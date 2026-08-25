@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vidéo de la semaine — WordSip</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="dashboard-header">
+      <div class="logo">🥤 WordSip</div>
+      <a href="/mot-du-jour" style="font-size:13px;color:#2b7a78;">← Retour</a>
+    </header>
+
+    <div id="loading">Chargement de la vidéo de la semaine...</div>
+
+    <div id="video-content" style="display:none;">
+      <section class="word-card">
+        <p class="label">🎬 Dialogue de la semaine</p>
+        <video id="weekly-video" controls style="width:100%;border-radius:16px;margin-top:10px;"></video>
+      </section>
+
+      <section class="exercise-card">
+        <p class="info-title">🧠 QUEL MOT AS-TU RECONNU ?</p>
+        <p style="font-size:13px;color:#555;margin-bottom:12px;">Sélectionne les mots que tu as entendus dans le dialogue :</p>
+        <div id="quiz-options"></div>
+        <button id="quiz-check-btn" style="margin-top:10px;">Vérifier mes réponses</button>
+        <p id="quiz-feedback" style="text-align:center;margin-top:10px;font-weight:600;"></p>
+      </section>
+    </div>
+  </div>
+
+  <script src="/video-semaine.js"></script>
+</body>
+</html>

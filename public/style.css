@@ -1,0 +1,134 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #e8f6f5 0%, #ffffff 100%);
+  color: #1a3c34;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container { max-width: 480px; margin: 0 auto; }
+
+header { text-align: center; margin-bottom: 20px; }
+
+.badges { display: flex; justify-content: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.badge { font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px; }
+.badge-warning { background: #fff3cd; color: #8a6d00; }
+.badge-success { background: #d4f4dd; color: #1a7a3e; }
+.badge-accent { background: #d0f0ee; color: #2b7a78; }
+
+header h1 { font-size: 2.5rem; color: #2b7a78; letter-spacing: -1px; }
+.tagline { color: #6b8f8c; margin-top: 5px; }
+
+.signup-card, .word-card, .info-card, .exercise-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(43, 122, 120, 0.08);
+  margin-bottom: 14px;
+}
+
+.signup-card h2 { margin-bottom: 6px; color: #17252a; text-align: center; }
+.step2-note { font-size: 12px; color: #6b8f8c; text-align: center; margin-bottom: 16px; }
+
+form { display: flex; flex-direction: column; gap: 10px; }
+
+label { font-size: 13px; font-weight: 600; color: #3aafa9; margin-top: 6px; }
+
+input, select {
+  padding: 10px 14px;
+  border: 1px solid #dceeed;
+  border-radius: 999px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px;
+  background: #2b7a78;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover { background: #17252a; }
+
+.radio-group { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+.radio-option {
+  display: flex; align-items: center; gap: 8px;
+  border: 1.5px solid #dceeed; border-radius: 12px; padding: 10px 14px;
+  font-weight: 500; font-size: 14px; color: #1a3c34;
+}
+.radio-option input { width: auto; padding: 0; }
+.hint { font-size: 11px; color: #8a6d00; margin: 2px 0 4px 14px; }
+
+#timer-duration { display: flex; flex-direction: column; gap: 6px; }
+#timer-duration input[type="range"] { border: none; padding: 0; }
+
+.divider { text-align: center; margin: 20px 0; position: relative; color: #999; font-size: 12px; }
+.divider::before { content: ""; position: absolute; top: 50%; left: 0; right: 0; border-top: 1px solid #eee; }
+.divider span { background: #fff; padding: 0 10px; position: relative; }
+
+.guest-btn {
+  width: 100%; background: transparent; border: 1.5px dashed #b8d4d2; color: #1a3c34;
+  border-radius: 20px; padding: 14px;
+}
+.guest-btn-note { font-size: 11px; color: #999; }
+
+#form-message { text-align: center; margin-top: 10px; font-size: 14px; }
+
+footer { text-align: center; margin-top: 20px; font-size: 13px; color: #6b8f8c; }
+footer a { color: #2b7a78; }
+
+/* Page mot du jour */
+.dashboard-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.logo { font-size: 20px; font-weight: 600; color: #2b7a78; }
+
+#loading { text-align: center; padding: 40px 0; color: #6b8f8c; }
+
+.channel-note {
+  background: #d0f0ee; color: #2b7a78; font-size: 12px; font-weight: 600;
+  padding: 8px 14px; border-radius: 999px; margin-bottom: 12px; text-align: center;
+}
+
+.word-card { text-align: center; }
+.word-card .label { font-size: 12px; color: #999; margin-bottom: 6px; }
+.word-card h1 { font-size: 2.2rem; font-weight: 600; color: #17252a; }
+.word-card .phonetic { font-style: italic; color: #6b8f8c; margin-top: 6px; }
+.word-card .translation { font-size: 1.3rem; font-weight: 600; color: #2b7a78; margin-top: 10px; }
+
+.info-title { font-size: 12px; font-weight: 700; color: #999; margin-bottom: 8px; letter-spacing: 0.5px; }
+.info-card p { font-size: 14px; line-height: 1.6; margin-bottom: 6px; }
+
+.slang-card { background: #fff8e6; }
+.slang-card .warning { font-size: 11px; color: #8a6d00; font-style: italic; }
+
+.exercise-card { background: #eaf5ff; }
+.word-display {
+  text-align: center; font-size: 20px; font-weight: 600; letter-spacing: 2px;
+  background: white; padding: 14px; border-radius: 12px; margin-bottom: 10px;
+}
+.reveal-btn {
+  width: 100%; background: white; color: #17252a; border: 1px solid #dceeed;
+  border-radius: 999px; padding: 10px; font-size: 14px; margin-bottom: 8px;
+}
+.timer-note { text-align: center; font-size: 12px; color: #2b7a78; margin-bottom: 8px; }
+
+#exercise-input-area input {
+  width: 100%; text-align: center; margin-bottom: 8px;
+}
+#check-btn { width: 100%; }
+#exercise-feedback { text-align: center; font-size: 13px; margin-top: 8px; font-weight: 600; }
+
+.progress-note { text-align: center; font-size: 13px; color: #6b8f8c; padding: 10px; }
+
+/* Ajustements pour très petits écrans (ex. iPhone SE, ~375px) */
+@media (max-width: 380px) {
+  body { padding: 12px; }
+  header h1 { font-size: 2rem; }
+  .word-card h1 { font-size: 1.8rem; }
+  .signup-card, .word-card, .info-card, .exercise-card { padding: 16px; }
+}

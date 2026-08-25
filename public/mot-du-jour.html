@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon mot du jour — WordSip</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="dashboard-header">
+      <div class="logo">🥤 WordSip</div>
+      <span id="level-badge" class="badge badge-accent"></span>
+    </header>
+
+    <div id="loading">Chargement de ton mot du jour...</div>
+
+    <div id="content" style="display:none;">
+      <div id="channel-note" class="channel-note" style="display:none;"></div>
+
+      <section class="word-card">
+        <p class="label">Ton mot du jour</p>
+        <h1 id="word-main"></h1>
+        <p id="word-phonetic" class="phonetic"></p>
+        <p id="word-translation" class="translation"></p>
+      </section>
+
+      <section class="info-card">
+        <p class="info-title">💬 EXEMPLES</p>
+        <div id="examples-list"></div>
+      </section>
+
+      <section class="info-card">
+        <p class="info-title">📖 GRAMMAIRE</p>
+        <div id="grammar-content"></div>
+      </section>
+
+      <section class="info-card slang-card">
+        <p class="info-title">🗣️ ARGOT / EXPRESSION FAMILIÈRE</p>
+        <p id="slang-expression"></p>
+        <p id="slang-meaning"></p>
+        <p id="slang-warning" class="warning"></p>
+      </section>
+
+      <section class="exercise-card">
+        <p class="info-title">✏️ À TOI D'ÉCRIRE — <span id="attempt-count">1</span> / 4</p>
+
+        <div id="word-display" class="word-display"></div>
+
+        <button id="reveal-btn" class="reveal-btn">Je suis prêt, cache le mot</button>
+        <div id="timer-note" class="timer-note" style="display:none;"></div>
+
+        <div id="exercise-input-area" style="display:none;">
+          <input type="text" id="exercise-input" placeholder="Écris le mot ici...">
+          <button id="check-btn">Vérifier</button>
+          <p id="exercise-feedback"></p>
+        </div>
+      </section>
+
+      <section id="progress-note" class="progress-note"></section>
+
+      <a href="/video-semaine" style="display:block;text-align:center;font-size:13px;color:#2b7a78;margin-top:10px;">🎬 Voir la vidéo de la semaine</a>
+    </div>
+  </div>
+
+  <script src="/mot-du-jour.js"></script>
+</body>
+</html>

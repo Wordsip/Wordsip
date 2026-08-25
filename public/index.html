@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordSip — Un mot par jour</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badges">
+        <span class="badge badge-warning">🥤 Un mot par jour</span>
+        <span class="badge badge-success">✓ 100% gratuit</span>
+      </div>
+      <h1>WordSip</h1>
+      <p class="tagline">Une petite gorgée de mot, chaque jour ✨</p>
+    </header>
+
+    <section class="signup-card">
+      <!-- Étape 1 : infos de base -->
+      <div id="step1">
+        <h2>Inscris-toi gratuitement</h2>
+        <form id="step1-form">
+          <label for="pseudo">Pseudo</label>
+          <input type="text" id="pseudo" name="pseudo" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="language">Langue à apprendre</label>
+          <select id="language" name="language" required>
+            <option value="en">🇬🇧 Anglais</option>
+            <option value="es">🇪🇸 Espagnol</option>
+            <option value="it">🇮🇹 Italien</option>
+            <option value="ja">🇯🇵 Japonais</option>
+            <option value="zh">🇨🇳 Chinois</option>
+          </select>
+
+          <label for="level">Niveau</label>
+          <select id="level" name="level" required>
+            <option value="beginner">Débutant</option>
+            <option value="intermediate">Intermédiaire</option>
+          </select>
+
+          <label>Quel parcours pour toi ?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="track" value="rapide" checked>
+              <div>
+                <strong>Parcours rapide</strong> — 198 mots essentiels
+                <p class="hint" style="margin-left:0;">~6,5 mois à 1 mot/jour. Bon niveau débutant solide.</p>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="track" value="complet">
+              <div>
+                <strong>Parcours complet</strong> — ~500 mots
+                <p class="hint" style="margin-left:0;">~16-17 mois à 1 mot/jour. Vrai niveau conversationnel.</p>
+              </div>
+            </label>
+          </div>
+
+          <button type="submit">Suivant →</button>
+        </form>
+      </div>
+
+      <!-- Étape 2 : préférences complètes -->
+      <div id="step2" style="display:none;">
+        <h2>Personnalise ton compte</h2>
+        <p class="step2-note">Étape 2/2 — tout reste modifiable plus tard dans tes préférences</p>
+
+        <form id="step2-form">
+          <label for="wordsPerWeek">Mots par semaine</label>
+          <select id="wordsPerWeek" name="wordsPerWeek">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
+          <label>Comment veux-tu recevoir ton mot ?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="channel" value="email" checked> Par email
+            </label>
+            <p class="hint">📩 Pense à activer les notifications de ta boîte mail</p>
+
+            <label class="radio-option">
+              <input type="radio" name="channel" value="whatsapp"> Par WhatsApp
+            </label>
+            <p class="hint">📱 Nécessite les notifications push activées pour WhatsApp</p>
+
+            <label class="radio-option">
+              <input type="radio" name="channel" value="site"> Sur le site uniquement
+            </label>
+            <p class="hint">🌐 Pas de notification, je viens pratiquer par moi-même</p>
+          </div>
+
+          <label for="notificationTime">Heure de réception (si email/WhatsApp)</label>
+          <input type="time" id="notificationTime" name="notificationTime" value="08:00">
+
+          <label>Exercice d'écriture : comment le mot doit-il disparaître ?</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="revealMode" value="manual" checked> Bouton manuel ("Je suis prêt")
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="revealMode" value="timer"> Minuteur automatique
+            </label>
+          </div>
+
+          <div id="timer-duration" style="display:none;">
+            <label for="revealSeconds">Durée avant disparition</label>
+            <input type="range" id="revealSeconds" name="revealSeconds" min="5" max="30" value="10">
+            <span id="revealSecondsValue">10s</span>
+          </div>
+
+          <button type="submit">Créer mon compte 🎉</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="divider"><span>ou</span></div>
+
+    <button id="guest-trial-btn" class="guest-btn">
+      ▶ Essayer sans inscription <span class="guest-btn-note">(7 jours, gratuit)</span>
+    </button>
+
+    <p id="form-message"></p>
+
+    <footer>
+      <p>Une question ? Écris-nous à <a href="mailto:wordsip@protonmail.com">wordsip@protonmail.com</a></p>
+    </footer>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
