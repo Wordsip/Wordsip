@@ -1,13 +1,9 @@
-const SibApiV3Sdk = require('@sendinblue/client');
-
-let apiInstance = null;
-if (process.env.BREVO_API_KEY) {
-  apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
-  apiInstance.setApiKey(SibApiV3Sdk.TransactionalEmailsApiApiKeys.apiKey, process.env.BREVO_API_KEY);
-}
+// Appel direct à l'API Brevo via fetch (natif à Node.js 18+), sans dépendance
+// tierce, pour éviter les vulnérabilités du SDK officiel (qui utilise une
+// bibliothèque HTTP obsolète en interne).
 
 async function sendWordEmail(user, wordEntry) {
-  if (!apiInstance) {
+  if (!process.env.BREVO_API_KEY) {
     console.log(`[SIMULATION] Email non envoyé (pas de clé Brevo configurée) à ${user.email} : ${wordEntry.word}`);
     return;
   }
@@ -42,15 +38,29 @@ async function sendWordEmail(user, wordEntry) {
     </div>
   `;
 
-  const email = {
+  const body = {
+    sender: { email: process.env.SENDER_EMAIL || 'wordsip@protonmail.com', name: 'WordSip' },
     to: [{ email: user.email }],
-    sender: { email: process.env.SENDER_EMAIL || 'noreply@wordsip.example.com', name: 'WordSip' },
     subject: `Ton mot du jour WordSip : ${wordEntry.word}`,
     htmlContent,
   };
 
   try {
-    await apiInstance.sendTransacEmail(email);
+    const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'api-key': process.env.BREVO_API_KEY,
+      },
+      body: JSON.stringify(body),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Brevo API error (${response.status}): ${errorText}`);
+    }
+
     console.log(`Email envoyé à ${user.email}`);
   } catch (error) {
     console.error(`Erreur lors de l'envoi à ${user.email} :`, error.message);

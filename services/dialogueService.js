@@ -3,9 +3,8 @@ const wordService = require('./wordService');
 // Construit un mini-dialogue à 2 répliques entre deux personnages (A et B),
 // en utilisant deux mots appris récemment. Volontairement très court
 // (le but est une vidéo de ~10 secondes maximum).
-function buildWeeklyDialogue(language) {
-  const allWords = wordService.getAllWords();
-  const languageWords = allWords[language];
+async function buildWeeklyDialogue(language) {
+  const languageWords = await wordService.getWordsForLanguage(language);
   if (!languageWords) return null;
 
   const pool = [

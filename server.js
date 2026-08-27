@@ -3,6 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+const { connectDB } = require('./services/db');
+const wordService = require('./services/wordService');
 const routes = require('./routes/index');
 const { startDailySender } = require('./cron/dailySender');
 const { startWeeklyVideoGenerator } = require('./cron/weeklyVideo');
@@ -16,8 +18,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
-app.listen(PORT, () => {
-  console.log(`WordSip est en ligne sur le port ${PORT}`);
-  startDailySender();
-  startWeeklyVideoGenerator();
-});
+async function start() {
+  try {
+    await connectDB();
+    await wordService.seedIfEmpty();
+  } catch (err) {
+    console.error('Erreur de connexion à la base de données :', err.message);
+    console.error('Vérifie que MONGODB_URI est bien configurée dans les variables d\'environnement.');
+  }
+
+  app.listen(PORT, () => {
+    console.log(`WordSip est en ligne sur le port ${PORT}`);
+    startDailySender();
+    startWeeklyVideoGenerator();
+  });
+}
+
+start();

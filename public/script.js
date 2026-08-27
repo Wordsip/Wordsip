@@ -1,5 +1,55 @@
 let step1Data = {};
 
+// Basculer entre le formulaire de connexion et le formulaire d'inscription
+const loginToggle = document.getElementById('login-toggle');
+const loginCard = document.getElementById('login-card');
+const signupCard = document.getElementById('signup-card');
+const guestOption = document.getElementById('guest-option');
+
+loginToggle.addEventListener('click', (e) => {
+  e.preventDefault();
+  const showingLogin = loginCard.style.display === 'block';
+
+  if (showingLogin) {
+    loginCard.style.display = 'none';
+    signupCard.style.display = 'block';
+    guestOption.style.display = 'block';
+    loginToggle.textContent = 'Déjà inscrit ? Se connecter';
+  } else {
+    loginCard.style.display = 'block';
+    signupCard.style.display = 'none';
+    guestOption.style.display = 'none';
+    loginToggle.textContent = 'Pas encore de compte ? S\'inscrire';
+  }
+});
+
+// Connexion par email (retrouve le compte existant, sans mot de passe)
+document.getElementById('login-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('login-email').value;
+  const messageEl = document.getElementById('login-message');
+
+  try {
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      window.location.href = `/mot-du-jour?email=${encodeURIComponent(email)}`;
+    } else {
+      messageEl.style.color = '#c0392b';
+      messageEl.textContent = result.error || 'Une erreur est survenue.';
+    }
+  } catch (err) {
+    messageEl.style.color = '#c0392b';
+    messageEl.textContent = 'Erreur de connexion au serveur.';
+  }
+});
+
 // Étape 1 → Étape 2
 document.getElementById('step1-form').addEventListener('submit', (e) => {
   e.preventDefault();

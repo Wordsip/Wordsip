@@ -3,7 +3,6 @@ const path = require('path');
 const https = require('https');
 const ffmpegPath = require('ffmpeg-static');
 const { execFile } = require('child_process');
-const googleTTS = require('google-tts-api');
 const sharp = require('sharp');
 
 const TMP_DIR = path.join(__dirname, '..', 'tmp');
@@ -14,10 +13,17 @@ function ensureDirs() {
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 }
 
+// Construit l'URL du TTS gratuit de Google Translate (formule publique connue,
+// pas besoin d'un package tiers pour ça — juste une URL avec le texte encodé).
+function buildGoogleTTSUrl(text, lang) {
+  const encoded = encodeURIComponent(text);
+  return `https://translate.google.com/translate_tts?ie=UTF-8&q=${encoded}&tl=${lang}&client=tw-ob`;
+}
+
 // Télécharge l'audio TTS gratuit (Google Translate) pour une phrase donnée
 function downloadTTS(text, lang, outputPath) {
   return new Promise((resolve, reject) => {
-    const url = googleTTS.getAudioUrl(text, { lang, slow: false });
+    const url = buildGoogleTTSUrl(text, lang);
     const file = fs.createWriteStream(outputPath);
 
     https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (response) => {

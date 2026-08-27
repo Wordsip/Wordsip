@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administration — WordSip</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .word-row { background: white; border-radius: 12px; padding: 14px; margin-bottom: 8px; border: 1px solid #dceeed; }
+    .word-row-header { display: flex; justify-content: space-between; align-items: center; }
+    .word-row-actions button { width: auto; padding: 5px 10px; font-size: 12px; margin-left: 6px; }
+    select, textarea { width: 100%; padding: 8px; border-radius: 8px; border: 1px solid #dceeed; margin-top: 4px; }
+    textarea { min-height: 60px; font-family: monospace; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container" style="max-width: 700px;">
+    <header>
+      <h1>🛠️ Admin WordSip</h1>
+    </header>
+
+    <!-- Connexion admin -->
+    <section id="admin-login" class="signup-card">
+      <h2>Connexion administrateur</h2>
+      <form id="admin-login-form">
+        <label for="admin-email">Email</label>
+        <input type="email" id="admin-email" required value="wordsip@protonmail.com">
+        <label for="admin-secret">Code secret</label>
+        <input type="password" id="admin-secret" required>
+        <button type="submit">Se connecter</button>
+      </form>
+      <p id="admin-login-message"></p>
+    </section>
+
+    <!-- Panneau admin, caché tant qu'on n'est pas connecté -->
+    <section id="admin-panel" style="display:none;">
+      <div class="signup-card">
+        <h2>Ajouter un mot</h2>
+        <form id="add-word-form">
+          <label>Langue</label>
+          <select id="add-language">
+            <option value="en">🇬🇧 Anglais</option>
+            <option value="es">🇪🇸 Espagnol</option>
+            <option value="it">🇮🇹 Italien</option>
+            <option value="ja">🇯🇵 Japonais</option>
+            <option value="zh">🇨🇳 Chinois</option>
+          </select>
+
+          <label>Sous-niveau</label>
+          <select id="add-sublevel">
+            <option value="beginner1">Débutant 1</option>
+            <option value="beginner2">Débutant 2</option>
+            <option value="beginner3">Débutant 3</option>
+            <option value="beginner4">Débutant 4</option>
+            <option value="beginner5">Débutant 5</option>
+            <option value="intermediate1">Intermédiaire 1</option>
+            <option value="intermediate2">Intermédiaire 2</option>
+            <option value="intermediate3">Intermédiaire 3</option>
+          </select>
+
+          <label>Mot</label>
+          <input type="text" id="add-word" required>
+          <label>Phonétique</label>
+          <input type="text" id="add-phonetic">
+          <label>Traduction</label>
+          <input type="text" id="add-translation" required>
+          <label>Exemples (un par ligne)</label>
+          <textarea id="add-examples" placeholder="Hello, how are you?&#10;She said hello."></textarea>
+          <label>Grammaire (JSON : nature, position, register, synonyms)</label>
+          <textarea id="add-grammar" placeholder='{"nature":"","position":"","register":"","synonyms":""}'></textarea>
+          <label>Argot (JSON : expression, meaning, warning)</label>
+          <textarea id="add-slang" placeholder='{"expression":"","meaning":"","warning":""}'></textarea>
+
+          <button type="submit">Ajouter ce mot</button>
+        </form>
+        <p id="add-word-message"></p>
+      </div>
+
+      <div class="signup-card">
+        <h2>Mots existants</h2>
+        <label>Filtrer par langue</label>
+        <select id="filter-language">
+          <option value="en">🇬🇧 Anglais</option>
+          <option value="es">🇪🇸 Espagnol</option>
+          <option value="it">🇮🇹 Italien</option>
+          <option value="ja">🇯🇵 Japonais</option>
+          <option value="zh">🇨🇳 Chinois</option>
+        </select>
+        <div id="words-list" style="margin-top:14px;"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="/admin.js"></script>
+</body>
+</html>

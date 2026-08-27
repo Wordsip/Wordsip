@@ -1,6 +1,13 @@
 let quizData = null;
 const selectedWords = new Set();
 
+// Le lien "Retour" doit conserver l'email (ou le mode invité) présent dans l'URL
+// actuelle, sinon la page mot-du-jour ne sait plus qui est connecté.
+const backLink = document.getElementById('back-link');
+if (backLink) {
+  backLink.href = `/mot-du-jour${window.location.search}`;
+}
+
 async function loadWeeklyVideo() {
   const loading = document.getElementById('loading');
   const content = document.getElementById('video-content');

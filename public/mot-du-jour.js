@@ -101,6 +101,13 @@ function renderWord() {
   document.getElementById('slang-warning').textContent = s.warning ? `⚠️ ${s.warning}` : '';
 
   setupExercise();
+
+  // Le lien vers la vidéo doit conserver l'email (ou le mode invité) pour que
+  // le bouton "Retour" fonctionne ensuite sans perdre la session.
+  const videoLink = document.getElementById('video-link');
+  if (videoLink) {
+    videoLink.href = `/video-semaine${window.location.search}`;
+  }
 }
 
 function setupExercise() {
@@ -143,6 +150,13 @@ function hideWordAndShowInput() {
   document.getElementById('timer-note').style.display = 'none';
   document.getElementById('exercise-input-area').style.display = 'block';
   document.getElementById('exercise-input').focus();
+
+  // Cache aussi le mot affiché en haut de page, sinon l'exercice n'a aucun intérêt
+  document.getElementById('word-main').textContent = '? '.repeat(currentWord.word.length).trim();
+}
+
+function revealWordMain() {
+  document.getElementById('word-main').textContent = currentWord.word;
 }
 
 document.getElementById('check-btn')?.addEventListener('click', async () => {
@@ -166,6 +180,10 @@ document.getElementById('check-btn')?.addEventListener('click', async () => {
     feedback.textContent = `❌ Pas tout à fait — la bonne orthographe est "${currentWord.word}"`;
     feedback.style.color = 'var(--text-danger, red)';
   }
+
+  // On révèle à nouveau le mot en haut le temps de voir la correction,
+  // avant de relancer un nouvel essai masqué juste après.
+  revealWordMain();
 
   setTimeout(() => {
     if (attemptCount < MAX_ATTEMPTS) {

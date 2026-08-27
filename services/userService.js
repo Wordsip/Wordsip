@@ -1,19 +1,17 @@
-const fs = require('fs');
-const path = require('path');
 const { nanoid } = require('nanoid');
+const { getDB } = require('./db');
 
-const USERS_FILE = path.join(__dirname, '..', 'data', 'users.json');
-
-function readUsers() {
-  const raw = fs.readFileSync(USERS_FILE, 'utf-8');
-  return JSON.parse(raw);
+function usersCollection() {
+  return getDB().collection('users');
 }
 
-function writeUsers(users) {
-  fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2), 'utf-8');
+// Normalise l'email (espaces + majuscules) pour éviter les doublons du type
+// "Test@Test.com" vs "test@test.com" qui passeraient à travers une comparaison stricte.
+function normalizeEmail(email) {
+  return (email || '').trim().toLowerCase();
 }
 
-function addUser({
+async function addUser({
   pseudo,
   email,
   language,
@@ -25,56 +23,50 @@ function addUser({
   revealSeconds,
   track,
 }) {
-  const users = readUsers();
-
-  const existing = users.find((u) => u.email === email);
+  const normalizedEmail = normalizeEmail(email);
+  const existing = await usersCollection().findOne({ email: normalizedEmail });
   if (existing) {
     throw new Error('Cet email est déjà inscrit.');
   }
 
   const newUser = {
     id: nanoid(10),
-    pseudo,
-    email,
+    pseudo: (pseudo || '').trim(),
+    email: normalizedEmail,
     language,
     level: level || 'beginner',
     wordsPerWeek: wordsPerWeek || 3,
-    // Heure choisie par l'utilisateur (format "HH:MM", heure du serveur)
     notificationTime: notificationTime || '08:00',
-    // "email", "whatsapp" ou "site" (pas de notification, pratique sur le site uniquement)
     channel: channel || 'email',
-    // "manual" (bouton "je suis prêt") ou "timer" (minuteur automatique)
     revealMode: revealMode || 'manual',
     revealSeconds: revealSeconds || 10,
-    // "rapide" (198 mots, 6 sous-niveaux) ou "complet" (~500 mots, 15 sous-niveaux)
     track: track === 'complet' ? 'complet' : 'rapide',
-    // Progression : nombre de mots validés à l'exercice d'écriture (fait avancer le sous-niveau)
     wordsValidated: 0,
     createdAt: new Date().toISOString(),
   };
 
-  users.push(newUser);
-  writeUsers(users);
+  await usersCollection().insertOne(newUser);
   return newUser;
 }
 
-function getAllUsers() {
-  return readUsers();
+async function getAllUsers() {
+  return usersCollection().find({}).toArray();
 }
 
-function findByEmail(email) {
-  const users = readUsers();
-  return users.find((u) => u.email === email) || null;
+async function findByEmail(email) {
+  return usersCollection().findOne({ email: normalizeEmail(email) });
 }
 
-function incrementWordsValidated(email) {
-  const users = readUsers();
-  const user = users.find((u) => u.email === email);
-  if (!user) throw new Error('Utilisateur introuvable.');
+async function incrementWordsValidated(email) {
+  const normalizedEmail = normalizeEmail(email);
+  const result = await usersCollection().findOneAndUpdate(
+    { email: normalizedEmail },
+    { $inc: { wordsValidated: 1 } },
+    { returnDocument: 'after' }
+  );
 
-  user.wordsValidated = (user.wordsValidated || 0) + 1;
-  writeUsers(users);
-  return user;
+  if (!result) throw new Error('Utilisateur introuvable.');
+  return result;
 }
 
-module.exports = { addUser, getAllUsers, findByEmail, incrementWordsValidated };
+module.exports = { addUser, getAllUsers, findByEmail, incrementWordsValidated, normalizeEmail };
