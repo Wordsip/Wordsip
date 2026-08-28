@@ -26,6 +26,8 @@ document.getElementById('admin-login-form').addEventListener('submit', async (e)
       document.getElementById('admin-login').style.display = 'none';
       document.getElementById('admin-panel').style.display = 'block';
       loadWords();
+      loadUsers();
+      loadBlacklist();
     } else {
       messageEl.textContent = result.error;
       messageEl.style.color = '#c0392b';
@@ -154,5 +156,114 @@ async function deleteWord(language, subLevel, index) {
     loadWords();
   } else {
     alert('Erreur lors de la suppression.');
+  }
+}
+
+// --- Utilisateurs ---
+
+async function loadUsers() {
+  const res = await fetch(`/api/admin/users?secret=${encodeURIComponent(adminSecret)}`);
+  const users = await res.json();
+  const container = document.getElementById('users-list');
+  container.innerHTML = '';
+
+  if (users.length === 0) {
+    container.innerHTML = '<p style="color:#999;font-size:13px;">Aucun utilisateur inscrit pour le moment.</p>';
+    return;
+  }
+
+  users.forEach((u) => {
+    const row = document.createElement('div');
+    row.className = 'word-row';
+    row.innerHTML = `
+      <div class="word-row-header">
+        <div>
+          <strong>${u.pseudo}</strong> — ${u.email}
+          <p style="font-size:11px;color:#666;">${u.language} · ${u.level} · ${u.track} · ${u.wordsValidated} mots validés</p>
+        </div>
+        <div class="word-row-actions">
+          <button onclick="deleteUser('${u.email}')" style="background:#c0392b;">Supprimer</button>
+        </div>
+      </div>
+    `;
+    container.appendChild(row);
+  });
+}
+
+async function deleteUser(email) {
+  if (!confirm(`Supprimer définitivement le compte ${email} et toutes ses données ?`)) return;
+
+  const res = await fetch('/api/admin/users', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ secret: adminSecret, email }),
+  });
+
+  if (res.ok) {
+    loadUsers();
+  } else {
+    alert('Erreur lors de la suppression.');
+  }
+}
+
+// --- Liste noire d'emails ---
+
+document.getElementById('blacklist-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('blacklist-email').value;
+  const messageEl = document.getElementById('blacklist-message');
+
+  const res = await fetch('/api/admin/blacklist', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ secret: adminSecret, email }),
+  });
+
+  if (res.ok) {
+    messageEl.textContent = `✅ ${email} a été bloqué.`;
+    messageEl.style.color = 'green';
+    e.target.reset();
+    loadBlacklist();
+  } else {
+    messageEl.textContent = 'Erreur lors du blocage.';
+    messageEl.style.color = '#c0392b';
+  }
+});
+
+async function loadBlacklist() {
+  const res = await fetch(`/api/admin/blacklist?secret=${encodeURIComponent(adminSecret)}`);
+  const list = await res.json();
+  const container = document.getElementById('blacklist-list');
+  container.innerHTML = '';
+
+  if (list.length === 0) {
+    container.innerHTML = '<p style="color:#999;font-size:13px;">Aucune adresse bloquée pour le moment.</p>';
+    return;
+  }
+
+  list.forEach((entry) => {
+    const row = document.createElement('div');
+    row.className = 'word-row';
+    row.innerHTML = `
+      <div class="word-row-header">
+        <span>${entry.email}</span>
+        <button onclick="removeFromBlacklist('${entry.email}')" style="width:auto;padding:5px 10px;font-size:12px;">Débloquer</button>
+      </div>
+    `;
+    container.appendChild(row);
+  });
+}
+
+async function removeFromBlacklist(email) {
+  const res = await fetch('/api/admin/blacklist', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ secret: adminSecret, email }),
+  });
+
+  if (res.ok) {
+    loadBlacklist();
+  } else {
+    alert('Erreur lors du déblocage.');
   }
 }

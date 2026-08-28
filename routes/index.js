@@ -5,6 +5,8 @@ const path = require('path');
 const userService = require('../services/userService');
 const wordService = require('../services/wordService');
 const scheduledTasks = require('../services/scheduledTasks');
+const { checkEmailDomain } = require('../services/emailDomainCheck');
+const blacklistService = require('../services/blacklistService');
 
 // Page d'accueil
 router.get('/', (req, res) => {
@@ -98,7 +100,7 @@ function isValidEmailFormat(email) {
 
 router.post('/api/signup', async (req, res) => {
   const {
-    pseudo, email, language, level, wordsPerWeek,
+    pseudo, email, language, level, wordDays,
     notificationTime, channel, revealMode, revealSeconds, track,
   } = req.body;
 
@@ -110,19 +112,34 @@ router.post('/api/signup', async (req, res) => {
     return res.status(400).json({ error: "Le format de l'email ne semble pas valide." });
   }
 
+  // Vérifie que le domaine n'est pas une adresse jetable connue, et qu'il a
+  // de vrais serveurs de messagerie configurés — sans envoyer de mail ni
+  // bloquer l'utilisateur plus longtemps.
+  const domainCheck = await checkEmailDomain(email);
+  if (!domainCheck.valid) {
+    return res.status(400).json({ error: domainCheck.reason });
+  }
+
+  // Vérifie que cette adresse précise n'a pas été bloquée manuellement par l'admin
+  const isBlacklisted = await blacklistService.isBlacklisted(email);
+  if (isBlacklisted) {
+    return res.status(403).json({ error: 'Cette adresse email ne peut pas être utilisée.' });
+  }
+
   try {
     const user = await userService.addUser({
       pseudo,
       email,
       language,
       level: level || 'beginner',
-      wordsPerWeek: parseInt(wordsPerWeek, 10) || 3,
+      wordDays,
       notificationTime: notificationTime || '08:00',
       channel: channel || 'email',
       revealMode: revealMode || 'manual',
       revealSeconds: parseInt(revealSeconds, 10) || 10,
       track: track || 'rapide',
     });
+
     res.status(201).json({ message: 'Inscription réussie !', user });
   } catch (err) {
     res.status(409).json({ error: err.message });
@@ -162,6 +179,20 @@ router.get('/api/preview/:language/:level', async (req, res) => {
     res.json(word);
   } catch (err) {
     res.status(500).json({ error: err.message });
+  }
+});
+
+// Suppression de compte par l'utilisateur lui-même — efface définitivement
+// toutes ses données. Cohérent avec le reste du site : pas de mot de passe,
+// juste l'email comme identifiant (comme pour la connexion).
+router.delete('/api/account', async (req, res) => {
+  try {
+    const { email } = req.body;
+    if (!email) return res.status(400).json({ error: 'Email requis.' });
+    await userService.deleteUser(email);
+    res.json({ ok: true });
+  } catch (err) {
+    res.status(404).json({ error: err.message });
   }
 });
 
@@ -233,6 +264,77 @@ router.delete('/api/admin/words', async (req, res) => {
   try {
     const { language, subLevel, index } = req.body;
     await wordService.deleteWord(language, subLevel, index);
+    res.json({ ok: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// --- Administration (utilisateurs) ---
+
+// Liste tous les comptes (pour que l'admin puisse les gérer/supprimer)
+router.get('/api/admin/users', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const users = await userService.getAllUsers();
+    // On ne renvoie que les champs utiles à l'admin, jamais les données
+    // chiffrées brutes ni le détail technique interne.
+    const safeUsers = users.map((u) => ({
+      pseudo: u.pseudo,
+      email: u.email,
+      language: u.language,
+      level: u.level,
+      track: u.track,
+      wordsValidated: u.wordsValidated,
+      createdAt: u.createdAt,
+    }));
+    res.json(safeUsers);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Supprime un compte utilisateur (admin) — efface définitivement ses données
+router.delete('/api/admin/users', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const { email } = req.body;
+    await userService.deleteUser(email);
+    res.json({ ok: true });
+  } catch (err) {
+    res.status(404).json({ error: err.message });
+  }
+});
+
+// --- Administration (liste noire d'emails) ---
+
+router.get('/api/admin/blacklist', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const list = await blacklistService.getBlacklist();
+    res.json(list);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.post('/api/admin/blacklist', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const { email } = req.body;
+    if (!email) return res.status(400).json({ error: 'Email requis.' });
+    await blacklistService.addToBlacklist(email);
+    res.json({ ok: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.delete('/api/admin/blacklist', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const { email } = req.body;
+    await blacklistService.removeFromBlacklist(email);
     res.json({ ok: true });
   } catch (err) {
     res.status(500).json({ error: err.message });

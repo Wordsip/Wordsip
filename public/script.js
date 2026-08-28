@@ -77,9 +77,20 @@ document.getElementById('step2-form').addEventListener('submit', async (e) => {
 
   const formData = new FormData(e.target);
   const step2Data = Object.fromEntries(formData.entries());
+  // Les jours cochés doivent être récupérés à part : getAll() renvoie bien
+  // toutes les valeurs cochées, contrairement à Object.fromEntries qui n'en
+  // garderait qu'une seule vu qu'elles partagent le même nom "wordDays".
+  step2Data.wordDays = formData.getAll('wordDays');
+
   const data = { ...step1Data, ...step2Data };
 
   const messageEl = document.getElementById('form-message');
+
+  if (data.wordDays.length === 0) {
+    messageEl.style.color = '#c0392b';
+    messageEl.textContent = 'Sélectionne au moins un jour de réception.';
+    return;
+  }
 
   try {
     const response = await fetch('/api/signup', {

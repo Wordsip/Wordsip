@@ -88,6 +88,22 @@
         </select>
         <div id="words-list" style="margin-top:14px;"></div>
       </div>
+
+      <div class="signup-card">
+        <h2>Utilisateurs inscrits</h2>
+        <button onclick="loadUsers()" style="width:auto;padding:6px 14px;font-size:12px;">Rafraîchir</button>
+        <div id="users-list" style="margin-top:14px;"></div>
+      </div>
+
+      <div class="signup-card">
+        <h2>Liste noire d'emails</h2>
+        <form id="blacklist-form" style="display:flex;gap:8px;">
+          <input type="email" id="blacklist-email" placeholder="email@a-bloquer.com" required style="flex:1;">
+          <button type="submit" style="width:auto;">Bloquer</button>
+        </form>
+        <p id="blacklist-message"></p>
+        <div id="blacklist-list" style="margin-top:14px;"></div>
+      </div>
     </section>
   </div>
 

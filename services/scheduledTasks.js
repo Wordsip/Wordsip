@@ -16,6 +16,8 @@ const FEATURED_LANGUAGE_LABEL = 'English';
 const FEATURED_LEVEL = 'beginner';
 const LATEST_VIDEO_FILE = path.join(__dirname, '..', 'data', 'latest-video.json');
 
+const DAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
 function getCurrentTimeString() {
   const now = new Date();
   const hours = String(now.getHours()).padStart(2, '0');
@@ -23,16 +25,24 @@ function getCurrentTimeString() {
   return `${hours}:${minutes}`;
 }
 
-// Envoie le mot du jour à tous les utilisateurs dont l'heure choisie correspond
-// (à quelques minutes près, pour rester tolérant si le déclenchement externe
-// n'arrive pas à la seconde près).
+function getCurrentDayKey() {
+  return DAY_KEYS[new Date().getDay()];
+}
+
+// Envoie le mot du jour à tous les utilisateurs dont l'heure ET le jour
+// choisis correspondent à maintenant.
 async function checkAndSendDueEmails() {
   const currentTime = getCurrentTimeString();
+  const currentDay = getCurrentDayKey();
   const users = await userService.getAllUsers();
-  const usersToNotify = users.filter((u) => (u.notificationTime || '08:00') === currentTime);
+  const usersToNotify = users.filter((u) => {
+    const timeMatches = (u.notificationTime || '08:00') === currentTime;
+    const dayMatches = Array.isArray(u.wordDays) ? u.wordDays.includes(currentDay) : true;
+    return timeMatches && dayMatches;
+  });
 
   if (usersToNotify.length === 0) {
-    return { sent: 0, currentTime };
+    return { sent: 0, currentTime, currentDay };
   }
 
   for (const user of usersToNotify) {
@@ -42,7 +52,7 @@ async function checkAndSendDueEmails() {
     }
   }
 
-  return { sent: usersToNotify.length, currentTime };
+  return { sent: usersToNotify.length, currentTime, currentDay };
 }
 
 async function postDailyTweetTask() {

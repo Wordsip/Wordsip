@@ -83,14 +83,17 @@
         <p class="step2-note">Étape 2/2 — tout reste modifiable plus tard dans tes préférences</p>
 
         <form id="step2-form">
-          <label for="wordsPerWeek">Mots par semaine</label>
-          <select id="wordsPerWeek" name="wordsPerWeek">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3" selected>3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
+          <label>Quels jours veux-tu recevoir ton mot ?</label>
+          <div class="days-grid">
+            <label class="day-checkbox"><input type="checkbox" name="wordDays" value="mon" checked>Lun</label>
+            <label class="day-checkbox"><input type="checkbox" name="wordDays" value="tue">Mar</label>
+            <label class="day-checkbox"><input type="checkbox" name="wordDays" value="wed" checked>Mer</label>
+            <label class="day-checkbox"><input type="checkbox" name="wordDays" value="thu">Jeu</label>
+            <label class="day-checkbox"><input type="checkbox" name="wordDays" value="fri" checked>Ven</label>
+            <label class="day-checkbox"><input type="checkbox" name="wordDays" value="sat">Sam</label>
+            <label class="day-checkbox"><input type="checkbox" name="wordDays" value="sun">Dim</label>
+          </div>
+          <p class="hint" style="margin-left:0;">Sélectionne au moins un jour. Ces jours s'appliquent aussi aux exercices d'écriture, qui font partie de la même leçon.</p>
 
           <label>Comment veux-tu recevoir ton mot ?</label>
           <div class="radio-group">

@@ -108,6 +108,39 @@ function renderWord() {
   if (videoLink) {
     videoLink.href = `/video-semaine${window.location.search}`;
   }
+
+  // Suppression de compte, cachée en mode invité (pas de vrai compte à supprimer)
+  const deleteLink = document.getElementById('delete-account-link');
+  if (deleteLink) {
+    if (isGuest) {
+      deleteLink.style.display = 'none';
+    } else {
+      deleteLink.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const confirmed = confirm(
+          'Es-tu sûr(e) de vouloir supprimer ton compte ? Cette action est définitive : toutes tes données (progression, préférences) seront effacées et ne pourront pas être récupérées.'
+        );
+        if (!confirmed) return;
+
+        try {
+          const res = await fetch('/api/account', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+          });
+
+          if (res.ok) {
+            alert('Ton compte a bien été supprimé.');
+            window.location.href = '/';
+          } else {
+            alert('Une erreur est survenue lors de la suppression.');
+          }
+        } catch (err) {
+          alert('Erreur de connexion au serveur.');
+        }
+      });
+    }
+  }
 }
 
 function setupExercise() {

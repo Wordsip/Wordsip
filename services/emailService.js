@@ -2,12 +2,38 @@
 // tierce, pour éviter les vulnérabilités du SDK officiel (qui utilise une
 // bibliothèque HTTP obsolète en interne).
 
-async function sendWordEmail(user, wordEntry) {
+async function sendRawEmail({ to, subject, htmlContent }) {
   if (!process.env.BREVO_API_KEY) {
-    console.log(`[SIMULATION] Email non envoyé (pas de clé Brevo configurée) à ${user.email} : ${wordEntry.word}`);
-    return;
+    console.log(`[SIMULATION] Email non envoyé (pas de clé Brevo configurée) à ${to} : ${subject}`);
+    return { simulated: true };
   }
 
+  const body = {
+    sender: { email: process.env.SENDER_EMAIL || 'wordsip@protonmail.com', name: 'WordSip' },
+    to: [{ email: to }],
+    subject,
+    htmlContent,
+  };
+
+  const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      'api-key': process.env.BREVO_API_KEY,
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Brevo API error (${response.status}): ${errorText}`);
+  }
+
+  return { simulated: false };
+}
+
+async function sendWordEmail(user, wordEntry) {
   const examplesHtml = (wordEntry.examples || [wordEntry.example])
     .filter(Boolean)
     .map((ex, i) => `<p>${i + 1}. ${ex}</p>`)
@@ -38,29 +64,12 @@ async function sendWordEmail(user, wordEntry) {
     </div>
   `;
 
-  const body = {
-    sender: { email: process.env.SENDER_EMAIL || 'wordsip@protonmail.com', name: 'WordSip' },
-    to: [{ email: user.email }],
-    subject: `Ton mot du jour WordSip : ${wordEntry.word}`,
-    htmlContent,
-  };
-
   try {
-    const response = await fetch('https://api.brevo.com/v3/smtp/email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'api-key': process.env.BREVO_API_KEY,
-      },
-      body: JSON.stringify(body),
+    await sendRawEmail({
+      to: user.email,
+      subject: `Ton mot du jour WordSip : ${wordEntry.word}`,
+      htmlContent,
     });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`Brevo API error (${response.status}): ${errorText}`);
-    }
-
     console.log(`Email envoyé à ${user.email}`);
   } catch (error) {
     console.error(`Erreur lors de l'envoi à ${user.email} :`, error.message);
