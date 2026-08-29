@@ -21,10 +21,12 @@ function getClient() {
 function composeTweetText(wordEntry, languageLabel) {
   const hashtag = `#Learn${languageLabel.replace(/\s/g, '')}`;
 
+  const firstExample = (wordEntry.examples && wordEntry.examples[0]) || wordEntry.example || '';
+
   let text = `📚 Mot du jour WordSip :\n\n${wordEntry.word}`;
   if (wordEntry.phonetic) text += ` ${wordEntry.phonetic}`;
   text += `\n🇫🇷 ${wordEntry.translation}`;
-  text += `\n\n💬 "${wordEntry.example}"`;
+  if (firstExample) text += `\n\n💬 "${firstExample}"`;
   text += `\n\nApprends un mot par jour 🥤`;
   text += `\n${hashtag} #WordOfTheDay`;
 
