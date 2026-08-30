@@ -80,6 +80,16 @@ function renderWord() {
   document.getElementById('word-phonetic').textContent = currentWord.phonetic || '';
   document.getElementById('word-translation').textContent = currentWord.translation;
 
+  // Bouton audio : joue la prononciation du mot via le service de synthèse vocale
+  const playBtn = document.getElementById('play-audio-btn');
+  if (playBtn) {
+    playBtn.onclick = () => {
+      const lang = currentUser.language || params.get('lang') || 'en';
+      const audio = new Audio(`/api/tts?text=${encodeURIComponent(currentWord.word)}&lang=${lang}`);
+      audio.play().catch(() => {});
+    };
+  }
+
   const examplesList = document.getElementById('examples-list');
   examplesList.innerHTML = '';
   (currentWord.examples || []).forEach((ex, i) => {
@@ -107,6 +117,10 @@ function renderWord() {
   const videoLink = document.getElementById('video-link');
   if (videoLink) {
     videoLink.href = `/video-semaine${window.location.search}`;
+  }
+  const navVideoLink = document.getElementById('nav-video-link');
+  if (navVideoLink) {
+    navVideoLink.href = `/video-semaine${window.location.search}`;
   }
 
   // Suppression de compte, cachée en mode invité (pas de vrai compte à supprimer)

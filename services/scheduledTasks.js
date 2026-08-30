@@ -11,12 +11,27 @@ const videoService = require('./videoService');
 const fs = require('fs');
 const path = require('path');
 
-const FEATURED_LANGUAGE = 'en';
-const FEATURED_LANGUAGE_LABEL = 'English';
-const FEATURED_LEVEL = 'beginner';
+const FEATURED_LANGUAGES = [
+  { code: 'en', label: 'English' },
+  { code: 'es', label: 'Spanish' },
+  { code: 'it', label: 'Italian' },
+  { code: 'ja', label: 'Japanese' },
+  { code: 'zh', label: 'Chinese' },
+];
 const LATEST_VIDEO_FILE = path.join(__dirname, '..', 'data', 'latest-video.json');
 
 const DAY_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+
+function getDayOfYear() {
+  return Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+}
+
+// Choisit la langue du jour en tournant sur les 5 langues disponibles, pour
+// que le tweet et la vidéo mettent en avant chaque langue à tour de rôle,
+// pas seulement l'anglais.
+function getFeaturedLanguageOfDay() {
+  return FEATURED_LANGUAGES[getDayOfYear() % FEATURED_LANGUAGES.length];
+}
 
 function getCurrentTimeString() {
   const now = new Date();
@@ -56,22 +71,21 @@ async function checkAndSendDueEmails() {
 }
 
 async function postDailyTweetTask() {
-  const featuredWord = await wordService.getWordForUser({
-    language: FEATURED_LANGUAGE,
-    level: FEATURED_LEVEL,
-  });
+  const { code, label } = getFeaturedLanguageOfDay();
+  const featuredWord = await wordService.getFeaturedWordOfDay(code);
 
-  if (!featuredWord) return { posted: false, reason: 'Aucun mot disponible.' };
+  if (!featuredWord) return { posted: false, reason: `Aucun mot disponible pour ${label}.` };
 
-  const tweetResult = await twitterService.postDailyTweet(featuredWord, FEATURED_LANGUAGE_LABEL);
-  return { posted: !tweetResult.simulated && !tweetResult.error, ...tweetResult };
+  const tweetResult = await twitterService.postDailyTweet(featuredWord, label, code);
+  return { posted: !tweetResult.simulated && !tweetResult.error, language: code, ...tweetResult };
 }
 
 async function generateWeeklyVideoTask() {
-  const dialogue = await dialogueService.buildWeeklyDialogue(FEATURED_LANGUAGE);
+  const { code } = getFeaturedLanguageOfDay();
+  const dialogue = await dialogueService.buildWeeklyDialogue(code);
   if (!dialogue) return { generated: false, reason: 'Pas assez de mots disponibles.' };
 
-  const videoUrl = await videoService.generateWeeklyVideo(dialogue, FEATURED_LANGUAGE);
+  const videoUrl = await videoService.generateWeeklyVideo(dialogue, code);
   fs.writeFileSync(LATEST_VIDEO_FILE, JSON.stringify({
     videoUrl,
     quizOptions: dialogue.quizOptions,

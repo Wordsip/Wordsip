@@ -13,6 +13,12 @@
       <span id="level-badge" class="badge badge-accent"></span>
     </header>
 
+    <nav style="display:flex;justify-content:center;gap:16px;margin-bottom:16px;font-size:12px;">
+      <a href="/mot-du-jour" style="color:#2b7a78;font-weight:600;">Mon mot</a>
+      <a href="#" id="nav-video-link" style="color:#666;">Vidéo</a>
+      <a href="/phonetique" style="color:#666;">Phonétique</a>
+    </nav>
+
     <div id="loading">Chargement de ton mot du jour...</div>
 
     <div id="content" style="display:none;">
@@ -21,7 +27,10 @@
       <section class="word-card">
         <p class="label">Ton mot du jour</p>
         <h1 id="word-main"></h1>
-        <p id="word-phonetic" class="phonetic"></p>
+        <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
+          <button id="play-audio-btn" title="Écouter la prononciation" style="width:36px;height:36px;border-radius:50%;background:#2b7a78;border:none;color:white;font-size:16px;padding:0;cursor:pointer;">🔊</button>
+          <p id="word-phonetic" class="phonetic" style="margin:0;"></p>
+        </div>
         <p id="word-translation" class="translation"></p>
       </section>
 

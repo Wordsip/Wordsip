@@ -7,6 +7,7 @@ const wordService = require('../services/wordService');
 const scheduledTasks = require('../services/scheduledTasks');
 const { checkEmailDomain } = require('../services/emailDomainCheck');
 const blacklistService = require('../services/blacklistService');
+const ttsService = require('../services/ttsService');
 
 // Page d'accueil
 router.get('/', (req, res) => {
@@ -23,9 +24,22 @@ router.get('/video-semaine', (req, res) => {
   res.sendFile('video-semaine.html', { root: 'public' });
 });
 
+// Page guide de prononciation
+router.get('/phonetique', (req, res) => {
+  res.sendFile('phonetique.html', { root: 'public' });
+});
+
 // Page admin
 router.get('/admin', (req, res) => {
   res.sendFile('admin.html', { root: 'public' });
+});
+
+// Audio de prononciation (relayé depuis le serveur pour ne jamais exposer
+// l'URL Google directement au navigateur, et éviter les soucis de CORS)
+router.get('/api/tts', (req, res) => {
+  const { text, lang } = req.query;
+  if (!text) return res.status(400).json({ error: 'Texte requis.' });
+  ttsService.streamTTS(text, lang || 'en', res);
 });
 
 // Dernière vidéo hebdomadaire générée + quiz associé

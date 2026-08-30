@@ -1,252 +1,4144 @@
 {
   "en": {
     "beginner1": [
-      { "word": "Hello", "phonetic": "/həˈloʊ/", "translation": "Bonjour",
-        "examples": ["Hello, how are you today?", "She said hello to everyone in the room."],
-        "grammar": { "nature": "Interjection de salutation.", "position": "Début de conversation.", "register": "Neutre.", "synonyms": "Hi, Hey, Good morning" },
-        "slang": { "expression": "Yo!", "meaning": "Salut très familier entre jeunes.", "warning": "À éviter en pro." } },
-      { "word": "Thank you", "phonetic": "/θæŋk juː/", "translation": "Merci",
-        "examples": ["Thank you for your help!", "I want to say thank you to everyone here."],
-        "grammar": { "nature": "Expression de politesse invariable.", "position": "Seule ou + for.", "register": "Neutre à formel.", "synonyms": "Thanks, Much appreciated" },
-        "slang": { "expression": "Thanks a bunch", "meaning": "Merci chaleureux et familier.", "warning": "Peut sonner sarcastique selon le ton." } },
-      { "word": "Yes", "phonetic": "/jɛs/", "translation": "Oui",
-        "examples": ["Yes, I would love to come.", "Do you agree? Yes, absolutely."],
-        "grammar": { "nature": "Adverbe d'affirmation.", "position": "Seul ou début de phrase.", "register": "Neutre.", "synonyms": "Yeah, Absolutely, Sure" },
-        "slang": { "expression": "Yep / Yup", "meaning": "Version courte et décontractée.", "warning": "Informel." } },
-      { "word": "No", "phonetic": "/noʊ/", "translation": "Non",
-        "examples": ["No, I can't make it tomorrow.", "She said no without hesitation."],
-        "grammar": { "nature": "Adverbe de négation.", "position": "Seul ou début de phrase.", "register": "Neutre.", "synonyms": "Nope, Not at all" },
-        "slang": { "expression": "Nah", "meaning": "Version relâchée de no.", "warning": "Informel." } },
-      { "word": "Please", "phonetic": "/pliːz/", "translation": "S'il te/vous plaît",
-        "examples": ["Could you help me, please?", "Please sit down."],
-        "grammar": { "nature": "Adverbe de politesse.", "position": "Fin ou début de demande.", "register": "Quasi-obligatoire pour être poli.", "synonyms": "If you don't mind" },
-        "slang": { "expression": "Pretty please", "meaning": "Version insistante et mignonne.", "warning": "Très familier." } },
-      { "word": "Sorry", "phonetic": "/ˈsɒri/", "translation": "Désolé",
-        "examples": ["I'm sorry for being late.", "Sorry, I didn't mean to interrupt."],
-        "grammar": { "nature": "Adjectif utilisé comme interjection.", "position": "Seul ou + for.", "register": "Neutre.", "synonyms": "My apologies, My bad" },
-        "slang": { "expression": "My bad", "meaning": "Reconnaître une petite erreur, décontracté.", "warning": "Entre amis/collègues proches." } },
-      { "word": "Good", "phonetic": "/ɡʊd/", "translation": "Bon / Bien",
-        "examples": ["This is a good idea.", "How are you? I'm good, thanks."],
-        "grammar": { "nature": "Adjectif.", "position": "Avant un nom ou après be.", "register": "Neutre.", "synonyms": "Great, Nice, Fine" },
-        "slang": { "expression": "Good stuff", "meaning": "Approbation familière.", "warning": "Informel." } },
-      { "word": "Water", "phonetic": "/ˈwɔːtər/", "translation": "Eau",
-        "examples": ["Can I have a glass of water, please?", "I drink a lot of water every day."],
-        "grammar": { "nature": "Nom indénombrable.", "position": "Sujet ou complément.", "register": "Neutre.", "synonyms": "Aucun courant." },
-        "slang": { "expression": "H2O", "meaning": "Façon ludique de dire eau.", "warning": "Rarement sérieux à l'oral." } },
-      { "word": "Help", "phonetic": "/hɛlp/", "translation": "Aide / Aider",
-        "examples": ["Can you help me with this?", "Help! I'm lost."],
-        "grammar": { "nature": "Nom et verbe.", "position": "Sujet + help + complément.", "register": "Neutre à urgent.", "synonyms": "Assist, Give a hand" },
-        "slang": { "expression": "Hook me up", "meaning": "Demander de l'aide familièrement.", "warning": "Très informel." } },
-      { "word": "Friend", "phonetic": "/frɛnd/", "translation": "Ami(e)",
-        "examples": ["She is my best friend.", "I made a lot of friends here."],
-        "grammar": { "nature": "Nom.", "position": "Sujet ou complément.", "register": "Neutre.", "synonyms": "Buddy, Pal, Mate" },
-        "slang": { "expression": "Homie", "meaning": "Ami proche, argot urbain US.", "warning": "Contexte très informel uniquement." } }
+      {
+        "word": "Hello",
+        "phonetic": "/həˈloʊ/",
+        "translation": "Bonjour",
+        "examples": [
+          "Hello, how are you today?",
+          "She said hello to everyone in the room."
+        ],
+        "grammar": {
+          "nature": "Interjection de salutation.",
+          "position": "Début de conversation.",
+          "register": "Neutre.",
+          "synonyms": "Hi, Hey, Good morning"
+        },
+        "slang": {
+          "expression": "Yo!",
+          "meaning": "Salut très familier entre jeunes.",
+          "warning": "À éviter en pro."
+        }
+      },
+      {
+        "word": "Thank you",
+        "phonetic": "/θæŋk juː/",
+        "translation": "Merci",
+        "examples": [
+          "Thank you for your help!",
+          "I want to say thank you to everyone here."
+        ],
+        "grammar": {
+          "nature": "Expression de politesse invariable.",
+          "position": "Seule ou + for.",
+          "register": "Neutre à formel.",
+          "synonyms": "Thanks, Much appreciated"
+        },
+        "slang": {
+          "expression": "Thanks a bunch",
+          "meaning": "Merci chaleureux et familier.",
+          "warning": "Peut sonner sarcastique selon le ton."
+        }
+      },
+      {
+        "word": "Yes",
+        "phonetic": "/jɛs/",
+        "translation": "Oui",
+        "examples": [
+          "Yes, I would love to come.",
+          "Do you agree? Yes, absolutely."
+        ],
+        "grammar": {
+          "nature": "Adverbe d'affirmation.",
+          "position": "Seul ou début de phrase.",
+          "register": "Neutre.",
+          "synonyms": "Yeah, Absolutely, Sure"
+        },
+        "slang": {
+          "expression": "Yep / Yup",
+          "meaning": "Version courte et décontractée.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "No",
+        "phonetic": "/noʊ/",
+        "translation": "Non",
+        "examples": [
+          "No, I can't make it tomorrow.",
+          "She said no without hesitation."
+        ],
+        "grammar": {
+          "nature": "Adverbe de négation.",
+          "position": "Seul ou début de phrase.",
+          "register": "Neutre.",
+          "synonyms": "Nope, Not at all"
+        },
+        "slang": {
+          "expression": "Nah",
+          "meaning": "Version relâchée de no.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "Please",
+        "phonetic": "/pliːz/",
+        "translation": "S'il te/vous plaît",
+        "examples": [
+          "Could you help me, please?",
+          "Please sit down."
+        ],
+        "grammar": {
+          "nature": "Adverbe de politesse.",
+          "position": "Fin ou début de demande.",
+          "register": "Quasi-obligatoire pour être poli.",
+          "synonyms": "If you don't mind"
+        },
+        "slang": {
+          "expression": "Pretty please",
+          "meaning": "Version insistante et mignonne.",
+          "warning": "Très familier."
+        }
+      },
+      {
+        "word": "Sorry",
+        "phonetic": "/ˈsɒri/",
+        "translation": "Désolé",
+        "examples": [
+          "I'm sorry for being late.",
+          "Sorry, I didn't mean to interrupt."
+        ],
+        "grammar": {
+          "nature": "Adjectif utilisé comme interjection.",
+          "position": "Seul ou + for.",
+          "register": "Neutre.",
+          "synonyms": "My apologies, My bad"
+        },
+        "slang": {
+          "expression": "My bad",
+          "meaning": "Reconnaître une petite erreur, décontracté.",
+          "warning": "Entre amis/collègues proches."
+        }
+      },
+      {
+        "word": "Good",
+        "phonetic": "/ɡʊd/",
+        "translation": "Bon / Bien",
+        "examples": [
+          "This is a good idea.",
+          "How are you? I'm good, thanks."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant un nom ou après be.",
+          "register": "Neutre.",
+          "synonyms": "Great, Nice, Fine"
+        },
+        "slang": {
+          "expression": "Good stuff",
+          "meaning": "Approbation familière.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "Water",
+        "phonetic": "/ˈwɔːtər/",
+        "translation": "Eau",
+        "examples": [
+          "Can I have a glass of water, please?",
+          "I drink a lot of water every day."
+        ],
+        "grammar": {
+          "nature": "Nom indénombrable.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "H2O",
+          "meaning": "Façon ludique de dire eau.",
+          "warning": "Rarement sérieux à l'oral."
+        }
+      },
+      {
+        "word": "Help",
+        "phonetic": "/hɛlp/",
+        "translation": "Aide / Aider",
+        "examples": [
+          "Can you help me with this?",
+          "Help! I'm lost."
+        ],
+        "grammar": {
+          "nature": "Nom et verbe.",
+          "position": "Sujet + help + complément.",
+          "register": "Neutre à urgent.",
+          "synonyms": "Assist, Give a hand"
+        },
+        "slang": {
+          "expression": "Hook me up",
+          "meaning": "Demander de l'aide familièrement.",
+          "warning": "Très informel."
+        }
+      },
+      {
+        "word": "Friend",
+        "phonetic": "/frɛnd/",
+        "translation": "Ami(e)",
+        "examples": [
+          "She is my best friend.",
+          "I made a lot of friends here."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Buddy, Pal, Mate"
+        },
+        "slang": {
+          "expression": "Homie",
+          "meaning": "Ami proche, argot urbain US.",
+          "warning": "Contexte très informel uniquement."
+        }
+      }
     ],
     "beginner2": [
-      { "word": "Because", "phonetic": "/bɪˈkɒz/", "translation": "Parce que",
-        "examples": ["I stayed home because it was raining.", "She smiled because she was happy."],
-        "grammar": { "nature": "Conjonction de subordination.", "position": "Relie deux propositions, cause + conséquence.", "register": "Neutre.", "synonyms": "Since, As" },
-        "slang": { "expression": "Cuz", "meaning": "Version orale très raccourcie.", "warning": "Argot écrit texto uniquement." } },
-      { "word": "Maybe", "phonetic": "/ˈmeɪbi/", "translation": "Peut-être",
-        "examples": ["Maybe we should try again tomorrow.", "I'm not sure, maybe later."],
-        "grammar": { "nature": "Adverbe de possibilité.", "position": "Début de phrase ou avant le verbe.", "register": "Neutre.", "synonyms": "Perhaps (plus formel)" },
-        "slang": { "expression": "Prolly", "meaning": "Contraction familière de \"probably\".", "warning": "Texto/oral très informel." } },
-      { "word": "Cool", "phonetic": "/kuːl/", "translation": "Cool / Sympa",
-        "examples": ["That movie was so cool!", "Stay cool, everything will be fine."],
-        "grammar": { "nature": "Adjectif invariable.", "position": "Après be ou avant un nom.", "register": "Familier.", "synonyms": "Great, Awesome, Nice" },
-        "slang": { "expression": "That's dope", "meaning": "Version plus familière encore.", "warning": "Entre amis uniquement." } }
+      {
+        "word": "Because",
+        "phonetic": "/bɪˈkɒz/",
+        "translation": "Parce que",
+        "examples": [
+          "I stayed home because it was raining.",
+          "She smiled because she was happy."
+        ],
+        "grammar": {
+          "nature": "Conjonction de subordination.",
+          "position": "Relie deux propositions, cause + conséquence.",
+          "register": "Neutre.",
+          "synonyms": "Since, As"
+        },
+        "slang": {
+          "expression": "Cuz",
+          "meaning": "Version orale très raccourcie.",
+          "warning": "Argot écrit texto uniquement."
+        }
+      },
+      {
+        "word": "Maybe",
+        "phonetic": "/ˈmeɪbi/",
+        "translation": "Peut-être",
+        "examples": [
+          "Maybe we should try again tomorrow.",
+          "I'm not sure, maybe later."
+        ],
+        "grammar": {
+          "nature": "Adverbe de possibilité.",
+          "position": "Début de phrase ou avant le verbe.",
+          "register": "Neutre.",
+          "synonyms": "Perhaps (plus formel)"
+        },
+        "slang": {
+          "expression": "Prolly",
+          "meaning": "Contraction familière de \"probably\".",
+          "warning": "Texto/oral très informel."
+        }
+      },
+      {
+        "word": "Cool",
+        "phonetic": "/kuːl/",
+        "translation": "Cool / Sympa",
+        "examples": [
+          "That movie was so cool!",
+          "Stay cool, everything will be fine."
+        ],
+        "grammar": {
+          "nature": "Adjectif invariable.",
+          "position": "Après be ou avant un nom.",
+          "register": "Familier.",
+          "synonyms": "Great, Awesome, Nice"
+        },
+        "slang": {
+          "expression": "That's dope",
+          "meaning": "Version plus familière encore.",
+          "warning": "Entre amis uniquement."
+        }
+      },
+      {
+        "word": "One",
+        "phonetic": "/wʌn/",
+        "translation": "Un",
+        "examples": [
+          "I have one apple.",
+          "Give me one minute."
+        ],
+        "grammar": {
+          "nature": "Adjectif numéral / pronom.",
+          "position": "Avant un nom ou seul.",
+          "register": "Neutre.",
+          "synonyms": "A, An"
+        },
+        "slang": {
+          "expression": "Just one",
+          "meaning": "Insistance familière sur la quantité.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "Two",
+        "phonetic": "/tuː/",
+        "translation": "Deux",
+        "examples": [
+          "I have two brothers.",
+          "See you in two days."
+        ],
+        "grammar": {
+          "nature": "Adjectif numéral.",
+          "position": "Avant un nom.",
+          "register": "Neutre.",
+          "synonyms": "A couple of (approximatif)"
+        },
+        "slang": {
+          "expression": "A couple",
+          "meaning": "Deux, de façon informelle.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Three",
+        "phonetic": "/θriː/",
+        "translation": "Trois",
+        "examples": [
+          "There are three cats.",
+          "Wait three minutes."
+        ],
+        "grammar": {
+          "nature": "Adjectif numéral.",
+          "position": "Avant un nom.",
+          "register": "Neutre.",
+          "synonyms": "A few (approximatif)"
+        },
+        "slang": {
+          "expression": "A few",
+          "meaning": "Quelques, approximation familière.",
+          "warning": "Imprécis, familier."
+        }
+      },
+      {
+        "word": "Today",
+        "phonetic": "/təˈdeɪ/",
+        "translation": "Aujourd'hui",
+        "examples": [
+          "Today is a good day.",
+          "I have work today."
+        ],
+        "grammar": {
+          "nature": "Adverbe de temps.",
+          "position": "Début ou fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "This day"
+        },
+        "slang": {
+          "expression": "Rn (right now)",
+          "meaning": "Maintenant, très familier en SMS.",
+          "warning": "Texto uniquement."
+        }
+      },
+      {
+        "word": "Tomorrow",
+        "phonetic": "/təˈmɒroʊ/",
+        "translation": "Demain",
+        "examples": [
+          "See you tomorrow!",
+          "Tomorrow is a new day."
+        ],
+        "grammar": {
+          "nature": "Adverbe de temps.",
+          "position": "Début ou fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "The next day"
+        },
+        "slang": {
+          "expression": "Tmrw",
+          "meaning": "Abréviation texto de tomorrow.",
+          "warning": "SMS uniquement."
+        }
+      },
+      {
+        "word": "Yesterday",
+        "phonetic": "/ˈjɛstərdeɪ/",
+        "translation": "Hier",
+        "examples": [
+          "I saw her yesterday.",
+          "Yesterday was fun."
+        ],
+        "grammar": {
+          "nature": "Adverbe de temps.",
+          "position": "Début ou fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "The day before"
+        },
+        "slang": {
+          "expression": "Ystrdy",
+          "meaning": "Abréviation texto.",
+          "warning": "SMS uniquement."
+        }
+      },
+      {
+        "word": "Mother",
+        "phonetic": "/ˈmʌðər/",
+        "translation": "Mère",
+        "examples": [
+          "My mother is kind.",
+          "She looks like her mother."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Mom, Mum (familier)"
+        },
+        "slang": {
+          "expression": "Mom",
+          "meaning": "Maman, très courant et familier.",
+          "warning": "Familier mais universel."
+        }
+      },
+      {
+        "word": "Father",
+        "phonetic": "/ˈfɑːðər/",
+        "translation": "Père",
+        "examples": [
+          "My father works hard.",
+          "He is a good father."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Dad, Pop (familier)"
+        },
+        "slang": {
+          "expression": "Dad",
+          "meaning": "Papa, très courant et familier.",
+          "warning": "Familier mais universel."
+        }
+      },
+      {
+        "word": "Brother",
+        "phonetic": "/ˈbrʌðər/",
+        "translation": "Frère",
+        "examples": [
+          "I have one brother.",
+          "He is my older brother."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Bro (familier)"
+        },
+        "slang": {
+          "expression": "Bro",
+          "meaning": "Frère, très familier, aussi utilisé entre amis.",
+          "warning": "Argot courant."
+        }
+      },
+      {
+        "word": "Sister",
+        "phonetic": "/ˈsɪstər/",
+        "translation": "Sœur",
+        "examples": [
+          "My sister is funny.",
+          "She is my little sister."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Sis (familier)"
+        },
+        "slang": {
+          "expression": "Sis",
+          "meaning": "Sœur, familier, aussi entre amies.",
+          "warning": "Argot courant."
+        }
+      },
+      {
+        "word": "Red",
+        "phonetic": "/rɛd/",
+        "translation": "Rouge",
+        "examples": [
+          "I like the red car.",
+          "Her dress is red."
+        ],
+        "grammar": {
+          "nature": "Adjectif de couleur.",
+          "position": "Avant un nom ou après be.",
+          "register": "Neutre.",
+          "synonyms": "Crimson (soutenu)"
+        },
+        "slang": {
+          "expression": "See red",
+          "meaning": "Être très en colère (expression figurée).",
+          "warning": "Idiome, pas littéral."
+        }
+      },
+      {
+        "word": "Blue",
+        "phonetic": "/bluː/",
+        "translation": "Bleu",
+        "examples": [
+          "The sky is blue.",
+          "I bought a blue shirt."
+        ],
+        "grammar": {
+          "nature": "Adjectif de couleur.",
+          "position": "Avant un nom ou après be.",
+          "register": "Neutre.",
+          "synonyms": "Azure (soutenu)"
+        },
+        "slang": {
+          "expression": "Feeling blue",
+          "meaning": "Se sentir triste (expression figurée).",
+          "warning": "Idiome, pas littéral."
+        }
+      },
+      {
+        "word": "Black",
+        "phonetic": "/blæk/",
+        "translation": "Noir",
+        "examples": [
+          "He wears a black coat.",
+          "The cat is black."
+        ],
+        "grammar": {
+          "nature": "Adjectif de couleur.",
+          "position": "Avant un nom ou après be.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "In the black",
+          "meaning": "Être rentable/positif financièrement.",
+          "warning": "Idiome business."
+        }
+      },
+      {
+        "word": "White",
+        "phonetic": "/waɪt/",
+        "translation": "Blanc",
+        "examples": [
+          "She wore a white dress.",
+          "The walls are white."
+        ],
+        "grammar": {
+          "nature": "Adjectif de couleur.",
+          "position": "Avant un nom ou après be.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "White lie",
+          "meaning": "Petit mensonge inoffensif (expression figurée).",
+          "warning": "Idiome, pas littéral."
+        }
+      },
+      {
+        "word": "What",
+        "phonetic": "/wʌt/",
+        "translation": "Quoi / Que",
+        "examples": [
+          "What is your name?",
+          "What time is it?"
+        ],
+        "grammar": {
+          "nature": "Pronom/adjectif interrogatif.",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "Whaaat?",
+          "meaning": "Surprise exagérée à l'oral.",
+          "warning": "Très expressif, informel."
+        }
+      },
+      {
+        "word": "Where",
+        "phonetic": "/wɛər/",
+        "translation": "Où",
+        "examples": [
+          "Where do you live?",
+          "Where is the station?"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif.",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "Where at?",
+          "meaning": "Où exactement, très familier (US).",
+          "warning": "Familier, redondant grammaticalement."
+        }
+      },
+      {
+        "word": "When",
+        "phonetic": "/wɛn/",
+        "translation": "Quand",
+        "examples": [
+          "When is the meeting?",
+          "When are you coming?"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif.",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "Whenever",
+          "meaning": "N'importe quand, décontracté.",
+          "warning": "Informel selon le ton."
+        }
+      },
+      {
+        "word": "Why",
+        "phonetic": "/waɪ/",
+        "translation": "Pourquoi",
+        "examples": [
+          "Why are you late?",
+          "Why not?"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif.",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "Why not?",
+          "meaning": "Pourquoi pas, encouragement décontracté.",
+          "warning": "Familier léger."
+        }
+      },
+      {
+        "word": "How",
+        "phonetic": "/haʊ/",
+        "translation": "Comment",
+        "examples": [
+          "How are you?",
+          "How does this work?"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif.",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "How come?",
+          "meaning": "Comment ça se fait, familier.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Eat",
+        "phonetic": "/iːt/",
+        "translation": "Manger",
+        "examples": [
+          "I eat breakfast every day.",
+          "Let's eat!"
+        ],
+        "grammar": {
+          "nature": "Verbe.",
+          "position": "Sujet + eat + complément.",
+          "register": "Neutre.",
+          "synonyms": "Have a meal (formel)"
+        },
+        "slang": {
+          "expression": "Grub",
+          "meaning": "Bouffe, nourriture en argot.",
+          "warning": "Très familier."
+        }
+      },
+      {
+        "word": "Drink",
+        "phonetic": "/drɪŋk/",
+        "translation": "Boire",
+        "examples": [
+          "I drink water every morning.",
+          "Do you want to drink something?"
+        ],
+        "grammar": {
+          "nature": "Verbe et nom.",
+          "position": "Sujet + drink + complément.",
+          "register": "Neutre.",
+          "synonyms": "Sip (boire à petites gorgées)"
+        },
+        "slang": {
+          "expression": "Chug",
+          "meaning": "Boire d'un coup, très familier.",
+          "warning": "Argot festif."
+        }
+      },
+      {
+        "word": "Sleep",
+        "phonetic": "/sliːp/",
+        "translation": "Dormir",
+        "examples": [
+          "I need to sleep.",
+          "She sleeps eight hours a night."
+        ],
+        "grammar": {
+          "nature": "Verbe et nom.",
+          "position": "Sujet + sleep.",
+          "register": "Neutre.",
+          "synonyms": "Rest (se reposer)"
+        },
+        "slang": {
+          "expression": "Crash",
+          "meaning": "S'endormir soudainement, familier.",
+          "warning": "Argot courant."
+        }
+      },
+      {
+        "word": "Go",
+        "phonetic": "/ɡoʊ/",
+        "translation": "Aller",
+        "examples": [
+          "I go to school.",
+          "Let's go!"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier (go, went, gone).",
+          "position": "Sujet + go + complément.",
+          "register": "Neutre.",
+          "synonyms": "Head (se diriger)"
+        },
+        "slang": {
+          "expression": "Let's bounce",
+          "meaning": "Partons, très familier.",
+          "warning": "Argot jeune."
+        }
+      },
+      {
+        "word": "Come",
+        "phonetic": "/kʌm/",
+        "translation": "Venir",
+        "examples": [
+          "Come here!",
+          "She comes from France."
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier (come, came, come).",
+          "position": "Sujet + come + complément.",
+          "register": "Neutre.",
+          "synonyms": "Arrive (arriver)"
+        },
+        "slang": {
+          "expression": "Come on!",
+          "meaning": "Allez !, encouragement familier.",
+          "warning": "Très courant, informel."
+        }
+      },
+      {
+        "word": "Want",
+        "phonetic": "/wɒnt/",
+        "translation": "Vouloir",
+        "examples": [
+          "I want a coffee.",
+          "What do you want?"
+        ],
+        "grammar": {
+          "nature": "Verbe.",
+          "position": "Sujet + want + nom/to+verbe.",
+          "register": "Neutre.",
+          "synonyms": "Wish (souhaiter, plus formel)"
+        },
+        "slang": {
+          "expression": "Wanna",
+          "meaning": "Contraction familière de want to.",
+          "warning": "Oral/texto uniquement."
+        }
+      },
+      {
+        "word": "Love",
+        "phonetic": "/lʌv/",
+        "translation": "Aimer / Amour",
+        "examples": [
+          "I love my family.",
+          "Love is beautiful."
+        ],
+        "grammar": {
+          "nature": "Verbe et nom.",
+          "position": "Sujet + love + complément.",
+          "register": "Neutre.",
+          "synonyms": "Adore (adorer, plus fort)"
+        },
+        "slang": {
+          "expression": "Luv",
+          "meaning": "Orthographe familière/texto de love.",
+          "warning": "Écrit informel."
+        }
+      },
+      {
+        "word": "See",
+        "phonetic": "/siː/",
+        "translation": "Voir",
+        "examples": [
+          "I see a bird.",
+          "See you later!"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier (see, saw, seen).",
+          "position": "Sujet + see + complément.",
+          "register": "Neutre.",
+          "synonyms": "Notice (remarquer)"
+        },
+        "slang": {
+          "expression": "See ya",
+          "meaning": "À plus, familier.",
+          "warning": "Oral informel."
+        }
+      },
+      {
+        "word": "Speak",
+        "phonetic": "/spiːk/",
+        "translation": "Parler",
+        "examples": [
+          "Do you speak English?",
+          "She speaks three languages."
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier (speak, spoke, spoken).",
+          "position": "Sujet + speak + complément.",
+          "register": "Neutre à formel.",
+          "synonyms": "Talk (plus familier)"
+        },
+        "slang": {
+          "expression": "Talk",
+          "meaning": "Version plus décontractée de speak.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Buy",
+        "phonetic": "/baɪ/",
+        "translation": "Acheter",
+        "examples": [
+          "I want to buy a car.",
+          "She bought new shoes."
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier (buy, bought, bought).",
+          "position": "Sujet + buy + complément.",
+          "register": "Neutre.",
+          "synonyms": "Purchase (plus formel)"
+        },
+        "slang": {
+          "expression": "Cop",
+          "meaning": "Acheter, argot urbain.",
+          "warning": "Très informel."
+        }
+      },
+      {
+        "word": "Big",
+        "phonetic": "/bɪɡ/",
+        "translation": "Grand",
+        "examples": [
+          "That's a big house.",
+          "It's a big problem."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant un nom ou après be.",
+          "register": "Neutre.",
+          "synonyms": "Large, Huge (plus fort)"
+        },
+        "slang": {
+          "expression": "Huge",
+          "meaning": "Énorme, version intensive familière.",
+          "warning": "Familier."
+        }
+      }
     ],
     "beginner3": [
-      { "word": "Nevertheless", "phonetic": "/ˌnɛvəðəˈlɛs/", "translation": "Néanmoins",
-        "examples": ["It was raining; nevertheless, we went for a walk.", "She was tired. Nevertheless, she finished the race."],
-        "grammar": { "nature": "Adverbe de liaison (opposition).", "position": "Début de phrase ou après point-virgule.", "register": "Soutenu.", "synonyms": "However, Still, Yet" },
-        "slang": { "expression": "Anyways", "meaning": "Version décontractée, moins précise.", "warning": "Informel, éviter à l'écrit formel." } }
+      {
+        "word": "Nevertheless",
+        "phonetic": "/ˌnɛvəðəˈlɛs/",
+        "translation": "Néanmoins",
+        "examples": [
+          "It was raining; nevertheless, we went for a walk.",
+          "She was tired. Nevertheless, she finished the race."
+        ],
+        "grammar": {
+          "nature": "Adverbe de liaison (opposition).",
+          "position": "Début de phrase ou après point-virgule.",
+          "register": "Soutenu.",
+          "synonyms": "However, Still, Yet"
+        },
+        "slang": {
+          "expression": "Anyways",
+          "meaning": "Version décontractée, moins précise.",
+          "warning": "Informel, éviter à l'écrit formel."
+        }
+      }
     ],
     "intermediate": [
-      { "word": "Nevertheless", "phonetic": "/ˌnɛvəðəˈlɛs/", "translation": "Néanmoins",
-        "examples": ["It was raining; nevertheless, we went for a walk.", "The plan was risky; they decided to try it nevertheless."],
-        "grammar": { "nature": "Adverbe de liaison.", "position": "Début de phrase ou après point-virgule.", "register": "Soutenu.", "synonyms": "However, Still, Yet" },
-        "slang": { "expression": "Anyways", "meaning": "Version décontractée.", "warning": "Informel." } }
+      {
+        "word": "Nevertheless",
+        "phonetic": "/ˌnɛvəðəˈlɛs/",
+        "translation": "Néanmoins",
+        "examples": [
+          "It was raining; nevertheless, we went for a walk.",
+          "The plan was risky; they decided to try it nevertheless."
+        ],
+        "grammar": {
+          "nature": "Adverbe de liaison.",
+          "position": "Début de phrase ou après point-virgule.",
+          "register": "Soutenu.",
+          "synonyms": "However, Still, Yet"
+        },
+        "slang": {
+          "expression": "Anyways",
+          "meaning": "Version décontractée.",
+          "warning": "Informel."
+        }
+      }
     ]
   },
   "es": {
     "beginner1": [
-      { "word": "Hola", "phonetic": "/ˈola/", "translation": "Bonjour / Salut",
-        "examples": ["¡Hola! ¿Cómo estás?", "Ella dijo hola a todos."],
-        "grammar": { "nature": "Interjection de salutation.", "position": "Début de conversation.", "register": "Neutre.", "synonyms": "Buenas (familier)" },
-        "slang": { "expression": "¿Qué onda?", "meaning": "Salut très familier (surtout Mexique).", "warning": "Contexte informel." } },
-      { "word": "Gracias", "phonetic": "/ˈɡɾasjas/", "translation": "Merci",
-        "examples": ["Gracias por tu ayuda.", "Muchas gracias por todo."],
-        "grammar": { "nature": "Expression de politesse invariable.", "position": "Seule ou + por.", "register": "Neutre.", "synonyms": "Te lo agradezco (plus formel)" },
-        "slang": { "expression": "Mil gracias", "meaning": "Merci mille fois, très chaleureux.", "warning": "Familier mais largement accepté." } },
-      { "word": "Sí", "phonetic": "/si/", "translation": "Oui",
-        "examples": ["Sí, quiero venir.", "¿Estás de acuerdo? Sí, claro."],
-        "grammar": { "nature": "Adverbe d'affirmation.", "position": "Seul ou début de phrase.", "register": "Neutre.", "synonyms": "Claro, Por supuesto" },
-        "slang": { "expression": "Sip", "meaning": "Oui très décontracté à l'oral.", "warning": "Informel." } },
-      { "word": "No", "phonetic": "/no/", "translation": "Non",
-        "examples": ["No, no puedo mañana.", "Ella dijo que no."],
-        "grammar": { "nature": "Adverbe de négation.", "position": "Seul ou début de phrase.", "register": "Neutre.", "synonyms": "Para nada (insistant)" },
-        "slang": { "expression": "Nel", "meaning": "Non très familier (Mexique).", "warning": "Régional et informel." } },
-      { "word": "Por favor", "phonetic": "/poɾ faˈβoɾ/", "translation": "S'il te/vous plaît",
-        "examples": ["¿Puedes ayudarme, por favor?", "Siéntate, por favor."],
-        "grammar": { "nature": "Locution de politesse.", "position": "Fin ou début de demande.", "register": "Neutre à formel.", "synonyms": "Si no te molesta" },
-        "slang": { "expression": "Porfa", "meaning": "Version raccourcie et mignonne.", "warning": "Très familier." } },
-      { "word": "Lo siento", "phonetic": "/lo ˈsjento/", "translation": "Désolé",
-        "examples": ["Lo siento por llegar tarde.", "Lo siento, no quise interrumpir."],
-        "grammar": { "nature": "Expression figée (verbe sentir).", "position": "Seule ou + por.", "register": "Neutre.", "synonyms": "Perdón (plus léger)" },
-        "slang": { "expression": "Mi mal", "meaning": "Calque familier de \"my bad\".", "warning": "Très informel, surtout jeunes." } },
-      { "word": "Bueno", "phonetic": "/ˈbweno/", "translation": "Bon / Bien",
-        "examples": ["Esta es una buena idea.", "¿Cómo estás? Bueno, gracias."],
-        "grammar": { "nature": "Adjectif (s'accorde en genre/nombre).", "position": "Avant ou après le nom.", "register": "Neutre.", "synonyms": "Genial, Chévere" },
-        "slang": { "expression": "Chido", "meaning": "Cool, sympa (Mexique).", "warning": "Régional, informel." } },
-      { "word": "Agua", "phonetic": "/ˈaɣwa/", "translation": "Eau",
-        "examples": ["¿Me das un vaso de agua, por favor?", "Bebo mucha agua cada día."],
-        "grammar": { "nature": "Nom féminin (mais 'el agua' au singulier).", "position": "Sujet ou complément.", "register": "Neutre.", "synonyms": "Aucun courant." },
-        "slang": { "expression": "Aguita", "meaning": "Diminutif affectueux pour l'eau.", "warning": "Familier, régional." } },
-      { "word": "Ayuda", "phonetic": "/aˈʝuða/", "translation": "Aide / Aider",
-        "examples": ["¿Puedes ayudarme con esto?", "¡Ayuda! Estoy perdido."],
-        "grammar": { "nature": "Nom et verbe (ayudar).", "position": "Sujet + ayuda / verbe conjugué.", "register": "Neutre à urgent.", "synonyms": "Asistencia (formel)" },
-        "slang": { "expression": "Échame la mano", "meaning": "Donne-moi un coup de main, familier.", "warning": "Informel." } },
-      { "word": "Amigo", "phonetic": "/aˈmiɣo/", "translation": "Ami",
-        "examples": ["Ella es mi mejor amiga.", "Hice muchos amigos aquí."],
-        "grammar": { "nature": "Nom (s'accorde en genre : amigo/amiga).", "position": "Sujet ou complément.", "register": "Neutre.", "synonyms": "Compa (familier), Cuate (Mexique)" },
-        "slang": { "expression": "Compa", "meaning": "Pote, ami proche, très familier.", "warning": "Régional, informel." } }
+      {
+        "word": "Hola",
+        "phonetic": "/ˈola/",
+        "translation": "Bonjour / Salut",
+        "examples": [
+          "¡Hola! ¿Cómo estás?",
+          "Ella dijo hola a todos."
+        ],
+        "grammar": {
+          "nature": "Interjection de salutation.",
+          "position": "Début de conversation.",
+          "register": "Neutre.",
+          "synonyms": "Buenas (familier)"
+        },
+        "slang": {
+          "expression": "¿Qué onda?",
+          "meaning": "Salut très familier (surtout Mexique).",
+          "warning": "Contexte informel."
+        }
+      },
+      {
+        "word": "Gracias",
+        "phonetic": "/ˈɡɾasjas/",
+        "translation": "Merci",
+        "examples": [
+          "Gracias por tu ayuda.",
+          "Muchas gracias por todo."
+        ],
+        "grammar": {
+          "nature": "Expression de politesse invariable.",
+          "position": "Seule ou + por.",
+          "register": "Neutre.",
+          "synonyms": "Te lo agradezco (plus formel)"
+        },
+        "slang": {
+          "expression": "Mil gracias",
+          "meaning": "Merci mille fois, très chaleureux.",
+          "warning": "Familier mais largement accepté."
+        }
+      },
+      {
+        "word": "Sí",
+        "phonetic": "/si/",
+        "translation": "Oui",
+        "examples": [
+          "Sí, quiero venir.",
+          "¿Estás de acuerdo? Sí, claro."
+        ],
+        "grammar": {
+          "nature": "Adverbe d'affirmation.",
+          "position": "Seul ou début de phrase.",
+          "register": "Neutre.",
+          "synonyms": "Claro, Por supuesto"
+        },
+        "slang": {
+          "expression": "Sip",
+          "meaning": "Oui très décontracté à l'oral.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "No",
+        "phonetic": "/no/",
+        "translation": "Non",
+        "examples": [
+          "No, no puedo mañana.",
+          "Ella dijo que no."
+        ],
+        "grammar": {
+          "nature": "Adverbe de négation.",
+          "position": "Seul ou début de phrase.",
+          "register": "Neutre.",
+          "synonyms": "Para nada (insistant)"
+        },
+        "slang": {
+          "expression": "Nel",
+          "meaning": "Non très familier (Mexique).",
+          "warning": "Régional et informel."
+        }
+      },
+      {
+        "word": "Por favor",
+        "phonetic": "/poɾ faˈβoɾ/",
+        "translation": "S'il te/vous plaît",
+        "examples": [
+          "¿Puedes ayudarme, por favor?",
+          "Siéntate, por favor."
+        ],
+        "grammar": {
+          "nature": "Locution de politesse.",
+          "position": "Fin ou début de demande.",
+          "register": "Neutre à formel.",
+          "synonyms": "Si no te molesta"
+        },
+        "slang": {
+          "expression": "Porfa",
+          "meaning": "Version raccourcie et mignonne.",
+          "warning": "Très familier."
+        }
+      },
+      {
+        "word": "Lo siento",
+        "phonetic": "/lo ˈsjento/",
+        "translation": "Désolé",
+        "examples": [
+          "Lo siento por llegar tarde.",
+          "Lo siento, no quise interrumpir."
+        ],
+        "grammar": {
+          "nature": "Expression figée (verbe sentir).",
+          "position": "Seule ou + por.",
+          "register": "Neutre.",
+          "synonyms": "Perdón (plus léger)"
+        },
+        "slang": {
+          "expression": "Mi mal",
+          "meaning": "Calque familier de \"my bad\".",
+          "warning": "Très informel, surtout jeunes."
+        }
+      },
+      {
+        "word": "Bueno",
+        "phonetic": "/ˈbweno/",
+        "translation": "Bon / Bien",
+        "examples": [
+          "Esta es una buena idea.",
+          "¿Cómo estás? Bueno, gracias."
+        ],
+        "grammar": {
+          "nature": "Adjectif (s'accorde en genre/nombre).",
+          "position": "Avant ou après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Genial, Chévere"
+        },
+        "slang": {
+          "expression": "Chido",
+          "meaning": "Cool, sympa (Mexique).",
+          "warning": "Régional, informel."
+        }
+      },
+      {
+        "word": "Agua",
+        "phonetic": "/ˈaɣwa/",
+        "translation": "Eau",
+        "examples": [
+          "¿Me das un vaso de agua, por favor?",
+          "Bebo mucha agua cada día."
+        ],
+        "grammar": {
+          "nature": "Nom féminin (mais 'el agua' au singulier).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "Aguita",
+          "meaning": "Diminutif affectueux pour l'eau.",
+          "warning": "Familier, régional."
+        }
+      },
+      {
+        "word": "Ayuda",
+        "phonetic": "/aˈʝuða/",
+        "translation": "Aide / Aider",
+        "examples": [
+          "¿Puedes ayudarme con esto?",
+          "¡Ayuda! Estoy perdido."
+        ],
+        "grammar": {
+          "nature": "Nom et verbe (ayudar).",
+          "position": "Sujet + ayuda / verbe conjugué.",
+          "register": "Neutre à urgent.",
+          "synonyms": "Asistencia (formel)"
+        },
+        "slang": {
+          "expression": "Échame la mano",
+          "meaning": "Donne-moi un coup de main, familier.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "Amigo",
+        "phonetic": "/aˈmiɣo/",
+        "translation": "Ami",
+        "examples": [
+          "Ella es mi mejor amiga.",
+          "Hice muchos amigos aquí."
+        ],
+        "grammar": {
+          "nature": "Nom (s'accorde en genre : amigo/amiga).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Compa (familier), Cuate (Mexique)"
+        },
+        "slang": {
+          "expression": "Compa",
+          "meaning": "Pote, ami proche, très familier.",
+          "warning": "Régional, informel."
+        }
+      }
     ],
-    "beginner2": [], "beginner3": [], "intermediate": []
+    "beginner2": [
+      {
+        "word": "Uno",
+        "phonetic": "/ˈuno/",
+        "translation": "Un",
+        "examples": [
+          "Tengo una manzana.",
+          "Dame un minuto."
+        ],
+        "grammar": {
+          "nature": "Adjectif numéral.",
+          "position": "Avant un nom.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "Solo uno",
+          "meaning": "Un seul, insistance familière.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "Dos",
+        "phonetic": "/dos/",
+        "translation": "Deux",
+        "examples": [
+          "Tengo dos hermanos.",
+          "Nos vemos en dos días."
+        ],
+        "grammar": {
+          "nature": "Adjectif numéral.",
+          "position": "Avant un nom.",
+          "register": "Neutre.",
+          "synonyms": "Un par de (approximatif)"
+        },
+        "slang": {
+          "expression": "Un par",
+          "meaning": "Une paire, familier.",
+          "warning": "Approximatif."
+        }
+      },
+      {
+        "word": "Tres",
+        "phonetic": "/tɾes/",
+        "translation": "Trois",
+        "examples": [
+          "Hay tres gatos.",
+          "Espera tres minutos."
+        ],
+        "grammar": {
+          "nature": "Adjectif numéral.",
+          "position": "Avant un nom.",
+          "register": "Neutre.",
+          "synonyms": "Unos pocos (approximatif)"
+        },
+        "slang": {
+          "expression": "Unos pocos",
+          "meaning": "Quelques-uns, approximation.",
+          "warning": "Imprécis."
+        }
+      },
+      {
+        "word": "Hoy",
+        "phonetic": "/oi/",
+        "translation": "Aujourd'hui",
+        "examples": [
+          "Hoy es un buen día.",
+          "Hoy tengo trabajo."
+        ],
+        "grammar": {
+          "nature": "Adverbe de temps.",
+          "position": "Début ou fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "Este día"
+        },
+        "slang": {
+          "expression": "Hoy mismo",
+          "meaning": "Aujourd'hui même, insistance.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Mañana",
+        "phonetic": "/maˈɲana/",
+        "translation": "Demain",
+        "examples": [
+          "¡Nos vemos mañana!",
+          "Mañana será un nuevo día."
+        ],
+        "grammar": {
+          "nature": "Adverbe de temps / nom (le matin aussi).",
+          "position": "Début ou fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "El día siguiente"
+        },
+        "slang": {
+          "expression": "Mañana mismo",
+          "meaning": "Dès demain, insistance.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Ayer",
+        "phonetic": "/aˈʝeɾ/",
+        "translation": "Hier",
+        "examples": [
+          "La vi ayer.",
+          "Ayer fue divertido."
+        ],
+        "grammar": {
+          "nature": "Adverbe de temps.",
+          "position": "Début ou fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "El día anterior"
+        },
+        "slang": {
+          "expression": "Ayer no más",
+          "meaning": "Pas plus tard qu'hier, familier régional.",
+          "warning": "Régional (Amérique latine)."
+        }
+      },
+      {
+        "word": "Madre",
+        "phonetic": "/ˈmaðɾe/",
+        "translation": "Mère",
+        "examples": [
+          "Mi madre es amable.",
+          "Se parece a su madre."
+        ],
+        "grammar": {
+          "nature": "Nom féminin.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Mamá (familier)"
+        },
+        "slang": {
+          "expression": "Mamá",
+          "meaning": "Maman, très courant.",
+          "warning": "Familier mais universel."
+        }
+      },
+      {
+        "word": "Padre",
+        "phonetic": "/ˈpaðɾe/",
+        "translation": "Père",
+        "examples": [
+          "Mi padre trabaja mucho.",
+          "Es un buen padre."
+        ],
+        "grammar": {
+          "nature": "Nom masculin.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Papá (familier)"
+        },
+        "slang": {
+          "expression": "Papá",
+          "meaning": "Papa, très courant.",
+          "warning": "Familier mais universel."
+        }
+      },
+      {
+        "word": "Hermano",
+        "phonetic": "/eɾˈmano/",
+        "translation": "Frère",
+        "examples": [
+          "Tengo un hermano.",
+          "Es mi hermano mayor."
+        ],
+        "grammar": {
+          "nature": "Nom masculin.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Bro (emprunté à l'anglais, jeunes)"
+        },
+        "slang": {
+          "expression": "Bro",
+          "meaning": "Emprunt anglais, très familier.",
+          "warning": "Jeunes, informel."
+        }
+      },
+      {
+        "word": "Hermana",
+        "phonetic": "/eɾˈmana/",
+        "translation": "Sœur",
+        "examples": [
+          "Mi hermana es graciosa.",
+          "Es mi hermana pequeña."
+        ],
+        "grammar": {
+          "nature": "Nom féminin.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Sis (emprunté à l'anglais)"
+        },
+        "slang": {
+          "expression": "Sis",
+          "meaning": "Emprunt anglais, familier.",
+          "warning": "Jeunes, informel."
+        }
+      },
+      {
+        "word": "Rojo",
+        "phonetic": "/ˈroxo/",
+        "translation": "Rouge",
+        "examples": [
+          "Me gusta el coche rojo.",
+          "Su vestido es rojo."
+        ],
+        "grammar": {
+          "nature": "Adjectif de couleur (s'accorde).",
+          "position": "Après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Carmesí (soutenu)"
+        },
+        "slang": {
+          "expression": "Ponerse rojo",
+          "meaning": "Rougir (de honte/gêne), expression figurée.",
+          "warning": "Idiome."
+        }
+      },
+      {
+        "word": "Azul",
+        "phonetic": "/aˈsul/",
+        "translation": "Bleu",
+        "examples": [
+          "El cielo es azul.",
+          "Compré una camisa azul."
+        ],
+        "grammar": {
+          "nature": "Adjectif de couleur (invariable en genre).",
+          "position": "Après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Celeste (bleu ciel)"
+        },
+        "slang": {
+          "expression": "Príncipe azul",
+          "meaning": "Prince charmant (expression figurée).",
+          "warning": "Idiome romantique."
+        }
+      },
+      {
+        "word": "Negro",
+        "phonetic": "/ˈneɣɾo/",
+        "translation": "Noir",
+        "examples": [
+          "Lleva un abrigo negro.",
+          "El gato es negro."
+        ],
+        "grammar": {
+          "nature": "Adjectif de couleur (s'accorde).",
+          "position": "Après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "Estar en números negros",
+          "meaning": "Être rentable financièrement.",
+          "warning": "Idiome business."
+        }
+      },
+      {
+        "word": "Blanco",
+        "phonetic": "/ˈblaŋko/",
+        "translation": "Blanc",
+        "examples": [
+          "Llevaba un vestido blanco.",
+          "Las paredes son blancas."
+        ],
+        "grammar": {
+          "nature": "Adjectif de couleur (s'accorde).",
+          "position": "Après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "Mentira blanca",
+          "meaning": "Petit mensonge inoffensif.",
+          "warning": "Idiome."
+        }
+      },
+      {
+        "word": "Qué",
+        "phonetic": "/ke/",
+        "translation": "Quoi / Que",
+        "examples": [
+          "¿Qué es esto?",
+          "¿Qué hora es?"
+        ],
+        "grammar": {
+          "nature": "Pronom/adjectif interrogatif (accent obligatoire).",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "¿Qué onda?",
+          "meaning": "Quoi de neuf, très familier (Mexique).",
+          "warning": "Régional, informel."
+        }
+      },
+      {
+        "word": "Dónde",
+        "phonetic": "/ˈdonde/",
+        "translation": "Où",
+        "examples": [
+          "¿Dónde vives?",
+          "¿Dónde está la estación?"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif.",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "¿Dónde andas?",
+          "meaning": "T'es où (familier, littéralement où tu marches).",
+          "warning": "Familier régional."
+        }
+      },
+      {
+        "word": "Cuándo",
+        "phonetic": "/ˈkwando/",
+        "translation": "Quand",
+        "examples": [
+          "¿Cuándo es la reunión?",
+          "¿Cuándo vienes?"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif.",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "Cuando sea",
+          "meaning": "N'importe quand, décontracté.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Por qué",
+        "phonetic": "/poɾ ˈke/",
+        "translation": "Pourquoi",
+        "examples": [
+          "¿Por qué llegas tarde?",
+          "¿Por qué no?"
+        ],
+        "grammar": {
+          "nature": "Locution interrogative (2 mots + accent).",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "¿Por qué no?",
+          "meaning": "Pourquoi pas, encouragement.",
+          "warning": "Familier léger."
+        }
+      },
+      {
+        "word": "Cómo",
+        "phonetic": "/ˈkomo/",
+        "translation": "Comment",
+        "examples": [
+          "¿Cómo estás?",
+          "¿Cómo funciona esto?"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif.",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "¿Cómo que...?",
+          "meaning": "Comment ça..., surprise familière.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Comer",
+        "phonetic": "/koˈmeɾ/",
+        "translation": "Manger",
+        "examples": [
+          "Como el desayuno cada día.",
+          "¡Vamos a comer!"
+        ],
+        "grammar": {
+          "nature": "Verbe du 2e groupe (-er).",
+          "position": "Sujet + comer + complément.",
+          "register": "Neutre.",
+          "synonyms": "Alimentarse (formel)"
+        },
+        "slang": {
+          "expression": "Papear",
+          "meaning": "Bouffer, très familier.",
+          "warning": "Argot."
+        }
+      },
+      {
+        "word": "Beber",
+        "phonetic": "/beˈβeɾ/",
+        "translation": "Boire",
+        "examples": [
+          "Bebo agua cada mañana.",
+          "¿Quieres beber algo?"
+        ],
+        "grammar": {
+          "nature": "Verbe du 2e groupe (-er).",
+          "position": "Sujet + beber + complément.",
+          "register": "Neutre.",
+          "synonyms": "Tomar (aussi utilisé pour boire)"
+        },
+        "slang": {
+          "expression": "Chupar",
+          "meaning": "Boire de l'alcool, très familier.",
+          "warning": "Argot festif."
+        }
+      },
+      {
+        "word": "Dormir",
+        "phonetic": "/doɾˈmiɾ/",
+        "translation": "Dormir",
+        "examples": [
+          "Necesito dormir.",
+          "Ella duerme ocho horas."
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier (o→ue).",
+          "position": "Sujet + dormir.",
+          "register": "Neutre.",
+          "synonyms": "Descansar (se reposer)"
+        },
+        "slang": {
+          "expression": "Sobar",
+          "meaning": "Roupiller, très familier.",
+          "warning": "Argot."
+        }
+      },
+      {
+        "word": "Ir",
+        "phonetic": "/iɾ/",
+        "translation": "Aller",
+        "examples": [
+          "Voy a la escuela.",
+          "¡Vamos!"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier.",
+          "position": "Sujet + ir + a + complément.",
+          "register": "Neutre.",
+          "synonyms": "Dirigirse (se diriger, formel)"
+        },
+        "slang": {
+          "expression": "¡Vámonos!",
+          "meaning": "Allons-y, familier et énergique.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Venir",
+        "phonetic": "/beˈniɾ/",
+        "translation": "Venir",
+        "examples": [
+          "¡Ven aquí!",
+          "Ella viene de Francia."
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier.",
+          "position": "Sujet + venir + complément.",
+          "register": "Neutre.",
+          "synonyms": "Llegar (arriver)"
+        },
+        "slang": {
+          "expression": "¡Ándale!",
+          "meaning": "Allez !, encouragement familier (Mexique).",
+          "warning": "Régional."
+        }
+      },
+      {
+        "word": "Querer",
+        "phonetic": "/keˈɾeɾ/",
+        "translation": "Vouloir",
+        "examples": [
+          "Quiero un café.",
+          "¿Qué quieres?"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier (e→ie).",
+          "position": "Sujet + querer + nom/infinitif.",
+          "register": "Neutre.",
+          "synonyms": "Desear (souhaiter, plus formel)"
+        },
+        "slang": {
+          "expression": "Quiero, no puedo",
+          "meaning": "Je veux mais je peux pas, expression familière.",
+          "warning": "Idiome courant."
+        }
+      },
+      {
+        "word": "Amar",
+        "phonetic": "/aˈmaɾ/",
+        "translation": "Aimer / Amour",
+        "examples": [
+          "Amo a mi familia.",
+          "El amor es hermoso."
+        ],
+        "grammar": {
+          "nature": "Verbe du 1er groupe (-ar) et nom (amor).",
+          "position": "Sujet + amar + complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Querer (aimer, plus courant à l'oral)"
+        },
+        "slang": {
+          "expression": "Te quiero",
+          "meaning": "Je t'aime (affection, moins fort que 'te amo').",
+          "warning": "Nuance importante en espagnol."
+        }
+      },
+      {
+        "word": "Ver",
+        "phonetic": "/beɾ/",
+        "translation": "Voir",
+        "examples": [
+          "Veo un pájaro.",
+          "¡Nos vemos luego!"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier.",
+          "position": "Sujet + ver + complément.",
+          "register": "Neutre.",
+          "synonyms": "Notar (remarquer)"
+        },
+        "slang": {
+          "expression": "Nos vidrios",
+          "meaning": "Jeu de mots argotique pour 'nos vemos'.",
+          "warning": "Très régional/familier."
+        }
+      },
+      {
+        "word": "Hablar",
+        "phonetic": "/aˈβlaɾ/",
+        "translation": "Parler",
+        "examples": [
+          "¿Hablas inglés?",
+          "Ella habla tres idiomas."
+        ],
+        "grammar": {
+          "nature": "Verbe du 1er groupe (-ar).",
+          "position": "Sujet + hablar + complément.",
+          "register": "Neutre.",
+          "synonyms": "Charlar (bavarder, familier)"
+        },
+        "slang": {
+          "expression": "Chismear",
+          "meaning": "Papoter/ragoter, très familier.",
+          "warning": "Argot."
+        }
+      },
+      {
+        "word": "Comprar",
+        "phonetic": "/komˈpɾaɾ/",
+        "translation": "Acheter",
+        "examples": [
+          "Quiero comprar un coche.",
+          "Compró zapatos nuevos."
+        ],
+        "grammar": {
+          "nature": "Verbe du 1er groupe (-ar).",
+          "position": "Sujet + comprar + complément.",
+          "register": "Neutre.",
+          "synonyms": "Adquirir (formel)"
+        },
+        "slang": {
+          "expression": "Pillar",
+          "meaning": "Choper/acheter, très familier (Espagne).",
+          "warning": "Régional Espagne."
+        }
+      },
+      {
+        "word": "Grande",
+        "phonetic": "/ˈɡɾande/",
+        "translation": "Grand",
+        "examples": [
+          "Es una casa grande.",
+          "Es un gran problema."
+        ],
+        "grammar": {
+          "nature": "Adjectif (invariable en genre, s'accorde en nombre).",
+          "position": "Avant ou après le nom (change le sens).",
+          "register": "Neutre.",
+          "synonyms": "Enorme (plus fort)"
+        },
+        "slang": {
+          "expression": "Enorme",
+          "meaning": "Énorme, version intensive.",
+          "warning": "Familier."
+        }
+      }
+    ],
+    "beginner3": [],
+    "intermediate": []
   },
   "it": {
     "beginner1": [
-      { "word": "Ciao", "phonetic": "/ˈtʃao/", "translation": "Salut / Au revoir",
-        "examples": ["Ciao, come stai?", "Ci vediamo, ciao!"],
-        "grammar": { "nature": "Interjection de salutation (arrivée et départ).", "position": "Début ou fin de conversation.", "register": "Familier.", "synonyms": "Salve (plus formel)" },
-        "slang": { "expression": "Ciao ciao", "meaning": "Au revoir affectueux, redoublé.", "warning": "Familier." } },
-      { "word": "Grazie", "phonetic": "/ˈɡrattsje/", "translation": "Merci",
-        "examples": ["Grazie mille per tutto!", "Grazie per il tuo aiuto."],
-        "grammar": { "nature": "Expression de politesse invariable.", "position": "Seule ou + per.", "register": "Neutre.", "synonyms": "Ti ringrazio (formel)" },
-        "slang": { "expression": "Grazie mille", "meaning": "Merci mille fois, chaleureux.", "warning": "Très courant, pas vraiment argot." } },
-      { "word": "Sì", "phonetic": "/si/", "translation": "Oui",
-        "examples": ["Sì, vengo volentieri.", "Sei d'accordo? Sì, certo."],
-        "grammar": { "nature": "Adverbe d'affirmation.", "position": "Seul ou début de phrase.", "register": "Neutre.", "synonyms": "Certo, Esatto" },
-        "slang": { "expression": "Sisi", "meaning": "Oui insistant et décontracté.", "warning": "Familier." } },
-      { "word": "No", "phonetic": "/nɔ/", "translation": "Non",
-        "examples": ["No, non posso domani.", "Ha detto di no."],
-        "grammar": { "nature": "Adverbe de négation.", "position": "Seul ou début de phrase.", "register": "Neutre.", "synonyms": "Assolutamente no (insistant)" },
-        "slang": { "expression": "Nooo", "meaning": "Non exagéré à l'oral.", "warning": "Informel, expressif." } },
-      { "word": "Per favore", "phonetic": "/per faˈvoːre/", "translation": "S'il te/vous plaît",
-        "examples": ["Puoi aiutarmi, per favore?", "Siediti, per favore."],
-        "grammar": { "nature": "Locution de politesse.", "position": "Fin ou début de demande.", "register": "Neutre à formel.", "synonyms": "Per cortesia (formel)" },
-        "slang": { "expression": "Pf", "meaning": "Abréviation texto de per favore.", "warning": "SMS uniquement." } },
-      { "word": "Scusa", "phonetic": "/ˈskuːza/", "translation": "Désolé / Excuse-moi",
-        "examples": ["Scusa per il ritardo.", "Scusa, non volevo interrompere."],
-        "grammar": { "nature": "Impératif du verbe scusare.", "position": "Seul ou + per.", "register": "Familier (Scusi = formel).", "synonyms": "Mi dispiace (regret)" },
-        "slang": { "expression": "Scusami eh", "meaning": "Excuse-moi, ton léger et familier.", "warning": "Oral décontracté." } },
-      { "word": "Buono", "phonetic": "/ˈbwɔːno/", "translation": "Bon",
-        "examples": ["Questa è una buona idea.", "Come stai? Buono, grazie."],
-        "grammar": { "nature": "Adjectif (s'accorde : buono/buona).", "position": "Avant ou après le nom.", "register": "Neutre.", "synonyms": "Ottimo, Fantastico" },
-        "slang": { "expression": "Top", "meaning": "Très bien, emprunté à l'anglais.", "warning": "Familier, jeunes." } },
-      { "word": "Acqua", "phonetic": "/ˈakkwa/", "translation": "Eau",
-        "examples": ["Posso avere un bicchiere d'acqua, per favore?", "Bevo molta acqua ogni giorno."],
-        "grammar": { "nature": "Nom féminin.", "position": "Sujet ou complément.", "register": "Neutre.", "synonyms": "Aucun courant." },
-        "slang": { "expression": "Acquetta", "meaning": "Diminutif affectueux pour l'eau.", "warning": "Familier, régional." } },
-      { "word": "Aiuto", "phonetic": "/aˈjuːto/", "translation": "Aide / Aider",
-        "examples": ["Puoi aiutarmi con questo?", "Aiuto! Mi sono perso."],
-        "grammar": { "nature": "Nom et verbe (aiutare).", "position": "Sujet + aiuto / verbe conjugué.", "register": "Neutre à urgent.", "synonyms": "Assistenza (formel)" },
-        "slang": { "expression": "Dammi una mano", "meaning": "Donne-moi un coup de main.", "warning": "Familier." } },
-      { "word": "Amico", "phonetic": "/aˈmiːko/", "translation": "Ami",
-        "examples": ["Lei è la mia migliore amica.", "Ho fatto molti amici qui."],
-        "grammar": { "nature": "Nom (s'accorde : amico/amica).", "position": "Sujet ou complément.", "register": "Neutre.", "synonyms": "Compagno (plus formel)" },
-        "slang": { "expression": "Bro", "meaning": "Emprunté à l'anglais, très familier.", "warning": "Jeunes, informel." } }
+      {
+        "word": "Ciao",
+        "phonetic": "/ˈtʃao/",
+        "translation": "Salut / Au revoir",
+        "examples": [
+          "Ciao, come stai?",
+          "Ci vediamo, ciao!"
+        ],
+        "grammar": {
+          "nature": "Interjection de salutation (arrivée et départ).",
+          "position": "Début ou fin de conversation.",
+          "register": "Familier.",
+          "synonyms": "Salve (plus formel)"
+        },
+        "slang": {
+          "expression": "Ciao ciao",
+          "meaning": "Au revoir affectueux, redoublé.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Grazie",
+        "phonetic": "/ˈɡrattsje/",
+        "translation": "Merci",
+        "examples": [
+          "Grazie mille per tutto!",
+          "Grazie per il tuo aiuto."
+        ],
+        "grammar": {
+          "nature": "Expression de politesse invariable.",
+          "position": "Seule ou + per.",
+          "register": "Neutre.",
+          "synonyms": "Ti ringrazio (formel)"
+        },
+        "slang": {
+          "expression": "Grazie mille",
+          "meaning": "Merci mille fois, chaleureux.",
+          "warning": "Très courant, pas vraiment argot."
+        }
+      },
+      {
+        "word": "Sì",
+        "phonetic": "/si/",
+        "translation": "Oui",
+        "examples": [
+          "Sì, vengo volentieri.",
+          "Sei d'accordo? Sì, certo."
+        ],
+        "grammar": {
+          "nature": "Adverbe d'affirmation.",
+          "position": "Seul ou début de phrase.",
+          "register": "Neutre.",
+          "synonyms": "Certo, Esatto"
+        },
+        "slang": {
+          "expression": "Sisi",
+          "meaning": "Oui insistant et décontracté.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "No",
+        "phonetic": "/nɔ/",
+        "translation": "Non",
+        "examples": [
+          "No, non posso domani.",
+          "Ha detto di no."
+        ],
+        "grammar": {
+          "nature": "Adverbe de négation.",
+          "position": "Seul ou début de phrase.",
+          "register": "Neutre.",
+          "synonyms": "Assolutamente no (insistant)"
+        },
+        "slang": {
+          "expression": "Nooo",
+          "meaning": "Non exagéré à l'oral.",
+          "warning": "Informel, expressif."
+        }
+      },
+      {
+        "word": "Per favore",
+        "phonetic": "/per faˈvoːre/",
+        "translation": "S'il te/vous plaît",
+        "examples": [
+          "Puoi aiutarmi, per favore?",
+          "Siediti, per favore."
+        ],
+        "grammar": {
+          "nature": "Locution de politesse.",
+          "position": "Fin ou début de demande.",
+          "register": "Neutre à formel.",
+          "synonyms": "Per cortesia (formel)"
+        },
+        "slang": {
+          "expression": "Pf",
+          "meaning": "Abréviation texto de per favore.",
+          "warning": "SMS uniquement."
+        }
+      },
+      {
+        "word": "Scusa",
+        "phonetic": "/ˈskuːza/",
+        "translation": "Désolé / Excuse-moi",
+        "examples": [
+          "Scusa per il ritardo.",
+          "Scusa, non volevo interrompere."
+        ],
+        "grammar": {
+          "nature": "Impératif du verbe scusare.",
+          "position": "Seul ou + per.",
+          "register": "Familier (Scusi = formel).",
+          "synonyms": "Mi dispiace (regret)"
+        },
+        "slang": {
+          "expression": "Scusami eh",
+          "meaning": "Excuse-moi, ton léger et familier.",
+          "warning": "Oral décontracté."
+        }
+      },
+      {
+        "word": "Buono",
+        "phonetic": "/ˈbwɔːno/",
+        "translation": "Bon",
+        "examples": [
+          "Questa è una buona idea.",
+          "Come stai? Buono, grazie."
+        ],
+        "grammar": {
+          "nature": "Adjectif (s'accorde : buono/buona).",
+          "position": "Avant ou après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Ottimo, Fantastico"
+        },
+        "slang": {
+          "expression": "Top",
+          "meaning": "Très bien, emprunté à l'anglais.",
+          "warning": "Familier, jeunes."
+        }
+      },
+      {
+        "word": "Acqua",
+        "phonetic": "/ˈakkwa/",
+        "translation": "Eau",
+        "examples": [
+          "Posso avere un bicchiere d'acqua, per favore?",
+          "Bevo molta acqua ogni giorno."
+        ],
+        "grammar": {
+          "nature": "Nom féminin.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "Acquetta",
+          "meaning": "Diminutif affectueux pour l'eau.",
+          "warning": "Familier, régional."
+        }
+      },
+      {
+        "word": "Aiuto",
+        "phonetic": "/aˈjuːto/",
+        "translation": "Aide / Aider",
+        "examples": [
+          "Puoi aiutarmi con questo?",
+          "Aiuto! Mi sono perso."
+        ],
+        "grammar": {
+          "nature": "Nom et verbe (aiutare).",
+          "position": "Sujet + aiuto / verbe conjugué.",
+          "register": "Neutre à urgent.",
+          "synonyms": "Assistenza (formel)"
+        },
+        "slang": {
+          "expression": "Dammi una mano",
+          "meaning": "Donne-moi un coup de main.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Amico",
+        "phonetic": "/aˈmiːko/",
+        "translation": "Ami",
+        "examples": [
+          "Lei è la mia migliore amica.",
+          "Ho fatto molti amici qui."
+        ],
+        "grammar": {
+          "nature": "Nom (s'accorde : amico/amica).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Compagno (plus formel)"
+        },
+        "slang": {
+          "expression": "Bro",
+          "meaning": "Emprunté à l'anglais, très familier.",
+          "warning": "Jeunes, informel."
+        }
+      }
     ],
-    "beginner2": [], "beginner3": [], "intermediate": []
+    "beginner2": [
+      {
+        "word": "Uno",
+        "phonetic": "/ˈuno/",
+        "translation": "Un",
+        "examples": [
+          "Ho una mela.",
+          "Dammi un minuto."
+        ],
+        "grammar": {
+          "nature": "Adjectif numéral.",
+          "position": "Avant un nom.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "Solo uno",
+          "meaning": "Un seul, insistance.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "Due",
+        "phonetic": "/ˈdue/",
+        "translation": "Deux",
+        "examples": [
+          "Ho due fratelli.",
+          "Ci vediamo tra due giorni."
+        ],
+        "grammar": {
+          "nature": "Adjectif numéral.",
+          "position": "Avant un nom.",
+          "register": "Neutre.",
+          "synonyms": "Un paio di (approximatif)"
+        },
+        "slang": {
+          "expression": "Un paio",
+          "meaning": "Une paire, familier.",
+          "warning": "Approximatif."
+        }
+      },
+      {
+        "word": "Tre",
+        "phonetic": "/tre/",
+        "translation": "Trois",
+        "examples": [
+          "Ci sono tre gatti.",
+          "Aspetta tre minuti."
+        ],
+        "grammar": {
+          "nature": "Adjectif numéral.",
+          "position": "Avant un nom.",
+          "register": "Neutre.",
+          "synonyms": "Un po' di (approximatif)"
+        },
+        "slang": {
+          "expression": "Un po'",
+          "meaning": "Quelques, approximation.",
+          "warning": "Imprécis."
+        }
+      },
+      {
+        "word": "Oggi",
+        "phonetic": "/ˈɔddʒi/",
+        "translation": "Aujourd'hui",
+        "examples": [
+          "Oggi è una bella giornata.",
+          "Oggi ho lavoro."
+        ],
+        "grammar": {
+          "nature": "Adverbe de temps.",
+          "position": "Début ou fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "Questo giorno"
+        },
+        "slang": {
+          "expression": "Oggi stesso",
+          "meaning": "Aujourd'hui même, insistance.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Domani",
+        "phonetic": "/doˈmani/",
+        "translation": "Demain",
+        "examples": [
+          "Ci vediamo domani!",
+          "Domani sarà un nuovo giorno."
+        ],
+        "grammar": {
+          "nature": "Adverbe de temps.",
+          "position": "Début ou fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "Il giorno dopo"
+        },
+        "slang": {
+          "expression": "A domani",
+          "meaning": "À demain, formule courante.",
+          "warning": "Très courant, pas argot."
+        }
+      },
+      {
+        "word": "Ieri",
+        "phonetic": "/ˈjɛri/",
+        "translation": "Hier",
+        "examples": [
+          "L'ho vista ieri.",
+          "Ieri è stato divertente."
+        ],
+        "grammar": {
+          "nature": "Adverbe de temps.",
+          "position": "Début ou fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "Il giorno prima"
+        },
+        "slang": {
+          "expression": "Ieri sera",
+          "meaning": "Hier soir, expression courante.",
+          "warning": "Pas argot, très fréquent."
+        }
+      },
+      {
+        "word": "Madre",
+        "phonetic": "/ˈmadre/",
+        "translation": "Mère",
+        "examples": [
+          "Mia madre è gentile.",
+          "Assomiglia a sua madre."
+        ],
+        "grammar": {
+          "nature": "Nom féminin.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Mamma (familier)"
+        },
+        "slang": {
+          "expression": "Mamma",
+          "meaning": "Maman, très courant.",
+          "warning": "Familier mais universel."
+        }
+      },
+      {
+        "word": "Padre",
+        "phonetic": "/ˈpadre/",
+        "translation": "Père",
+        "examples": [
+          "Mio padre lavora molto.",
+          "È un buon padre."
+        ],
+        "grammar": {
+          "nature": "Nom masculin.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Papà (familier)"
+        },
+        "slang": {
+          "expression": "Papà",
+          "meaning": "Papa, très courant.",
+          "warning": "Familier mais universel."
+        }
+      },
+      {
+        "word": "Fratello",
+        "phonetic": "/fraˈtɛllo/",
+        "translation": "Frère",
+        "examples": [
+          "Ho un fratello.",
+          "È il mio fratello maggiore."
+        ],
+        "grammar": {
+          "nature": "Nom masculin.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Bro (emprunté à l'anglais)"
+        },
+        "slang": {
+          "expression": "Bro",
+          "meaning": "Emprunt anglais, familier chez les jeunes.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "Sorella",
+        "phonetic": "/soˈrɛlla/",
+        "translation": "Sœur",
+        "examples": [
+          "Mia sorella è divertente.",
+          "È la mia sorellina."
+        ],
+        "grammar": {
+          "nature": "Nom féminin.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Sorellina (petite sœur, affectueux)"
+        },
+        "slang": {
+          "expression": "Sorellina",
+          "meaning": "Diminutif affectueux pour petite sœur.",
+          "warning": "Familier, affectueux."
+        }
+      },
+      {
+        "word": "Rosso",
+        "phonetic": "/ˈrosso/",
+        "translation": "Rouge",
+        "examples": [
+          "Mi piace la macchina rossa.",
+          "Il suo vestito è rosso."
+        ],
+        "grammar": {
+          "nature": "Adjectif de couleur (s'accorde).",
+          "position": "Après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Cremisi (soutenu)"
+        },
+        "slang": {
+          "expression": "Diventare rosso",
+          "meaning": "Rougir (de honte/gêne).",
+          "warning": "Idiome."
+        }
+      },
+      {
+        "word": "Blu",
+        "phonetic": "/blu/",
+        "translation": "Bleu",
+        "examples": [
+          "Il cielo è blu.",
+          "Ho comprato una camicia blu."
+        ],
+        "grammar": {
+          "nature": "Adjectif de couleur (invariable).",
+          "position": "Après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Azzurro (bleu ciel)"
+        },
+        "slang": {
+          "expression": "Principe azzurro",
+          "meaning": "Prince charmant (expression figurée).",
+          "warning": "Idiome romantique."
+        }
+      },
+      {
+        "word": "Nero",
+        "phonetic": "/ˈnɛro/",
+        "translation": "Noir",
+        "examples": [
+          "Indossa un cappotto nero.",
+          "Il gatto è nero."
+        ],
+        "grammar": {
+          "nature": "Adjectif de couleur (s'accorde).",
+          "position": "Après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "In nero",
+          "meaning": "Au noir (travail non déclaré), expression figurée.",
+          "warning": "Idiome économique."
+        }
+      },
+      {
+        "word": "Bianco",
+        "phonetic": "/ˈbjaŋko/",
+        "translation": "Blanc",
+        "examples": [
+          "Indossava un vestito bianco.",
+          "Le pareti sono bianche."
+        ],
+        "grammar": {
+          "nature": "Adjectif de couleur (s'accorde).",
+          "position": "Après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "Bugia bianca",
+          "meaning": "Petit mensonge inoffensif.",
+          "warning": "Idiome."
+        }
+      },
+      {
+        "word": "Cosa",
+        "phonetic": "/ˈkɔza/",
+        "translation": "Quoi / Que",
+        "examples": [
+          "Cosa è questo?",
+          "Che ore sono?"
+        ],
+        "grammar": {
+          "nature": "Pronom interrogatif.",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Che (autre pronom interrogatif)"
+        },
+        "slang": {
+          "expression": "Cosa dici?",
+          "meaning": "Qu'est-ce que tu racontes, familier.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Dove",
+        "phonetic": "/ˈdove/",
+        "translation": "Où",
+        "examples": [
+          "Dove abiti?",
+          "Dov'è la stazione?"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif.",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "Dove diavolo...?",
+          "meaning": "Où diable..., familier expressif.",
+          "warning": "Familier fort."
+        }
+      },
+      {
+        "word": "Quando",
+        "phonetic": "/ˈkwando/",
+        "translation": "Quand",
+        "examples": [
+          "Quando è la riunione?",
+          "Quando vieni?"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif.",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "Quando vuoi",
+          "meaning": "Quand tu veux, décontracté.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Perché",
+        "phonetic": "/perˈke/",
+        "translation": "Pourquoi",
+        "examples": [
+          "Perché sei in ritardo?",
+          "Perché no?"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif (aussi = 'parce que').",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "Perché no?",
+          "meaning": "Pourquoi pas, encouragement.",
+          "warning": "Familier léger."
+        }
+      },
+      {
+        "word": "Come",
+        "phonetic": "/ˈkome/",
+        "translation": "Comment",
+        "examples": [
+          "Come stai?",
+          "Come funziona questo?"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif.",
+          "position": "Début de question.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "Come mai?",
+          "meaning": "Comment ça se fait, familier.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Mangiare",
+        "phonetic": "/manˈdʒaːre/",
+        "translation": "Manger",
+        "examples": [
+          "Mangio la colazione ogni giorno.",
+          "Andiamo a mangiare!"
+        ],
+        "grammar": {
+          "nature": "Verbe du 1er groupe (-are).",
+          "position": "Sujet + mangiare + complément.",
+          "register": "Neutre.",
+          "synonyms": "Nutrirsi (se nourrir, formel)"
+        },
+        "slang": {
+          "expression": "Sbafare",
+          "meaning": "Bouffer, très familier.",
+          "warning": "Argot."
+        }
+      },
+      {
+        "word": "Bere",
+        "phonetic": "/ˈbeːre/",
+        "translation": "Boire",
+        "examples": [
+          "Bevo acqua ogni mattina.",
+          "Vuoi bere qualcosa?"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier (2e groupe).",
+          "position": "Sujet + bere + complément.",
+          "register": "Neutre.",
+          "synonyms": "Sorseggiare (siroter)"
+        },
+        "slang": {
+          "expression": "Trincare",
+          "meaning": "Picoler, très familier.",
+          "warning": "Argot festif."
+        }
+      },
+      {
+        "word": "Dormire",
+        "phonetic": "/dorˈmiːre/",
+        "translation": "Dormir",
+        "examples": [
+          "Ho bisogno di dormire.",
+          "Dorme otto ore."
+        ],
+        "grammar": {
+          "nature": "Verbe du 3e groupe (-ire).",
+          "position": "Sujet + dormire.",
+          "register": "Neutre.",
+          "synonyms": "Riposare (se reposer)"
+        },
+        "slang": {
+          "expression": "Schiacciare un pisolino",
+          "meaning": "Faire une sieste, expression courante.",
+          "warning": "Idiome familier."
+        }
+      },
+      {
+        "word": "Andare",
+        "phonetic": "/anˈdaːre/",
+        "translation": "Aller",
+        "examples": [
+          "Vado a scuola.",
+          "Andiamo!"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier.",
+          "position": "Sujet + andare + a + complément.",
+          "register": "Neutre.",
+          "synonyms": "Dirigersi (se diriger, formel)"
+        },
+        "slang": {
+          "expression": "Andiamo!",
+          "meaning": "Allons-y, énergique et familier.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Venire",
+        "phonetic": "/veˈniːre/",
+        "translation": "Venir",
+        "examples": [
+          "Vieni qui!",
+          "Viene dalla Francia."
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier.",
+          "position": "Sujet + venire + complément.",
+          "register": "Neutre.",
+          "synonyms": "Arrivare (arriver)"
+        },
+        "slang": {
+          "expression": "Dai, vieni!",
+          "meaning": "Allez, viens !, familier.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "Volere",
+        "phonetic": "/voˈleːre/",
+        "translation": "Vouloir",
+        "examples": [
+          "Voglio un caffè.",
+          "Cosa vuoi?"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier.",
+          "position": "Sujet + volere + nom/infinitif.",
+          "register": "Neutre.",
+          "synonyms": "Desiderare (souhaiter, plus formel)"
+        },
+        "slang": {
+          "expression": "Magari",
+          "meaning": "Si seulement/pourquoi pas, expression courante.",
+          "warning": "Idiome très fréquent."
+        }
+      },
+      {
+        "word": "Amare",
+        "phonetic": "/aˈmaːre/",
+        "translation": "Aimer / Amour",
+        "examples": [
+          "Amo la mia famiglia.",
+          "L'amore è bellissimo."
+        ],
+        "grammar": {
+          "nature": "Verbe du 1er groupe (-are) et nom (amore).",
+          "position": "Sujet + amare + complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Voler bene (affection, moins fort)"
+        },
+        "slang": {
+          "expression": "Ti voglio bene",
+          "meaning": "Je t'aime bien (affection, moins fort que 'ti amo').",
+          "warning": "Nuance importante en italien."
+        }
+      },
+      {
+        "word": "Vedere",
+        "phonetic": "/veˈdeːre/",
+        "translation": "Voir",
+        "examples": [
+          "Vedo un uccello.",
+          "Ci vediamo dopo!"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier (2e groupe).",
+          "position": "Sujet + vedere + complément.",
+          "register": "Neutre.",
+          "synonyms": "Notare (remarquer)"
+        },
+        "slang": {
+          "expression": "Ci vediamo",
+          "meaning": "On se voit, formule très courante.",
+          "warning": "Pas argot, universel."
+        }
+      },
+      {
+        "word": "Parlare",
+        "phonetic": "/parˈlaːre/",
+        "translation": "Parler",
+        "examples": [
+          "Parli inglese?",
+          "Parla tre lingue."
+        ],
+        "grammar": {
+          "nature": "Verbe du 1er groupe (-are).",
+          "position": "Sujet + parlare + complément.",
+          "register": "Neutre.",
+          "synonyms": "Chiacchierare (bavarder, familier)"
+        },
+        "slang": {
+          "expression": "Chiacchierare",
+          "meaning": "Papoter, familier.",
+          "warning": "Familier léger."
+        }
+      },
+      {
+        "word": "Comprare",
+        "phonetic": "/komˈpraːre/",
+        "translation": "Acheter",
+        "examples": [
+          "Voglio comprare una macchina.",
+          "Ha comprato scarpe nuove."
+        ],
+        "grammar": {
+          "nature": "Verbe du 1er groupe (-are).",
+          "position": "Sujet + comprare + complément.",
+          "register": "Neutre.",
+          "synonyms": "Acquistare (formel)"
+        },
+        "slang": {
+          "expression": "Beccare un affare",
+          "meaning": "Choper une bonne affaire, familier.",
+          "warning": "Argot."
+        }
+      },
+      {
+        "word": "Grande",
+        "phonetic": "/ˈɡrande/",
+        "translation": "Grand",
+        "examples": [
+          "È una casa grande.",
+          "È un grande problema."
+        ],
+        "grammar": {
+          "nature": "Adjectif (invariable en genre).",
+          "position": "Avant ou après le nom (change le sens).",
+          "register": "Neutre.",
+          "synonyms": "Enorme (plus fort)"
+        },
+        "slang": {
+          "expression": "Top",
+          "meaning": "Génial, emprunté à l'anglais, très familier.",
+          "warning": "Jeunes, informel."
+        }
+      }
+    ],
+    "beginner3": [],
+    "intermediate": []
   },
   "ja": {
     "beginner1": [
-      { "word": "こんにちは", "phonetic": "konnichiwa", "translation": "Bonjour",
-        "examples": ["こんにちは、元気ですか？", "彼女はみんなにこんにちはと言った。"],
-        "grammar": { "nature": "Salutation figée (littéralement \"aujourd'hui...\").", "position": "Utilisée dans la journée, pas le matin ni le soir.", "register": "Neutre.", "synonyms": "おはよう (matin), こんばんは (soir)" },
-        "slang": { "expression": "オッス", "meaning": "Salut très familier, style masculin/sportif.", "warning": "Entre amis proches uniquement." } },
-      { "word": "ありがとう", "phonetic": "arigatō", "translation": "Merci",
-        "examples": ["手伝ってくれてありがとう。", "本当にありがとうございます。"],
-        "grammar": { "nature": "Expression de remerciement.", "position": "Forme familière ; +ございます pour la politesse.", "register": "Familier (ございます = poli).", "synonyms": "どうも (plus léger)" },
-        "slang": { "expression": "あざす", "meaning": "Version très raccourcie et argotique, jeunes.", "warning": "Très informel." } },
-      { "word": "はい", "phonetic": "hai", "translation": "Oui",
-        "examples": ["はい、行きます。", "分かりましたか？はい。"],
-        "grammar": { "nature": "Particule d'affirmation/écoute active.", "position": "Réponse ou accusé de réception.", "register": "Neutre à poli.", "synonyms": "うん (familier)" },
-        "slang": { "expression": "うん", "meaning": "Oui très décontracté entre proches.", "warning": "Informel." } },
-      { "word": "いいえ", "phonetic": "iie", "translation": "Non",
-        "examples": ["いいえ、違います。", "好きですか？いいえ。"],
-        "grammar": { "nature": "Adverbe de négation.", "position": "Réponse directe.", "register": "Poli, un peu formel à l'oral.", "synonyms": "ううん (familier)" },
-        "slang": { "expression": "ううん", "meaning": "Non familier, ton relâché.", "warning": "Entre amis." } },
-      { "word": "すみません", "phonetic": "sumimasen", "translation": "Excusez-moi / Pardon",
-        "examples": ["すみません、道を教えてください。", "遅れてすみません。"],
-        "grammar": { "nature": "Expression polyvalente (excuse + attirer l'attention + merci léger).", "position": "Seule, en début de phrase.", "register": "Neutre à poli, très utilisée au quotidien.", "synonyms": "ごめんなさい (excuse plus personnelle)" },
-        "slang": { "expression": "すいません", "meaning": "Prononciation relâchée de sumimasen.", "warning": "Oral décontracté." } },
-      { "word": "ありがとうございます", "phonetic": "arigatō gozaimasu", "translation": "Merci beaucoup (poli)",
-        "examples": ["本当にありがとうございます。", "ご親切にありがとうございます。"],
-        "grammar": { "nature": "Forme polie du remerciement.", "position": "Seule ou en fin de phrase.", "register": "Poli, formel.", "synonyms": "ありがとう (familier)" },
-        "slang": { "expression": "サンキュー", "meaning": "Emprunt anglais \"thank you\", léger et jeune.", "warning": "Très informel." } },
-      { "word": "水", "phonetic": "mizu", "translation": "Eau",
-        "examples": ["水を一杯ください。", "毎日たくさん水を飲みます。"],
-        "grammar": { "nature": "Nom commun (kanji : 水).", "position": "Sujet ou complément.", "register": "Neutre.", "synonyms": "お水 (plus poli)" },
-        "slang": { "expression": "お水", "meaning": "Version polie avec préfixe honorifique お.", "warning": "Poli, pas argot." } },
-      { "word": "助けて", "phonetic": "tasukete", "translation": "Aide-moi / Au secours",
-        "examples": ["助けてください！", "彼を助けてあげました。"],
-        "grammar": { "nature": "Forme impérative du verbe 助ける (aider).", "position": "Exclamation urgente ou demande.", "register": "Urgent à neutre.", "synonyms": "手伝って (aide plus quotidienne)" },
-        "slang": { "expression": "ヘルプ", "meaning": "Emprunt anglais \"help\", utilisé familièrement.", "warning": "Informel, jeunes." } },
-      { "word": "友達", "phonetic": "tomodachi", "translation": "Ami",
-        "examples": ["彼女は私の親友です。", "ここでたくさん友達を作りました。"],
-        "grammar": { "nature": "Nom commun.", "position": "Sujet ou complément.", "register": "Neutre.", "synonyms": "親友 (meilleur ami)" },
-        "slang": { "expression": "友", "meaning": "Version courte et poétique/familière.", "warning": "Utilisé à l'écrit stylisé." } },
-      { "word": "いい", "phonetic": "ii", "translation": "Bon / Bien",
-        "examples": ["これはいい考えです。", "元気ですか？いいですよ。"],
-        "grammar": { "nature": "Adjectif en い (i-adjective).", "position": "Avant un nom ou en fin de phrase.", "register": "Neutre.", "synonyms": "よい (plus formel)" },
-        "slang": { "expression": "マジいい", "meaning": "\"Vraiment bien\", très familier et intensif.", "warning": "Jeunes, très informel." } }
+      {
+        "word": "こんにちは",
+        "phonetic": "konnichiwa",
+        "translation": "Bonjour",
+        "examples": [
+          "こんにちは、元気ですか？",
+          "彼女はみんなにこんにちはと言った。"
+        ],
+        "grammar": {
+          "nature": "Salutation figée (littéralement \"aujourd'hui...\").",
+          "position": "Utilisée dans la journée, pas le matin ni le soir.",
+          "register": "Neutre.",
+          "synonyms": "おはよう (matin), こんばんは (soir)"
+        },
+        "slang": {
+          "expression": "オッス",
+          "meaning": "Salut très familier, style masculin/sportif.",
+          "warning": "Entre amis proches uniquement."
+        }
+      },
+      {
+        "word": "ありがとう",
+        "phonetic": "arigatō",
+        "translation": "Merci",
+        "examples": [
+          "手伝ってくれてありがとう。",
+          "本当にありがとうございます。"
+        ],
+        "grammar": {
+          "nature": "Expression de remerciement.",
+          "position": "Forme familière ; +ございます pour la politesse.",
+          "register": "Familier (ございます = poli).",
+          "synonyms": "どうも (plus léger)"
+        },
+        "slang": {
+          "expression": "あざす",
+          "meaning": "Version très raccourcie et argotique, jeunes.",
+          "warning": "Très informel."
+        }
+      },
+      {
+        "word": "はい",
+        "phonetic": "hai",
+        "translation": "Oui",
+        "examples": [
+          "はい、行きます。",
+          "分かりましたか？はい。"
+        ],
+        "grammar": {
+          "nature": "Particule d'affirmation/écoute active.",
+          "position": "Réponse ou accusé de réception.",
+          "register": "Neutre à poli.",
+          "synonyms": "うん (familier)"
+        },
+        "slang": {
+          "expression": "うん",
+          "meaning": "Oui très décontracté entre proches.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "いいえ",
+        "phonetic": "iie",
+        "translation": "Non",
+        "examples": [
+          "いいえ、違います。",
+          "好きですか？いいえ。"
+        ],
+        "grammar": {
+          "nature": "Adverbe de négation.",
+          "position": "Réponse directe.",
+          "register": "Poli, un peu formel à l'oral.",
+          "synonyms": "ううん (familier)"
+        },
+        "slang": {
+          "expression": "ううん",
+          "meaning": "Non familier, ton relâché.",
+          "warning": "Entre amis."
+        }
+      },
+      {
+        "word": "すみません",
+        "phonetic": "sumimasen",
+        "translation": "Excusez-moi / Pardon",
+        "examples": [
+          "すみません、道を教えてください。",
+          "遅れてすみません。"
+        ],
+        "grammar": {
+          "nature": "Expression polyvalente (excuse + attirer l'attention + merci léger).",
+          "position": "Seule, en début de phrase.",
+          "register": "Neutre à poli, très utilisée au quotidien.",
+          "synonyms": "ごめんなさい (excuse plus personnelle)"
+        },
+        "slang": {
+          "expression": "すいません",
+          "meaning": "Prononciation relâchée de sumimasen.",
+          "warning": "Oral décontracté."
+        }
+      },
+      {
+        "word": "ありがとうございます",
+        "phonetic": "arigatō gozaimasu",
+        "translation": "Merci beaucoup (poli)",
+        "examples": [
+          "本当にありがとうございます。",
+          "ご親切にありがとうございます。"
+        ],
+        "grammar": {
+          "nature": "Forme polie du remerciement.",
+          "position": "Seule ou en fin de phrase.",
+          "register": "Poli, formel.",
+          "synonyms": "ありがとう (familier)"
+        },
+        "slang": {
+          "expression": "サンキュー",
+          "meaning": "Emprunt anglais \"thank you\", léger et jeune.",
+          "warning": "Très informel."
+        }
+      },
+      {
+        "word": "水",
+        "phonetic": "mizu",
+        "translation": "Eau",
+        "examples": [
+          "水を一杯ください。",
+          "毎日たくさん水を飲みます。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 水).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "お水 (plus poli)"
+        },
+        "slang": {
+          "expression": "お水",
+          "meaning": "Version polie avec préfixe honorifique お.",
+          "warning": "Poli, pas argot."
+        }
+      },
+      {
+        "word": "助けて",
+        "phonetic": "tasukete",
+        "translation": "Aide-moi / Au secours",
+        "examples": [
+          "助けてください！",
+          "彼を助けてあげました。"
+        ],
+        "grammar": {
+          "nature": "Forme impérative du verbe 助ける (aider).",
+          "position": "Exclamation urgente ou demande.",
+          "register": "Urgent à neutre.",
+          "synonyms": "手伝って (aide plus quotidienne)"
+        },
+        "slang": {
+          "expression": "ヘルプ",
+          "meaning": "Emprunt anglais \"help\", utilisé familièrement.",
+          "warning": "Informel, jeunes."
+        }
+      },
+      {
+        "word": "友達",
+        "phonetic": "tomodachi",
+        "translation": "Ami",
+        "examples": [
+          "彼女は私の親友です。",
+          "ここでたくさん友達を作りました。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "親友 (meilleur ami)"
+        },
+        "slang": {
+          "expression": "友",
+          "meaning": "Version courte et poétique/familière.",
+          "warning": "Utilisé à l'écrit stylisé."
+        }
+      },
+      {
+        "word": "いい",
+        "phonetic": "ii",
+        "translation": "Bon / Bien",
+        "examples": [
+          "これはいい考えです。",
+          "元気ですか？いいですよ。"
+        ],
+        "grammar": {
+          "nature": "Adjectif en い (i-adjective).",
+          "position": "Avant un nom ou en fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "よい (plus formel)"
+        },
+        "slang": {
+          "expression": "マジいい",
+          "meaning": "\"Vraiment bien\", très familier et intensif.",
+          "warning": "Jeunes, très informel."
+        }
+      }
     ],
-    "beginner2": [], "beginner3": [], "intermediate": []
+    "beginner2": [
+      {
+        "word": "一",
+        "phonetic": "ichi",
+        "translation": "Un",
+        "examples": [
+          "りんごが一つあります。",
+          "一分ください。"
+        ],
+        "grammar": {
+          "nature": "Chiffre (kanji).",
+          "position": "Avant un compteur (一つ, 一人...).",
+          "register": "Neutre.",
+          "synonyms": "ひとつ (lecture japonaise native)"
+        },
+        "slang": {
+          "expression": "ワン",
+          "meaning": "Emprunt anglais 'one', utilisé familièrement.",
+          "warning": "Informel, style jeune."
+        }
+      },
+      {
+        "word": "二",
+        "phonetic": "ni",
+        "translation": "Deux",
+        "examples": [
+          "兄弟が二人います。",
+          "二日後に会いましょう。"
+        ],
+        "grammar": {
+          "nature": "Chiffre (kanji).",
+          "position": "Avant un compteur.",
+          "register": "Neutre.",
+          "synonyms": "ふたつ (lecture native)"
+        },
+        "slang": {
+          "expression": "ツー",
+          "meaning": "Emprunt anglais 'two', rare et familier.",
+          "warning": "Très informel."
+        }
+      },
+      {
+        "word": "三",
+        "phonetic": "san",
+        "translation": "Trois",
+        "examples": [
+          "猫が三匹います。",
+          "三分待ってください。"
+        ],
+        "grammar": {
+          "nature": "Chiffre (kanji).",
+          "position": "Avant un compteur.",
+          "register": "Neutre.",
+          "synonyms": "みっつ (lecture native)"
+        },
+        "slang": {
+          "expression": "サンキュー(3Q)",
+          "meaning": "Jeu de mots argot internet : 3Q = thank you.",
+          "warning": "Argot internet japonais."
+        }
+      },
+      {
+        "word": "今日",
+        "phonetic": "kyō",
+        "translation": "Aujourd'hui",
+        "examples": [
+          "今日はいい天気です。",
+          "今日は仕事があります。"
+        ],
+        "grammar": {
+          "nature": "Nom/adverbe de temps.",
+          "position": "Début de phrase ou avant le verbe.",
+          "register": "Neutre.",
+          "synonyms": "本日 (plus formel)"
+        },
+        "slang": {
+          "expression": "きょうび",
+          "meaning": "De nos jours, légèrement familier.",
+          "warning": "Usage particulier, pas synonyme direct."
+        }
+      },
+      {
+        "word": "明日",
+        "phonetic": "ashita",
+        "translation": "Demain",
+        "examples": [
+          "また明日！",
+          "明日は新しい日です。"
+        ],
+        "grammar": {
+          "nature": "Nom/adverbe de temps.",
+          "position": "Début de phrase ou avant le verbe.",
+          "register": "Neutre (明日 formel = asu).",
+          "synonyms": "明日 (asu, plus formel)"
+        },
+        "slang": {
+          "expression": "あした",
+          "meaning": "Prononciation familière standard (vs 'asu' formel).",
+          "warning": "Différence de registre importante."
+        }
+      },
+      {
+        "word": "昨日",
+        "phonetic": "kinō",
+        "translation": "Hier",
+        "examples": [
+          "昨日彼女に会いました。",
+          "昨日は楽しかったです。"
+        ],
+        "grammar": {
+          "nature": "Nom/adverbe de temps.",
+          "position": "Début de phrase ou avant le verbe.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "きのう",
+          "meaning": "Forme standard, pas d'argot particulier.",
+          "warning": "Usage courant."
+        }
+      },
+      {
+        "word": "母",
+        "phonetic": "haha",
+        "translation": "Mère (sa propre mère)",
+        "examples": [
+          "母は優しいです。",
+          "母に似ています。"
+        ],
+        "grammar": {
+          "nature": "Nom (humble, pour sa propre mère).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre (utiliser お母さん pour la mère de quelqu'un d'autre).",
+          "synonyms": "お母さん (mère de quelqu'un d'autre, ou familier)"
+        },
+        "slang": {
+          "expression": "ママ",
+          "meaning": "Maman, emprunt occidental familier.",
+          "warning": "Très familier, enfantin."
+        }
+      },
+      {
+        "word": "父",
+        "phonetic": "chichi",
+        "translation": "Père (son propre père)",
+        "examples": [
+          "父は忙しく働いています。",
+          "彼はいい父です。"
+        ],
+        "grammar": {
+          "nature": "Nom (humble, pour son propre père).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre (utiliser お父さん pour le père de quelqu'un d'autre).",
+          "synonyms": "お父さん (père de quelqu'un d'autre, ou familier)"
+        },
+        "slang": {
+          "expression": "パパ",
+          "meaning": "Papa, emprunt occidental familier.",
+          "warning": "Très familier, enfantin."
+        }
+      },
+      {
+        "word": "兄",
+        "phonetic": "ani",
+        "translation": "Frère aîné (le sien)",
+        "examples": [
+          "兄が一人います。",
+          "彼は私の兄です。"
+        ],
+        "grammar": {
+          "nature": "Nom (humble, pour son propre frère aîné).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre (お兄さん pour celui de quelqu'un d'autre).",
+          "synonyms": "お兄さん (frère aîné de quelqu'un d'autre)"
+        },
+        "slang": {
+          "expression": "兄貴",
+          "meaning": "Grand frère, familier et viril.",
+          "warning": "Argot masculin."
+        }
+      },
+      {
+        "word": "姉",
+        "phonetic": "ane",
+        "translation": "Sœur aînée (la sienne)",
+        "examples": [
+          "姉は面白いです。",
+          "彼女は私の姉です。"
+        ],
+        "grammar": {
+          "nature": "Nom (humble, pour sa propre sœur aînée).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre (お姉さん pour celle de quelqu'un d'autre).",
+          "synonyms": "お姉さん (sœur aînée de quelqu'un d'autre)"
+        },
+        "slang": {
+          "expression": "姉貴",
+          "meaning": "Grande sœur, familier.",
+          "warning": "Argot, moins courant que 兄貴."
+        }
+      },
+      {
+        "word": "赤",
+        "phonetic": "aka",
+        "translation": "Rouge",
+        "examples": [
+          "赤い車が好きです。",
+          "彼女のドレスは赤いです。"
+        ],
+        "grammar": {
+          "nature": "Nom / adjectif en -i (赤い).",
+          "position": "Avant un nom avec い.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "赤っ恥",
+          "meaning": "Grande honte (littéralement 'honte rouge').",
+          "warning": "Expression figurée."
+        }
+      },
+      {
+        "word": "青",
+        "phonetic": "ao",
+        "translation": "Bleu",
+        "examples": [
+          "空は青いです。",
+          "青いシャツを買いました。"
+        ],
+        "grammar": {
+          "nature": "Nom / adjectif en -i (青い).",
+          "position": "Avant un nom avec い.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant (couvre aussi le vert dans certains contextes)."
+        },
+        "slang": {
+          "expression": "青春",
+          "meaning": "Jeunesse (littéralement 'printemps bleu'), expression courante.",
+          "warning": "Terme culturel, pas littéral."
+        }
+      },
+      {
+        "word": "黒",
+        "phonetic": "kuro",
+        "translation": "Noir",
+        "examples": [
+          "黒いコートを着ています。",
+          "猫は黒いです。"
+        ],
+        "grammar": {
+          "nature": "Nom / adjectif en -i (黒い).",
+          "position": "Avant un nom avec い.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "腹黒い",
+          "meaning": "Sournois, malveillant (littéralement 'ventre noir').",
+          "warning": "Expression figurée."
+        }
+      },
+      {
+        "word": "白",
+        "phonetic": "shiro",
+        "translation": "Blanc",
+        "examples": [
+          "彼女は白いドレスを着ていました。",
+          "壁は白いです。"
+        ],
+        "grammar": {
+          "nature": "Nom / adjectif en -i (白い).",
+          "position": "Avant un nom avec い.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "白状する",
+          "meaning": "Avouer (littéralement 'déclarer blanc').",
+          "warning": "Expression figurée."
+        }
+      },
+      {
+        "word": "何",
+        "phonetic": "nani",
+        "translation": "Quoi / Que",
+        "examples": [
+          "これは何ですか？",
+          "何時ですか？"
+        ],
+        "grammar": {
+          "nature": "Pronom interrogatif.",
+          "position": "Peut être n'importe où selon la structure.",
+          "register": "Neutre.",
+          "synonyms": "何 (nan, forme courte devant certains mots)"
+        },
+        "slang": {
+          "expression": "なんだよ",
+          "meaning": "C'est quoi ça (agacé), très familier.",
+          "warning": "Familier, un peu impoli."
+        }
+      },
+      {
+        "word": "どこ",
+        "phonetic": "doko",
+        "translation": "Où",
+        "examples": [
+          "どこに住んでいますか？",
+          "駅はどこですか？"
+        ],
+        "grammar": {
+          "nature": "Pronom interrogatif de lieu.",
+          "position": "Avant la particule に/で.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "どこよ",
+          "meaning": "T'es où (impatient), familier féminin/décontracté.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "いつ",
+        "phonetic": "itsu",
+        "translation": "Quand",
+        "examples": [
+          "会議はいつですか？",
+          "いつ来ますか？"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif de temps.",
+          "position": "Avant le verbe ou en début de phrase.",
+          "register": "Neutre.",
+          "synonyms": "Aucun direct."
+        },
+        "slang": {
+          "expression": "いつでも",
+          "meaning": "N'importe quand, décontracté.",
+          "warning": "Familier léger."
+        }
+      },
+      {
+        "word": "なぜ",
+        "phonetic": "naze",
+        "translation": "Pourquoi",
+        "examples": [
+          "なぜ遅れたのですか？",
+          "なぜだめですか？"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif (plus formel que どうして).",
+          "position": "Début de phrase.",
+          "register": "Formel.",
+          "synonyms": "どうして (plus courant à l'oral)"
+        },
+        "slang": {
+          "expression": "どうして",
+          "meaning": "Version plus orale/familière de なぜ.",
+          "warning": "Registre différent, pas argot à proprement parler."
+        }
+      },
+      {
+        "word": "どう",
+        "phonetic": "dō",
+        "translation": "Comment",
+        "examples": [
+          "お元気ですか？",
+          "これはどう機能しますか？"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif.",
+          "position": "Avant le verbe.",
+          "register": "Neutre.",
+          "synonyms": "いかが (plus poli)"
+        },
+        "slang": {
+          "expression": "どうよ",
+          "meaning": "Alors, ça donne quoi (décontracté).",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "食べる",
+        "phonetic": "taberu",
+        "translation": "Manger",
+        "examples": [
+          "毎日朝ごはんを食べます。",
+          "食べましょう！"
+        ],
+        "grammar": {
+          "nature": "Verbe du 2e groupe (ichidan).",
+          "position": "Complément + を +食べる.",
+          "register": "Neutre.",
+          "synonyms": "召し上がる (forme très polie)"
+        },
+        "slang": {
+          "expression": "食う",
+          "meaning": "Bouffer, version masculine très familière.",
+          "warning": "Argot masculin, un peu rude."
+        }
+      },
+      {
+        "word": "飲む",
+        "phonetic": "nomu",
+        "translation": "Boire",
+        "examples": [
+          "毎朝水を飲みます。",
+          "何か飲みますか？"
+        ],
+        "grammar": {
+          "nature": "Verbe du 1er groupe (godan).",
+          "position": "Complément + を + 飲む.",
+          "register": "Neutre.",
+          "synonyms": "召し上がる (forme très polie)"
+        },
+        "slang": {
+          "expression": "飲みに行く",
+          "meaning": "Aller boire un verre (sortie sociale typique au Japon).",
+          "warning": "Expression culturelle courante."
+        }
+      },
+      {
+        "word": "寝る",
+        "phonetic": "neru",
+        "translation": "Dormir",
+        "examples": [
+          "寝る必要があります。",
+          "彼女は八時間寝ます。"
+        ],
+        "grammar": {
+          "nature": "Verbe du 2e groupe (ichidan).",
+          "position": "Sujet + 寝る.",
+          "register": "Neutre.",
+          "synonyms": "休む (se reposer)"
+        },
+        "slang": {
+          "expression": "寝落ち",
+          "meaning": "S'endormir sans faire exprès, argot internet.",
+          "warning": "Argot moderne, jeunes."
+        }
+      },
+      {
+        "word": "行く",
+        "phonetic": "iku",
+        "translation": "Aller",
+        "examples": [
+          "学校に行きます。",
+          "行きましょう！"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier (1er groupe particulier).",
+          "position": "Lieu + に/へ + 行く.",
+          "register": "Neutre.",
+          "synonyms": "参る (forme humble)"
+        },
+        "slang": {
+          "expression": "行くぞ",
+          "meaning": "On y va !, énergique et masculin.",
+          "warning": "Familier, ton masculin."
+        }
+      },
+      {
+        "word": "来る",
+        "phonetic": "kuru",
+        "translation": "Venir",
+        "examples": [
+          "ここに来て！",
+          "彼女はフランスから来ました。"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier.",
+          "position": "Lieu + に/から + 来る.",
+          "register": "Neutre.",
+          "synonyms": "いらっしゃる (forme très polie)"
+        },
+        "slang": {
+          "expression": "来た！",
+          "meaning": "Ça y est ! (arrivée attendue), expression familière.",
+          "warning": "Exclamatif, familier."
+        }
+      },
+      {
+        "word": "欲しい",
+        "phonetic": "hoshii",
+        "translation": "Vouloir (un objet)",
+        "examples": [
+          "コーヒーが欲しいです。",
+          "何が欲しいですか？"
+        ],
+        "grammar": {
+          "nature": "Adjectif en -i exprimant le désir (pour un objet, pas une action).",
+          "position": "Objet + が + 欲しい.",
+          "register": "Neutre.",
+          "synonyms": "たい (désir d'action, différent grammaticalement)"
+        },
+        "slang": {
+          "expression": "欲しいなー",
+          "meaning": "J'aimerais bien..., ton rêveur/familier.",
+          "warning": "Familier, expressif."
+        }
+      },
+      {
+        "word": "愛する",
+        "phonetic": "aisuru",
+        "translation": "Aimer / Amour",
+        "examples": [
+          "家族を愛しています。",
+          "愛は美しいです。"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier (suru-verbe) et nom (愛, ai).",
+          "position": "Complément + を + 愛する.",
+          "register": "Soutenu (peu utilisé à l'oral quotidien).",
+          "synonyms": "好き (aimer/apprécier, bien plus courant au quotidien)"
+        },
+        "slang": {
+          "expression": "好き",
+          "meaning": "Version bien plus courante et naturelle pour dire qu'on aime quelqu'un/quelque chose au quotidien.",
+          "warning": "愛する sonne dramatique/romanesque à l'oral courant."
+        }
+      },
+      {
+        "word": "見る",
+        "phonetic": "miru",
+        "translation": "Voir",
+        "examples": [
+          "鳥を見ます。",
+          "また後で会いましょう！"
+        ],
+        "grammar": {
+          "nature": "Verbe du 2e groupe (ichidan).",
+          "position": "Complément + を + 見る.",
+          "register": "Neutre.",
+          "synonyms": "拝見する (forme humble)"
+        },
+        "slang": {
+          "expression": "見て見て！",
+          "meaning": "Regarde regarde !, enfantin et familier.",
+          "warning": "Très familier, enthousiaste."
+        }
+      },
+      {
+        "word": "話す",
+        "phonetic": "hanasu",
+        "translation": "Parler",
+        "examples": [
+          "英語を話しますか？",
+          "彼女は三つの言語を話します。"
+        ],
+        "grammar": {
+          "nature": "Verbe du 1er groupe (godan).",
+          "position": "Complément + を + 話す.",
+          "register": "Neutre.",
+          "synonyms": "喋る (bavarder, familier)"
+        },
+        "slang": {
+          "expression": "喋る",
+          "meaning": "Bavarder, version plus décontractée.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "買う",
+        "phonetic": "kau",
+        "translation": "Acheter",
+        "examples": [
+          "車を買いたいです。",
+          "新しい靴を買いました。"
+        ],
+        "grammar": {
+          "nature": "Verbe du 1er groupe (godan).",
+          "position": "Complément + を + 買う.",
+          "register": "Neutre.",
+          "synonyms": "購入する (formel)"
+        },
+        "slang": {
+          "expression": "爆買い",
+          "meaning": "Acheter en masse/frénétiquement, argot moderne.",
+          "warning": "Argot médiatique récent."
+        }
+      },
+      {
+        "word": "大きい",
+        "phonetic": "ōkii",
+        "translation": "Grand",
+        "examples": [
+          "それは大きい家です。",
+          "それは大きい問題です。"
+        ],
+        "grammar": {
+          "nature": "Adjectif en -i.",
+          "position": "Avant un nom.",
+          "register": "Neutre.",
+          "synonyms": "巨大 (énorme, plus fort)"
+        },
+        "slang": {
+          "expression": "でかい",
+          "meaning": "Version très familière/masculine de 'grand'.",
+          "warning": "Familier, un peu rude."
+        }
+      }
+    ],
+    "beginner3": [],
+    "intermediate": []
   },
   "zh": {
     "beginner1": [
-      { "word": "你好", "phonetic": "nǐ hǎo", "translation": "Bonjour",
-        "examples": ["你好，你怎么样？", "她跟大家说你好。"],
-        "grammar": { "nature": "Salutation composée (toi + bon).", "position": "Début de conversation.", "register": "Neutre.", "synonyms": "您好 (formel, vouvoiement)" },
-        "slang": { "expression": "嗨", "meaning": "Salut emprunté à l'anglais \"hi\", très familier.", "warning": "Jeunes, informel." } },
-      { "word": "谢谢", "phonetic": "xièxie", "translation": "Merci",
-        "examples": ["谢谢你的帮助。", "非常谢谢你。"],
-        "grammar": { "nature": "Expression de remerciement, verbe redoublé.", "position": "Seule ou + 你 (toi).", "register": "Neutre.", "synonyms": "多谢 (plus insistant)" },
-        "slang": { "expression": "谢谢谢谢", "meaning": "Merci répété pour insister, chaleureux.", "warning": "Familier mais courant." } },
-      { "word": "是", "phonetic": "shì", "translation": "Oui / Être",
-        "examples": ["是的，我愿意去。", "你同意吗？是的。"],
-        "grammar": { "nature": "Verbe être / marqueur d'affirmation.", "position": "Réponse ou copule.", "register": "Neutre.", "synonyms": "对 (correct/exact)" },
-        "slang": { "expression": "嗯", "meaning": "Oui/acquiescement très décontracté à l'oral.", "warning": "Informel." } },
-      { "word": "不", "phonetic": "bù", "translation": "Non",
-        "examples": ["不，我明天不能去。", "她说不。"],
-        "grammar": { "nature": "Adverbe de négation.", "position": "Avant le verbe.", "register": "Neutre.", "synonyms": "不是 (négation de \"être\")" },
-        "slang": { "expression": "不要不要", "meaning": "Non répété pour insister, expressif.", "warning": "Familier, oral." } },
-      { "word": "请", "phonetic": "qǐng", "translation": "S'il te/vous plaît",
-        "examples": ["请帮我一下。", "请坐。"],
-        "grammar": { "nature": "Marqueur de politesse / \"prier de\".", "position": "Début de la demande, avant le verbe.", "register": "Neutre à formel.", "synonyms": "麻烦你 (plus formel, \"je te dérange\")" },
-        "slang": { "expression": "拜托", "meaning": "\"Je t'en prie / steuplaît\", plus insistant et familier.", "warning": "Familier." } },
-      { "word": "对不起", "phonetic": "duìbùqǐ", "translation": "Désolé",
-        "examples": ["对不起，我迟到了。", "对不起，我不是故意的。"],
-        "grammar": { "nature": "Expression figée d'excuse.", "position": "Seule, en début de phrase.", "register": "Neutre.", "synonyms": "不好意思 (plus léger, quotidien)" },
-        "slang": { "expression": "不好意思", "meaning": "Excuse plus légère, utilisée aussi pour déranger poliment.", "warning": "Très courant, pas vraiment argot." } },
-      { "word": "好", "phonetic": "hǎo", "translation": "Bon / Bien",
-        "examples": ["这是一个好主意。", "你好吗？我很好。"],
-        "grammar": { "nature": "Adjectif.", "position": "Avant un nom ou seul.", "register": "Neutre.", "synonyms": "不错 (pas mal), 棒 (super)" },
-        "slang": { "expression": "666", "meaning": "\"Super/génial\" en argot internet chinois (jeu de mots numérique).", "warning": "Argot internet, très informel." } },
-      { "word": "水", "phonetic": "shuǐ", "translation": "Eau",
-        "examples": ["请给我一杯水。", "我每天喝很多水。"],
-        "grammar": { "nature": "Nom commun.", "position": "Sujet ou complément.", "register": "Neutre.", "synonyms": "Aucun courant." },
-        "slang": { "expression": "水水", "meaning": "Diminutif affectueux, rare.", "warning": "Familier, peu courant." } },
-      { "word": "帮助", "phonetic": "bāngzhù", "translation": "Aide / Aider",
-        "examples": ["你能帮助我吗？", "救命！我迷路了。"],
-        "grammar": { "nature": "Nom et verbe.", "position": "Sujet + 帮助 + complément.", "register": "Neutre à urgent (救命 pour urgence).", "synonyms": "救命 (au secours, urgence)" },
-        "slang": { "expression": "帮个忙", "meaning": "\"Rends-moi service\", familier et courant.", "warning": "Informel." } },
-      { "word": "朋友", "phonetic": "péngyǒu", "translation": "Ami",
-        "examples": ["她是我最好的朋友。", "我在这里交了很多朋友。"],
-        "grammar": { "nature": "Nom commun.", "position": "Sujet ou complément.", "register": "Neutre.", "synonyms": "好友 (meilleur ami)" },
-        "slang": { "expression": "哥们", "meaning": "\"Pote/frère\", très familier entre hommes.", "warning": "Argot masculin informel." } }
+      {
+        "word": "你好",
+        "phonetic": "nǐ hǎo",
+        "translation": "Bonjour",
+        "examples": [
+          "你好，你怎么样？",
+          "她跟大家说你好。"
+        ],
+        "grammar": {
+          "nature": "Salutation composée (toi + bon).",
+          "position": "Début de conversation.",
+          "register": "Neutre.",
+          "synonyms": "您好 (formel, vouvoiement)"
+        },
+        "slang": {
+          "expression": "嗨",
+          "meaning": "Salut emprunté à l'anglais \"hi\", très familier.",
+          "warning": "Jeunes, informel."
+        }
+      },
+      {
+        "word": "谢谢",
+        "phonetic": "xièxie",
+        "translation": "Merci",
+        "examples": [
+          "谢谢你的帮助。",
+          "非常谢谢你。"
+        ],
+        "grammar": {
+          "nature": "Expression de remerciement, verbe redoublé.",
+          "position": "Seule ou + 你 (toi).",
+          "register": "Neutre.",
+          "synonyms": "多谢 (plus insistant)"
+        },
+        "slang": {
+          "expression": "谢谢谢谢",
+          "meaning": "Merci répété pour insister, chaleureux.",
+          "warning": "Familier mais courant."
+        }
+      },
+      {
+        "word": "是",
+        "phonetic": "shì",
+        "translation": "Oui / Être",
+        "examples": [
+          "是的，我愿意去。",
+          "你同意吗？是的。"
+        ],
+        "grammar": {
+          "nature": "Verbe être / marqueur d'affirmation.",
+          "position": "Réponse ou copule.",
+          "register": "Neutre.",
+          "synonyms": "对 (correct/exact)"
+        },
+        "slang": {
+          "expression": "嗯",
+          "meaning": "Oui/acquiescement très décontracté à l'oral.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "不",
+        "phonetic": "bù",
+        "translation": "Non",
+        "examples": [
+          "不，我明天不能去。",
+          "她说不。"
+        ],
+        "grammar": {
+          "nature": "Adverbe de négation.",
+          "position": "Avant le verbe.",
+          "register": "Neutre.",
+          "synonyms": "不是 (négation de \"être\")"
+        },
+        "slang": {
+          "expression": "不要不要",
+          "meaning": "Non répété pour insister, expressif.",
+          "warning": "Familier, oral."
+        }
+      },
+      {
+        "word": "请",
+        "phonetic": "qǐng",
+        "translation": "S'il te/vous plaît",
+        "examples": [
+          "请帮我一下。",
+          "请坐。"
+        ],
+        "grammar": {
+          "nature": "Marqueur de politesse / \"prier de\".",
+          "position": "Début de la demande, avant le verbe.",
+          "register": "Neutre à formel.",
+          "synonyms": "麻烦你 (plus formel, \"je te dérange\")"
+        },
+        "slang": {
+          "expression": "拜托",
+          "meaning": "\"Je t'en prie / steuplaît\", plus insistant et familier.",
+          "warning": "Familier."
+        }
+      },
+      {
+        "word": "对不起",
+        "phonetic": "duìbùqǐ",
+        "translation": "Désolé",
+        "examples": [
+          "对不起，我迟到了。",
+          "对不起，我不是故意的。"
+        ],
+        "grammar": {
+          "nature": "Expression figée d'excuse.",
+          "position": "Seule, en début de phrase.",
+          "register": "Neutre.",
+          "synonyms": "不好意思 (plus léger, quotidien)"
+        },
+        "slang": {
+          "expression": "不好意思",
+          "meaning": "Excuse plus légère, utilisée aussi pour déranger poliment.",
+          "warning": "Très courant, pas vraiment argot."
+        }
+      },
+      {
+        "word": "好",
+        "phonetic": "hǎo",
+        "translation": "Bon / Bien",
+        "examples": [
+          "这是一个好主意。",
+          "你好吗？我很好。"
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant un nom ou seul.",
+          "register": "Neutre.",
+          "synonyms": "不错 (pas mal), 棒 (super)"
+        },
+        "slang": {
+          "expression": "666",
+          "meaning": "\"Super/génial\" en argot internet chinois (jeu de mots numérique).",
+          "warning": "Argot internet, très informel."
+        }
+      },
+      {
+        "word": "水",
+        "phonetic": "shuǐ",
+        "translation": "Eau",
+        "examples": [
+          "请给我一杯水。",
+          "我每天喝很多水。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "水水",
+          "meaning": "Diminutif affectueux, rare.",
+          "warning": "Familier, peu courant."
+        }
+      },
+      {
+        "word": "帮助",
+        "phonetic": "bāngzhù",
+        "translation": "Aide / Aider",
+        "examples": [
+          "你能帮助我吗？",
+          "救命！我迷路了。"
+        ],
+        "grammar": {
+          "nature": "Nom et verbe.",
+          "position": "Sujet + 帮助 + complément.",
+          "register": "Neutre à urgent (救命 pour urgence).",
+          "synonyms": "救命 (au secours, urgence)"
+        },
+        "slang": {
+          "expression": "帮个忙",
+          "meaning": "\"Rends-moi service\", familier et courant.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "朋友",
+        "phonetic": "péngyǒu",
+        "translation": "Ami",
+        "examples": [
+          "她是我最好的朋友。",
+          "我在这里交了很多朋友。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "好友 (meilleur ami)"
+        },
+        "slang": {
+          "expression": "哥们",
+          "meaning": "\"Pote/frère\", très familier entre hommes.",
+          "warning": "Argot masculin informel."
+        }
+      }
     ],
-    "beginner2": [], "beginner3": [], "intermediate": []
+    "beginner2": [
+      {
+        "word": "一",
+        "phonetic": "yī",
+        "translation": "Un",
+        "examples": [
+          "我有一个苹果。",
+          "给我一分钟。"
+        ],
+        "grammar": {
+          "nature": "Chiffre.",
+          "position": "Avant un classificateur (一个, 一只...).",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "一下",
+          "meaning": "Un petit peu/un instant, très utilisé pour adoucir une demande.",
+          "warning": "Expression grammaticale courante, pas vraiment argot."
+        }
+      },
+      {
+        "word": "二",
+        "phonetic": "èr",
+        "translation": "Deux",
+        "examples": [
+          "我有两个兄弟。",
+          "两天后见。"
+        ],
+        "grammar": {
+          "nature": "Chiffre (两 liǎng utilisé devant un classificateur, pas 二).",
+          "position": "两 + classificateur + nom.",
+          "register": "Neutre.",
+          "synonyms": "两 (liǎng, forme utilisée en comptant des objets)"
+        },
+        "slang": {
+          "expression": "二百五",
+          "meaning": "Idiot/maladroit (expression figurée, littéralement '250').",
+          "warning": "Insulte légère, à utiliser avec précaution."
+        }
+      },
+      {
+        "word": "三",
+        "phonetic": "sān",
+        "translation": "Trois",
+        "examples": [
+          "有三只猫。",
+          "等三分钟。"
+        ],
+        "grammar": {
+          "nature": "Chiffre.",
+          "position": "Avant un classificateur.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "三心二意",
+          "meaning": "Indécis (expression figurée, littéralement '3 cœurs 2 pensées').",
+          "warning": "Expression idiomatique (chengyu)."
+        }
+      },
+      {
+        "word": "今天",
+        "phonetic": "jīntiān",
+        "translation": "Aujourd'hui",
+        "examples": [
+          "今天天气很好。",
+          "我今天有工作。"
+        ],
+        "grammar": {
+          "nature": "Nom/adverbe de temps.",
+          "position": "Début de phrase ou avant le verbe.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "现在",
+          "meaning": "Maintenant (pas exactement synonyme mais proche à l'usage).",
+          "warning": "Nuance temporelle différente."
+        }
+      },
+      {
+        "word": "明天",
+        "phonetic": "míngtiān",
+        "translation": "Demain",
+        "examples": [
+          "明天见！",
+          "明天是新的一天。"
+        ],
+        "grammar": {
+          "nature": "Nom/adverbe de temps.",
+          "position": "Début de phrase ou avant le verbe.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "明天见",
+          "meaning": "À demain, formule très courante.",
+          "warning": "Pas argot, usage standard."
+        }
+      },
+      {
+        "word": "昨天",
+        "phonetic": "zuótiān",
+        "translation": "Hier",
+        "examples": [
+          "我昨天见到她了。",
+          "昨天很开心。"
+        ],
+        "grammar": {
+          "nature": "Nom/adverbe de temps.",
+          "position": "Début de phrase ou avant le verbe.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "昨儿",
+          "meaning": "Version orale/familière de 'hier' (dialecte pékinois).",
+          "warning": "Régional (Pékin), familier."
+        }
+      },
+      {
+        "word": "妈妈",
+        "phonetic": "māma",
+        "translation": "Mère / Maman",
+        "examples": [
+          "我妈妈很善良。",
+          "她长得像妈妈。"
+        ],
+        "grammar": {
+          "nature": "Nom (redoublement affectueux).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à familier.",
+          "synonyms": "母亲 (mǔqīn, plus formel)"
+        },
+        "slang": {
+          "expression": "老妈",
+          "meaning": "Vieille maman, familier et affectueux.",
+          "warning": "Familier, ton décontracté."
+        }
+      },
+      {
+        "word": "爸爸",
+        "phonetic": "bàba",
+        "translation": "Père / Papa",
+        "examples": [
+          "我爸爸工作很努力。",
+          "他是一个好爸爸。"
+        ],
+        "grammar": {
+          "nature": "Nom (redoublement affectueux).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à familier.",
+          "synonyms": "父亲 (fùqīn, plus formel)"
+        },
+        "slang": {
+          "expression": "老爸",
+          "meaning": "Vieux papa, familier et affectueux.",
+          "warning": "Familier, ton décontracté."
+        }
+      },
+      {
+        "word": "哥哥",
+        "phonetic": "gēge",
+        "translation": "Frère aîné",
+        "examples": [
+          "我有一个哥哥。",
+          "他是我哥哥。"
+        ],
+        "grammar": {
+          "nature": "Nom (spécifique au frère aîné).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "弟弟 (dìdi, frère cadet, différent)"
+        },
+        "slang": {
+          "expression": "哥们儿",
+          "meaning": "Pote/frère (entre amis), très familier (dialecte nordiste).",
+          "warning": "Régional (nord de la Chine), masculin."
+        }
+      },
+      {
+        "word": "姐姐",
+        "phonetic": "jiějiě",
+        "translation": "Sœur aînée",
+        "examples": [
+          "我姐姐很有趣。",
+          "她是我姐姐。"
+        ],
+        "grammar": {
+          "nature": "Nom (spécifique à la sœur aînée).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "妹妹 (mèimei, sœur cadette, différent)"
+        },
+        "slang": {
+          "expression": "闺蜜",
+          "meaning": "Meilleure amie (pas littéralement 'sœur' mais utilisé similairement).",
+          "warning": "Ne désigne pas une vraie sœur, amitié féminine proche."
+        }
+      },
+      {
+        "word": "红色",
+        "phonetic": "hóngsè",
+        "translation": "Rouge",
+        "examples": [
+          "我喜欢红色的车。",
+          "她的裙子是红色的。"
+        ],
+        "grammar": {
+          "nature": "Nom composé (couleur + 色).",
+          "position": "Avant un nom ou après 是.",
+          "register": "Neutre.",
+          "synonyms": "红 (forme courte)"
+        },
+        "slang": {
+          "expression": "红人",
+          "meaning": "Personne populaire/en vogue (littéralement 'personne rouge').",
+          "warning": "Expression figurée moderne."
+        }
+      },
+      {
+        "word": "蓝色",
+        "phonetic": "lánsè",
+        "translation": "Bleu",
+        "examples": [
+          "天空是蓝色的。",
+          "我买了一件蓝色衬衫。"
+        ],
+        "grammar": {
+          "nature": "Nom composé (couleur + 色).",
+          "position": "Avant un nom ou après 是.",
+          "register": "Neutre.",
+          "synonyms": "蓝 (forme courte)"
+        },
+        "slang": {
+          "expression": "蓝瘦香菇",
+          "meaning": "Jeu de mots internet pour '难受想哭' (triste, envie de pleurer).",
+          "warning": "Argot internet très récent et régional."
+        }
+      },
+      {
+        "word": "黑色",
+        "phonetic": "hēisè",
+        "translation": "Noir",
+        "examples": [
+          "他穿着黑色外套。",
+          "猫是黑色的。"
+        ],
+        "grammar": {
+          "nature": "Nom composé (couleur + 色).",
+          "position": "Avant un nom ou après 是.",
+          "register": "Neutre.",
+          "synonyms": "黑 (forme courte)"
+        },
+        "slang": {
+          "expression": "黑心",
+          "meaning": "Malveillant/sans scrupules (littéralement 'cœur noir').",
+          "warning": "Expression figurée négative."
+        }
+      },
+      {
+        "word": "白色",
+        "phonetic": "báisè",
+        "translation": "Blanc",
+        "examples": [
+          "她穿着白色的裙子。",
+          "墙是白色的。"
+        ],
+        "grammar": {
+          "nature": "Nom composé (couleur + 色).",
+          "position": "Avant un nom ou après 是.",
+          "register": "Neutre.",
+          "synonyms": "白 (forme courte)"
+        },
+        "slang": {
+          "expression": "白手起家",
+          "meaning": "Partir de rien (littéralement 'mains blanches').",
+          "warning": "Expression idiomatique (chengyu)."
+        }
+      },
+      {
+        "word": "什么",
+        "phonetic": "shénme",
+        "translation": "Quoi / Que",
+        "examples": [
+          "这是什么？",
+          "现在几点？"
+        ],
+        "grammar": {
+          "nature": "Pronom interrogatif.",
+          "position": "Remplace directement l'élément demandé, pas de déplacement.",
+          "register": "Neutre.",
+          "synonyms": "啥 (familier, dialecte nordiste)"
+        },
+        "slang": {
+          "expression": "啥",
+          "meaning": "Version très familière/orale de 什么 (nord de la Chine).",
+          "warning": "Régional, familier."
+        }
+      },
+      {
+        "word": "哪里",
+        "phonetic": "nǎlǐ",
+        "translation": "Où",
+        "examples": [
+          "你住在哪里？",
+          "车站在哪里？"
+        ],
+        "grammar": {
+          "nature": "Pronom interrogatif de lieu.",
+          "position": "Remplace directement le lieu.",
+          "register": "Neutre.",
+          "synonyms": "哪儿 (nǎr, variante nordiste)"
+        },
+        "slang": {
+          "expression": "哪儿",
+          "meaning": "Variante familière/pékinoise de 哪里.",
+          "warning": "Régional (nord), familier."
+        }
+      },
+      {
+        "word": "什么时候",
+        "phonetic": "shénme shíhou",
+        "translation": "Quand",
+        "examples": [
+          "会议是什么时候？",
+          "你什么时候来？"
+        ],
+        "grammar": {
+          "nature": "Locution interrogative de temps.",
+          "position": "Remplace directement le moment.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "啥时候",
+          "meaning": "Version très familière (nord de la Chine).",
+          "warning": "Régional, familier."
+        }
+      },
+      {
+        "word": "为什么",
+        "phonetic": "wèishénme",
+        "translation": "Pourquoi",
+        "examples": [
+          "你为什么迟到？",
+          "为什么不？"
+        ],
+        "grammar": {
+          "nature": "Locution interrogative.",
+          "position": "Début de phrase ou avant le verbe.",
+          "register": "Neutre.",
+          "synonyms": "Aucun courant."
+        },
+        "slang": {
+          "expression": "为啥",
+          "meaning": "Version familière (nord de la Chine).",
+          "warning": "Régional, familier."
+        }
+      },
+      {
+        "word": "怎么",
+        "phonetic": "zěnme",
+        "translation": "Comment",
+        "examples": [
+          "你好吗？",
+          "这个怎么用？"
+        ],
+        "grammar": {
+          "nature": "Adverbe interrogatif.",
+          "position": "Avant le verbe.",
+          "register": "Neutre.",
+          "synonyms": "如何 (plus formel/écrit)"
+        },
+        "slang": {
+          "expression": "咋",
+          "meaning": "Version très familière/dialectale de 怎么.",
+          "warning": "Très régional (nord), familier."
+        }
+      },
+      {
+        "word": "吃",
+        "phonetic": "chī",
+        "translation": "Manger",
+        "examples": [
+          "我每天吃早饭。",
+          "我们吃饭吧！"
+        ],
+        "grammar": {
+          "nature": "Verbe.",
+          "position": "Sujet + 吃 + complément.",
+          "register": "Neutre.",
+          "synonyms": "用餐 (formel)"
+        },
+        "slang": {
+          "expression": "吃货",
+          "meaning": "Gourmand/amateur de bonne bouffe, très courant et affectueux.",
+          "warning": "Familier mais positif, pas insultant."
+        }
+      },
+      {
+        "word": "喝",
+        "phonetic": "hē",
+        "translation": "Boire",
+        "examples": [
+          "我每天早上喝水。",
+          "你想喝点什么？"
+        ],
+        "grammar": {
+          "nature": "Verbe.",
+          "position": "Sujet + 喝 + complément.",
+          "register": "Neutre.",
+          "synonyms": "饮 (plus littéraire)"
+        },
+        "slang": {
+          "expression": "干杯",
+          "meaning": "Cul sec/santé (pour trinquer), expression sociale courante.",
+          "warning": "Contexte festif."
+        }
+      },
+      {
+        "word": "睡觉",
+        "phonetic": "shuìjiào",
+        "translation": "Dormir",
+        "examples": [
+          "我需要睡觉。",
+          "她每天睡八个小时。"
+        ],
+        "grammar": {
+          "nature": "Verbe composé (verbe-objet).",
+          "position": "Sujet + 睡觉 (ne prend pas de complément direct).",
+          "register": "Neutre.",
+          "synonyms": "休息 (se reposer)"
+        },
+        "slang": {
+          "expression": "睡懒觉",
+          "meaning": "Faire la grasse matinée, expression courante.",
+          "warning": "Familier léger, pas argot fort."
+        }
+      },
+      {
+        "word": "去",
+        "phonetic": "qù",
+        "translation": "Aller",
+        "examples": [
+          "我去学校。",
+          "我们走吧！"
+        ],
+        "grammar": {
+          "nature": "Verbe.",
+          "position": "Sujet + 去 + lieu.",
+          "register": "Neutre.",
+          "synonyms": "前往 (formel)"
+        },
+        "slang": {
+          "expression": "走",
+          "meaning": "Partir/y aller, souvent utilisé pour dire 'allons-y'.",
+          "warning": "Très courant, familier."
+        }
+      },
+      {
+        "word": "来",
+        "phonetic": "lái",
+        "translation": "Venir",
+        "examples": [
+          "快来这里！",
+          "她来自法国。"
+        ],
+        "grammar": {
+          "nature": "Verbe.",
+          "position": "Sujet + 来 + lieu/complément.",
+          "register": "Neutre.",
+          "synonyms": "抵达 (arriver, formel)"
+        },
+        "slang": {
+          "expression": "来吧",
+          "meaning": "Viens/allez, invitation familière.",
+          "warning": "Très courant, familier."
+        }
+      },
+      {
+        "word": "想要",
+        "phonetic": "xiǎngyào",
+        "translation": "Vouloir",
+        "examples": [
+          "我想要一杯咖啡。",
+          "你想要什么？"
+        ],
+        "grammar": {
+          "nature": "Verbe composé (想 + 要).",
+          "position": "Sujet + 想要 + nom/verbe.",
+          "register": "Neutre.",
+          "synonyms": "要 (forme plus directe/courte)"
+        },
+        "slang": {
+          "expression": "想吃了",
+          "meaning": "Envie de manger (familier, désir spontané).",
+          "warning": "Expression du quotidien."
+        }
+      },
+      {
+        "word": "爱",
+        "phonetic": "ài",
+        "translation": "Aimer / Amour",
+        "examples": [
+          "我爱我的家人。",
+          "爱是美丽的。"
+        ],
+        "grammar": {
+          "nature": "Verbe et nom.",
+          "position": "Sujet + 爱 + complément.",
+          "register": "Neutre à soutenu (fort, utilisé avec précaution entre amis).",
+          "synonyms": "喜欢 (aimer bien/apprécier, bien plus léger et courant)"
+        },
+        "slang": {
+          "expression": "喜欢",
+          "meaning": "Version bien plus légère et courante pour dire qu'on apprécie quelqu'un/quelque chose.",
+          "warning": "爱 est fort et engageant, réservé aux relations proches."
+        }
+      },
+      {
+        "word": "看",
+        "phonetic": "kàn",
+        "translation": "Voir / Regarder",
+        "examples": [
+          "我看到一只鸟。",
+          "回头见！"
+        ],
+        "grammar": {
+          "nature": "Verbe.",
+          "position": "Sujet + 看 + complément.",
+          "register": "Neutre.",
+          "synonyms": "瞧 (regarder, familier dialectal)"
+        },
+        "slang": {
+          "expression": "瞧",
+          "meaning": "Version familière/dialectale de 看.",
+          "warning": "Régional (nord), familier."
+        }
+      },
+      {
+        "word": "说",
+        "phonetic": "shuō",
+        "translation": "Parler / Dire",
+        "examples": [
+          "你说英语吗？",
+          "她说三种语言。"
+        ],
+        "grammar": {
+          "nature": "Verbe.",
+          "position": "Sujet + 说 + complément.",
+          "register": "Neutre.",
+          "synonyms": "讲 (dire/raconter, très proche)"
+        },
+        "slang": {
+          "expression": "唠嗑",
+          "meaning": "Papoter/bavarder, très familier (dialecte du nord-est).",
+          "warning": "Très régional, familier."
+        }
+      },
+      {
+        "word": "买",
+        "phonetic": "mǎi",
+        "translation": "Acheter",
+        "examples": [
+          "我想买一辆车。",
+          "她买了新鞋。"
+        ],
+        "grammar": {
+          "nature": "Verbe.",
+          "position": "Sujet + 买 + complément.",
+          "register": "Neutre.",
+          "synonyms": "购买 (formel)"
+        },
+        "slang": {
+          "expression": "剁手",
+          "meaning": "Craquer/dépenser sans compter en ligne (littéralement 'couper sa main'), argot internet.",
+          "warning": "Argot internet moderne, humoristique."
+        }
+      },
+      {
+        "word": "大",
+        "phonetic": "dà",
+        "translation": "Grand",
+        "examples": [
+          "这是一个大房子。",
+          "这是一个大问题。"
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant un nom.",
+          "register": "Neutre.",
+          "synonyms": "巨大 (énorme, plus fort)"
+        },
+        "slang": {
+          "expression": "大佬",
+          "meaning": "Grand chef/expert respecté, argot internet.",
+          "warning": "Argot internet, registre spécifique."
+        }
+      }
+    ],
+    "beginner3": [],
+    "intermediate": []
   }
 }

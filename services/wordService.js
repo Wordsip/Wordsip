@@ -121,10 +121,47 @@ async function deleteWord(language, subLevel, index) {
   );
 }
 
+// Ordre des sous-niveaux du plus avancé au plus simple, pour toujours choisir
+// le mot le plus intéressant disponible pour une langue donnée (utilisé pour
+// le tweet et la vidéo publics, qui ne sont liés à aucun utilisateur précis).
+const SUBLEVEL_PRIORITY = [
+  'intermediate5', 'intermediate4', 'intermediate3', 'intermediate2', 'intermediate1', 'intermediate',
+  'beginner5', 'beginner4', 'beginner3', 'beginner2', 'beginner1', 'beginner',
+];
+
+// Choisit le mot "vedette" du jour pour une langue donnée : prend le
+// sous-niveau le plus avancé qui a déjà du contenu (pour éviter de tomber
+// systématiquement sur les mots les plus basiques comme "Thank you"), et
+// fait varier le mot choisi chaque jour dans ce sous-niveau.
+async function getFeaturedWordOfDay(language) {
+  const languageWords = await getWordsForLanguage(language);
+  if (!languageWords) return null;
+
+  let bestSubLevel = null;
+  let bestWords = null;
+  for (const level of SUBLEVEL_PRIORITY) {
+    const words = languageWords[level];
+    if (Array.isArray(words) && words.length > 0) {
+      bestSubLevel = level;
+      bestWords = words;
+      break;
+    }
+  }
+  if (!bestWords) return null;
+
+  const dayOfYear = Math.floor(
+    (new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000
+  );
+  const index = dayOfYear % bestWords.length;
+
+  return { ...bestWords[index], subLevel: bestSubLevel };
+}
+
 module.exports = {
   getAllWords,
   getWordsForLanguage,
   getWordForUser,
+  getFeaturedWordOfDay,
   getSubLevel,
   addWord,
   updateWord,
