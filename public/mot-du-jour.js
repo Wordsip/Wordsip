@@ -76,6 +76,8 @@ function renderWord() {
     }
   }
 
+  loadExpressionOfWeek();
+
   document.getElementById('word-main').textContent = currentWord.word;
   document.getElementById('word-phonetic').textContent = currentWord.phonetic || '';
   document.getElementById('word-translation').textContent = currentWord.translation;
@@ -245,5 +247,24 @@ document.getElementById('check-btn')?.addEventListener('click', async () => {
 });
 
 document.getElementById('reveal-btn')?.addEventListener('input', () => {});
+
+async function loadExpressionOfWeek() {
+  const lang = currentUser.language || params.get('lang') || 'en';
+  try {
+    const res = await fetch(`/api/expression-of-week?language=${lang}`);
+    if (!res.ok) return;
+    const expr = await res.json();
+
+    const banner = document.getElementById('expression-banner');
+    banner.style.display = 'block';
+    banner.innerHTML = `
+      <p style="font-size:11px;font-weight:700;color:#8a6d00;margin-bottom:6px;">💡 EXPRESSION DE LA SEMAINE</p>
+      <p style="font-weight:600;color:#17252a;">"${expr.expression}"</p>
+      <p style="font-size:13px;color:#666;margin-top:4px;">🇫🇷 ${expr.meaning}</p>
+    `;
+  } catch (err) {
+    // Silencieux : l'expression est un bonus, pas bloquant si ça échoue
+  }
+}
 
 loadWord();

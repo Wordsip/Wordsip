@@ -8,6 +8,7 @@ const scheduledTasks = require('../services/scheduledTasks');
 const { checkEmailDomain } = require('../services/emailDomainCheck');
 const blacklistService = require('../services/blacklistService');
 const ttsService = require('../services/ttsService');
+const expressionService = require('../services/expressionService');
 
 // Page d'accueil
 router.get('/', (req, res) => {
@@ -49,6 +50,18 @@ router.get('/api/latest-video', (req, res) => {
     return res.status(404).json({ error: 'Aucune vidéo générée pour le moment.' });
   }
   res.json(JSON.parse(fs.readFileSync(filePath, 'utf-8')));
+});
+
+// Expression de la semaine, pour la langue apprise par l'utilisateur connecté
+router.get('/api/expression-of-week', async (req, res) => {
+  try {
+    const language = req.query.language || 'en';
+    const expression = await expressionService.getExpressionOfWeek(language);
+    if (!expression) return res.status(404).json({ error: 'Aucune expression disponible pour cette langue.' });
+    res.json(expression);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // Connexion (retrouver son compte existant par email, sans mot de passe)

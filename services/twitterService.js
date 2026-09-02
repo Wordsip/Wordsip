@@ -65,4 +65,78 @@ async function postDailyTweet(wordEntry, languageLabel) {
   }
 }
 
-module.exports = { postDailyTweet, composeTweetText };
+function composeExpressionTweetText(expressionEntry, languageLabel) {
+  const hashtag = `#Learn${languageLabel.replace(/\s/g, '')}`;
+  const siteUrl = process.env.SITE_URL || 'https://wordsip.onrender.com';
+
+  let text = `💡 Expression de la semaine WordSip :\n\n"${expressionEntry.expression}"`;
+  if (expressionEntry.phonetic) text += ` ${expressionEntry.phonetic}`;
+  text += `\n🇫🇷 Sens : ${expressionEntry.meaning}`;
+  if (expressionEntry.literalMeaning) text += `\n(Littéralement : ${expressionEntry.literalMeaning})`;
+  text += `\n\n${siteUrl}`;
+  text += `\n${hashtag} #ExpressionOfTheWeek`;
+
+  if (text.length > 280) {
+    text = text.slice(0, 277) + '...';
+  }
+
+  return text;
+}
+
+async function postExpressionTweet(expressionEntry, languageLabel) {
+  const client = getClient();
+  const text = composeExpressionTweetText(expressionEntry, languageLabel);
+
+  if (!client) {
+    console.log('[SIMULATION] Clés Twitter non configurées, tweet non publié.');
+    return { simulated: true, text };
+  }
+
+  try {
+    const result = await client.v2.tweet(text);
+    console.log('Tweet expression publié avec succès :', result.data.id);
+    return { simulated: false, text, tweetId: result.data.id };
+  } catch (error) {
+    console.error('Erreur lors de la publication du tweet expression :', error.message);
+    return { simulated: false, error: error.message, text };
+  }
+}
+
+module.exports = { postDailyTweet, composeTweetText, postExpressionTweet, composeExpressionTweetText, postJokeTweet, composeJokeTweetText };
+
+function composeJokeTweetText(jokeEntry, languageLabel) {
+  const hashtag = `#Learn${languageLabel.replace(/\s/g, '')}`;
+  const siteUrl = process.env.SITE_URL || 'https://wordsip.onrender.com';
+
+  let text = `😄 La blague du dimanche WordSip :\n\n${jokeEntry.joke}`;
+  if (jokeEntry.phonetic) text += ` (${jokeEntry.phonetic})`;
+  if (jokeEntry.punchline) text += `\n${jokeEntry.punchline}`;
+  text += `\n\n🇫🇷 ${jokeEntry.translation}`;
+  text += `\n\n${siteUrl}`;
+  text += `\n${hashtag} #JokeOfTheWeek`;
+
+  if (text.length > 280) {
+    text = text.slice(0, 277) + '...';
+  }
+
+  return text;
+}
+
+async function postJokeTweet(jokeEntry, languageLabel) {
+  const client = getClient();
+  const text = composeJokeTweetText(jokeEntry, languageLabel);
+
+  if (!client) {
+    console.log('[SIMULATION] Clés Twitter non configurées, tweet non publié.');
+    return { simulated: true, text };
+  }
+
+  try {
+    const result = await client.v2.tweet(text);
+    console.log('Tweet blague publié avec succès :', result.data.id);
+    return { simulated: false, text, tweetId: result.data.id };
+  } catch (error) {
+    console.error('Erreur lors de la publication du tweet blague :', error.message);
+    return { simulated: false, error: error.message, text };
+  }
+}

@@ -8,6 +8,8 @@ const emailService = require('./emailService');
 const twitterService = require('./twitterService');
 const dialogueService = require('./dialogueService');
 const videoService = require('./videoService');
+const expressionService = require('./expressionService');
+const jokeService = require('./jokeService');
 const fs = require('fs');
 const path = require('path');
 
@@ -70,14 +72,40 @@ async function checkAndSendDueEmails() {
   return { sent: usersToNotify.length, currentTime, currentDay };
 }
 
+// Programmation hebdomadaire du tweet, moins fréquente mais plus ciblée :
+// lundi/mardi/jeudi/vendredi = mot, mercredi = expression, dimanche = blague,
+// samedi = pause (aucune publication).
 async function postDailyTweetTask() {
   const { code, label } = getFeaturedLanguageOfDay();
+  const day = getCurrentDayKey();
+
+  if (day === 'sat') {
+    return { posted: false, reason: 'Samedi : jour de pause, pas de publication.' };
+  }
+
+  if (day === 'wed') {
+    const expression = await expressionService.getExpressionOfWeek(code);
+    if (expression) {
+      const tweetResult = await twitterService.postExpressionTweet(expression, label);
+      return { posted: !tweetResult.simulated && !tweetResult.error, language: code, type: 'expression', ...tweetResult };
+    }
+  }
+
+  if (day === 'sun') {
+    const joke = await jokeService.getJokeOfWeek(code);
+    if (joke) {
+      const tweetResult = await twitterService.postJokeTweet(joke, label);
+      return { posted: !tweetResult.simulated && !tweetResult.error, language: code, type: 'joke', ...tweetResult };
+    }
+  }
+
+  // Lundi, mardi, jeudi, vendredi (et repli si expression/blague indisponible)
   const featuredWord = await wordService.getFeaturedWordOfDay(code);
 
   if (!featuredWord) return { posted: false, reason: `Aucun mot disponible pour ${label}.` };
 
   const tweetResult = await twitterService.postDailyTweet(featuredWord, label, code);
-  return { posted: !tweetResult.simulated && !tweetResult.error, language: code, ...tweetResult };
+  return { posted: !tweetResult.simulated && !tweetResult.error, language: code, type: 'word', ...tweetResult };
 }
 
 async function generateWeeklyVideoTask() {

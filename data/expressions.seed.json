@@ -1,0 +1,37 @@
+{
+  "en": [
+    { "expression": "It's raining cats and dogs", "phonetic": "/ɪts ˈreɪnɪŋ kæts ənd dɒɡz/", "literalMeaning": "Il pleut des chats et des chiens", "meaning": "Il pleut très fort — équivalent de \"il pleut des cordes\".", "example": "Take an umbrella, it's raining cats and dogs outside!", "register": "Familier, très courant." },
+    { "expression": "Break a leg", "phonetic": "/breɪk ə lɛɡ/", "literalMeaning": "Casse-toi une jambe", "meaning": "Bonne chance ! — utilisé surtout avant une performance (spectacle, examen, entretien).", "example": "You have your interview today? Break a leg!", "register": "Familier, encourageant." },
+    { "expression": "It's not rocket science", "phonetic": "/ɪts nɒt ˈrɒkɪt ˈsaɪəns/", "literalMeaning": "Ce n'est pas de la science des fusées", "meaning": "Ce n'est pas compliqué — équivalent de \"c'est pas sorcier\".", "example": "Come on, assembling this shelf isn't rocket science.", "register": "Familier, un peu moqueur." },
+    { "expression": "Piece of cake", "phonetic": "/piːs əv keɪk/", "literalMeaning": "Un morceau de gâteau", "meaning": "Très facile — équivalent de \"c'est du gâteau\".", "example": "Don't worry, the test was a piece of cake.", "register": "Familier, courant." },
+    { "expression": "Under the weather", "phonetic": "/ˈʌndər ðə ˈwɛðər/", "literalMeaning": "Sous le temps", "meaning": "Ne pas se sentir bien, légèrement malade.", "example": "I'm feeling a bit under the weather today.", "register": "Neutre à familier." }
+  ],
+  "es": [
+    { "expression": "Estar en las nubes", "phonetic": "/esˈtaɾ en las ˈnuβes/", "literalMeaning": "Être dans les nuages", "meaning": "Être distrait, dans la lune.", "example": "¡Deja de estar en las nubes y escúchame!", "register": "Familier, courant." },
+    { "expression": "Costar un ojo de la cara", "phonetic": "/kosˈtaɾ un ˈoxo de la ˈkaɾa/", "literalMeaning": "Coûter un œil du visage", "meaning": "Coûter très cher — équivalent de \"coûter les yeux de la tête\".", "example": "Ese coche me costó un ojo de la cara.", "register": "Familier, très courant." },
+    { "expression": "Ser pan comido", "phonetic": "/seɾ pan koˈmiðo/", "literalMeaning": "Être du pain mangé", "meaning": "Être très facile — équivalent de \"être du gâteau\".", "example": "El examen fue pan comido.", "register": "Familier, courant." },
+    { "expression": "Meter la pata", "phonetic": "/meˈteɾ la ˈpata/", "literalMeaning": "Mettre la patte", "meaning": "Faire une gaffe, se tromper maladroitement.", "example": "Metí la pata al decir eso delante de todos.", "register": "Familier, très courant." },
+    { "expression": "No hay mal que por bien no venga", "phonetic": "/no ai mal ke poɾ bjen no ˈβeŋɡa/", "literalMeaning": "Il n'y a pas de mal dont il ne vienne du bien", "meaning": "À quelque chose malheur est bon.", "example": "Perdí el tren, pero no hay mal que por bien no venga: conocí a alguien interesante.", "register": "Neutre, proverbe courant." }
+  ],
+  "it": [
+    { "expression": "In bocca al lupo", "phonetic": "/in ˈbokka al ˈlupo/", "literalMeaning": "Dans la bouche du loup", "meaning": "Bonne chance ! (la réponse traditionnelle est \"crepi\" — que le loup meure).", "example": "Hai l'esame domani? In bocca al lupo!", "register": "Familier, très courant, superstition théâtrale." },
+    { "expression": "Costare un occhio della testa", "phonetic": "/kosˈtaːre un ˈɔkkjo della ˈtesta/", "literalMeaning": "Coûter un œil de la tête", "meaning": "Coûter très cher.", "example": "Quella borsa mi è costata un occhio della testa.", "register": "Familier, très courant." },
+    { "expression": "Prendere due piccioni con una fava", "phonetic": "/ˈprɛndere ˈdue pitˈtʃoni kon ˈuna ˈfava/", "literalMeaning": "Prendre deux pigeons avec une fève", "meaning": "Faire d'une pierre deux coups.", "example": "Andando al supermercato ho preso due piccioni con una fava.", "register": "Neutre à familier, très imagé." },
+    { "expression": "Avere le mani in pasta", "phonetic": "/aˈveːre le ˈmani in ˈpasta/", "literalMeaning": "Avoir les mains dans la pâte", "meaning": "Être impliqué dans une affaire, avoir de l'influence.", "example": "Lui ha le mani in pasta in molti settori.", "register": "Neutre à familier." },
+    { "expression": "Non è tutto oro quello che luccica", "phonetic": "/non ɛ ˈtutto ˈɔro ˈkwello ke ˈluttʃika/", "literalMeaning": "Tout ce qui brille n'est pas or", "meaning": "Les apparences sont trompeuses.", "example": "Quel lavoro sembrava perfetto, ma non è tutto oro quello che luccica.", "register": "Neutre, proverbe courant." }
+  ],
+  "ja": [
+    { "expression": "猫の手も借りたい", "phonetic": "neko no te mo karitai", "literalMeaning": "Vouloir emprunter même la patte d'un chat", "meaning": "Être débordé, avoir besoin d'aide même minime.", "example": "今日は忙しくて猫の手も借りたいくらいです。", "register": "Courant, imagé." },
+    { "expression": "猿も木から落ちる", "phonetic": "saru mo ki kara ochiru", "literalMeaning": "Même les singes tombent des arbres", "meaning": "L'erreur est humaine, même les experts se trompent.", "example": "彼でも失敗した。猿も木から落ちるね。", "register": "Courant, proverbe." },
+    { "expression": "石の上にも三年", "phonetic": "ishi no ue nimo san-nen", "literalMeaning": "Trois ans assis sur une pierre", "meaning": "La patience et la persévérance finissent par payer.", "example": "諦めないで、石の上にも三年だよ。", "register": "Neutre, proverbe encourageant." },
+    { "expression": "猫をかぶる", "phonetic": "neko wo kaburu", "literalMeaning": "Porter un chat sur la tête", "meaning": "Faire semblant d'être sage/innocent alors qu'on ne l'est pas.", "example": "彼女は猫をかぶっているだけだよ。", "register": "Familier, imagé." },
+    { "expression": "七転び八起き", "phonetic": "nana korobi ya oki", "literalMeaning": "Tomber sept fois, se relever huit", "meaning": "Ne jamais abandonner malgré les échecs.", "example": "七転び八起きの精神で頑張ります。", "register": "Neutre à soutenu, très connu." }
+  ],
+  "zh": [
+    { "expression": "马马虎虎", "phonetic": "mǎmǎhūhū", "literalMeaning": "Cheval cheval tigre tigre", "meaning": "Comme ci comme ça, moyen — ou faire les choses à la va-vite.", "example": "你今天怎么样？马马虎虎。", "register": "Très familier et courant." },
+    { "expression": "画蛇添足", "phonetic": "huàshé tiānzú", "literalMeaning": "Dessiner un serpent et lui ajouter des pattes", "meaning": "En faire trop, gâcher quelque chose de parfait en voulant l'améliorer.", "example": "别再改了，你这是画蛇添足。", "register": "Soutenu, expression classique (chengyu)." },
+    { "expression": "对牛弹琴", "phonetic": "duì niú tán qín", "literalMeaning": "Jouer du luth à une vache", "meaning": "Parler à quelqu'un qui ne peut pas comprendre — équivalent de \"parler à un mur\".", "example": "跟他解释这些没有用，简直是对牛弹琴。", "register": "Neutre à familier, expression classique." },
+    { "expression": "入乡随俗", "phonetic": "rùxiāng suísú", "literalMeaning": "Entrer au village, suivre les coutumes", "meaning": "À Rome, fais comme les Romains.", "example": "在日本，入乡随俗，要脱鞋进屋。", "register": "Neutre, expression classique très utilisée." },
+    { "expression": "说曹操，曹操到", "phonetic": "shuō CáoCāo, CáoCāo dào", "literalMeaning": "On parle de Cao Cao, Cao Cao arrive", "meaning": "Quand on parle du loup, on en voit la queue.", "example": "我们正说你呢，说曹操，曹操到！", "register": "Familier, très imagé et courant." }
+  ]
+}

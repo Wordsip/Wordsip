@@ -1,0 +1,37 @@
+{
+  "en": [
+    { "joke": "Why don't scientists trust atoms?", "punchline": "Because they make up everything!", "translation": "Pourquoi les scientifiques ne font pas confiance aux atomes ? — Parce qu'ils composent (inventent) tout !", "explanation": "Jeu de mots sur \"make up\" qui signifie à la fois \"composer/constituer\" et \"inventer\"." },
+    { "joke": "What do you call cheese that isn't yours?", "punchline": "Nacho cheese!", "translation": "Comment appelle-t-on un fromage qui n'est pas à toi ? — Nacho cheese !", "explanation": "Jeu de mots : \"Nacho\" se prononce comme \"not your\" (pas ton)." },
+    { "joke": "I used to be a banker,", "punchline": "but I lost interest.", "translation": "J'étais banquier avant, mais j'ai perdu tout intérêt.", "explanation": "Double sens de \"interest\" : intérêt (émotion) et intérêts (finance)." },
+    { "joke": "Why did the scarecrow win an award?", "punchline": "Because he was outstanding in his field!", "translation": "Pourquoi l'épouvantail a-t-il gagné un prix ? — Parce qu'il excellait dans son domaine !", "explanation": "\"Outstanding in his field\" veut dire à la fois \"excellent dans son domaine\" et \"debout dans son champ\"." },
+    { "joke": "I told my computer I needed a break,", "punchline": "and now it won't stop sending me vacation ads.", "translation": "J'ai dit à mon ordi que j'avais besoin d'une pause, maintenant il n'arrête pas de m'envoyer des pubs de vacances.", "explanation": "Humour absurde sur l'interprétation littérale d'une machine." }
+  ],
+  "es": [
+    { "joke": "¿Qué le dice un pez a otro pez?", "punchline": "¡Nada!", "translation": "Que dit un poisson à un autre poisson ? — Rien ! (Nada = rien / il nage)", "explanation": "\"Nada\" veut dire à la fois \"rien\" et \"il nage\" (du verbe nadar)." },
+    { "joke": "¿Cómo se despiden los químicos?", "punchline": "¡Ácido un placer!", "translation": "Comment les chimistes se disent-ils au revoir ? — \"Ácido un placer\" !", "explanation": "\"Ácido\" (acide) se prononce comme \"ha sido\" (ça a été), formant \"ça a été un plaisir\"." },
+    { "joke": "¿Qué hace una abeja en el gimnasio?", "punchline": "¡Zumba!", "translation": "Que fait une abeille à la salle de sport ? — Zumba !", "explanation": "\"Zumba\" veut dire à la fois \"elle bourdonne\" et le nom du cours de danse fitness." },
+    { "joke": "¿Por qué el libro de matemáticas está triste?", "punchline": "Porque tiene muchos problemas.", "translation": "Pourquoi le livre de maths est-il triste ? — Parce qu'il a beaucoup de problèmes.", "explanation": "Double sens de \"problemas\" : exercices de maths et soucis personnels." },
+    { "joke": "¿Qué le dijo un techo a otro techo?", "punchline": "¡Techo de menos!", "translation": "Que dit un toit à un autre toit ? — \"Techo de menos\" !", "explanation": "\"Techo\" (toit) sonne comme \"te echo\" (tu me manques), formant \"tu me manques\"." }
+  ],
+  "it": [
+    { "joke": "Perché i pesci non pagano le tasse?", "punchline": "Perché nuotano in acque internazionali!", "translation": "Pourquoi les poissons ne paient pas d'impôts ? — Parce qu'ils nagent en eaux internationales !", "explanation": "Jeu sur le sens propre et figuré des \"eaux internationales\"." },
+    { "joke": "Cosa dice un muro a un altro muro?", "punchline": "Ci vediamo all'angolo!", "translation": "Que dit un mur à un autre mur ? — On se voit au coin (de la rue) !", "explanation": "Humour simple et visuel, très classique." },
+    { "joke": "Perché il libro di matematica è triste?", "punchline": "Perché ha troppi problemi.", "translation": "Pourquoi le livre de maths est-il triste ? — Parce qu'il a trop de problèmes.", "explanation": "Double sens de \"problemi\" (exercices et soucis)." },
+    { "joke": "Cosa fa una mucca durante un terremoto?", "punchline": "Un milk-shake (latte scosso)!", "translation": "Que fait une vache pendant un tremblement de terre ? — Un milk-shake (lait secoué) !", "explanation": "\"Latte scosso\" (lait secoué) évoque directement le milk-shake." },
+    { "joke": "Qual è il colmo per un elettricista?", "punchline": "Non avere corrente!", "translation": "Quel est le comble pour un électricien ? — Ne pas avoir de courant !", "explanation": "\"Corrente\" veut dire à la fois \"courant électrique\" et \"argent liquide/actualité\"." }
+  ],
+  "ja": [
+    { "joke": "布団が吹っ飛んだ。", "phonetic": "Futon ga futtonda.", "translation": "Le futon s'est envolé.", "explanation": "Jeu de mots classique (dajare) : \"futon\" et \"futtonda\" (s'est envolé) se ressemblent phonétiquement." },
+    { "joke": "アルミ缶の上にあるみかん。", "phonetic": "Arumikan no ue ni aru mikan.", "translation": "Une mandarine posée sur une canette en aluminium.", "explanation": "Jeu de mots très connu : \"arumikan\" (canette alu) contient le son \"aru mikan\" (il y a une mandarine)." },
+    { "joke": "このイカ、いかがですか？", "phonetic": "Kono ika, ikaga desu ka?", "translation": "Que pensez-vous de ce calamar ?", "explanation": "Jeu de mots entre \"ika\" (calamar) et \"ikaga\" (comment/qu'en pensez-vous)." },
+    { "joke": "トイレに行っといれ。", "phonetic": "Toire ni ittoire.", "translation": "Va donc aux toilettes.", "explanation": "Jeu de mots entre \"toire\" (toilettes) et \"ittoire\" (vas-y, forme dialectale)." },
+    { "joke": "カエルの子はカエル。", "phonetic": "Kaeru no ko wa kaeru.", "translation": "Le petit de la grenouille est une grenouille (= tel père, tel fils).", "explanation": "Proverbe basé sur le jeu de mots entre \"kaeru\" (grenouille) et \"kaeru\" (redevenir/ressembler)." }
+  ],
+  "zh": [
+    { "joke": "为什么大雁秋天要飞到南方？", "phonetic": "Wèishéme dàyàn qiūtiān yào fēidào nánfāng?", "punchline": "因为走太慢了。", "translation": "Pourquoi les oies sauvages volent-elles vers le sud en automne ? — Parce que marcher est trop lent.", "explanation": "Humour absurde et logique, simple et universel." },
+    { "joke": "世界上最烦人的三个字是什么？", "phonetic": "Shìjiè shàng zuì fánrén de sān gè zì shì shénme?", "punchline": "\"在吗？\"", "translation": "Quels sont les 3 mots les plus énervants au monde ? — \"T'es là ?\"", "explanation": "Humour sur le quotidien des messages qui restent sans contexte." },
+    { "joke": "为什么牛奶不能倒立？", "phonetic": "Wèishéme niúnǎi bùnéng dàolì?", "punchline": "因为会变成酸奶。", "translation": "Pourquoi le lait ne peut-il pas faire le poirier ? — Parce qu'il se transformerait en yaourt.", "explanation": "Jeu de mots visuel : \"倒\" (renverser) rappelle le processus de fermentation du lait." },
+    { "joke": "老师问：地球是圆的还是方的？", "phonetic": "Lǎoshī wèn: dìqiú shì yuán de háishì fāng de?", "punchline": "学生说：星期天是圆的，星期一到星期五是方的。", "translation": "Le prof demande : la Terre est-elle ronde ou carrée ? L'élève répond : dimanche est rond, du lundi au vendredi c'est carré (à cause du travail).", "explanation": "Jeu créatif sur le rythme de la semaine, présenté comme une réponse d'élève espiègle." },
+    { "joke": "一个人去应聘，老板问：你最大的缺点是什么？", "phonetic": "Yīgè rén qù yìngpìn, lǎobǎn wèn: nǐ zuìdà de quēdiǎn shì shénme?", "punchline": "他说：诚实。老板说：这不是缺点。他说：我知道，我在撒谎。", "translation": "Un candidat à un entretien : le patron demande son plus grand défaut. \"L'honnêteté\", répond-il. \"Ce n'est pas un défaut\", dit le patron. \"Je sais, je mens\", répond-il.", "explanation": "Humour classique d'entretien d'embauche, universel et malin." }
+  ]
+}
