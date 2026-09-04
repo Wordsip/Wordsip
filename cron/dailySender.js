@@ -14,7 +14,7 @@ function startDailySender() {
     );
   });
 
-  cron.schedule('0 9 * * *', () => {
+  cron.schedule('5 9 * * *', () => {
     scheduledTasks.postDailyTweetTask().catch((err) =>
       console.error('Erreur publication tweet planifié :', err.message)
     );
