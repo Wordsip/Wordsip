@@ -119,16 +119,18 @@ async function loadWords() {
 
     const heading = document.createElement('h3');
     heading.style.cssText = 'font-size:14px;margin:16px 0 8px;color:#2b7a78;';
-    heading.textContent = LEVEL_LABELS[subLevel] || subLevel;
+    heading.textContent = `${LEVEL_LABELS[subLevel] || subLevel} — ordre de diffusion`;
     container.appendChild(heading);
 
     words.forEach((w, index) => {
       const row = document.createElement('div');
       row.className = 'word-row';
+      if (w.disabled) row.style.cssText = 'opacity:0.5;background:#f5f5f5;';
       row.innerHTML = `
         <div class="word-row-header">
-          <strong>${w.word}</strong> — ${w.translation}
+          <span><span style="color:#999;font-size:12px;">#${index + 1}</span> <strong>${w.word}</strong> — ${w.translation} ${w.disabled ? '<span style="color:#c0392b;font-size:11px;font-weight:600;">(BLOQUÉ)</span>' : ''}</span>
           <div class="word-row-actions">
+            <button onclick="toggleWord('${language}', '${subLevel}', ${index})" style="background:${w.disabled ? '#2b7a78' : '#e0a800'};">${w.disabled ? 'Débloquer' : 'Bloquer'}</button>
             <button onclick="deleteWord('${language}', '${subLevel}', ${index})" style="background:#c0392b;">Supprimer</button>
           </div>
         </div>
@@ -140,6 +142,20 @@ async function loadWords() {
 
   if (container.innerHTML === '') {
     container.innerHTML = '<p style="color:#999;font-size:13px;">Aucun mot pour cette langue pour le moment.</p>';
+  }
+}
+
+async function toggleWord(language, subLevel, index) {
+  const res = await fetch('/api/admin/words/toggle', {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ secret: adminSecret, language, subLevel, index }),
+  });
+
+  if (res.ok) {
+    loadWords();
+  } else {
+    alert('Erreur lors du blocage/déblocage.');
   }
 }
 

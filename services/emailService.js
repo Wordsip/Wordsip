@@ -76,4 +76,36 @@ async function sendWordEmail(user, wordEntry) {
   }
 }
 
-module.exports = { sendWordEmail };
+module.exports = { sendWordEmail, sendWelcomeEmail };
+
+// Email de bienvenue simple, purement informatif, envoyé juste après
+// l'inscription — aucun lien à cliquer, aucun blocage d'accès. Sert
+// uniquement à rassurer l'utilisateur que son inscription a bien fonctionné.
+async function sendWelcomeEmail(user) {
+  const languageLabels = { en: 'anglais', es: 'espagnol', it: 'italien', ja: 'japonais', zh: 'chinois' };
+  const languageLabel = languageLabels[user.language] || user.language;
+
+  const htmlContent = `
+    <div style="font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto;">
+      <h1 style="color: #2b7a78;">Bienvenue sur WordSip 🎉</h1>
+      <p>Bonjour ${user.pseudo},</p>
+      <p>Ton inscription est bien confirmée ! Tu vas apprendre l'<strong>${languageLabel}</strong>, ${user.wordDays && user.wordDays.length ? `avec un mot livré ${user.wordDays.length} jour(s) par semaine` : 'à ton rythme'}.</p>
+      <p>Ton premier mot arrive bientôt à l'heure choisie (${user.notificationTime || '08:00'}). En attendant, tu peux dès maintenant explorer ton espace sur le site.</p>
+      <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
+      <p style="font-size: 12px; color: #999;">
+        Une question ? Écris-nous à ${process.env.CONTACT_EMAIL || 'wordsip@protonmail.com'}
+      </p>
+    </div>
+  `;
+
+  try {
+    await sendRawEmail({
+      to: user.email,
+      subject: 'Bienvenue sur WordSip — ton inscription est confirmée !',
+      htmlContent,
+    });
+    console.log(`Email de bienvenue envoyé à ${user.email}`);
+  } catch (error) {
+    console.error(`Erreur lors de l'envoi de l'email de bienvenue à ${user.email} :`, error.message);
+  }
+}

@@ -29,6 +29,11 @@ function toUsableUser(doc) {
 
 const VALID_DAYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
+// Réservé à l'admin (wordsip@protonmail.com) — personne d'autre ne peut
+// s'inscrire avec ce pseudo, qui identifie le créateur du site.
+const RESERVED_PSEUDO = 'wordsip';
+const ADMIN_EMAIL = 'wordsip@protonmail.com';
+
 async function addUser({
   pseudo,
   email,
@@ -47,6 +52,11 @@ async function addUser({
   const existing = await usersCollection().findOne({ emailHash });
   if (existing) {
     throw new Error('Cet email est déjà inscrit.');
+  }
+
+  const trimmedPseudo = (pseudo || '').trim();
+  if (trimmedPseudo.toLowerCase() === RESERVED_PSEUDO && normalizedEmail !== ADMIN_EMAIL) {
+    throw new Error('Ce pseudo est réservé.');
   }
 
   // Filtre pour ne garder que des jours valides, avec un jour par défaut

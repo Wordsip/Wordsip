@@ -9,6 +9,7 @@ const { checkEmailDomain } = require('../services/emailDomainCheck');
 const blacklistService = require('../services/blacklistService');
 const ttsService = require('../services/ttsService');
 const expressionService = require('../services/expressionService');
+const emailService = require('../services/emailService');
 
 // Page d'accueil
 router.get('/', (req, res) => {
@@ -139,6 +140,12 @@ router.post('/api/signup', async (req, res) => {
     return res.status(400).json({ error: "Le format de l'email ne semble pas valide." });
   }
 
+  // Le pseudo "wordsip" est réservé à l'admin (identifié par son email officiel)
+  const ADMIN_EMAIL_FOR_PSEUDO = 'wordsip@protonmail.com';
+  if (pseudo.trim().toLowerCase() === 'wordsip' && email.trim().toLowerCase() !== ADMIN_EMAIL_FOR_PSEUDO) {
+    return res.status(403).json({ error: 'Ce pseudo est réservé.' });
+  }
+
   // Vérifie que le domaine n'est pas une adresse jetable connue, et qu'il a
   // de vrais serveurs de messagerie configurés — sans envoyer de mail ni
   // bloquer l'utilisateur plus longtemps.
@@ -168,6 +175,12 @@ router.post('/api/signup', async (req, res) => {
     });
 
     res.status(201).json({ message: 'Inscription réussie !', user });
+
+    // Envoi de l'email de bienvenue en arrière-plan, sans bloquer la réponse
+    // ni faire échouer l'inscription si l'envoi rencontre un souci.
+    emailService.sendWelcomeEmail(user).catch((err) =>
+      console.error('Erreur email de bienvenue (non bloquant) :', err.message)
+    );
   } catch (err) {
     res.status(409).json({ error: err.message });
   }
@@ -292,6 +305,18 @@ router.delete('/api/admin/words', async (req, res) => {
     const { language, subLevel, index } = req.body;
     await wordService.deleteWord(language, subLevel, index);
     res.json({ ok: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Bloque/débloque un mot (sans le supprimer) — il n'est plus/plus diffusé
+router.patch('/api/admin/words/toggle', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const { language, subLevel, index } = req.body;
+    const result = await wordService.toggleWordDisabled(language, subLevel, index);
+    res.json({ ok: true, ...result });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

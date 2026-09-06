@@ -78,14 +78,17 @@ async function getWordForUser(user) {
   if (!levelWords || levelWords.length === 0) {
     levelWords = languageWords.beginner1 || languageWords.beginner || [];
   }
-  if (levelWords.length === 0) return null;
+
+  // Les mots bloqués par l'admin ne sont jamais diffusés, sans être supprimés
+  const activeWords = levelWords.filter((w) => !w.disabled);
+  if (activeWords.length === 0) return null;
 
   const dayOfYear = Math.floor(
     (new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000
   );
-  const index = dayOfYear % levelWords.length;
+  const index = dayOfYear % activeWords.length;
 
-  return { ...levelWords[index], subLevel };
+  return { ...activeWords[index], subLevel };
 }
 
 // Ajoute un mot à un sous-niveau donné d'une langue (utilisé par la page admin)
@@ -140,8 +143,8 @@ async function getFeaturedWordOfDay(language) {
   let bestSubLevel = null;
   let bestWords = null;
   for (const level of SUBLEVEL_PRIORITY) {
-    const words = languageWords[level];
-    if (Array.isArray(words) && words.length > 0) {
+    const words = (languageWords[level] || []).filter((w) => !w.disabled);
+    if (words.length > 0) {
       bestSubLevel = level;
       bestWords = words;
       break;
@@ -157,6 +160,26 @@ async function getFeaturedWordOfDay(language) {
   return { ...bestWords[index], subLevel: bestSubLevel };
 }
 
+// Bloque ou débloque un mot à un index donné, sans le supprimer — il reste
+// visible dans la page admin mais n'est plus jamais diffusé aux utilisateurs
+// tant qu'il est bloqué.
+async function toggleWordDisabled(language, subLevel, index) {
+  const doc = await wordsCollection().findOne({ _id: language });
+  if (!doc || !doc[subLevel] || !doc[subLevel][index]) {
+    throw new Error('Mot introuvable.');
+  }
+
+  const currentlyDisabled = !!doc[subLevel][index].disabled;
+  const setKey = `${subLevel}.${index}.disabled`;
+
+  await wordsCollection().updateOne(
+    { _id: language },
+    { $set: { [setKey]: !currentlyDisabled } }
+  );
+
+  return { disabled: !currentlyDisabled };
+}
+
 module.exports = {
   getAllWords,
   getWordsForLanguage,
@@ -166,6 +189,7 @@ module.exports = {
   addWord,
   updateWord,
   deleteWord,
+  toggleWordDisabled,
   seedIfEmpty,
   WORDS_PER_SUBLEVEL,
   TRACKS,
