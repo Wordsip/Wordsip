@@ -9,15 +9,16 @@ const MAX_ATTEMPTS = 4;
 let correctCount = 0;
 
 const LEVEL_LABELS = {
-  beginner1: 'Débutant 1', beginner2: 'Débutant 2', beginner3: 'Débutant 3',
-  intermediate1: 'Intermédiaire 1', intermediate2: 'Intermédiaire 2', intermediate3: 'Intermédiaire 3',
+  niveau1: 'Niveau 1 — Collège', niveau2: 'Niveau 2 — Lycée', niveau3: 'Niveau 3 — Fac/Pro',
 };
+const LEVEL_ORDER = ['niveau1', 'niveau2', 'niveau3'];
+let currentProgress = null;
 
 async function loadWord() {
   if (isGuest) {
     // Mode invité : pas de compte, langue/niveau fixes, suivi via localStorage
     const guestLang = params.get('lang') || 'en';
-    const res = await fetch(`/api/preview/${guestLang}/beginner1`);
+    const res = await fetch(`/api/preview/${guestLang}/niveau1`);
     currentWord = await res.json();
     currentUser = { pseudo: 'Invité', revealMode: 'manual', channel: 'site' };
     setupGuestBanner(guestLang);
@@ -34,9 +35,11 @@ async function loadWord() {
     const data = await res.json();
     currentWord = data.word;
     currentUser = data.user;
+    currentProgress = data.progress || null;
   }
 
   renderWord();
+  renderProgress();
 }
 
 function setupGuestBanner(lang) {
@@ -62,6 +65,64 @@ function setupGuestBanner(lang) {
   banner.textContent = `🎟️ Mode essai — Jour ${daysElapsed} / 7`;
 }
 
+// Équivalent front-end de services/phoneticFormat.js : le champ "phonetic"
+// est soit une simple chaîne (it/ja/zh), soit un objet à variantes
+// régionales — {us, uk} pour l'anglais, {es, latam} pour l'espagnol, etc.
+const REGION_LABELS = { us: 'US', uk: 'UK', es: 'ES', latam: 'LATAM' };
+
+function formatPhonetic(phonetic) {
+  if (!phonetic) return '';
+  if (typeof phonetic === 'string') return phonetic;
+  const parts = [];
+  for (const [region, value] of Object.entries(phonetic)) {
+    if (value) parts.push(`${REGION_LABELS[region] || region.toUpperCase()} ${value}`);
+  }
+  return parts.join('  ·  ');
+}
+
+// Affiche une barre de progression par niveau (mots distincts validés / mots
+// disponibles à ce niveau), pour que l'utilisateur voie où il en est et soit
+// encouragé à continuer. Rien n'est affiché en mode invité (pas de suivi
+// persistant sans compte).
+function renderProgress() {
+  const section = document.getElementById('progress-section');
+  if (!currentProgress || isGuest) {
+    section.style.display = 'none';
+    return;
+  }
+
+  const rows = LEVEL_ORDER.map((level) => {
+    const p = currentProgress[level];
+    if (!p || p.total === 0) return '';
+    const isCurrent = currentUser && currentUser.level === level;
+    const isComplete = p.percent >= 100;
+    const note = isComplete
+      ? '🎉 Niveau terminé, bravo !'
+      : isCurrent
+        ? 'Continue, tu progresses bien !'
+        : '';
+    return `
+      <div class="progress-row">
+        <div class="progress-row-head">
+          <span class="level-name${isCurrent ? ' current' : ''}">${LEVEL_LABELS[level] || level}</span>
+          <span class="level-pct">${p.validated}/${p.total} · ${p.percent}%</span>
+        </div>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill${isComplete ? ' complete' : ''}" style="width:${p.percent}%;"></div>
+        </div>
+        ${note ? `<p class="progress-row-note">${note}</p>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  if (!rows) {
+    section.style.display = 'none';
+    return;
+  }
+  section.innerHTML = rows;
+  section.style.display = 'block';
+}
+
 function renderWord() {
   document.getElementById('loading').style.display = 'none';
   document.getElementById('content').style.display = 'block';
@@ -79,7 +140,7 @@ function renderWord() {
   loadExpressionOfWeek();
 
   document.getElementById('word-main').textContent = currentWord.word;
-  document.getElementById('word-phonetic').textContent = currentWord.phonetic || '';
+  document.getElementById('word-phonetic').textContent = formatPhonetic(currentWord.phonetic);
   document.getElementById('word-translation').textContent = currentWord.translation;
 
   // Bouton audio : joue la prononciation du mot via le service de synthèse vocale
@@ -169,6 +230,7 @@ function setupExercise() {
 
   inputArea.style.display = 'none';
   document.getElementById('exercise-input').value = '';
+  document.getElementById('virtual-keyboard').style.display = 'none';
   document.getElementById('exercise-feedback').textContent = '';
   document.getElementById('word-display').style.color = '';
   document.getElementById('word-display').textContent = currentWord.word;
@@ -192,6 +254,108 @@ function setupExercise() {
     revealBtn.onclick = hideWordAndShowInput;
   }
 }
+
+// --- Clavier virtuel ---
+// Pour les langues latines (en/es/it), un clavier standard + la rangée de
+// caractères spéciaux/accents propres à la langue (utile si le clavier
+// physique de l'utilisateur ne les a pas). Pour le japonais et le chinois,
+// pas de "clavier standard" pertinent : les touches sont construites à
+// partir des caractères réellement utilisés dans la base de mots
+// (récupérés une fois via /api/keyboard/:language, puis mis en cache).
+const LATIN_ROW = ['a', 'z', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p',
+  'q', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
+  'w', 'x', 'c', 'v', 'b', 'n'];
+const KEYBOARD_SPECIALS = {
+  en: [],
+  es: ['ñ', 'á', 'é', 'í', 'ó', 'ú', 'ü', '¿', '¡'],
+  it: ['à', 'è', 'é', 'ì', 'ò', 'ù'],
+};
+const dynamicKeyboardCache = {};
+
+async function getKeyboardRows(language) {
+  if (language === 'ja' || language === 'zh') {
+    if (!dynamicKeyboardCache[language]) {
+      try {
+        const res = await fetch(`/api/keyboard/${language}`);
+        const data = await res.json();
+        dynamicKeyboardCache[language] = data.chars || [];
+      } catch (err) {
+        dynamicKeyboardCache[language] = [];
+      }
+    }
+    const chars = dynamicKeyboardCache[language];
+    // Grille de 10 caractères par ligne, plus lisible qu'une seule longue rangée
+    const rows = [];
+    for (let i = 0; i < chars.length; i += 10) rows.push(chars.slice(i, i + 10));
+    return rows;
+  }
+
+  const rows = [LATIN_ROW.slice(0, 10), LATIN_ROW.slice(10, 19), LATIN_ROW.slice(19)];
+  const specials = KEYBOARD_SPECIALS[language] || [];
+  if (specials.length) rows.push(specials);
+  return rows;
+}
+
+function insertAtCursor(input, text) {
+  const start = input.selectionStart ?? input.value.length;
+  const end = input.selectionEnd ?? input.value.length;
+  input.value = input.value.slice(0, start) + text + input.value.slice(end);
+  const newPos = start + text.length;
+  input.focus();
+  input.setSelectionRange(newPos, newPos);
+}
+
+async function renderVirtualKeyboard() {
+  const panel = document.getElementById('virtual-keyboard');
+  const language = (currentUser && currentUser.language) || 'en';
+  const rows = await getKeyboardRows(language);
+  const input = document.getElementById('exercise-input');
+
+  const rowsHtml = rows.map((row) => {
+    const keys = row.map((ch) => `<button type="button" class="vk-key" data-char="${ch}">${ch}</button>`).join('');
+    return `<div class="vk-row">${keys}</div>`;
+  }).join('');
+
+  panel.innerHTML = `
+    ${rowsHtml}
+    <div class="vk-row">
+      <button type="button" class="vk-key vk-wide" data-action="space">␣ espace</button>
+      <button type="button" class="vk-key vk-wide" data-action="backspace">⌫ effacer</button>
+    </div>
+  `;
+
+  panel.querySelectorAll('.vk-key').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const action = btn.dataset.action;
+      if (action === 'backspace') {
+        const start = input.selectionStart ?? input.value.length;
+        const end = input.selectionEnd ?? input.value.length;
+        if (start === end && start > 0) {
+          input.value = input.value.slice(0, start - 1) + input.value.slice(end);
+          input.focus();
+          input.setSelectionRange(start - 1, start - 1);
+        } else {
+          insertAtCursor(input, '');
+        }
+      } else if (action === 'space') {
+        insertAtCursor(input, ' ');
+      } else {
+        insertAtCursor(input, btn.dataset.char);
+      }
+    });
+  });
+}
+
+document.getElementById('keyboard-toggle-btn')?.addEventListener('click', async () => {
+  const panel = document.getElementById('virtual-keyboard');
+  const willShow = panel.style.display === 'none';
+  if (willShow) {
+    await renderVirtualKeyboard();
+    panel.style.display = 'block';
+  } else {
+    panel.style.display = 'none';
+  }
+});
 
 function hideWordAndShowInput() {
   document.getElementById('word-display').textContent = '? '.repeat(currentWord.word.length).trim();
@@ -219,11 +383,16 @@ document.getElementById('check-btn')?.addEventListener('click', async () => {
     correctCount += 1;
 
     if (!isGuest && email) {
-      await fetch('/api/validate-word', {
+      const res = await fetch('/api/validate-word', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, level: currentWord.subLevel, word: currentWord.word }),
       });
+      const result = await res.json();
+      if (result.progress) {
+        currentProgress = result.progress;
+        renderProgress();
+      }
     }
   } else {
     feedback.textContent = `❌ Pas tout à fait — la bonne orthographe est "${currentWord.word}"`;

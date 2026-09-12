@@ -8,8 +8,8 @@ async function buildWeeklyDialogue(language) {
   if (!languageWords) return null;
 
   const pool = [
-    ...(languageWords.beginner1 || []),
-    ...(languageWords.beginner2 || []),
+    ...(languageWords.niveau1 || []),
+    ...(languageWords.niveau2 || []),
   ];
   if (pool.length < 2) return null;
 

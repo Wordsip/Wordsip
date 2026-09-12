@@ -60,13 +60,29 @@ async function generateBubbleImage(speaker, text, outputPath) {
 // Génère l'image "carte mot du jour" (mot + phonétique + traduction), utilisée
 // pour la petite vidéo jointe au tweet quotidien.
 async function generateWordCardImage(wordEntry, outputPath) {
+  // Certaines langues ont 2 variantes régionales de phonétique (anglais :
+  // US/UK, espagnol : ES/LATAM...) : on les affiche sur deux lignes séparées
+  // plutôt que de tout compresser sur une seule, pour rester lisible sur
+  // l'image 720x720. Les langues à une seule variante n'ont qu'une ligne.
+  const REGION_LABELS = { us: 'US', uk: 'UK', es: 'ES', latam: 'LATAM' };
+  const phoneticLines = typeof wordEntry.phonetic === 'string'
+    ? [wordEntry.phonetic]
+    : Object.entries(wordEntry.phonetic || {})
+        .filter(([, value]) => value)
+        .map(([region, value]) => `${REGION_LABELS[region] || region.toUpperCase()} ${value}`);
+
+  const phoneticSvg = phoneticLines
+    .map((line, i) => `<text x="360" y="${390 + i * 34}" font-family="sans-serif" font-size="26" fill="white" opacity="0.85" text-anchor="middle">${escapeXml(line)}</text>`)
+    .join('\n      ');
+  const translationY = 390 + phoneticLines.length * 34 + 30;
+
   const svg = `
     <svg width="720" height="720" xmlns="http://www.w3.org/2000/svg">
       <rect width="720" height="720" fill="#2b7a78"/>
       <text x="360" y="60" font-family="sans-serif" font-size="28" fill="white" opacity="0.8" text-anchor="middle">🥤 WordSip</text>
       <text x="360" y="340" font-family="sans-serif" font-size="64" fill="white" text-anchor="middle" font-weight="bold">${escapeXml(wordEntry.word)}</text>
-      <text x="360" y="390" font-family="sans-serif" font-size="28" fill="white" opacity="0.85" text-anchor="middle">${escapeXml(wordEntry.phonetic || '')}</text>
-      <text x="360" y="450" font-family="sans-serif" font-size="36" fill="white" text-anchor="middle">🇫🇷 ${escapeXml(wordEntry.translation)}</text>
+      ${phoneticSvg}
+      <text x="360" y="${translationY}" font-family="sans-serif" font-size="36" fill="white" text-anchor="middle">🇫🇷 ${escapeXml(wordEntry.translation)}</text>
     </svg>
   `;
   await sharp(Buffer.from(svg)).png().toFile(outputPath);

@@ -125,6 +125,25 @@ footer a { color: #2b7a78; }
 
 .progress-note { text-align: center; font-size: 13px; color: #6b8f8c; padding: 10px; }
 
+.progress-card { background: white; border-radius: 16px; padding: 16px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.progress-row { margin-bottom: 12px; }
+.progress-row:last-child { margin-bottom: 0; }
+.progress-row-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; margin-bottom: 4px; }
+.progress-row-head .level-name { font-weight: 600; color: #333; }
+.progress-row-head .level-name.current::before { content: "▶ "; color: #2b7a78; }
+.progress-row-head .level-pct { color: #2b7a78; font-weight: 600; }
+.progress-bar-track { background: #e8f4f3; border-radius: 999px; height: 10px; overflow: hidden; }
+.progress-bar-fill { background: linear-gradient(90deg, #2b7a78, #3aa89f); height: 100%; border-radius: 999px; transition: width 0.4s ease; }
+.progress-bar-fill.complete { background: linear-gradient(90deg, #1a7a3e, #2fae5c); }
+.progress-row-note { font-size: 11px; color: #999; margin-top: 3px; }
+
+.virtual-keyboard { margin-top: 10px; padding: 10px; background: #f4faf9; border-radius: 12px; }
+.vk-row { display: flex; justify-content: center; gap: 4px; margin-bottom: 4px; flex-wrap: wrap; }
+.vk-row:last-child { margin-bottom: 0; }
+.vk-key { min-width: 28px; height: 34px; padding: 0 6px; border: none; border-radius: 6px; background: white; box-shadow: 0 1px 2px rgba(0,0,0,0.15); font-size: 14px; cursor: pointer; color: #333; }
+.vk-key:active { background: #d0f0ee; }
+.vk-key.vk-wide { min-width: 60px; font-size: 12px; color: #2b7a78; font-weight: 600; }
+
 /* Ajustements pour très petits écrans (ex. iPhone SE, ~375px) */
 @media (max-width: 380px) {
   body { padding: 12px; }

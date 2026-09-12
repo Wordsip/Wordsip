@@ -25,6 +25,8 @@
       <div id="channel-note" class="channel-note" style="display:none;"></div>
       <div id="expression-banner" style="display:none;background:#fff3cd;border-radius:16px;padding:14px;margin-bottom:14px;"></div>
 
+      <section id="progress-section" class="progress-card" style="display:none;"></section>
+
       <section class="word-card">
         <p class="label">Ton mot du jour</p>
         <h1 id="word-main"></h1>
@@ -61,7 +63,11 @@
         <div id="timer-note" class="timer-note" style="display:none;"></div>
 
         <div id="exercise-input-area" style="display:none;">
-          <input type="text" id="exercise-input" placeholder="Écris le mot ici...">
+          <div style="display:flex;gap:8px;align-items:center;">
+            <input type="text" id="exercise-input" placeholder="Écris le mot ici..." style="flex:1;">
+            <button id="keyboard-toggle-btn" type="button" title="Afficher/masquer le clavier virtuel" style="width:36px;height:36px;border-radius:50%;background:#2b7a78;border:none;color:white;font-size:16px;padding:0;cursor:pointer;flex-shrink:0;">⌨️</button>
+          </div>
+          <div id="virtual-keyboard" class="virtual-keyboard" style="display:none;"></div>
           <button id="check-btn">Vérifier</button>
           <p id="exercise-feedback"></p>
         </div>

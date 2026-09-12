@@ -4,12 +4,12 @@ const { getDB } = require('./db');
 
 const SEED_FILE = path.join(__dirname, '..', 'data', 'words.seed.json');
 
-// Seuil de mots validés pour passer au sous-niveau suivant
-const WORDS_PER_SUBLEVEL = 33;
-
-const TRACKS = {
-  rapide: { beginnerLevels: 3, intermediateLevels: 3 },
-  complet: { beginnerLevels: 5, intermediateLevels: 10 },
+// 3 niveaux fixes, choisis par l'utilisateur à l'inscription (plus de
+// parcours rapide/complet ni de progression automatique par mots validés).
+const LEVELS = {
+  niveau1: 'Niveau 1 — Collège (6e-5e-4e)',
+  niveau2: 'Niveau 2 — Lycée (3e-2nde-1re-Tle)',
+  niveau3: 'Niveau 3 — Fac / Master / Pro',
 };
 
 function wordsCollection() {
@@ -56,16 +56,11 @@ async function getWordsForLanguage(language) {
   return levels;
 }
 
+// Le niveau est directement celui choisi par l'utilisateur (niveau1/2/3),
+// sans progression automatique. On retombe sur niveau1 si la valeur stockée
+// n'est pas (ou plus) l'un des 3 niveaux valides.
 function getSubLevel(user) {
-  const validated = user.wordsValidated || 0;
-  const track = TRACKS[user.track] || TRACKS.rapide;
-  const base = (user.level || 'beginner').startsWith('intermediate') ? 'intermediate' : 'beginner';
-  const maxLevels = base === 'intermediate' ? track.intermediateLevels : track.beginnerLevels;
-
-  const rawIndex = Math.floor(validated / WORDS_PER_SUBLEVEL) + 1;
-  const index = Math.min(rawIndex, maxLevels);
-
-  return `${base}${index}`;
+  return LEVELS[user.level] ? user.level : 'niveau1';
 }
 
 async function getWordForUser(user) {
@@ -76,7 +71,7 @@ async function getWordForUser(user) {
   let levelWords = languageWords[subLevel];
 
   if (!levelWords || levelWords.length === 0) {
-    levelWords = languageWords.beginner1 || languageWords.beginner || [];
+    levelWords = languageWords.niveau1 || [];
   }
 
   // Les mots bloqués par l'admin ne sont jamais diffusés, sans être supprimés
@@ -124,13 +119,10 @@ async function deleteWord(language, subLevel, index) {
   );
 }
 
-// Ordre des sous-niveaux du plus avancé au plus simple, pour toujours choisir
-// le mot le plus intéressant disponible pour une langue donnée (utilisé pour
-// le tweet et la vidéo publics, qui ne sont liés à aucun utilisateur précis).
-const SUBLEVEL_PRIORITY = [
-  'intermediate5', 'intermediate4', 'intermediate3', 'intermediate2', 'intermediate1', 'intermediate',
-  'beginner5', 'beginner4', 'beginner3', 'beginner2', 'beginner1', 'beginner',
-];
+// Ordre des niveaux du plus avancé au plus simple, pour toujours choisir le
+// mot le plus intéressant disponible pour une langue donnée (utilisé pour le
+// tweet et la vidéo publics, qui ne sont liés à aucun utilisateur précis).
+const SUBLEVEL_PRIORITY = ['niveau3', 'niveau2', 'niveau1'];
 
 // Choisit le mot "vedette" du jour pour une langue donnée : prend le
 // sous-niveau le plus avancé qui a déjà du contenu (pour éviter de tomber
@@ -180,17 +172,52 @@ async function toggleWordDisabled(language, subLevel, index) {
   return { disabled: !currentlyDisabled };
 }
 
+// Compte, pour une langue donnée, le nombre de mots actifs (non bloqués par
+// l'admin) disponibles à chaque niveau — sert de dénominateur pour calculer
+// le % d'avancement d'un utilisateur dans ce niveau.
+async function getLevelWordCounts(language) {
+  const languageWords = await getWordsForLanguage(language);
+  if (!languageWords) return { niveau1: 0, niveau2: 0, niveau3: 0 };
+  const counts = {};
+  for (const level of Object.keys(LEVELS)) {
+    counts[level] = (languageWords[level] || []).filter((w) => !w.disabled).length;
+  }
+  return counts;
+}
+
+// Calcule, pour une langue donnée, l'ensemble des caractères distincts
+// utilisés dans tous ses mots (tous niveaux confondus) — sert à construire
+// le clavier virtuel pour le japonais/chinois, où un clavier standard n'a
+// pas de sens (script logographique/syllabique), contrairement aux langues
+// latines qui ont un alphabet fixe connu à l'avance.
+async function getUniqueCharacters(language) {
+  const languageWords = await getWordsForLanguage(language);
+  if (!languageWords) return [];
+  const chars = new Set();
+  for (const level of Object.keys(LEVELS)) {
+    for (const w of languageWords[level] || []) {
+      for (const ch of w.word) {
+        // On exclut les espaces et la ponctuation latine basique : ils sont
+        // déjà accessibles depuis n'importe quel clavier physique.
+        if (ch.trim() && !/[.,!?'"()-]/.test(ch)) chars.add(ch);
+      }
+    }
+  }
+  return Array.from(chars).sort((a, b) => a.localeCompare(b, language));
+}
+
 module.exports = {
   getAllWords,
   getWordsForLanguage,
   getWordForUser,
   getFeaturedWordOfDay,
   getSubLevel,
+  getLevelWordCounts,
+  getUniqueCharacters,
   addWord,
   updateWord,
   deleteWord,
   toggleWordDisabled,
   seedIfEmpty,
-  WORDS_PER_SUBLEVEL,
-  TRACKS,
+  LEVELS,
 };

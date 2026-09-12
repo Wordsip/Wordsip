@@ -1,11 +1,40 @@
 let adminSecret = null;
 
+// Envoie le secret admin dans un header plutôt que dans l'URL ou le corps :
+// une query string finit dans les logs serveur/proxy et dans l'historique
+// du navigateur, ce qu'on veut éviter pour un secret. Toutes les requêtes
+// admin passent par cette fonction pour garder ça cohérent partout.
+function adminFetch(url, options = {}) {
+  const headers = { ...(options.headers || {}), 'x-admin-secret': adminSecret };
+  return fetch(url, { ...options, headers });
+}
+
 const LEVEL_LABELS = {
-  beginner1: 'Débutant 1', beginner2: 'Débutant 2', beginner3: 'Débutant 3',
-  beginner4: 'Débutant 4', beginner5: 'Débutant 5',
-  intermediate1: 'Intermédiaire 1', intermediate2: 'Intermédiaire 2', intermediate3: 'Intermédiaire 3',
-  intermediate4: 'Intermédiaire 4', intermediate5: 'Intermédiaire 5',
+  niveau1: 'Niveau 1 — Collège (6e-5e-4e)',
+  niveau2: 'Niveau 2 — Lycée (3e-2nde-1re-Tle)',
+  niveau3: 'Niveau 3 — Fac / Master / Pro',
 };
+
+// Chaque langue a ses propres clés de variante régionale pour la phonétique
+// (ou une seule variante pour les langues qui n'en ont pas deux). Détermine
+// les libellés affichés dans le formulaire d'ajout de mot selon la langue
+// choisie, pour que l'admin sache ce qu'il remplit.
+const PHONETIC_REGIONS = {
+  en: { key1: 'us', key2: 'uk', label1: 'Phonétique US', label2: 'Phonétique UK' },
+  es: { key1: 'es', key2: 'latam', label1: 'Phonétique Espagne', label2: 'Phonétique Amérique latine' },
+};
+
+function updatePhoneticLabels() {
+  const lang = document.getElementById('add-language').value;
+  const regions = PHONETIC_REGIONS[lang];
+  document.getElementById('add-phonetic-label-1').textContent = regions ? regions.label1 : 'Phonétique';
+  const label2 = document.getElementById('add-phonetic-label-2');
+  const input2 = document.getElementById('add-phonetic-2');
+  label2.style.display = regions ? '' : 'none';
+  input2.style.display = regions ? '' : 'none';
+}
+document.getElementById('add-language').addEventListener('change', updatePhoneticLabels);
+updatePhoneticLabels();
 
 document.getElementById('admin-login-form').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -64,9 +93,20 @@ document.getElementById('add-word-form').addEventListener('submit', async (e) =>
     return;
   }
 
+  // Phonétique : construit l'objet avec les bonnes clés régionales selon la
+  // langue (us/uk pour l'anglais, es/latam pour l'espagnol...), ou une simple
+  // chaîne si la langue n'a qu'une seule variante ou si la 2e n'est pas remplie.
+  const lang = document.getElementById('add-language').value;
+  const regions = PHONETIC_REGIONS[lang];
+  const value1 = document.getElementById('add-phonetic-1').value.trim();
+  const value2 = document.getElementById('add-phonetic-2').value.trim();
+  const phonetic = (regions && value2)
+    ? { [regions.key1]: value1, [regions.key2]: value2 }
+    : value1;
+
   const wordEntry = {
     word: document.getElementById('add-word').value,
-    phonetic: document.getElementById('add-phonetic').value,
+    phonetic,
     translation: document.getElementById('add-translation').value,
     examples,
     grammar,
@@ -74,14 +114,13 @@ document.getElementById('add-word-form').addEventListener('submit', async (e) =>
   };
 
   const body = {
-    secret: adminSecret,
     language: document.getElementById('add-language').value,
     subLevel: document.getElementById('add-sublevel').value,
     wordEntry,
   };
 
   try {
-    const res = await fetch('/api/admin/words', {
+    const res = await adminFetch('/api/admin/words', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
@@ -107,7 +146,7 @@ document.getElementById('filter-language').addEventListener('change', loadWords)
 
 async function loadWords() {
   const language = document.getElementById('filter-language').value;
-  const res = await fetch(`/api/admin/words?secret=${encodeURIComponent(adminSecret)}`);
+  const res = await adminFetch('/api/admin/words');
   const allWords = await res.json();
   const languageWords = allWords[language] || {};
 
@@ -146,10 +185,10 @@ async function loadWords() {
 }
 
 async function toggleWord(language, subLevel, index) {
-  const res = await fetch('/api/admin/words/toggle', {
+  const res = await adminFetch('/api/admin/words/toggle', {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ secret: adminSecret, language, subLevel, index }),
+    body: JSON.stringify({ language, subLevel, index }),
   });
 
   if (res.ok) {
@@ -162,10 +201,10 @@ async function toggleWord(language, subLevel, index) {
 async function deleteWord(language, subLevel, index) {
   if (!confirm('Supprimer ce mot définitivement ?')) return;
 
-  const res = await fetch('/api/admin/words', {
+  const res = await adminFetch('/api/admin/words', {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ secret: adminSecret, language, subLevel, index }),
+    body: JSON.stringify({ language, subLevel, index }),
   });
 
   if (res.ok) {
@@ -178,7 +217,7 @@ async function deleteWord(language, subLevel, index) {
 // --- Utilisateurs ---
 
 async function loadUsers() {
-  const res = await fetch(`/api/admin/users?secret=${encodeURIComponent(adminSecret)}`);
+  const res = await adminFetch('/api/admin/users');
   const users = await res.json();
   const container = document.getElementById('users-list');
   container.innerHTML = '';
@@ -195,7 +234,7 @@ async function loadUsers() {
       <div class="word-row-header">
         <div>
           <strong>${u.pseudo}</strong> — ${u.email}
-          <p style="font-size:11px;color:#666;">${u.language} · ${u.level} · ${u.track} · ${u.wordsValidated} mots validés</p>
+          <p style="font-size:11px;color:#666;">${u.language} · ${LEVEL_LABELS[u.level] || u.level} · ${u.wordsValidated} mots validés</p>
         </div>
         <div class="word-row-actions">
           <button onclick="deleteUser('${u.email}')" style="background:#c0392b;">Supprimer</button>
@@ -209,10 +248,10 @@ async function loadUsers() {
 async function deleteUser(email) {
   if (!confirm(`Supprimer définitivement le compte ${email} et toutes ses données ?`)) return;
 
-  const res = await fetch('/api/admin/users', {
+  const res = await adminFetch('/api/admin/users', {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ secret: adminSecret, email }),
+    body: JSON.stringify({ email }),
   });
 
   if (res.ok) {
@@ -229,10 +268,10 @@ document.getElementById('blacklist-form').addEventListener('submit', async (e) =
   const email = document.getElementById('blacklist-email').value;
   const messageEl = document.getElementById('blacklist-message');
 
-  const res = await fetch('/api/admin/blacklist', {
+  const res = await adminFetch('/api/admin/blacklist', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ secret: adminSecret, email }),
+    body: JSON.stringify({ email }),
   });
 
   if (res.ok) {
@@ -247,7 +286,7 @@ document.getElementById('blacklist-form').addEventListener('submit', async (e) =
 });
 
 async function loadBlacklist() {
-  const res = await fetch(`/api/admin/blacklist?secret=${encodeURIComponent(adminSecret)}`);
+  const res = await adminFetch('/api/admin/blacklist');
   const list = await res.json();
   const container = document.getElementById('blacklist-list');
   container.innerHTML = '';
@@ -271,10 +310,10 @@ async function loadBlacklist() {
 }
 
 async function removeFromBlacklist(email) {
-  const res = await fetch('/api/admin/blacklist', {
+  const res = await adminFetch('/api/admin/blacklist', {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ secret: adminSecret, email }),
+    body: JSON.stringify({ email }),
   });
 
   if (res.ok) {

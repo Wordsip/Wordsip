@@ -6,8 +6,9 @@ Un mot par jour, envoyé par email/WhatsApp/site, avec exercices et vidéos hebd
 
 - Inscription en 2 étapes : infos de base puis toutes les préférences (fréquence, canal, heure, mode d'exercice)
 - 5 langues : anglais, espagnol, italien, japonais, chinois
-- 3 sous-niveaux par palier (débutant 1/2/3, intermédiaire 1/2/3), progression à 33 mots validés
-- Chaque mot inclut : phonétique, 2 exemples, grammaire détaillée (nature/position/registre/synonymes), argot
+- 3 niveaux fixes, choisis à l'inscription : Niveau 1 (Collège, 6e-5e-4e), Niveau 2 (Lycée, 3e-2nde-1re-Tle), Niveau 3 (Fac / Master / Pro)
+- Barre de progression par niveau (% de mots distincts validés / total disponible), affichée sur la page du mot du jour pour suivre son avancement
+- Chaque mot inclut : phonétique (anglais : US et UK), 2 exemples, grammaire détaillée (nature/position/registre/synonymes), argot
 - Exercice d'écriture interactif : le mot disparaît (bouton manuel ou minuteur au choix), 4 tentatives avec correction
 - Mode essai invité, 7 jours, sans inscription
 - Canal "sur le site uniquement" pour ceux qui ne veulent pas de notification
@@ -54,13 +55,17 @@ wordsip/
 │   ├── dailySender.js       # Emails par créneau + tweet 9h
 │   └── weeklyVideo.js       # Vidéo dimanche 18h
 ├── data/
-│   ├── words.json           # Base de mots (10/langue, à enrichir vers 100)
-│   └── users.json
+│   └── words.seed.json      # Base de mots de départ (anglais : 84 mots ; autres langues : 40/langue, à enrichir)
 └── public/
     ├── index.html           # Accueil (inscription 2 étapes + essai invité)
     ├── mot-du-jour.html     # Tableau de bord + exercice
     └── video-semaine.html   # Vidéo + quiz
 ```
+
+## Sécurité
+
+- Le secret admin (`ADMIN_SECRET`) est envoyé via le header `x-admin-secret`, jamais dans l'URL, pour éviter qu'il se retrouve dans les logs serveur/proxy ou l'historique du navigateur.
+- La route `/api/tts` (relais audio) est limitée à 20 requêtes/minute par IP et 200 caractères par texte, pour éviter qu'elle serve de proxy gratuit vers l'API TTS de Google.
 
 ## Notes techniques importantes
 
@@ -69,7 +74,7 @@ wordsip/
 
 ## Prochaines étapes prévues
 
-- Compléter la base de mots vers 100 mots/langue (actuellement 10-13/langue)
+- Compléter la base de mots pour espagnol/italien/japonais/chinois (actuellement 40 mots/langue, niveau 3 vide) — l'anglais sert de modèle avec 84 mots répartis sur les 3 niveaux
 - Historique des mots appris
 - Applications mobiles iOS/Android
 - Palier payant après 1 mois gratuit

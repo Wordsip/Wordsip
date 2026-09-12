@@ -14,6 +14,11 @@ const { startWeeklyVideoGenerator } = require('./cron/weeklyVideo');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Nécessaire sur Render (et tout hébergeur derrière un proxy inverse) pour
+// que req.ip renvoie la vraie IP du visiteur plutôt que celle du proxy —
+// indispensable pour que le rate-limiting par IP fonctionne correctement.
+app.set('trust proxy', 1);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));

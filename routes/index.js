@@ -10,6 +10,7 @@ const blacklistService = require('../services/blacklistService');
 const ttsService = require('../services/ttsService');
 const expressionService = require('../services/expressionService');
 const emailService = require('../services/emailService');
+const { rateLimit } = require('../services/rateLimiter');
 
 // Page d'accueil
 router.get('/', (req, res) => {
@@ -38,9 +39,17 @@ router.get('/admin', (req, res) => {
 
 // Audio de prononciation (relayé depuis le serveur pour ne jamais exposer
 // l'URL Google directement au navigateur, et éviter les soucis de CORS)
-router.get('/api/tts', (req, res) => {
+// Limité en débit + en longueur car cette route est ouverte (pas d'auth) :
+// sans ça, n'importe qui pourrait s'en servir comme proxy TTS gratuit et
+// épuiser le quota de l'API non officielle de Google.
+const ttsRateLimit = rateLimit({ windowMs: 60_000, max: 20 });
+
+router.get('/api/tts', ttsRateLimit, (req, res) => {
   const { text, lang } = req.query;
   if (!text) return res.status(400).json({ error: 'Texte requis.' });
+  if (text.length > 200) {
+    return res.status(400).json({ error: 'Texte trop long (200 caractères max).' });
+  }
   ttsService.streamTTS(text, lang || 'en', res);
 });
 
@@ -129,7 +138,7 @@ function isValidEmailFormat(email) {
 router.post('/api/signup', async (req, res) => {
   const {
     pseudo, email, language, level, wordDays,
-    notificationTime, channel, revealMode, revealSeconds, track,
+    notificationTime, channel, revealMode, revealSeconds,
   } = req.body;
 
   if (!pseudo || !email || !language) {
@@ -165,13 +174,12 @@ router.post('/api/signup', async (req, res) => {
       pseudo,
       email,
       language,
-      level: level || 'beginner',
+      level: level || 'niveau1',
       wordDays,
       notificationTime: notificationTime || '08:00',
       channel: channel || 'email',
       revealMode: revealMode || 'manual',
       revealSeconds: parseInt(revealSeconds, 10) || 10,
-      track: track || 'rapide',
     });
 
     res.status(201).json({ message: 'Inscription réussie !', user });
@@ -195,7 +203,10 @@ router.get('/api/my-word', async (req, res) => {
     const word = await wordService.getWordForUser(user);
     if (!word) return res.status(404).json({ error: 'Aucun mot disponible pour ce profil.' });
 
-    res.json({ user, word });
+    const levelWordCounts = await wordService.getLevelWordCounts(user.language);
+    const progress = userService.computeProgress(user, levelWordCounts);
+
+    res.json({ user, word, progress });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -203,9 +214,20 @@ router.get('/api/my-word', async (req, res) => {
 
 router.post('/api/validate-word', async (req, res) => {
   try {
-    const { email } = req.body;
-    const user = await userService.incrementWordsValidated(email);
-    res.json({ wordsValidated: user.wordsValidated });
+    const { email, level, word } = req.body;
+    await userService.incrementWordsValidated(email);
+    // level/word sont fournis par le client à partir du mot affiché à
+    // l'écran : si absents (anciens clients non mis à jour), on garde
+    // seulement le compteur global sans casser la validation.
+    let user;
+    if (level && word) {
+      user = await userService.markWordValidated(email, level, word);
+    } else {
+      user = await userService.findByEmail(email);
+    }
+    const levelWordCounts = await wordService.getLevelWordCounts(user.language);
+    const progress = userService.computeProgress(user, levelWordCounts);
+    res.json({ wordsValidated: user.wordsValidated, progress });
   } catch (err) {
     res.status(404).json({ error: err.message });
   }
@@ -217,6 +239,19 @@ router.get('/api/preview/:language/:level', async (req, res) => {
     const word = await wordService.getWordForUser({ language, level, wordsValidated: 0 });
     if (!word) return res.status(404).json({ error: 'Langue ou niveau non trouvé.' });
     res.json(word);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Caractères disponibles pour le clavier virtuel d'une langue (japonais et
+// chinois surtout, où l'utilisateur n'a généralement pas de clavier physique
+// adapté). Ne renvoie que ce qui est effectivement utilisé dans la base de
+// mots, pour rester un clavier compact et pertinent plutôt qu'un IME complet.
+router.get('/api/keyboard/:language', async (req, res) => {
+  try {
+    const chars = await wordService.getUniqueCharacters(req.params.language);
+    res.json({ chars });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -240,8 +275,14 @@ router.delete('/api/account', async (req, res) => {
 
 const ADMIN_EMAIL = 'wordsip@protonmail.com';
 
+// Le secret admin est lu depuis un header (x-admin-secret), jamais depuis
+// l'URL : les query strings finissent dans les logs du serveur/du proxy et
+// dans l'historique du navigateur, ce qu'on veut éviter pour un secret.
+// On garde une compatibilité avec l'ancien format (query/body) le temps que
+// tout le monde recharge la page admin, mais le header est la méthode
+// recommandée et c'est ce que public/admin.js utilise désormais.
 function checkAdminSecret(req, res) {
-  const provided = req.query.secret || req.body.secret;
+  const provided = req.get('x-admin-secret') || req.query.secret || req.body.secret;
   if (!process.env.ADMIN_SECRET || provided !== process.env.ADMIN_SECRET) {
     res.status(403).json({ error: 'Accès refusé.' });
     return false;
@@ -336,7 +377,6 @@ router.get('/api/admin/users', async (req, res) => {
       email: u.email,
       language: u.language,
       level: u.level,
-      track: u.track,
       wordsValidated: u.wordsValidated,
       createdAt: u.createdAt,
     }));

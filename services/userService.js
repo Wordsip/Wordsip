@@ -1,6 +1,7 @@
 const { nanoid } = require('nanoid');
 const { getDB } = require('./db');
 const { encryptField, decryptField, hashForLookup } = require('./crypto');
+const { LEVELS } = require('./wordService');
 
 function usersCollection() {
   return getDB().collection('users');
@@ -44,7 +45,6 @@ async function addUser({
   channel,
   revealMode,
   revealSeconds,
-  track,
 }) {
   const normalizedEmail = normalizeEmail(email);
   const emailHash = hashForLookup(normalizedEmail);
@@ -73,7 +73,9 @@ async function addUser({
     emailHash,
     emailEncrypted: encryptField(normalizedEmail),
     language,
-    level: level || 'beginner',
+    // Un des 3 niveaux fixes (niveau1/niveau2/niveau3) ; on retombe sur
+    // niveau1 si une valeur inattendue est envoyée.
+    level: LEVELS[level] ? level : 'niveau1',
     wordDays: finalDays,
     // Conservé pour compatibilité avec le reste du code / d'anciens comptes ;
     // dérivé directement du nombre de jours choisis.
@@ -82,8 +84,11 @@ async function addUser({
     channel: channel || 'email',
     revealMode: revealMode || 'manual',
     revealSeconds: revealSeconds || 10,
-    track: track === 'complet' ? 'complet' : 'rapide',
     wordsValidated: 0,
+    // Mots distincts validés par niveau (niveau1/niveau2/niveau3), pour
+    // calculer un % d'avancement précis par niveau plutôt qu'un simple
+    // compteur global. Vide à l'inscription.
+    validatedWords: {},
     createdAt: new Date().toISOString(),
   };
 
@@ -132,6 +137,52 @@ async function incrementWordsValidated(email) {
   return toUsableUser(result);
 }
 
+// Enregistre qu'un mot précis a été validé avec succès dans un niveau donné
+// (en plus du compteur global). On utilise $addToSet pour ne compter chaque
+// mot qu'une seule fois même s'il revient dans la rotation quotidienne et
+// est revalidé plusieurs fois — le % d'avancement reflète des mots distincts,
+// pas un nombre brut de bonnes réponses.
+async function markWordValidated(email, level, word) {
+  const normalizedEmail = normalizeEmail(email);
+  const emailHash = hashForLookup(normalizedEmail);
+  const setKey = `validatedWords.${level}`;
+
+  let result = await usersCollection().findOneAndUpdate(
+    { emailHash },
+    { $addToSet: { [setKey]: word } },
+    { returnDocument: 'after' }
+  );
+
+  if (!result) {
+    result = await usersCollection().findOneAndUpdate(
+      { email: normalizedEmail },
+      { $addToSet: { [setKey]: word } },
+      { returnDocument: 'after' }
+    );
+  }
+
+  if (!result) throw new Error('Utilisateur introuvable.');
+  return toUsableUser(result);
+}
+
+// Calcule le % d'avancement de l'utilisateur pour chaque niveau, à partir des
+// mots distincts déjà validés et du nombre total de mots actifs disponibles
+// à ce niveau pour sa langue (fourni par wordService.getLevelWordCounts).
+function computeProgress(user, levelWordCounts) {
+  const validated = user.validatedWords || {};
+  const progress = {};
+  for (const level of Object.keys(levelWordCounts)) {
+    const total = levelWordCounts[level] || 0;
+    const done = (validated[level] || []).length;
+    progress[level] = {
+      validated: done,
+      total,
+      percent: total > 0 ? Math.min(100, Math.round((done / total) * 100)) : 0,
+    };
+  }
+  return progress;
+}
+
 // Supprime définitivement un compte et toutes ses données — utilisé à la
 // fois par l'utilisateur lui-même (suppression volontaire) et par l'admin.
 async function deleteUser(email) {
@@ -151,6 +202,8 @@ module.exports = {
   getAllUsers,
   findByEmail,
   incrementWordsValidated,
+  markWordValidated,
+  computeProgress,
   normalizeEmail,
   deleteUser,
 };

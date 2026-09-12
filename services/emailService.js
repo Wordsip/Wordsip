@@ -1,6 +1,7 @@
 // Appel direct à l'API Brevo via fetch (natif à Node.js 18+), sans dépendance
 // tierce, pour éviter les vulnérabilités du SDK officiel (qui utilise une
 // bibliothèque HTTP obsolète en interne).
+const { formatPhonetic } = require('./phoneticFormat');
 
 async function sendRawEmail({ to, subject, htmlContent }) {
   if (!process.env.BREVO_API_KEY) {
@@ -45,7 +46,7 @@ async function sendWordEmail(user, wordEntry) {
   const htmlContent = `
     <div style="font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto;">
       <h1 style="color: #2b7a78;">${wordEntry.word}</h1>
-      <p style="font-style: italic; color: #666;">${wordEntry.phonetic || ''}</p>
+      <p style="font-style: italic; color: #666;">${formatPhonetic(wordEntry.phonetic)}</p>
       <p><strong>Traduction :</strong> ${wordEntry.translation}</p>
       <div style="margin-top:12px;"><strong>Exemples :</strong>${examplesHtml}</div>
       <div style="margin-top:12px;">

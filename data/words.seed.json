@@ -1,9 +1,12 @@
 {
   "en": {
-    "beginner1": [
+    "niveau1": [
       {
         "word": "Hello",
-        "phonetic": "/həˈloʊ/",
+        "phonetic": {
+          "us": "/həˈloʊ/",
+          "uk": "/həˈləʊ/"
+        },
         "translation": "Bonjour",
         "examples": [
           "Hello, how are you today?",
@@ -23,7 +26,10 @@
       },
       {
         "word": "Thank you",
-        "phonetic": "/θæŋk juː/",
+        "phonetic": {
+          "us": "/θæŋk juː/",
+          "uk": "/θæŋk juː/"
+        },
         "translation": "Merci",
         "examples": [
           "Thank you for your help!",
@@ -43,7 +49,10 @@
       },
       {
         "word": "Yes",
-        "phonetic": "/jɛs/",
+        "phonetic": {
+          "us": "/jɛs/",
+          "uk": "/jɛs/"
+        },
         "translation": "Oui",
         "examples": [
           "Yes, I would love to come.",
@@ -63,7 +72,10 @@
       },
       {
         "word": "No",
-        "phonetic": "/noʊ/",
+        "phonetic": {
+          "us": "/noʊ/",
+          "uk": "/nəʊ/"
+        },
         "translation": "Non",
         "examples": [
           "No, I can't make it tomorrow.",
@@ -83,7 +95,10 @@
       },
       {
         "word": "Please",
-        "phonetic": "/pliːz/",
+        "phonetic": {
+          "us": "/pliːz/",
+          "uk": "/pliːz/"
+        },
         "translation": "S'il te/vous plaît",
         "examples": [
           "Could you help me, please?",
@@ -103,7 +118,10 @@
       },
       {
         "word": "Sorry",
-        "phonetic": "/ˈsɒri/",
+        "phonetic": {
+          "us": "/ˈsɑːri/",
+          "uk": "/ˈsɒri/"
+        },
         "translation": "Désolé",
         "examples": [
           "I'm sorry for being late.",
@@ -123,7 +141,10 @@
       },
       {
         "word": "Good",
-        "phonetic": "/ɡʊd/",
+        "phonetic": {
+          "us": "/ɡʊd/",
+          "uk": "/ɡʊd/"
+        },
         "translation": "Bon / Bien",
         "examples": [
           "This is a good idea.",
@@ -143,7 +164,10 @@
       },
       {
         "word": "Water",
-        "phonetic": "/ˈwɔːtər/",
+        "phonetic": {
+          "us": "/ˈwɔːtər/",
+          "uk": "/ˈwɔːtə/"
+        },
         "translation": "Eau",
         "examples": [
           "Can I have a glass of water, please?",
@@ -163,7 +187,10 @@
       },
       {
         "word": "Help",
-        "phonetic": "/hɛlp/",
+        "phonetic": {
+          "us": "/hɛlp/",
+          "uk": "/hɛlp/"
+        },
         "translation": "Aide / Aider",
         "examples": [
           "Can you help me with this?",
@@ -183,7 +210,10 @@
       },
       {
         "word": "Friend",
-        "phonetic": "/frɛnd/",
+        "phonetic": {
+          "us": "/frɛnd/",
+          "uk": "/frɛnd/"
+        },
         "translation": "Ami(e)",
         "examples": [
           "She is my best friend.",
@@ -200,12 +230,544 @@
           "meaning": "Ami proche, argot urbain US.",
           "warning": "Contexte très informel uniquement."
         }
+      },
+      {
+        "word": "Goodbye",
+        "phonetic": {
+          "us": "/ˌɡʊdˈbaɪ/",
+          "uk": "/ˌɡʊdˈbaɪ/"
+        },
+        "translation": "Au revoir",
+        "examples": [
+          "Goodbye, see you tomorrow!",
+          "She waved goodbye at the door."
+        ],
+        "grammar": {
+          "nature": "Interjection de salutation (départ).",
+          "position": "Fin de conversation.",
+          "register": "Neutre.",
+          "synonyms": "Bye, See you, Take care"
+        },
+        "slang": {
+          "expression": "Catch you later",
+          "meaning": "Façon décontractée de dire à plus tard.",
+          "warning": "Entre amis, pas en contexte formel."
+        }
+      },
+      {
+        "word": "Excuse me",
+        "phonetic": {
+          "us": "/ɪkˈskjuːz miː/",
+          "uk": "/ɪkˈskjuːz miː/"
+        },
+        "translation": "Excusez-moi",
+        "examples": [
+          "Excuse me, where is the train station?",
+          "Excuse me, can I pass?"
+        ],
+        "grammar": {
+          "nature": "Expression de politesse (pour interpeller ou s'excuser légèrement).",
+          "position": "Début de phrase.",
+          "register": "Neutre à formel.",
+          "synonyms": "Pardon me, Sorry"
+        },
+        "slang": {
+          "expression": "'Scuse me",
+          "meaning": "Version relâchée et rapide à l'oral.",
+          "warning": "Informel, surtout à l'oral rapide."
+        }
+      },
+      {
+        "word": "Name",
+        "phonetic": {
+          "us": "/neɪm/",
+          "uk": "/neɪm/"
+        },
+        "translation": "Nom / Prénom",
+        "examples": [
+          "What is your name?",
+          "My name is Sarah."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "First name, Full name"
+        },
+        "slang": {
+          "expression": "What's your handle?",
+          "meaning": "Argot pour pseudo en ligne.",
+          "warning": "Contexte internet/jeux vidéo uniquement."
+        }
+      },
+      {
+        "word": "House",
+        "phonetic": {
+          "us": "/haʊs/",
+          "uk": "/haʊs/"
+        },
+        "translation": "Maison",
+        "examples": [
+          "I live in a small house.",
+          "Their house has a big garden."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Home, Place"
+        },
+        "slang": {
+          "expression": "Crib",
+          "meaning": "Façon très familière de dire chez-soi.",
+          "warning": "Argot américain, à réserver à l'oral décontracté."
+        }
+      },
+      {
+        "word": "Family",
+        "phonetic": {
+          "us": "/ˈfæməli/",
+          "uk": "/ˈfæməli/"
+        },
+        "translation": "Famille",
+        "examples": [
+          "I have a big family.",
+          "We spend holidays with family."
+        ],
+        "grammar": {
+          "nature": "Nom collectif (singulier en anglais).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Relatives, Kin"
+        },
+        "slang": {
+          "expression": "Fam",
+          "meaning": "Diminutif affectueux pour famille ou amis très proches.",
+          "warning": "Très familier, jeunes/réseaux sociaux."
+        }
+      },
+      {
+        "word": "Like",
+        "phonetic": {
+          "us": "/laɪk/",
+          "uk": "/laɪk/"
+        },
+        "translation": "Aimer bien / Apprécier",
+        "examples": [
+          "I like this song.",
+          "Do you like pizza?"
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + like + complément (nom ou -ing).",
+          "register": "Neutre.",
+          "synonyms": "Enjoy, Be fond of"
+        },
+        "slang": {
+          "expression": "Dig",
+          "meaning": "Aimer beaucoup quelque chose, façon rétro-cool.",
+          "warning": "Un peu daté mais reconnu."
+        }
+      },
+      {
+        "word": "Have",
+        "phonetic": {
+          "us": "/hæv/",
+          "uk": "/hæv/"
+        },
+        "translation": "Avoir",
+        "examples": [
+          "I have two brothers.",
+          "Do you have any questions?"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier (have/had/had), aussi auxiliaire.",
+          "position": "Sujet + have + complément.",
+          "register": "Neutre.",
+          "synonyms": "Own, Possess"
+        },
+        "slang": {
+          "expression": "Got",
+          "meaning": "Version orale/contractée de have got.",
+          "warning": "Très courant à l'oral informel."
+        }
+      },
+      {
+        "word": "Small",
+        "phonetic": {
+          "us": "/smɔːl/",
+          "uk": "/smɔːl/"
+        },
+        "translation": "Petit",
+        "examples": [
+          "I need a small bag.",
+          "The apartment is quite small."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant un nom ou après be.",
+          "register": "Neutre.",
+          "synonyms": "Little, Tiny"
+        },
+        "slang": {
+          "expression": "Tiny",
+          "meaning": "Insiste sur la petite taille, plus expressif.",
+          "warning": "Aucune restriction particulière."
+        }
+      },
+      {
+        "word": "Happy",
+        "phonetic": {
+          "us": "/ˈhæpi/",
+          "uk": "/ˈhæpi/"
+        },
+        "translation": "Heureux / Content",
+        "examples": [
+          "I'm happy to see you.",
+          "She looks very happy today."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Après be/look/feel.",
+          "register": "Neutre.",
+          "synonyms": "Glad, Pleased"
+        },
+        "slang": {
+          "expression": "Stoked",
+          "meaning": "Très content, enthousiaste, argot américain.",
+          "warning": "Très informel."
+        }
+      },
+      {
+        "word": "Beautiful",
+        "phonetic": {
+          "us": "/ˈbjuːtɪfəl/",
+          "uk": "/ˈbjuːtɪfəl/"
+        },
+        "translation": "Beau / Belle",
+        "examples": [
+          "What a beautiful sunset!",
+          "She has a beautiful voice."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant un nom ou après be.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Gorgeous, Lovely"
+        },
+        "slang": {
+          "expression": "Stunning",
+          "meaning": "Insiste sur une beauté impressionnante.",
+          "warning": "Un peu plus fort, à utiliser avec sincérité."
+        }
+      },
+      {
+        "word": "Time",
+        "phonetic": {
+          "us": "/taɪm/",
+          "uk": "/taɪm/"
+        },
+        "translation": "Temps / Heure",
+        "examples": [
+          "What time is it?",
+          "I don't have much time today."
+        ],
+        "grammar": {
+          "nature": "Nom indénombrable (le plus souvent).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Moment, Hour"
+        },
+        "slang": {
+          "expression": "It's high time",
+          "meaning": "Il est grand temps de faire quelque chose.",
+          "warning": "Expression figée, ton un peu insistant."
+        }
+      },
+      {
+        "word": "Day",
+        "phonetic": {
+          "us": "/deɪ/",
+          "uk": "/deɪ/"
+        },
+        "translation": "Jour / Journée",
+        "examples": [
+          "Have a nice day!",
+          "I work five days a week."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Daytime, Date"
+        },
+        "slang": {
+          "expression": "D-day",
+          "meaning": "Le jour décisif, jour J.",
+          "warning": "Expression imagée, contexte d'événement important."
+        }
+      },
+      {
+        "word": "Money",
+        "phonetic": {
+          "us": "/ˈmʌni/",
+          "uk": "/ˈmʌni/"
+        },
+        "translation": "Argent",
+        "examples": [
+          "I don't have much money.",
+          "She saves money every month."
+        ],
+        "grammar": {
+          "nature": "Nom indénombrable.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Cash, Funds"
+        },
+        "slang": {
+          "expression": "Dough",
+          "meaning": "Argent, argot classique et imagé.",
+          "warning": "Très familier, un peu daté mais reconnu."
+        }
+      },
+      {
+        "word": "Work",
+        "phonetic": {
+          "us": "/wɜːrk/",
+          "uk": "/wɜːk/"
+        },
+        "translation": "Travail / Travailler",
+        "examples": [
+          "I go to work at 8am.",
+          "She works in a hospital."
+        ],
+        "grammar": {
+          "nature": "Nom et verbe régulier.",
+          "position": "Sujet + work / go to work.",
+          "register": "Neutre.",
+          "synonyms": "Job, Labor (nom) ; Labor, Toil (verbe)"
+        },
+        "slang": {
+          "expression": "Grind",
+          "meaning": "Travail dur et répétitif (« le daily grind »).",
+          "warning": "Connotation d'effort intense, contexte informel."
+        }
+      },
+      {
+        "word": "School",
+        "phonetic": {
+          "us": "/skuːl/",
+          "uk": "/skuːl/"
+        },
+        "translation": "École",
+        "examples": [
+          "I go to school every day.",
+          "The school is near my house."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "College (UK, pour le supérieur), Academy"
+        },
+        "slang": {
+          "expression": "Skip school",
+          "meaning": "Sécher les cours, ne pas y aller.",
+          "warning": "Familier, connotation négative."
+        }
+      },
+      {
+        "word": "Morning",
+        "phonetic": {
+          "us": "/ˈmɔːrnɪŋ/",
+          "uk": "/ˈmɔːnɪŋ/"
+        },
+        "translation": "Matin",
+        "examples": [
+          "Good morning!",
+          "I wake up early in the morning."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet, complément, ou après 'in the'.",
+          "register": "Neutre.",
+          "synonyms": "Dawn (plus poétique)"
+        },
+        "slang": {
+          "expression": "Mornin'",
+          "meaning": "Version orale relâchée de 'good morning'.",
+          "warning": "Très familier, entre proches."
+        }
+      },
+      {
+        "word": "Night",
+        "phonetic": {
+          "us": "/naɪt/",
+          "uk": "/naɪt/"
+        },
+        "translation": "Nuit / Soir",
+        "examples": [
+          "Good night, sleep well.",
+          "We went out last night."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet, complément, ou après 'at'.",
+          "register": "Neutre.",
+          "synonyms": "Evening (plus tôt dans la soirée)"
+        },
+        "slang": {
+          "expression": "Nite",
+          "meaning": "Orthographe texto raccourcie de night.",
+          "warning": "SMS/réseaux sociaux uniquement."
+        }
+      },
+      {
+        "word": "Week",
+        "phonetic": {
+          "us": "/wiːk/",
+          "uk": "/wiːk/"
+        },
+        "translation": "Semaine",
+        "examples": [
+          "I work five days a week.",
+          "See you next week."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Workweek"
+        },
+        "slang": {
+          "expression": "Weekly",
+          "meaning": "Adjectif dérivé, 'chaque semaine'.",
+          "warning": "Aucune restriction, standard."
+        }
+      },
+      {
+        "word": "Child",
+        "phonetic": {
+          "us": "/tʃaɪld/",
+          "uk": "/tʃaɪld/"
+        },
+        "translation": "Enfant",
+        "examples": [
+          "She has one child.",
+          "Every child deserves love."
+        ],
+        "grammar": {
+          "nature": "Nom (pluriel irrégulier : children).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Kid (familier)"
+        },
+        "slang": {
+          "expression": "Kid",
+          "meaning": "Version familière et très courante de child.",
+          "warning": "Familier mais poli, utilisable partout à l'oral."
+        }
+      },
+      {
+        "word": "Man",
+        "phonetic": {
+          "us": "/mæn/",
+          "uk": "/mæn/"
+        },
+        "translation": "Homme",
+        "examples": [
+          "That man is my teacher.",
+          "He became a man."
+        ],
+        "grammar": {
+          "nature": "Nom (pluriel irrégulier : men).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Guy (familier)"
+        },
+        "slang": {
+          "expression": "Dude",
+          "meaning": "Type, mec — très familier et courant en américain.",
+          "warning": "Informel, entre amis."
+        }
+      },
+      {
+        "word": "Woman",
+        "phonetic": {
+          "us": "/ˈwʊmən/",
+          "uk": "/ˈwʊmən/"
+        },
+        "translation": "Femme",
+        "examples": [
+          "That woman is a doctor.",
+          "She is a strong woman."
+        ],
+        "grammar": {
+          "nature": "Nom (pluriel irrégulier : women).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Lady (plus poli/formel)"
+        },
+        "slang": {
+          "expression": "Girl",
+          "meaning": "Utilisé familièrement pour désigner une femme, même adulte.",
+          "warning": "Familier, contexte amical uniquement."
+        }
+      },
+      {
+        "word": "Hot",
+        "phonetic": {
+          "us": "/hɑːt/",
+          "uk": "/hɒt/"
+        },
+        "translation": "Chaud",
+        "examples": [
+          "It's very hot today.",
+          "Be careful, the plate is hot."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant un nom ou après be.",
+          "register": "Neutre.",
+          "synonyms": "Warm (moins fort), Boiling (plus fort)"
+        },
+        "slang": {
+          "expression": "Scorching",
+          "meaning": "Extrêmement chaud, argot imagé pour la météo.",
+          "warning": "Usage principalement météo."
+        }
+      },
+      {
+        "word": "Cold",
+        "phonetic": {
+          "us": "/koʊld/",
+          "uk": "/kəʊld/"
+        },
+        "translation": "Froid",
+        "examples": [
+          "It's cold outside.",
+          "I don't like cold weather."
+        ],
+        "grammar": {
+          "nature": "Adjectif (aussi nom : un rhume).",
+          "position": "Avant un nom ou après be.",
+          "register": "Neutre.",
+          "synonyms": "Chilly (léger), Freezing (extrême)"
+        },
+        "slang": {
+          "expression": "Freezing",
+          "meaning": "Très froid, expression courante et imagée.",
+          "warning": "Hyperbole courante, pas toujours littéral."
+        }
       }
     ],
-    "beginner2": [
+    "niveau2": [
       {
         "word": "Because",
-        "phonetic": "/bɪˈkɒz/",
+        "phonetic": {
+          "us": "/bɪˈkʌz/",
+          "uk": "/bɪˈkɒz/"
+        },
         "translation": "Parce que",
         "examples": [
           "I stayed home because it was raining.",
@@ -225,7 +787,10 @@
       },
       {
         "word": "Maybe",
-        "phonetic": "/ˈmeɪbi/",
+        "phonetic": {
+          "us": "/ˈmeɪbi/",
+          "uk": "/ˈmeɪbi/"
+        },
         "translation": "Peut-être",
         "examples": [
           "Maybe we should try again tomorrow.",
@@ -245,7 +810,10 @@
       },
       {
         "word": "Cool",
-        "phonetic": "/kuːl/",
+        "phonetic": {
+          "us": "/kuːl/",
+          "uk": "/kuːl/"
+        },
         "translation": "Cool / Sympa",
         "examples": [
           "That movie was so cool!",
@@ -265,7 +833,10 @@
       },
       {
         "word": "One",
-        "phonetic": "/wʌn/",
+        "phonetic": {
+          "us": "/wʌn/",
+          "uk": "/wʌn/"
+        },
         "translation": "Un",
         "examples": [
           "I have one apple.",
@@ -285,7 +856,10 @@
       },
       {
         "word": "Two",
-        "phonetic": "/tuː/",
+        "phonetic": {
+          "us": "/tuː/",
+          "uk": "/tuː/"
+        },
         "translation": "Deux",
         "examples": [
           "I have two brothers.",
@@ -305,7 +879,10 @@
       },
       {
         "word": "Three",
-        "phonetic": "/θriː/",
+        "phonetic": {
+          "us": "/θriː/",
+          "uk": "/θriː/"
+        },
         "translation": "Trois",
         "examples": [
           "There are three cats.",
@@ -325,7 +902,10 @@
       },
       {
         "word": "Today",
-        "phonetic": "/təˈdeɪ/",
+        "phonetic": {
+          "us": "/təˈdeɪ/",
+          "uk": "/təˈdeɪ/"
+        },
         "translation": "Aujourd'hui",
         "examples": [
           "Today is a good day.",
@@ -345,7 +925,10 @@
       },
       {
         "word": "Tomorrow",
-        "phonetic": "/təˈmɒroʊ/",
+        "phonetic": {
+          "us": "/təˈmɔːroʊ/",
+          "uk": "/təˈmɒrəʊ/"
+        },
         "translation": "Demain",
         "examples": [
           "See you tomorrow!",
@@ -365,7 +948,10 @@
       },
       {
         "word": "Yesterday",
-        "phonetic": "/ˈjɛstərdeɪ/",
+        "phonetic": {
+          "us": "/ˈjɛstərdeɪ/",
+          "uk": "/ˈjɛstədeɪ/"
+        },
         "translation": "Hier",
         "examples": [
           "I saw her yesterday.",
@@ -385,7 +971,10 @@
       },
       {
         "word": "Mother",
-        "phonetic": "/ˈmʌðər/",
+        "phonetic": {
+          "us": "/ˈmʌðər/",
+          "uk": "/ˈmʌðə/"
+        },
         "translation": "Mère",
         "examples": [
           "My mother is kind.",
@@ -405,7 +994,10 @@
       },
       {
         "word": "Father",
-        "phonetic": "/ˈfɑːðər/",
+        "phonetic": {
+          "us": "/ˈfɑːðər/",
+          "uk": "/ˈfɑːðə/"
+        },
         "translation": "Père",
         "examples": [
           "My father works hard.",
@@ -425,7 +1017,10 @@
       },
       {
         "word": "Brother",
-        "phonetic": "/ˈbrʌðər/",
+        "phonetic": {
+          "us": "/ˈbrʌðər/",
+          "uk": "/ˈbrʌðə/"
+        },
         "translation": "Frère",
         "examples": [
           "I have one brother.",
@@ -445,7 +1040,10 @@
       },
       {
         "word": "Sister",
-        "phonetic": "/ˈsɪstər/",
+        "phonetic": {
+          "us": "/ˈsɪstər/",
+          "uk": "/ˈsɪstə/"
+        },
         "translation": "Sœur",
         "examples": [
           "My sister is funny.",
@@ -465,7 +1063,10 @@
       },
       {
         "word": "Red",
-        "phonetic": "/rɛd/",
+        "phonetic": {
+          "us": "/rɛd/",
+          "uk": "/rɛd/"
+        },
         "translation": "Rouge",
         "examples": [
           "I like the red car.",
@@ -485,7 +1086,10 @@
       },
       {
         "word": "Blue",
-        "phonetic": "/bluː/",
+        "phonetic": {
+          "us": "/bluː/",
+          "uk": "/bluː/"
+        },
         "translation": "Bleu",
         "examples": [
           "The sky is blue.",
@@ -505,7 +1109,10 @@
       },
       {
         "word": "Black",
-        "phonetic": "/blæk/",
+        "phonetic": {
+          "us": "/blæk/",
+          "uk": "/blæk/"
+        },
         "translation": "Noir",
         "examples": [
           "He wears a black coat.",
@@ -525,7 +1132,10 @@
       },
       {
         "word": "White",
-        "phonetic": "/waɪt/",
+        "phonetic": {
+          "us": "/waɪt/",
+          "uk": "/waɪt/"
+        },
         "translation": "Blanc",
         "examples": [
           "She wore a white dress.",
@@ -545,7 +1155,10 @@
       },
       {
         "word": "What",
-        "phonetic": "/wʌt/",
+        "phonetic": {
+          "us": "/wʌt/",
+          "uk": "/wɒt/"
+        },
         "translation": "Quoi / Que",
         "examples": [
           "What is your name?",
@@ -565,7 +1178,10 @@
       },
       {
         "word": "Where",
-        "phonetic": "/wɛər/",
+        "phonetic": {
+          "us": "/wɛr/",
+          "uk": "/weə/"
+        },
         "translation": "Où",
         "examples": [
           "Where do you live?",
@@ -585,7 +1201,10 @@
       },
       {
         "word": "When",
-        "phonetic": "/wɛn/",
+        "phonetic": {
+          "us": "/wɛn/",
+          "uk": "/wɛn/"
+        },
         "translation": "Quand",
         "examples": [
           "When is the meeting?",
@@ -605,7 +1224,10 @@
       },
       {
         "word": "Why",
-        "phonetic": "/waɪ/",
+        "phonetic": {
+          "us": "/waɪ/",
+          "uk": "/waɪ/"
+        },
         "translation": "Pourquoi",
         "examples": [
           "Why are you late?",
@@ -625,7 +1247,10 @@
       },
       {
         "word": "How",
-        "phonetic": "/haʊ/",
+        "phonetic": {
+          "us": "/haʊ/",
+          "uk": "/haʊ/"
+        },
         "translation": "Comment",
         "examples": [
           "How are you?",
@@ -645,7 +1270,10 @@
       },
       {
         "word": "Eat",
-        "phonetic": "/iːt/",
+        "phonetic": {
+          "us": "/iːt/",
+          "uk": "/iːt/"
+        },
         "translation": "Manger",
         "examples": [
           "I eat breakfast every day.",
@@ -665,7 +1293,10 @@
       },
       {
         "word": "Drink",
-        "phonetic": "/drɪŋk/",
+        "phonetic": {
+          "us": "/drɪŋk/",
+          "uk": "/drɪŋk/"
+        },
         "translation": "Boire",
         "examples": [
           "I drink water every morning.",
@@ -685,7 +1316,10 @@
       },
       {
         "word": "Sleep",
-        "phonetic": "/sliːp/",
+        "phonetic": {
+          "us": "/sliːp/",
+          "uk": "/sliːp/"
+        },
         "translation": "Dormir",
         "examples": [
           "I need to sleep.",
@@ -705,7 +1339,10 @@
       },
       {
         "word": "Go",
-        "phonetic": "/ɡoʊ/",
+        "phonetic": {
+          "us": "/ɡoʊ/",
+          "uk": "/ɡəʊ/"
+        },
         "translation": "Aller",
         "examples": [
           "I go to school.",
@@ -725,7 +1362,10 @@
       },
       {
         "word": "Come",
-        "phonetic": "/kʌm/",
+        "phonetic": {
+          "us": "/kʌm/",
+          "uk": "/kʌm/"
+        },
         "translation": "Venir",
         "examples": [
           "Come here!",
@@ -745,7 +1385,10 @@
       },
       {
         "word": "Want",
-        "phonetic": "/wɒnt/",
+        "phonetic": {
+          "us": "/wɑːnt/",
+          "uk": "/wɒnt/"
+        },
         "translation": "Vouloir",
         "examples": [
           "I want a coffee.",
@@ -765,7 +1408,10 @@
       },
       {
         "word": "Love",
-        "phonetic": "/lʌv/",
+        "phonetic": {
+          "us": "/lʌv/",
+          "uk": "/lʌv/"
+        },
         "translation": "Aimer / Amour",
         "examples": [
           "I love my family.",
@@ -785,7 +1431,10 @@
       },
       {
         "word": "See",
-        "phonetic": "/siː/",
+        "phonetic": {
+          "us": "/siː/",
+          "uk": "/siː/"
+        },
         "translation": "Voir",
         "examples": [
           "I see a bird.",
@@ -805,7 +1454,10 @@
       },
       {
         "word": "Speak",
-        "phonetic": "/spiːk/",
+        "phonetic": {
+          "us": "/spiːk/",
+          "uk": "/spiːk/"
+        },
         "translation": "Parler",
         "examples": [
           "Do you speak English?",
@@ -825,7 +1477,10 @@
       },
       {
         "word": "Buy",
-        "phonetic": "/baɪ/",
+        "phonetic": {
+          "us": "/baɪ/",
+          "uk": "/baɪ/"
+        },
         "translation": "Acheter",
         "examples": [
           "I want to buy a car.",
@@ -845,7 +1500,10 @@
       },
       {
         "word": "Big",
-        "phonetic": "/bɪɡ/",
+        "phonetic": {
+          "us": "/bɪɡ/",
+          "uk": "/bɪɡ/"
+        },
         "translation": "Grand",
         "examples": [
           "That's a big house.",
@@ -864,14 +1522,17 @@
         }
       }
     ],
-    "beginner3": [
+    "niveau3": [
       {
         "word": "Nevertheless",
-        "phonetic": "/ˌnɛvəðəˈlɛs/",
+        "phonetic": {
+          "us": "/ˌnɛvərðəˈlɛs/",
+          "uk": "/ˌnevəðəˈles/"
+        },
         "translation": "Néanmoins",
         "examples": [
           "It was raining; nevertheless, we went for a walk.",
-          "She was tired. Nevertheless, she finished the race."
+          "The plan was risky; they decided to try it nevertheless."
         ],
         "grammar": {
           "nature": "Adverbe de liaison (opposition).",
@@ -881,39 +1542,411 @@
         },
         "slang": {
           "expression": "Anyways",
-          "meaning": "Version décontractée, moins précise.",
-          "warning": "Informel, éviter à l'écrit formel."
+          "meaning": "Version très décontractée, moins précise stylistiquement.",
+          "warning": "Informel, à éviter à l'écrit académique/professionnel."
         }
-      }
-    ],
-    "intermediate": [
+      },
       {
-        "word": "Nevertheless",
-        "phonetic": "/ˌnɛvəðəˈlɛs/",
-        "translation": "Néanmoins",
+        "word": "Furthermore",
+        "phonetic": {
+          "us": "/ˈfɜːrðərmɔːr/",
+          "uk": "/ˌfɜːðəˈmɔː/"
+        },
+        "translation": "De plus / En outre",
         "examples": [
-          "It was raining; nevertheless, we went for a walk.",
-          "The plan was risky; they decided to try it nevertheless."
+          "The report was late. Furthermore, it contained several errors.",
+          "Furthermore, the budget must be approved by Friday."
         ],
         "grammar": {
-          "nature": "Adverbe de liaison.",
-          "position": "Début de phrase ou après point-virgule.",
-          "register": "Soutenu.",
-          "synonyms": "However, Still, Yet"
+          "nature": "Adverbe de liaison (addition).",
+          "position": "Début de phrase, registre soutenu.",
+          "register": "Soutenu / académique.",
+          "synonyms": "Moreover, In addition"
         },
         "slang": {
-          "expression": "Anyways",
-          "meaning": "Version décontractée.",
-          "warning": "Informel."
+          "expression": "Plus",
+          "meaning": "Façon orale et simplifiée d'ajouter une idée.",
+          "warning": "Familier, jamais à l'écrit formel."
+        }
+      },
+      {
+        "word": "Consequently",
+        "phonetic": {
+          "us": "/ˈkɑːnsəkwəntli/",
+          "uk": "/ˈkɒnsɪkwəntli/"
+        },
+        "translation": "Par conséquent",
+        "examples": [
+          "Sales dropped; consequently, the company cut costs.",
+          "He missed the deadline; consequently, the project was delayed."
+        ],
+        "grammar": {
+          "nature": "Adverbe de liaison (conséquence).",
+          "position": "Début de phrase, suit souvent un point-virgule.",
+          "register": "Soutenu.",
+          "synonyms": "Therefore, As a result"
+        },
+        "slang": {
+          "expression": "So",
+          "meaning": "Version orale simple et courante pour introduire une conséquence.",
+          "warning": "Trop familier pour un rapport ou un email formel."
+        }
+      },
+      {
+        "word": "Negotiate",
+        "phonetic": {
+          "us": "/nɪˈɡoʊʃieɪt/",
+          "uk": "/nɪˈɡəʊʃieɪt/"
+        },
+        "translation": "Négocier",
+        "examples": [
+          "We need to negotiate a better price.",
+          "She negotiated her salary before signing."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + negotiate + complément.",
+          "register": "Neutre à soutenu (contexte professionnel).",
+          "synonyms": "Bargain, Discuss terms"
+        },
+        "slang": {
+          "expression": "Haggle",
+          "meaning": "Négocier de façon insistante, surtout sur un prix.",
+          "warning": "Connotation familière, pas pour un contexte corporate formel."
+        }
+      },
+      {
+        "word": "Deadline",
+        "phonetic": {
+          "us": "/ˈdɛdlaɪn/",
+          "uk": "/ˈdedlaɪn/"
+        },
+        "translation": "Date limite / Échéance",
+        "examples": [
+          "The deadline for this project is Friday.",
+          "We missed the deadline by two days."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre (professionnel/académique).",
+          "synonyms": "Due date, Cutoff"
+        },
+        "slang": {
+          "expression": "Crunch time",
+          "meaning": "Période de forte pression juste avant une échéance.",
+          "warning": "Informel, contexte de stress professionnel."
+        }
+      },
+      {
+        "word": "Accomplish",
+        "phonetic": {
+          "us": "/əˈkɑːmplɪʃ/",
+          "uk": "/əˈkʌmplɪʃ/"
+        },
+        "translation": "Accomplir / Réaliser",
+        "examples": [
+          "We accomplished all our goals this quarter.",
+          "She accomplished the task ahead of schedule."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + accomplish + complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Achieve, Complete"
+        },
+        "slang": {
+          "expression": "Pull off",
+          "meaning": "Réussir quelque chose de difficile, avec une nuance d'exploit.",
+          "warning": "Informel mais très courant à l'oral professionnel."
+        }
+      },
+      {
+        "word": "Sustainability",
+        "phonetic": {
+          "us": "/səˌsteɪnəˈbɪləti/",
+          "uk": "/səˌsteɪnəˈbɪləti/"
+        },
+        "translation": "Durabilité",
+        "examples": [
+          "The company focuses on sustainability.",
+          "Sustainability is central to our strategy."
+        ],
+        "grammar": {
+          "nature": "Nom indénombrable.",
+          "position": "Sujet ou complément.",
+          "register": "Soutenu / académique / professionnel.",
+          "synonyms": "Eco-responsibility"
+        },
+        "slang": {
+          "expression": "Green",
+          "meaning": "Adjectif informel pour tout ce qui est écologique/durable.",
+          "warning": "Simplifié, parfois vu comme du marketing (« greenwashing »)."
+        }
+      },
+      {
+        "word": "Entrepreneur",
+        "phonetic": {
+          "us": "/ˌɑːntrəprəˈnɜːr/",
+          "uk": "/ˌɒntrəprəˈnɜː/"
+        },
+        "translation": "Entrepreneur",
+        "examples": [
+          "She became a successful entrepreneur at 25.",
+          "Entrepreneurs often take big financial risks."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Founder, Business owner"
+        },
+        "slang": {
+          "expression": "Self-made",
+          "meaning": "Qui a réussi seul, sans aide/héritage.",
+          "warning": "Connotation méritocratique parfois critiquée."
+        }
+      },
+      {
+        "word": "Feasible",
+        "phonetic": {
+          "us": "/ˈfiːzəbəl/",
+          "uk": "/ˈfiːzəbəl/"
+        },
+        "translation": "Faisable / Réalisable",
+        "examples": [
+          "Is this plan financially feasible?",
+          "The engineers confirmed the project is feasible."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Après be, souvent en contexte de faisabilité.",
+          "register": "Soutenu / technique.",
+          "synonyms": "Viable, Achievable"
+        },
+        "slang": {
+          "expression": "Doable",
+          "meaning": "Version plus simple et orale de feasible.",
+          "warning": "Informel, à réserver à l'oral ou aux échanges rapides."
+        }
+      },
+      {
+        "word": "Leverage",
+        "phonetic": {
+          "us": "/ˈlɛvərɪdʒ/",
+          "uk": "/ˈliːvərɪdʒ/"
+        },
+        "translation": "Tirer parti de / Effet de levier",
+        "examples": [
+          "We should leverage our existing network.",
+          "The company used leverage to grow quickly."
+        ],
+        "grammar": {
+          "nature": "Verbe et nom.",
+          "position": "Sujet + leverage + complément (verbe) ; nom après 'use'.",
+          "register": "Soutenu / jargon professionnel.",
+          "synonyms": "Utilize, Capitalize on"
+        },
+        "slang": {
+          "expression": "Use to your advantage",
+          "meaning": "Reformulation plus simple et directe du même concept.",
+          "warning": "'Leverage' est parfois critiqué comme jargon d'entreprise excessif."
+        }
+      },
+      {
+        "word": "Stakeholder",
+        "phonetic": {
+          "us": "/ˈsteɪkˌhoʊldər/",
+          "uk": "/ˈsteɪkˌhəʊldə/"
+        },
+        "translation": "Partie prenante",
+        "examples": [
+          "All stakeholders must approve the plan.",
+          "We consulted key stakeholders before deciding."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Soutenu / jargon professionnel.",
+          "synonyms": "Interested party"
+        },
+        "slang": {
+          "expression": "Stakeholder buy-in",
+          "meaning": "L'adhésion des parties prenantes à un projet.",
+          "warning": "Jargon corporate, peu utilisé hors contexte professionnel."
+        }
+      },
+      {
+        "word": "Implement",
+        "phonetic": {
+          "us": "/ˈɪmplɪmɛnt/",
+          "uk": "/ˈɪmplɪment/"
+        },
+        "translation": "Mettre en œuvre / Implémenter",
+        "examples": [
+          "We will implement the new policy next month.",
+          "The team implemented the changes successfully."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + implement + complément.",
+          "register": "Soutenu / technique.",
+          "synonyms": "Execute, Carry out"
+        },
+        "slang": {
+          "expression": "Roll out",
+          "meaning": "Déployer progressivement une nouvelle mesure ou un produit.",
+          "warning": "Jargon d'entreprise courant, informel mais largement accepté."
+        }
+      },
+      {
+        "word": "Analyze",
+        "phonetic": {
+          "us": "/ˈænəlaɪz/",
+          "uk": "/ˈænəlaɪz/"
+        },
+        "translation": "Analyser",
+        "examples": [
+          "We need to analyze the data before deciding.",
+          "The report analyzes market trends."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier. Attention à l'orthographe : 'analyze' (US) vs 'analyse' (UK).",
+          "position": "Sujet + analyze + complément.",
+          "register": "Soutenu / académique.",
+          "synonyms": "Examine, Evaluate"
+        },
+        "slang": {
+          "expression": "Break down",
+          "meaning": "Décortiquer, analyser en détail de façon plus imagée.",
+          "warning": "Informel mais courant même en contexte professionnel."
+        }
+      },
+      {
+        "word": "Colleague",
+        "phonetic": {
+          "us": "/ˈkɑːliːɡ/",
+          "uk": "/ˈkɒliːɡ/"
+        },
+        "translation": "Collègue",
+        "examples": [
+          "I had lunch with a colleague.",
+          "She's a colleague from the marketing team."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Coworker (US), Workmate"
+        },
+        "slang": {
+          "expression": "Coworker",
+          "meaning": "Synonyme légèrement plus informel, plus courant aux USA.",
+          "warning": "Aucune restriction particulière."
+        }
+      },
+      {
+        "word": "Meeting",
+        "phonetic": {
+          "us": "/ˈmiːtɪŋ/",
+          "uk": "/ˈmiːtɪŋ/"
+        },
+        "translation": "Réunion",
+        "examples": [
+          "We have a meeting at 10am.",
+          "The meeting ran longer than expected."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Conference, Briefing"
+        },
+        "slang": {
+          "expression": "Touch base",
+          "meaning": "Faire un point rapide, plutôt qu'une vraie réunion.",
+          "warning": "Jargon d'entreprise, léger et informel."
+        }
+      },
+      {
+        "word": "Draft",
+        "phonetic": {
+          "us": "/dræft/",
+          "uk": "/drɑːft/"
+        },
+        "translation": "Brouillon / Ébauche",
+        "examples": [
+          "Can you send me the draft by tomorrow?",
+          "This is just a first draft."
+        ],
+        "grammar": {
+          "nature": "Nom et verbe.",
+          "position": "Sujet + draft (nom) ; draft + complément (verbe).",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Outline, Version"
+        },
+        "slang": {
+          "expression": "Rough draft",
+          "meaning": "Version brute et non finalisée d'un texte.",
+          "warning": "Aucune restriction, expression standard."
+        }
+      },
+      {
+        "word": "Thesis",
+        "phonetic": {
+          "us": "/ˈθiːsɪs/",
+          "uk": "/ˈθiːsɪs/"
+        },
+        "translation": "Thèse (mémoire universitaire)",
+        "examples": [
+          "She is writing her master's thesis.",
+          "His thesis focuses on climate policy."
+        ],
+        "grammar": {
+          "nature": "Nom (pluriel irrégulier : theses).",
+          "position": "Sujet ou complément.",
+          "register": "Académique.",
+          "synonyms": "Dissertation"
+        },
+        "slang": {
+          "expression": "Diss",
+          "meaning": "Abréviation familière et américaine de 'dissertation'.",
+          "warning": "Très familier, réservé à l'oral entre étudiants."
+        }
+      },
+      {
+        "word": "Curriculum",
+        "phonetic": {
+          "us": "/kəˈrɪkjələm/",
+          "uk": "/kəˈrɪkjʊləm/"
+        },
+        "translation": "Programme (d'études)",
+        "examples": [
+          "The university updated its curriculum.",
+          "This course is not part of the official curriculum."
+        ],
+        "grammar": {
+          "nature": "Nom (pluriel : curricula ou curriculums).",
+          "position": "Sujet ou complément.",
+          "register": "Académique.",
+          "synonyms": "Syllabus, Program of study"
+        },
+        "slang": {
+          "expression": "Course load",
+          "meaning": "Ensemble des cours suivis, façon plus concrète.",
+          "warning": "Aucune restriction, usage courant sur les campus."
         }
       }
     ]
   },
   "es": {
-    "beginner1": [
+    "niveau1": [
       {
         "word": "Hola",
-        "phonetic": "/ˈola/",
+        "phonetic": {
+          "es": "/ˈola/",
+          "latam": "/ˈola/"
+        },
         "translation": "Bonjour / Salut",
         "examples": [
           "¡Hola! ¿Cómo estás?",
@@ -933,7 +1966,10 @@
       },
       {
         "word": "Gracias",
-        "phonetic": "/ˈɡɾasjas/",
+        "phonetic": {
+          "es": "/ˈɡɾaθjas/",
+          "latam": "/ˈɡɾasjas/"
+        },
         "translation": "Merci",
         "examples": [
           "Gracias por tu ayuda.",
@@ -953,7 +1989,10 @@
       },
       {
         "word": "Sí",
-        "phonetic": "/si/",
+        "phonetic": {
+          "es": "/si/",
+          "latam": "/si/"
+        },
         "translation": "Oui",
         "examples": [
           "Sí, quiero venir.",
@@ -973,7 +2012,10 @@
       },
       {
         "word": "No",
-        "phonetic": "/no/",
+        "phonetic": {
+          "es": "/no/",
+          "latam": "/no/"
+        },
         "translation": "Non",
         "examples": [
           "No, no puedo mañana.",
@@ -993,7 +2035,10 @@
       },
       {
         "word": "Por favor",
-        "phonetic": "/poɾ faˈβoɾ/",
+        "phonetic": {
+          "es": "/poɾ faˈβoɾ/",
+          "latam": "/poɾ faˈβoɾ/"
+        },
         "translation": "S'il te/vous plaît",
         "examples": [
           "¿Puedes ayudarme, por favor?",
@@ -1013,7 +2058,10 @@
       },
       {
         "word": "Lo siento",
-        "phonetic": "/lo ˈsjento/",
+        "phonetic": {
+          "es": "/lo ˈsjento/",
+          "latam": "/lo ˈsjento/"
+        },
         "translation": "Désolé",
         "examples": [
           "Lo siento por llegar tarde.",
@@ -1033,7 +2081,10 @@
       },
       {
         "word": "Bueno",
-        "phonetic": "/ˈbweno/",
+        "phonetic": {
+          "es": "/ˈbweno/",
+          "latam": "/ˈbweno/"
+        },
         "translation": "Bon / Bien",
         "examples": [
           "Esta es una buena idea.",
@@ -1053,7 +2104,10 @@
       },
       {
         "word": "Agua",
-        "phonetic": "/ˈaɣwa/",
+        "phonetic": {
+          "es": "/ˈaɣwa/",
+          "latam": "/ˈaɣwa/"
+        },
         "translation": "Eau",
         "examples": [
           "¿Me das un vaso de agua, por favor?",
@@ -1073,7 +2127,10 @@
       },
       {
         "word": "Ayuda",
-        "phonetic": "/aˈʝuða/",
+        "phonetic": {
+          "es": "/aˈʝuða/",
+          "latam": "/aˈʝuða/"
+        },
         "translation": "Aide / Aider",
         "examples": [
           "¿Puedes ayudarme con esto?",
@@ -1093,7 +2150,10 @@
       },
       {
         "word": "Amigo",
-        "phonetic": "/aˈmiɣo/",
+        "phonetic": {
+          "es": "/aˈmiɣo/",
+          "latam": "/aˈmiɣo/"
+        },
         "translation": "Ami",
         "examples": [
           "Ella es mi mejor amiga.",
@@ -1110,12 +2170,544 @@
           "meaning": "Pote, ami proche, très familier.",
           "warning": "Régional, informel."
         }
+      },
+      {
+        "word": "Adiós",
+        "phonetic": {
+          "es": "/aˈðjos/",
+          "latam": "/aˈðjos/"
+        },
+        "translation": "Au revoir",
+        "examples": [
+          "¡Adiós, hasta mañana!",
+          "Me despedí y dije adiós."
+        ],
+        "grammar": {
+          "nature": "Interjection de salutation (départ).",
+          "position": "Fin de conversation.",
+          "register": "Neutre.",
+          "synonyms": "Hasta luego, Chao"
+        },
+        "slang": {
+          "expression": "Chao",
+          "meaning": "Emprunté à l'italien, très courant et décontracté.",
+          "warning": "Familier, informel."
+        }
+      },
+      {
+        "word": "Perdón",
+        "phonetic": {
+          "es": "/peɾˈðon/",
+          "latam": "/peɾˈðon/"
+        },
+        "translation": "Pardon / Excusez-moi",
+        "examples": [
+          "Perdón, ¿dónde está la estación?",
+          "Perdón por la tardanza."
+        ],
+        "grammar": {
+          "nature": "Nom utilisé comme interjection de politesse.",
+          "position": "Début de phrase.",
+          "register": "Neutre à formel.",
+          "synonyms": "Disculpe (plus formel), Con permiso"
+        },
+        "slang": {
+          "expression": "Perdona",
+          "meaning": "Version tutoyée et plus directe, entre amis.",
+          "warning": "Informel, réservé au tutoiement."
+        }
+      },
+      {
+        "word": "Nombre",
+        "phonetic": {
+          "es": "/ˈnombɾe/",
+          "latam": "/ˈnombɾe/"
+        },
+        "translation": "Nom / Prénom",
+        "examples": [
+          "¿Cuál es tu nombre?",
+          "Mi nombre es Sara."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Apellido (nom de famille)"
+        },
+        "slang": {
+          "expression": "¿Cómo te llamas?",
+          "meaning": "Façon plus naturelle de demander le prénom.",
+          "warning": "Expression standard, très utilisée à l'oral."
+        }
+      },
+      {
+        "word": "Casa",
+        "phonetic": {
+          "es": "/ˈkasa/",
+          "latam": "/ˈkasa/"
+        },
+        "translation": "Maison",
+        "examples": [
+          "Vivo en una casa pequeña.",
+          "Su casa tiene un jardín grande."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Hogar (plus affectif)"
+        },
+        "slang": {
+          "expression": "Depa / Piso",
+          "meaning": "Appartement — 'depa' en Amérique latine, 'piso' en Espagne.",
+          "warning": "Vocabulaire régional différent selon le pays."
+        }
+      },
+      {
+        "word": "Familia",
+        "phonetic": {
+          "es": "/faˈmilja/",
+          "latam": "/faˈmilja/"
+        },
+        "translation": "Famille",
+        "examples": [
+          "Tengo una familia grande.",
+          "Pasamos las vacaciones en familia."
+        ],
+        "grammar": {
+          "nature": "Nom collectif.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Parientes (la famille élargie)"
+        },
+        "slang": {
+          "expression": "Family",
+          "meaning": "Emprunt à l'anglais, utilisé familièrement chez les jeunes bilingues.",
+          "warning": "Très familier, contexte informel."
+        }
+      },
+      {
+        "word": "Gustar",
+        "phonetic": {
+          "es": "/ɡusˈtaɾ/",
+          "latam": "/ɡusˈtaɾ/"
+        },
+        "translation": "Plaire / Aimer bien",
+        "examples": [
+          "Me gusta esta canción.",
+          "¿Te gusta el chocolate?"
+        ],
+        "grammar": {
+          "nature": "Verbe régulier à construction inversée (comme 'plaire' en français : 'me gusta' = 'ça me plaît').",
+          "position": "Me/te/le + gusta + sujet réel.",
+          "register": "Neutre.",
+          "synonyms": "Encantar (aimer beaucoup)"
+        },
+        "slang": {
+          "expression": "Molar",
+          "meaning": "'Plaire, être cool' — très utilisé en Espagne.",
+          "warning": "Argot régional (Espagne uniquement)."
+        }
+      },
+      {
+        "word": "Tener",
+        "phonetic": {
+          "es": "/teˈneɾ/",
+          "latam": "/teˈneɾ/"
+        },
+        "translation": "Avoir",
+        "examples": [
+          "Tengo dos hermanos.",
+          "¿Tienes alguna pregunta?"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier.",
+          "position": "Sujet + tener + complément.",
+          "register": "Neutre.",
+          "synonyms": "Poseer (plus soutenu)"
+        },
+        "slang": {
+          "expression": "Tener pinta de",
+          "meaning": "Avoir l'air de, expression figée très courante.",
+          "warning": "Familier mais largement accepté à l'oral."
+        }
+      },
+      {
+        "word": "Pequeño",
+        "phonetic": {
+          "es": "/peˈkeɲo/",
+          "latam": "/peˈkeɲo/"
+        },
+        "translation": "Petit",
+        "examples": [
+          "Necesito una bolsa pequeña.",
+          "El apartamento es bastante pequeño."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant ou après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Chico (surtout en Amérique latine)"
+        },
+        "slang": {
+          "expression": "Chiquito",
+          "meaning": "Diminutif affectueux de pequeño, très courant.",
+          "warning": "Familier et affectueux, pas offensant."
+        }
+      },
+      {
+        "word": "Feliz",
+        "phonetic": {
+          "es": "/feˈliθ/",
+          "latam": "/feˈlis/"
+        },
+        "translation": "Heureux / Content",
+        "examples": [
+          "Estoy feliz de verte.",
+          "Hoy se ve muy feliz."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Après estar.",
+          "register": "Neutre.",
+          "synonyms": "Contento, Alegre"
+        },
+        "slang": {
+          "expression": "Chévere / De pelos",
+          "meaning": "'Génial, super' — expressions régionales (Colombie-Venezuela / Mexique).",
+          "warning": "Argot très régional, à adapter selon le pays visé."
+        }
+      },
+      {
+        "word": "Hermoso",
+        "phonetic": {
+          "es": "/eɾˈmoso/",
+          "latam": "/eɾˈmoso/"
+        },
+        "translation": "Beau / Belle",
+        "examples": [
+          "¡Qué atardecer tan hermoso!",
+          "Tiene una voz hermosa."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant ou après le nom.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Bonito, Bello"
+        },
+        "slang": {
+          "expression": "Precioso",
+          "meaning": "Insiste sur une beauté particulièrement frappante.",
+          "warning": "Aucune restriction, ton un peu plus emphatique."
+        }
+      },
+      {
+        "word": "Tiempo",
+        "phonetic": {
+          "es": "/ˈtjempo/",
+          "latam": "/ˈtjempo/"
+        },
+        "translation": "Temps",
+        "examples": [
+          "No tengo mucho tiempo hoy.",
+          "¿Qué tiempo hace?"
+        ],
+        "grammar": {
+          "nature": "Nom (aussi 'météo' selon contexte).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Rato (moment court)"
+        },
+        "slang": {
+          "expression": "Un toque",
+          "meaning": "Un petit moment, façon familière de dire 'attends un peu'.",
+          "warning": "Familier, surtout en Espagne."
+        }
+      },
+      {
+        "word": "Día",
+        "phonetic": {
+          "es": "/ˈdia/",
+          "latam": "/ˈdia/"
+        },
+        "translation": "Jour / Journée",
+        "examples": [
+          "¡Que tengas un buen día!",
+          "Trabajo cinco días a la semana."
+        ],
+        "grammar": {
+          "nature": "Nom (masculin malgré le -a final).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Jornada (journée de travail)"
+        },
+        "slang": {
+          "expression": "Día a día",
+          "meaning": "Le quotidien, expression figée très courante.",
+          "warning": "Standard, aucune restriction."
+        }
+      },
+      {
+        "word": "Dinero",
+        "phonetic": {
+          "es": "/diˈneɾo/",
+          "latam": "/diˈneɾo/"
+        },
+        "translation": "Argent",
+        "examples": [
+          "No tengo mucho dinero.",
+          "Ahorra dinero cada mes."
+        ],
+        "grammar": {
+          "nature": "Nom indénombrable.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Plata (très courant en Amérique latine)"
+        },
+        "slang": {
+          "expression": "Plata",
+          "meaning": "'Argent', quasi standard en Amérique latine, rare en Espagne.",
+          "warning": "Régional : en Espagne on dit plutôt 'pasta' ou 'dinero'."
+        }
+      },
+      {
+        "word": "Trabajo",
+        "phonetic": {
+          "es": "/tɾaˈβaxo/",
+          "latam": "/tɾaˈβaxo/"
+        },
+        "translation": "Travail",
+        "examples": [
+          "Voy al trabajo a las 8.",
+          "Tiene mucho trabajo esta semana."
+        ],
+        "grammar": {
+          "nature": "Nom et verbe (trabajar).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Empleo, Curro (argot, Espagne)"
+        },
+        "slang": {
+          "expression": "Curro",
+          "meaning": "'Boulot', très familier et typique d'Espagne.",
+          "warning": "Argot régional (Espagne), à éviter en Amérique latine."
+        }
+      },
+      {
+        "word": "Escuela",
+        "phonetic": {
+          "es": "/esˈkwela/",
+          "latam": "/esˈkwela/"
+        },
+        "translation": "École",
+        "examples": [
+          "Voy a la escuela todos los días.",
+          "La escuela está cerca de mi casa."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Colegio (souvent interchangeable)"
+        },
+        "slang": {
+          "expression": "Hacer pellas / Hacer la vaca",
+          "meaning": "Sécher les cours — expression différente selon le pays.",
+          "warning": "Familier, connotation négative."
+        }
+      },
+      {
+        "word": "Ciudad",
+        "phonetic": {
+          "es": "/θjuˈðað/",
+          "latam": "/sjuˈðað/"
+        },
+        "translation": "Ville",
+        "examples": [
+          "Madrid es una ciudad grande.",
+          "Me gusta vivir en esta ciudad."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Urbe (plus soutenu)"
+        },
+        "slang": {
+          "expression": "La city",
+          "meaning": "Emprunt informel à l'anglais pour désigner le centre-ville.",
+          "warning": "Usage limité, familier."
+        }
+      },
+      {
+        "word": "Noche",
+        "phonetic": {
+          "es": "/ˈnotʃe/",
+          "latam": "/ˈnotʃe/"
+        },
+        "translation": "Nuit / Soir",
+        "examples": [
+          "Buenas noches, que descanses.",
+          "Salimos anoche."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Velada (soirée, plus soutenu)"
+        },
+        "slang": {
+          "expression": "De marcha",
+          "meaning": "Faire la fête le soir, expression typique d'Espagne.",
+          "warning": "Argot régional (Espagne)."
+        }
+      },
+      {
+        "word": "Semana",
+        "phonetic": {
+          "es": "/seˈmana/",
+          "latam": "/seˈmana/"
+        },
+        "translation": "Semaine",
+        "examples": [
+          "Trabajo cinco días a la semana.",
+          "Nos vemos la próxima semana."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Semanal (adjectif dérivé)"
+        },
+        "slang": {
+          "expression": "Finde",
+          "meaning": "Abréviation familière de 'fin de semana' (week-end).",
+          "warning": "Très familier et courant à l'oral."
+        }
+      },
+      {
+        "word": "Niño",
+        "phonetic": {
+          "es": "/ˈniɲo/",
+          "latam": "/ˈniɲo/"
+        },
+        "translation": "Enfant (garçon)",
+        "examples": [
+          "Ese niño es muy inteligente.",
+          "Todo niño merece cariño."
+        ],
+        "grammar": {
+          "nature": "Nom (féminin : niña).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Chico/a, Crío (familier)"
+        },
+        "slang": {
+          "expression": "Chaval",
+          "meaning": "'Gamin', très familier et typique d'Espagne.",
+          "warning": "Argot régional (Espagne)."
+        }
+      },
+      {
+        "word": "Hombre",
+        "phonetic": {
+          "es": "/ˈombɾe/",
+          "latam": "/ˈombɾe/"
+        },
+        "translation": "Homme",
+        "examples": [
+          "Ese hombre es mi profesor.",
+          "Se convirtió en un hombre."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Tío (familier, Espagne), Tipo"
+        },
+        "slang": {
+          "expression": "Tío",
+          "meaning": "'Mec', très familier, typique d'Espagne (≠ oncle).",
+          "warning": "Argot régional (Espagne uniquement)."
+        }
+      },
+      {
+        "word": "Mujer",
+        "phonetic": {
+          "es": "/muˈxeɾ/",
+          "latam": "/muˈxeɾ/"
+        },
+        "translation": "Femme",
+        "examples": [
+          "Esa mujer es doctora.",
+          "Es una mujer muy fuerte."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Señora (plus formel)"
+        },
+        "slang": {
+          "expression": "Tía",
+          "meaning": "'Meuf', très familier, typique d'Espagne.",
+          "warning": "Argot régional (Espagne uniquement)."
+        }
+      },
+      {
+        "word": "Caliente",
+        "phonetic": {
+          "es": "/kaˈljente/",
+          "latam": "/kaˈljente/"
+        },
+        "translation": "Chaud",
+        "examples": [
+          "El café está muy caliente.",
+          "Cuidado, el plato está caliente."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant ou après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Calor (nom, la chaleur)"
+        },
+        "slang": {
+          "expression": "Que arde",
+          "meaning": "'Ça brûle', hyperbole familière pour insister sur la chaleur.",
+          "warning": "Expression imagée, pas toujours littérale."
+        }
+      },
+      {
+        "word": "Frío",
+        "phonetic": {
+          "es": "/ˈfɾio/",
+          "latam": "/ˈfɾio/"
+        },
+        "translation": "Froid",
+        "examples": [
+          "Hace frío afuera.",
+          "No me gusta el clima frío."
+        ],
+        "grammar": {
+          "nature": "Adjectif (aussi nom : le froid).",
+          "position": "Avant ou après le nom ; 'hacer frío' pour la météo.",
+          "register": "Neutre.",
+          "synonyms": "Helado (glacial)"
+        },
+        "slang": {
+          "expression": "Pelarse de frío",
+          "meaning": "'Être gelé', expression familière et imagée.",
+          "warning": "Informel mais très courant."
+        }
       }
     ],
-    "beginner2": [
+    "niveau2": [
       {
         "word": "Uno",
-        "phonetic": "/ˈuno/",
+        "phonetic": {
+          "es": "/ˈuno/",
+          "latam": "/ˈuno/"
+        },
         "translation": "Un",
         "examples": [
           "Tengo una manzana.",
@@ -1135,7 +2727,10 @@
       },
       {
         "word": "Dos",
-        "phonetic": "/dos/",
+        "phonetic": {
+          "es": "/dos/",
+          "latam": "/dos/"
+        },
         "translation": "Deux",
         "examples": [
           "Tengo dos hermanos.",
@@ -1155,7 +2750,10 @@
       },
       {
         "word": "Tres",
-        "phonetic": "/tɾes/",
+        "phonetic": {
+          "es": "/tɾes/",
+          "latam": "/tɾes/"
+        },
         "translation": "Trois",
         "examples": [
           "Hay tres gatos.",
@@ -1175,7 +2773,10 @@
       },
       {
         "word": "Hoy",
-        "phonetic": "/oi/",
+        "phonetic": {
+          "es": "/oi/",
+          "latam": "/oi/"
+        },
         "translation": "Aujourd'hui",
         "examples": [
           "Hoy es un buen día.",
@@ -1195,7 +2796,10 @@
       },
       {
         "word": "Mañana",
-        "phonetic": "/maˈɲana/",
+        "phonetic": {
+          "es": "/maˈɲana/",
+          "latam": "/maˈɲana/"
+        },
         "translation": "Demain",
         "examples": [
           "¡Nos vemos mañana!",
@@ -1215,7 +2819,10 @@
       },
       {
         "word": "Ayer",
-        "phonetic": "/aˈʝeɾ/",
+        "phonetic": {
+          "es": "/aˈʝeɾ/",
+          "latam": "/aˈʝeɾ/"
+        },
         "translation": "Hier",
         "examples": [
           "La vi ayer.",
@@ -1235,7 +2842,10 @@
       },
       {
         "word": "Madre",
-        "phonetic": "/ˈmaðɾe/",
+        "phonetic": {
+          "es": "/ˈmaðɾe/",
+          "latam": "/ˈmaðɾe/"
+        },
         "translation": "Mère",
         "examples": [
           "Mi madre es amable.",
@@ -1255,7 +2865,10 @@
       },
       {
         "word": "Padre",
-        "phonetic": "/ˈpaðɾe/",
+        "phonetic": {
+          "es": "/ˈpaðɾe/",
+          "latam": "/ˈpaðɾe/"
+        },
         "translation": "Père",
         "examples": [
           "Mi padre trabaja mucho.",
@@ -1275,7 +2888,10 @@
       },
       {
         "word": "Hermano",
-        "phonetic": "/eɾˈmano/",
+        "phonetic": {
+          "es": "/eɾˈmano/",
+          "latam": "/eɾˈmano/"
+        },
         "translation": "Frère",
         "examples": [
           "Tengo un hermano.",
@@ -1295,7 +2911,10 @@
       },
       {
         "word": "Hermana",
-        "phonetic": "/eɾˈmana/",
+        "phonetic": {
+          "es": "/eɾˈmana/",
+          "latam": "/eɾˈmana/"
+        },
         "translation": "Sœur",
         "examples": [
           "Mi hermana es graciosa.",
@@ -1315,7 +2934,10 @@
       },
       {
         "word": "Rojo",
-        "phonetic": "/ˈroxo/",
+        "phonetic": {
+          "es": "/ˈroxo/",
+          "latam": "/ˈroxo/"
+        },
         "translation": "Rouge",
         "examples": [
           "Me gusta el coche rojo.",
@@ -1335,7 +2957,10 @@
       },
       {
         "word": "Azul",
-        "phonetic": "/aˈsul/",
+        "phonetic": {
+          "es": "/aˈθul/",
+          "latam": "/aˈsul/"
+        },
         "translation": "Bleu",
         "examples": [
           "El cielo es azul.",
@@ -1355,7 +2980,10 @@
       },
       {
         "word": "Negro",
-        "phonetic": "/ˈneɣɾo/",
+        "phonetic": {
+          "es": "/ˈneɣɾo/",
+          "latam": "/ˈneɣɾo/"
+        },
         "translation": "Noir",
         "examples": [
           "Lleva un abrigo negro.",
@@ -1375,7 +3003,10 @@
       },
       {
         "word": "Blanco",
-        "phonetic": "/ˈblaŋko/",
+        "phonetic": {
+          "es": "/ˈblaŋko/",
+          "latam": "/ˈblaŋko/"
+        },
         "translation": "Blanc",
         "examples": [
           "Llevaba un vestido blanco.",
@@ -1395,7 +3026,10 @@
       },
       {
         "word": "Qué",
-        "phonetic": "/ke/",
+        "phonetic": {
+          "es": "/ke/",
+          "latam": "/ke/"
+        },
         "translation": "Quoi / Que",
         "examples": [
           "¿Qué es esto?",
@@ -1415,7 +3049,10 @@
       },
       {
         "word": "Dónde",
-        "phonetic": "/ˈdonde/",
+        "phonetic": {
+          "es": "/ˈdonde/",
+          "latam": "/ˈdonde/"
+        },
         "translation": "Où",
         "examples": [
           "¿Dónde vives?",
@@ -1435,7 +3072,10 @@
       },
       {
         "word": "Cuándo",
-        "phonetic": "/ˈkwando/",
+        "phonetic": {
+          "es": "/ˈkwando/",
+          "latam": "/ˈkwando/"
+        },
         "translation": "Quand",
         "examples": [
           "¿Cuándo es la reunión?",
@@ -1455,7 +3095,10 @@
       },
       {
         "word": "Por qué",
-        "phonetic": "/poɾ ˈke/",
+        "phonetic": {
+          "es": "/poɾ ˈke/",
+          "latam": "/poɾ ˈke/"
+        },
         "translation": "Pourquoi",
         "examples": [
           "¿Por qué llegas tarde?",
@@ -1475,7 +3118,10 @@
       },
       {
         "word": "Cómo",
-        "phonetic": "/ˈkomo/",
+        "phonetic": {
+          "es": "/ˈkomo/",
+          "latam": "/ˈkomo/"
+        },
         "translation": "Comment",
         "examples": [
           "¿Cómo estás?",
@@ -1495,7 +3141,10 @@
       },
       {
         "word": "Comer",
-        "phonetic": "/koˈmeɾ/",
+        "phonetic": {
+          "es": "/koˈmeɾ/",
+          "latam": "/koˈmeɾ/"
+        },
         "translation": "Manger",
         "examples": [
           "Como el desayuno cada día.",
@@ -1515,7 +3164,10 @@
       },
       {
         "word": "Beber",
-        "phonetic": "/beˈβeɾ/",
+        "phonetic": {
+          "es": "/beˈβeɾ/",
+          "latam": "/beˈβeɾ/"
+        },
         "translation": "Boire",
         "examples": [
           "Bebo agua cada mañana.",
@@ -1535,7 +3187,10 @@
       },
       {
         "word": "Dormir",
-        "phonetic": "/doɾˈmiɾ/",
+        "phonetic": {
+          "es": "/doɾˈmiɾ/",
+          "latam": "/doɾˈmiɾ/"
+        },
         "translation": "Dormir",
         "examples": [
           "Necesito dormir.",
@@ -1555,7 +3210,10 @@
       },
       {
         "word": "Ir",
-        "phonetic": "/iɾ/",
+        "phonetic": {
+          "es": "/iɾ/",
+          "latam": "/iɾ/"
+        },
         "translation": "Aller",
         "examples": [
           "Voy a la escuela.",
@@ -1575,7 +3233,10 @@
       },
       {
         "word": "Venir",
-        "phonetic": "/beˈniɾ/",
+        "phonetic": {
+          "es": "/beˈniɾ/",
+          "latam": "/beˈniɾ/"
+        },
         "translation": "Venir",
         "examples": [
           "¡Ven aquí!",
@@ -1595,7 +3256,10 @@
       },
       {
         "word": "Querer",
-        "phonetic": "/keˈɾeɾ/",
+        "phonetic": {
+          "es": "/keˈɾeɾ/",
+          "latam": "/keˈɾeɾ/"
+        },
         "translation": "Vouloir",
         "examples": [
           "Quiero un café.",
@@ -1615,7 +3279,10 @@
       },
       {
         "word": "Amar",
-        "phonetic": "/aˈmaɾ/",
+        "phonetic": {
+          "es": "/aˈmaɾ/",
+          "latam": "/aˈmaɾ/"
+        },
         "translation": "Aimer / Amour",
         "examples": [
           "Amo a mi familia.",
@@ -1635,7 +3302,10 @@
       },
       {
         "word": "Ver",
-        "phonetic": "/beɾ/",
+        "phonetic": {
+          "es": "/beɾ/",
+          "latam": "/beɾ/"
+        },
         "translation": "Voir",
         "examples": [
           "Veo un pájaro.",
@@ -1655,7 +3325,10 @@
       },
       {
         "word": "Hablar",
-        "phonetic": "/aˈβlaɾ/",
+        "phonetic": {
+          "es": "/aˈβlaɾ/",
+          "latam": "/aˈβlaɾ/"
+        },
         "translation": "Parler",
         "examples": [
           "¿Hablas inglés?",
@@ -1675,7 +3348,10 @@
       },
       {
         "word": "Comprar",
-        "phonetic": "/komˈpɾaɾ/",
+        "phonetic": {
+          "es": "/komˈpɾaɾ/",
+          "latam": "/komˈpɾaɾ/"
+        },
         "translation": "Acheter",
         "examples": [
           "Quiero comprar un coche.",
@@ -1695,7 +3371,10 @@
       },
       {
         "word": "Grande",
-        "phonetic": "/ˈɡɾande/",
+        "phonetic": {
+          "es": "/ˈɡɾande/",
+          "latam": "/ˈɡɾande/"
+        },
         "translation": "Grand",
         "examples": [
           "Es una casa grande.",
@@ -1714,11 +3393,425 @@
         }
       }
     ],
-    "beginner3": [],
-    "intermediate": []
+    "niveau3": [
+      {
+        "word": "Sin embargo",
+        "phonetic": {
+          "es": "/sin emˈbaɾɣo/",
+          "latam": "/sin emˈbaɾɣo/"
+        },
+        "translation": "Cependant / Néanmoins",
+        "examples": [
+          "Llovía; sin embargo, salimos a caminar.",
+          "El plan era arriesgado; sin embargo, decidieron intentarlo."
+        ],
+        "grammar": {
+          "nature": "Locution adverbiale de liaison (opposition).",
+          "position": "Début de phrase ou après point-virgule.",
+          "register": "Soutenu.",
+          "synonyms": "No obstante, Aun así"
+        },
+        "slang": {
+          "expression": "Pero bueno",
+          "meaning": "Version orale et décontractée pour marquer une opposition.",
+          "warning": "Informel, à éviter à l'écrit académique."
+        }
+      },
+      {
+        "word": "Además",
+        "phonetic": {
+          "es": "/aˈðemas/",
+          "latam": "/aˈðemas/"
+        },
+        "translation": "De plus / En outre",
+        "examples": [
+          "El informe llegó tarde. Además, tenía varios errores.",
+          "Además, el presupuesto debe aprobarse el viernes."
+        ],
+        "grammar": {
+          "nature": "Adverbe de liaison (addition).",
+          "position": "Début de phrase, registre soutenu.",
+          "register": "Soutenu / académique.",
+          "synonyms": "Asimismo, Igualmente"
+        },
+        "slang": {
+          "expression": "Y encima",
+          "meaning": "Version orale, souvent avec une nuance négative.",
+          "warning": "Familier, connotation parfois plaintive."
+        }
+      },
+      {
+        "word": "Por consiguiente",
+        "phonetic": {
+          "es": "/poɾ konsiˈɣjente/",
+          "latam": "/poɾ konsiˈɣjente/"
+        },
+        "translation": "Par conséquent",
+        "examples": [
+          "Las ventas bajaron; por consiguiente, la empresa redujo costos.",
+          "Perdió el plazo; por consiguiente, el proyecto se retrasó."
+        ],
+        "grammar": {
+          "nature": "Locution adverbiale de liaison (conséquence).",
+          "position": "Début de phrase, après point-virgule.",
+          "register": "Soutenu.",
+          "synonyms": "Por lo tanto, Así que"
+        },
+        "slang": {
+          "expression": "Así que",
+          "meaning": "Version plus simple et orale pour introduire une conséquence.",
+          "warning": "Trop familier pour un rapport formel."
+        }
+      },
+      {
+        "word": "Negociar",
+        "phonetic": {
+          "es": "/neɣoˈθjaɾ/",
+          "latam": "/neɣoˈsjaɾ/"
+        },
+        "translation": "Négocier",
+        "examples": [
+          "Necesitamos negociar un mejor precio.",
+          "Ella negoció su salario antes de firmar."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + negociar + complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Regatear (marchander, plus familier)"
+        },
+        "slang": {
+          "expression": "Regatear",
+          "meaning": "Négocier avec insistance, surtout sur un prix (marché).",
+          "warning": "Connotation familière, pas pour un contexte corporate formel."
+        }
+      },
+      {
+        "word": "Plazo",
+        "phonetic": {
+          "es": "/ˈplaθo/",
+          "latam": "/ˈplaso/"
+        },
+        "translation": "Date limite / Échéance",
+        "examples": [
+          "El plazo de este proyecto es el viernes.",
+          "No cumplimos el plazo por dos días."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre (professionnel/académique).",
+          "synonyms": "Fecha límite"
+        },
+        "slang": {
+          "expression": "Contrarreloj",
+          "meaning": "'Contre la montre', pour une période de forte pression avant une échéance.",
+          "warning": "Informel, contexte de stress."
+        }
+      },
+      {
+        "word": "Lograr",
+        "phonetic": {
+          "es": "/loˈɣɾaɾ/",
+          "latam": "/loˈɣɾaɾ/"
+        },
+        "translation": "Accomplir / Réaliser",
+        "examples": [
+          "Logramos todos nuestros objetivos este trimestre.",
+          "Ella logró terminar la tarea antes de tiempo."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + lograr + complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Conseguir, Alcanzar"
+        },
+        "slang": {
+          "expression": "Conseguirlo",
+          "meaning": "'Y arriver', formulation plus orale et directe.",
+          "warning": "Informel mais très courant."
+        }
+      },
+      {
+        "word": "Sostenibilidad",
+        "phonetic": {
+          "es": "/sosteniβiliˈðað/",
+          "latam": "/sosteniβiliˈðað/"
+        },
+        "translation": "Durabilité",
+        "examples": [
+          "La empresa se centra en la sostenibilidad.",
+          "La sostenibilidad es clave en nuestra estrategia."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Soutenu / académique / professionnel.",
+          "synonyms": "Sustentabilidad (surtout en Amérique latine)"
+        },
+        "slang": {
+          "expression": "Eco-friendly",
+          "meaning": "Emprunt informel à l'anglais, très courant en marketing.",
+          "warning": "Anglicisme, parfois critiqué comme 'greenwashing'."
+        }
+      },
+      {
+        "word": "Emprendedor",
+        "phonetic": {
+          "es": "/empɾendeˈðoɾ/",
+          "latam": "/empɾendeˈðoɾ/"
+        },
+        "translation": "Entrepreneur",
+        "examples": [
+          "Se convirtió en una emprendedora exitosa a los 25 años.",
+          "Los emprendedores suelen asumir grandes riesgos financieros."
+        ],
+        "grammar": {
+          "nature": "Nom (féminin : emprendedora).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Fundador/a, Empresario/a"
+        },
+        "slang": {
+          "expression": "Self-made",
+          "meaning": "Emprunt à l'anglais pour désigner quelqu'un qui a réussi seul.",
+          "warning": "Anglicisme courant dans le monde des affaires."
+        }
+      },
+      {
+        "word": "Viable",
+        "phonetic": {
+          "es": "/ˈbjaβle/",
+          "latam": "/ˈbjaβle/"
+        },
+        "translation": "Faisable / Réalisable",
+        "examples": [
+          "¿Es viable este plan económicamente?",
+          "Los ingenieros confirmaron que el proyecto es viable."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Après ser, souvent en contexte de faisabilité.",
+          "register": "Soutenu / technique.",
+          "synonyms": "Factible, Realizable"
+        },
+        "slang": {
+          "expression": "Se puede hacer",
+          "meaning": "Version plus simple et orale de viable.",
+          "warning": "Informel, à réserver à l'oral."
+        }
+      },
+      {
+        "word": "Aprovechar",
+        "phonetic": {
+          "es": "/apɾoβeˈtʃaɾ/",
+          "latam": "/apɾoβeˈtʃaɾ/"
+        },
+        "translation": "Tirer parti de",
+        "examples": [
+          "Deberíamos aprovechar nuestra red de contactos.",
+          "La empresa aprovechó su posición para crecer rápido."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + aprovechar + complément.",
+          "register": "Soutenu / jargon professionnel.",
+          "synonyms": "Sacar partido de, Capitalizar"
+        },
+        "slang": {
+          "expression": "Sacarle jugo",
+          "meaning": "'En tirer le jus', façon imagée de dire 'en tirer profit'.",
+          "warning": "Familier mais très courant."
+        }
+      },
+      {
+        "word": "Parte interesada",
+        "phonetic": {
+          "es": "/ˈpaɾte inteɾeˈsaða/",
+          "latam": "/ˈpaɾte inteɾeˈsaða/"
+        },
+        "translation": "Partie prenante",
+        "examples": [
+          "Todas las partes interesadas deben aprobar el plan.",
+          "Consultamos a las partes interesadas clave antes de decidir."
+        ],
+        "grammar": {
+          "nature": "Locution nominale.",
+          "position": "Sujet ou complément.",
+          "register": "Soutenu / jargon professionnel.",
+          "synonyms": "Interesado, Actor implicado"
+        },
+        "slang": {
+          "expression": "Los de arriba",
+          "meaning": "'Ceux d'en haut', pour désigner la direction/les décideurs.",
+          "warning": "Informel, parfois connotation critique."
+        }
+      },
+      {
+        "word": "Implementar",
+        "phonetic": {
+          "es": "/implemenˈtaɾ/",
+          "latam": "/implemenˈtaɾ/"
+        },
+        "translation": "Mettre en œuvre / Implémenter",
+        "examples": [
+          "Implementaremos la nueva política el próximo mes.",
+          "El equipo implementó los cambios con éxito."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + implementar + complément.",
+          "register": "Soutenu / technique.",
+          "synonyms": "Ejecutar, Llevar a cabo"
+        },
+        "slang": {
+          "expression": "Poner en marcha",
+          "meaning": "'Mettre en route', formulation plus concrète et courante.",
+          "warning": "Aucune restriction, standard."
+        }
+      },
+      {
+        "word": "Analizar",
+        "phonetic": {
+          "es": "/analiˈθaɾ/",
+          "latam": "/analiˈsaɾ/"
+        },
+        "translation": "Analyser",
+        "examples": [
+          "Necesitamos analizar los datos antes de decidir.",
+          "El informe analiza las tendencias del mercado."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + analizar + complément.",
+          "register": "Soutenu / académique.",
+          "synonyms": "Examinar, Evaluar"
+        },
+        "slang": {
+          "expression": "Desmenuzar",
+          "meaning": "'Décortiquer', analyser en détail de façon imagée.",
+          "warning": "Informel mais courant même en contexte professionnel."
+        }
+      },
+      {
+        "word": "Colega",
+        "phonetic": {
+          "es": "/koˈleɣa/",
+          "latam": "/koˈleɣa/"
+        },
+        "translation": "Collègue",
+        "examples": [
+          "Almorcé con un colega.",
+          "Es colega mía del equipo de marketing."
+        ],
+        "grammar": {
+          "nature": "Nom (invariable en genre).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Compañero/a de trabajo"
+        },
+        "slang": {
+          "expression": "Colega",
+          "meaning": "En Espagne, s'utilise aussi familièrement pour dire 'pote/copain'.",
+          "warning": "Sens différent selon contexte : collègue vs copain (Espagne)."
+        }
+      },
+      {
+        "word": "Reunión",
+        "phonetic": {
+          "es": "/reuˈnjon/",
+          "latam": "/reuˈnjon/"
+        },
+        "translation": "Réunion",
+        "examples": [
+          "Tenemos una reunión a las 10.",
+          "La reunión duró más de lo esperado."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Junta (Mexique), Encuentro"
+        },
+        "slang": {
+          "expression": "Junta",
+          "meaning": "Synonyme de 'réunion', très courant au Mexique et en Amérique centrale.",
+          "warning": "Vocabulaire régional, peu utilisé en Espagne."
+        }
+      },
+      {
+        "word": "Borrador",
+        "phonetic": {
+          "es": "/boraˈðoɾ/",
+          "latam": "/boraˈðoɾ/"
+        },
+        "translation": "Brouillon / Ébauche",
+        "examples": [
+          "¿Puedes enviarme el borrador para mañana?",
+          "Esto es solo un primer borrador."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Esbozo, Versión preliminar"
+        },
+        "slang": {
+          "expression": "En bruto",
+          "meaning": "'Brut, pas encore finalisé', pour qualifier un premier jet.",
+          "warning": "Aucune restriction, expression courante."
+        }
+      },
+      {
+        "word": "Tesis",
+        "phonetic": {
+          "es": "/ˈtesis/",
+          "latam": "/ˈtesis/"
+        },
+        "translation": "Thèse (mémoire universitaire)",
+        "examples": [
+          "Está escribiendo su tesis de máster.",
+          "Su tesis se centra en la política climática."
+        ],
+        "grammar": {
+          "nature": "Nom (invariable au pluriel : las tesis).",
+          "position": "Sujet ou complément.",
+          "register": "Académique.",
+          "synonyms": "Disertación"
+        },
+        "slang": {
+          "expression": "La tesis",
+          "meaning": "Utilisé familièrement par les étudiants avec une connotation de stress.",
+          "warning": "Familier, contexte universitaire uniquement."
+        }
+      },
+      {
+        "word": "Plan de estudios",
+        "phonetic": {
+          "es": "/plan de esˈtuðjos/",
+          "latam": "/plan de esˈtuðjos/"
+        },
+        "translation": "Programme (d'études)",
+        "examples": [
+          "La universidad actualizó su plan de estudios.",
+          "Este curso no forma parte del plan de estudios oficial."
+        ],
+        "grammar": {
+          "nature": "Locution nominale (aussi 'currículo' en Amérique latine).",
+          "position": "Sujet ou complément.",
+          "register": "Académique.",
+          "synonyms": "Currículo, Programa académico"
+        },
+        "slang": {
+          "expression": "Carga académica",
+          "meaning": "'Charge de cours', façon plus concrète de parler du volume d'études.",
+          "warning": "Aucune restriction, usage courant sur les campus."
+        }
+      }
+    ]
   },
   "it": {
-    "beginner1": [
+    "niveau1": [
       {
         "word": "Ciao",
         "phonetic": "/ˈtʃao/",
@@ -1920,7 +4013,7 @@
         }
       }
     ],
-    "beginner2": [
+    "niveau2": [
       {
         "word": "Uno",
         "phonetic": "/ˈuno/",
@@ -2522,11 +4615,10 @@
         }
       }
     ],
-    "beginner3": [],
-    "intermediate": []
+    "niveau3": []
   },
   "ja": {
-    "beginner1": [
+    "niveau1": [
       {
         "word": "こんにちは",
         "phonetic": "konnichiwa",
@@ -2728,7 +4820,7 @@
         }
       }
     ],
-    "beginner2": [
+    "niveau2": [
       {
         "word": "一",
         "phonetic": "ichi",
@@ -3330,11 +5422,10 @@
         }
       }
     ],
-    "beginner3": [],
-    "intermediate": []
+    "niveau3": []
   },
   "zh": {
-    "beginner1": [
+    "niveau1": [
       {
         "word": "你好",
         "phonetic": "nǐ hǎo",
@@ -3536,7 +5627,7 @@
         }
       }
     ],
-    "beginner2": [
+    "niveau2": [
       {
         "word": "一",
         "phonetic": "yī",
@@ -4138,7 +6229,6 @@
         }
       }
     ],
-    "beginner3": [],
-    "intermediate": []
+    "niveau3": []
   }
 }

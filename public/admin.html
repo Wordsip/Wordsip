@@ -46,22 +46,19 @@
             <option value="zh">🇨🇳 Chinois</option>
           </select>
 
-          <label>Sous-niveau</label>
+          <label>Niveau</label>
           <select id="add-sublevel">
-            <option value="beginner1">Débutant 1</option>
-            <option value="beginner2">Débutant 2</option>
-            <option value="beginner3">Débutant 3</option>
-            <option value="beginner4">Débutant 4</option>
-            <option value="beginner5">Débutant 5</option>
-            <option value="intermediate1">Intermédiaire 1</option>
-            <option value="intermediate2">Intermédiaire 2</option>
-            <option value="intermediate3">Intermédiaire 3</option>
+            <option value="niveau1">Niveau 1 — Collège (6e-5e-4e)</option>
+            <option value="niveau2">Niveau 2 — Lycée (3e-2nde-1re-Tle)</option>
+            <option value="niveau3">Niveau 3 — Fac / Master / Pro</option>
           </select>
 
           <label>Mot</label>
           <input type="text" id="add-word" required>
-          <label>Phonétique</label>
-          <input type="text" id="add-phonetic">
+          <label id="add-phonetic-label-1">Phonétique (variante 1)</label>
+          <input type="text" id="add-phonetic-1" placeholder="/ˈwɔːtər/">
+          <label id="add-phonetic-label-2">Phonétique (variante 2, optionnelle)</label>
+          <input type="text" id="add-phonetic-2" placeholder="/ˈwɔːtə/">
           <label>Traduction</label>
           <input type="text" id="add-translation" required>
           <label>Exemples (un par ligne)</label>
