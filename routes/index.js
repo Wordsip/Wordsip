@@ -10,6 +10,7 @@ const blacklistService = require('../services/blacklistService');
 const ttsService = require('../services/ttsService');
 const expressionService = require('../services/expressionService');
 const emailService = require('../services/emailService');
+const twitterService = require('../services/twitterService');
 const { rateLimit } = require('../services/rateLimiter');
 
 // Page d'accueil
@@ -112,6 +113,25 @@ router.get('/api/cron/post-tweet', async (req, res) => {
   try {
     const result = await scheduledTasks.postDailyTweetTask();
     res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Route de test réservée à l'admin : force une tentative de publication
+// immédiate, sans tenir compte du jour (contrairement à /api/cron/post-tweet
+// qui ne poste que lundi/vendredi). Utile pour diagnostiquer une erreur
+// Twitter/X (ex. 403) sans attendre le prochain jour de publication.
+// Exemple : /api/admin/test-tweet?secret=TON_ADMIN_SECRET
+router.get('/api/admin/test-tweet', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const { code, label } = scheduledTasks.getFeaturedLanguageOfDay();
+    const featuredWord = await wordService.getFeaturedWordOfDay(code);
+    if (!featuredWord) return res.status(404).json({ error: `Aucun mot disponible pour ${label}.` });
+
+    const result = await twitterService.postDailyTweet(featuredWord, label, code);
+    res.json({ language: code, word: featuredWord.word, ...result });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

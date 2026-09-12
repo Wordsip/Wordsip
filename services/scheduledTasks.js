@@ -106,4 +106,4 @@ async function generateWeeklyVideoTask() {
   return { generated: true, videoUrl };
 }
 
-module.exports = { checkAndSendDueEmails, postDailyTweetTask, generateWeeklyVideoTask };
+module.exports = { checkAndSendDueEmails, postDailyTweetTask, generateWeeklyVideoTask, getFeaturedLanguageOfDay };
