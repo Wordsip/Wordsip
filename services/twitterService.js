@@ -1,5 +1,14 @@
 const { TwitterApi } = require('twitter-api-v2');
 
+// La librairie twitter-api-v2 met le vrai détail renvoyé par X dans
+// error.data (title/detail/type), mais error.message seul ne montre souvent
+// que "Request failed with code 403" — inutile pour diagnostiquer. Cette
+// fonction récupère le détail exploitable quand il existe.
+function describeTwitterError(error) {
+  const detail = error?.data?.detail || error?.data?.title || error?.error;
+  return detail ? `${error.message} — ${detail}` : error.message;
+}
+
 function getClient() {
   if (
     !process.env.TWITTER_API_KEY ||
@@ -60,8 +69,8 @@ async function postDailyTweet(wordEntry, languageLabel) {
     console.log('Tweet publié avec succès :', result.data.id);
     return { simulated: false, text, tweetId: result.data.id };
   } catch (error) {
-    console.error('Erreur lors de la publication du tweet :', error.message);
-    return { simulated: false, error: error.message, text };
+    console.error('Erreur lors de la publication du tweet :', describeTwitterError(error));
+    return { simulated: false, error: describeTwitterError(error), text };
   }
 }
 
@@ -97,8 +106,8 @@ async function postExpressionTweet(expressionEntry, languageLabel) {
     console.log('Tweet expression publié avec succès :', result.data.id);
     return { simulated: false, text, tweetId: result.data.id };
   } catch (error) {
-    console.error('Erreur lors de la publication du tweet expression :', error.message);
-    return { simulated: false, error: error.message, text };
+    console.error('Erreur lors de la publication du tweet expression :', describeTwitterError(error));
+    return { simulated: false, error: describeTwitterError(error), text };
   }
 }
 
@@ -136,7 +145,7 @@ async function postJokeTweet(jokeEntry, languageLabel) {
     console.log('Tweet blague publié avec succès :', result.data.id);
     return { simulated: false, text, tweetId: result.data.id };
   } catch (error) {
-    console.error('Erreur lors de la publication du tweet blague :', error.message);
-    return { simulated: false, error: error.message, text };
+    console.error('Erreur lors de la publication du tweet blague :', describeTwitterError(error));
+    return { simulated: false, error: describeTwitterError(error), text };
   }
 }
