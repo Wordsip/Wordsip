@@ -1,4 +1,5 @@
 const { TwitterApi } = require('twitter-api-v2');
+const { formatPhonetic } = require('./phoneticFormat');
 
 // La librairie twitter-api-v2 met le vrai détail renvoyé par X dans
 // error.data (title/detail/type), mais error.message seul ne montre souvent
@@ -34,7 +35,7 @@ function composeTweetText(wordEntry, languageLabel) {
   const siteUrl = process.env.SITE_URL || 'https://wordsip.onrender.com';
 
   let text = `📚 Mot du jour WordSip :\n\n${wordEntry.word}`;
-  if (wordEntry.phonetic) text += ` ${wordEntry.phonetic}`;
+  if (wordEntry.phonetic) text += ` ${formatPhonetic(wordEntry.phonetic)}`;
   text += `\n🇫🇷 ${wordEntry.translation}`;
   if (firstExample) text += `\n\n💬 "${firstExample}"`;
   if (slang.expression) text += `\n\n🗣️ Argot : "${slang.expression}"`;
@@ -79,7 +80,7 @@ function composeExpressionTweetText(expressionEntry, languageLabel) {
   const siteUrl = process.env.SITE_URL || 'https://wordsip.onrender.com';
 
   let text = `💡 Expression de la semaine WordSip :\n\n"${expressionEntry.expression}"`;
-  if (expressionEntry.phonetic) text += ` ${expressionEntry.phonetic}`;
+  if (expressionEntry.phonetic) text += ` ${formatPhonetic(expressionEntry.phonetic)}`;
   text += `\n🇫🇷 Sens : ${expressionEntry.meaning}`;
   if (expressionEntry.literalMeaning) text += `\n(Littéralement : ${expressionEntry.literalMeaning})`;
   text += `\n\n${siteUrl}`;
@@ -118,7 +119,7 @@ function composeJokeTweetText(jokeEntry, languageLabel) {
   const siteUrl = process.env.SITE_URL || 'https://wordsip.onrender.com';
 
   let text = `😄 La blague du dimanche WordSip :\n\n${jokeEntry.joke}`;
-  if (jokeEntry.phonetic) text += ` (${jokeEntry.phonetic})`;
+  if (jokeEntry.phonetic) text += ` (${formatPhonetic(jokeEntry.phonetic)})`;
   if (jokeEntry.punchline) text += `\n${jokeEntry.punchline}`;
   text += `\n\n🇫🇷 ${jokeEntry.translation}`;
   text += `\n\n${siteUrl}`;
