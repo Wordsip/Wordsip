@@ -137,6 +137,22 @@ router.get('/api/admin/test-tweet', async (req, res) => {
   }
 });
 
+// Migration ponctuelle : réimporte data/words.seed.json dans MongoDB,
+// nécessaire une seule fois après le passage à la structure à 3 niveaux
+// (niveau1/niveau2/niveau3) puisque la base existante gardait l'ancienne
+// structure (beginner1/beginner2...). ⚠️ Écrase les mots ajoutés depuis
+// l'admin qui ne seraient pas dans le fichier seed local.
+// Exemple : /api/admin/reseed-words?secret=TON_ADMIN_SECRET
+router.get('/api/admin/reseed-words', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const result = await wordService.reseedFromFile();
+    res.json({ success: true, ...result });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 router.get('/api/cron/weekly-video', async (req, res) => {
   if (!checkCronSecret(req, res)) return;
   try {

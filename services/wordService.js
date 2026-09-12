@@ -206,6 +206,30 @@ async function getUniqueCharacters(language) {
   return Array.from(chars).sort((a, b) => a.localeCompare(b, language));
 }
 
+// Réimporte le fichier data/words.seed.json dans MongoDB en écrasant chaque
+// langue existante (upsert par _id=langue). Contrairement à seedIfEmpty
+// (qui ne s'exécute qu'au tout premier démarrage, base vide), cette fonction
+// est destinée à migrer une base déjà peuplée vers une nouvelle structure —
+// utile après un changement de schéma comme le passage aux 3 niveaux fixes.
+// ⚠️ Écrase tout mot ajouté depuis l'admin qui ne serait pas déjà dans le
+// fichier seed local.
+async function reseedFromFile() {
+  if (!fs.existsSync(SEED_FILE)) {
+    throw new Error('Fichier data/words.seed.json introuvable.');
+  }
+  const seedData = JSON.parse(fs.readFileSync(SEED_FILE, 'utf-8'));
+  const languages = Object.keys(seedData);
+
+  for (const [language, levels] of Object.entries(seedData)) {
+    await wordsCollection().replaceOne(
+      { _id: language },
+      { _id: language, ...levels },
+      { upsert: true }
+    );
+  }
+  return { languages, count: languages.length };
+}
+
 module.exports = {
   getAllWords,
   getWordsForLanguage,
@@ -219,5 +243,6 @@ module.exports = {
   deleteWord,
   toggleWordDisabled,
   seedIfEmpty,
+  reseedFromFile,
   LEVELS,
 };
