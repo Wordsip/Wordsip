@@ -75,12 +75,69 @@ router.get('/api/expression-of-week', async (req, res) => {
   }
 });
 
-// Connexion (retrouver son compte existant par email, sans mot de passe)
-router.post('/api/login', async (req, res) => {
+// Indique si un compte existe et s'il a déjà un mot de passe — sert
+// uniquement à afficher (ou non) le champ mot de passe sur le formulaire de
+// connexion. Réservé au même compte que /api/create-password
+// (wordsip@protonmail.com) : pour tout autre email, on répond toujours
+// "non concerné" sans révéler si le compte existe ou a un mot de passe —
+// la connexion par email seul continue de fonctionner normalement pour eux,
+// juste sans jamais afficher de champ mot de passe.
+router.get('/api/account-status', async (req, res) => {
   try {
-    const { email } = req.body;
+    const { email } = req.query;
+    if (!email) return res.status(400).json({ error: 'Email requis.' });
+    if (email.trim().toLowerCase() !== ADMIN_EMAIL) {
+      return res.json({ exists: false, hasPassword: false });
+    }
+    const user = await userService.findByEmail(email);
+    res.json({ exists: !!user, hasPassword: !!(user && user.passwordHash) });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Permet à la personne de créer elle-même le mot de passe de son compte, la
+// toute première fois seulement (si le compte n'en a pas déjà un) — pour ne
+// pas avoir à passer par l'admin/la console. Réservé exclusivement au compte
+// wordsip@protonmail.com : les autres comptes (s'il y en a un jour) ne
+// passent que par /api/admin/set-password, décidé par l'admin, pas en
+// libre-service.
+router.post('/api/create-password', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email et mot de passe requis.' });
+    }
+    if (email.trim().toLowerCase() !== ADMIN_EMAIL) {
+      return res.status(403).json({ error: 'Cette fonctionnalité est réservée à ce compte.' });
+    }
+    if (password.length < 8) {
+      return res.status(400).json({ error: 'Le mot de passe doit faire au moins 8 caractères.' });
+    }
     const user = await userService.findByEmail(email);
     if (!user) return res.status(404).json({ error: 'Aucun compte trouvé avec cet email.' });
+    if (user.passwordHash) {
+      return res.status(409).json({ error: 'Ce compte a déjà un mot de passe.' });
+    }
+    await userService.setPassword(email, password);
+    res.json({ ok: true, email: user.email });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Connexion (retrouver son compte existant par email). Le mot de passe n'est
+// requis QUE si le compte en a un (via /api/admin/set-password) — la
+// majorité des comptes restent accessibles par email seul, comme prévu.
+router.post('/api/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await userService.findByEmail(email);
+    if (!user) return res.status(404).json({ error: 'Aucun compte trouvé avec cet email.' });
+
+    const passwordOk = await userService.verifyPassword(user, password);
+    if (!passwordOk) return res.status(403).json({ error: 'Mot de passe incorrect.' });
+
     res.json({ email: user.email });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -126,7 +183,8 @@ router.get('/api/cron/post-tweet', async (req, res) => {
 router.get('/api/admin/test-tweet', async (req, res) => {
   if (!checkAdminSecret(req, res)) return;
   try {
-    const { code, label } = scheduledTasks.getFeaturedLanguageOfDay();
+    const code = 'en';
+    const label = 'English';
     const featuredWord = await wordService.getFeaturedWordOfDay(code);
     if (!featuredWord) return res.status(404).json({ error: `Aucun mot disponible pour ${label}.` });
 
@@ -171,7 +229,17 @@ function isValidEmailFormat(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email || '');
 }
 
+router.get('/api/signup-status', (req, res) => {
+  res.json({ open: process.env.ALLOW_SIGNUPS === 'true' });
+});
+
 router.post('/api/signup', async (req, res) => {
+  // Inscriptions fermées par défaut (site personnel, un seul compte prévu) :
+  // pour rouvrir un jour, définir ALLOW_SIGNUPS=true sur Render.
+  if (process.env.ALLOW_SIGNUPS !== 'true') {
+    return res.status(403).json({ error: 'Les inscriptions sont actuellement fermées.' });
+  }
+
   const {
     pseudo, email, language, level, wordDays,
     notificationTime, channel, revealMode, revealSeconds,
@@ -241,8 +309,9 @@ router.get('/api/my-word', async (req, res) => {
 
     const levelWordCounts = await wordService.getLevelWordCounts(user.language);
     const progress = userService.computeProgress(user, levelWordCounts);
+    const adjacent = await wordService.getAdjacentWordsForUser(user);
 
-    res.json({ user, word, progress });
+    res.json({ user: userService.toSafeUser(user), word, progress, adjacent });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -298,8 +367,18 @@ router.get('/api/keyboard/:language', async (req, res) => {
 // juste l'email comme identifiant (comme pour la connexion).
 router.delete('/api/account', async (req, res) => {
   try {
-    const { email } = req.body;
+    const { email, password } = req.body;
     if (!email) return res.status(400).json({ error: 'Email requis.' });
+
+    // Si le compte a un mot de passe (protection manuelle par l'admin), il
+    // est requis pour supprimer le compte — pas seulement pour se connecter.
+    // Sans ça, n'importe qui devinant l'email pourrait supprimer un compte
+    // protégé sans jamais avoir besoin du mot de passe.
+    const user = await userService.findByEmail(email);
+    if (!user) return res.status(404).json({ error: 'Utilisateur introuvable.' });
+    const passwordOk = await userService.verifyPassword(user, password);
+    if (!passwordOk) return res.status(403).json({ error: 'Mot de passe incorrect.' });
+
     await userService.deleteUser(email);
     res.json({ ok: true });
   } catch (err) {
@@ -325,6 +404,87 @@ function checkAdminSecret(req, res) {
   }
   return true;
 }
+
+// Recrée un compte de A à Z en un seul appel admin, sans passer par le
+// formulaire public ni toucher ALLOW_SIGNUPS sur Render : réutilise l'ancien
+// compte s'il existe (garde sa progression : wordsValidated/validatedWords),
+// sinon en crée un nouveau, puis applique les préférences et pose le mot de
+// passe. Contourne intentionnellement la fermeture des inscriptions puisque
+// c'est toi qui l'appelles avec le secret admin.
+// Exemple : POST /api/admin/recreate-account
+// { "pseudo":"wordsip", "email":"wordsip@protonmail.com", "language":"en",
+//   "level":"niveau1", "wordDays":["mon","tue","wed","thu","fri"],
+//   "password":"..." }
+router.post('/api/admin/recreate-account', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const {
+      pseudo, email, language, level, wordDays,
+      notificationTime, channel, revealMode, revealSeconds, password,
+    } = req.body;
+
+    if (!pseudo || !email || !language || !password) {
+      return res.status(400).json({ error: 'pseudo, email, language et password sont requis.' });
+    }
+    if (password.length < 8) {
+      return res.status(400).json({ error: 'Le mot de passe doit faire au moins 8 caractères.' });
+    }
+
+    // Garde la progression de l'ancien compte s'il existe, avant de le
+    // supprimer — pour ne jamais silencieusement remettre l'utilisateur à
+    // 0% comme c'est arrivé une fois avant ce correctif.
+    const existing = await userService.findByEmail(email);
+    const previousProgress = existing
+      ? { wordsValidated: existing.wordsValidated || 0, validatedWords: existing.validatedWords || {} }
+      : null;
+
+    await userService.deleteUser(email).catch(() => {});
+
+    const user = await userService.addUser({
+      pseudo,
+      email,
+      language,
+      level: level || 'niveau1',
+      wordDays: wordDays || ['mon', 'tue', 'wed', 'thu', 'fri'],
+      notificationTime: notificationTime || '08:00',
+      channel: channel || 'email',
+      revealMode: revealMode || 'manual',
+      revealSeconds: parseInt(revealSeconds, 10) || 10,
+    });
+
+    if (previousProgress) {
+      await userService.restoreProgress(email, previousProgress);
+    }
+
+    await userService.setPassword(email, password);
+
+    res.json({ ok: true, user });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Définit ou change le mot de passe d'un compte — réservé à l'admin, pas de
+// flux public. Sert notamment à protéger le compte wordsip@protonmail.com
+// (email facile à deviner puisqu'il est visible partout dans l'app) contre
+// une connexion par une autre personne que toi.
+// Exemple : POST /api/admin/set-password  { "email": "...", "password": "..." }
+router.post('/api/admin/set-password', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email et mot de passe requis.' });
+    }
+    if (password.length < 8) {
+      return res.status(400).json({ error: 'Le mot de passe doit faire au moins 8 caractères.' });
+    }
+    await userService.setPassword(email, password);
+    res.json({ ok: true });
+  } catch (err) {
+    res.status(404).json({ error: err.message });
+  }
+});
 
 // Connexion admin : vérifie l'email ET le code secret
 router.post('/api/admin/login', (req, res) => {

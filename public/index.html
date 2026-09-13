@@ -24,6 +24,16 @@
       <form id="login-form">
         <label for="login-email">Ton email</label>
         <input type="email" id="login-email" name="email" required placeholder="toi@example.com">
+
+        <div id="login-password-area" style="display:none;">
+          <label id="login-password-label" for="login-password">Mot de passe</label>
+          <input type="password" id="login-password" name="password">
+          <div id="login-password-confirm-area" style="display:none;">
+            <label for="login-password-confirm">Confirme le mot de passe</label>
+            <input type="password" id="login-password-confirm">
+          </div>
+        </div>
+
         <button type="submit">Retrouver mon mot du jour</button>
       </form>
       <p id="login-message"></p>

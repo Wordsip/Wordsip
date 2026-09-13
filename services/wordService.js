@@ -63,6 +63,19 @@ function getSubLevel(user) {
   return LEVELS[user.level] ? user.level : 'niveau1';
 }
 
+// Calcule le mot du jour pour une date précise (pas seulement "aujourd'hui"),
+// pour pouvoir aussi donner le mot de la veille et du lendemain — utile pour
+// l'aperçu "mot d'avant / mot d'après" sur la page. Généraliser par date
+// plutôt que de juste faire index±1 gère correctement le changement d'année
+// (le 31 décembre, le calcul repart à dayOfYear=1 le 1er janvier, pas 366).
+function getWordForDateSync(activeWords, date) {
+  const dayOfYear = Math.floor(
+    (date - new Date(date.getFullYear(), 0, 0)) / 86400000
+  );
+  const index = dayOfYear % activeWords.length;
+  return activeWords[index];
+}
+
 async function getWordForUser(user) {
   const languageWords = await getWordsForLanguage(user.language);
   if (!languageWords) return null;
@@ -78,12 +91,38 @@ async function getWordForUser(user) {
   const activeWords = levelWords.filter((w) => !w.disabled);
   if (activeWords.length === 0) return null;
 
-  const dayOfYear = Math.floor(
-    (new Date() - new Date(new Date().getFullYear(), 0, 0)) / 86400000
-  );
-  const index = dayOfYear % activeWords.length;
+  return { ...getWordForDateSync(activeWords, new Date()), subLevel };
+}
 
-  return { ...activeWords[index], subLevel };
+// Donne le mot de la veille (déjà "passé", pas de spoil) et celui du
+// lendemain (à flouter côté front tant que l'utilisateur ne clique pas
+// dessus) — même liste de mots actifs et même logique que getWordForUser,
+// juste appliquée à hier/demain plutôt qu'aujourd'hui.
+async function getAdjacentWordsForUser(user) {
+  const languageWords = await getWordsForLanguage(user.language);
+  if (!languageWords) return { previous: null, next: null };
+
+  const subLevel = getSubLevel(user);
+  let levelWords = languageWords[subLevel];
+  if (!levelWords || levelWords.length === 0) {
+    levelWords = languageWords.niveau1 || [];
+  }
+  const activeWords = levelWords.filter((w) => !w.disabled);
+  if (activeWords.length === 0) return { previous: null, next: null };
+
+  const today = new Date();
+  const yesterday = new Date(today);
+  yesterday.setDate(today.getDate() - 1);
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+
+  const previous = getWordForDateSync(activeWords, yesterday);
+  const next = getWordForDateSync(activeWords, tomorrow);
+
+  return {
+    previous: { word: previous.word, translation: previous.translation },
+    next: { word: next.word, translation: next.translation },
+  };
 }
 
 // Ajoute un mot à un sous-niveau donné d'une langue (utilisé par la page admin)
@@ -234,6 +273,7 @@ module.exports = {
   getAllWords,
   getWordsForLanguage,
   getWordForUser,
+  getAdjacentWordsForUser,
   getFeaturedWordOfDay,
   getSubLevel,
   getLevelWordCounts,

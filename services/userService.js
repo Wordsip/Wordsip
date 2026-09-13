@@ -1,4 +1,5 @@
 const { nanoid } = require('nanoid');
+const bcrypt = require('bcryptjs');
 const { getDB } = require('./db');
 const { encryptField, decryptField, hashForLookup } = require('./crypto');
 const { LEVELS } = require('./wordService');
@@ -26,6 +27,16 @@ function toUsableUser(doc) {
     }
   }
   return { ...doc, email };
+}
+
+// Retire les champs internes/sensibles avant d'envoyer un utilisateur au
+// client (jamais le hash du mot de passe, ni les artefacts de chiffrement
+// internes de l'email — le client n'en a pas besoin et ça ne doit pas
+// pouvoir être exfiltré depuis le navigateur).
+function toSafeUser(user) {
+  if (!user) return null;
+  const { passwordHash, emailHash, emailEncrypted, ...safe } = user;
+  return safe;
 }
 
 const VALID_DAYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
@@ -183,6 +194,43 @@ function computeProgress(user, levelWordCounts) {
   return progress;
 }
 
+// Définit (ou change) le mot de passe d'un compte existant. Réservé à
+// l'admin (voir la route /api/admin/set-password) — il n'y a pas de flux
+// public pour ça, seulement toi qui peux protéger un compte via le secret
+// admin. bcrypt gère le sel automatiquement, pas besoin de le stocker à part.
+async function setPassword(email, plainPassword) {
+  const normalizedEmail = normalizeEmail(email);
+  const emailHash = hashForLookup(normalizedEmail);
+  const passwordHash = await bcrypt.hash(plainPassword, 10);
+
+  let result = await usersCollection().findOneAndUpdate(
+    { emailHash },
+    { $set: { passwordHash } },
+    { returnDocument: 'after' }
+  );
+
+  if (!result) {
+    result = await usersCollection().findOneAndUpdate(
+      { email: normalizedEmail },
+      { $set: { passwordHash } },
+      { returnDocument: 'after' }
+    );
+  }
+
+  if (!result) throw new Error('Utilisateur introuvable.');
+  return toUsableUser(result);
+}
+
+// Vérifie un mot de passe pour un compte. Si le compte n'a pas de mot de
+// passe défini (cas normal pour tous les comptes sauf ceux protégés à la
+// main via l'admin), on considère qu'aucun mot de passe n'est requis — pour
+// ne pas casser la connexion "par email seul" qui reste le mode par défaut.
+async function verifyPassword(user, plainPassword) {
+  if (!user.passwordHash) return true;
+  if (!plainPassword) return false;
+  return bcrypt.compare(plainPassword, user.passwordHash);
+}
+
 // Supprime définitivement un compte et toutes ses données — utilisé à la
 // fois par l'utilisateur lui-même (suppression volontaire) et par l'admin.
 async function deleteUser(email) {
@@ -197,6 +245,22 @@ async function deleteUser(email) {
   return true;
 }
 
+// Restaure la progression (compteur global + mots validés par niveau) sur
+// un compte — utilisé par /api/admin/recreate-account pour ne pas perdre la
+// progression d'un utilisateur quand son compte doit être recréé.
+async function restoreProgress(email, { wordsValidated, validatedWords }) {
+  const normalizedEmail = normalizeEmail(email);
+  const emailHash = hashForLookup(normalizedEmail);
+  const update = { $set: { wordsValidated: wordsValidated || 0, validatedWords: validatedWords || {} } };
+
+  let result = await usersCollection().findOneAndUpdate({ emailHash }, update, { returnDocument: 'after' });
+  if (!result) {
+    result = await usersCollection().findOneAndUpdate({ email: normalizedEmail }, update, { returnDocument: 'after' });
+  }
+  if (!result) throw new Error('Utilisateur introuvable.');
+  return toUsableUser(result);
+}
+
 module.exports = {
   addUser,
   getAllUsers,
@@ -204,6 +268,10 @@ module.exports = {
   incrementWordsValidated,
   markWordValidated,
   computeProgress,
+  restoreProgress,
+  setPassword,
+  verifyPassword,
+  toSafeUser,
   normalizeEmail,
   deleteUser,
 };

@@ -13,6 +13,7 @@ const LEVEL_LABELS = {
 };
 const LEVEL_ORDER = ['niveau1', 'niveau2', 'niveau3'];
 let currentProgress = null;
+let currentAdjacent = null;
 
 async function loadWord() {
   if (isGuest) {
@@ -36,10 +37,12 @@ async function loadWord() {
     currentWord = data.word;
     currentUser = data.user;
     currentProgress = data.progress || null;
+    currentAdjacent = data.adjacent || null;
   }
 
   renderWord();
   renderProgress();
+  renderAdjacentWords();
 }
 
 function setupGuestBanner(lang) {
@@ -123,6 +126,39 @@ function renderProgress() {
   section.style.display = 'block';
 }
 
+// Affiche le mot d'hier (déjà révélé, pas de flou) et celui de demain
+// (flouté, cliquable pour le dévoiler si l'utilisateur veut se donner un
+// aperçu). Le clic est permanent pour la session en cours — pas de
+// re-floutage automatique, une fois vu c'est vu.
+function renderAdjacentWords() {
+  const section = document.getElementById('adjacent-words-section');
+  if (!currentAdjacent || isGuest) {
+    section.style.display = 'none';
+    return;
+  }
+
+  const prevEl = document.getElementById('adjacent-previous');
+  const nextEl = document.getElementById('adjacent-next');
+
+  if (currentAdjacent.previous) {
+    prevEl.textContent = `${currentAdjacent.previous.word} — ${currentAdjacent.previous.translation}`;
+  }
+
+  if (currentAdjacent.next) {
+    nextEl.classList.add('blurred');
+    nextEl.textContent = '●●●●●●';
+    nextEl.title = 'Clique pour dévoiler';
+    nextEl.onclick = () => {
+      nextEl.classList.remove('blurred');
+      nextEl.textContent = `${currentAdjacent.next.word} — ${currentAdjacent.next.translation}`;
+      nextEl.title = '';
+      nextEl.onclick = null;
+    };
+  }
+
+  section.style.display = 'block';
+}
+
 function renderWord() {
   document.getElementById('loading').style.display = 'none';
   document.getElementById('content').style.display = 'block';
@@ -185,6 +221,10 @@ function renderWord() {
   if (navVideoLink) {
     navVideoLink.href = `/video-semaine${window.location.search}`;
   }
+  const navPhonetiqueLink = document.getElementById('nav-phonetique-link');
+  if (navPhonetiqueLink) {
+    navPhonetiqueLink.href = `/phonetique${window.location.search}`;
+  }
 
   // Suppression de compte, cachée en mode invité (pas de vrai compte à supprimer)
   const deleteLink = document.getElementById('delete-account-link');
@@ -200,11 +240,25 @@ function renderWord() {
         if (!confirmed) return;
 
         try {
-          const res = await fetch('/api/account', {
+          let res = await fetch('/api/account', {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email }),
           });
+
+          // Si le compte est protégé par un mot de passe, le serveur renvoie
+          // 403 sans email — on redemande alors le mot de passe et on
+          // réessaie une seule fois, plutôt que de le demander à tout le
+          // monde par défaut (la grande majorité des comptes n'en ont pas).
+          if (res.status === 403) {
+            const password = prompt('Ce compte est protégé par un mot de passe. Entre-le pour confirmer la suppression :');
+            if (password === null) return;
+            res = await fetch('/api/account', {
+              method: 'DELETE',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email, password }),
+            });
+          }
 
           if (res.ok) {
             alert('Ton compte a bien été supprimé.');

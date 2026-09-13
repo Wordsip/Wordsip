@@ -6,6 +6,19 @@ const loginCard = document.getElementById('login-card');
 const signupCard = document.getElementById('signup-card');
 const guestOption = document.getElementById('guest-option');
 
+// Inscriptions fermées par défaut : si c'est le cas, on cache directement le
+// formulaire plutôt que de laisser quelqu'un le remplir en entier pour se
+// faire rejeter à la fin. La connexion reste possible (pour le seul compte
+// existant), donc on affiche seulement l'écran de connexion.
+fetch('/api/signup-status').then((r) => r.json()).then(({ open }) => {
+  if (!open) {
+    signupCard.style.display = 'none';
+    guestOption.style.display = 'none';
+    loginToggle.style.display = 'none';
+    loginCard.style.display = 'block';
+  }
+}).catch(() => {});
+
 loginToggle.addEventListener('click', (e) => {
   e.preventDefault();
   const showingLogin = loginCard.style.display === 'block';
@@ -23,17 +36,112 @@ loginToggle.addEventListener('click', (e) => {
   }
 });
 
-// Connexion par email (retrouve le compte existant, sans mot de passe)
+// Connexion par email : le champ mot de passe apparaît dynamiquement selon
+// l'état réel du compte, détecté dès que l'email est saisi — pas besoin de
+// deviner si un mot de passe existe. Si le compte n'en a pas encore, on
+// propose de le créer directement ici (avec confirmation) au lieu de passer
+// par la console ou l'admin.
+let loginAccountStatus = null;
+
+async function checkLoginAccountStatus() {
+  const email = document.getElementById('login-email').value.trim();
+  const passwordArea = document.getElementById('login-password-area');
+  const confirmArea = document.getElementById('login-password-confirm-area');
+  const label = document.getElementById('login-password-label');
+  const passwordInput = document.getElementById('login-password');
+
+  if (!email || !email.includes('@')) {
+    passwordArea.style.display = 'none';
+    loginAccountStatus = null;
+    return;
+  }
+
+  try {
+    const res = await fetch(`/api/account-status?email=${encodeURIComponent(email)}`);
+    loginAccountStatus = await res.json();
+  } catch (err) {
+    loginAccountStatus = null;
+    return;
+  }
+
+  if (!loginAccountStatus.exists) {
+    passwordArea.style.display = 'none';
+    return;
+  }
+
+  passwordArea.style.display = 'block';
+  passwordInput.value = '';
+
+  // La proposition "crée ton mot de passe toi-même" n'apparaît que pour le
+  // compte wordsip@protonmail.com (seul compte concerné pour l'instant) —
+  // pour un autre compte sans mot de passe, la connexion reste par email
+  // seul comme avant, sans rien proposer de plus.
+  const isReservedAccount = email.toLowerCase() === 'wordsip@protonmail.com';
+
+  if (loginAccountStatus.hasPassword) {
+    label.textContent = 'Mot de passe';
+    confirmArea.style.display = 'none';
+  } else if (isReservedAccount) {
+    label.textContent = 'Crée ton mot de passe (première connexion, 8 caractères min.)';
+    confirmArea.style.display = 'block';
+    document.getElementById('login-password-confirm').value = '';
+  } else {
+    // Compte sans mot de passe et non concerné par la création en
+    // libre-service : on repasse en connexion par email seul, comme avant.
+    passwordArea.style.display = 'none';
+  }
+}
+document.getElementById('login-email').addEventListener('blur', checkLoginAccountStatus);
+
 document.getElementById('login-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
   const messageEl = document.getElementById('login-message');
+  messageEl.style.color = '';
+  messageEl.textContent = '';
+
+  // Le compte existe mais n'a pas encore de mot de passe, et le champ de
+  // création est affiché : on le crée d'abord, avant la connexion elle-même.
+  const creatingPassword = loginAccountStatus && loginAccountStatus.exists && !loginAccountStatus.hasPassword
+    && document.getElementById('login-password-area').style.display !== 'none';
+
+  if (creatingPassword) {
+    const confirmPassword = document.getElementById('login-password-confirm').value;
+    if (!password || password.length < 8) {
+      messageEl.style.color = '#c0392b';
+      messageEl.textContent = 'Le mot de passe doit faire au moins 8 caractères.';
+      return;
+    }
+    if (password !== confirmPassword) {
+      messageEl.style.color = '#c0392b';
+      messageEl.textContent = 'Les deux mots de passe ne correspondent pas.';
+      return;
+    }
+    try {
+      const createRes = await fetch('/api/create-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+      const createResult = await createRes.json();
+      if (!createRes.ok) {
+        messageEl.style.color = '#c0392b';
+        messageEl.textContent = createResult.error || 'Erreur lors de la création du mot de passe.';
+        return;
+      }
+    } catch (err) {
+      messageEl.style.color = '#c0392b';
+      messageEl.textContent = 'Erreur de connexion au serveur.';
+      return;
+    }
+  }
 
   try {
     const response = await fetch('/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, password }),
     });
 
     const result = await response.json();

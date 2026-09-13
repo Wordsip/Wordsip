@@ -137,6 +137,14 @@ footer a { color: #2b7a78; }
 .progress-bar-fill.complete { background: linear-gradient(90deg, #1a7a3e, #2fae5c); }
 .progress-row-note { font-size: 11px; color: #999; margin-top: 3px; }
 
+.adjacent-words-card { background: white; border-radius: 16px; padding: 12px 16px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-size: 13px; }
+.adjacent-word-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; }
+.adjacent-word-row:first-child { border-bottom: 1px solid #f0f0f0; }
+.adjacent-label { color: #999; font-size: 12px; }
+.adjacent-word-text { font-weight: 600; color: #333; }
+.adjacent-word-text.blurred { filter: blur(5px); cursor: pointer; user-select: none; color: #2b7a78; letter-spacing: 1px; transition: filter 0.25s ease; }
+.adjacent-word-text.blurred:hover { filter: blur(3px); }
+
 .virtual-keyboard { margin-top: 10px; padding: 10px; background: #f4faf9; border-radius: 12px; }
 .vk-row { display: flex; justify-content: center; gap: 4px; margin-bottom: 4px; flex-wrap: wrap; }
 .vk-row:last-child { margin-bottom: 0; }

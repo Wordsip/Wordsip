@@ -56,8 +56,14 @@
     </div>
 
     <p style="text-align:center;margin-top:20px;">
-      <a href="/mot-du-jour" style="color:#2b7a78;font-size:13px;">← Retour à mon mot du jour</a>
+      <a href="/mot-du-jour" id="back-link" style="color:#2b7a78;font-size:13px;">← Retour à mon mot du jour</a>
     </p>
   </div>
+  <script>
+    // Reporte le paramètre email (ou le mode invité) reçu à l'arrivée sur
+    // cette page vers le lien de retour, sinon /mot-du-jour ne sait plus à
+    // quel compte se rattacher et affiche "aucun compte trouvé".
+    document.getElementById('back-link').href = '/mot-du-jour' + window.location.search;
+  </script>
 </body>
 </html>

@@ -74,8 +74,12 @@ async function checkAndSendDueEmails() {
 // des jours de pause, même si cron-job.org (ou le cron interne) déclenche la
 // route tous les jours : le filtre se fait ici, pas côté planification
 // externe, pour ne pas dépendre d'une config cron-job.org à jour.
+// La langue est fixée à l'anglais uniquement (le tweet ne tourne pas entre
+// les 5 langues, contrairement à la vidéo hebdomadaire qui utilise encore
+// getFeaturedLanguageOfDay).
 async function postDailyTweetTask() {
-  const { code, label } = getFeaturedLanguageOfDay();
+  const code = 'en';
+  const label = 'English';
   const day = getCurrentDayKey();
 
   if (day !== 'mon' && day !== 'fri') {

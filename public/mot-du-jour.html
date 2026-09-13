@@ -16,7 +16,7 @@
     <nav style="display:flex;justify-content:center;gap:16px;margin-bottom:16px;font-size:12px;">
       <a href="/mot-du-jour" style="color:#2b7a78;font-weight:600;">Mon mot</a>
       <a href="#" id="nav-video-link" style="color:#666;">Vidéo</a>
-      <a href="/phonetique" style="color:#666;">Phonétique</a>
+      <a href="/phonetique" style="color:#666;" id="nav-phonetique-link">Phonétique</a>
     </nav>
 
     <div id="loading">Chargement de ton mot du jour...</div>
@@ -26,6 +26,17 @@
       <div id="expression-banner" style="display:none;background:#fff3cd;border-radius:16px;padding:14px;margin-bottom:14px;"></div>
 
       <section id="progress-section" class="progress-card" style="display:none;"></section>
+
+      <section id="adjacent-words-section" class="adjacent-words-card" style="display:none;">
+        <div class="adjacent-word-row">
+          <span class="adjacent-label">← Hier</span>
+          <span id="adjacent-previous" class="adjacent-word-text"></span>
+        </div>
+        <div class="adjacent-word-row">
+          <span class="adjacent-label">Demain →</span>
+          <span id="adjacent-next" class="adjacent-word-text blurred" title="Clique pour dévoiler">●●●●●●</span>
+        </div>
+      </section>
 
       <section class="word-card">
         <p class="label">Ton mot du jour</p>
