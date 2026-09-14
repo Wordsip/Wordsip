@@ -1,5 +1,9 @@
 let step1Data = {};
 
+// Compteur de visiteurs uniques pour le panneau admin — silencieux si ça
+// échoue, ne doit jamais gêner le reste de la page.
+fetch('/api/track-visit', { method: 'POST' }).catch(() => {});
+
 // Basculer entre le formulaire de connexion et le formulaire d'inscription
 const loginToggle = document.getElementById('login-toggle');
 const loginCard = document.getElementById('login-card');

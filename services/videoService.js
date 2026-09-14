@@ -33,8 +33,9 @@ function wrapText(text, maxCharsPerLine) {
   return lines;
 }
 
-// Génère l'image de la bulle de dialogue (fond coloré + texte centré)
-async function generateBubbleImage(speaker, text, outputPath) {
+// Génère l'image de la bulle de dialogue (fond coloré + texte centré + un
+// petit encart argot en bas si le mot du jour en a un)
+async function generateBubbleImage(speaker, text, outputPath, hint) {
   const bgColor = speaker === 'A' ? '#2b7a78' : '#3aafa9';
   const lines = wrapText(text, 26);
   const lineHeight = 44;
@@ -44,12 +45,17 @@ async function generateBubbleImage(speaker, text, outputPath) {
     .map((line, i) => `<text x="360" y="${startY + i * lineHeight}" font-family="sans-serif" font-size="34" fill="white" text-anchor="middle">${escapeXml(line)}</text>`)
     .join('\n');
 
+  const hintSvg = hint
+    ? `<text x="360" y="650" font-family="sans-serif" font-size="22" fill="white" opacity="0.85" text-anchor="middle">${escapeXml(hint)}</text>`
+    : '';
+
   const svg = `
     <svg width="720" height="720" xmlns="http://www.w3.org/2000/svg">
       <rect width="720" height="720" fill="${bgColor}"/>
       <circle cx="360" cy="230" r="50" fill="white" opacity="0.15"/>
       <text x="360" y="245" font-family="sans-serif" font-size="48" fill="white" text-anchor="middle" font-weight="bold">${speaker}</text>
       ${textElements}
+      ${hintSvg}
     </svg>
   `;
 
@@ -111,7 +117,7 @@ async function generateWeeklyVideo(dialogue, language) {
     await downloadTTS(line.text, language, audioPath);
 
     const imagePath = path.join(TMP_DIR, `bubble-${sessionId}-${i}.png`);
-    await generateBubbleImage(line.speaker, line.text, imagePath);
+    await generateBubbleImage(line.speaker, line.text, imagePath, line.hint);
 
     const clipPath = path.join(TMP_DIR, `clip-${sessionId}-${i}.mp4`);
     await runFfmpeg([

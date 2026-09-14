@@ -1,47 +1,47 @@
 const wordService = require('./wordService');
 
-// Construit un mini-dialogue à 2 répliques entre deux personnages (A et B),
-// en utilisant deux mots appris récemment. Volontairement très court
-// (le but est une vidéo de ~10 secondes maximum).
-async function buildWeeklyDialogue(language) {
-  const languageWords = await wordService.getWordsForLanguage(language);
-  if (!languageWords) return null;
+// Construit le dialogue de la vidéo hebdomadaire à partir des mots
+// RÉELLEMENT montrés du lundi au dimanche de la semaine (même calcul que le
+// mot du jour affiché sur le site) — pas un tirage indépendant. Chaque
+// réplique reprend l'exemple du mot, et son expression argotique est
+// affichée en incrustation texte (sans coût audio supplémentaire) pour
+// couvrir "mots + expressions" sans doubler le nombre de clips à générer.
+async function buildWeeklyDialogue(language, level = 'niveau1') {
+  const weekWords = await wordService.getWeekWords(language, level);
+  if (weekWords.length === 0) return null;
 
-  const pool = [
-    ...(languageWords.niveau1 || []),
-    ...(languageWords.niveau2 || []),
-  ];
-  if (pool.length < 2) return null;
+  // Dédoublonne (un pool très restreint pourrait répéter un mot sur 7 jours)
+  const seen = new Set();
+  const uniqueDays = weekWords.filter((d) => {
+    if (seen.has(d.word)) return false;
+    seen.add(d.word);
+    return true;
+  });
 
-  // Sélection simple : les 2 premiers mots de la semaine (basé sur la semaine de l'année,
-  // pour varier automatiquement chaque semaine)
-  const weekOfYear = Math.floor(
-    (new Date() - new Date(new Date().getFullYear(), 0, 0)) / (7 * 86400000)
-  );
-  const wordA = pool[weekOfYear % pool.length];
-  const wordB = pool[(weekOfYear + 1) % pool.length];
-
-  // Utilise le premier exemple de chaque mot comme réplique du dialogue
-  const lineA = wordA.examples?.[0] || wordA.word;
-  const lineB = wordB.examples?.[0] || wordB.word;
+  const lines = uniqueDays.map((day, i) => ({
+    speaker: i % 2 === 0 ? 'A' : 'B',
+    text: day.examples?.[0] || day.word,
+    highlightWord: day.word,
+    hint: day.slang?.expression ? `Argot : "${day.slang.expression}"` : null,
+  }));
 
   return {
-    lines: [
-      { speaker: 'A', text: lineA, highlightWord: wordA.word },
-      { speaker: 'B', text: lineB, highlightWord: wordB.word },
-    ],
-    correctWords: [wordA.word, wordB.word],
-    // Options pour le quiz "quel mot as-tu reconnu ?" (2 bons + 2 leurres du même pool)
-    quizOptions: shuffleAndPick(pool, wordA.word, wordB.word),
+    lines,
+    correctWords: uniqueDays.map((d) => d.word),
+    // Options pour le quiz "quels mots as-tu reconnus ?" : tous les mots de
+    // la semaine + quelques leurres du même niveau.
+    quizOptions: await buildQuizOptions(language, level, uniqueDays.map((d) => d.word)),
   };
 }
 
-function shuffleAndPick(pool, correctA, correctB) {
+async function buildQuizOptions(language, level, correctWords) {
+  const languageWords = await wordService.getWordsForLanguage(language);
+  const pool = (languageWords?.[level] || []).map((w) => w.word);
   const distractors = pool
-    .map((w) => w.word)
-    .filter((w) => w !== correctA && w !== correctB);
-  const shuffledDistractors = distractors.sort(() => Math.random() - 0.5).slice(0, 2);
-  const options = [correctA, correctB, ...shuffledDistractors];
+    .filter((w) => !correctWords.includes(w))
+    .sort(() => Math.random() - 0.5)
+    .slice(0, Math.max(2, correctWords.length));
+  const options = [...correctWords, ...distractors];
   return options.sort(() => Math.random() - 0.5);
 }
 

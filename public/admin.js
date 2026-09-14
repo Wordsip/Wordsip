@@ -218,7 +218,15 @@ async function deleteWord(language, subLevel, index) {
 
 async function loadUsers() {
   const res = await adminFetch('/api/admin/users');
-  const users = await res.json();
+  const data = await res.json();
+  const users = data.users || [];
+  const visitStats = data.visitStats || { uniqueVisitors: 0, totalVisits: 0 };
+
+  const statsEl = document.getElementById('visit-stats');
+  if (statsEl) {
+    statsEl.innerHTML = `👥 ${visitStats.uniqueVisitors} visiteurs uniques · ${visitStats.totalVisits} visites au total`;
+  }
+
   const container = document.getElementById('users-list');
   container.innerHTML = '';
 
@@ -230,11 +238,13 @@ async function loadUsers() {
   users.forEach((u) => {
     const row = document.createElement('div');
     row.className = 'word-row';
+    const lastLogin = u.lastLoginAt ? new Date(u.lastLoginAt).toLocaleDateString('fr-FR') : 'jamais';
     row.innerHTML = `
       <div class="word-row-header">
         <div>
           <strong>${u.pseudo}</strong> — ${u.email}
           <p style="font-size:11px;color:#666;">${u.language} · ${LEVEL_LABELS[u.level] || u.level} · ${u.wordsValidated} mots validés</p>
+          <p style="font-size:11px;color:#999;">🔑 ${u.loginCount} connexions · dernière : ${lastLogin}</p>
         </div>
         <div class="word-row-actions">
           <button onclick="deleteUser('${u.email}')" style="background:#c0392b;">Supprimer</button>

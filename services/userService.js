@@ -261,6 +261,25 @@ async function restoreProgress(email, { wordsValidated, validatedWords }) {
   return toUsableUser(result);
 }
 
+// Enregistre une connexion (accès à /api/my-word) — incrémente un compteur
+// et met à jour la date de dernière connexion, pour le suivi admin. Volontai-
+// rement silencieux en cas d'erreur (ne doit jamais bloquer l'affichage du
+// mot du jour pour un souci de comptage).
+async function trackLogin(email) {
+  try {
+    const normalizedEmail = normalizeEmail(email);
+    const emailHash = hashForLookup(normalizedEmail);
+    const update = { $inc: { loginCount: 1 }, $set: { lastLoginAt: new Date().toISOString() } };
+
+    let result = await usersCollection().updateOne({ emailHash }, update);
+    if (result.matchedCount === 0) {
+      await usersCollection().updateOne({ email: normalizedEmail }, update);
+    }
+  } catch (err) {
+    // silencieux, voir commentaire ci-dessus
+  }
+}
+
 module.exports = {
   addUser,
   getAllUsers,
@@ -274,4 +293,5 @@ module.exports = {
   toSafeUser,
   normalizeEmail,
   deleteUser,
+  trackLogin,
 };

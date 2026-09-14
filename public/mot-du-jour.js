@@ -2,6 +2,10 @@ const params = new URLSearchParams(window.location.search);
 const email = params.get('email');
 const isGuest = params.get('guest') === 'true';
 
+// Compteur de visiteurs uniques pour le panneau admin — silencieux si ça
+// échoue, ne doit jamais gêner le reste de la page.
+fetch('/api/track-visit', { method: 'POST' }).catch(() => {});
+
 let currentWord = null;
 let currentUser = null;
 let attemptCount = 1;
@@ -206,8 +210,25 @@ function renderWord() {
   `;
 
   const s = currentWord.slang || {};
-  document.getElementById('slang-expression').innerHTML = `<strong>"${s.expression || '-'}"</strong> — ${s.meaning || ''}`;
+  document.getElementById('slang-expression').innerHTML = `<strong>"${s.expression || '-'}"</strong>`;
+  document.getElementById('slang-meaning').textContent = s.meaning || '';
   document.getElementById('slang-warning').textContent = s.warning ? `⚠️ ${s.warning}` : '';
+
+  // Bouton audio pour l'expression argotique, même mécanisme que le mot
+  // principal — masqué s'il n'y a pas d'expression pour ce mot.
+  const playSlangBtn = document.getElementById('play-slang-audio-btn');
+  if (playSlangBtn) {
+    if (s.expression) {
+      playSlangBtn.style.display = '';
+      playSlangBtn.onclick = () => {
+        const lang = currentUser.language || params.get('lang') || 'en';
+        const audio = new Audio(`/api/tts?text=${encodeURIComponent(s.expression)}&lang=${lang}`);
+        audio.play().catch(() => {});
+      };
+    } else {
+      playSlangBtn.style.display = 'none';
+    }
+  }
 
   setupExercise();
 

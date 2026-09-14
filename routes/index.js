@@ -11,7 +11,27 @@ const ttsService = require('../services/ttsService');
 const expressionService = require('../services/expressionService');
 const emailService = require('../services/emailService');
 const twitterService = require('../services/twitterService');
+const dialogueService = require('../services/dialogueService');
+const videoService = require('../services/videoService');
+const visitService = require('../services/visitService');
 const { rateLimit } = require('../services/rateLimiter');
+
+const LATEST_VIDEO_FILE = path.join(__dirname, '..', 'data', 'latest-video.json');
+
+// Enregistre une visite (IP hachée, jamais stockée en clair) — appelé depuis
+// le front à chaque chargement des pages publiques, pour le compteur
+// "visiteurs uniques" du panneau admin. Rate-limité comme /api/tts pour
+// éviter tout abus, même si l'appel légitime n'a lieu qu'une fois par page.
+const visitRateLimit = rateLimit({ windowMs: 60_000, max: 20 });
+router.post('/api/track-visit', visitRateLimit, async (req, res) => {
+  try {
+    await visitService.trackVisit(req.ip);
+    res.json({ ok: true });
+  } catch (err) {
+    // Ne doit jamais faire échouer le chargement de la page pour ça
+    res.json({ ok: false });
+  }
+});
 
 // Page d'accueil
 router.get('/', (req, res) => {
@@ -195,6 +215,35 @@ router.get('/api/admin/test-tweet', async (req, res) => {
   }
 });
 
+// Route de test réservée à l'admin : force une génération immédiate de la
+// vidéo hebdomadaire, sans tenir compte du jour (contrairement à
+// /api/cron/weekly-video qui ne génère que le dimanche). Utile pour
+// diagnostiquer une erreur (ffmpeg, téléchargement TTS...) sans attendre
+// dimanche. ⚠️ Peut prendre du temps (plusieurs clips vidéo à assembler) —
+// le fichier data/latest-video.json est écrasé si ça réussit.
+// Exemple : /api/admin/test-weekly-video?secret=TON_ADMIN_SECRET
+router.get('/api/admin/test-weekly-video', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const code = req.query.language || 'en';
+    const level = req.query.level || 'niveau1';
+    const dialogue = await dialogueService.buildWeeklyDialogue(code, level);
+    if (!dialogue) return res.status(404).json({ error: `Pas assez de mots disponibles pour ${code}/${level}.` });
+
+    const videoUrl = await videoService.generateWeeklyVideo(dialogue, code);
+    fs.writeFileSync(LATEST_VIDEO_FILE, JSON.stringify({
+      videoUrl,
+      quizOptions: dialogue.quizOptions,
+      correctWords: dialogue.correctWords,
+      generatedAt: new Date().toISOString(),
+    }, null, 2));
+
+    res.json({ generated: true, videoUrl, correctWords: dialogue.correctWords, lineCount: dialogue.lines.length });
+  } catch (err) {
+    res.status(500).json({ error: err.message, stack: err.stack });
+  }
+});
+
 // Migration ponctuelle : réimporte data/words.seed.json dans MongoDB,
 // nécessaire une seule fois après le passage à la structure à 3 niveaux
 // (niveau1/niveau2/niveau3) puisque la base existante gardait l'ancienne
@@ -303,6 +352,8 @@ router.get('/api/my-word', async (req, res) => {
     const { email } = req.query;
     const user = await userService.findByEmail(email);
     if (!user) return res.status(404).json({ error: 'Utilisateur introuvable.' });
+
+    userService.trackLogin(email); // pas d'await : ne doit pas ralentir la réponse
 
     const word = await wordService.getWordForUser(user);
     if (!word) return res.status(404).json({ error: 'Aucun mot disponible pour ce profil.' });
@@ -566,6 +617,7 @@ router.get('/api/admin/users', async (req, res) => {
   if (!checkAdminSecret(req, res)) return;
   try {
     const users = await userService.getAllUsers();
+    const visitStats = await visitService.getVisitStats();
     // On ne renvoie que les champs utiles à l'admin, jamais les données
     // chiffrées brutes ni le détail technique interne.
     const safeUsers = users.map((u) => ({
@@ -574,9 +626,11 @@ router.get('/api/admin/users', async (req, res) => {
       language: u.language,
       level: u.level,
       wordsValidated: u.wordsValidated,
+      loginCount: u.loginCount || 0,
+      lastLoginAt: u.lastLoginAt || null,
       createdAt: u.createdAt,
     }));
-    res.json(safeUsers);
+    res.json({ users: safeUsers, visitStats });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

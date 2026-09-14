@@ -39,6 +39,39 @@ async function seedIfEmpty() {
   }
 }
 
+// Donne le lundi de la semaine d'une date donnée (utilisé pour reconstituer
+// "les mots de la semaine" pour la vidéo hebdomadaire, générée le dimanche).
+function getMondayOfWeek(date) {
+  const d = new Date(date);
+  const day = d.getDay(); // 0=dimanche ... 6=samedi
+  const diff = day === 0 ? -6 : 1 - day;
+  d.setDate(d.getDate() + diff);
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
+// Reconstitue les mots effectivement montrés du lundi au dimanche de la
+// semaine en cours (même calcul que le mot du jour affiché sur le site,
+// jour par jour) — pas une sélection à part, donc ce sont vraiment "les mots
+// appris cette semaine" pour ce niveau/cette langue, pas un tirage séparé.
+async function getWeekWords(language, level) {
+  const languageWords = await getWordsForLanguage(language);
+  if (!languageWords) return [];
+
+  let levelWords = languageWords[level] || languageWords.niveau1 || [];
+  const activeWords = levelWords.filter((w) => !w.disabled);
+  if (activeWords.length === 0) return [];
+
+  const monday = getMondayOfWeek(new Date());
+  const days = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(monday);
+    d.setDate(monday.getDate() + i);
+    days.push({ date: d, ...getWordForDateSync(activeWords, d) });
+  }
+  return days;
+}
+
 async function getAllWords() {
   const docs = await wordsCollection().find({}).toArray();
   const result = {};
@@ -274,6 +307,7 @@ module.exports = {
   getWordsForLanguage,
   getWordForUser,
   getAdjacentWordsForUser,
+  getWeekWords,
   getFeaturedWordOfDay,
   getSubLevel,
   getLevelWordCounts,

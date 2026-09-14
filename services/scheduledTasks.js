@@ -94,7 +94,16 @@ async function postDailyTweetTask() {
   return { posted: !tweetResult.simulated && !tweetResult.error, language: code, type: 'word', ...tweetResult };
 }
 
+// La vidéo n'est (re)générée que le dimanche — les autres jours, même si
+// cron-job.org ou le cron interne appelle la route, on ne fait rien (la
+// vidéo de la semaine précédente reste affichée). Même filtre en dur que
+// pour le tweet, indépendant de la config cron-job.org.
 async function generateWeeklyVideoTask() {
+  const day = getCurrentDayKey();
+  if (day !== 'sun') {
+    return { generated: false, reason: 'La vidéo n\'est générée que le dimanche.' };
+  }
+
   const { code } = getFeaturedLanguageOfDay();
   const dialogue = await dialogueService.buildWeeklyDialogue(code);
   if (!dialogue) return { generated: false, reason: 'Pas assez de mots disponibles.' };
