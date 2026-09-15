@@ -224,7 +224,7 @@ async function loadUsers() {
 
   const statsEl = document.getElementById('visit-stats');
   if (statsEl) {
-    statsEl.innerHTML = `👥 ${visitStats.uniqueVisitors} visiteurs uniques · ${visitStats.totalVisits} visites au total`;
+    statsEl.innerHTML = `👤 ${users.length} inscrit${users.length > 1 ? 's' : ''} · 👥 ${visitStats.uniqueVisitors} IP unique${visitStats.uniqueVisitors > 1 ? 's' : ''} · 🔁 ${visitStats.totalVisits} visite${visitStats.totalVisits > 1 ? 's' : ''} au total (dont ${Math.max(0, visitStats.totalVisits - visitStats.uniqueVisitors)} revisite${(visitStats.totalVisits - visitStats.uniqueVisitors) > 1 ? 's' : ''} depuis une même IP)`;
   }
 
   const container = document.getElementById('users-list');
