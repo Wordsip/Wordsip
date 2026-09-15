@@ -4011,6 +4011,466 @@
           "meaning": "Emprunté à l'anglais, très familier.",
           "warning": "Jeunes, informel."
         }
+      },
+      {
+        "word": "Arrivederci",
+        "phonetic": "/arriveˈdertʃi/",
+        "translation": "Au revoir (formel)",
+        "examples": [
+          "Arrivederci, a presto!",
+          "Ha detto arrivederci a tutti."
+        ],
+        "grammar": {
+          "nature": "Interjection de salutation (départ, formelle).",
+          "position": "Fin de conversation.",
+          "register": "Formel.",
+          "synonyms": "Ciao (informel), A dopo"
+        },
+        "slang": {
+          "expression": "Ci vediamo",
+          "meaning": "À plus, façon décontractée de dire au revoir.",
+          "warning": "Informel, entre amis."
+        }
+      },
+      {
+        "word": "Permesso",
+        "phonetic": "/perˈmesso/",
+        "translation": "Pardon / Excusez-moi (pour passer)",
+        "examples": [
+          "Permesso, devo passare.",
+          "Ha chiesto permesso prima di entrare."
+        ],
+        "grammar": {
+          "nature": "Expression de politesse (pour passer ou entrer).",
+          "position": "Début de phrase.",
+          "register": "Neutre à formel.",
+          "synonyms": "Scusi (plus formel), Con permesso"
+        },
+        "slang": {
+          "expression": "Fammi passare",
+          "meaning": "Façon directe et familière de demander à passer.",
+          "warning": "Informel, peut sembler abrupt."
+        }
+      },
+      {
+        "word": "Nome",
+        "phonetic": "/ˈnome/",
+        "translation": "Nom / Prénom",
+        "examples": [
+          "Come ti chiami? Qual è il tuo nome?",
+          "Il mio nome è Marco."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Nome di battesimo (prénom précis)"
+        },
+        "slang": {
+          "expression": "Come ti chiami?",
+          "meaning": "Façon la plus courante de demander le nom de quelqu'un.",
+          "warning": "Expression standard, très fréquente."
+        }
+      },
+      {
+        "word": "Casa",
+        "phonetic": "/ˈkaza/",
+        "translation": "Maison",
+        "examples": [
+          "Abito in una casa piccola.",
+          "Vieni a casa mia stasera?"
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Abitazione (plus formel)"
+        },
+        "slang": {
+          "expression": "A casa",
+          "meaning": "Chez soi, expression figée très courante.",
+          "warning": "Aucune restriction, standard."
+        }
+      },
+      {
+        "word": "Famiglia",
+        "phonetic": "/faˈmiʎʎa/",
+        "translation": "Famille",
+        "examples": [
+          "Ho una famiglia numerosa.",
+          "La famiglia è importante per me."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Parenti (la parenté au sens large)"
+        },
+        "slang": {
+          "expression": "Famiglia allargata",
+          "meaning": "Famille recomposée, expression moderne courante.",
+          "warning": "Contexte social contemporain."
+        }
+      },
+      {
+        "word": "Piacere",
+        "phonetic": "/pjaˈtʃere/",
+        "translation": "Aimer bien / Plaire",
+        "examples": [
+          "Mi piace questa canzone.",
+          "Ti piace il gelato?"
+        ],
+        "grammar": {
+          "nature": "Verbe régulier, construction inversée (comme 'gustar' en espagnol).",
+          "position": "Mi/ti/gli piace + nom.",
+          "register": "Neutre.",
+          "synonyms": "Amare (aimer plus fort), Adorare"
+        },
+        "slang": {
+          "expression": "Mi piace un sacco",
+          "meaning": "J'aime beaucoup, littéralement 'un sac' pour énormément.",
+          "warning": "Familier mais très courant."
+        }
+      },
+      {
+        "word": "Avere",
+        "phonetic": "/aˈveːre/",
+        "translation": "Avoir",
+        "examples": [
+          "Ho due fratelli.",
+          "Hai una domanda?"
+        ],
+        "grammar": {
+          "nature": "Verbe irrégulier, aussi auxiliaire.",
+          "position": "Sujet + avere + complément.",
+          "register": "Neutre.",
+          "synonyms": "Possedere (posséder, plus formel)"
+        },
+        "slang": {
+          "expression": "Ce l'ho",
+          "meaning": "Je l'ai, façon orale contractée très courante.",
+          "warning": "Informel à l'oral."
+        }
+      },
+      {
+        "word": "Piccolo",
+        "phonetic": "/ˈpikkolo/",
+        "translation": "Petit",
+        "examples": [
+          "Ho un piccolo problema.",
+          "Il gatto è molto piccolo."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant ou après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Minuscolo (très petit)"
+        },
+        "slang": {
+          "expression": "Piccolino",
+          "meaning": "Diminutif affectueux, 'tout petit'.",
+          "warning": "Familier, ton tendre."
+        }
+      },
+      {
+        "word": "Felice",
+        "phonetic": "/feˈliːtʃe/",
+        "translation": "Heureux",
+        "examples": [
+          "Sono molto felice oggi.",
+          "Lei sembra felice."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Après essere.",
+          "register": "Neutre.",
+          "synonyms": "Contento (content, plus courant à l'oral)"
+        },
+        "slang": {
+          "expression": "Al settimo cielo",
+          "meaning": "Au septième ciel, extrêmement heureux.",
+          "warning": "Expression imagée, un peu emphatique."
+        }
+      },
+      {
+        "word": "Bello",
+        "phonetic": "/ˈbɛllo/",
+        "translation": "Beau",
+        "examples": [
+          "Che bella giornata!",
+          "Hai una bella casa."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant ou après le nom.",
+          "register": "Neutre.",
+          "synonyms": "Stupendo (magnifique, plus fort)"
+        },
+        "slang": {
+          "expression": "Che bello!",
+          "meaning": "Que c'est beau/cool ! Exclamation très courante.",
+          "warning": "Usage très large, presque passe-partout."
+        }
+      },
+      {
+        "word": "Tempo",
+        "phonetic": "/ˈtempo/",
+        "translation": "Temps",
+        "examples": [
+          "Non ho tempo oggi.",
+          "Che tempo fa?"
+        ],
+        "grammar": {
+          "nature": "Nom (aussi 'météo' en italien).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Ora (heure précise)"
+        },
+        "slang": {
+          "expression": "Perdere tempo",
+          "meaning": "Perdre du temps, expression figée très courante.",
+          "warning": "Aucune restriction."
+        }
+      },
+      {
+        "word": "Giorno",
+        "phonetic": "/ˈdʒorno/",
+        "translation": "Jour",
+        "examples": [
+          "Buongiorno, come stai?",
+          "Lavoro cinque giorni a settimana."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Giornata (la journée dans sa durée)"
+        },
+        "slang": {
+          "expression": "Il giorno D",
+          "meaning": "Le jour J, moment décisif.",
+          "warning": "Expression imagée."
+        }
+      },
+      {
+        "word": "Soldi",
+        "phonetic": "/ˈsɔldi/",
+        "translation": "Argent",
+        "examples": [
+          "Non ho molti soldi.",
+          "Risparmia i suoi soldi ogni mese."
+        ],
+        "grammar": {
+          "nature": "Nom (toujours pluriel en italien).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Denaro (plus formel)"
+        },
+        "slang": {
+          "expression": "Grana",
+          "meaning": "Argot classique pour argent, façon décontractée.",
+          "warning": "Très familier."
+        }
+      },
+      {
+        "word": "Lavoro",
+        "phonetic": "/laˈvoːro/",
+        "translation": "Travail",
+        "examples": [
+          "Vado al lavoro alle 8.",
+          "Ha trovato un nuovo lavoro."
+        ],
+        "grammar": {
+          "nature": "Nom et verbe (lavorare).",
+          "position": "Sujet + lavoro / andare al lavoro.",
+          "register": "Neutre.",
+          "synonyms": "Impiego (emploi, plus formel)"
+        },
+        "slang": {
+          "expression": "Sgobbare",
+          "meaning": "Trimer, bosser dur, argot pour travailler intensément.",
+          "warning": "Familier, connotation d'effort."
+        }
+      },
+      {
+        "word": "Scuola",
+        "phonetic": "/ˈskwɔːla/",
+        "translation": "École",
+        "examples": [
+          "I bambini vanno a scuola.",
+          "La scuola inizia a settembre."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Istituto (établissement, plus formel)"
+        },
+        "slang": {
+          "expression": "Marinare la scuola",
+          "meaning": "Sécher les cours (littéralement 'faire mariner').",
+          "warning": "Familier, connotation négative."
+        }
+      },
+      {
+        "word": "Mattina",
+        "phonetic": "/matˈtiːna/",
+        "translation": "Matin",
+        "examples": [
+          "Buongiorno, buona mattina!",
+          "Mi sveglio presto la mattina."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet, complément, ou après 'di'.",
+          "register": "Neutre.",
+          "synonyms": "Mattinata (la matinée dans sa durée)"
+        },
+        "slang": {
+          "expression": "Di prima mattina",
+          "meaning": "Tôt le matin, expression figée courante.",
+          "warning": "Aucune restriction."
+        }
+      },
+      {
+        "word": "Notte",
+        "phonetic": "/ˈnɔtte/",
+        "translation": "Nuit",
+        "examples": [
+          "Buonanotte, dormi bene.",
+          "Siamo usciti fino a tarda notte."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet, complément, ou après 'di'.",
+          "register": "Neutre.",
+          "synonyms": "Serata (soirée, plus tôt)"
+        },
+        "slang": {
+          "expression": "Nottataccia",
+          "meaning": "Nuit difficile/agitée, augmentatif péjoratif.",
+          "warning": "Familier, connotation négative."
+        }
+      },
+      {
+        "word": "Settimana",
+        "phonetic": "/settiˈmaːna/",
+        "translation": "Semaine",
+        "examples": [
+          "Lavoro cinque giorni a settimana.",
+          "Ci vediamo la prossima settimana."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Settimanale (adjectif, hebdomadaire)"
+        },
+        "slang": {
+          "expression": "Weekend",
+          "meaning": "Week-end, mot anglais entré dans l'usage courant italien.",
+          "warning": "Anglicisme très répandu."
+        }
+      },
+      {
+        "word": "Bambino",
+        "phonetic": "/bamˈbiːno/",
+        "translation": "Enfant",
+        "examples": [
+          "Ha due bambini.",
+          "Il bambino gioca in giardino."
+        ],
+        "grammar": {
+          "nature": "Nom (féminin : bambina).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Figlio (enfant au sens de fils/fille)"
+        },
+        "slang": {
+          "expression": "Bimbo",
+          "meaning": "Version affectueuse et familière de bambino.",
+          "warning": "Familier, ton tendre."
+        }
+      },
+      {
+        "word": "Uomo",
+        "phonetic": "/ˈwɔːmo/",
+        "translation": "Homme",
+        "examples": [
+          "Quell'uomo è il mio professore.",
+          "È diventato un uomo."
+        ],
+        "grammar": {
+          "nature": "Nom (pluriel irrégulier : uomini).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Signore (monsieur, plus formel)"
+        },
+        "slang": {
+          "expression": "Tizio",
+          "meaning": "Type, mec, façon familière de désigner un homme.",
+          "warning": "Informel, un peu familier."
+        }
+      },
+      {
+        "word": "Donna",
+        "phonetic": "/ˈdɔnna/",
+        "translation": "Femme",
+        "examples": [
+          "Quella donna è una dottoressa.",
+          "È una donna forte."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Signora (madame, plus formel)"
+        },
+        "slang": {
+          "expression": "Tizia",
+          "meaning": "Version féminine familière de 'tizio'.",
+          "warning": "Informel."
+        }
+      },
+      {
+        "word": "Caldo",
+        "phonetic": "/ˈkaldo/",
+        "translation": "Chaud",
+        "examples": [
+          "Fa molto caldo oggi.",
+          "Attento, il piatto è caldo."
+        ],
+        "grammar": {
+          "nature": "Adjectif (aussi nom : la chaleur).",
+          "position": "Avant ou après le nom, ou après essere/fare.",
+          "register": "Neutre.",
+          "synonyms": "Bollente (brûlant, plus fort)"
+        },
+        "slang": {
+          "expression": "Che caldo!",
+          "meaning": "Qu'il fait chaud ! Exclamation courante.",
+          "warning": "Usage météo principalement."
+        }
+      },
+      {
+        "word": "Freddo",
+        "phonetic": "/ˈfreddo/",
+        "translation": "Froid",
+        "examples": [
+          "Fa freddo fuori.",
+          "Non mi piace il freddo."
+        ],
+        "grammar": {
+          "nature": "Adjectif (aussi nom : un rhume, le froid).",
+          "position": "Avant ou après le nom, ou après essere/fare.",
+          "register": "Neutre.",
+          "synonyms": "Gelido (glacial, plus fort)"
+        },
+        "slang": {
+          "expression": "Un freddo cane",
+          "meaning": "Un froid de canard, expression imagée très courante.",
+          "warning": "Expression familière."
+        }
       }
     ],
     "niveau2": [
@@ -4615,7 +5075,368 @@
         }
       }
     ],
-    "niveau3": []
+    "niveau3": [
+      {
+        "word": "Tuttavia",
+        "phonetic": "/tuttaˈviːa/",
+        "translation": "Néanmoins",
+        "examples": [
+          "Pioveva; tuttavia, siamo usciti.",
+          "Il piano era rischioso, tuttavia lo hanno provato."
+        ],
+        "grammar": {
+          "nature": "Avverbio di collegamento (opposizione).",
+          "position": "Début de phrase ou après point-virgule.",
+          "register": "Soutenu.",
+          "synonyms": "Comunque, Però (plus courant à l'oral)"
+        },
+        "slang": {
+          "expression": "Comunque",
+          "meaning": "Version plus orale pour introduire une opposition.",
+          "warning": "Moins formel, très utilisé à l'oral."
+        }
+      },
+      {
+        "word": "Inoltre",
+        "phonetic": "/iˈnoltre/",
+        "translation": "De plus",
+        "examples": [
+          "Il rapporto era in ritardo. Inoltre, conteneva errori.",
+          "Inoltre, il budget deve essere approvato entro venerdì."
+        ],
+        "grammar": {
+          "nature": "Avverbio di collegamento (addizione).",
+          "position": "Début de phrase, registre soutenu.",
+          "register": "Soutenu / académique.",
+          "synonyms": "Anche, In più"
+        },
+        "slang": {
+          "expression": "In più",
+          "meaning": "Version plus simple et orale pour ajouter une idée.",
+          "warning": "Informel, à éviter à l'écrit très formel."
+        }
+      },
+      {
+        "word": "Di conseguenza",
+        "phonetic": "/di konseˈɡwɛntsa/",
+        "translation": "Par conséquent",
+        "examples": [
+          "Le vendite sono calate; di conseguenza, l'azienda ha tagliato i costi.",
+          "Ha perso la scadenza; di conseguenza, il progetto è stato ritardato."
+        ],
+        "grammar": {
+          "nature": "Locution adverbiale de conséquence.",
+          "position": "Début de phrase, suit souvent un point-virgule.",
+          "register": "Soutenu.",
+          "synonyms": "Perciò, Quindi (plus courant)"
+        },
+        "slang": {
+          "expression": "Quindi",
+          "meaning": "Donc, version orale simple et très courante.",
+          "warning": "Trop familier pour un rapport formel."
+        }
+      },
+      {
+        "word": "Negoziare",
+        "phonetic": "/neɡotsjaˈre/",
+        "translation": "Négocier",
+        "examples": [
+          "Dobbiamo negoziare un prezzo migliore.",
+          "Ha negoziato il suo stipendio prima di firmare."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + negoziare + complément.",
+          "register": "Neutre à soutenu (contexte professionnel).",
+          "synonyms": "Contrattare (marchander, plus familier)"
+        },
+        "slang": {
+          "expression": "Trattare",
+          "meaning": "Marchander, négocier de façon insistante, plus familier.",
+          "warning": "Connotation familière, marché/achat."
+        }
+      },
+      {
+        "word": "Scadenza",
+        "phonetic": "/skaˈdɛntsa/",
+        "translation": "Date limite / Échéance",
+        "examples": [
+          "La scadenza per questo progetto è venerdì.",
+          "Abbiamo mancato la scadenza di due giorni."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre (professionnel/académique).",
+          "synonyms": "Termine ultimo"
+        },
+        "slang": {
+          "expression": "Sotto scadenza",
+          "meaning": "Sous pression avant une échéance.",
+          "warning": "Informel, contexte de stress professionnel."
+        }
+      },
+      {
+        "word": "Realizzare",
+        "phonetic": "/realiddzaˈre/",
+        "translation": "Réaliser / Accomplir",
+        "examples": [
+          "Abbiamo realizzato tutti i nostri obiettivi.",
+          "Ha realizzato il compito in anticipo."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier (aussi 'se rendre compte' selon contexte).",
+          "position": "Sujet + realizzare + complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Compiere, Portare a termine"
+        },
+        "slang": {
+          "expression": "Farcela",
+          "meaning": "Y arriver, réussir, expression orale très courante.",
+          "warning": "Informel mais très répandu."
+        }
+      },
+      {
+        "word": "Sostenibilità",
+        "phonetic": "/sostenibiliˈta/",
+        "translation": "Durabilité",
+        "examples": [
+          "L'azienda si concentra sulla sostenibilità.",
+          "La sostenibilità è centrale nella nostra strategia."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Soutenu / académique / professionnel.",
+          "synonyms": "Eco-responsabilità"
+        },
+        "slang": {
+          "expression": "Green",
+          "meaning": "Emprunt anglais informel pour l'écologique.",
+          "warning": "Anglicisme, connotation parfois marketing."
+        }
+      },
+      {
+        "word": "Imprenditore",
+        "phonetic": "/imprenditoˈre/",
+        "translation": "Entrepreneur",
+        "examples": [
+          "È diventata un'imprenditrice di successo a 25 anni.",
+          "Gli imprenditori spesso corrono grandi rischi finanziari."
+        ],
+        "grammar": {
+          "nature": "Nom (féminin : imprenditrice).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Fondatore (fondateur)"
+        },
+        "slang": {
+          "expression": "Self-made",
+          "meaning": "Anglicisme pour quelqu'un qui a réussi seul.",
+          "warning": "Emprunt courant, connotation méritocratique."
+        }
+      },
+      {
+        "word": "Fattibile",
+        "phonetic": "/fatˈtiːbile/",
+        "translation": "Faisable",
+        "examples": [
+          "Questo piano è finanziariamente fattibile?",
+          "Gli ingegneri hanno confermato che il progetto è fattibile."
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Après essere, contexte de faisabilité.",
+          "register": "Soutenu / technique.",
+          "synonyms": "Realizzabile"
+        },
+        "slang": {
+          "expression": "Si può fare",
+          "meaning": "On peut le faire, version simple et orale.",
+          "warning": "Informel, à l'oral."
+        }
+      },
+      {
+        "word": "Sfruttare",
+        "phonetic": "/sfrutˈtaːre/",
+        "translation": "Tirer parti de / Exploiter",
+        "examples": [
+          "Dovremmo sfruttare la nostra rete esistente.",
+          "L'azienda ha sfruttato la sua posizione per crescere."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + sfruttare + complément.",
+          "register": "Soutenu / jargon professionnel.",
+          "synonyms": "Utilizzare, Valorizzare"
+        },
+        "slang": {
+          "expression": "Sfruttare al massimo",
+          "meaning": "Tirer le meilleur parti de.",
+          "warning": "Peut aussi être négatif (exploiter quelqu'un), attention au contexte."
+        }
+      },
+      {
+        "word": "Portatore di interesse",
+        "phonetic": "/portaˈtoːre di interesˈse/",
+        "translation": "Partie prenante",
+        "examples": [
+          "Tutti i portatori di interesse devono approvare il piano.",
+          "Abbiamo consultato i principali portatori di interesse."
+        ],
+        "grammar": {
+          "nature": "Locution nominale (calque de l'anglais 'stakeholder').",
+          "position": "Sujet ou complément.",
+          "register": "Soutenu / jargon professionnel.",
+          "synonyms": "Stakeholder (emprunt direct, très utilisé)"
+        },
+        "slang": {
+          "expression": "Stakeholder",
+          "meaning": "Le mot anglais est en fait plus utilisé que sa traduction.",
+          "warning": "Jargon corporate, anglicisme dominant."
+        }
+      },
+      {
+        "word": "Implementare",
+        "phonetic": "/implementaˈre/",
+        "translation": "Mettre en œuvre",
+        "examples": [
+          "Implementeremo la nuova politica il mese prossimo.",
+          "Il team ha implementato i cambiamenti con successo."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier (emprunt technique de l'anglais).",
+          "position": "Sujet + implementare + complément.",
+          "register": "Soutenu / technique.",
+          "synonyms": "Attuare, Mettere in atto"
+        },
+        "slang": {
+          "expression": "Lanciare",
+          "meaning": "Lancer, déployer une nouvelle mesure, plus informel.",
+          "warning": "Jargon d'entreprise courant."
+        }
+      },
+      {
+        "word": "Analizzare",
+        "phonetic": "/analiddzaˈre/",
+        "translation": "Analyser",
+        "examples": [
+          "Dobbiamo analizzare i dati prima di decidere.",
+          "Il rapporto analizza le tendenze di mercato."
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + analizzare + complément.",
+          "register": "Soutenu / académique.",
+          "synonyms": "Esaminare, Valutare"
+        },
+        "slang": {
+          "expression": "Sviscerare",
+          "meaning": "Décortiquer en détail, façon imagée d'analyser en profondeur.",
+          "warning": "Registre plutôt soutenu malgré l'image."
+        }
+      },
+      {
+        "word": "Collega",
+        "phonetic": "/kolˈlɛːɡa/",
+        "translation": "Collègue",
+        "examples": [
+          "Ho pranzato con un collega.",
+          "È una collega del reparto marketing."
+        ],
+        "grammar": {
+          "nature": "Nom (même forme au masculin/féminin, pluriel : colleghi/colleghe).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Compagno di lavoro"
+        },
+        "slang": {
+          "expression": "Il/la collega",
+          "meaning": "Forme standard, pas vraiment d'argot alternatif.",
+          "warning": "Aucune restriction particulière."
+        }
+      },
+      {
+        "word": "Riunione",
+        "phonetic": "/riuˈnjoːne/",
+        "translation": "Réunion",
+        "examples": [
+          "Abbiamo una riunione alle 10.",
+          "La riunione è durata più del previsto."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "Meeting (emprunt anglais très courant)"
+        },
+        "slang": {
+          "expression": "Meeting",
+          "meaning": "Emprunt anglais aussi courant que 'riunione' en pro.",
+          "warning": "Anglicisme très répandu dans le monde du travail."
+        }
+      },
+      {
+        "word": "Bozza",
+        "phonetic": "/ˈbɔttsa/",
+        "translation": "Brouillon / Ébauche",
+        "examples": [
+          "Puoi mandarmi la bozza entro domani?",
+          "Questa è solo una prima bozza."
+        ],
+        "grammar": {
+          "nature": "Nom.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "Schema, Abbozzo"
+        },
+        "slang": {
+          "expression": "Bozza grezza",
+          "meaning": "Version brute et non finalisée d'un texte.",
+          "warning": "Aucune restriction, expression standard."
+        }
+      },
+      {
+        "word": "Tesi",
+        "phonetic": "/ˈtɛːzi/",
+        "translation": "Thèse (mémoire universitaire)",
+        "examples": [
+          "Sta scrivendo la sua tesi di laurea.",
+          "La sua tesi si concentra sulla politica climatica."
+        ],
+        "grammar": {
+          "nature": "Nom (invariable au pluriel).",
+          "position": "Sujet ou complément.",
+          "register": "Académique.",
+          "synonyms": "Dissertazione"
+        },
+        "slang": {
+          "expression": "Tesone",
+          "meaning": "Augmentatif familier, une thèse particulièrement longue.",
+          "warning": "Très familier, entre étudiants."
+        }
+      },
+      {
+        "word": "Curriculum",
+        "phonetic": "/kurˈrikulum/",
+        "translation": "Programme (d'études) / CV",
+        "examples": [
+          "L'università ha aggiornato il curriculum.",
+          "Questo corso non fa parte del curriculum ufficiale."
+        ],
+        "grammar": {
+          "nature": "Nom invariable (aussi 'curriculum vitae' = CV en pro).",
+          "position": "Sujet ou complément.",
+          "register": "Académique / professionnel.",
+          "synonyms": "Programma di studi"
+        },
+        "slang": {
+          "expression": "CV",
+          "meaning": "Abréviation universelle de curriculum vitae.",
+          "warning": "Anglicisme/latinisme courant, aucune restriction."
+        }
+      }
+    ]
   },
   "ja": {
     "niveau1": [
