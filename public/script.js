@@ -82,7 +82,6 @@ async function checkLoginAccountStatus() {
   if (!wasAlreadyVisible) {
     passwordInput.value = '';
   }
-
   // La proposition "crée ton mot de passe toi-même" n'apparaît que pour le
   // compte wordsip@protonmail.com (seul compte concerné pour l'instant) —
   // pour un autre compte sans mot de passe, la connexion reste par email
@@ -92,11 +91,13 @@ async function checkLoginAccountStatus() {
   if (loginAccountStatus.hasPassword) {
     label.textContent = 'Mot de passe';
     confirmArea.style.display = 'none';
+    if (!wasAlreadyVisible) passwordInput.focus();
   } else if (isReservedAccount) {
     label.textContent = 'Crée ton mot de passe (première connexion, 8 caractères min.)';
     confirmArea.style.display = 'block';
     if (!wasAlreadyVisible) {
       document.getElementById('login-password-confirm').value = '';
+      passwordInput.focus();
     }
   } else {
     // Compte sans mot de passe et non concerné par la création en
