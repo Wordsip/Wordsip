@@ -247,6 +247,14 @@ function renderWord() {
     navPhonetiqueLink.href = `/phonetique${window.location.search}`;
   }
 
+  // Lien vers le panneau admin, visible uniquement pour ce compte précis —
+  // pour tous les autres utilisateurs, le lien reste caché comme avant.
+  const navAdminLink = document.getElementById('nav-admin-link');
+  if (navAdminLink && currentUser && currentUser.email
+      && currentUser.email.toLowerCase() === 'wordsip@protonmail.com') {
+    navAdminLink.style.display = '';
+  }
+
   // Suppression de compte, cachée en mode invité (pas de vrai compte à supprimer)
   const deleteLink = document.getElementById('delete-account-link');
   if (deleteLink) {
