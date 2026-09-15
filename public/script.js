@@ -53,6 +53,7 @@ async function checkLoginAccountStatus() {
   const confirmArea = document.getElementById('login-password-confirm-area');
   const label = document.getElementById('login-password-label');
   const passwordInput = document.getElementById('login-password');
+  const wasAlreadyVisible = passwordArea.style.display !== 'none';
 
   if (!email || !email.includes('@')) {
     passwordArea.style.display = 'none';
@@ -74,7 +75,13 @@ async function checkLoginAccountStatus() {
   }
 
   passwordArea.style.display = 'block';
-  passwordInput.value = '';
+  // On ne vide le champ que la toute première fois qu'il apparaît — sinon un
+  // second appel (déclenché par une soumission pendant qu'un premier appel,
+  // lancé par la sortie du champ email, tournait encore) effacerait un mot
+  // de passe déjà tapé par la personne, juste avant qu'elle ne valide.
+  if (!wasAlreadyVisible) {
+    passwordInput.value = '';
+  }
 
   // La proposition "crée ton mot de passe toi-même" n'apparaît que pour le
   // compte wordsip@protonmail.com (seul compte concerné pour l'instant) —
@@ -88,7 +95,9 @@ async function checkLoginAccountStatus() {
   } else if (isReservedAccount) {
     label.textContent = 'Crée ton mot de passe (première connexion, 8 caractères min.)';
     confirmArea.style.display = 'block';
-    document.getElementById('login-password-confirm').value = '';
+    if (!wasAlreadyVisible) {
+      document.getElementById('login-password-confirm').value = '';
+    }
   } else {
     // Compte sans mot de passe et non concerné par la création en
     // libre-service : on repasse en connexion par email seul, comme avant.
@@ -100,10 +109,26 @@ document.getElementById('login-email').addEventListener('blur', checkLoginAccoun
 document.getElementById('login-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = document.getElementById('login-email').value;
-  const password = document.getElementById('login-password').value;
   const messageEl = document.getElementById('login-message');
   messageEl.style.color = '';
   messageEl.textContent = '';
+
+  // Ne relance la vérification que si le champ mot de passe n'est pas déjà
+  // affiché — sinon on risquerait d'effacer un mot de passe déjà tapé par
+  // la personne pendant qu'une vérification précédente (déclenchée par la
+  // sortie du champ email) était encore en cours.
+  const passwordAreaEl = document.getElementById('login-password-area');
+  if (!loginAccountStatus && passwordAreaEl.style.display === 'none') {
+    await checkLoginAccountStatus();
+    if (passwordAreaEl.style.display !== 'none') {
+      messageEl.textContent = loginAccountStatus?.hasPassword
+        ? 'Entre ton mot de passe puis valide à nouveau.'
+        : 'Ce compte n\'a pas encore de mot de passe : crée-en un ci-dessous puis valide à nouveau.';
+      return;
+    }
+  }
+
+  const password = document.getElementById('login-password').value;
 
   // Le compte existe mais n'a pas encore de mot de passe, et le champ de
   // création est affiché : on le crée d'abord, avant la connexion elle-même.
