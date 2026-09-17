@@ -246,6 +246,10 @@ function renderWord() {
   if (navPhonetiqueLink) {
     navPhonetiqueLink.href = `/phonetique${window.location.search}`;
   }
+  const navGrammaireLink = document.getElementById('nav-grammaire-link');
+  if (navGrammaireLink) {
+    navGrammaireLink.href = `/grammaire${window.location.search}`;
+  }
 
   // Lien vers le panneau admin, visible uniquement pour ce compte précis —
   // pour tous les autres utilisateurs, le lien reste caché comme avant.
@@ -302,6 +306,12 @@ function renderWord() {
     }
   }
 }
+
+// --- Pratique du tracé à la main (japonais/chinois) ---
+// Voir setupHandwritingPractice() plus bas, appelée depuis revealWordMain() —
+// un canevas dédié par caractère avec le mot du jour en transparence comme
+// modèle. Volontairement pas de reconnaissance d'écriture, juste un support
+// visuel au tracé ; la réponse de l'exercice reste le texte tapé.
 
 function setupExercise() {
   document.getElementById('word-display').textContent = currentWord.word;
@@ -449,10 +459,114 @@ function hideWordAndShowInput() {
 
   // Cache aussi le mot affiché en haut de page, sinon l'exercice n'a aucun intérêt
   document.getElementById('word-main').textContent = '? '.repeat(currentWord.word.length).trim();
+
+  const handwritingSection = document.getElementById('handwriting-section');
+  if (handwritingSection) handwritingSection.style.display = 'none';
 }
+
+// --- Pratique de l'écriture (japonais / chinois uniquement) ---
+// Un canvas par caractère du mot, avec le caractère affiché en transparence
+// comme guide à tracer par-dessus — pas de reconnaissance d'écriture, juste
+// un support pour muscler le geste, à la manière du papier calque.
+function setupHandwritingPractice() {
+  const section = document.getElementById('handwriting-section');
+  const language = currentUser && currentUser.language;
+
+  if (!section || (language !== 'ja' && language !== 'zh') || !currentWord) {
+    if (section) section.style.display = 'none';
+    return;
+  }
+
+  section.style.display = 'block';
+  const container = document.getElementById('handwriting-canvases');
+  container.innerHTML = '';
+
+  const characters = Array.from(currentWord.word).filter((ch) => ch.trim());
+
+  characters.forEach((ch) => {
+    const wrapper = document.createElement('div');
+    const canvas = document.createElement('canvas');
+    const size = 140;
+    canvas.width = size;
+    canvas.height = size;
+    canvas.style.cssText = 'border:2px solid #d0f0ee;border-radius:8px;touch-action:none;background:white;';
+    wrapper.appendChild(canvas);
+    container.appendChild(wrapper);
+
+    const ctx = canvas.getContext('2d');
+    // Caractère en transparence, à tracer par-dessus
+    ctx.font = `${size * 0.75}px sans-serif`;
+    ctx.fillStyle = 'rgba(43,122,120,0.15)';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(ch, size / 2, size / 2 + 4);
+
+    ctx.lineWidth = 4;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.strokeStyle = '#2b7a78';
+
+    let drawing = false;
+    let last = null;
+
+    function pos(e) {
+      const rect = canvas.getBoundingClientRect();
+      const point = e.touches ? e.touches[0] : e;
+      return { x: point.clientX - rect.left, y: point.clientY - rect.top };
+    }
+    function start(e) {
+      e.preventDefault();
+      drawing = true;
+      last = pos(e);
+    }
+    function move(e) {
+      if (!drawing) return;
+      e.preventDefault();
+      const p = pos(e);
+      ctx.beginPath();
+      ctx.moveTo(last.x, last.y);
+      ctx.lineTo(p.x, p.y);
+      ctx.stroke();
+      last = p;
+    }
+    function end() {
+      drawing = false;
+    }
+
+    canvas.addEventListener('mousedown', start);
+    canvas.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', end);
+    canvas.addEventListener('touchstart', start, { passive: false });
+    canvas.addEventListener('touchmove', move, { passive: false });
+    canvas.addEventListener('touchend', end);
+
+    // Redessine le guide en transparence, sans effacer le tracé de la personne
+    wrapper.dataset.redrawGuide = 'true';
+    canvas._redrawGuide = () => {
+      ctx.clearRect(0, 0, size, size);
+      ctx.fillStyle = 'rgba(43,122,120,0.15)';
+      ctx.fillText(ch, size / 2, size / 2 + 4);
+    };
+  });
+}
+
+document.getElementById('handwriting-toggle-btn')?.addEventListener('click', () => {
+  const pad = document.getElementById('handwriting-pad');
+  const btn = document.getElementById('handwriting-toggle-btn');
+  const willShow = pad.style.display === 'none';
+  pad.style.display = willShow ? 'block' : 'none';
+  btn.textContent = willShow ? 'Masquer le pavé d\'entraînement' : 'Afficher le pavé d\'entraînement';
+});
+
+document.getElementById('handwriting-clear-btn')?.addEventListener('click', () => {
+  document.querySelectorAll('#handwriting-canvases canvas').forEach((canvas) => {
+    if (canvas._redrawGuide) canvas._redrawGuide();
+  });
+});
 
 function revealWordMain() {
   document.getElementById('word-main').textContent = currentWord.word;
+  setupHandwritingPractice();
 }
 
 document.getElementById('check-btn')?.addEventListener('click', async () => {

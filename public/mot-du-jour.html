@@ -16,6 +16,7 @@
     <nav style="display:flex;justify-content:center;gap:16px;margin-bottom:16px;font-size:12px;">
       <a href="/mot-du-jour" style="color:#2b7a78;font-weight:600;">Mon mot</a>
       <a href="#" id="nav-video-link" style="color:#666;">Vidéo</a>
+      <a href="/grammaire" id="nav-grammaire-link" style="color:#666;">Grammaire</a>
       <a href="/phonetique" style="color:#666;" id="nav-phonetique-link">Phonétique</a>
       <a href="/admin" id="nav-admin-link" style="color:#666;display:none;">Admin</a>
     </nav>
@@ -85,6 +86,16 @@
           <div id="virtual-keyboard" class="virtual-keyboard" style="display:none;"></div>
           <button id="check-btn">Vérifier</button>
           <p id="exercise-feedback"></p>
+        </div>
+      </section>
+
+      <section id="handwriting-section" class="info-card" style="display:none;">
+        <p class="info-title">✍️ S'ENTRAÎNER À ÉCRIRE</p>
+        <button id="handwriting-toggle-btn" type="button" style="width:auto;padding:6px 14px;font-size:13px;">Afficher le pavé d'entraînement</button>
+        <div id="handwriting-pad" style="display:none;margin-top:10px;">
+          <div id="handwriting-canvases" style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;"></div>
+          <button id="handwriting-clear-btn" type="button" style="width:auto;padding:6px 14px;font-size:12px;margin-top:8px;">Effacer tout</button>
+          <p style="font-size:11px;color:#999;margin-top:6px;">Trace par-dessus le caractère en transparence, avec la souris ou le doigt.</p>
         </div>
       </section>
 

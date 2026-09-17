@@ -1,0 +1,49 @@
+{
+  "en": [
+    {
+      "id": "prepositions-place-1",
+      "title": "On / In / Under / Around / Between",
+      "intro": "Ces 5 prépositions décrivent toutes une position, mais chacune raconte une histoire spatiale différente. Le piège n'est pas de les traduire (elles se traduisent souvent toutes par « à » ou « dans » en français), mais de visualiser la relation exacte entre les deux objets.",
+      "items": [
+        {
+          "word": "on",
+          "rule": "Contact direct avec une surface : l'objet touche quelque chose, généralement par-dessus.",
+          "examples": ["The book is on the table.", "There's a picture on the wall."]
+        },
+        {
+          "word": "in",
+          "rule": "À l'intérieur d'un espace fermé ou délimité en trois dimensions — on est entouré, pas juste posé dessus.",
+          "examples": ["The keys are in the drawer.", "She lives in Paris."]
+        },
+        {
+          "word": "under",
+          "rule": "En dessous de quelque chose, souvent caché ou couvert par un élément au-dessus.",
+          "examples": ["The cat is hiding under the bed.", "We sheltered under a tree."]
+        },
+        {
+          "word": "around",
+          "rule": "Tout autour, en cercle ou en périphérie — pas un point précis, mais une zone qui entoure.",
+          "examples": ["The children ran around the garden.", "There's a fence around the house."]
+        },
+        {
+          "word": "between",
+          "rule": "Exactement entre deux éléments identifiables et distincts. Dès qu'il y a plus de deux éléments, on utilise 'among', pas 'between'.",
+          "examples": ["The house is between the bakery and the bank.", "Choose between tea and coffee."]
+        }
+      ],
+      "exercises": [
+        { "sentence": "The cat is hiding ___ the bed.", "correct": "under", "options": ["on", "in", "under"] },
+        { "sentence": "She put the vase ___ the table.", "correct": "on", "options": ["on", "around", "between"] },
+        { "sentence": "My office is ___ the bank and the pharmacy.", "correct": "between", "options": ["under", "between", "around"] },
+        { "sentence": "The dog ran ___ the tree three times.", "correct": "around", "options": ["around", "in", "on"] },
+        { "sentence": "There is milk ___ the fridge.", "correct": "in", "options": ["in", "on", "under"] },
+        { "sentence": "The picture is hanging ___ the wall.", "correct": "on", "options": ["on", "in", "around"] },
+        { "sentence": "We planted flowers ___ the whole garden.", "correct": "around", "options": ["around", "between", "under"] }
+      ]
+    }
+  ],
+  "es": [],
+  "it": [],
+  "ja": [],
+  "zh": []
+}

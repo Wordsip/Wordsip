@@ -5639,6 +5639,466 @@
           "meaning": "\"Vraiment bien\", très familier et intensif.",
           "warning": "Jeunes, très informel."
         }
+      },
+      {
+        "word": "さようなら",
+        "phonetic": "sayōnara",
+        "translation": "Au revoir",
+        "examples": [
+          "さようなら、また明日。",
+          "彼はさようならも言わずに帰った。"
+        ],
+        "grammar": {
+          "nature": "Interjection de salutation (départ, assez formelle).",
+          "position": "Fin de conversation.",
+          "register": "Neutre à formel.",
+          "synonyms": "またね (informel), じゃあね"
+        },
+        "slang": {
+          "expression": "またね",
+          "meaning": "À plus, façon très décontractée entre amis.",
+          "warning": "Informel, jamais en contexte professionnel."
+        }
+      },
+      {
+        "word": "名前",
+        "phonetic": "namae",
+        "translation": "Nom / Prénom",
+        "examples": [
+          "お名前は何ですか？",
+          "私の名前はサラです。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 名前).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "お名前 (poli)"
+        },
+        "slang": {
+          "expression": "お名前は？",
+          "meaning": "Façon la plus courante de demander le nom de quelqu'un.",
+          "warning": "Standard, pas vraiment de l'argot."
+        }
+      },
+      {
+        "word": "家",
+        "phonetic": "ie",
+        "translation": "Maison",
+        "examples": [
+          "小さい家に住んでいます。",
+          "今日は家にいます。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 家).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "お家 (plus poli/affectueux)"
+        },
+        "slang": {
+          "expression": "うち",
+          "meaning": "Chez moi, façon très courante et familière de dire 'ma maison'.",
+          "warning": "Très courant à l'oral, informel."
+        }
+      },
+      {
+        "word": "家族",
+        "phonetic": "kazoku",
+        "translation": "Famille",
+        "examples": [
+          "家族は大きいです。",
+          "休みは家族と過ごします。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 家族).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "ご家族 (poli, pour la famille de quelqu'un d'autre)"
+        },
+        "slang": {
+          "expression": "ファミリー",
+          "meaning": "Emprunt anglais 'family', utilisé de façon décontractée.",
+          "warning": "Informel, contexte jeune/moderne."
+        }
+      },
+      {
+        "word": "好き",
+        "phonetic": "suki",
+        "translation": "Aimer bien / Apprécier",
+        "examples": [
+          "この歌が好きです。",
+          "ピザが好きですか？"
+        ],
+        "grammar": {
+          "nature": "Adjectif en na (kanji : 好き), pas un verbe malgré la traduction.",
+          "position": "Nom + が好きです.",
+          "register": "Neutre.",
+          "synonyms": "大好き (adorer)"
+        },
+        "slang": {
+          "expression": "めっちゃ好き",
+          "meaning": "J'adore vraiment, version très familière et intensive.",
+          "warning": "Très familier, jeunes."
+        }
+      },
+      {
+        "word": "あります",
+        "phonetic": "arimasu",
+        "translation": "Avoir (pour un objet/chose)",
+        "examples": [
+          "質問があります。",
+          "時間がありますか？"
+        ],
+        "grammar": {
+          "nature": "Verbe (existence, pour objets inanimés).",
+          "position": "Nom + があります.",
+          "register": "Neutre à poli.",
+          "synonyms": "ある (forme simple, moins polie)"
+        },
+        "slang": {
+          "expression": "ある",
+          "meaning": "Forme courte et directe, utilisée entre amis.",
+          "warning": "Informel, jamais en contexte poli."
+        }
+      },
+      {
+        "word": "小さい",
+        "phonetic": "chiisai",
+        "translation": "Petit",
+        "examples": [
+          "小さい問題があります。",
+          "この犬はとても小さいです。"
+        ],
+        "grammar": {
+          "nature": "Adjectif en i (kanji : 小さい).",
+          "position": "Avant le nom ou en fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "ちっちゃい (plus familier)"
+        },
+        "slang": {
+          "expression": "ちっちゃい",
+          "meaning": "Version enfantine et affectueuse de 'petit'.",
+          "warning": "Familier, ton mignon/enfantin."
+        }
+      },
+      {
+        "word": "幸せ",
+        "phonetic": "shiawase",
+        "translation": "Heureux",
+        "examples": [
+          "今日はとても幸せです。",
+          "彼女は幸せそうです。"
+        ],
+        "grammar": {
+          "nature": "Adjectif en na (kanji : 幸せ).",
+          "position": "Nom + です/そうです.",
+          "register": "Neutre.",
+          "synonyms": "嬉しい (content, plus ponctuel)"
+        },
+        "slang": {
+          "expression": "最高に幸せ",
+          "meaning": "Le plus heureux possible, expression intensive.",
+          "warning": "Un peu emphatique."
+        }
+      },
+      {
+        "word": "きれい",
+        "phonetic": "kirei",
+        "translation": "Beau / Belle",
+        "examples": [
+          "きれいな夕日ですね。",
+          "彼女はきれいな声を持っています。"
+        ],
+        "grammar": {
+          "nature": "Adjectif en na (habituellement écrit en kana).",
+          "position": "Avant le nom ou en fin de phrase.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "美しい (plus soutenu, littéraire)"
+        },
+        "slang": {
+          "expression": "めっちゃきれい",
+          "meaning": "Vraiment très beau, version intensive et familière.",
+          "warning": "Familier, oral."
+        }
+      },
+      {
+        "word": "時間",
+        "phonetic": "jikan",
+        "translation": "Temps / Heure",
+        "examples": [
+          "時間がありません。",
+          "何時ですか？"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 時間).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "お時間 (poli)"
+        },
+        "slang": {
+          "expression": "ヒマ",
+          "meaning": "Avoir du temps libre / être disponible, façon décontractée.",
+          "warning": "Familier, oral."
+        }
+      },
+      {
+        "word": "日",
+        "phonetic": "hi",
+        "translation": "Jour / Journée",
+        "examples": [
+          "いい日ですね。",
+          "週に五日働きます。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 日, lecture variable selon contexte).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "一日 (une journée entière)"
+        },
+        "slang": {
+          "expression": "その日",
+          "meaning": "Ce jour-là, expression figée très courante.",
+          "warning": "Aucune restriction, standard."
+        }
+      },
+      {
+        "word": "お金",
+        "phonetic": "okane",
+        "translation": "Argent",
+        "examples": [
+          "お金がありません。",
+          "毎月お金を貯めています。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 金, avec préfixe honorifique お).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "金 (sans お, plus brut)"
+        },
+        "slang": {
+          "expression": "カネ",
+          "meaning": "Version très familière et brute, souvent en katakana à l'oral.",
+          "warning": "Très familier, presque grossier selon le ton."
+        }
+      },
+      {
+        "word": "仕事",
+        "phonetic": "shigoto",
+        "translation": "Travail",
+        "examples": [
+          "8時に仕事に行きます。",
+          "彼女は病院で仕事をしています。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 仕事).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "お仕事 (poli)"
+        },
+        "slang": {
+          "expression": "バイト",
+          "meaning": "Abréviation d'arubaito (petit boulot, emprunt à l'allemand Arbeit).",
+          "warning": "Informel, désigne un travail à temps partiel."
+        }
+      },
+      {
+        "word": "学校",
+        "phonetic": "gakkō",
+        "translation": "École",
+        "examples": [
+          "子供たちは学校に行きます。",
+          "学校は9月に始まります。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 学校).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "スクール (emprunt anglais, contextes spécifiques)"
+        },
+        "slang": {
+          "expression": "学校をサボる",
+          "meaning": "Sécher les cours.",
+          "warning": "Familier, connotation négative."
+        }
+      },
+      {
+        "word": "朝",
+        "phonetic": "asa",
+        "translation": "Matin",
+        "examples": [
+          "おはよう、いい朝ですね。",
+          "毎朝早く起きます。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 朝).",
+          "position": "Sujet, complément, ou en début de composé.",
+          "register": "Neutre.",
+          "synonyms": "朝方 (tôt le matin)"
+        },
+        "slang": {
+          "expression": "朝ごはん",
+          "meaning": "Petit-déjeuner, littéralement 'riz du matin'.",
+          "warning": "Standard, pas argot mais très fréquent."
+        }
+      },
+      {
+        "word": "夜",
+        "phonetic": "yoru",
+        "translation": "Nuit / Soir",
+        "examples": [
+          "おやすみなさい、よく眠ってね。",
+          "昨夜遅くまで出かけました。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 夜).",
+          "position": "Sujet, complément, ou en début de composé.",
+          "register": "Neutre.",
+          "synonyms": "晩 (soirée, plus littéraire)"
+        },
+        "slang": {
+          "expression": "夜更かし",
+          "meaning": "Veiller tard, se coucher tard.",
+          "warning": "Aucune restriction, très courant."
+        }
+      },
+      {
+        "word": "週間",
+        "phonetic": "shūkan",
+        "translation": "Semaine",
+        "examples": [
+          "週に五日働きます。",
+          "来週会いましょう。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 週間, suffixe de durée).",
+          "position": "Après un nombre : 一週間.",
+          "register": "Neutre.",
+          "synonyms": "週 (semaine au sens du jour de la semaine)"
+        },
+        "slang": {
+          "expression": "週末",
+          "meaning": "Week-end, littéralement 'fin de semaine'.",
+          "warning": "Standard, très fréquent."
+        }
+      },
+      {
+        "word": "子供",
+        "phonetic": "kodomo",
+        "translation": "Enfant",
+        "examples": [
+          "子供が一人います。",
+          "すべての子供は愛される権利があります。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 子供).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "お子さん (poli, pour l'enfant de quelqu'un d'autre)"
+        },
+        "slang": {
+          "expression": "ガキ",
+          "meaning": "Gamin, façon familière et parfois péjorative de dire enfant.",
+          "warning": "Familier, peut être irrespectueux selon le ton."
+        }
+      },
+      {
+        "word": "男",
+        "phonetic": "otoko",
+        "translation": "Homme",
+        "examples": [
+          "あの男は先生です。",
+          "彼は立派な男になった。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 男).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "男性 (plus formel)"
+        },
+        "slang": {
+          "expression": "男子",
+          "meaning": "Garçon/mec, utilisé familièrement surtout chez les jeunes.",
+          "warning": "Informel, contexte scolaire/amical."
+        }
+      },
+      {
+        "word": "女",
+        "phonetic": "onna",
+        "translation": "Femme",
+        "examples": [
+          "あの女性は医者です。",
+          "彼女は強い女性です。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 女).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "女性 (plus formel et poli)"
+        },
+        "slang": {
+          "expression": "女子",
+          "meaning": "Fille/nana, utilisé familièrement surtout chez les jeunes.",
+          "warning": "Informel, contexte scolaire/amical."
+        }
+      },
+      {
+        "word": "暑い",
+        "phonetic": "atsui",
+        "translation": "Chaud (météo)",
+        "examples": [
+          "今日はとても暑いです。",
+          "夏は暑いですね。"
+        ],
+        "grammar": {
+          "nature": "Adjectif en i (kanji : 暑い, spécifique à la météo).",
+          "position": "Avant le nom ou en fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "熱い (chaud au toucher, objet/liquide)"
+        },
+        "slang": {
+          "expression": "めっちゃ暑い",
+          "meaning": "Vraiment très chaud, version intensive et familière.",
+          "warning": "Familier, oral, usage météo."
+        }
+      },
+      {
+        "word": "寒い",
+        "phonetic": "samui",
+        "translation": "Froid (météo)",
+        "examples": [
+          "外は寒いです。",
+          "寒い天気が好きではありません。"
+        ],
+        "grammar": {
+          "nature": "Adjectif en i (kanji : 寒い, spécifique à la météo/ambiance).",
+          "position": "Avant le nom ou en fin de phrase.",
+          "register": "Neutre.",
+          "synonyms": "冷たい (froid au toucher, objet/liquide)"
+        },
+        "slang": {
+          "expression": "寒っ！",
+          "meaning": "Version exclamative et coupée, très orale.",
+          "warning": "Familier, exclamation spontanée."
+        }
+      },
+      {
+        "word": "お願いします",
+        "phonetic": "onegaishimasu",
+        "translation": "S'il vous plaît",
+        "examples": [
+          "水をお願いします。",
+          "助けてください、お願いします。"
+        ],
+        "grammar": {
+          "nature": "Expression de politesse figée (kanji : 願い).",
+          "position": "Fin de demande.",
+          "register": "Poli à formel.",
+          "synonyms": "ください (plus direct, après un verbe)"
+        },
+        "slang": {
+          "expression": "よろしく",
+          "meaning": "Version courte et informelle, 'je compte sur toi'.",
+          "warning": "Informel, entre proches."
+        }
       }
     ],
     "niveau2": [
@@ -6243,7 +6703,368 @@
         }
       }
     ],
-    "niveau3": []
+    "niveau3": [
+      {
+        "word": "それにもかかわらず",
+        "phonetic": "sore ni mo kakawarazu",
+        "translation": "Néanmoins",
+        "examples": [
+          "雨が降っていた。それにもかかわらず、散歩に行った。",
+          "計画はリスクが高かったが、それにもかかわらず試みた。"
+        ],
+        "grammar": {
+          "nature": "Locution de liaison (opposition).",
+          "position": "Début de phrase.",
+          "register": "Soutenu.",
+          "synonyms": "しかし, でも (plus courants à l'oral)"
+        },
+        "slang": {
+          "expression": "でも",
+          "meaning": "Version orale simple et très courante pour introduire une opposition.",
+          "warning": "Informel, à éviter à l'écrit académique."
+        }
+      },
+      {
+        "word": "さらに",
+        "phonetic": "sarani",
+        "translation": "De plus / En outre",
+        "examples": [
+          "報告書は遅れていた。さらに、間違いもあった。",
+          "さらに、予算は金曜日までに承認される必要がある。"
+        ],
+        "grammar": {
+          "nature": "Adverbe de liaison (addition).",
+          "position": "Début de phrase, registre soutenu.",
+          "register": "Soutenu / académique.",
+          "synonyms": "それに, 加えて"
+        },
+        "slang": {
+          "expression": "それに",
+          "meaning": "Version un peu plus orale pour ajouter une idée.",
+          "warning": "Moins formel, à l'oral."
+        }
+      },
+      {
+        "word": "その結果",
+        "phonetic": "sono kekka",
+        "translation": "Par conséquent",
+        "examples": [
+          "売上が落ちた。その結果、会社はコストを削減した。",
+          "締め切りを逃した。その結果、プロジェクトは遅れた。"
+        ],
+        "grammar": {
+          "nature": "Locution de liaison (conséquence, kanji : 結果).",
+          "position": "Début de phrase.",
+          "register": "Soutenu.",
+          "synonyms": "従って, だから (plus courant à l'oral)"
+        },
+        "slang": {
+          "expression": "だから",
+          "meaning": "Donc, version orale simple et très courante.",
+          "warning": "Trop familier pour un rapport formel."
+        }
+      },
+      {
+        "word": "交渉する",
+        "phonetic": "kōshō suru",
+        "translation": "Négocier",
+        "examples": [
+          "もっと良い価格を交渉する必要があります。",
+          "彼女は契約する前に給料を交渉した。"
+        ],
+        "grammar": {
+          "nature": "Verbe composé (nom 交渉 + する).",
+          "position": "Sujet + 交渉する + 目的語.",
+          "register": "Neutre à soutenu (contexte professionnel).",
+          "synonyms": "話し合う (discuter, plus général)"
+        },
+        "slang": {
+          "expression": "掛け合う",
+          "meaning": "Négocier de façon insistante, surtout sur un prix.",
+          "warning": "Connotation familière, contexte marché/achat."
+        }
+      },
+      {
+        "word": "締め切り",
+        "phonetic": "shimekiri",
+        "translation": "Date limite / Échéance",
+        "examples": [
+          "このプロジェクトの締め切りは金曜日です。",
+          "締め切りを二日過ぎてしまいました。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 締め切り).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre (professionnel/académique).",
+          "synonyms": "期限 (plus formel)"
+        },
+        "slang": {
+          "expression": "締め切りに追われる",
+          "meaning": "Être sous pression à cause d'une échéance.",
+          "warning": "Informel, contexte de stress professionnel."
+        }
+      },
+      {
+        "word": "達成する",
+        "phonetic": "tassei suru",
+        "translation": "Accomplir / Réaliser",
+        "examples": [
+          "今四半期の目標をすべて達成しました。",
+          "彼女は予定より早く任務を達成した。"
+        ],
+        "grammar": {
+          "nature": "Verbe composé (nom 達成 + する).",
+          "position": "Sujet + 達成する + 目的語.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "成し遂げる (accomplir, plus littéraire)"
+        },
+        "slang": {
+          "expression": "やり遂げる",
+          "meaning": "Aller jusqu'au bout de quelque chose, plus imagé.",
+          "warning": "Informel mais courant à l'oral professionnel."
+        }
+      },
+      {
+        "word": "持続可能性",
+        "phonetic": "jizoku kanōsei",
+        "translation": "Durabilité",
+        "examples": [
+          "会社は持続可能性に力を入れています。",
+          "持続可能性は私たちの戦略の中心です。"
+        ],
+        "grammar": {
+          "nature": "Nom composé (kanji : 持続可能性).",
+          "position": "Sujet ou complément.",
+          "register": "Soutenu / académique / professionnel.",
+          "synonyms": "サステナビリティ (emprunt anglais, très courant)"
+        },
+        "slang": {
+          "expression": "エコ",
+          "meaning": "Abréviation familière d''écologique', très répandue.",
+          "warning": "Simplifié, parfois vu comme du marketing."
+        }
+      },
+      {
+        "word": "起業家",
+        "phonetic": "kigyōka",
+        "translation": "Entrepreneur",
+        "examples": [
+          "彼女は25歳で成功した起業家になった。",
+          "起業家はしばしば大きな金融リスクを負う。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 起業家).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "創業者 (fondateur)"
+        },
+        "slang": {
+          "expression": "自力で",
+          "meaning": "Par ses propres moyens, façon informelle de dire 'self-made'.",
+          "warning": "Aucune restriction particulière."
+        }
+      },
+      {
+        "word": "実現可能",
+        "phonetic": "jitsugen kanō",
+        "translation": "Faisable",
+        "examples": [
+          "この計画は財政的に実現可能ですか？",
+          "エンジニアたちはプロジェクトが実現可能だと確認した。"
+        ],
+        "grammar": {
+          "nature": "Adjectif en na (kanji : 実現可能).",
+          "position": "Après です, contexte de faisabilité.",
+          "register": "Soutenu / technique.",
+          "synonyms": "可能 (possible, plus général)"
+        },
+        "slang": {
+          "expression": "できそう",
+          "meaning": "Ça a l'air faisable, version simple et orale.",
+          "warning": "Informel, à l'oral."
+        }
+      },
+      {
+        "word": "活用する",
+        "phonetic": "katsuyō suru",
+        "translation": "Tirer parti de",
+        "examples": [
+          "既存のネットワークを活用すべきです。",
+          "会社はその立場を活用して成長した。"
+        ],
+        "grammar": {
+          "nature": "Verbe composé (nom 活用 + する).",
+          "position": "Sujet + 活用する + 目的語.",
+          "register": "Soutenu / jargon professionnel.",
+          "synonyms": "利用する (utiliser, plus général)"
+        },
+        "slang": {
+          "expression": "フル活用",
+          "meaning": "Utiliser à fond, expression intensive courante.",
+          "warning": "Familier mais très employé en entreprise."
+        }
+      },
+      {
+        "word": "利害関係者",
+        "phonetic": "rigai kankeisha",
+        "translation": "Partie prenante",
+        "examples": [
+          "すべての利害関係者が計画を承認しなければなりません。",
+          "主要な利害関係者に相談しました。"
+        ],
+        "grammar": {
+          "nature": "Nom composé (kanji : 利害関係者).",
+          "position": "Sujet ou complément.",
+          "register": "Soutenu / jargon professionnel.",
+          "synonyms": "ステークホルダー (emprunt anglais, très courant)"
+        },
+        "slang": {
+          "expression": "ステークホルダー",
+          "meaning": "Le mot anglais est en fait plus utilisé que sa traduction.",
+          "warning": "Jargon corporate, anglicisme dominant."
+        }
+      },
+      {
+        "word": "実施する",
+        "phonetic": "jisshi suru",
+        "translation": "Mettre en œuvre",
+        "examples": [
+          "来月新しい方針を実施します。",
+          "チームは変更をうまく実施した。"
+        ],
+        "grammar": {
+          "nature": "Verbe composé (nom 実施 + する).",
+          "position": "Sujet + 実施する + 目的語.",
+          "register": "Soutenu / technique.",
+          "synonyms": "導入する (introduire, plus spécifique)"
+        },
+        "slang": {
+          "expression": "ローンチする",
+          "meaning": "Lancer (emprunt anglais 'launch'), pour un produit/mesure.",
+          "warning": "Jargon d'entreprise moderne, anglicisme."
+        }
+      },
+      {
+        "word": "分析する",
+        "phonetic": "bunseki suru",
+        "translation": "Analyser",
+        "examples": [
+          "決める前にデータを分析する必要があります。",
+          "この報告書は市場の傾向を分析している。"
+        ],
+        "grammar": {
+          "nature": "Verbe composé (nom 分析 + する).",
+          "position": "Sujet + 分析する + 目的語.",
+          "register": "Soutenu / académique.",
+          "synonyms": "検討する (examiner, plus général)"
+        },
+        "slang": {
+          "expression": "掘り下げる",
+          "meaning": "Creuser en détail, façon imagée d'analyser en profondeur.",
+          "warning": "Informel mais courant même en pro."
+        }
+      },
+      {
+        "word": "同僚",
+        "phonetic": "dōryō",
+        "translation": "Collègue",
+        "examples": [
+          "同僚とランチを食べました。",
+          "彼女はマーケティング部の同僚です。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 同僚).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "仲間 (camarade, plus large)"
+        },
+        "slang": {
+          "expression": "同僚くん/ちゃん",
+          "meaning": "Ajout affectueux de suffixe, façon familière de désigner un collègue proche.",
+          "warning": "Informel, contexte amical au travail."
+        }
+      },
+      {
+        "word": "会議",
+        "phonetic": "kaigi",
+        "translation": "Réunion",
+        "examples": [
+          "10時に会議があります。",
+          "会議は予定より長引いた。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 会議).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "ミーティング (emprunt anglais, très courant)"
+        },
+        "slang": {
+          "expression": "ミーティング",
+          "meaning": "Emprunt anglais aussi courant que '会議' en pro.",
+          "warning": "Anglicisme très répandu dans le monde du travail."
+        }
+      },
+      {
+        "word": "下書き",
+        "phonetic": "shitagaki",
+        "translation": "Brouillon / Ébauche",
+        "examples": [
+          "明日までに下書きを送ってもらえますか？",
+          "これはただの最初の下書きです。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 下書き).",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "草案 (plus formel, contexte juridique/officiel)"
+        },
+        "slang": {
+          "expression": "たたき台",
+          "meaning": "Base de travail brute à discuter, expression imagée courante.",
+          "warning": "Jargon d'entreprise/réunion, informel."
+        }
+      },
+      {
+        "word": "論文",
+        "phonetic": "ronbun",
+        "translation": "Thèse (mémoire universitaire)",
+        "examples": [
+          "彼女は修士論文を書いています。",
+          "彼の論文は気候政策に焦点を当てている。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (kanji : 論文).",
+          "position": "Sujet ou complément.",
+          "register": "Académique.",
+          "synonyms": "卒論 (mémoire de fin d'études, abréviation courante)"
+        },
+        "slang": {
+          "expression": "卒論",
+          "meaning": "Abréviation très courante de '卒業論文' (mémoire de fin d'études).",
+          "warning": "Familier entre étudiants, mais largement compris."
+        }
+      },
+      {
+        "word": "カリキュラム",
+        "phonetic": "karikyuramu",
+        "translation": "Programme (d'études)",
+        "examples": [
+          "大学はカリキュラムを更新しました。",
+          "このコースは公式カリキュラムの一部ではありません。"
+        ],
+        "grammar": {
+          "nature": "Nom (emprunt anglais, en katakana).",
+          "position": "Sujet ou complément.",
+          "register": "Académique.",
+          "synonyms": "教育課程 (version japonaise plus formelle)"
+        },
+        "slang": {
+          "expression": "コマ数",
+          "meaning": "Nombre de créneaux de cours, façon concrète d'en parler sur un campus.",
+          "warning": "Jargon universitaire japonais, informel."
+        }
+      }
+    ]
   },
   "zh": {
     "niveau1": [
@@ -6445,6 +7266,466 @@
           "expression": "哥们",
           "meaning": "\"Pote/frère\", très familier entre hommes.",
           "warning": "Argot masculin informel."
+        }
+      },
+      {
+        "word": "再见",
+        "phonetic": "zàijiàn",
+        "translation": "Au revoir",
+        "examples": [
+          "再见，明天见。",
+          "他没说再见就走了。"
+        ],
+        "grammar": {
+          "nature": "Interjection de salutation (départ).",
+          "position": "Fin de conversation.",
+          "register": "Neutre.",
+          "synonyms": "拜拜 (emprunt anglais 'bye-bye', informel)"
+        },
+        "slang": {
+          "expression": "拜拜",
+          "meaning": "Emprunt à l'anglais 'bye-bye', très courant à l'oral.",
+          "warning": "Informel, entre amis."
+        }
+      },
+      {
+        "word": "名字",
+        "phonetic": "míngzi",
+        "translation": "Nom / Prénom",
+        "examples": [
+          "你叫什么名字？",
+          "我的名字是莎拉。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "姓名 (nom complet, plus formel)"
+        },
+        "slang": {
+          "expression": "你叫什么名字？",
+          "meaning": "Façon la plus courante de demander le nom de quelqu'un.",
+          "warning": "Standard, pas vraiment de l'argot."
+        }
+      },
+      {
+        "word": "家",
+        "phonetic": "jiā",
+        "translation": "Maison",
+        "examples": [
+          "我住在一个小家里。",
+          "今天我在家。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "住处 (logement, plus formel)"
+        },
+        "slang": {
+          "expression": "回家",
+          "meaning": "Rentrer chez soi, expression figée très courante.",
+          "warning": "Aucune restriction, standard."
+        }
+      },
+      {
+        "word": "家人",
+        "phonetic": "jiārén",
+        "translation": "Famille",
+        "examples": [
+          "我有一个大家庭。",
+          "假期我和家人在一起。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "家庭 (la famille comme unité, plus formel)"
+        },
+        "slang": {
+          "expression": "自家人",
+          "meaning": "Les gens de sa propre famille/clan, ton affectueux.",
+          "warning": "Familier, connotation de proximité."
+        }
+      },
+      {
+        "word": "喜欢",
+        "phonetic": "xǐhuan",
+        "translation": "Aimer bien / Apprécier",
+        "examples": [
+          "我喜欢这首歌。",
+          "你喜欢比萨吗？"
+        ],
+        "grammar": {
+          "nature": "Verbe régulier.",
+          "position": "Sujet + 喜欢 + complément.",
+          "register": "Neutre.",
+          "synonyms": "爱 (aimer plus fort), 喜爱 (plus soutenu)"
+        },
+        "slang": {
+          "expression": "超喜欢",
+          "meaning": "J'aime énormément, version intensive et familière.",
+          "warning": "Familier, oral."
+        }
+      },
+      {
+        "word": "有",
+        "phonetic": "yǒu",
+        "translation": "Avoir",
+        "examples": [
+          "我有两个兄弟。",
+          "你有问题吗？"
+        ],
+        "grammar": {
+          "nature": "Verbe (existence/possession).",
+          "position": "Sujet + 有 + complément.",
+          "register": "Neutre.",
+          "synonyms": "拥有 (posséder, plus formel)"
+        },
+        "slang": {
+          "expression": "有没有",
+          "meaning": "Forme interrogative orale très courante ('as-tu ou pas').",
+          "warning": "Informel, oral."
+        }
+      },
+      {
+        "word": "小",
+        "phonetic": "xiǎo",
+        "translation": "Petit",
+        "examples": [
+          "我有一个小问题。",
+          "这只猫很小。"
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant le nom.",
+          "register": "Neutre.",
+          "synonyms": "小小的 (tout petit, plus affectueux)"
+        },
+        "slang": {
+          "expression": "小小的",
+          "meaning": "Diminutif affectueux, 'tout petit'.",
+          "warning": "Familier, ton tendre."
+        }
+      },
+      {
+        "word": "开心",
+        "phonetic": "kāixīn",
+        "translation": "Heureux / Content",
+        "examples": [
+          "今天我很开心。",
+          "她看起来很开心。"
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Après 很/是.",
+          "register": "Neutre.",
+          "synonyms": "高兴 (content, très proche), 幸福 (heureux dans la vie, plus profond)"
+        },
+        "slang": {
+          "expression": "超开心",
+          "meaning": "Super content, version intensive et familière.",
+          "warning": "Familier, oral."
+        }
+      },
+      {
+        "word": "漂亮",
+        "phonetic": "piàoliang",
+        "translation": "Beau / Belle",
+        "examples": [
+          "多么漂亮的日落啊！",
+          "她有一个漂亮的声音。"
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant le nom ou après 很/是.",
+          "register": "Neutre.",
+          "synonyms": "美丽 (plus soutenu, littéraire)"
+        },
+        "slang": {
+          "expression": "美美的",
+          "meaning": "Vraiment joli/e, version redoublée affectueuse.",
+          "warning": "Familier, ton mignon."
+        }
+      },
+      {
+        "word": "时间",
+        "phonetic": "shíjiān",
+        "translation": "Temps / Heure",
+        "examples": [
+          "我没有时间。",
+          "现在几点了？"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "工夫 (le temps consacré à faire quelque chose)"
+        },
+        "slang": {
+          "expression": "没空",
+          "meaning": "Ne pas avoir de temps libre, façon orale courante.",
+          "warning": "Informel, oral."
+        }
+      },
+      {
+        "word": "天",
+        "phonetic": "tiān",
+        "translation": "Jour / Journée",
+        "examples": [
+          "祝你有美好的一天！",
+          "我每周工作五天。"
+        ],
+        "grammar": {
+          "nature": "Nom commun (aussi 'ciel' selon contexte).",
+          "position": "Après un nombre : 一天.",
+          "register": "Neutre.",
+          "synonyms": "日子 (jour au sens vécu, plus courant à l'oral)"
+        },
+        "slang": {
+          "expression": "那天",
+          "meaning": "Ce jour-là, expression figée très courante.",
+          "warning": "Aucune restriction, standard."
+        }
+      },
+      {
+        "word": "钱",
+        "phonetic": "qián",
+        "translation": "Argent",
+        "examples": [
+          "我没有很多钱。",
+          "她每个月都存钱。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "金钱 (plus formel/écrit)"
+        },
+        "slang": {
+          "expression": "money",
+          "meaning": "Emprunt direct à l'anglais, utilisé de façon ironique/moderne.",
+          "warning": "Très informel, contexte jeune/réseaux sociaux."
+        }
+      },
+      {
+        "word": "工作",
+        "phonetic": "gōngzuò",
+        "translation": "Travail",
+        "examples": [
+          "我八点去上班。",
+          "她在医院工作。"
+        ],
+        "grammar": {
+          "nature": "Nom et verbe.",
+          "position": "Sujet + 工作 / 去上班.",
+          "register": "Neutre.",
+          "synonyms": "上班 (aller travailler, verbe spécifique)"
+        },
+        "slang": {
+          "expression": "搬砖",
+          "meaning": "Littéralement 'porter des briques', argot moderne pour dire travailler dur.",
+          "warning": "Très familier, humour autodérisoire."
+        }
+      },
+      {
+        "word": "学校",
+        "phonetic": "xuéxiào",
+        "translation": "École",
+        "examples": [
+          "孩子们去学校。",
+          "学校九月开学。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "校园 (le campus, plus spécifique)"
+        },
+        "slang": {
+          "expression": "翘课",
+          "meaning": "Sécher les cours.",
+          "warning": "Familier, connotation négative."
+        }
+      },
+      {
+        "word": "早上",
+        "phonetic": "zǎoshang",
+        "translation": "Matin",
+        "examples": [
+          "早上好！",
+          "我每天早上很早起床。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet, complément, ou en début de phrase.",
+          "register": "Neutre.",
+          "synonyms": "上午 (matinée, plus formel/administratif)"
+        },
+        "slang": {
+          "expression": "一大早",
+          "meaning": "Très tôt le matin, expression figée courante.",
+          "warning": "Aucune restriction."
+        }
+      },
+      {
+        "word": "晚上",
+        "phonetic": "wǎnshang",
+        "translation": "Nuit / Soir",
+        "examples": [
+          "晚安，好好睡觉。",
+          "我们昨晚出去玩到很晚。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet, complément, ou en début de phrase.",
+          "register": "Neutre.",
+          "synonyms": "夜里 (au cœur de la nuit, plus littéraire)"
+        },
+        "slang": {
+          "expression": "熬夜",
+          "meaning": "Veiller tard, se coucher tard.",
+          "warning": "Aucune restriction, très courant."
+        }
+      },
+      {
+        "word": "星期",
+        "phonetic": "xīngqī",
+        "translation": "Semaine",
+        "examples": [
+          "我每周工作五天。",
+          "下星期见。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "周 (semaine, plus court/moderne)"
+        },
+        "slang": {
+          "expression": "周末",
+          "meaning": "Week-end, littéralement 'fin de semaine'.",
+          "warning": "Standard, très fréquent."
+        }
+      },
+      {
+        "word": "孩子",
+        "phonetic": "háizi",
+        "translation": "Enfant",
+        "examples": [
+          "她有一个孩子。",
+          "每个孩子都应该被爱。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "小孩 (plus familier)"
+        },
+        "slang": {
+          "expression": "熊孩子",
+          "meaning": "Littéralement 'enfant-ours', un enfant turbulent/insupportable.",
+          "warning": "Familier, connotation humoristique ou agacée."
+        }
+      },
+      {
+        "word": "男人",
+        "phonetic": "nánrén",
+        "translation": "Homme",
+        "examples": [
+          "那个男人是我的老师。",
+          "他长成了一个男人。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "先生 (monsieur, plus formel)"
+        },
+        "slang": {
+          "expression": "man",
+          "meaning": "Emprunt direct à l'anglais 'man', utilisé de façon moderne.",
+          "warning": "Très informel, contexte jeune/réseaux sociaux."
+        }
+      },
+      {
+        "word": "女人",
+        "phonetic": "nǚrén",
+        "translation": "Femme",
+        "examples": [
+          "那个女人是医生。",
+          "她是一个坚强的女人。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "女士 (madame, plus formel)"
+        },
+        "slang": {
+          "expression": "girl",
+          "meaning": "Emprunt direct à l'anglais, utilisé de façon moderne/décontractée.",
+          "warning": "Très informel, contexte jeune."
+        }
+      },
+      {
+        "word": "热",
+        "phonetic": "rè",
+        "translation": "Chaud",
+        "examples": [
+          "今天很热。",
+          "小心，盘子很热。"
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant le nom ou après 很/是.",
+          "register": "Neutre.",
+          "synonyms": "炎热 (torride, plus fort)"
+        },
+        "slang": {
+          "expression": "热死了",
+          "meaning": "Littéralement 'mort de chaud', exclamation très courante.",
+          "warning": "Hyperbole familière, usage météo."
+        }
+      },
+      {
+        "word": "冷",
+        "phonetic": "lěng",
+        "translation": "Froid",
+        "examples": [
+          "外面很冷。",
+          "我不喜欢冷天气。"
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Avant le nom ou après 很/是.",
+          "register": "Neutre.",
+          "synonyms": "寒冷 (glacial, plus soutenu)"
+        },
+        "slang": {
+          "expression": "冷死了",
+          "meaning": "Littéralement 'mort de froid', exclamation très courante.",
+          "warning": "Hyperbole familière, usage météo."
+        }
+      },
+      {
+        "word": "打扰一下",
+        "phonetic": "dǎrǎo yíxià",
+        "translation": "Excusez-moi (pour interpeller)",
+        "examples": [
+          "打扰一下，火车站在哪里？",
+          "打扰一下，我可以过去吗？"
+        ],
+        "grammar": {
+          "nature": "Expression de politesse figée.",
+          "position": "Début de phrase.",
+          "register": "Neutre à formel.",
+          "synonyms": "不好意思 (plus léger, très courant)"
+        },
+        "slang": {
+          "expression": "不好意思",
+          "meaning": "Version plus légère et très fréquente à l'oral.",
+          "warning": "Informel, usage très large au quotidien."
         }
       }
     ],
@@ -7050,6 +8331,367 @@
         }
       }
     ],
-    "niveau3": []
+    "niveau3": [
+      {
+        "word": "尽管如此",
+        "phonetic": "jǐnguǎn rúcǐ",
+        "translation": "Néanmoins",
+        "examples": [
+          "下雨了；尽管如此，我们还是出去散步了。",
+          "计划有风险，尽管如此他们还是尝试了。"
+        ],
+        "grammar": {
+          "nature": "Locution de liaison (opposition).",
+          "position": "Début de phrase.",
+          "register": "Soutenu.",
+          "synonyms": "但是, 不过 (plus courants à l'oral)"
+        },
+        "slang": {
+          "expression": "不过",
+          "meaning": "Version orale simple et très courante pour introduire une opposition.",
+          "warning": "Informel, à éviter à l'écrit académique."
+        }
+      },
+      {
+        "word": "此外",
+        "phonetic": "cǐwài",
+        "translation": "De plus / En outre",
+        "examples": [
+          "报告迟交了。此外，还有几个错误。",
+          "此外，预算必须在周五前获得批准。"
+        ],
+        "grammar": {
+          "nature": "Adverbe de liaison (addition).",
+          "position": "Début de phrase, registre soutenu.",
+          "register": "Soutenu / académique.",
+          "synonyms": "而且, 另外"
+        },
+        "slang": {
+          "expression": "而且",
+          "meaning": "Version un peu plus orale pour ajouter une idée.",
+          "warning": "Moins formel."
+        }
+      },
+      {
+        "word": "因此",
+        "phonetic": "yīncǐ",
+        "translation": "Par conséquent",
+        "examples": [
+          "销售额下降了；因此，公司削减了成本。",
+          "他错过了截止日期；因此，项目被推迟了。"
+        ],
+        "grammar": {
+          "nature": "Adverbe de liaison (conséquence).",
+          "position": "Début de phrase, suit souvent un point-virgule.",
+          "register": "Soutenu.",
+          "synonyms": "所以 (plus courant à l'oral)"
+        },
+        "slang": {
+          "expression": "所以",
+          "meaning": "Donc, version orale simple et très courante.",
+          "warning": "Trop familier pour un rapport formel."
+        }
+      },
+      {
+        "word": "谈判",
+        "phonetic": "tánpàn",
+        "translation": "Négocier",
+        "examples": [
+          "我们需要谈判一个更好的价格。",
+          "她在签约前谈判了自己的薪水。"
+        ],
+        "grammar": {
+          "nature": "Nom et verbe.",
+          "position": "Sujet + 谈判 + complément.",
+          "register": "Neutre à soutenu (contexte professionnel).",
+          "synonyms": "商谈 (discuter, plus général)"
+        },
+        "slang": {
+          "expression": "讨价还价",
+          "meaning": "Marchander, négocier de façon insistante sur un prix.",
+          "warning": "Connotation familière, contexte marché/achat."
+        }
+      },
+      {
+        "word": "截止日期",
+        "phonetic": "jiézhǐ rìqī",
+        "translation": "Date limite / Échéance",
+        "examples": [
+          "这个项目的截止日期是星期五。",
+          "我们错过了两天的截止日期。"
+        ],
+        "grammar": {
+          "nature": "Nom composé.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre (professionnel/académique).",
+          "synonyms": "期限 (plus court, tout aussi courant)"
+        },
+        "slang": {
+          "expression": "赶due",
+          "meaning": "Expression hybride chinois-anglais très moderne, 'courir après le deadline'.",
+          "warning": "Très familier, argot étudiant/jeune professionnel."
+        }
+      },
+      {
+        "word": "实现",
+        "phonetic": "shíxiàn",
+        "translation": "Réaliser / Accomplir",
+        "examples": [
+          "我们这个季度实现了所有目标。",
+          "她提前实现了任务。"
+        ],
+        "grammar": {
+          "nature": "Verbe.",
+          "position": "Sujet + 实现 + complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "完成 (compléter, plus général)"
+        },
+        "slang": {
+          "expression": "搞定",
+          "meaning": "Régler/boucler quelque chose, façon très décontractée.",
+          "warning": "Familier mais très courant à l'oral professionnel."
+        }
+      },
+      {
+        "word": "可持续性",
+        "phonetic": "kěchíxùxìng",
+        "translation": "Durabilité",
+        "examples": [
+          "公司专注于可持续性。",
+          "可持续性是我们战略的核心。"
+        ],
+        "grammar": {
+          "nature": "Nom composé.",
+          "position": "Sujet ou complément.",
+          "register": "Soutenu / académique / professionnel.",
+          "synonyms": "可持续发展 (développement durable)"
+        },
+        "slang": {
+          "expression": "环保",
+          "meaning": "Écologique, terme informel très répandu pour ce qui est durable.",
+          "warning": "Simplifié, parfois vu comme du marketing."
+        }
+      },
+      {
+        "word": "企业家",
+        "phonetic": "qǐyèjiā",
+        "translation": "Entrepreneur",
+        "examples": [
+          "她25岁就成为了成功的企业家。",
+          "企业家常常承担很大的经济风险。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "创业者 (personne qui se lance, plus moderne)"
+        },
+        "slang": {
+          "expression": "白手起家",
+          "meaning": "Littéralement 'partir de mains vides', réussir seul (self-made).",
+          "warning": "Expression imagée, connotation méritocratique."
+        }
+      },
+      {
+        "word": "可行",
+        "phonetic": "kěxíng",
+        "translation": "Faisable",
+        "examples": [
+          "这个计划在财务上可行吗？",
+          "工程师们确认了这个项目是可行的。"
+        ],
+        "grammar": {
+          "nature": "Adjectif.",
+          "position": "Après 是, contexte de faisabilité.",
+          "register": "Soutenu / technique.",
+          "synonyms": "可实现 (réalisable)"
+        },
+        "slang": {
+          "expression": "靠谱",
+          "meaning": "Fiable/faisable, façon très courante et informelle de valider une idée.",
+          "warning": "Informel, à l'oral."
+        }
+      },
+      {
+        "word": "利用",
+        "phonetic": "lìyòng",
+        "translation": "Tirer parti de",
+        "examples": [
+          "我们应该利用现有的人脉。",
+          "公司利用了自己的地位来发展。"
+        ],
+        "grammar": {
+          "nature": "Verbe.",
+          "position": "Sujet + 利用 + complément.",
+          "register": "Soutenu / jargon professionnel.",
+          "synonyms": "运用 (mettre en pratique, plus neutre)"
+        },
+        "slang": {
+          "expression": "薅羊毛",
+          "meaning": "Littéralement 'tondre la laine du mouton', tirer parti d'une offre/opportunité.",
+          "warning": "Très familier, argot internet moderne."
+        }
+      },
+      {
+        "word": "利益相关者",
+        "phonetic": "lìyì xiāngguānzhě",
+        "translation": "Partie prenante",
+        "examples": [
+          "所有利益相关者都必须批准这个计划。",
+          "我们咨询了主要的利益相关者。"
+        ],
+        "grammar": {
+          "nature": "Nom composé.",
+          "position": "Sujet ou complément.",
+          "register": "Soutenu / jargon professionnel.",
+          "synonyms": "相关方 (partie concernée, plus court)"
+        },
+        "slang": {
+          "expression": "stakeholder",
+          "meaning": "Le mot anglais est parfois utilisé tel quel dans les entreprises internationales.",
+          "warning": "Jargon corporate, anglicisme dans certains milieux."
+        }
+      },
+      {
+        "word": "实施",
+        "phonetic": "shíshī",
+        "translation": "Mettre en œuvre",
+        "examples": [
+          "我们下个月将实施新政策。",
+          "团队成功实施了这些变化。"
+        ],
+        "grammar": {
+          "nature": "Verbe.",
+          "position": "Sujet + 实施 + complément.",
+          "register": "Soutenu / technique.",
+          "synonyms": "执行 (exécuter, très proche)"
+        },
+        "slang": {
+          "expression": "落地",
+          "meaning": "Littéralement 'atterrir', faire qu'un projet devienne concret.",
+          "warning": "Jargon d'entreprise moderne, imagé."
+        }
+      },
+      {
+        "word": "分析",
+        "phonetic": "fēnxī",
+        "translation": "Analyser",
+        "examples": [
+          "我们需要在决定前分析数据。",
+          "这份报告分析了市场趋势。"
+        ],
+        "grammar": {
+          "nature": "Nom et verbe.",
+          "position": "Sujet + 分析 + complément.",
+          "register": "Soutenu / académique.",
+          "synonyms": "研究 (étudier, plus général)"
+        },
+        "slang": {
+          "expression": "扒一扒",
+          "meaning": "Décortiquer/éplucher en détail, argot internet imagé.",
+          "warning": "Très familier, style réseaux sociaux."
+        }
+      },
+      {
+        "word": "同事",
+        "phonetic": "tóngshì",
+        "translation": "Collègue",
+        "examples": [
+          "我和一个同事一起吃了午饭。",
+          "她是市场部的同事。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "同僚 (plus formel/littéraire)"
+        },
+        "slang": {
+          "expression": "同事哥/姐",
+          "meaning": "Ajout affectueux, façon familière de désigner un collègue proche.",
+          "warning": "Informel, contexte amical au travail."
+        }
+      },
+      {
+        "word": "会议",
+        "phonetic": "huìyì",
+        "translation": "Réunion",
+        "examples": [
+          "我们十点有一个会议。",
+          "会议比预期的时间长。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre.",
+          "synonyms": "开会 (tenir une réunion, verbe)"
+        },
+        "slang": {
+          "expression": "开小会",
+          "meaning": "Littéralement 'petite réunion', une réunion informelle rapide.",
+          "warning": "Jargon d'entreprise, léger et informel."
+        }
+      },
+      {
+        "word": "草稿",
+        "phonetic": "cǎogǎo",
+        "translation": "Brouillon / Ébauche",
+        "examples": [
+          "你能明天前把草稿发给我吗？",
+          "这只是第一份草稿。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Neutre à soutenu.",
+          "synonyms": "初稿 (première version, plus précis)"
+        },
+        "slang": {
+          "expression": "打个草稿",
+          "meaning": "Faire un brouillon rapide, expression figée courante.",
+          "warning": "Aucune restriction, expression standard."
+        }
+      },
+      {
+        "word": "论文",
+        "phonetic": "lùnwén",
+        "translation": "Thèse (mémoire universitaire)",
+        "examples": [
+          "她正在写她的硕士论文。",
+          "他的论文关注气候政策。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Académique.",
+          "synonyms": "毕业论文 (mémoire de fin d'études)"
+        },
+        "slang": {
+          "expression": "赶论文",
+          "meaning": "Courir après sa thèse, la finir dans l'urgence.",
+          "warning": "Très familier, entre étudiants."
+        }
+      },
+      {
+        "word": "课程",
+        "phonetic": "kèchéng",
+        "translation": "Programme (d'études)",
+        "examples": [
+          "大学更新了课程。",
+          "这门课不属于官方课程。"
+        ],
+        "grammar": {
+          "nature": "Nom commun.",
+          "position": "Sujet ou complément.",
+          "register": "Académique.",
+          "synonyms": "教学大纲 (programme détaillé, plus formel)"
+        },
+        "slang": {
+          "expression": "选课",
+          "meaning": "Choisir ses cours, expression très courante sur un campus.",
+          "warning": "Aucune restriction, usage courant."
+        }
+      }
+    ]
   }
 }

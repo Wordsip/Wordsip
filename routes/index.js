@@ -14,6 +14,7 @@ const twitterService = require('../services/twitterService');
 const dialogueService = require('../services/dialogueService');
 const videoService = require('../services/videoService');
 const visitService = require('../services/visitService');
+const comparisonService = require('../services/comparisonService');
 const { rateLimit } = require('../services/rateLimiter');
 
 const LATEST_VIDEO_FILE = path.join(__dirname, '..', 'data', 'latest-video.json');
@@ -51,6 +52,10 @@ router.get('/video-semaine', (req, res) => {
 // Page guide de prononciation
 router.get('/phonetique', (req, res) => {
   res.sendFile('phonetique.html', { root: 'public' });
+});
+
+router.get('/grammaire', (req, res) => {
+  res.sendFile('grammaire.html', { root: 'public' });
 });
 
 // Page admin
@@ -260,6 +265,18 @@ router.get('/api/admin/reseed-words', async (req, res) => {
   }
 });
 
+// Même chose pour les points de grammaire comparés (nouveau type de contenu,
+// collection MongoDB séparée des mots).
+router.get('/api/admin/reseed-comparisons', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const result = await comparisonService.reseedFromFile();
+    res.json({ success: true, ...result });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 router.get('/api/cron/weekly-video', async (req, res) => {
   if (!checkCronSecret(req, res)) return;
   try {
@@ -408,6 +425,20 @@ router.get('/api/keyboard/:language', async (req, res) => {
   try {
     const chars = await wordService.getUniqueCharacters(req.params.language);
     res.json({ chars });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Point de grammaire comparé du jour (ex. on/in/under/around/between) — un
+// type de contenu distinct du mot du jour : explique le sens de chaque
+// option plutôt qu'une simple traduction, avec un mini-exercice à choix
+// multiple pour vérifier la compréhension.
+router.get('/api/comparison/:language', async (req, res) => {
+  try {
+    const comparison = await comparisonService.getComparisonOfDay(req.params.language);
+    if (!comparison) return res.status(404).json({ error: 'Aucun point de grammaire disponible pour cette langue.' });
+    res.json(comparison);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
