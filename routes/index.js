@@ -15,6 +15,7 @@ const dialogueService = require('../services/dialogueService');
 const videoService = require('../services/videoService');
 const visitService = require('../services/visitService');
 const comparisonService = require('../services/comparisonService');
+const irregularVerbsService = require('../services/irregularVerbsService');
 const { rateLimit } = require('../services/rateLimiter');
 
 const LATEST_VIDEO_FILE = path.join(__dirname, '..', 'data', 'latest-video.json');
@@ -277,6 +278,16 @@ router.get('/api/admin/reseed-comparisons', async (req, res) => {
   }
 });
 
+router.get('/api/admin/reseed-irregular-verbs', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const result = await irregularVerbsService.reseedFromFile();
+    res.json({ success: true, ...result });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 router.get('/api/cron/weekly-video', async (req, res) => {
   if (!checkCronSecret(req, res)) return;
   try {
@@ -439,6 +450,19 @@ router.get('/api/comparison/:language', async (req, res) => {
     const comparison = await comparisonService.getComparisonOfDay(req.params.language);
     if (!comparison) return res.status(404).json({ error: 'Aucun point de grammaire disponible pour cette langue.' });
     res.json(comparison);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Liste des verbes irréguliers pour une langue — le client construit lui-même
+// le quiz (mélange choix multiple / saisie libre) à partir de cette liste,
+// pour varier les questions à chaque session plutôt qu'une série figée.
+router.get('/api/irregular-verbs/:language', async (req, res) => {
+  try {
+    const verbs = await irregularVerbsService.getVerbsForLanguage(req.params.language);
+    if (verbs.length === 0) return res.status(404).json({ error: 'Aucun verbe irrégulier disponible pour cette langue.' });
+    res.json({ verbs });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

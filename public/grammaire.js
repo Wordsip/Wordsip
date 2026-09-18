@@ -150,3 +150,177 @@ document.getElementById('quiz-retry-btn').addEventListener('click', () => {
 });
 
 init();
+
+// --- Onglets ---
+document.getElementById('tab-comparison-btn').addEventListener('click', () => switchTab('comparison'));
+document.getElementById('tab-verbs-btn').addEventListener('click', () => switchTab('verbs'));
+
+function switchTab(tab) {
+  const isComparison = tab === 'comparison';
+  document.getElementById('comparison-tab').style.display = isComparison ? 'block' : 'none';
+  document.getElementById('verbs-tab').style.display = isComparison ? 'none' : 'block';
+  document.getElementById('tab-comparison-btn').className = `tab-btn${isComparison ? ' tab-btn-active' : ''}`;
+  document.getElementById('tab-verbs-btn').className = `tab-btn${isComparison ? '' : ' tab-btn-active'}`;
+
+  if (!isComparison && !verbsLoaded) {
+    loadIrregularVerbs();
+  }
+}
+
+// --- Verbes irréguliers ---
+// Un mélange de questions à choix multiple et de saisie libre, généré côté
+// client à partir de la liste complète de verbes — pour que chaque session
+// propose une série différente plutôt que toujours les mêmes questions.
+let allVerbs = [];
+let verbQuestions = [];
+let verbsLoaded = false;
+const QUESTIONS_PER_ROUND = 10;
+
+async function loadIrregularVerbs() {
+  const language = await resolveLanguage();
+  try {
+    const res = await fetch(`/api/irregular-verbs/${language}`);
+    if (!res.ok) throw new Error('none');
+    const data = await res.json();
+    allVerbs = data.verbs;
+  } catch (err) {
+    document.getElementById('verbs-loading').style.display = 'none';
+    document.getElementById('verbs-empty').style.display = 'block';
+    return;
+  }
+
+  verbsLoaded = true;
+  buildVerbQuestions();
+  renderVerbQuiz();
+  document.getElementById('verbs-loading').style.display = 'none';
+  document.getElementById('verbs-content').style.display = 'block';
+}
+
+// Une forme peut avoir plusieurs variantes valides séparées par "/" (ex.
+// "was/were" pour be) — on les sépare pour la comparaison et l'affichage.
+function formVariants(form) {
+  return form.split('/').map((f) => f.trim());
+}
+
+function buildVerbQuestions() {
+  const shuffled = [...allVerbs].sort(() => Math.random() - 0.5);
+  const chosen = shuffled.slice(0, Math.min(QUESTIONS_PER_ROUND, shuffled.length));
+
+  verbQuestions = chosen.map((verb) => {
+    const formKey = Math.random() < 0.5 ? 'past' : 'participle';
+    const formLabel = formKey === 'past' ? 'prétérit (passé simple)' : 'participe passé';
+    const type = Math.random() < 0.5 ? 'multiple_choice' : 'typed';
+    const correctVariants = formVariants(verb[formKey]);
+
+    let options = null;
+    if (type === 'multiple_choice') {
+      const distractorPool = allVerbs
+        .filter((v) => v.base !== verb.base)
+        .flatMap((v) => formVariants(v[formKey]));
+      const distractors = [...new Set(distractorPool)]
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      options = [...correctVariants.slice(0, 1), ...distractors].sort(() => Math.random() - 0.5);
+    }
+
+    return { base: verb.base, translation: verb.translation, formKey, formLabel, type, correctVariants, options };
+  });
+}
+
+function renderVerbQuiz() {
+  const container = document.getElementById('verbs-quiz-container');
+  container.innerHTML = verbQuestions.map((q, i) => `
+    <div class="verb-question" data-index="${i}">
+      <p style="font-size:14px;margin-bottom:6px;">
+        ${i + 1}. <strong>${q.base}</strong> <span style="color:#999;font-size:12px;">(${q.translation})</span>
+        — donne le <strong>${q.formLabel}</strong>
+      </p>
+      ${q.type === 'multiple_choice'
+        ? `<div style="display:flex;gap:8px;flex-wrap:wrap;">
+            ${q.options.map((opt) => `
+              <button type="button" class="quiz-option verb-option" data-question="${i}" data-value="${opt}" data-selected="false"
+                style="padding:6px 14px;border-radius:8px;border:1px solid #d0f0ee;background:white;cursor:pointer;font-size:13px;">
+                ${opt}
+              </button>
+            `).join('')}
+          </div>`
+        : `<input type="text" class="verb-input" data-question="${i}" placeholder="Écris ta réponse...">`
+      }
+    </div>
+  `).join('');
+
+  container.querySelectorAll('.verb-option').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const q = btn.dataset.question;
+      container.querySelectorAll(`.verb-option[data-question="${q}"]`).forEach((b) => {
+        b.style.background = 'white';
+        b.style.borderColor = '#d0f0ee';
+        b.style.color = '#333';
+        b.dataset.selected = 'false';
+      });
+      btn.style.background = '#2b7a78';
+      btn.style.borderColor = '#2b7a78';
+      btn.style.color = 'white';
+      btn.dataset.selected = 'true';
+    });
+  });
+}
+
+document.getElementById('verbs-quiz-check-btn').addEventListener('click', () => {
+  const container = document.getElementById('verbs-quiz-container');
+  let correct = 0;
+
+  verbQuestions.forEach((q, i) => {
+    const questionEl = container.querySelector(`.verb-question[data-index="${i}"]`);
+    let isCorrect = false;
+
+    if (q.type === 'multiple_choice') {
+      const selected = container.querySelector(`.verb-option[data-question="${i}"][data-selected="true"]`);
+      const allOptions = container.querySelectorAll(`.verb-option[data-question="${i}"]`);
+      allOptions.forEach((btn) => { btn.disabled = true; });
+
+      isCorrect = !!selected && q.correctVariants.includes(selected.dataset.value);
+      allOptions.forEach((btn) => {
+        if (q.correctVariants.includes(btn.dataset.value)) {
+          btn.style.background = '#1a7a3e';
+          btn.style.borderColor = '#1a7a3e';
+          btn.style.color = 'white';
+        } else if (btn === selected) {
+          btn.style.background = '#c0392b';
+          btn.style.borderColor = '#c0392b';
+        }
+      });
+    } else {
+      const input = container.querySelector(`.verb-input[data-question="${i}"]`);
+      input.disabled = true;
+      const value = input.value.trim().toLowerCase();
+      isCorrect = q.correctVariants.some((v) => v.toLowerCase() === value);
+      input.style.borderColor = isCorrect ? '#1a7a3e' : '#c0392b';
+      input.style.background = isCorrect ? '#e8f7ee' : '#fdecea';
+      if (!isCorrect) {
+        const hint = document.createElement('span');
+        hint.style.cssText = 'font-size:12px;color:#1a7a3e;margin-left:8px;';
+        hint.textContent = `→ ${q.correctVariants.join(' / ')}`;
+        input.insertAdjacentElement('afterend', hint);
+      }
+    }
+
+    if (isCorrect) correct += 1;
+  });
+
+  const resultEl = document.getElementById('verbs-quiz-result');
+  resultEl.style.display = 'block';
+  resultEl.style.color = correct === verbQuestions.length ? '#1a7a3e' : '#333';
+  resultEl.textContent = `${correct} / ${verbQuestions.length} bonnes réponses`;
+
+  document.getElementById('verbs-quiz-check-btn').style.display = 'none';
+  document.getElementById('verbs-quiz-retry-btn').style.display = 'inline-block';
+});
+
+document.getElementById('verbs-quiz-retry-btn').addEventListener('click', () => {
+  buildVerbQuestions();
+  renderVerbQuiz();
+  document.getElementById('verbs-quiz-result').style.display = 'none';
+  document.getElementById('verbs-quiz-check-btn').style.display = 'inline-block';
+  document.getElementById('verbs-quiz-retry-btn').style.display = 'none';
+});
