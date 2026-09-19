@@ -1,0 +1,64 @@
+{
+  "ja": {
+    "hiragana": [
+      {"char":"あ","romaji":"a"},{"char":"い","romaji":"i"},{"char":"う","romaji":"u"},{"char":"え","romaji":"e"},{"char":"お","romaji":"o"},
+      {"char":"か","romaji":"ka"},{"char":"き","romaji":"ki"},{"char":"く","romaji":"ku"},{"char":"け","romaji":"ke"},{"char":"こ","romaji":"ko"},
+      {"char":"さ","romaji":"sa"},{"char":"し","romaji":"shi"},{"char":"す","romaji":"su"},{"char":"せ","romaji":"se"},{"char":"そ","romaji":"so"},
+      {"char":"た","romaji":"ta"},{"char":"ち","romaji":"chi"},{"char":"つ","romaji":"tsu"},{"char":"て","romaji":"te"},{"char":"と","romaji":"to"},
+      {"char":"な","romaji":"na"},{"char":"に","romaji":"ni"},{"char":"ぬ","romaji":"nu"},{"char":"ね","romaji":"ne"},{"char":"の","romaji":"no"},
+      {"char":"は","romaji":"ha"},{"char":"ひ","romaji":"hi"},{"char":"ふ","romaji":"fu"},{"char":"へ","romaji":"he"},{"char":"ほ","romaji":"ho"},
+      {"char":"ま","romaji":"ma"},{"char":"み","romaji":"mi"},{"char":"む","romaji":"mu"},{"char":"め","romaji":"me"},{"char":"も","romaji":"mo"},
+      {"char":"や","romaji":"ya"},{"char":"ゆ","romaji":"yu"},{"char":"よ","romaji":"yo"},
+      {"char":"ら","romaji":"ra"},{"char":"り","romaji":"ri"},{"char":"る","romaji":"ru"},{"char":"れ","romaji":"re"},{"char":"ろ","romaji":"ro"},
+      {"char":"わ","romaji":"wa"},{"char":"を","romaji":"wo"},
+      {"char":"ん","romaji":"n"}
+    ],
+    "katakana": [
+      {"char":"ア","romaji":"a"},{"char":"イ","romaji":"i"},{"char":"ウ","romaji":"u"},{"char":"エ","romaji":"e"},{"char":"オ","romaji":"o"},
+      {"char":"カ","romaji":"ka"},{"char":"キ","romaji":"ki"},{"char":"ク","romaji":"ku"},{"char":"ケ","romaji":"ke"},{"char":"コ","romaji":"ko"},
+      {"char":"サ","romaji":"sa"},{"char":"シ","romaji":"shi"},{"char":"ス","romaji":"su"},{"char":"セ","romaji":"se"},{"char":"ソ","romaji":"so"},
+      {"char":"タ","romaji":"ta"},{"char":"チ","romaji":"chi"},{"char":"ツ","romaji":"tsu"},{"char":"テ","romaji":"te"},{"char":"ト","romaji":"to"},
+      {"char":"ナ","romaji":"na"},{"char":"ニ","romaji":"ni"},{"char":"ヌ","romaji":"nu"},{"char":"ネ","romaji":"ne"},{"char":"ノ","romaji":"no"},
+      {"char":"ハ","romaji":"ha"},{"char":"ヒ","romaji":"hi"},{"char":"フ","romaji":"fu"},{"char":"ヘ","romaji":"he"},{"char":"ホ","romaji":"ho"},
+      {"char":"マ","romaji":"ma"},{"char":"ミ","romaji":"mi"},{"char":"ム","romaji":"mu"},{"char":"メ","romaji":"me"},{"char":"モ","romaji":"mo"},
+      {"char":"ヤ","romaji":"ya"},{"char":"ユ","romaji":"yu"},{"char":"ヨ","romaji":"yo"},
+      {"char":"ラ","romaji":"ra"},{"char":"リ","romaji":"ri"},{"char":"ル","romaji":"ru"},{"char":"レ","romaji":"re"},{"char":"ロ","romaji":"ro"},
+      {"char":"ワ","romaji":"wa"},{"char":"ヲ","romaji":"wo"},
+      {"char":"ン","romaji":"n"}
+    ]
+  },
+  "zh": {
+    "radicals": [
+      {"char":"人","pinyin":"rén","meaning":"homme, personne","example":"你 (nǐ, tu)"},
+      {"char":"氵","pinyin":"shuǐ","meaning":"eau (forme réduite, à gauche)","example":"河 (hé, rivière)"},
+      {"char":"木","pinyin":"mù","meaning":"bois, arbre","example":"林 (lín, forêt)"},
+      {"char":"火","pinyin":"huǒ","meaning":"feu","example":"灯 (dēng, lampe)"},
+      {"char":"土","pinyin":"tǔ","meaning":"terre","example":"地 (dì, sol)"},
+      {"char":"口","pinyin":"kǒu","meaning":"bouche","example":"吃 (chī, manger)"},
+      {"char":"日","pinyin":"rì","meaning":"soleil, jour","example":"明 (míng, clair)"},
+      {"char":"月","pinyin":"yuè","meaning":"lune, mois","example":"期 (qī, période)"},
+      {"char":"女","pinyin":"nǚ","meaning":"femme","example":"好 (hǎo, bon)"},
+      {"char":"子","pinyin":"zǐ","meaning":"enfant","example":"孩 (hái, enfant)"},
+      {"char":"扌","pinyin":"shǒu","meaning":"main (forme réduite, à gauche)","example":"打 (dǎ, frapper)"},
+      {"char":"忄","pinyin":"xīn","meaning":"cœur (forme réduite, à gauche)","example":"忘 (wàng, oublier)"},
+      {"char":"讠","pinyin":"yán","meaning":"parole (forme réduite, à gauche)","example":"说 (shuō, parler)"},
+      {"char":"钅","pinyin":"jīn","meaning":"métal, or (forme réduite, à gauche)","example":"银 (yín, argent)"},
+      {"char":"山","pinyin":"shān","meaning":"montagne","example":"岛 (dǎo, île)"},
+      {"char":"门","pinyin":"mén","meaning":"porte","example":"问 (wèn, demander)"},
+      {"char":"马","pinyin":"mǎ","meaning":"cheval","example":"骂 (mà, gronder)"},
+      {"char":"鸟","pinyin":"niǎo","meaning":"oiseau","example":"鸡 (jī, poulet)"},
+      {"char":"虫","pinyin":"chóng","meaning":"insecte","example":"蛇 (shé, serpent)"},
+      {"char":"目","pinyin":"mù","meaning":"œil","example":"看 (kàn, regarder)"},
+      {"char":"耳","pinyin":"ěr","meaning":"oreille","example":"聪 (cōng, intelligent)"},
+      {"char":"车","pinyin":"chē","meaning":"véhicule","example":"轮 (lún, roue)"},
+      {"char":"雨","pinyin":"yǔ","meaning":"pluie","example":"雪 (xuě, neige)"},
+      {"char":"田","pinyin":"tián","meaning":"champ","example":"男 (nán, homme)"},
+      {"char":"禾","pinyin":"hé","meaning":"céréale","example":"秋 (qiū, automne)"},
+      {"char":"米","pinyin":"mǐ","meaning":"riz","example":"粒 (lì, grain)"},
+      {"char":"衤","pinyin":"yī","meaning":"vêtement (forme réduite, à gauche)","example":"裙 (qún, jupe)"},
+      {"char":"贝","pinyin":"bèi","meaning":"coquillage (ancienne monnaie)","example":"购 (gòu, acheter)"},
+      {"char":"石","pinyin":"shí","meaning":"pierre","example":"破 (pò, casser)"},
+      {"char":"竹","pinyin":"zhú","meaning":"bambou","example":"笔 (bǐ, stylo)"}
+    ]
+  }
+}

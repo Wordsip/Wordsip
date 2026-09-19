@@ -16,6 +16,7 @@ const videoService = require('../services/videoService');
 const visitService = require('../services/visitService');
 const comparisonService = require('../services/comparisonService');
 const irregularVerbsService = require('../services/irregularVerbsService');
+const characterService = require('../services/characterService');
 const { rateLimit } = require('../services/rateLimiter');
 
 const LATEST_VIDEO_FILE = path.join(__dirname, '..', 'data', 'latest-video.json');
@@ -288,6 +289,16 @@ router.get('/api/admin/reseed-irregular-verbs', async (req, res) => {
   }
 });
 
+router.get('/api/admin/reseed-characters', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const result = await characterService.reseedFromFile();
+    res.json({ success: true, ...result });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 router.get('/api/cron/weekly-video', async (req, res) => {
   if (!checkCronSecret(req, res)) return;
   try {
@@ -463,6 +474,18 @@ router.get('/api/irregular-verbs/:language', async (req, res) => {
     const verbs = await irregularVerbsService.getVerbsForLanguage(req.params.language);
     if (verbs.length === 0) return res.status(404).json({ error: 'Aucun verbe irrégulier disponible pour cette langue.' });
     res.json({ verbs });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Fiches de caractères (hiragana/katakana pour le japonais, radicaux pour le
+// chinois) — référence pure, à distinguer des mots du jour.
+router.get('/api/characters/:language', async (req, res) => {
+  try {
+    const sets = await characterService.getCharactersForLanguage(req.params.language);
+    if (!sets) return res.status(404).json({ error: 'Aucune fiche de caractères disponible pour cette langue.' });
+    res.json(sets);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

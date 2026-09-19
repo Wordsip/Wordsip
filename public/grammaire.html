@@ -19,9 +19,10 @@
       <a href="/phonetique" id="nav-phonetique-link" style="color:#666;">Phonétique</a>
     </nav>
 
-    <div class="tabs" style="display:flex;gap:8px;margin-bottom:16px;justify-content:center;">
+    <div class="tabs" style="display:flex;gap:8px;margin-bottom:16px;justify-content:center;flex-wrap:wrap;">
       <button type="button" id="tab-comparison-btn" class="tab-btn tab-btn-active">Pièges de sens</button>
       <button type="button" id="tab-verbs-btn" class="tab-btn">Verbes irréguliers</button>
+      <button type="button" id="tab-characters-btn" class="tab-btn">Caractères</button>
     </div>
 
     <div id="comparison-tab">
@@ -68,6 +69,31 @@
           <div id="verbs-quiz-result" style="display:none;text-align:center;font-weight:600;margin-top:10px;"></div>
           <button id="verbs-quiz-check-btn" style="margin-top:10px;">Vérifier mes réponses</button>
           <button id="verbs-quiz-retry-btn" style="display:none;margin-top:10px;">Nouvelle série</button>
+        </section>
+      </div>
+    </div>
+
+    <div id="characters-tab" style="display:none;">
+      <div id="characters-loading">Chargement des fiches...</div>
+      <div id="characters-empty" style="display:none;text-align:center;color:#999;font-size:13px;padding:30px 0;">
+        Rien de disponible pour cette langue pour le moment.
+      </div>
+
+      <div id="characters-content" style="display:none;">
+        <section class="word-card">
+          <p class="label">Référence</p>
+          <h1 id="characters-title" style="font-size:22px;"></h1>
+          <p id="characters-subtitle" style="font-size:13px;color:#555;margin-top:6px;"></p>
+        </section>
+
+        <div id="characters-tables"></div>
+
+        <section class="info-card" style="margin-top:16px;">
+          <p class="info-title">🎯 EXERCICE DE RECONNAISSANCE</p>
+          <div id="characters-quiz-container"></div>
+          <div id="characters-quiz-result" style="display:none;text-align:center;font-weight:600;margin-top:10px;"></div>
+          <button id="characters-quiz-check-btn" style="margin-top:10px;">Je suis prêt(e), lancer le quiz</button>
+          <button id="characters-quiz-retry-btn" style="display:none;margin-top:10px;">Nouvelle série</button>
         </section>
       </div>
     </div>

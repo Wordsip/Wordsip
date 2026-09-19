@@ -1,35 +1,550 @@
 {
   "en": [
-    { "base": "be", "past": "was/were", "participle": "been", "translation": "être" },
-    { "base": "have", "past": "had", "participle": "had", "translation": "avoir" },
-    { "base": "do", "past": "did", "participle": "done", "translation": "faire" },
-    { "base": "go", "past": "went", "participle": "gone", "translation": "aller" },
-    { "base": "get", "past": "got", "participle": "gotten", "translation": "obtenir" },
-    { "base": "make", "past": "made", "participle": "made", "translation": "fabriquer / faire" },
-    { "base": "know", "past": "knew", "participle": "known", "translation": "savoir / connaître" },
-    { "base": "think", "past": "thought", "participle": "thought", "translation": "penser" },
-    { "base": "take", "past": "took", "participle": "taken", "translation": "prendre" },
-    { "base": "see", "past": "saw", "participle": "seen", "translation": "voir" },
-    { "base": "come", "past": "came", "participle": "come", "translation": "venir" },
-    { "base": "give", "past": "gave", "participle": "given", "translation": "donner" },
-    { "base": "find", "past": "found", "participle": "found", "translation": "trouver" },
-    { "base": "tell", "past": "told", "participle": "told", "translation": "dire" },
-    { "base": "feel", "past": "felt", "participle": "felt", "translation": "ressentir" },
-    { "base": "leave", "past": "left", "participle": "left", "translation": "partir / laisser" },
-    { "base": "put", "past": "put", "participle": "put", "translation": "poser / mettre" },
-    { "base": "bring", "past": "brought", "participle": "brought", "translation": "apporter" },
-    { "base": "begin", "past": "began", "participle": "begun", "translation": "commencer" },
-    { "base": "keep", "past": "kept", "participle": "kept", "translation": "garder" },
-    { "base": "hold", "past": "held", "participle": "held", "translation": "tenir" },
-    { "base": "write", "past": "wrote", "participle": "written", "translation": "écrire" },
-    { "base": "hear", "past": "heard", "participle": "heard", "translation": "entendre" },
-    { "base": "meet", "past": "met", "participle": "met", "translation": "rencontrer" },
-    { "base": "run", "past": "ran", "participle": "run", "translation": "courir" },
-    { "base": "pay", "past": "paid", "participle": "paid", "translation": "payer" },
-    { "base": "sit", "past": "sat", "participle": "sat", "translation": "s'asseoir" },
-    { "base": "read", "past": "read", "participle": "read", "translation": "lire" },
-    { "base": "grow", "past": "grew", "participle": "grown", "translation": "grandir / pousser" },
-    { "base": "win", "past": "won", "participle": "won", "translation": "gagner" }
+    {
+      "base": "be",
+      "past": "was/were",
+      "participle": "been",
+      "translation": "être"
+    },
+    {
+      "base": "have",
+      "past": "had",
+      "participle": "had",
+      "translation": "avoir"
+    },
+    {
+      "base": "do",
+      "past": "did",
+      "participle": "done",
+      "translation": "faire"
+    },
+    {
+      "base": "go",
+      "past": "went",
+      "participle": "gone",
+      "translation": "aller"
+    },
+    {
+      "base": "get",
+      "past": "got",
+      "participle": "gotten",
+      "translation": "obtenir"
+    },
+    {
+      "base": "make",
+      "past": "made",
+      "participle": "made",
+      "translation": "fabriquer / faire"
+    },
+    {
+      "base": "know",
+      "past": "knew",
+      "participle": "known",
+      "translation": "savoir / connaître"
+    },
+    {
+      "base": "think",
+      "past": "thought",
+      "participle": "thought",
+      "translation": "penser"
+    },
+    {
+      "base": "take",
+      "past": "took",
+      "participle": "taken",
+      "translation": "prendre"
+    },
+    {
+      "base": "see",
+      "past": "saw",
+      "participle": "seen",
+      "translation": "voir"
+    },
+    {
+      "base": "come",
+      "past": "came",
+      "participle": "come",
+      "translation": "venir"
+    },
+    {
+      "base": "give",
+      "past": "gave",
+      "participle": "given",
+      "translation": "donner"
+    },
+    {
+      "base": "find",
+      "past": "found",
+      "participle": "found",
+      "translation": "trouver"
+    },
+    {
+      "base": "tell",
+      "past": "told",
+      "participle": "told",
+      "translation": "dire"
+    },
+    {
+      "base": "feel",
+      "past": "felt",
+      "participle": "felt",
+      "translation": "ressentir"
+    },
+    {
+      "base": "leave",
+      "past": "left",
+      "participle": "left",
+      "translation": "partir / laisser"
+    },
+    {
+      "base": "put",
+      "past": "put",
+      "participle": "put",
+      "translation": "poser / mettre"
+    },
+    {
+      "base": "bring",
+      "past": "brought",
+      "participle": "brought",
+      "translation": "apporter"
+    },
+    {
+      "base": "begin",
+      "past": "began",
+      "participle": "begun",
+      "translation": "commencer"
+    },
+    {
+      "base": "keep",
+      "past": "kept",
+      "participle": "kept",
+      "translation": "garder"
+    },
+    {
+      "base": "hold",
+      "past": "held",
+      "participle": "held",
+      "translation": "tenir"
+    },
+    {
+      "base": "write",
+      "past": "wrote",
+      "participle": "written",
+      "translation": "écrire"
+    },
+    {
+      "base": "hear",
+      "past": "heard",
+      "participle": "heard",
+      "translation": "entendre"
+    },
+    {
+      "base": "meet",
+      "past": "met",
+      "participle": "met",
+      "translation": "rencontrer"
+    },
+    {
+      "base": "run",
+      "past": "ran",
+      "participle": "run",
+      "translation": "courir"
+    },
+    {
+      "base": "pay",
+      "past": "paid",
+      "participle": "paid",
+      "translation": "payer"
+    },
+    {
+      "base": "sit",
+      "past": "sat",
+      "participle": "sat",
+      "translation": "s'asseoir"
+    },
+    {
+      "base": "read",
+      "past": "read",
+      "participle": "read",
+      "translation": "lire"
+    },
+    {
+      "base": "grow",
+      "past": "grew",
+      "participle": "grown",
+      "translation": "grandir / pousser"
+    },
+    {
+      "base": "win",
+      "past": "won",
+      "participle": "won",
+      "translation": "gagner"
+    }
   ],
-  "es": [], "it": [], "ja": [], "zh": []
+  "es": [
+    {
+      "base": "ser",
+      "past": "soy",
+      "participle": "sido",
+      "translation": "être"
+    },
+    {
+      "base": "estar",
+      "past": "estoy",
+      "participle": "estado",
+      "translation": "être (état)"
+    },
+    {
+      "base": "tener",
+      "past": "tengo",
+      "participle": "tenido",
+      "translation": "avoir"
+    },
+    {
+      "base": "hacer",
+      "past": "hago",
+      "participle": "hecho",
+      "translation": "faire"
+    },
+    {
+      "base": "ir",
+      "past": "voy",
+      "participle": "ido",
+      "translation": "aller"
+    },
+    {
+      "base": "poder",
+      "past": "puedo",
+      "participle": "podido",
+      "translation": "pouvoir"
+    },
+    {
+      "base": "querer",
+      "past": "quiero",
+      "participle": "querido",
+      "translation": "vouloir"
+    },
+    {
+      "base": "decir",
+      "past": "digo",
+      "participle": "dicho",
+      "translation": "dire"
+    },
+    {
+      "base": "poner",
+      "past": "pongo",
+      "participle": "puesto",
+      "translation": "mettre"
+    },
+    {
+      "base": "saber",
+      "past": "sé",
+      "participle": "sabido",
+      "translation": "savoir"
+    },
+    {
+      "base": "ver",
+      "past": "veo",
+      "participle": "visto",
+      "translation": "voir"
+    },
+    {
+      "base": "dar",
+      "past": "doy",
+      "participle": "dado",
+      "translation": "donner"
+    },
+    {
+      "base": "venir",
+      "past": "vengo",
+      "participle": "venido",
+      "translation": "venir"
+    },
+    {
+      "base": "salir",
+      "past": "salgo",
+      "participle": "salido",
+      "translation": "sortir"
+    },
+    {
+      "base": "traer",
+      "past": "traigo",
+      "participle": "traído",
+      "translation": "apporter"
+    },
+    {
+      "base": "escribir",
+      "past": "escribo",
+      "participle": "escrito",
+      "translation": "écrire"
+    },
+    {
+      "base": "abrir",
+      "past": "abro",
+      "participle": "abierto",
+      "translation": "ouvrir"
+    },
+    {
+      "base": "volver",
+      "past": "vuelvo",
+      "participle": "vuelto",
+      "translation": "revenir"
+    },
+    {
+      "base": "romper",
+      "past": "rompo",
+      "participle": "roto",
+      "translation": "casser"
+    },
+    {
+      "base": "morir",
+      "past": "muero",
+      "participle": "muerto",
+      "translation": "mourir"
+    },
+    {
+      "base": "oír",
+      "past": "oigo",
+      "participle": "oído",
+      "translation": "entendre"
+    },
+    {
+      "base": "conocer",
+      "past": "conozco",
+      "participle": "conocido",
+      "translation": "connaître"
+    },
+    {
+      "base": "seguir",
+      "past": "sigo",
+      "participle": "seguido",
+      "translation": "suivre"
+    },
+    {
+      "base": "pedir",
+      "past": "pido",
+      "participle": "pedido",
+      "translation": "demander"
+    },
+    {
+      "base": "dormir",
+      "past": "duermo",
+      "participle": "dormido",
+      "translation": "dormir"
+    },
+    {
+      "base": "sentir",
+      "past": "siento",
+      "participle": "sentido",
+      "translation": "ressentir"
+    },
+    {
+      "base": "pensar",
+      "past": "pienso",
+      "participle": "pensado",
+      "translation": "penser"
+    },
+    {
+      "base": "jugar",
+      "past": "juego",
+      "participle": "jugado",
+      "translation": "jouer"
+    },
+    {
+      "base": "empezar",
+      "past": "empiezo",
+      "participle": "empezado",
+      "translation": "commencer"
+    },
+    {
+      "base": "encontrar",
+      "past": "encuentro",
+      "participle": "encontrado",
+      "translation": "trouver"
+    }
+  ],
+  "it": [
+    {
+      "base": "essere",
+      "past": "sono",
+      "participle": "stato",
+      "translation": "être"
+    },
+    {
+      "base": "avere",
+      "past": "ho",
+      "participle": "avuto",
+      "translation": "avoir"
+    },
+    {
+      "base": "fare",
+      "past": "faccio",
+      "participle": "fatto",
+      "translation": "faire"
+    },
+    {
+      "base": "andare",
+      "past": "vado",
+      "participle": "andato",
+      "translation": "aller"
+    },
+    {
+      "base": "potere",
+      "past": "posso",
+      "participle": "potuto",
+      "translation": "pouvoir"
+    },
+    {
+      "base": "volere",
+      "past": "voglio",
+      "participle": "voluto",
+      "translation": "vouloir"
+    },
+    {
+      "base": "dovere",
+      "past": "devo",
+      "participle": "dovuto",
+      "translation": "devoir"
+    },
+    {
+      "base": "dire",
+      "past": "dico",
+      "participle": "detto",
+      "translation": "dire"
+    },
+    {
+      "base": "dare",
+      "past": "do",
+      "participle": "dato",
+      "translation": "donner"
+    },
+    {
+      "base": "stare",
+      "past": "sto",
+      "participle": "stato",
+      "translation": "rester / être"
+    },
+    {
+      "base": "venire",
+      "past": "vengo",
+      "participle": "venuto",
+      "translation": "venir"
+    },
+    {
+      "base": "uscire",
+      "past": "esco",
+      "participle": "uscito",
+      "translation": "sortir"
+    },
+    {
+      "base": "sapere",
+      "past": "so",
+      "participle": "saputo",
+      "translation": "savoir"
+    },
+    {
+      "base": "vedere",
+      "past": "vedo",
+      "participle": "visto",
+      "translation": "voir"
+    },
+    {
+      "base": "bere",
+      "past": "bevo",
+      "participle": "bevuto",
+      "translation": "boire"
+    },
+    {
+      "base": "tenere",
+      "past": "tengo",
+      "participle": "tenuto",
+      "translation": "tenir"
+    },
+    {
+      "base": "rimanere",
+      "past": "rimango",
+      "participle": "rimasto",
+      "translation": "rester"
+    },
+    {
+      "base": "scrivere",
+      "past": "scrivo",
+      "participle": "scritto",
+      "translation": "écrire"
+    },
+    {
+      "base": "leggere",
+      "past": "leggo",
+      "participle": "letto",
+      "translation": "lire"
+    },
+    {
+      "base": "prendere",
+      "past": "prendo",
+      "participle": "preso",
+      "translation": "prendre"
+    },
+    {
+      "base": "mettere",
+      "past": "metto",
+      "participle": "messo",
+      "translation": "mettre"
+    },
+    {
+      "base": "chiudere",
+      "past": "chiudo",
+      "participle": "chiuso",
+      "translation": "fermer"
+    },
+    {
+      "base": "aprire",
+      "past": "apro",
+      "participle": "aperto",
+      "translation": "ouvrir"
+    },
+    {
+      "base": "morire",
+      "past": "muoio",
+      "participle": "morto",
+      "translation": "mourir"
+    },
+    {
+      "base": "nascere",
+      "past": "nasco",
+      "participle": "nato",
+      "translation": "naître"
+    },
+    {
+      "base": "chiedere",
+      "past": "chiedo",
+      "participle": "chiesto",
+      "translation": "demander"
+    },
+    {
+      "base": "rispondere",
+      "past": "rispondo",
+      "participle": "risposto",
+      "translation": "répondre"
+    },
+    {
+      "base": "perdere",
+      "past": "perdo",
+      "participle": "perso",
+      "translation": "perdre"
+    },
+    {
+      "base": "vivere",
+      "past": "vivo",
+      "participle": "vissuto",
+      "translation": "vivre"
+    },
+    {
+      "base": "correre",
+      "past": "corro",
+      "participle": "corso",
+      "translation": "courir"
+    }
+  ],
+  "ja": [],
+  "zh": []
 }

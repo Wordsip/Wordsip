@@ -154,16 +154,20 @@ init();
 // --- Onglets ---
 document.getElementById('tab-comparison-btn').addEventListener('click', () => switchTab('comparison'));
 document.getElementById('tab-verbs-btn').addEventListener('click', () => switchTab('verbs'));
+document.getElementById('tab-characters-btn').addEventListener('click', () => switchTab('characters'));
 
 function switchTab(tab) {
-  const isComparison = tab === 'comparison';
-  document.getElementById('comparison-tab').style.display = isComparison ? 'block' : 'none';
-  document.getElementById('verbs-tab').style.display = isComparison ? 'none' : 'block';
-  document.getElementById('tab-comparison-btn').className = `tab-btn${isComparison ? ' tab-btn-active' : ''}`;
-  document.getElementById('tab-verbs-btn').className = `tab-btn${isComparison ? '' : ' tab-btn-active'}`;
+  const tabs = ['comparison', 'verbs', 'characters'];
+  tabs.forEach((t) => {
+    document.getElementById(`${t}-tab`).style.display = t === tab ? 'block' : 'none';
+    document.getElementById(`tab-${t}-btn`).className = `tab-btn${t === tab ? ' tab-btn-active' : ''}`;
+  });
 
-  if (!isComparison && !verbsLoaded) {
+  if (tab === 'verbs' && !verbsLoaded) {
     loadIrregularVerbs();
+  }
+  if (tab === 'characters' && !charactersLoaded) {
+    loadCharacters();
   }
 }
 
@@ -171,29 +175,98 @@ function switchTab(tab) {
 // Un mélange de questions à choix multiple et de saisie libre, généré côté
 // client à partir de la liste complète de verbes — pour que chaque session
 // propose une série différente plutôt que toujours les mêmes questions.
+// Le "piège" n'est pas le même selon la langue : en anglais c'est le
+// prétérit/participe passé, en espagnol/italien c'est surtout le présent
+// irrégulier (radical qui change) et le participe passé irrégulier.
+const VERB_FORM_LABELS = {
+  en: { base: 'Infinitif', past: 'prétérit (passé simple)', participle: 'participe passé' },
+  es: { base: 'Infinitivo', past: 'présent, forme "yo"', participle: 'participe passé' },
+  it: { base: 'Infinito', past: 'présent, forme "io"', participle: 'participe passé (passato prossimo)' },
+};
+// Pourquoi le japonais et le chinois n'ont pas ce contenu : le chinois n'a
+// aucune conjugaison verbale (le verbe ne change jamais de forme), et le
+// japonais n'a que 2 verbes véritablement irréguliers (する et 来る) — pas
+// assez pour ce format d'exercice, le reste suit des règles régulières par
+// groupe de verbes.
+const VERB_EMPTY_REASONS = {
+  ja: "Le japonais n'a que 2 verbes vraiment irréguliers (する et 来る) — pas assez pour ce format d'exercice. Le reste suit des règles régulières par groupe de verbes.",
+  zh: "Le chinois n'a pas de conjugaison verbale : un verbe ne change jamais de forme, quel que soit le temps ou le sujet. Cette notion ne s'applique donc pas.",
+};
+
 let allVerbs = [];
 let verbQuestions = [];
 let verbsLoaded = false;
+let currentVerbLanguage = 'en';
+let verbsStudyMode = true;
 const QUESTIONS_PER_ROUND = 10;
 
 async function loadIrregularVerbs() {
-  const language = await resolveLanguage();
+  currentVerbLanguage = await resolveLanguage();
   try {
-    const res = await fetch(`/api/irregular-verbs/${language}`);
+    const res = await fetch(`/api/irregular-verbs/${currentVerbLanguage}`);
     if (!res.ok) throw new Error('none');
     const data = await res.json();
     allVerbs = data.verbs;
   } catch (err) {
     document.getElementById('verbs-loading').style.display = 'none';
-    document.getElementById('verbs-empty').style.display = 'block';
+    const emptyEl = document.getElementById('verbs-empty');
+    emptyEl.textContent = VERB_EMPTY_REASONS[currentVerbLanguage]
+      || 'Rien de disponible pour cette langue pour le moment.';
+    emptyEl.style.display = 'block';
     return;
   }
 
   verbsLoaded = true;
-  buildVerbQuestions();
-  renderVerbQuiz();
+  verbsStudyMode = true;
+  renderVerbStudyTable();
   document.getElementById('verbs-loading').style.display = 'none';
   document.getElementById('verbs-content').style.display = 'block';
+}
+
+// Vue "réviser" : tableau complet des verbes avec leurs formes, à parcourir
+// avant de se lancer dans le quiz — pour apprendre, pas juste être testé.
+function renderVerbStudyTable() {
+  const labels = VERB_FORM_LABELS[currentVerbLanguage] || VERB_FORM_LABELS.en;
+  const container = document.getElementById('verbs-quiz-container');
+
+  const rows = allVerbs.map((v) => `
+    <tr>
+      <td style="padding:6px 8px;font-weight:600;">${v.base}</td>
+      <td style="padding:6px 8px;color:#666;font-size:12px;">${v.translation}</td>
+      <td style="padding:6px 8px;">${v.past}</td>
+      <td style="padding:6px 8px;">${v.participle}</td>
+    </tr>
+  `).join('');
+
+  container.innerHTML = `
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:2px solid #d0f0ee;text-align:left;">
+            <th style="padding:6px 8px;">${labels.base}</th>
+            <th style="padding:6px 8px;">Traduction</th>
+            <th style="padding:6px 8px;">${labels.past}</th>
+            <th style="padding:6px 8px;">${labels.participle}</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  `;
+
+  document.getElementById('verbs-quiz-check-btn').textContent = 'Je suis prêt(e), lancer le quiz';
+  document.getElementById('verbs-quiz-check-btn').style.display = 'inline-block';
+  document.getElementById('verbs-quiz-check-btn').onclick = startVerbQuiz;
+  document.getElementById('verbs-quiz-retry-btn').style.display = 'none';
+  document.getElementById('verbs-quiz-result').style.display = 'none';
+}
+
+function startVerbQuiz() {
+  verbsStudyMode = false;
+  buildVerbQuestions();
+  renderVerbQuiz();
+  document.getElementById('verbs-quiz-check-btn').textContent = 'Vérifier mes réponses';
+  document.getElementById('verbs-quiz-check-btn').onclick = checkVerbQuiz;
 }
 
 // Une forme peut avoir plusieurs variantes valides séparées par "/" (ex.
@@ -203,12 +276,13 @@ function formVariants(form) {
 }
 
 function buildVerbQuestions() {
+  const labels = VERB_FORM_LABELS[currentVerbLanguage] || VERB_FORM_LABELS.en;
   const shuffled = [...allVerbs].sort(() => Math.random() - 0.5);
   const chosen = shuffled.slice(0, Math.min(QUESTIONS_PER_ROUND, shuffled.length));
 
   verbQuestions = chosen.map((verb) => {
     const formKey = Math.random() < 0.5 ? 'past' : 'participle';
-    const formLabel = formKey === 'past' ? 'prétérit (passé simple)' : 'participe passé';
+    const formLabel = labels[formKey];
     const type = Math.random() < 0.5 ? 'multiple_choice' : 'typed';
     const correctVariants = formVariants(verb[formKey]);
 
@@ -266,12 +340,11 @@ function renderVerbQuiz() {
   });
 }
 
-document.getElementById('verbs-quiz-check-btn').addEventListener('click', () => {
+function checkVerbQuiz() {
   const container = document.getElementById('verbs-quiz-container');
   let correct = 0;
 
   verbQuestions.forEach((q, i) => {
-    const questionEl = container.querySelector(`.verb-question[data-index="${i}"]`);
     let isCorrect = false;
 
     if (q.type === 'multiple_choice') {
@@ -315,12 +388,207 @@ document.getElementById('verbs-quiz-check-btn').addEventListener('click', () => 
 
   document.getElementById('verbs-quiz-check-btn').style.display = 'none';
   document.getElementById('verbs-quiz-retry-btn').style.display = 'inline-block';
-});
+}
 
 document.getElementById('verbs-quiz-retry-btn').addEventListener('click', () => {
-  buildVerbQuestions();
-  renderVerbQuiz();
-  document.getElementById('verbs-quiz-result').style.display = 'none';
-  document.getElementById('verbs-quiz-check-btn').style.display = 'inline-block';
-  document.getElementById('verbs-quiz-retry-btn').style.display = 'none';
+  // Repasse par la table de révision avant une nouvelle série, plutôt que
+  // d'enchaîner directement sur un nouveau quiz à froid.
+  renderVerbStudyTable();
+});
+
+// --- Fiches de caractères (japonais : hiragana/katakana, chinois : radicaux) ---
+let charactersLoaded = false;
+let currentCharLanguage = 'en';
+let charSets = null;
+let charQuestions = [];
+const CHAR_QUESTIONS_PER_ROUND = 12;
+
+const CHAR_EMPTY_REASONS = {
+  en: "Les fiches de caractères concernent le japonais et le chinois — l'anglais utilise l'alphabet latin classique.",
+  es: "Les fiches de caractères concernent le japonais et le chinois — l'espagnol utilise l'alphabet latin classique.",
+  it: "Les fiches de caractères concernent le japonais et le chinois — l'italien utilise l'alphabet latin classique.",
+};
+
+async function loadCharacters() {
+  currentCharLanguage = await resolveLanguage();
+  try {
+    const res = await fetch(`/api/characters/${currentCharLanguage}`);
+    if (!res.ok) throw new Error('none');
+    charSets = await res.json();
+  } catch (err) {
+    document.getElementById('characters-loading').style.display = 'none';
+    const emptyEl = document.getElementById('characters-empty');
+    emptyEl.textContent = CHAR_EMPTY_REASONS[currentCharLanguage]
+      || 'Rien de disponible pour cette langue pour le moment.';
+    emptyEl.style.display = 'block';
+    return;
+  }
+
+  charactersLoaded = true;
+  renderCharacterTables();
+  document.getElementById('characters-loading').style.display = 'none';
+  document.getElementById('characters-content').style.display = 'block';
+}
+
+// Aplati les différents jeux (hiragana/katakana, ou radicaux) en une seule
+// liste homogène {char, answer, label} pour pouvoir générer le quiz sans
+// dépendre de la structure exacte (qui diffère entre japonais et chinois).
+function flattenCharItems() {
+  if (charSets.hiragana || charSets.katakana) {
+    return [
+      ...(charSets.hiragana || []).map((c) => ({ char: c.char, answer: c.romaji, label: 'romaji' })),
+      ...(charSets.katakana || []).map((c) => ({ char: c.char, answer: c.romaji, label: 'romaji' })),
+    ];
+  }
+  if (charSets.radicals) {
+    return charSets.radicals.map((c) => ({ char: c.char, answer: c.meaning, label: 'sens' }));
+  }
+  return [];
+}
+
+function renderCharacterTables() {
+  const titleEl = document.getElementById('characters-title');
+  const subtitleEl = document.getElementById('characters-subtitle');
+  const tablesEl = document.getElementById('characters-tables');
+
+  if (charSets.hiragana || charSets.katakana) {
+    titleEl.textContent = 'Hiragana et Katakana';
+    subtitleEl.textContent = 'Les 46 syllabes de base des deux alphabets phonétiques japonais.';
+    tablesEl.innerHTML = ['hiragana', 'katakana'].map((setName) => {
+      if (!charSets[setName]) return '';
+      const cells = charSets[setName].map((c) => `
+        <div style="text-align:center;padding:6px;background:white;border-radius:8px;">
+          <div style="font-size:22px;">${c.char}</div>
+          <div style="font-size:11px;color:#999;">${c.romaji}</div>
+        </div>
+      `).join('');
+      return `
+        <section class="info-card" style="margin-top:10px;">
+          <p class="info-title">${setName === 'hiragana' ? 'ひらがな — HIRAGANA' : 'カタカナ — KATAKANA'}</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(54px, 1fr));gap:6px;margin-top:8px;">
+            ${cells}
+          </div>
+        </section>
+      `;
+    }).join('');
+  } else if (charSets.radicals) {
+    titleEl.textContent = 'Radicaux de base (部首)';
+    subtitleEl.textContent = "30 radicaux courants — les briques de base qui composent la plupart des caractères chinois.";
+    tablesEl.innerHTML = `
+      <section class="info-card" style="margin-top:10px;">
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <thead>
+              <tr style="border-bottom:2px solid #d0f0ee;text-align:left;">
+                <th style="padding:6px 8px;">Radical</th>
+                <th style="padding:6px 8px;">Pinyin</th>
+                <th style="padding:6px 8px;">Sens</th>
+                <th style="padding:6px 8px;">Exemple</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${charSets.radicals.map((r) => `
+                <tr>
+                  <td style="padding:6px 8px;font-size:20px;">${r.char}</td>
+                  <td style="padding:6px 8px;color:#666;">${r.pinyin}</td>
+                  <td style="padding:6px 8px;">${r.meaning}</td>
+                  <td style="padding:6px 8px;color:#666;font-size:12px;">${r.example}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    `;
+  }
+
+  document.getElementById('characters-quiz-check-btn').textContent = 'Je suis prêt(e), lancer le quiz';
+  document.getElementById('characters-quiz-check-btn').onclick = startCharacterQuiz;
+  document.getElementById('characters-quiz-retry-btn').style.display = 'none';
+  document.getElementById('characters-quiz-result').style.display = 'none';
+  document.getElementById('characters-quiz-container').innerHTML = '';
+}
+
+function startCharacterQuiz() {
+  const allItems = flattenCharItems();
+  const shuffled = [...allItems].sort(() => Math.random() - 0.5);
+  charQuestions = shuffled.slice(0, Math.min(CHAR_QUESTIONS_PER_ROUND, shuffled.length)).map((item) => {
+    const distractorPool = allItems
+      .filter((i) => i.answer !== item.answer)
+      .map((i) => i.answer);
+    const distractors = [...new Set(distractorPool)].sort(() => Math.random() - 0.5).slice(0, 3);
+    const options = [item.answer, ...distractors].sort(() => Math.random() - 0.5);
+    return { ...item, options };
+  });
+
+  const container = document.getElementById('characters-quiz-container');
+  container.innerHTML = charQuestions.map((q, i) => `
+    <div class="verb-question" data-index="${i}">
+      <p style="font-size:22px;margin-bottom:6px;">${i + 1}. ${q.char} <span style="font-size:12px;color:#999;">(${q.label} ?)</span></p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        ${q.options.map((opt) => `
+          <button type="button" class="quiz-option char-option" data-question="${i}" data-value="${opt}" data-selected="false"
+            style="padding:6px 14px;border-radius:8px;border:1px solid #d0f0ee;background:white;cursor:pointer;font-size:13px;">
+            ${opt}
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  container.querySelectorAll('.char-option').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const q = btn.dataset.question;
+      container.querySelectorAll(`.char-option[data-question="${q}"]`).forEach((b) => {
+        b.style.background = 'white';
+        b.style.borderColor = '#d0f0ee';
+        b.style.color = '#333';
+        b.dataset.selected = 'false';
+      });
+      btn.style.background = '#2b7a78';
+      btn.style.borderColor = '#2b7a78';
+      btn.style.color = 'white';
+      btn.dataset.selected = 'true';
+    });
+  });
+
+  document.getElementById('characters-quiz-check-btn').textContent = 'Vérifier mes réponses';
+  document.getElementById('characters-quiz-check-btn').onclick = checkCharacterQuiz;
+}
+
+function checkCharacterQuiz() {
+  const container = document.getElementById('characters-quiz-container');
+  let correct = 0;
+
+  charQuestions.forEach((q, i) => {
+    const selected = container.querySelector(`.char-option[data-question="${i}"][data-selected="true"]`);
+    const allOptions = container.querySelectorAll(`.char-option[data-question="${i}"]`);
+    allOptions.forEach((btn) => { btn.disabled = true; });
+
+    const isCorrect = !!selected && selected.dataset.value === q.answer;
+    if (isCorrect) correct += 1;
+
+    allOptions.forEach((btn) => {
+      if (btn.dataset.value === q.answer) {
+        btn.style.background = '#1a7a3e';
+        btn.style.borderColor = '#1a7a3e';
+        btn.style.color = 'white';
+      } else if (btn === selected) {
+        btn.style.background = '#c0392b';
+        btn.style.borderColor = '#c0392b';
+      }
+    });
+  });
+
+  const resultEl = document.getElementById('characters-quiz-result');
+  resultEl.style.display = 'block';
+  resultEl.style.color = correct === charQuestions.length ? '#1a7a3e' : '#333';
+  resultEl.textContent = `${correct} / ${charQuestions.length} bonnes réponses`;
+
+  document.getElementById('characters-quiz-check-btn').style.display = 'none';
+  document.getElementById('characters-quiz-retry-btn').style.display = 'inline-block';
+}
+
+document.getElementById('characters-quiz-retry-btn').addEventListener('click', () => {
+  renderCharacterTables();
 });
