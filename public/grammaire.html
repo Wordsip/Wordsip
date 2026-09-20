@@ -23,6 +23,7 @@
       <button type="button" id="tab-comparison-btn" class="tab-btn tab-btn-active">Pièges de sens</button>
       <button type="button" id="tab-verbs-btn" class="tab-btn">Verbes irréguliers</button>
       <button type="button" id="tab-characters-btn" class="tab-btn">Caractères</button>
+      <button type="button" id="tab-lessons-btn" class="tab-btn">Fiches de cours</button>
     </div>
 
     <div id="comparison-tab">
@@ -96,6 +97,14 @@
           <button id="characters-quiz-retry-btn" style="display:none;margin-top:10px;">Nouvelle série</button>
         </section>
       </div>
+    </div>
+
+    <div id="lessons-tab" style="display:none;">
+      <div id="lessons-loading">Chargement des fiches...</div>
+      <div id="lessons-empty" style="display:none;text-align:center;color:#999;font-size:13px;padding:30px 0;">
+        Rien de disponible pour cette langue pour le moment.
+      </div>
+      <div id="lessons-content"></div>
     </div>
   </div>
 

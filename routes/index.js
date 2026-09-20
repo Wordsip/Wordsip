@@ -17,6 +17,7 @@ const visitService = require('../services/visitService');
 const comparisonService = require('../services/comparisonService');
 const irregularVerbsService = require('../services/irregularVerbsService');
 const characterService = require('../services/characterService');
+const lessonService = require('../services/lessonService');
 const { rateLimit } = require('../services/rateLimiter');
 
 const LATEST_VIDEO_FILE = path.join(__dirname, '..', 'data', 'latest-video.json');
@@ -299,6 +300,16 @@ router.get('/api/admin/reseed-characters', async (req, res) => {
   }
 });
 
+router.get('/api/admin/reseed-lessons', async (req, res) => {
+  if (!checkAdminSecret(req, res)) return;
+  try {
+    const result = await lessonService.reseedFromFile();
+    res.json({ success: true, ...result });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 router.get('/api/cron/weekly-video', async (req, res) => {
   if (!checkCronSecret(req, res)) return;
   try {
@@ -486,6 +497,18 @@ router.get('/api/characters/:language', async (req, res) => {
     const sets = await characterService.getCharactersForLanguage(req.params.language);
     if (!sets) return res.status(404).json({ error: 'Aucune fiche de caractères disponible pour cette langue.' });
     res.json(sets);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Fiches de cours structurées (marqueurs de temps / utilisation / tableau de
+// conjugaison) — un temps verbal ou point de grammaire par fiche.
+router.get('/api/lessons/:language', async (req, res) => {
+  try {
+    const lessons = await lessonService.getLessonsForLanguage(req.params.language);
+    if (lessons.length === 0) return res.status(404).json({ error: 'Aucune fiche de cours disponible pour cette langue.' });
+    res.json({ lessons });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

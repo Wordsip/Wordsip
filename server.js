@@ -10,6 +10,7 @@ const jokeService = require('./services/jokeService');
 const comparisonService = require('./services/comparisonService');
 const irregularVerbsService = require('./services/irregularVerbsService');
 const characterService = require('./services/characterService');
+const lessonService = require('./services/lessonService');
 const routes = require('./routes/index');
 const { startDailySender } = require('./cron/dailySender');
 const { startWeeklyVideoGenerator } = require('./cron/weeklyVideo');
@@ -37,6 +38,7 @@ async function start() {
     await comparisonService.seedIfEmpty();
     await irregularVerbsService.seedIfEmpty();
     await characterService.seedIfEmpty();
+    await lessonService.seedIfEmpty();
   } catch (err) {
     console.error('Erreur de connexion à la base de données :', err.message);
     console.error('Vérifie que MONGODB_URI est bien configurée dans les variables d\'environnement.');

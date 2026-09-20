@@ -48,11 +48,16 @@ function renderComparison() {
   const itemsList = document.getElementById('items-list');
   itemsList.innerHTML = comparison.items.map((item) => `
     <section class="info-card" style="margin-top:10px;">
-      <p class="info-title">${item.word.toUpperCase()}</p>
-      <p style="font-size:14px;">${item.rule}</p>
-      <p style="font-size:13px;color:#666;font-style:italic;margin-top:6px;">
-        ${item.examples.map((ex) => `« ${ex} »`).join('<br>')}
-      </p>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        ${item.icon ? `<div style="width:64px;height:64px;flex-shrink:0;">${item.icon}</div>` : ''}
+        <div>
+          <p class="info-title">${item.word.toUpperCase()}</p>
+          <p style="font-size:14px;">${item.rule}</p>
+          <p style="font-size:13px;color:#666;font-style:italic;margin-top:6px;">
+            ${item.examples.map((ex) => `« ${ex} »`).join('<br>')}
+          </p>
+        </div>
+      </div>
     </section>
   `).join('');
 
@@ -157,7 +162,7 @@ document.getElementById('tab-verbs-btn').addEventListener('click', () => switchT
 document.getElementById('tab-characters-btn').addEventListener('click', () => switchTab('characters'));
 
 function switchTab(tab) {
-  const tabs = ['comparison', 'verbs', 'characters'];
+  const tabs = ['comparison', 'verbs', 'characters', 'lessons'];
   tabs.forEach((t) => {
     document.getElementById(`${t}-tab`).style.display = t === tab ? 'block' : 'none';
     document.getElementById(`tab-${t}-btn`).className = `tab-btn${t === tab ? ' tab-btn-active' : ''}`;
@@ -169,7 +174,11 @@ function switchTab(tab) {
   if (tab === 'characters' && !charactersLoaded) {
     loadCharacters();
   }
+  if (tab === 'lessons' && !lessonsLoaded) {
+    loadLessons();
+  }
 }
+document.getElementById('tab-lessons-btn').addEventListener('click', () => switchTab('lessons'));
 
 // --- Verbes irréguliers ---
 // Un mélange de questions à choix multiple et de saisie libre, généré côté
@@ -592,3 +601,86 @@ function checkCharacterQuiz() {
 document.getElementById('characters-quiz-retry-btn').addEventListener('click', () => {
   renderCharacterTables();
 });
+
+// --- Fiches de cours (marqueurs de temps / utilisation / tableau de formes) ---
+let lessonsLoaded = false;
+
+async function loadLessons() {
+  const language = await resolveLanguage();
+  try {
+    const res = await fetch(`/api/lessons/${language}`);
+    if (!res.ok) throw new Error('none');
+    const data = await res.json();
+    renderLessons(data.lessons);
+  } catch (err) {
+    document.getElementById('lessons-loading').style.display = 'none';
+    document.getElementById('lessons-empty').style.display = 'block';
+    return;
+  }
+
+  lessonsLoaded = true;
+  document.getElementById('lessons-loading').style.display = 'none';
+}
+
+function renderLessons(lessons) {
+  const container = document.getElementById('lessons-content');
+  container.innerHTML = lessons.map((lesson) => renderLessonCard(lesson)).join('');
+}
+
+function renderLessonCard(lesson) {
+  const markersHtml = lesson.timeMarkers.map((m) => `
+    <li style="margin-bottom:4px;"><strong>${m.expression}</strong> — <span style="color:#666;">${m.translation}</span></li>
+  `).join('');
+
+  const usagesHtml = lesson.usages.map((u) => `
+    <div style="margin-bottom:12px;">
+      <p style="font-weight:600;font-size:13px;color:#2b7a78;">${u.title}</p>
+      <p style="font-size:13px;margin:2px 0;">${u.description}</p>
+      <p style="font-size:13px;font-style:italic;color:#666;">« ${u.example} »</p>
+    </div>
+  `).join('');
+
+  const formsHtml = ['affirmative', 'negative', 'interrogative'].map((formKey) => {
+    const form = lesson.forms[formKey];
+    if (!form) return '';
+    const formLabel = { affirmative: 'Forme affirmative', negative: 'Forme négative', interrogative: 'Forme interrogative' }[formKey];
+    const rows = form.rows.map((row) => `
+      <tr>${row.map((cell) => `<td style="padding:4px 8px;border-bottom:1px solid #f0f0f0;">${cell}</td>`).join('')}</tr>
+    `).join('');
+    return `
+      <div style="flex:1;min-width:180px;">
+        <p style="font-weight:600;font-size:13px;color:#2b7a78;text-align:center;margin-bottom:4px;">${formLabel}</p>
+        <p style="font-size:11px;color:#999;text-align:center;margin-bottom:6px;">${form.pattern}</p>
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <section class="word-card" style="margin-top:10px;">
+      <p class="label">Fiche de cours</p>
+      <h1 style="font-size:22px;">${lesson.title}</h1>
+      <p style="font-size:13px;color:#555;margin-top:4px;">${lesson.subtitle || ''}</p>
+    </section>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;">
+      <section class="info-card" style="flex:1;min-width:220px;">
+        <p class="info-title">🕐 MARQUEURS DE TEMPS</p>
+        <ul style="font-size:13px;padding-left:18px;margin-top:8px;">${markersHtml}</ul>
+      </section>
+      <section class="info-card" style="flex:1;min-width:220px;">
+        <p class="info-title">✅ UTILISATION</p>
+        ${usagesHtml}
+      </section>
+    </div>
+
+    <section class="info-card" style="margin-top:12px;">
+      <p class="info-title">⚙️ FORMES</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;overflow-x:auto;">
+        ${formsHtml}
+      </div>
+    </section>
+  `;
+}

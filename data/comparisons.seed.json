@@ -8,42 +8,1273 @@
         {
           "word": "on",
           "rule": "Contact direct avec une surface : l'objet touche quelque chose, généralement par-dessus.",
-          "examples": ["The book is on the table.", "There's a picture on the wall."]
+          "examples": [
+            "The book is on the table.",
+            "There's a picture on the wall."
+          ],
+          "svg": "<svg viewBox=\"0 0 140 120\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"62\" width=\"80\" height=\"46\" rx=\"4\" fill=\"#c68642\"/><rect x=\"30\" y=\"62\" width=\"80\" height=\"10\" fill=\"#a56a34\"/><circle cx=\"70\" cy=\"46\" r=\"16\" fill=\"#4CAF50\"/></svg>",
+          "icon": "<svg viewBox=\"0 0 140 140\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"75\" width=\"70\" height=\"45\" rx=\"4\" fill=\"#c99b6b\" stroke=\"#a87d4f\" stroke-width=\"2\"/><rect x=\"30\" y=\"75\" width=\"70\" height=\"10\" fill=\"#a87d4f\" opacity=\"0.4\"/><circle cx=\"65\" cy=\"58\" r=\"17\" fill=\"#7cb342\" stroke=\"#568233\" stroke-width=\"2\"/></svg>"
         },
         {
           "word": "in",
           "rule": "À l'intérieur d'un espace fermé ou délimité en trois dimensions — on est entouré, pas juste posé dessus.",
-          "examples": ["The keys are in the drawer.", "She lives in Paris."]
+          "examples": [
+            "The keys are in the drawer.",
+            "She lives in Paris."
+          ],
+          "svg": "<svg viewBox=\"0 0 140 120\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"22,58 118,58 108,108 32,108\" fill=\"#c68642\"/><polygon points=\"22,58 42,38 98,38 118,58\" fill=\"#a56a34\"/><circle cx=\"68\" cy=\"84\" r=\"15\" fill=\"#4CAF50\"/></svg>",
+          "icon": "<svg viewBox=\"0 0 140 140\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M25 60 L115 60 L105 120 L35 120 Z\" fill=\"#c99b6b\" stroke=\"#a87d4f\" stroke-width=\"2\"/><ellipse cx=\"70\" cy=\"60\" rx=\"45\" ry=\"8\" fill=\"#a87d4f\" opacity=\"0.5\"/><circle cx=\"70\" cy=\"90\" r=\"16\" fill=\"#7cb342\" stroke=\"#568233\" stroke-width=\"2\"/></svg>"
         },
         {
           "word": "under",
           "rule": "En dessous de quelque chose, souvent caché ou couvert par un élément au-dessus.",
-          "examples": ["The cat is hiding under the bed.", "We sheltered under a tree."]
+          "examples": [
+            "The cat is hiding under the bed.",
+            "We sheltered under a tree."
+          ],
+          "svg": "<svg viewBox=\"0 0 140 120\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"18\" width=\"80\" height=\"42\" rx=\"4\" fill=\"#c68642\"/><rect x=\"30\" y=\"18\" width=\"80\" height=\"10\" fill=\"#a56a34\"/><circle cx=\"70\" cy=\"90\" r=\"16\" fill=\"#4CAF50\"/></svg>",
+          "icon": "<svg viewBox=\"0 0 140 140\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"20\" y=\"35\" width=\"100\" height=\"12\" rx=\"2\" fill=\"#c99b6b\" stroke=\"#a87d4f\" stroke-width=\"2\"/><rect x=\"30\" y=\"47\" width=\"8\" height=\"40\" fill=\"#a87d4f\"/><rect x=\"102\" y=\"47\" width=\"8\" height=\"40\" fill=\"#a87d4f\"/><circle cx=\"70\" cy=\"100\" r=\"16\" fill=\"#7cb342\" stroke=\"#568233\" stroke-width=\"2\"/></svg>"
         },
         {
           "word": "around",
           "rule": "Tout autour, en cercle ou en périphérie — pas un point précis, mais une zone qui entoure.",
-          "examples": ["The children ran around the garden.", "There's a fence around the house."]
+          "examples": [
+            "The children ran around the garden.",
+            "There's a fence around the house."
+          ],
+          "svg": "<svg viewBox=\"0 0 140 120\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"70\" cy=\"62\" r=\"46\" fill=\"none\" stroke=\"#4CAF50\" stroke-width=\"2.5\" stroke-dasharray=\"7 5\"/><rect x=\"54\" y=\"46\" width=\"32\" height=\"32\" rx=\"3\" fill=\"#c68642\"/><circle cx=\"70\" cy=\"13\" r=\"9\" fill=\"#4CAF50\"/></svg>",
+          "icon": "<svg viewBox=\"0 0 140 140\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"50\" y=\"55\" width=\"40\" height=\"35\" rx=\"3\" fill=\"#c99b6b\" stroke=\"#a87d4f\" stroke-width=\"2\"/><ellipse cx=\"70\" cy=\"72\" rx=\"48\" ry=\"48\" fill=\"none\" stroke=\"#7cb342\" stroke-width=\"2\" stroke-dasharray=\"5,5\"/><circle cx=\"118\" cy=\"72\" r=\"12\" fill=\"#7cb342\" stroke=\"#568233\" stroke-width=\"2\"/></svg>"
         },
         {
           "word": "between",
           "rule": "Exactement entre deux éléments identifiables et distincts. Dès qu'il y a plus de deux éléments, on utilise 'among', pas 'between'.",
-          "examples": ["The house is between the bakery and the bank.", "Choose between tea and coffee."]
+          "examples": [
+            "The house is between the bakery and the bank.",
+            "Choose between tea and coffee."
+          ],
+          "svg": "<svg viewBox=\"0 0 140 120\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"8\" y=\"48\" width=\"38\" height=\"48\" rx=\"3\" fill=\"#c68642\"/><rect x=\"94\" y=\"48\" width=\"38\" height=\"48\" rx=\"3\" fill=\"#c68642\"/><circle cx=\"70\" cy=\"72\" r=\"16\" fill=\"#4CAF50\"/></svg>",
+          "icon": "<svg viewBox=\"0 0 140 140\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"60\" width=\"35\" height=\"45\" rx=\"3\" fill=\"#c99b6b\" stroke=\"#a87d4f\" stroke-width=\"2\"/><rect x=\"95\" y=\"60\" width=\"35\" height=\"45\" rx=\"3\" fill=\"#c99b6b\" stroke=\"#a87d4f\" stroke-width=\"2\"/><circle cx=\"70\" cy=\"82\" r=\"16\" fill=\"#7cb342\" stroke=\"#568233\" stroke-width=\"2\"/></svg>"
         }
       ],
       "exercises": [
-        { "sentence": "The cat is hiding ___ the bed.", "correct": "under", "options": ["on", "in", "under"] },
-        { "sentence": "She put the vase ___ the table.", "correct": "on", "options": ["on", "around", "between"] },
-        { "sentence": "My office is ___ the bank and the pharmacy.", "correct": "between", "options": ["under", "between", "around"] },
-        { "sentence": "The dog ran ___ the tree three times.", "correct": "around", "options": ["around", "in", "on"] },
-        { "sentence": "There is milk ___ the fridge.", "correct": "in", "options": ["in", "on", "under"] },
-        { "sentence": "The picture is hanging ___ the wall.", "correct": "on", "options": ["on", "in", "around"] },
-        { "sentence": "We planted flowers ___ the whole garden.", "correct": "around", "options": ["around", "between", "under"] }
+        {
+          "sentence": "The cat is hiding ___ the bed.",
+          "correct": "under",
+          "options": [
+            "on",
+            "in",
+            "under"
+          ]
+        },
+        {
+          "sentence": "She put the vase ___ the table.",
+          "correct": "on",
+          "options": [
+            "on",
+            "around",
+            "between"
+          ]
+        },
+        {
+          "sentence": "My office is ___ the bank and the pharmacy.",
+          "correct": "between",
+          "options": [
+            "under",
+            "between",
+            "around"
+          ]
+        },
+        {
+          "sentence": "The dog ran ___ the tree three times.",
+          "correct": "around",
+          "options": [
+            "around",
+            "in",
+            "on"
+          ]
+        },
+        {
+          "sentence": "There is milk ___ the fridge.",
+          "correct": "in",
+          "options": [
+            "in",
+            "on",
+            "under"
+          ]
+        },
+        {
+          "sentence": "The picture is hanging ___ the wall.",
+          "correct": "on",
+          "options": [
+            "on",
+            "in",
+            "around"
+          ]
+        },
+        {
+          "sentence": "We planted flowers ___ the whole garden.",
+          "correct": "around",
+          "options": [
+            "around",
+            "between",
+            "under"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coordination-1",
+      "title": "And / But / Or / So / Because",
+      "intro": "Ces mots relient deux idées, mais chacun indique une relation logique différente entre elles : addition, opposition, alternative, conséquence ou cause.",
+      "items": [
+        {
+          "word": "and",
+          "rule": "Addition : ajoute une idée qui va dans le même sens.",
+          "examples": [
+            "I like tea and coffee.",
+            "She studied hard and passed the exam."
+          ]
+        },
+        {
+          "word": "but",
+          "rule": "Opposition : introduit une idée contraire à ce qui précède.",
+          "examples": [
+            "I like tea but not coffee.",
+            "He tried hard but failed."
+          ]
+        },
+        {
+          "word": "or",
+          "rule": "Alternative : propose un choix entre deux options.",
+          "examples": [
+            "Tea or coffee?",
+            "You can call or email me."
+          ]
+        },
+        {
+          "word": "so",
+          "rule": "Conséquence : introduit un résultat logique de ce qui précède.",
+          "examples": [
+            "It was raining, so we stayed inside.",
+            "She was tired, so she went to bed early."
+          ]
+        },
+        {
+          "word": "because",
+          "rule": "Cause : explique la raison de ce qui précède.",
+          "examples": [
+            "I stayed inside because it was raining.",
+            "He passed because he studied hard."
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "I wanted to go out, ___ it was raining.",
+          "correct": "but",
+          "options": [
+            "but",
+            "and",
+            "because"
+          ]
+        },
+        {
+          "sentence": "She studied hard ___ she wanted to pass.",
+          "correct": "because",
+          "options": [
+            "because",
+            "so",
+            "or"
+          ]
+        },
+        {
+          "sentence": "Do you want tea ___ coffee?",
+          "correct": "or",
+          "options": [
+            "or",
+            "and",
+            "but"
+          ]
+        },
+        {
+          "sentence": "He was tired, ___ he went to bed early.",
+          "correct": "so",
+          "options": [
+            "so",
+            "because",
+            "and"
+          ]
+        },
+        {
+          "sentence": "I like reading ___ writing.",
+          "correct": "and",
+          "options": [
+            "and",
+            "but",
+            "or"
+          ]
+        },
+        {
+          "sentence": "We stayed home ___ it was cold.",
+          "correct": "because",
+          "options": [
+            "because",
+            "so",
+            "but"
+          ]
+        },
+        {
+          "sentence": "It was late, ___ we decided to leave.",
+          "correct": "so",
+          "options": [
+            "so",
+            "and",
+            "because"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adjectives-1",
+      "title": "Adjective Position & Agreement",
+      "intro": "Contrairement au français, l'adjectif anglais se place TOUJOURS avant le nom et ne s'accorde JAMAIS en genre ou en nombre. Quand plusieurs adjectifs se suivent, leur ordre n'est pas libre non plus.",
+      "items": [
+        {
+          "word": "position",
+          "rule": "L'adjectif se place toujours avant le nom, jamais après.",
+          "examples": [
+            "a big red car (pas 'a car big red')",
+            "an interesting book"
+          ]
+        },
+        {
+          "word": "invariabilité",
+          "rule": "L'adjectif anglais a une seule forme, il ne s'accorde jamais en genre ni en nombre.",
+          "examples": [
+            "a tall man / a tall woman / tall men (toujours 'tall')",
+            "a good idea / good ideas"
+          ]
+        },
+        {
+          "word": "ordre",
+          "rule": "Entre plusieurs adjectifs, l'ordre suit une logique : opinion, taille/âge, couleur, origine, matière.",
+          "examples": [
+            "a beautiful small red car (opinion-taille-couleur)",
+            "an old Italian car (âge-origine)"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "I have a ___ cat.",
+          "correct": "small black",
+          "options": [
+            "small black",
+            "black small",
+            "cats small"
+          ]
+        },
+        {
+          "sentence": "She wore a ___ dress.",
+          "correct": "beautiful long",
+          "options": [
+            "beautiful long",
+            "long beautiful",
+            "dresses beautiful"
+          ]
+        },
+        {
+          "sentence": "They live in a ___ house.",
+          "correct": "big old",
+          "options": [
+            "big old",
+            "old big",
+            "houses big"
+          ]
+        },
+        {
+          "sentence": "The two brothers are very ___.",
+          "correct": "tall",
+          "options": [
+            "tall",
+            "talls",
+            "tallly"
+          ]
+        },
+        {
+          "sentence": "She is a ___ friend.",
+          "correct": "good",
+          "options": [
+            "good",
+            "goods",
+            "gooder"
+          ]
+        },
+        {
+          "sentence": "I bought ___.",
+          "correct": "a red car",
+          "options": [
+            "a red car",
+            "a car red",
+            "car a red"
+          ]
+        },
+        {
+          "sentence": "He drives a ___ car.",
+          "correct": "fast red",
+          "options": [
+            "fast red",
+            "red fast",
+            "cars fast"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sentence-structure-1",
+      "title": "Sentence Structure: SVO, Questions & Negation",
+      "intro": "L'anglais suit un ordre de mots strict (Sujet-Verbe-Objet), et les questions/négations se construisent avec l'auxiliaire do/does plutôt qu'en inversant simplement le sujet et le verbe.",
+      "items": [
+        {
+          "word": "SVO",
+          "rule": "L'ordre Sujet-Verbe-Objet est fixe en anglais affirmatif, contrairement au français qui tolère plus de souplesse.",
+          "examples": [
+            "I eat an apple. (pas 'Apple I eat')",
+            "She reads a book every night."
+          ]
+        },
+        {
+          "word": "do/does",
+          "rule": "Pour une question, on place do/does devant le sujet ; le verbe principal reste à l'infinitif sans -s.",
+          "examples": [
+            "Do you like coffee? (pas 'Like you coffee?')",
+            "Does she work here?"
+          ]
+        },
+        {
+          "word": "don't/doesn't",
+          "rule": "Pour la négation, on insère don't/doesn't après le sujet, avant le verbe à l'infinitif.",
+          "examples": [
+            "I don't like coffee.",
+            "He doesn't work here."
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "___ you like pizza?",
+          "correct": "Do",
+          "options": [
+            "Do",
+            "Does",
+            "Are"
+          ]
+        },
+        {
+          "sentence": "She ___ like coffee.",
+          "correct": "doesn't",
+          "options": [
+            "doesn't",
+            "don't",
+            "not"
+          ]
+        },
+        {
+          "sentence": "___ he work here?",
+          "correct": "Does",
+          "options": [
+            "Does",
+            "Do",
+            "Is"
+          ]
+        },
+        {
+          "sentence": "Choose the correct sentence:",
+          "correct": "I eat an apple.",
+          "options": [
+            "I eat an apple.",
+            "Apple I eat.",
+            "Eat I an apple."
+          ]
+        },
+        {
+          "sentence": "They ___ like the movie.",
+          "correct": "don't",
+          "options": [
+            "don't",
+            "doesn't",
+            "not"
+          ]
+        },
+        {
+          "sentence": "___ they live in Paris?",
+          "correct": "Do",
+          "options": [
+            "Do",
+            "Does",
+            "Is"
+          ]
+        },
+        {
+          "sentence": "My sister ___ speak French.",
+          "correct": "doesn't",
+          "options": [
+            "doesn't",
+            "don't",
+            "isn't"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comparatives-1",
+      "title": "Good / Bad / Far / Little / Many — comparatifs et superlatifs irréguliers",
+      "intro": "La plupart des adjectifs ajoutent -er/-est (ou more/most pour les plus longs), mais quelques-uns, très courants, ne suivent aucune règle et doivent être appris par cœur.",
+      "items": [
+        {
+          "word": "good → better → best",
+          "rule": "Meilleur : forme totalement irrégulière, jamais 'gooder'.",
+          "examples": [
+            "This cake is better than the last one.",
+            "She is the best student in class."
+          ]
+        },
+        {
+          "word": "bad → worse → worst",
+          "rule": "Pire : forme totalement irrégulière, jamais 'badder'.",
+          "examples": [
+            "This is worse than I expected.",
+            "That was the worst movie I've ever seen."
+          ]
+        },
+        {
+          "word": "far → further → furthest",
+          "rule": "Plus loin : irrégulier (existe aussi 'farther/farthest' pour la distance physique).",
+          "examples": [
+            "The station is further than I thought.",
+            "That's the furthest I've ever run."
+          ]
+        },
+        {
+          "word": "little → less → least",
+          "rule": "Moins : irrégulier, ne pas confondre avec 'small/smaller' (la taille).",
+          "examples": [
+            "I have less time than you.",
+            "This is the least interesting book I've read."
+          ]
+        },
+        {
+          "word": "many/much → more → most",
+          "rule": "Plus : irrégulier, s'utilise pour le dénombrable (many) et l'indénombrable (much).",
+          "examples": [
+            "She has more experience than him.",
+            "He has the most money in the group."
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "This cake is ___ than the last one.",
+          "correct": "better",
+          "options": [
+            "better",
+            "gooder",
+            "best"
+          ]
+        },
+        {
+          "sentence": "She is the ___ student in class.",
+          "correct": "best",
+          "options": [
+            "best",
+            "better",
+            "goodest"
+          ]
+        },
+        {
+          "sentence": "That was the ___ movie I've ever seen.",
+          "correct": "worst",
+          "options": [
+            "worst",
+            "worse",
+            "baddest"
+          ]
+        },
+        {
+          "sentence": "I have ___ time than you.",
+          "correct": "less",
+          "options": [
+            "less",
+            "littler",
+            "least"
+          ]
+        },
+        {
+          "sentence": "He has the ___ money in the group.",
+          "correct": "most",
+          "options": [
+            "most",
+            "more",
+            "manyest"
+          ]
+        }
       ]
     }
   ],
-  "es": [],
-  "it": [],
+  "es": [
+    {
+      "id": "coordination-1",
+      "title": "Y/E — O/U — Pero — Porque — Así que",
+      "intro": "Ces mots relient deux idées avec une logique différente (addition, alternative, opposition, cause, conséquence) — et deux d'entre eux changent même de forme selon le son qui suit !",
+      "items": [
+        {
+          "word": "y / e",
+          "rule": "Addition. Devient 'e' devant un mot commençant par le son 'i' (piège classique).",
+          "examples": [
+            "Me gusta el té y el café.",
+            "Fernando e Isabel son hermanos."
+          ]
+        },
+        {
+          "word": "o / u",
+          "rule": "Alternative. Devient 'u' devant un mot commençant par le son 'o'.",
+          "examples": [
+            "¿Té o café?",
+            "Siete u ocho personas vinieron."
+          ]
+        },
+        {
+          "word": "pero",
+          "rule": "Opposition : introduit une idée contraire.",
+          "examples": [
+            "Me gusta el té pero no el café.",
+            "Lo intentó pero falló."
+          ]
+        },
+        {
+          "word": "porque",
+          "rule": "Cause : explique la raison.",
+          "examples": [
+            "Me quedé en casa porque llovía."
+          ]
+        },
+        {
+          "word": "así que",
+          "rule": "Conséquence : introduit un résultat logique.",
+          "examples": [
+            "Llovía, así que nos quedamos en casa."
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "Quiero café ___ té.",
+          "correct": "o",
+          "options": [
+            "o",
+            "y",
+            "pero"
+          ]
+        },
+        {
+          "sentence": "Me gusta leer ___ escribir.",
+          "correct": "y",
+          "options": [
+            "y",
+            "o",
+            "pero"
+          ]
+        },
+        {
+          "sentence": "Estudió mucho ___ no aprobó.",
+          "correct": "pero",
+          "options": [
+            "pero",
+            "y",
+            "porque"
+          ]
+        },
+        {
+          "sentence": "Me quedé en casa ___ llovía.",
+          "correct": "porque",
+          "options": [
+            "porque",
+            "así que",
+            "pero"
+          ]
+        },
+        {
+          "sentence": "Llovía, ___ nos quedamos en casa.",
+          "correct": "así que",
+          "options": [
+            "así que",
+            "porque",
+            "pero"
+          ]
+        },
+        {
+          "sentence": "Fernando ___ Isabel son hermanos.",
+          "correct": "e",
+          "options": [
+            "e",
+            "y",
+            "o"
+          ]
+        },
+        {
+          "sentence": "¿Vienes hoy ___ mañana?",
+          "correct": "o",
+          "options": [
+            "o",
+            "u",
+            "y"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adjectives-1",
+      "title": "Accord et place de l'adjectif",
+      "intro": "En espagnol, l'adjectif s'accorde en genre et en nombre avec le nom, et se place généralement après — sauf quelques adjectifs courts et fréquents qui peuvent se placer avant, parfois avec un sens différent.",
+      "items": [
+        {
+          "word": "genre",
+          "rule": "L'adjectif s'accorde en genre avec le nom, souvent -o (masc.) / -a (fém.).",
+          "examples": [
+            "un coche rojo / una casa roja"
+          ]
+        },
+        {
+          "word": "nombre",
+          "rule": "L'adjectif s'accorde en nombre, pluriel en -s ou -es.",
+          "examples": [
+            "coches rojos / casas rojas"
+          ]
+        },
+        {
+          "word": "position",
+          "rule": "Généralement après le nom, mais certains adjectifs courts (bueno, malo, grande...) peuvent se placer avant, avec un sens parfois figuré.",
+          "examples": [
+            "un hombre grande (de grande taille) vs un gran hombre (un grand homme, au sens figuré)"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "Tengo un perro ___.",
+          "correct": "negro",
+          "options": [
+            "negro",
+            "negra",
+            "negros"
+          ]
+        },
+        {
+          "sentence": "Tengo una casa ___.",
+          "correct": "blanca",
+          "options": [
+            "blanca",
+            "blanco",
+            "blancos"
+          ]
+        },
+        {
+          "sentence": "Son coches ___.",
+          "correct": "rápidos",
+          "options": [
+            "rápidos",
+            "rápido",
+            "rápida"
+          ]
+        },
+        {
+          "sentence": "Ella es una ___ persona.",
+          "correct": "buena",
+          "options": [
+            "buena",
+            "bueno",
+            "buen"
+          ]
+        },
+        {
+          "sentence": "Es un ___ hombre. (sens figuré)",
+          "correct": "gran",
+          "options": [
+            "gran",
+            "grande",
+            "grandes"
+          ]
+        },
+        {
+          "sentence": "Las flores son ___.",
+          "correct": "bonitas",
+          "options": [
+            "bonitas",
+            "bonito",
+            "bonitos"
+          ]
+        },
+        {
+          "sentence": "Tiene los ojos ___.",
+          "correct": "verdes",
+          "options": [
+            "verdes",
+            "verde",
+            "verdos"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sentence-structure-1",
+      "title": "Structure de phrase : sujet omis et questions",
+      "intro": "Contrairement au français/anglais, l'espagnol omet souvent le pronom sujet car la terminaison du verbe l'indique déjà, et les questions ne demandent pas d'inversion particulière.",
+      "items": [
+        {
+          "word": "sujet omis",
+          "rule": "Le pronom sujet (yo, tú, él...) est souvent omis, la terminaison verbale suffit à l'indiquer.",
+          "examples": [
+            "Hablo español. (pas besoin de dire 'Yo hablo')",
+            "¿Dónde vives?"
+          ]
+        },
+        {
+          "word": "questions fermées",
+          "rule": "Pas d'inversion ni d'auxiliaire comme en anglais — juste ¿...? à l'écrit et l'intonation à l'oral.",
+          "examples": [
+            "¿Hablas español?"
+          ]
+        },
+        {
+          "word": "mots interrogatifs",
+          "rule": "Qué/dónde/cuándo/cómo/por qué se placent en tout début de question.",
+          "examples": [
+            "¿Dónde vives?",
+            "¿Por qué estudias español?"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "¿___ vives?",
+          "correct": "Dónde",
+          "options": [
+            "Dónde",
+            "Qué",
+            "Cuándo"
+          ]
+        },
+        {
+          "sentence": "¿___ te llamas?",
+          "correct": "Cómo",
+          "options": [
+            "Cómo",
+            "Dónde",
+            "Qué"
+          ]
+        },
+        {
+          "sentence": "¿___ estudias español?",
+          "correct": "Por qué",
+          "options": [
+            "Por qué",
+            "Qué",
+            "Cuándo"
+          ]
+        },
+        {
+          "sentence": "___ español.",
+          "correct": "Hablo",
+          "options": [
+            "Hablo",
+            "Yo hablo",
+            "Hablar"
+          ]
+        },
+        {
+          "sentence": "¿___ es tu cumpleaños?",
+          "correct": "Cuándo",
+          "options": [
+            "Cuándo",
+            "Dónde",
+            "Qué"
+          ]
+        },
+        {
+          "sentence": "¿___ quieres comer?",
+          "correct": "Qué",
+          "options": [
+            "Qué",
+            "Cómo",
+            "Dónde"
+          ]
+        },
+        {
+          "sentence": "___ un libro cada mes.",
+          "correct": "Leo",
+          "options": [
+            "Leo",
+            "Yo leo",
+            "Leer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comparativos-1",
+      "title": "Bueno / Malo / Grande / Pequeño — comparativos irregulares",
+      "intro": "La mayoría de los adjetivos usan 'más' o 'menos', pero cuatro adjetivos muy comunes tienen una forma comparativa irregular propia — y dos de ellos cambian de sentido según el contexto (tamaño físico vs. edad/importancia).",
+      "items": [
+        {
+          "word": "bueno → mejor",
+          "rule": "Mejor es la forma irregular ; nunca 'más bueno'.",
+          "examples": [
+            "Este libro es mejor que el otro.",
+            "Ella es la mejor estudiante de la clase."
+          ]
+        },
+        {
+          "word": "malo → peor",
+          "rule": "Peor es la forma irregular ; nunca 'más malo'.",
+          "examples": [
+            "Esta película es peor de lo que esperaba.",
+            "Fue la peor experiencia de mi vida."
+          ]
+        },
+        {
+          "word": "grande → mayor",
+          "rule": "Mayor se usa para la edad o la importancia — para el tamaño físico se sigue diciendo 'más grande'.",
+          "examples": [
+            "Mi hermano mayor vive en Madrid.",
+            "Es el problema mayor de la empresa."
+          ]
+        },
+        {
+          "word": "pequeño → menor",
+          "rule": "Menor se usa para la edad o la importancia — para el tamaño físico se sigue diciendo 'más pequeño'.",
+          "examples": [
+            "Mi hermana menor tiene diez años.",
+            "Es un problema menor."
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "Este libro es ___ que el otro.",
+          "correct": "mejor",
+          "options": [
+            "mejor",
+            "más bueno",
+            "buenísimo"
+          ]
+        },
+        {
+          "sentence": "Fue la ___ experiencia de mi vida.",
+          "correct": "peor",
+          "options": [
+            "peor",
+            "más mala",
+            "malísima"
+          ]
+        },
+        {
+          "sentence": "Mi hermano ___ vive en Madrid.",
+          "correct": "mayor",
+          "options": [
+            "mayor",
+            "más grande",
+            "grandísimo"
+          ]
+        },
+        {
+          "sentence": "Mi hermana ___ tiene diez años.",
+          "correct": "menor",
+          "options": [
+            "menor",
+            "más pequeña",
+            "pequeñísima"
+          ]
+        }
+      ]
+    }
+  ],
+  "it": [
+    {
+      "id": "coordination-1",
+      "title": "E / Ma / O / Perché / Quindi",
+      "intro": "Ces mots relient deux idées avec une logique différente : addition, opposition, alternative, cause, conséquence.",
+      "items": [
+        {
+          "word": "e",
+          "rule": "Addition : ajoute une idée qui va dans le même sens.",
+          "examples": [
+            "Mi piace il tè e il caffè.",
+            "Ha studiato molto e ha superato l'esame."
+          ]
+        },
+        {
+          "word": "ma",
+          "rule": "Opposition : introduit une idée contraire.",
+          "examples": [
+            "Mi piace il tè ma non il caffè.",
+            "Ci ha provato ma ha fallito."
+          ]
+        },
+        {
+          "word": "o",
+          "rule": "Alternative : propose un choix.",
+          "examples": [
+            "Tè o caffè?",
+            "Puoi chiamare o scrivere."
+          ]
+        },
+        {
+          "word": "perché",
+          "rule": "Cause : explique la raison.",
+          "examples": [
+            "Sono rimasto a casa perché pioveva."
+          ]
+        },
+        {
+          "word": "quindi",
+          "rule": "Conséquence : introduit un résultat logique.",
+          "examples": [
+            "Pioveva, quindi siamo rimasti a casa."
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "Voglio caffè ___ tè.",
+          "correct": "o",
+          "options": [
+            "o",
+            "e",
+            "ma"
+          ]
+        },
+        {
+          "sentence": "Mi piace leggere ___ scrivere.",
+          "correct": "e",
+          "options": [
+            "e",
+            "o",
+            "ma"
+          ]
+        },
+        {
+          "sentence": "Ha studiato molto ___ non ha superato l'esame.",
+          "correct": "ma",
+          "options": [
+            "ma",
+            "e",
+            "perché"
+          ]
+        },
+        {
+          "sentence": "Sono rimasto a casa ___ pioveva.",
+          "correct": "perché",
+          "options": [
+            "perché",
+            "quindi",
+            "ma"
+          ]
+        },
+        {
+          "sentence": "Pioveva, ___ siamo rimasti a casa.",
+          "correct": "quindi",
+          "options": [
+            "quindi",
+            "perché",
+            "ma"
+          ]
+        },
+        {
+          "sentence": "Vieni oggi ___ domani?",
+          "correct": "o",
+          "options": [
+            "o",
+            "e",
+            "ma"
+          ]
+        },
+        {
+          "sentence": "Ha lavorato tanto, ___ è stanco.",
+          "correct": "quindi",
+          "options": [
+            "quindi",
+            "perché",
+            "e"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adjectives-1",
+      "title": "Accord et place de l'adjectif",
+      "intro": "En italien, l'adjectif s'accorde en genre et en nombre, et se place généralement après le nom — sauf quelques adjectifs très courants qui peuvent se placer avant, avec un sens parfois différent.",
+      "items": [
+        {
+          "word": "genre",
+          "rule": "L'adjectif s'accorde en genre, souvent -o (masc.) / -a (fém.).",
+          "examples": [
+            "un cane nero / una casa nera"
+          ]
+        },
+        {
+          "word": "nombre",
+          "rule": "L'adjectif s'accorde en nombre : -i (masc. pl.) / -e (fém. pl.).",
+          "examples": [
+            "cani neri / case nere"
+          ]
+        },
+        {
+          "word": "position",
+          "rule": "Généralement après le nom, mais des adjectifs fréquents (bello, buono, grande...) peuvent se placer avant, avec une nuance de sens.",
+          "examples": [
+            "un uomo grande (de grande taille) vs un grande uomo (un grand homme, au sens figuré)"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "Ho un cane ___.",
+          "correct": "nero",
+          "options": [
+            "nero",
+            "nera",
+            "neri"
+          ]
+        },
+        {
+          "sentence": "Ho una casa ___.",
+          "correct": "bianca",
+          "options": [
+            "bianca",
+            "bianco",
+            "bianchi"
+          ]
+        },
+        {
+          "sentence": "Sono macchine ___.",
+          "correct": "veloci",
+          "options": [
+            "veloci",
+            "veloce",
+            "velocia"
+          ]
+        },
+        {
+          "sentence": "È una ___ persona.",
+          "correct": "buona",
+          "options": [
+            "buona",
+            "buono",
+            "buon"
+          ]
+        },
+        {
+          "sentence": "È un ___ uomo. (sens figuré)",
+          "correct": "grande",
+          "options": [
+            "grande",
+            "grosso",
+            "grandi"
+          ]
+        },
+        {
+          "sentence": "I fiori sono ___.",
+          "correct": "belli",
+          "options": [
+            "belli",
+            "bella",
+            "bello"
+          ]
+        },
+        {
+          "sentence": "Ha gli occhi ___.",
+          "correct": "verdi",
+          "options": [
+            "verdi",
+            "verde",
+            "verdo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sentence-structure-1",
+      "title": "Structure de phrase : sujet omis et questions",
+      "intro": "Comme en espagnol, l'italien omet souvent le pronom sujet car la terminaison du verbe l'indique déjà, et les questions ne demandent pas d'inversion particulière.",
+      "items": [
+        {
+          "word": "sujet omis",
+          "rule": "Le pronom sujet (io, tu, lui...) est souvent omis, la terminaison verbale suffit.",
+          "examples": [
+            "Parlo italiano. (pas besoin de dire 'Io parlo')",
+            "Dove abiti?"
+          ]
+        },
+        {
+          "word": "questions fermées",
+          "rule": "Pas d'inversion — juste le point d'interrogation à l'écrit et l'intonation à l'oral.",
+          "examples": [
+            "Parli italiano?"
+          ]
+        },
+        {
+          "word": "mots interrogatifs",
+          "rule": "Dove/quando/come/perché se placent en tout début de question.",
+          "examples": [
+            "Dove abiti?",
+            "Perché studi italiano?"
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "___ abiti?",
+          "correct": "Dove",
+          "options": [
+            "Dove",
+            "Che",
+            "Quando"
+          ]
+        },
+        {
+          "sentence": "___ ti chiami?",
+          "correct": "Come",
+          "options": [
+            "Come",
+            "Dove",
+            "Che"
+          ]
+        },
+        {
+          "sentence": "___ studi italiano?",
+          "correct": "Perché",
+          "options": [
+            "Perché",
+            "Che",
+            "Quando"
+          ]
+        },
+        {
+          "sentence": "___ italiano.",
+          "correct": "Parlo",
+          "options": [
+            "Parlo",
+            "Io parlo",
+            "Parlare"
+          ]
+        },
+        {
+          "sentence": "___ è il tuo compleanno?",
+          "correct": "Quando",
+          "options": [
+            "Quando",
+            "Dove",
+            "Che"
+          ]
+        },
+        {
+          "sentence": "___ vuoi mangiare?",
+          "correct": "Che cosa",
+          "options": [
+            "Che cosa",
+            "Come",
+            "Dove"
+          ]
+        },
+        {
+          "sentence": "___ un libro ogni mese.",
+          "correct": "Leggo",
+          "options": [
+            "Leggo",
+            "Io leggo",
+            "Leggere"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "comparativi-1",
+      "title": "Buono / Cattivo / Grande / Piccolo — comparativi irregolari",
+      "intro": "La maggior parte degli aggettivi usa 'più' o 'meno', ma quattro aggettivi molto comuni hanno una forma comparativa irregolare propria — due di questi cambiano significato secondo il contesto (dimensione fisica vs. età/importanza).",
+      "items": [
+        {
+          "word": "buono → migliore",
+          "rule": "Migliore è la forma irregolare ; mai 'più buono' in questo senso.",
+          "examples": [
+            "Questo libro è migliore dell'altro.",
+            "Lei è la migliore studentessa della classe."
+          ]
+        },
+        {
+          "word": "cattivo → peggiore",
+          "rule": "Peggiore è la forma irregolare ; mai 'più cattivo' in questo senso.",
+          "examples": [
+            "Questo film è peggiore di quanto pensassi.",
+            "È stata la peggiore esperienza della mia vita."
+          ]
+        },
+        {
+          "word": "grande → maggiore",
+          "rule": "Maggiore si usa per l'età o l'importanza — per la dimensione fisica si usa ancora 'più grande'.",
+          "examples": [
+            "Mio fratello maggiore vive a Milano.",
+            "È il problema maggiore dell'azienda."
+          ]
+        },
+        {
+          "word": "piccolo → minore",
+          "rule": "Minore si usa per l'età o l'importanza — per la dimensione fisica si usa ancora 'più piccolo'.",
+          "examples": [
+            "Mia sorella minore ha dieci anni.",
+            "È un problema minore."
+          ]
+        }
+      ],
+      "exercises": [
+        {
+          "sentence": "Questo libro è ___ dell'altro.",
+          "correct": "migliore",
+          "options": [
+            "migliore",
+            "più buono",
+            "buonissimo"
+          ]
+        },
+        {
+          "sentence": "È stata la ___ esperienza della mia vita.",
+          "correct": "peggiore",
+          "options": [
+            "peggiore",
+            "più cattiva",
+            "cattivissima"
+          ]
+        },
+        {
+          "sentence": "Mio fratello ___ vive a Milano.",
+          "correct": "maggiore",
+          "options": [
+            "maggiore",
+            "più grande",
+            "grandissimo"
+          ]
+        },
+        {
+          "sentence": "Mia sorella ___ ha dieci anni.",
+          "correct": "minore",
+          "options": [
+            "minore",
+            "più piccola",
+            "piccolissima"
+          ]
+        }
+      ]
+    }
+  ],
   "ja": [],
   "zh": []
 }

@@ -1,0 +1,36 @@
+{
+  "en": [
+    {
+      "id": "present-continuous",
+      "title": "Present Continuous (BE + -ING)",
+      "subtitle": "Le présent progressif — parler d'une action en cours",
+      "timeMarkers": [
+        { "expression": "now", "translation": "maintenant" },
+        { "expression": "right now", "translation": "tout de suite" },
+        { "expression": "at the moment", "translation": "en ce moment" },
+        { "expression": "currently", "translation": "actuellement" },
+        { "expression": "Look! / Listen!", "translation": "une phrase qui commence ainsi annonce presque toujours un BE + -ING" }
+      ],
+      "usages": [
+        { "title": "Une action en cours", "description": "Pour parler d'une action en train de se dérouler au moment précis où l'on parle.", "example": "Lucia is currently working." },
+        { "title": "Ce que l'on voit ou entend", "description": "Pour décrire une scène observée en direct, sous nos yeux.", "example": "You can see Peter, who is cooking dinner." },
+        { "title": "Un futur proche déjà prévu", "description": "Pour un projet ou un événement organisé, déjà planifié dans un futur proche.", "example": "My plane is taking off in two hours." }
+      ],
+      "forms": {
+        "affirmative": {
+          "pattern": "Sujet + BE + verbe-ING",
+          "rows": [["I", "am", "playing"], ["You", "are", "playing"], ["She / He / It", "is", "playing"], ["We", "are", "playing"], ["You", "are", "playing"], ["They", "are", "playing"]]
+        },
+        "negative": {
+          "pattern": "Sujet + BE + NOT + verbe-ING",
+          "rows": [["I", "am not", "playing"], ["You", "are not", "playing"], ["She / He / It", "is not", "playing"], ["We", "are not", "playing"], ["You", "are not", "playing"], ["They", "are not", "playing"]]
+        },
+        "interrogative": {
+          "pattern": "BE + Sujet + verbe-ING ?",
+          "rows": [["Am", "I", "playing?"], ["Are", "you", "playing?"], ["Is", "she / he / it", "playing?"], ["Are", "we", "playing?"], ["Are", "you", "playing?"], ["Are", "they", "playing?"]]
+        }
+      }
+    }
+  ],
+  "es": [], "it": [], "ja": [], "zh": []
+}
