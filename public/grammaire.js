@@ -5,6 +5,7 @@ const isGuest = params.get('guest') === 'true';
 fetch('/api/track-visit', { method: 'POST' }).catch(() => {});
 
 let comparison = null;
+let allComparisonGroups = [];
 
 async function resolveLanguage() {
   if (email) {
@@ -27,19 +28,48 @@ async function init() {
   const language = await resolveLanguage();
 
   try {
-    const res = await fetch(`/api/comparison/${language}`);
+    const res = await fetch(`/api/comparisons/${language}`);
     if (!res.ok) throw new Error('none');
-    comparison = await res.json();
+    const data = await res.json();
+    allComparisonGroups = data.groups;
   } catch (err) {
     document.getElementById('loading').style.display = 'none';
     document.getElementById('empty').style.display = 'block';
     return;
   }
 
-  renderComparison();
+  renderComparisonMenu();
   document.getElementById('loading').style.display = 'none';
-  document.getElementById('content').style.display = 'block';
 }
+
+// Menu de sélection : toutes les fiches sont visibles d'un coup, l'utilisateur
+// choisit celle qu'il veut étudier — les autres restent en arrière-plan,
+// accessibles via le bouton "Retour à la liste".
+function renderComparisonMenu() {
+  const menu = document.getElementById('comparison-menu');
+  menu.innerHTML = allComparisonGroups.map((g, i) => `
+    <button type="button" class="lesson-menu-item" data-index="${i}">
+      <span style="font-weight:600;">${g.title}</span>
+      <span style="display:block;font-size:12px;color:#999;margin-top:2px;">${g.intro.slice(0, 90)}${g.intro.length > 90 ? '…' : ''}</span>
+    </button>
+  `).join('');
+
+  menu.querySelectorAll('.lesson-menu-item').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      comparison = allComparisonGroups[Number(btn.dataset.index)];
+      renderComparison();
+      menu.style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    });
+  });
+
+  menu.style.display = 'block';
+}
+
+document.getElementById('comparison-back-btn').addEventListener('click', () => {
+  document.getElementById('content').style.display = 'none';
+  document.getElementById('comparison-menu').style.display = 'block';
+});
 
 function renderComparison() {
   document.getElementById('comparison-title').textContent = comparison.title;
@@ -155,6 +185,13 @@ document.getElementById('quiz-retry-btn').addEventListener('click', () => {
 });
 
 init();
+
+// Ouvre directement le bon onglet si l'URL le demande (ex. lien envoyé depuis
+// la page mot du jour vers une fiche de cours précise).
+const initialTab = params.get('tab');
+if (initialTab && ['verbs', 'characters', 'lessons'].includes(initialTab)) {
+  switchTab(initialTab);
+}
 
 // --- Onglets ---
 document.getElementById('tab-comparison-btn').addEventListener('click', () => switchTab('comparison'));
@@ -604,6 +641,7 @@ document.getElementById('characters-quiz-retry-btn').addEventListener('click', (
 
 // --- Fiches de cours (marqueurs de temps / utilisation / tableau de formes) ---
 let lessonsLoaded = false;
+let allLessons = [];
 
 async function loadLessons() {
   const language = await resolveLanguage();
@@ -611,7 +649,7 @@ async function loadLessons() {
     const res = await fetch(`/api/lessons/${language}`);
     if (!res.ok) throw new Error('none');
     const data = await res.json();
-    renderLessons(data.lessons);
+    allLessons = data.lessons;
   } catch (err) {
     document.getElementById('lessons-loading').style.display = 'none';
     document.getElementById('lessons-empty').style.display = 'block';
@@ -619,8 +657,49 @@ async function loadLessons() {
   }
 
   lessonsLoaded = true;
+  renderLessonsMenu();
   document.getElementById('lessons-loading').style.display = 'none';
+
+  // Lien direct depuis une autre page (ex. bannière "jour grammaire" sur le
+  // mot du jour) : ?lesson=ID affiche directement la fiche visée, sans passer
+  // par le menu.
+  const preselectId = params.get('lesson');
+  if (preselectId) {
+    const index = allLessons.findIndex((l) => l.id === preselectId);
+    if (index !== -1) showLessonDetail(index);
+  }
 }
+
+// Menu de sélection : toutes les fiches sont listées, l'utilisateur choisit
+// celle qu'il veut étudier — les autres passent en arrière-plan, accessibles
+// via le bouton "Retour à la liste".
+function renderLessonsMenu() {
+  const menu = document.getElementById('lessons-menu');
+  menu.innerHTML = allLessons.map((lesson, i) => `
+    <button type="button" class="lesson-menu-item" data-index="${i}">
+      <span style="font-weight:600;">${lesson.title}</span>
+      ${lesson.subtitle ? `<span style="display:block;font-size:12px;color:#999;margin-top:2px;">${lesson.subtitle}</span>` : ''}
+    </button>
+  `).join('');
+
+  menu.querySelectorAll('.lesson-menu-item').forEach((btn) => {
+    btn.addEventListener('click', () => showLessonDetail(Number(btn.dataset.index)));
+  });
+
+  menu.style.display = 'block';
+  document.getElementById('lessons-detail').style.display = 'none';
+}
+
+function showLessonDetail(index) {
+  renderLessons([allLessons[index]]);
+  document.getElementById('lessons-menu').style.display = 'none';
+  document.getElementById('lessons-detail').style.display = 'block';
+}
+
+document.getElementById('lessons-back-btn').addEventListener('click', () => {
+  document.getElementById('lessons-detail').style.display = 'none';
+  document.getElementById('lessons-menu').style.display = 'block';
+});
 
 function renderLessons(lessons) {
   const container = document.getElementById('lessons-content');
@@ -628,6 +707,61 @@ function renderLessons(lessons) {
 }
 
 function renderLessonCard(lesson) {
+  if (lesson.type === 'rule') return renderRuleLessonCard(lesson);
+  if (lesson.type === 'reference') return renderReferenceLessonCard(lesson);
+  return renderTenseLessonCard(lesson);
+}
+
+// Fiches "règle" : plusieurs sous-points, chacun avec une règle de sens et
+// des exemples — pour les sujets qui n'ont pas de tableau de conjugaison
+// (modaux, articles, voix passive, pluriels...).
+function renderRuleLessonCard(lesson) {
+  const sectionsHtml = lesson.sections.map((s) => `
+    <section class="info-card" style="margin-top:10px;">
+      <p class="info-title">${s.title.toUpperCase()}</p>
+      <p style="font-size:14px;">${s.rule}</p>
+      <p style="font-size:13px;color:#666;font-style:italic;margin-top:6px;">
+        ${s.examples.map((ex) => `« ${ex} »`).join('<br>')}
+      </p>
+    </section>
+  `).join('');
+
+  return `
+    <section class="word-card" style="margin-top:10px;">
+      <p class="label">Fiche de cours</p>
+      <h1 style="font-size:22px;">${lesson.title}</h1>
+      <p style="font-size:13px;color:#555;margin-top:4px;">${lesson.subtitle || ''}</p>
+    </section>
+    ${sectionsHtml}
+  `;
+}
+
+// Fiches "référence" : un simple tableau (ex. pronoms sujet/complément/
+// possessifs), sans règle de sens à expliquer — juste une grille à consulter.
+function renderReferenceLessonCard(lesson) {
+  const headerHtml = lesson.table.headers.map((h) => `<th style="padding:6px 8px;">${h}</th>`).join('');
+  const rowsHtml = lesson.table.rows.map((row) => `
+    <tr>${row.map((cell) => `<td style="padding:6px 8px;border-bottom:1px solid #f0f0f0;">${cell}</td>`).join('')}</tr>
+  `).join('');
+
+  return `
+    <section class="word-card" style="margin-top:10px;">
+      <p class="label">Fiche de cours</p>
+      <h1 style="font-size:22px;">${lesson.title}</h1>
+      <p style="font-size:13px;color:#555;margin-top:4px;">${lesson.subtitle || ''}</p>
+    </section>
+    <section class="info-card" style="margin-top:10px;">
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <thead><tr style="border-bottom:2px solid #d0f0ee;text-align:left;">${headerHtml}</tr></thead>
+          <tbody>${rowsHtml}</tbody>
+        </table>
+      </div>
+    </section>
+  `;
+}
+
+function renderTenseLessonCard(lesson) {
   const markersHtml = lesson.timeMarkers.map((m) => `
     <li style="margin-bottom:4px;"><strong>${m.expression}</strong> — <span style="color:#666;">${m.translation}</span></li>
   `).join('');
@@ -640,16 +774,13 @@ function renderLessonCard(lesson) {
     </div>
   `).join('');
 
-  const formsHtml = ['affirmative', 'negative', 'interrogative'].map((formKey) => {
-    const form = lesson.forms[formKey];
-    if (!form) return '';
-    const formLabel = { affirmative: 'Forme affirmative', negative: 'Forme négative', interrogative: 'Forme interrogative' }[formKey];
+  const formsHtml = lesson.forms.map((form) => {
     const rows = form.rows.map((row) => `
       <tr>${row.map((cell) => `<td style="padding:4px 8px;border-bottom:1px solid #f0f0f0;">${cell}</td>`).join('')}</tr>
     `).join('');
     return `
       <div style="flex:1;min-width:180px;">
-        <p style="font-weight:600;font-size:13px;color:#2b7a78;text-align:center;margin-bottom:4px;">${formLabel}</p>
+        <p style="font-weight:600;font-size:13px;color:#2b7a78;text-align:center;margin-bottom:4px;">${form.label}</p>
         <p style="font-size:11px;color:#999;text-align:center;margin-bottom:6px;">${form.pattern}</p>
         <table style="width:100%;border-collapse:collapse;font-size:13px;">
           <tbody>${rows}</tbody>

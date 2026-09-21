@@ -5,32 +5,2065 @@
       "title": "Present Continuous (BE + -ING)",
       "subtitle": "Le présent progressif — parler d'une action en cours",
       "timeMarkers": [
-        { "expression": "now", "translation": "maintenant" },
-        { "expression": "right now", "translation": "tout de suite" },
-        { "expression": "at the moment", "translation": "en ce moment" },
-        { "expression": "currently", "translation": "actuellement" },
-        { "expression": "Look! / Listen!", "translation": "une phrase qui commence ainsi annonce presque toujours un BE + -ING" }
+        {
+          "expression": "now",
+          "translation": "maintenant"
+        },
+        {
+          "expression": "right now",
+          "translation": "tout de suite"
+        },
+        {
+          "expression": "at the moment",
+          "translation": "en ce moment"
+        },
+        {
+          "expression": "currently",
+          "translation": "actuellement"
+        },
+        {
+          "expression": "Look! / Listen!",
+          "translation": "annonce presque toujours un BE + -ING"
+        }
       ],
       "usages": [
-        { "title": "Une action en cours", "description": "Pour parler d'une action en train de se dérouler au moment précis où l'on parle.", "example": "Lucia is currently working." },
-        { "title": "Ce que l'on voit ou entend", "description": "Pour décrire une scène observée en direct, sous nos yeux.", "example": "You can see Peter, who is cooking dinner." },
-        { "title": "Un futur proche déjà prévu", "description": "Pour un projet ou un événement organisé, déjà planifié dans un futur proche.", "example": "My plane is taking off in two hours." }
-      ],
-      "forms": {
-        "affirmative": {
-          "pattern": "Sujet + BE + verbe-ING",
-          "rows": [["I", "am", "playing"], ["You", "are", "playing"], ["She / He / It", "is", "playing"], ["We", "are", "playing"], ["You", "are", "playing"], ["They", "are", "playing"]]
+        {
+          "title": "Une action en cours",
+          "description": "Une action en train de se dérouler au moment où l'on parle.",
+          "example": "Lucia is currently working."
         },
-        "negative": {
-          "pattern": "Sujet + BE + NOT + verbe-ING",
-          "rows": [["I", "am not", "playing"], ["You", "are not", "playing"], ["She / He / It", "is not", "playing"], ["We", "are not", "playing"], ["You", "are not", "playing"], ["They", "are not", "playing"]]
+        {
+          "title": "Ce que l'on voit ou entend",
+          "description": "Décrire une scène observée en direct.",
+          "example": "You can see Peter, who is cooking dinner."
         },
-        "interrogative": {
-          "pattern": "BE + Sujet + verbe-ING ?",
-          "rows": [["Am", "I", "playing?"], ["Are", "you", "playing?"], ["Is", "she / he / it", "playing?"], ["Are", "we", "playing?"], ["Are", "you", "playing?"], ["Are", "they", "playing?"]]
+        {
+          "title": "Un futur proche déjà prévu",
+          "description": "Un projet déjà planifié dans un futur proche.",
+          "example": "My plane is taking off in two hours."
         }
-      }
+      ],
+      "forms": [
+        {
+          "label": "Affirmative",
+          "pattern": "Sujet + BE + verbe-ING",
+          "rows": [
+            [
+              "I",
+              "am",
+              "playing"
+            ],
+            [
+              "You",
+              "are",
+              "playing"
+            ],
+            [
+              "She/He/It",
+              "is",
+              "playing"
+            ],
+            [
+              "We",
+              "are",
+              "playing"
+            ],
+            [
+              "You",
+              "are",
+              "playing"
+            ],
+            [
+              "They",
+              "are",
+              "playing"
+            ]
+          ]
+        },
+        {
+          "label": "Négative",
+          "pattern": "Sujet + BE + NOT + verbe-ING",
+          "rows": [
+            [
+              "I",
+              "am not",
+              "playing"
+            ],
+            [
+              "You",
+              "are not",
+              "playing"
+            ],
+            [
+              "She/He/It",
+              "is not",
+              "playing"
+            ],
+            [
+              "We",
+              "are not",
+              "playing"
+            ],
+            [
+              "You",
+              "are not",
+              "playing"
+            ],
+            [
+              "They",
+              "are not",
+              "playing"
+            ]
+          ]
+        },
+        {
+          "label": "Interrogative",
+          "pattern": "BE + Sujet + verbe-ING ?",
+          "rows": [
+            [
+              "Am",
+              "I",
+              "playing?"
+            ],
+            [
+              "Are",
+              "you",
+              "playing?"
+            ],
+            [
+              "Is",
+              "she/he/it",
+              "playing?"
+            ],
+            [
+              "Are",
+              "we",
+              "playing?"
+            ],
+            [
+              "Are",
+              "you",
+              "playing?"
+            ],
+            [
+              "Are",
+              "they",
+              "playing?"
+            ]
+          ]
+        }
+      ],
+      "level": "niveau1"
+    },
+    {
+      "id": "present-simple",
+      "title": "Present Simple",
+      "subtitle": "Le présent simple — habitudes, vérités générales, horaires",
+      "timeMarkers": [
+        {
+          "expression": "always / usually / often",
+          "translation": "toujours / d'habitude / souvent"
+        },
+        {
+          "expression": "sometimes / rarely / never",
+          "translation": "parfois / rarement / jamais"
+        },
+        {
+          "expression": "every day/week/year",
+          "translation": "chaque jour/semaine/année"
+        },
+        {
+          "expression": "on Mondays",
+          "translation": "le lundi (habitude récurrente)"
+        }
+      ],
+      "usages": [
+        {
+          "title": "Une habitude",
+          "description": "Une action répétée régulièrement.",
+          "example": "She drinks coffee every morning."
+        },
+        {
+          "title": "Une vérité générale",
+          "description": "Un fait toujours vrai.",
+          "example": "Water boils at 100°C."
+        },
+        {
+          "title": "Un horaire fixe",
+          "description": "Un programme prévu (train, film, cours...).",
+          "example": "The train leaves at 9am."
+        }
+      ],
+      "forms": [
+        {
+          "label": "Affirmative",
+          "pattern": "Sujet + verbe (+s à la 3e pers. sing.)",
+          "rows": [
+            [
+              "I",
+              "play",
+              ""
+            ],
+            [
+              "You",
+              "play",
+              ""
+            ],
+            [
+              "She/He/It",
+              "plays",
+              ""
+            ],
+            [
+              "We",
+              "play",
+              ""
+            ],
+            [
+              "You",
+              "play",
+              ""
+            ],
+            [
+              "They",
+              "play",
+              ""
+            ]
+          ]
+        },
+        {
+          "label": "Négative",
+          "pattern": "Sujet + DON'T/DOESN'T + base",
+          "rows": [
+            [
+              "I",
+              "don't",
+              "play"
+            ],
+            [
+              "You",
+              "don't",
+              "play"
+            ],
+            [
+              "She/He/It",
+              "doesn't",
+              "play"
+            ],
+            [
+              "We",
+              "don't",
+              "play"
+            ],
+            [
+              "You",
+              "don't",
+              "play"
+            ],
+            [
+              "They",
+              "don't",
+              "play"
+            ]
+          ]
+        },
+        {
+          "label": "Interrogative",
+          "pattern": "DO/DOES + Sujet + base ?",
+          "rows": [
+            [
+              "Do",
+              "I",
+              "play?"
+            ],
+            [
+              "Do",
+              "you",
+              "play?"
+            ],
+            [
+              "Does",
+              "she/he/it",
+              "play?"
+            ],
+            [
+              "Do",
+              "we",
+              "play?"
+            ],
+            [
+              "Do",
+              "you",
+              "play?"
+            ],
+            [
+              "Do",
+              "they",
+              "play?"
+            ]
+          ]
+        }
+      ],
+      "level": "niveau1"
+    },
+    {
+      "id": "past-simple",
+      "title": "Past Simple",
+      "subtitle": "Le prétérit — une action terminée à un moment précis du passé",
+      "timeMarkers": [
+        {
+          "expression": "yesterday",
+          "translation": "hier"
+        },
+        {
+          "expression": "last week/year",
+          "translation": "la semaine/l'année dernière"
+        },
+        {
+          "expression": "in 2020",
+          "translation": "en 2020 (date précise passée)"
+        },
+        {
+          "expression": "... ago",
+          "translation": "il y a ... (two days ago)"
+        },
+        {
+          "expression": "when I was young",
+          "translation": "quand j'étais jeune"
+        }
+      ],
+      "usages": [
+        {
+          "title": "Une action terminée",
+          "description": "Un événement complet, à un moment précis et révolu du passé.",
+          "example": "I visited Rome last summer."
+        },
+        {
+          "title": "Une suite d'événements passés",
+          "description": "Pour raconter une histoire.",
+          "example": "She woke up, got dressed and left."
+        }
+      ],
+      "forms": [
+        {
+          "label": "Affirmative",
+          "pattern": "Sujet + verbe-ED (ou forme irrégulière)",
+          "rows": [
+            [
+              "I",
+              "worked",
+              "(saw, went, did...)"
+            ],
+            [
+              "You",
+              "worked",
+              ""
+            ],
+            [
+              "She/He/It",
+              "worked",
+              ""
+            ],
+            [
+              "We",
+              "worked",
+              ""
+            ],
+            [
+              "You",
+              "worked",
+              ""
+            ],
+            [
+              "They",
+              "worked",
+              ""
+            ]
+          ]
+        },
+        {
+          "label": "Négative",
+          "pattern": "Sujet + DIDN'T + base (jamais de -ED avec didn't)",
+          "rows": [
+            [
+              "I",
+              "didn't",
+              "work"
+            ],
+            [
+              "You",
+              "didn't",
+              "work"
+            ],
+            [
+              "She/He/It",
+              "didn't",
+              "work"
+            ],
+            [
+              "We",
+              "didn't",
+              "work"
+            ],
+            [
+              "You",
+              "didn't",
+              "work"
+            ],
+            [
+              "They",
+              "didn't",
+              "work"
+            ]
+          ]
+        },
+        {
+          "label": "Interrogative",
+          "pattern": "DID + Sujet + base ?",
+          "rows": [
+            [
+              "Did",
+              "I",
+              "work?"
+            ],
+            [
+              "Did",
+              "you",
+              "work?"
+            ],
+            [
+              "Did",
+              "she/he/it",
+              "work?"
+            ],
+            [
+              "Did",
+              "we",
+              "work?"
+            ],
+            [
+              "Did",
+              "you",
+              "work?"
+            ],
+            [
+              "Did",
+              "they",
+              "work?"
+            ]
+          ]
+        }
+      ],
+      "level": "niveau2"
+    },
+    {
+      "id": "present-perfect",
+      "title": "Present Perfect",
+      "subtitle": "Le present perfect — un lien entre le passé et le présent",
+      "timeMarkers": [
+        {
+          "expression": "already / yet",
+          "translation": "déjà / pas encore"
+        },
+        {
+          "expression": "just",
+          "translation": "vient de"
+        },
+        {
+          "expression": "ever / never",
+          "translation": "déjà (question) / jamais"
+        },
+        {
+          "expression": "since / for",
+          "translation": "depuis (point précis) / depuis (durée)"
+        },
+        {
+          "expression": "so far",
+          "translation": "jusqu'à présent"
+        }
+      ],
+      "usages": [
+        {
+          "title": "Un résultat présent",
+          "description": "Une action passée dont le résultat compte maintenant.",
+          "example": "I have lost my keys."
+        },
+        {
+          "title": "Une expérience de vie",
+          "description": "Ce qu'on a déjà fait ou pas, sans date précise.",
+          "example": "Have you ever been to Japan?"
+        },
+        {
+          "title": "Une période non terminée",
+          "description": "Quelque chose qui dure jusqu'à maintenant.",
+          "example": "She has lived here since 2015."
+        }
+      ],
+      "forms": [
+        {
+          "label": "Affirmative",
+          "pattern": "Sujet + HAVE/HAS + participe passé",
+          "rows": [
+            [
+              "I",
+              "have",
+              "worked"
+            ],
+            [
+              "You",
+              "have",
+              "worked"
+            ],
+            [
+              "She/He/It",
+              "has",
+              "worked"
+            ],
+            [
+              "We",
+              "have",
+              "worked"
+            ],
+            [
+              "You",
+              "have",
+              "worked"
+            ],
+            [
+              "They",
+              "have",
+              "worked"
+            ]
+          ]
+        },
+        {
+          "label": "Négative",
+          "pattern": "Sujet + HAVEN'T/HASN'T + participe passé",
+          "rows": [
+            [
+              "I",
+              "haven't",
+              "worked"
+            ],
+            [
+              "You",
+              "haven't",
+              "worked"
+            ],
+            [
+              "She/He/It",
+              "hasn't",
+              "worked"
+            ],
+            [
+              "We",
+              "haven't",
+              "worked"
+            ],
+            [
+              "You",
+              "haven't",
+              "worked"
+            ],
+            [
+              "They",
+              "haven't",
+              "worked"
+            ]
+          ]
+        },
+        {
+          "label": "Interrogative",
+          "pattern": "HAVE/HAS + Sujet + participe passé ?",
+          "rows": [
+            [
+              "Have",
+              "I",
+              "worked?"
+            ],
+            [
+              "Have",
+              "you",
+              "worked?"
+            ],
+            [
+              "Has",
+              "she/he/it",
+              "worked?"
+            ],
+            [
+              "Have",
+              "we",
+              "worked?"
+            ],
+            [
+              "Have",
+              "you",
+              "worked?"
+            ],
+            [
+              "Have",
+              "they",
+              "worked?"
+            ]
+          ]
+        }
+      ],
+      "level": "niveau3"
+    },
+    {
+      "id": "future",
+      "title": "Future : WILL vs GOING TO",
+      "subtitle": "Deux futurs, deux nuances différentes",
+      "timeMarkers": [
+        {
+          "expression": "tomorrow",
+          "translation": "demain"
+        },
+        {
+          "expression": "next week/year",
+          "translation": "la semaine/l'année prochaine"
+        },
+        {
+          "expression": "soon",
+          "translation": "bientôt"
+        },
+        {
+          "expression": "in the future",
+          "translation": "à l'avenir"
+        }
+      ],
+      "usages": [
+        {
+          "title": "WILL — décision spontanée",
+          "description": "Décidée au moment où l'on parle.",
+          "example": "The phone is ringing — I'll get it!"
+        },
+        {
+          "title": "WILL — prédiction sans preuve",
+          "description": "Une opinion générale, sans indice visible.",
+          "example": "I think it will rain next week."
+        },
+        {
+          "title": "GOING TO — intention planifiée",
+          "description": "Une décision déjà prise avant.",
+          "example": "I'm going to visit my parents this weekend."
+        },
+        {
+          "title": "GOING TO — prédiction avec preuve",
+          "description": "Basée sur un indice visible maintenant.",
+          "example": "Look at those clouds — it's going to rain!"
+        }
+      ],
+      "forms": [
+        {
+          "label": "WILL",
+          "pattern": "Sujet + WILL + base",
+          "rows": [
+            [
+              "I",
+              "will",
+              "go"
+            ],
+            [
+              "You",
+              "will",
+              "go"
+            ],
+            [
+              "She/He/It",
+              "will",
+              "go"
+            ],
+            [
+              "We",
+              "will",
+              "go"
+            ],
+            [
+              "You",
+              "will",
+              "go"
+            ],
+            [
+              "They",
+              "will",
+              "go"
+            ]
+          ]
+        },
+        {
+          "label": "GOING TO",
+          "pattern": "Sujet + BE + going to + base",
+          "rows": [
+            [
+              "I",
+              "am going to",
+              "go"
+            ],
+            [
+              "You",
+              "are going to",
+              "go"
+            ],
+            [
+              "She/He/It",
+              "is going to",
+              "go"
+            ],
+            [
+              "We",
+              "are going to",
+              "go"
+            ],
+            [
+              "You",
+              "are going to",
+              "go"
+            ],
+            [
+              "They",
+              "are going to",
+              "go"
+            ]
+          ]
+        }
+      ],
+      "level": "niveau2"
+    },
+    {
+      "id": "modals",
+      "title": "Verbes modaux : can, must, have to, should, may/might",
+      "subtitle": "Capacité, obligation, conseil, possibilité",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "CAN",
+          "rule": "Capacité ou permission informelle.",
+          "examples": [
+            "I can swim.",
+            "Can I leave early?"
+          ]
+        },
+        {
+          "title": "MUST",
+          "rule": "Obligation forte, souvent perçue comme non négociable.",
+          "examples": [
+            "You must wear a seatbelt.",
+            "I must finish this today."
+          ]
+        },
+        {
+          "title": "HAVE TO",
+          "rule": "Obligation externe, imposée par une règle extérieure — nuance avec 'must'.",
+          "examples": [
+            "I have to work tomorrow.",
+            "She has to see a doctor."
+          ]
+        },
+        {
+          "title": "SHOULD",
+          "rule": "Conseil ou recommandation, pas une obligation.",
+          "examples": [
+            "You should see a doctor.",
+            "We should leave now."
+          ]
+        },
+        {
+          "title": "MAY / MIGHT",
+          "rule": "Possibilité incertaine, ou permission formelle pour 'may'.",
+          "examples": [
+            "It may rain later.",
+            "May I come in?"
+          ]
+        }
+      ],
+      "level": "niveau2"
+    },
+    {
+      "id": "articles",
+      "title": "Articles : A / AN / THE / (pas d'article)",
+      "subtitle": "Quand utiliser chaque article — et quand n'en utiliser aucun",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "A",
+          "rule": "Devant un son consonne, singulier, non spécifique.",
+          "examples": [
+            "I saw a car.",
+            "She has a dog."
+          ]
+        },
+        {
+          "title": "AN",
+          "rule": "Devant un son voyelle — c'est le SON qui compte, pas la lettre.",
+          "examples": [
+            "I ate an apple.",
+            "It's an hour."
+          ]
+        },
+        {
+          "title": "THE",
+          "rule": "Référent précis, connu des deux interlocuteurs, ou unique.",
+          "examples": [
+            "The sun is bright today.",
+            "The car I bought yesterday broke down."
+          ]
+        },
+        {
+          "title": "(pas d'article)",
+          "rule": "Généralité, ou nom indénombrable au sens général.",
+          "examples": [
+            "I like music.",
+            "Dogs are loyal animals."
+          ]
+        }
+      ],
+      "level": "niveau1"
+    },
+    {
+      "id": "passive-voice",
+      "title": "La voix passive",
+      "subtitle": "Quand l'action compte plus que celui qui la fait",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "Auteur inconnu ou évident",
+          "rule": "On ne sait pas qui a fait l'action, ou ça n'a pas d'importance.",
+          "examples": [
+            "My phone was stolen last night."
+          ]
+        },
+        {
+          "title": "Le résultat compte plus que l'auteur",
+          "rule": "On s'intéresse à ce qui est arrivé à l'objet.",
+          "examples": [
+            "The bridge was built in 1930."
+          ]
+        },
+        {
+          "title": "Formation",
+          "rule": "Sujet + BE + participe passé (+ by + agent, optionnel).",
+          "examples": [
+            "The cake is eaten (by the children).",
+            "The window was broken (by the storm)."
+          ]
+        }
+      ],
+      "level": "niveau3"
+    },
+    {
+      "id": "plurals",
+      "title": "Les pluriels : réguliers et irréguliers",
+      "subtitle": "La règle -s ne suffit pas toujours",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "Régulier : +S",
+          "rule": "La grande majorité des noms.",
+          "examples": [
+            "cat → cats",
+            "book → books"
+          ]
+        },
+        {
+          "title": "+ES après -s/-x/-ch/-sh",
+          "rule": "Pour faciliter la prononciation.",
+          "examples": [
+            "box → boxes",
+            "watch → watches"
+          ]
+        },
+        {
+          "title": "Consonne + Y → -IES",
+          "rule": "Le y devient ie devant le s.",
+          "examples": [
+            "city → cities",
+            "baby → babies"
+          ]
+        },
+        {
+          "title": "-F/-FE → -VES",
+          "rule": "Le son f devient v au pluriel.",
+          "examples": [
+            "leaf → leaves",
+            "knife → knives"
+          ]
+        },
+        {
+          "title": "Pluriels irréguliers",
+          "rule": "Aucune règle, à mémoriser un par un.",
+          "examples": [
+            "child → children",
+            "man → men",
+            "tooth → teeth"
+          ]
+        },
+        {
+          "title": "Invariables",
+          "rule": "Même forme au singulier et au pluriel.",
+          "examples": [
+            "sheep → sheep",
+            "fish → fish"
+          ]
+        }
+      ],
+      "level": "niveau1"
+    },
+    {
+      "id": "possessives",
+      "title": "Les possessifs : 's, adjectifs et pronoms",
+      "subtitle": "Trois façons différentes d'exprimer la possession",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "'S (apostrophe-s)",
+          "rule": "Pour un possesseur singulier, personne ou être vivant.",
+          "examples": [
+            "Sarah's book",
+            "the dog's tail"
+          ]
+        },
+        {
+          "title": "S' (s-apostrophe)",
+          "rule": "Pour un possesseur pluriel qui finit déjà par -s.",
+          "examples": [
+            "the students' books"
+          ]
+        },
+        {
+          "title": "OF",
+          "rule": "Souvent préféré pour les objets inanimés.",
+          "examples": [
+            "the roof of the house"
+          ]
+        },
+        {
+          "title": "Adjectifs possessifs",
+          "rule": "my/your/his/her/its/our/their + nom, toujours suivis d'un nom.",
+          "examples": [
+            "This is my book.",
+            "Is this your car?"
+          ]
+        },
+        {
+          "title": "Pronoms possessifs",
+          "rule": "mine/yours/his/hers/its/ours/theirs, utilisés SANS nom après.",
+          "examples": [
+            "This book is mine.",
+            "Is this car yours?"
+          ]
+        }
+      ],
+      "level": "niveau1"
     }
   ],
-  "es": [], "it": [], "ja": [], "zh": []
+  "es": [
+    {
+      "id": "presente",
+      "title": "El presente de indicativo",
+      "subtitle": "Habitudes, vérités générales, actions en cours",
+      "timeMarkers": [
+        {
+          "expression": "siempre / normalmente / a menudo",
+          "translation": "toujours / normalement / souvent"
+        },
+        {
+          "expression": "a veces / nunca",
+          "translation": "parfois / jamais"
+        },
+        {
+          "expression": "todos los días",
+          "translation": "tous les jours"
+        },
+        {
+          "expression": "ahora / en este momento",
+          "translation": "maintenant / en ce moment"
+        }
+      ],
+      "usages": [
+        {
+          "title": "Una costumbre",
+          "description": "Une action répétée régulièrement.",
+          "example": "Ella bebe café cada mañana."
+        },
+        {
+          "title": "Una verdad general",
+          "description": "Un fait toujours vrai.",
+          "example": "El agua hierve a 100°C."
+        },
+        {
+          "title": "Una acción en curso",
+          "description": "L'espagnol utilise aussi le présent simple pour le moment actuel.",
+          "example": "¿Qué haces? — Trabajo."
+        }
+      ],
+      "forms": [
+        {
+          "label": "-AR (hablar)",
+          "pattern": "Radical + terminación",
+          "rows": [
+            [
+              "yo",
+              "hablo",
+              ""
+            ],
+            [
+              "tú",
+              "hablas",
+              ""
+            ],
+            [
+              "él/ella/usted",
+              "habla",
+              ""
+            ],
+            [
+              "nosotros",
+              "hablamos",
+              ""
+            ],
+            [
+              "vosotros",
+              "habláis",
+              ""
+            ],
+            [
+              "ellos/ellas",
+              "hablan",
+              ""
+            ]
+          ]
+        },
+        {
+          "label": "-ER (comer)",
+          "pattern": "Radical + terminación",
+          "rows": [
+            [
+              "yo",
+              "como",
+              ""
+            ],
+            [
+              "tú",
+              "comes",
+              ""
+            ],
+            [
+              "él/ella/usted",
+              "come",
+              ""
+            ],
+            [
+              "nosotros",
+              "comemos",
+              ""
+            ],
+            [
+              "vosotros",
+              "coméis",
+              ""
+            ],
+            [
+              "ellos/ellas",
+              "comen",
+              ""
+            ]
+          ]
+        },
+        {
+          "label": "-IR (vivir)",
+          "pattern": "Radical + terminación",
+          "rows": [
+            [
+              "yo",
+              "vivo",
+              ""
+            ],
+            [
+              "tú",
+              "vives",
+              ""
+            ],
+            [
+              "él/ella/usted",
+              "vive",
+              ""
+            ],
+            [
+              "nosotros",
+              "vivimos",
+              ""
+            ],
+            [
+              "vosotros",
+              "vivís",
+              ""
+            ],
+            [
+              "ellos/ellas",
+              "viven",
+              ""
+            ]
+          ]
+        }
+      ],
+      "level": "niveau1"
+    },
+    {
+      "id": "preterito-indefinido",
+      "title": "El pretérito indefinido",
+      "subtitle": "Une action terminée, ponctuelle, dans le passé",
+      "timeMarkers": [
+        {
+          "expression": "ayer",
+          "translation": "hier"
+        },
+        {
+          "expression": "la semana pasada",
+          "translation": "la semaine dernière"
+        },
+        {
+          "expression": "en 2020",
+          "translation": "en 2020"
+        },
+        {
+          "expression": "hace dos días",
+          "translation": "il y a deux jours"
+        }
+      ],
+      "usages": [
+        {
+          "title": "Una acción terminada",
+          "description": "Un événement complet et ponctuel.",
+          "example": "Visité Roma el año pasado."
+        },
+        {
+          "title": "Una serie de eventos pasados",
+          "description": "Pour raconter une histoire.",
+          "example": "Se despertó, se vistió y salió."
+        }
+      ],
+      "forms": [
+        {
+          "label": "-AR (hablar)",
+          "pattern": "Radical + terminación",
+          "rows": [
+            [
+              "yo",
+              "hablé",
+              ""
+            ],
+            [
+              "tú",
+              "hablaste",
+              ""
+            ],
+            [
+              "él/ella/usted",
+              "habló",
+              ""
+            ],
+            [
+              "nosotros",
+              "hablamos",
+              ""
+            ],
+            [
+              "vosotros",
+              "hablasteis",
+              ""
+            ],
+            [
+              "ellos/ellas",
+              "hablaron",
+              ""
+            ]
+          ]
+        },
+        {
+          "label": "-ER/-IR (comer)",
+          "pattern": "Radical + terminación",
+          "rows": [
+            [
+              "yo",
+              "comí",
+              ""
+            ],
+            [
+              "tú",
+              "comiste",
+              ""
+            ],
+            [
+              "él/ella/usted",
+              "comió",
+              ""
+            ],
+            [
+              "nosotros",
+              "comimos",
+              ""
+            ],
+            [
+              "vosotros",
+              "comisteis",
+              ""
+            ],
+            [
+              "ellos/ellas",
+              "comieron",
+              ""
+            ]
+          ]
+        }
+      ],
+      "level": "niveau2"
+    },
+    {
+      "id": "futuro",
+      "title": "El futuro : IR A + infinitivo vs futuro simple",
+      "subtitle": "Deux façons d'exprimer le futur, comme will/going to en anglais",
+      "timeMarkers": [
+        {
+          "expression": "mañana",
+          "translation": "demain"
+        },
+        {
+          "expression": "la semana que viene",
+          "translation": "la semaine prochaine"
+        },
+        {
+          "expression": "pronto",
+          "translation": "bientôt"
+        }
+      ],
+      "usages": [
+        {
+          "title": "IR A — intention proche",
+          "description": "Très utilisé à l'oral, comme 'going to'.",
+          "example": "Voy a visitar a mis padres este fin de semana."
+        },
+        {
+          "title": "Futuro simple — prédiction",
+          "description": "Plus formel, futur plus lointain.",
+          "example": "Lloverá la próxima semana."
+        }
+      ],
+      "forms": [
+        {
+          "label": "IR A + infinitivo",
+          "pattern": "Sujeto + IR + a + infinitif",
+          "rows": [
+            [
+              "yo",
+              "voy a",
+              "hablar"
+            ],
+            [
+              "tú",
+              "vas a",
+              "hablar"
+            ],
+            [
+              "él/ella",
+              "va a",
+              "hablar"
+            ],
+            [
+              "nosotros",
+              "vamos a",
+              "hablar"
+            ],
+            [
+              "vosotros",
+              "vais a",
+              "hablar"
+            ],
+            [
+              "ellos",
+              "van a",
+              "hablar"
+            ]
+          ]
+        },
+        {
+          "label": "Futuro simple",
+          "pattern": "Infinitif + terminaison",
+          "rows": [
+            [
+              "yo",
+              "hablaré",
+              ""
+            ],
+            [
+              "tú",
+              "hablarás",
+              ""
+            ],
+            [
+              "él/ella",
+              "hablará",
+              ""
+            ],
+            [
+              "nosotros",
+              "hablaremos",
+              ""
+            ],
+            [
+              "vosotros",
+              "hablaréis",
+              ""
+            ],
+            [
+              "ellos",
+              "hablarán",
+              ""
+            ]
+          ]
+        }
+      ],
+      "level": "niveau2"
+    },
+    {
+      "id": "articulos",
+      "title": "Los artículos : EL / LA / LOS / LAS / UN / UNA",
+      "subtitle": "Genre et nombre déterminent toujours l'article",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "EL / LOS (masculin déf.)",
+          "rule": "Article défini masculin, singulier et pluriel.",
+          "examples": [
+            "el libro",
+            "los libros"
+          ]
+        },
+        {
+          "title": "LA / LAS (féminin déf.)",
+          "rule": "Article défini féminin, singulier et pluriel.",
+          "examples": [
+            "la casa",
+            "las casas"
+          ]
+        },
+        {
+          "title": "UN / UNA (indéfini)",
+          "rule": "Article indéfini, accord en genre.",
+          "examples": [
+            "un coche",
+            "una mesa"
+          ]
+        },
+        {
+          "title": "Piège : EL devant A tonique",
+          "rule": "Devant un nom féminin en 'a' accentué, on utilise EL au singulier.",
+          "examples": [
+            "el agua (pas 'la agua')",
+            "el águila"
+          ]
+        }
+      ],
+      "level": "niveau1"
+    },
+    {
+      "id": "posesivos",
+      "title": "Los posesivos : mi/tu/su... y mío/tuyo/suyo...",
+      "subtitle": "Adjectifs possessifs (avant le nom) vs pronoms possessifs (après/seuls)",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "Adjectifs possessifs courts",
+          "rule": "mi/tu/su/nuestro/vuestro/su + nom, toujours avant le nom.",
+          "examples": [
+            "mi casa",
+            "su coche"
+          ]
+        },
+        {
+          "title": "Pronoms possessifs (forme longue)",
+          "rule": "mío/tuyo/suyo..., utilisés seuls ou après le nom, avec article.",
+          "examples": [
+            "Este libro es mío.",
+            "la casa mía"
+          ]
+        },
+        {
+          "title": "Piège : SU est ambigu",
+          "rule": "'Su' peut vouloir dire son/sa/leur — seul le contexte lève l'ambiguïté.",
+          "examples": [
+            "su casa (= his/her/their house)"
+          ]
+        }
+      ],
+      "level": "niveau1"
+    },
+    {
+      "id": "plurales",
+      "title": "Los plurales : reglas y casos particulares",
+      "subtitle": "La terminaison détermine la règle à appliquer",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "Voyelle non accentuée → +S",
+          "rule": "La majorité des noms.",
+          "examples": [
+            "casa → casas",
+            "coche → coches"
+          ]
+        },
+        {
+          "title": "Consonne ou voyelle accentuée → +ES",
+          "rule": "Pour faciliter la prononciation.",
+          "examples": [
+            "ciudad → ciudades",
+            "autobús → autobuses"
+          ]
+        },
+        {
+          "title": "-Z → -CES",
+          "rule": "Le z devient c devant es.",
+          "examples": [
+            "luz → luces",
+            "pez → peces"
+          ]
+        }
+      ],
+      "level": "niveau1"
+    },
+    {
+      "id": "modales",
+      "title": "Verbos modales : poder, deber, tener que, hay que",
+      "subtitle": "Exprimer capacité, obligation ou nécessité",
+      "sections": [
+        {
+          "title": "PODER",
+          "rule": "Capacité ou possibilité — 'pouvoir' au sens général.",
+          "examples": [
+            "Puedo nadar muy bien.",
+            "¿Puedes ayudarme?"
+          ]
+        },
+        {
+          "title": "DEBER",
+          "rule": "Obligation morale, ou déduction logique selon le contexte.",
+          "examples": [
+            "Debes estudiar más.",
+            "Debe de estar en casa a esta hora."
+          ]
+        },
+        {
+          "title": "TENER QUE",
+          "rule": "Obligation externe, imposée par une règle ou une nécessité concrète — plus fort et plus courant à l'oral que 'deber'.",
+          "examples": [
+            "Tengo que trabajar mañana.",
+            "Tenemos que salir temprano."
+          ]
+        },
+        {
+          "title": "HAY QUE",
+          "rule": "Obligation impersonnelle, sans sujet précis — équivalent de 'il faut'.",
+          "examples": [
+            "Hay que estudiar para aprobar.",
+            "Hay que llegar a tiempo."
+          ]
+        }
+      ],
+      "level": "niveau2"
+    },
+    {
+      "id": "voz-pasiva",
+      "title": "La voz pasiva : ser + participio",
+      "subtitle": "Quand l'action compte plus que celui qui la fait",
+      "sections": [
+        {
+          "title": "SER + PARTICIPIO",
+          "rule": "Construction classique : ser conjugué + participe passé accordé en genre/nombre avec le sujet. Utilisée surtout à l'écrit, plus rare à l'oral.",
+          "examples": [
+            "La casa fue construida en 1990.",
+            "El libro fue escrito por un autor famoso."
+          ]
+        },
+        {
+          "title": "SE PASIVA (voix passive réfléchie)",
+          "rule": "Bien plus courante à l'oral : 'se' + verbe à la 3e personne, sans mentionner qui fait l'action.",
+          "examples": [
+            "Se habla español aquí.",
+            "Se venden pisos en esta zona."
+          ]
+        },
+        {
+          "title": "Quand l'éviter",
+          "rule": "L'espagnol préfère souvent la voix active ou 'se pasiva' à la construction avec 'ser' — cette dernière peut sonner trop formelle/littéraire à l'oral courant.",
+          "examples": [
+            "Construyeron la casa en 1990. (plus naturel que la version passive)"
+          ]
+        }
+      ],
+      "level": "niveau3"
+    }
+  ],
+  "it": [
+    {
+      "id": "presente",
+      "title": "Il presente indicativo",
+      "subtitle": "Abitudini, verità generali, azioni in corso",
+      "timeMarkers": [
+        {
+          "expression": "sempre / di solito / spesso",
+          "translation": "toujours / d'habitude / souvent"
+        },
+        {
+          "expression": "a volte / mai",
+          "translation": "parfois / jamais"
+        },
+        {
+          "expression": "ogni giorno",
+          "translation": "chaque jour"
+        },
+        {
+          "expression": "adesso / in questo momento",
+          "translation": "maintenant / en ce moment"
+        }
+      ],
+      "usages": [
+        {
+          "title": "Un'abitudine",
+          "description": "Une action répétée régulièrement.",
+          "example": "Lei beve caffè ogni mattina."
+        },
+        {
+          "title": "Una verità generale",
+          "description": "Un fait toujours vrai.",
+          "example": "L'acqua bolle a 100°C."
+        },
+        {
+          "title": "Un'azione in corso",
+          "description": "L'italien utilise aussi le présent simple pour le moment actuel.",
+          "example": "Cosa fai? — Lavoro."
+        }
+      ],
+      "forms": [
+        {
+          "label": "-ARE (parlare)",
+          "pattern": "Radice + terminazione",
+          "rows": [
+            [
+              "io",
+              "parlo",
+              ""
+            ],
+            [
+              "tu",
+              "parli",
+              ""
+            ],
+            [
+              "lui/lei",
+              "parla",
+              ""
+            ],
+            [
+              "noi",
+              "parliamo",
+              ""
+            ],
+            [
+              "voi",
+              "parlate",
+              ""
+            ],
+            [
+              "loro",
+              "parlano",
+              ""
+            ]
+          ]
+        },
+        {
+          "label": "-ERE (credere)",
+          "pattern": "Radice + terminazione",
+          "rows": [
+            [
+              "io",
+              "credo",
+              ""
+            ],
+            [
+              "tu",
+              "credi",
+              ""
+            ],
+            [
+              "lui/lei",
+              "crede",
+              ""
+            ],
+            [
+              "noi",
+              "crediamo",
+              ""
+            ],
+            [
+              "voi",
+              "credete",
+              ""
+            ],
+            [
+              "loro",
+              "credono",
+              ""
+            ]
+          ]
+        },
+        {
+          "label": "-IRE (dormire)",
+          "pattern": "Radice + terminazione",
+          "rows": [
+            [
+              "io",
+              "dormo",
+              ""
+            ],
+            [
+              "tu",
+              "dormi",
+              ""
+            ],
+            [
+              "lui/lei",
+              "dorme",
+              ""
+            ],
+            [
+              "noi",
+              "dormiamo",
+              ""
+            ],
+            [
+              "voi",
+              "dormite",
+              ""
+            ],
+            [
+              "loro",
+              "dormono",
+              ""
+            ]
+          ]
+        }
+      ],
+      "level": "niveau1"
+    },
+    {
+      "id": "passato-prossimo",
+      "title": "Il passato prossimo",
+      "subtitle": "Une action terminée, avec un lien récent avec le présent",
+      "timeMarkers": [
+        {
+          "expression": "ieri",
+          "translation": "hier"
+        },
+        {
+          "expression": "la settimana scorsa",
+          "translation": "la semaine dernière"
+        },
+        {
+          "expression": "già / non ancora",
+          "translation": "déjà / pas encore"
+        },
+        {
+          "expression": "due giorni fa",
+          "translation": "il y a deux jours"
+        }
+      ],
+      "usages": [
+        {
+          "title": "Un'azione terminata",
+          "description": "Un événement complet, souvent avec un lien avec le présent.",
+          "example": "Ho visitato Roma l'anno scorso."
+        },
+        {
+          "title": "Ausiliare AVERE o ESSERE",
+          "description": "La plupart des verbes utilisent 'avere', les verbes de mouvement/état utilisent 'essere'.",
+          "example": "Ho mangiato. / Sono andato/a."
+        }
+      ],
+      "forms": [
+        {
+          "label": "Avec AVERE (mangiare)",
+          "pattern": "AVERE + participio passato",
+          "rows": [
+            [
+              "io",
+              "ho",
+              "mangiato"
+            ],
+            [
+              "tu",
+              "hai",
+              "mangiato"
+            ],
+            [
+              "lui/lei",
+              "ha",
+              "mangiato"
+            ],
+            [
+              "noi",
+              "abbiamo",
+              "mangiato"
+            ],
+            [
+              "voi",
+              "avete",
+              "mangiato"
+            ],
+            [
+              "loro",
+              "hanno",
+              "mangiato"
+            ]
+          ]
+        },
+        {
+          "label": "Avec ESSERE (andare)",
+          "pattern": "ESSERE + participio (accord)",
+          "rows": [
+            [
+              "io",
+              "sono",
+              "andato/a"
+            ],
+            [
+              "tu",
+              "sei",
+              "andato/a"
+            ],
+            [
+              "lui/lei",
+              "è",
+              "andato/a"
+            ],
+            [
+              "noi",
+              "siamo",
+              "andati/e"
+            ],
+            [
+              "voi",
+              "siete",
+              "andati/e"
+            ],
+            [
+              "loro",
+              "sono",
+              "andati/e"
+            ]
+          ]
+        }
+      ],
+      "level": "niveau2"
+    },
+    {
+      "id": "futuro",
+      "title": "Il futuro semplice",
+      "subtitle": "Prédictions, promesses, projets",
+      "timeMarkers": [
+        {
+          "expression": "domani",
+          "translation": "demain"
+        },
+        {
+          "expression": "la settimana prossima",
+          "translation": "la semaine prochaine"
+        },
+        {
+          "expression": "presto",
+          "translation": "bientôt"
+        }
+      ],
+      "usages": [
+        {
+          "title": "Una previsione",
+          "description": "Ce qui va probablement se passer.",
+          "example": "Domani pioverà."
+        },
+        {
+          "title": "Una promessa o decisione",
+          "description": "Un engagement pris maintenant.",
+          "example": "Ti aiuterò domani."
+        },
+        {
+          "title": "Un'ipotesi sul presente",
+          "description": "Usage particulier : exprimer une supposition sur le présent.",
+          "example": "Che ore sono? Saranno le tre."
+        }
+      ],
+      "forms": [
+        {
+          "label": "-ARE/-ERE (parlare)",
+          "pattern": "Infinitif modifié + terminaison",
+          "rows": [
+            [
+              "io",
+              "parlerò",
+              ""
+            ],
+            [
+              "tu",
+              "parlerai",
+              ""
+            ],
+            [
+              "lui/lei",
+              "parlerà",
+              ""
+            ],
+            [
+              "noi",
+              "parleremo",
+              ""
+            ],
+            [
+              "voi",
+              "parlerete",
+              ""
+            ],
+            [
+              "loro",
+              "parleranno",
+              ""
+            ]
+          ]
+        },
+        {
+          "label": "-IRE (dormire)",
+          "pattern": "Infinitif + terminaison",
+          "rows": [
+            [
+              "io",
+              "dormirò",
+              ""
+            ],
+            [
+              "tu",
+              "dormirai",
+              ""
+            ],
+            [
+              "lui/lei",
+              "dormirà",
+              ""
+            ],
+            [
+              "noi",
+              "dormiremo",
+              ""
+            ],
+            [
+              "voi",
+              "dormirete",
+              ""
+            ],
+            [
+              "loro",
+              "dormiranno",
+              ""
+            ]
+          ]
+        }
+      ],
+      "level": "niveau2"
+    },
+    {
+      "id": "articoli",
+      "title": "Gli articoli : IL / LO / LA / I / GLI / LE",
+      "subtitle": "L'italien a plus de formes que le français",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "IL / I (masculin standard)",
+          "rule": "Devant une consonne standard.",
+          "examples": [
+            "il libro / i libri"
+          ]
+        },
+        {
+          "title": "LO / GLI (cas particulier)",
+          "rule": "Devant s+consonne, z, ps, gn, y.",
+          "examples": [
+            "lo studente / gli studenti",
+            "lo zaino"
+          ]
+        },
+        {
+          "title": "LA / LE (féminin)",
+          "rule": "Article défini féminin.",
+          "examples": [
+            "la casa / le case"
+          ]
+        },
+        {
+          "title": "UN / UNO / UNA (indéfini)",
+          "rule": "UNO devant les mêmes cas particuliers que LO.",
+          "examples": [
+            "un libro",
+            "uno studente",
+            "una casa"
+          ]
+        }
+      ],
+      "level": "niveau1"
+    },
+    {
+      "id": "possessivi",
+      "title": "I possessivi : il mio, la mia, il tuo...",
+      "subtitle": "Piège fréquent : l'article reste devant le possessif",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "Article + possessif + nom",
+          "rule": "Contrairement au français/anglais, l'italien garde l'article devant le possessif.",
+          "examples": [
+            "il mio libro (pas juste 'mio libro')",
+            "la mia casa"
+          ]
+        },
+        {
+          "title": "Exception : la famille au singulier",
+          "rule": "Pas d'article devant un possessif + nom de famille au singulier.",
+          "examples": [
+            "mia madre (pas 'la mia madre')",
+            "mio padre"
+          ]
+        },
+        {
+          "title": "Accord en genre et nombre",
+          "rule": "Le possessif s'accorde avec l'objet possédé, pas le possesseur.",
+          "examples": [
+            "il suo libro (à lui ou à elle)",
+            "la sua casa"
+          ]
+        }
+      ],
+      "level": "niveau1"
+    },
+    {
+      "id": "plurali",
+      "title": "I plurali : maschile e femminile",
+      "subtitle": "Les terminaisons changent selon le genre",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "Masculin -O → -I",
+          "rule": "La majorité des noms masculins.",
+          "examples": [
+            "libro → libri",
+            "gatto → gatti"
+          ]
+        },
+        {
+          "title": "Féminin -A → -E",
+          "rule": "La majorité des noms féminins.",
+          "examples": [
+            "casa → case",
+            "ragazza → ragazze"
+          ]
+        },
+        {
+          "title": "-E → -I (masc. ET fém.)",
+          "rule": "Les noms en -e suivent la même règle quel que soit le genre.",
+          "examples": [
+            "cane → cani",
+            "notte → notti"
+          ]
+        },
+        {
+          "title": "Invariables",
+          "rule": "Noms accentués sur la dernière voyelle, ou empruntés.",
+          "examples": [
+            "città → città",
+            "film → film"
+          ]
+        }
+      ],
+      "level": "niveau1"
+    },
+    {
+      "id": "modali",
+      "title": "Verbi modali : potere, dovere, sapere",
+      "subtitle": "Esprimere capacità, obbligo o competenza",
+      "sections": [
+        {
+          "title": "POTERE",
+          "rule": "Capacità generale o permesso — 'potere' fare qualcosa nel senso ampio.",
+          "examples": [
+            "Posso nuotare molto bene.",
+            "Puoi aiutarmi?"
+          ]
+        },
+        {
+          "title": "DOVERE",
+          "rule": "Obbligo morale o esterno, oppure deduzione logica secondo il contesto.",
+          "examples": [
+            "Devi studiare di più.",
+            "Deve essere a casa a quest'ora."
+          ]
+        },
+        {
+          "title": "SAPERE",
+          "rule": "Competenza acquisita, sapere fare qualcosa grazie a un apprendimento — diverso da 'potere', che è la capacità fisica o il permesso.",
+          "examples": [
+            "So nuotare.",
+            "Non so guidare la moto."
+          ]
+        },
+        {
+          "title": "Il piège potere vs sapere",
+          "rule": "'Posso nuotare' (physiquement possible maintenant, ex. piscine ouverte) est différent de 'So nuotare' (j'ai appris, je sais nager) — une nuance qui n'existe pas en français.",
+          "examples": [
+            "Non posso nuotare oggi, la piscina è chiusa.",
+            "Non so nuotare, non ho mai imparato."
+          ]
+        }
+      ],
+      "level": "niveau2"
+    },
+    {
+      "id": "passivo",
+      "title": "La forma passiva : essere + participio",
+      "subtitle": "Quando l'azione conta più di chi la compie",
+      "sections": [
+        {
+          "title": "ESSERE + PARTICIPIO",
+          "rule": "Costruzione classica : essere coniugato + participio passato, accordato in genere/numero con il soggetto.",
+          "examples": [
+            "La casa è stata costruita nel 1990.",
+            "Il libro è stato scritto da un autore famoso."
+          ]
+        },
+        {
+          "title": "VENIRE + PARTICIPIO",
+          "rule": "Alternativa a 'essere', usata soprattutto ai tempi semplici (presente, imperfetto) — impossibile ai tempi composti.",
+          "examples": [
+            "La porta viene chiusa ogni sera.",
+            "I documenti vengono controllati regolarmente."
+          ]
+        },
+        {
+          "title": "SI PASSIVANTE",
+          "rule": "Molto comune nel parlato : 'si' + verbo alla 3ª persona, senza menzionare chi compie l'azione.",
+          "examples": [
+            "Qui si parla italiano.",
+            "Si vendono appartamenti in questa zona."
+          ]
+        }
+      ],
+      "level": "niveau3"
+    }
+  ],
+  "ja": [],
+  "zh": []
 }

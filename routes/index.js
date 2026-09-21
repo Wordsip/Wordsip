@@ -477,6 +477,18 @@ router.get('/api/comparison/:language', async (req, res) => {
   }
 });
 
+// Tous les groupes de comparaison d'une langue (pas juste celui du jour) —
+// pour laisser l'utilisateur choisir lui-même lequel étudier.
+router.get('/api/comparisons/:language', async (req, res) => {
+  try {
+    const groups = await comparisonService.getGroupsForLanguage(req.params.language);
+    if (groups.length === 0) return res.status(404).json({ error: 'Aucun point de grammaire disponible pour cette langue.' });
+    res.json({ groups });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // Liste des verbes irréguliers pour une langue — le client construit lui-même
 // le quiz (mélange choix multiple / saisie libre) à partir de cette liste,
 // pour varier les questions à chaque session plutôt qu'une série figée.

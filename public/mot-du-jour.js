@@ -47,6 +47,72 @@ async function loadWord() {
   renderWord();
   renderProgress();
   renderAdjacentWords();
+  renderGrammarDayBanner();
+}
+
+// --- Jour spécial grammaire ---
+// Certains jours (environ 1 sur 5), plutôt que d'insister uniquement sur le
+// mot du jour, on propose de réviser une fiche de grammaire à la place.
+// Le tirage est déterministe (email + date du jour) : le même jour, la même
+// personne voit toujours le même résultat si elle recharge la page — ce
+// n'est "aléatoire" qu'au sens où ça change d'un jour à l'autre.
+function simpleHash(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash * 31 + str.charCodeAt(i)) >>> 0;
+  }
+  return hash;
+}
+
+async function renderGrammarDayBanner() {
+  const banner = document.getElementById('grammar-day-banner');
+  if (isGuest || !currentUser || !currentUser.email) {
+    banner.style.display = 'none';
+    return;
+  }
+
+  const todayKey = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  const isGrammarDay = simpleHash(`${currentUser.email}-${todayKey}`) % 5 === 0; // ~1 jour sur 5
+  if (!isGrammarDay) {
+    banner.style.display = 'none';
+    return;
+  }
+
+  let lessons = [];
+  try {
+    const res = await fetch(`/api/lessons/${currentUser.language}`);
+    if (!res.ok) throw new Error('none');
+    const data = await res.json();
+    lessons = data.lessons;
+  } catch (err) {
+    banner.style.display = 'none'; // pas de fiches pour cette langue, pas de bannière
+    return;
+  }
+
+  // Ne propose que les fiches jusqu'au niveau atteint par l'utilisateur (un
+  // niveau3 voit tout, un niveau1 ne voit que les fiches niveau1).
+  const userLevelIndex = LEVEL_ORDER.indexOf(currentUser.level);
+  const maxLevelIndex = userLevelIndex === -1 ? 0 : userLevelIndex;
+  const eligible = lessons.filter((l) => LEVEL_ORDER.indexOf(l.level) <= maxLevelIndex);
+  if (eligible.length === 0) {
+    banner.style.display = 'none';
+    return;
+  }
+
+  // Choix de 3 fiches (ou moins si pas assez disponibles), tirage déterministe
+  // aussi pour rester cohérent si la page est rechargée le même jour.
+  const shuffled = [...eligible].sort((a, b) => simpleHash(a.id + todayKey) - simpleHash(b.id + todayKey));
+  const choices = shuffled.slice(0, 3);
+
+  const choicesEl = document.getElementById('grammar-day-choices');
+  choicesEl.innerHTML = choices.map((l) => `
+    <a href="/grammaire?tab=lessons&lesson=${encodeURIComponent(l.id)}${window.location.search.replace('?', '&')}"
+       style="display:inline-block;padding:8px 14px;background:white;border:1px solid #2b7a78;border-radius:999px;color:#2b7a78;font-size:13px;font-weight:600;text-decoration:none;">
+      ${l.title}
+    </a>
+  `).join('');
+
+  banner.style.display = 'block';
 }
 
 function setupGuestBanner(lang) {
