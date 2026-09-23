@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WordSip — Fiches pédagogiques anglais (complet)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-900:#17252a; --teal-700:#2b7a78; --teal-500:#3aafa9;
+    --mint-100:#eaf6f5; --coral:#e8734f; --line:#dceeed;
+    --paper:#ffffff; --page-bg:#f3faf9; color-scheme: light;
+  }
+  :root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+    --page-bg:#0e1716; --paper:#152321; --line:#233f3c; --teal-900:#eaf6f5;
+  }}
+  :root[data-theme="dark"]{ --page-bg:#0e1716; --paper:#152321; --line:#233f3c; --teal-900:#eaf6f5; }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{ margin:0; background:var(--page-bg); color:var(--teal-900);
+    font-family:'Nunito Sans','Segoe UI',Arial,sans-serif;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+  h1,h2,h3,.chip,.brand{font-family:'Fredoka','Segoe UI',sans-serif;}
+  .toolbar{ position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between;
+    gap:12px; padding:10px 18px; padding-top:calc(10px + env(safe-area-inset-top,0px)); background:var(--teal-700); color:#fff; }
+  .toolbar .brand{font-weight:600; font-size:1rem;}
+  .toolbar button{ background:#fff; color:var(--teal-700); border:none; border-radius:999px;
+    padding:8px 18px; font-weight:700; font-size:.85rem; cursor:pointer; font-family:'Nunito Sans',sans-serif; }
+  .toolbar button:hover{background:var(--mint-100);}
+  .sheet{ max-width:900px; margin:28px auto; background:var(--paper); border-radius:18px;
+    box-shadow:0 10px 30px rgba(23,37,42,.08); padding:40px 44px; position:relative; overflow:hidden; }
+  .sheet + .sheet{margin-top:36px;}
+  .watermark{ position:absolute; inset:0; z-index:0; pointer-events:none; display:grid;
+    grid-template-columns:repeat(4,1fr); gap:38px; transform:rotate(-18deg) scale(1.3); opacity:.05; }
+  .watermark span{font-family:'Fredoka',sans-serif; font-weight:700; font-size:1.3rem; color:var(--teal-900); white-space:nowrap;}
+  .sheet > *:not(.watermark){position:relative; z-index:1;}
+  .eyebrow{font-size:.8rem; color:var(--teal-500); font-weight:700; margin-bottom:4px;}
+  .sheet h1{font-size:1.8rem; color:var(--teal-900); margin:0 0 2px; font-weight:700;}
+  .sheet .sub{color:var(--teal-500); font-size:.95rem; margin-bottom:26px; font-style:italic;}
+  .prep-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px 26px;}
+  .prep-card{border:1.5px solid var(--line); border-radius:16px; padding:14px 16px 16px; display:flex; align-items:center; gap:14px;}
+  .prep-card svg{flex:0 0 auto; width:84px; height:68px;}
+  .prep-word{font-family:'Fredoka',sans-serif; font-weight:600; color:var(--teal-700); font-size:1.05rem; margin-bottom:2px;}
+  .prep-ex{font-size:.88rem; color:var(--teal-900); line-height:1.4;}
+  .prep-ex .fr{display:block; color:#7c9a97; font-size:.8rem; margin-top:2px;}
+  .q-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px 30px;}
+  .q-block{padding-bottom:16px; border-bottom:1px dashed var(--line);}
+  .q-block::after{content:"";display:table;clear:both;}
+  .q-icon{float:left; width:52px; height:42px; margin:0 10px 8px 0;}
+  .q-grid .q-block:nth-last-child(-n+2){border-bottom:none;}
+  .chip{display:inline-block; background:var(--coral); color:#fff; font-weight:600; font-size:.8rem; padding:5px 14px; border-radius:8px; margin-bottom:10px;}
+  .q-sentence{font-size:.96rem; margin-bottom:12px; line-height:1.5;}
+  .blank{display:inline-block; min-width:70px; border-bottom:2px solid var(--teal-500); height:1.1em; vertical-align:-4px; margin:0 3px;}
+  .opt-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .opt{display:flex; align-items:center; gap:10px; border:1.5px solid var(--line); border-radius:10px; padding:8px 12px; font-size:.9rem; cursor:pointer; user-select:none; transition:background .15s,border-color .15s;}
+  .opt:hover{border-color:var(--teal-500);}
+  .opt .num{width:20px; height:20px; border-radius:50%; border:1.5px solid var(--teal-500); color:var(--teal-700);
+    font-size:.72rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 auto;}
+  .opt.correct{background:#e6f7ec; border-color:#2f9e5c; color:#1f7a44; font-weight:700;}
+  .opt.correct .num{border-color:#2f9e5c; color:#1f7a44;}
+  .opt.incorrect{background:#fdecea; border-color:#d9503c; color:#b83f2e; font-weight:700;}
+  .opt.incorrect .num{border-color:#d9503c; color:#b83f2e;}
+  .q-block.answered .opt{cursor:default; pointer-events:none;}
+  .feedback{display:none; margin-top:10px; padding:8px 12px; border-radius:8px; font-size:.85rem; line-height:1.4;}
+  .feedback.fb-correct{display:block; background:#e6f7ec; color:#1f7a44;}
+  .feedback.fb-incorrect{display:block; background:#fdecea; color:#b83f2e;}
+  .corrige{display:none; max-width:900px; margin:20px auto 60px; padding:0 44px; font-size:.88rem; color:var(--teal-700);}
+  .corrige h3{font-size:1rem; margin-bottom:10px; color:var(--teal-900);}
+  .corrige ol{margin:0; padding-left:18px; columns:2; column-gap:36px;}
+  .corrige li{margin-bottom:8px; line-height:1.35;}
+  .corrige li b{color:var(--teal-900);}
+  .corrige li .why{display:block; color:#7c9a97; font-size:.82rem;}
+  .note{max-width:900px; margin:0 auto 30px; padding:0 44px; font-size:.85rem; color:#7c9a97;}
+  @media (max-width:640px){ .prep-grid,.q-grid{grid-template-columns:1fr;} .sheet{padding:28px 20px; margin:16px 12px;} .corrige,.note{padding:0 20px;} .corrige ol{columns:1;} }
+  @media print{
+    .toolbar,.note,.feedback{display:none !important;} body{background:#fff;}
+    .sheet{box-shadow:none; border-radius:0; margin:0; padding:26px 30px; page-break-after:always;}
+    .corrige{display:block; page-break-before:always; padding:26px 30px 40px;}
+    .opt.correct,.opt.incorrect{background:none; border-color:var(--line); color:inherit; font-weight:400;}
+    .watermark{opacity:.06;} @page{size:A4; margin:14mm;}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <span class="brand">WordSip · Fiches pédagogiques</span>
+  <button onclick="window.print()">Imprimer / PDF</button>
+</div>
+
+
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Fiche pédagogique — anglais</div>
+  <h1>Prepositions of place</h1>
+  <div class="sub">Where is it? Let's learn!</div>
+  <div class="prep-grid">
+
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="18" y="30" width="64" height="42" rx="4" fill="none" stroke="#2b7a78" stroke-width="3"/><line x1="18" y1="30" x2="82" y2="30" stroke="#2b7a78" stroke-width="3"/><circle cx="50" cy="50" r="13" fill="#3aafa9"/><circle cx="45" cy="47" r="2" fill="#17252a"/><circle cx="55" cy="47" r="2" fill="#17252a"/><path d="M45 55 Q50 59 55 55" stroke="#17252a" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <div><div class="prep-word">in</div><div class="prep-ex">The ball is <b>in</b> the box.<span class="fr">dans</span></div></div></div>
+
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="18" y="46" width="64" height="26" rx="4" fill="none" stroke="#2b7a78" stroke-width="3"/><line x1="18" y1="46" x2="82" y2="46" stroke="#2b7a78" stroke-width="3"/><circle cx="50" cy="32" r="13" fill="#3aafa9"/><circle cx="45" cy="29" r="2" fill="#17252a"/><circle cx="55" cy="29" r="2" fill="#17252a"/><path d="M45 37 Q50 41 55 37" stroke="#17252a" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <div><div class="prep-word">on</div><div class="prep-ex">The ball is <b>on</b> the box.<span class="fr">sur</span></div></div></div>
+
+    <div class="prep-card"><svg viewBox="0 0 100 80"><circle cx="50" cy="60" r="13" fill="#3aafa9"/><circle cx="45" cy="57" r="2" fill="#17252a"/><circle cx="55" cy="57" r="2" fill="#17252a"/><path d="M45 65 Q50 69 55 65" stroke="#17252a" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="18" y="14" width="64" height="26" rx="4" fill="none" stroke="#2b7a78" stroke-width="3"/><line x1="18" y1="14" x2="82" y2="14" stroke="#2b7a78" stroke-width="3"/></svg>
+      <div><div class="prep-word">under</div><div class="prep-ex">The ball is <b>under</b> the box.<span class="fr">sous (juste en dessous)</span></div></div></div>
+
+    <div class="prep-card"><svg viewBox="0 0 100 80"><circle cx="25" cy="60" r="13" fill="#3aafa9"/><circle cx="20" cy="57" r="2" fill="#17252a"/><circle cx="30" cy="57" r="2" fill="#17252a"/><rect x="50" y="14" width="42" height="26" rx="4" fill="none" stroke="#2b7a78" stroke-width="3"/><line x1="50" y1="14" x2="92" y2="14" stroke="#2b7a78" stroke-width="3"/></svg>
+      <div><div class="prep-word">below</div><div class="prep-ex">The ball is <b>below</b> the box.<span class="fr">en dessous (position plus large/vague)</span></div></div></div>
+
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="8" y="26" width="30" height="40" rx="3" fill="none" stroke="#2b7a78" stroke-width="3"/><rect x="62" y="26" width="30" height="40" rx="3" fill="none" stroke="#2b7a78" stroke-width="3"/><circle cx="50" cy="50" r="12" fill="#3aafa9"/><circle cx="46" cy="47" r="1.8" fill="#17252a"/><circle cx="54" cy="47" r="1.8" fill="#17252a"/><path d="M45 54 Q50 58 55 54" stroke="#17252a" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+      <div><div class="prep-word">between</div><div class="prep-ex">The ball is <b>between</b> the boxes.<span class="fr">entre</span></div></div></div>
+
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="30" y="18" width="52" height="46" rx="4" fill="none" stroke="#2b7a78" stroke-width="3"/><line x1="30" y1="18" x2="82" y2="18" stroke="#2b7a78" stroke-width="3"/><circle cx="24" cy="52" r="12" fill="#3aafa9" opacity=".85"/><circle cx="20" cy="49" r="1.8" fill="#17252a"/><circle cx="28" cy="49" r="1.8" fill="#17252a"/></svg>
+      <div><div class="prep-word">behind</div><div class="prep-ex">The ball is <b>behind</b> the box.<span class="fr">derrière</span></div></div></div>
+
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="42" y="20" width="50" height="44" rx="4" fill="none" stroke="#2b7a78" stroke-width="3"/><line x1="42" y1="20" x2="92" y2="20" stroke="#2b7a78" stroke-width="3"/><circle cx="30" cy="54" r="14" fill="#3aafa9"/><circle cx="25" cy="51" r="2" fill="#17252a"/><circle cx="35" cy="51" r="2" fill="#17252a"/><path d="M24 59 Q30 63 36 59" stroke="#17252a" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <div><div class="prep-word">in front of</div><div class="prep-ex">The ball is <b>in front of</b> the box.<span class="fr">devant</span></div></div></div>
+
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="10" y="26" width="40" height="40" rx="4" fill="none" stroke="#2b7a78" stroke-width="3"/><line x1="10" y1="26" x2="50" y2="26" stroke="#2b7a78" stroke-width="3"/><circle cx="72" cy="48" r="13" fill="#3aafa9"/><circle cx="67" cy="45" r="2" fill="#17252a"/><circle cx="77" cy="45" r="2" fill="#17252a"/><path d="M67 53 Q72 57 77 53" stroke="#17252a" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <div><div class="prep-word">next to</div><div class="prep-ex">The ball is <b>next to</b> the box.<span class="fr">juste à côté, presque collé</span></div></div></div>
+
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="6" y="28" width="34" height="34" rx="4" fill="none" stroke="#2b7a78" stroke-width="3"/><line x1="6" y1="28" x2="40" y2="28" stroke="#2b7a78" stroke-width="3"/><circle cx="86" cy="48" r="13" fill="#3aafa9"/><circle cx="81" cy="45" r="2" fill="#17252a"/><circle cx="91" cy="45" r="2" fill="#17252a"/><path d="M81 53 Q86 57 91 53" stroke="#17252a" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      <div><div class="prep-word">near</div><div class="prep-ex">The ball is <b>near</b> the box.<span class="fr">proche, mais avec un peu de distance</span></div></div></div>
+
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="22" y="48" width="56" height="26" rx="4" fill="none" stroke="#2b7a78" stroke-width="3"/><line x1="22" y1="48" x2="78" y2="48" stroke="#2b7a78" stroke-width="3"/><circle cx="50" cy="20" r="13" fill="#3aafa9"/><circle cx="45" cy="17" r="2" fill="#17252a"/><circle cx="55" cy="17" r="2" fill="#17252a"/><path d="M45 25 Q50 29 55 25" stroke="#17252a" stroke-width="2" fill="none" stroke-linecap="round"/><line x1="50" y1="34" x2="50" y2="44" stroke="#dceeed" stroke-width="2" stroke-dasharray="2 3"/></svg>
+      <div><div class="prep-word">above</div><div class="prep-ex">The ball is <b>above</b> the box.<span class="fr">au-dessus (sans toucher)</span></div></div></div>
+
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Exercice — anglais</div>
+  <h1>Prepositions of place</h1>
+  <div class="sub">Clique sur ta réponse — la correction s'affiche aussitôt</div>
+
+  <div class="q-grid">
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="18" y="30" width="64" height="42" rx="4" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="18" y1="30" x2="82" y2="30" stroke="#2b7a78" stroke-width="4"/><circle cx="50" cy="50" r="14" fill="#3aafa9"/></svg><span class="chip">Question 1</span>
+      <div class="q-sentence">The cat fell asleep curled up <span class="blank"></span> the open cardboard box, completely hidden inside.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>near</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>above</div></div>
+      <div class="feedback" data-ok="in — elle est cachée à l'intérieur, invisible." data-ko="Pas tout à fait : le dessin montre la balle dedans → in — elle est cachée à l'intérieur, invisible."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="18" y="46" width="64" height="26" rx="4" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="18" y1="46" x2="82" y2="46" stroke="#2b7a78" stroke-width="4"/><circle cx="50" cy="32" r="14" fill="#3aafa9"/></svg><span class="chip">Question 2</span>
+      <div class="q-sentence">He placed the lamp right <span class="blank"></span> the top of the wooden table, in the middle.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>under</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>in</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>between</div></div>
+      <div class="feedback" data-ok="on — « on top of » = posé sur la surface." data-ko="Pas tout à fait : « on top of » = posé sur la surface → on."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><circle cx="50" cy="60" r="14" fill="#3aafa9"/><rect x="18" y="14" width="64" height="26" rx="4" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="18" y1="14" x2="82" y2="14" stroke="#2b7a78" stroke-width="4"/></svg><span class="chip">Question 3</span>
+      <div class="q-sentence">The dog is hiding, completely out of sight, right <span class="blank"></span> the sofa.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>on</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>under</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>next to</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>above</div></div>
+      <div class="feedback" data-ok="under — hors de vue, donc en dessous, caché." data-ko="Pas tout à fait : « out of sight » = hors de vue, donc en dessous → under."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="8" y="26" width="30" height="40" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><rect x="62" y="26" width="30" height="40" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><circle cx="50" cy="48" r="13" fill="#3aafa9"/></svg><span class="chip">Question 4</span>
+      <div class="q-sentence">The playground sits exactly halfway <span class="blank"></span> the school and the church, the same distance from both.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>behind</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>between</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>near</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>under</div></div>
+      <div class="feedback" data-ok="between — seule préposition qui relie naturellement « X and Y »." data-ko="Pas tout à fait : elle relie deux repères « X and Y » → between."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="42" y="20" width="50" height="44" rx="4" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="42" y1="20" x2="92" y2="20" stroke="#2b7a78" stroke-width="4"/><circle cx="28" cy="54" r="15" fill="#3aafa9"/></svg><span class="chip">Question 5</span>
+      <div class="q-sentence">She's standing only inches away, directly <span class="blank"></span> the door, about to knock.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>under</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>behind</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>in front of</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>near</div></div>
+      <div class="feedback" data-ok="in front of — « about to knock » = juste devant la porte." data-ko="Pas tout à fait : « about to knock » = juste devant la porte → in front of."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="22" y="48" width="56" height="26" rx="4" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="22" y1="48" x2="78" y2="48" stroke="#2b7a78" stroke-width="4"/><circle cx="50" cy="18" r="13" fill="#3aafa9"/><line x1="50" y1="32" x2="50" y2="44" stroke="#dceeed" stroke-width="3" stroke-dasharray="2 3"/></svg><span class="chip">Question 6</span>
+      <div class="q-sentence">The plane flew far <span class="blank"></span> the clouds, without ever touching them.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>on</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>above</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>next to</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>under</div></div>
+      <div class="feedback" data-ok="above — « without touching » exclut on/under, il y a un espace." data-ko="Pas tout à fait : « without touching » exclut on/under → above."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="10" y="26" width="40" height="40" rx="4" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="10" y1="26" x2="50" y2="26" stroke="#2b7a78" stroke-width="4"/><circle cx="72" cy="48" r="14" fill="#3aafa9"/></svg><span class="chip">Question 7</span>
+      <div class="q-sentence">The two friends sat so close their shoulders were almost touching, one <span class="blank"></span> the other.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>near</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>next to</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>between</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>behind</div></div>
+      <div class="feedback" data-ok="next to — « almost touching » = contact direct, pas de distance." data-ko="Pas tout à fait : « almost touching » = contact direct → next to."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="6" y="28" width="34" height="34" rx="4" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="6" y1="28" x2="40" y2="28" stroke="#2b7a78" stroke-width="4"/><circle cx="86" cy="48" r="14" fill="#3aafa9"/></svg><span class="chip">Question 8</span>
+      <div class="q-sentence">The bakery is a five-minute walk away, somewhere <span class="blank"></span> the train station.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>next to</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>near</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>above</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>behind</div></div>
+      <div class="feedback" data-ok="near — « five-minute walk » = à distance, pas juste à côté." data-ko="Pas tout à fait : « five-minute walk » = à distance → near."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="30" y="18" width="52" height="46" rx="4" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="30" y1="18" x2="82" y2="18" stroke="#2b7a78" stroke-width="4"/><circle cx="24" cy="52" r="13" fill="#3aafa9" opacity=".8"/></svg><span class="chip">Question 9</span>
+      <div class="q-sentence">He tried to sneak up on his friend, staying <span class="blank"></span> the tree so he wouldn't be seen.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>behind</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>in front of</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>above</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>near</div></div>
+      <div class="feedback" data-ok="behind — « so he wouldn't be seen » = caché derrière." data-ko="Pas tout à fait : « so he wouldn't be seen » = caché derrière → behind."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><circle cx="25" cy="60" r="14" fill="#3aafa9"/><rect x="50" y="14" width="42" height="26" rx="4" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="50" y1="14" x2="92" y2="14" stroke="#2b7a78" stroke-width="4"/></svg><span class="chip">Question 10</span>
+      <div class="q-sentence">The ball rolled off the shelf and landed somewhere lower down, roughly <span class="blank"></span> it.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>under</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>below</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>above</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>next to</div></div>
+      <div class="feedback" data-ok="below — position plus vague/générale que « under »." data-ko="Pas tout à fait : position plus large, pas forcément juste dessous → below."></div></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Fiche pédagogique — anglais</div>
+  <h1>Prepositions of movement</h1>
+  <div class="sub">Which way is it going?</div>
+  <div class="prep-grid">
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="28" y="50" width="44" height="24" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M50,45 L50,10" stroke="#2b7a78" stroke-width="4"/><path d="M43,20 L50,8 L57,20" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">up</div><div class="prep-ex">The ball rolled <b>up</b> the stairs.<span class="fr">vers le haut</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="28" y="50" width="44" height="24" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M50,10 L50,42" stroke="#2b7a78" stroke-width="4"/><path d="M43,33 L50,45 L57,33" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">down</div><div class="prep-ex">The ball rolled <b>down</b> the stairs.<span class="fr">vers le bas</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="20" y="38" width="60" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M15,10 Q55,10 50,34" stroke="#2b7a78" stroke-width="4" fill="none"/><path d="M42,28 L50,38 L58,26" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">into</div><div class="prep-ex">The ball rolled <b>into</b> the box.<span class="fr">à l'intérieur de</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="20" y="38" width="60" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M50,36 Q45,10 85,10" stroke="#2b7a78" stroke-width="4" fill="none"/><path d="M74,4 L86,10 L76,18" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">out of</div><div class="prep-ex">The ball rolled <b>out of</b> the box.<span class="fr">hors de</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="26" y="44" width="48" height="26" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="26" y1="44" x2="74" y2="44" stroke="#2b7a78" stroke-width="4"/><path d="M15,12 Q55,12 50,40" stroke="#2b7a78" stroke-width="4" fill="none"/><path d="M42,32 L50,42 L58,30" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">onto</div><div class="prep-ex">The ball jumped <b>onto</b> the box.<span class="fr">sur (avec mouvement)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="26" y="44" width="48" height="26" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="26" y1="44" x2="74" y2="44" stroke="#2b7a78" stroke-width="4"/><path d="M50,42 Q55,12 85,12" stroke="#2b7a78" stroke-width="4" fill="none"/><path d="M74,6 L86,12 L76,20" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">off</div><div class="prep-ex">The ball fell <b>off</b> the box.<span class="fr">hors de, de dessus</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="35" y="46" width="30" height="24" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M15,66 Q50,8 85,66" stroke="#2b7a78" stroke-width="4" fill="none"/><path d="M74,58 L86,66 L79,54" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">over</div><div class="prep-ex">The ball flew <b>over</b> the box.<span class="fr">par-dessus</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="8" y="30" width="26" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><rect x="66" y="30" width="26" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M34,47 L60,47" stroke="#2b7a78" stroke-width="4"/><path d="M52,40 L62,47 L52,54" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">across</div><div class="prep-ex">The ball rolled <b>across</b> the room.<span class="fr">à travers, d'un côté à l'autre</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="35" y="30" width="30" height="30" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M50,10 A30,30 0 1 1 21,42" stroke="#2b7a78" stroke-width="4" fill="none"/><path d="M13,35 L21,43 L29,34" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">around</div><div class="prep-ex">The ball rolled <b>around</b> the box.<span class="fr">autour de</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><ellipse cx="50" cy="40" rx="16" ry="30" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M14,40 L78,40" stroke="#2b7a78" stroke-width="4"/><path d="M70,32 L80,40 L70,48" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">through</div><div class="prep-ex">The ball went <b>through</b> the hoop.<span class="fr">à travers (un espace fermé)</span></div></div></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Exercice — anglais</div>
+  <h1>Prepositions of movement</h1>
+  <div class="sub">Clique sur ta réponse — la correction s'affiche aussitôt</div>
+  <div class="q-grid">
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="28" y="50" width="44" height="24" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M50,45 L50,10" stroke="#2b7a78" stroke-width="5"/></svg><span class="chip">Question 1</span>
+      <div class="q-sentence">The cat climbed <span class="blank"></span> the tree, all the way to the top branch.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>down</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>up</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>across</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>through</div></div>
+      <div class="feedback" data-ok="up — grimper « jusqu'en haut »." data-ko="Pas tout à fait : « all the way to the top » = vers le haut → up."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="20" y="38" width="60" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M15,10 Q55,10 50,36" stroke="#2b7a78" stroke-width="5" fill="none"/></svg><span class="chip">Question 2</span>
+      <div class="q-sentence">She dropped the letter <span class="blank"></span> the mailbox and heard it land at the bottom.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>onto</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>into</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>off</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>over</div></div>
+      <div class="feedback" data-ok="into — elle entre à l'intérieur de la boîte." data-ko="Pas tout à fait : « heard it land at the bottom » = elle entre dedans → into."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="8" y="30" width="26" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><rect x="66" y="30" width="26" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M34,47 L62,47" stroke="#2b7a78" stroke-width="5"/></svg><span class="chip">Question 3</span>
+      <div class="q-sentence">He walked <span class="blank"></span> the busy street to reach the shop on the other side.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>around</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>across</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>past</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>along</div></div>
+      <div class="feedback" data-ok="across — traverser d'un côté à l'autre." data-ko="Pas tout à fait : « the other side » = traverser d'un bout à l'autre → across."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="35" y="46" width="30" height="24" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M15,66 Q50,8 85,66" stroke="#2b7a78" stroke-width="5" fill="none"/></svg><span class="chip">Question 4</span>
+      <div class="q-sentence">The plane flew <span class="blank"></span> the mountain, staying well above its peak.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>under</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>over</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>through</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>into</div></div>
+      <div class="feedback" data-ok="over — « bien au-dessus » du sommet." data-ko="Pas tout à fait : « well above its peak » = par-dessus → over."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="35" y="30" width="30" height="30" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M50,10 A30,30 0 1 1 21,42" stroke="#2b7a78" stroke-width="5" fill="none"/></svg><span class="chip">Question 5</span>
+      <div class="q-sentence">The dog ran <span class="blank"></span> the fountain in a full circle, chasing its tail.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>around</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>along</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>past</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>into</div></div>
+      <div class="feedback" data-ok="around — « cercle complet »." data-ko="Pas tout à fait : « a full circle » → around."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><ellipse cx="50" cy="40" rx="16" ry="30" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M14,40 L84,40" stroke="#2b7a78" stroke-width="5"/></svg><span class="chip">Question 6</span>
+      <div class="q-sentence">The mouse squeezed <span class="blank"></span> the narrow tunnel to the other side.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>through</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>over</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>onto</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>up</div></div>
+      <div class="feedback" data-ok="through — tunnel étroit = espace fermé traversé." data-ko="Pas tout à fait : un tunnel est un espace fermé qu'on traverse → through."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="26" y="44" width="48" height="26" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M50,42 Q55,12 85,12" stroke="#2b7a78" stroke-width="5" fill="none"/></svg><span class="chip">Question 7</span>
+      <div class="q-sentence">The vase slipped <span class="blank"></span> the shelf and smashed on the floor below.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>onto</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>off</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>into</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>along</div></div>
+      <div class="feedback" data-ok="off — tombe de l'étagère, quitte la surface." data-ko="Pas tout à fait : elle quitte la surface de l'étagère → off."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="20" y="38" width="60" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M50,36 Q45,10 85,10" stroke="#2b7a78" stroke-width="5" fill="none"/></svg><span class="chip">Question 8</span>
+      <div class="q-sentence">The kitten jumped <span class="blank"></span> the basket and ran away.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>into</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>out of</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>onto</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>around</div></div>
+      <div class="feedback" data-ok="out of — sort du panier." data-ko="Pas tout à fait : « ran away » = elle sort du panier → out of."></div></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Fiche pédagogique — anglais</div>
+  <h1>Prepositions of time</h1>
+  <div class="sub">When is it?</div>
+  <div class="prep-grid">
+    <div class="prep-card"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="50" y1="50" x2="50" y2="26" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><line x1="50" y1="50" x2="68" y2="50" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/></svg><div><div class="prep-word">at</div><div class="prep-ex">The class starts <b>at</b> 7 AM.<span class="fr">à (heure précise)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="5"/><line x1="30" y1="12" x2="30" y2="26" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><line x1="70" y1="12" x2="70" y2="26" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/></svg><div><div class="prep-word">in</div><div class="prep-ex">She was born <b>in</b> 1997.<span class="fr">en (mois, année, siècle)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="5"/><rect x="42" y="52" width="16" height="16" rx="3" fill="#3aafa9"/></svg><div><div class="prep-word">on</div><div class="prep-ex">We're meeting <b>on</b> Monday.<span class="fr">un jour précis / une date</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><line x1="18" y1="50" x2="82" y2="50" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><line x1="18" y1="38" x2="18" y2="62" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><line x1="82" y1="38" x2="82" y2="62" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/></svg><div><div class="prep-word">for</div><div class="prep-ex">He waited <b>for</b> two hours.<span class="fr">pendant (durée)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><circle cx="35" cy="50" r="6" fill="#2b7a78"/><line x1="41" y1="50" x2="78" y2="50" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><path d="M70,42 L80,50 L70,58" stroke="#2b7a78" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">since</div><div class="prep-ex">She's been here <b>since</b> 8 AM.<span class="fr">depuis (point de départ)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><path d="M30,60 A20,20 0 1 1 62,30" fill="none" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><circle cx="72" cy="66" r="2.5" fill="#2b7a78"/><circle cx="78" cy="60" r="2.5" fill="#2b7a78"/><circle cx="82" cy="52" r="2.5" fill="#2b7a78"/></svg><div><div class="prep-word">during</div><div class="prep-ex">He fell asleep <b>during</b> the night.<span class="fr">pendant (un événement)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><circle cx="55" cy="50" r="30" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="55" y1="50" x2="55" y2="30" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><line x1="55" y1="50" x2="70" y2="50" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><path d="M18,50 L28,42 L28,58 z" fill="#2b7a78"/></svg><div><div class="prep-word">before</div><div class="prep-ex">Wash your hands <b>before</b> dinner.<span class="fr">avant</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><circle cx="45" cy="50" r="30" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="45" y1="50" x2="45" y2="30" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><line x1="45" y1="50" x2="60" y2="50" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><path d="M82,50 L72,42 L72,58 z" fill="#2b7a78"/></svg><div><div class="prep-word">after</div><div class="prep-ex">We talked <b>after</b> the meeting.<span class="fr">après</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="5"/><line x1="66" y1="56" x2="66" y2="76" stroke="#e8734f" stroke-width="5" stroke-linecap="round"/><line x1="58" y1="76" x2="74" y2="76" stroke="#e8734f" stroke-width="5" stroke-linecap="round"/></svg><div><div class="prep-word">until</div><div class="prep-ex">The shop is open <b>until</b> Friday.<span class="fr">jusqu'à (sans interruption)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="5"/><path d="M50,52 L50,72" stroke="#e8734f" stroke-width="5" stroke-linecap="round"/><path d="M42,64 L50,74 L58,64" stroke="#e8734f" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">by</div><div class="prep-ex">Finish the report <b>by</b> tomorrow.<span class="fr">au plus tard, avant une échéance</span></div></div></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Exercice — anglais</div>
+  <h1>Prepositions of time</h1>
+  <div class="sub">Clique sur ta réponse — la correction s'affiche aussitôt</div>
+  <div class="q-grid">
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="50" y1="50" x2="50" y2="26" stroke="#2b7a78" stroke-width="6"/><line x1="50" y1="50" x2="68" y2="50" stroke="#2b7a78" stroke-width="6"/></svg><span class="chip">Question 1</span>
+      <div class="q-sentence">The train leaves <span class="blank"></span> exactly 9 o'clock, not a minute later.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>during</div></div>
+      <div class="feedback" data-ok="at — heure précise, « not a minute later »." data-ko="Pas tout à fait : heure précise → at."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="6"/><rect x="42" y="52" width="16" height="16" rx="3" fill="#3aafa9"/></svg><span class="chip">Question 2</span>
+      <div class="q-sentence">We always visit grandma <span class="blank"></span> Sundays, every single week.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>at</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>for</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>since</div></div>
+      <div class="feedback" data-ok="on — jour de la semaine répété : on Sundays." data-ko="Pas tout à fait : jour de la semaine → on."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><line x1="18" y1="50" x2="82" y2="50" stroke="#2b7a78" stroke-width="6"/><line x1="18" y1="38" x2="18" y2="62" stroke="#2b7a78" stroke-width="6"/><line x1="82" y1="38" x2="82" y2="62" stroke="#2b7a78" stroke-width="6"/></svg><span class="chip">Question 3</span>
+      <div class="q-sentence">They have lived in Paris <span class="blank"></span> ten years, and they're still there.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>since</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>for</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>until</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>by</div></div>
+      <div class="feedback" data-ok="for — durée chiffrée « ten years »." data-ko="Pas tout à fait : durée chiffrée → for."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><circle cx="35" cy="50" r="7" fill="#2b7a78"/><line x1="42" y1="50" x2="78" y2="50" stroke="#2b7a78" stroke-width="6"/><path d="M70,42 L80,50 L70,58" stroke="#2b7a78" stroke-width="6" fill="none"/></svg><span class="chip">Question 4</span>
+      <div class="q-sentence">I haven't seen her <span class="blank"></span> last Christmas — that was the last time.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>for</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>during</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>since</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>at</div></div>
+      <div class="feedback" data-ok="since — point de départ précis dans le passé." data-ko="Pas tout à fait : point de départ précis → since."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><path d="M30,60 A20,20 0 1 1 62,30" fill="none" stroke="#2b7a78" stroke-width="6"/><circle cx="72" cy="66" r="3" fill="#2b7a78"/><circle cx="78" cy="60" r="3" fill="#2b7a78"/></svg><span class="chip">Question 5</span>
+      <div class="q-sentence">The phone rang twice <span class="blank"></span> the movie, which was really annoying.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>during</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>for</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>on</div></div>
+      <div class="feedback" data-ok="during — pendant un événement (« the movie »)." data-ko="Pas tout à fait : pendant l'événement → during."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><circle cx="55" cy="50" r="30" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="55" y1="50" x2="55" y2="30" stroke="#2b7a78" stroke-width="6"/><path d="M18,50 L28,42 L28,58 z" fill="#2b7a78"/></svg><span class="chip">Question 6</span>
+      <div class="q-sentence">Please arrive <span class="blank"></span> the meeting starts, not one minute after.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>after</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>before</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>during</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>since</div></div>
+      <div class="feedback" data-ok="before — « not one minute after » = avant le début." data-ko="Pas tout à fait : « not one minute after » → before."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="6"/><line x1="66" y1="56" x2="66" y2="76" stroke="#e8734f" stroke-width="6"/><line x1="58" y1="76" x2="74" y2="76" stroke="#e8734f" stroke-width="6"/></svg><span class="chip">Question 7</span>
+      <div class="q-sentence">The library stays open <span class="blank"></span> 9 PM every night, with no break.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>by</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>until</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>since</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>during</div></div>
+      <div class="feedback" data-ok="until — continuité sans interruption jusqu'à l'heure." data-ko="Pas tout à fait : « with no break » = continuité → until."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="6"/><path d="M50,52 L50,72" stroke="#e8734f" stroke-width="6"/><path d="M42,64 L50,74 L58,64" stroke="#e8734f" stroke-width="6" fill="none"/></svg><span class="chip">Question 8</span>
+      <div class="q-sentence">You need to hand in the form <span class="blank"></span> Friday at the latest.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>until</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>by</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>for</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>in</div></div>
+      <div class="feedback" data-ok="by — échéance « at the latest »." data-ko="Pas tout à fait : « at the latest » = échéance → by."></div></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Fiche mémo — anglais</div>
+  <h1>In, on, at</h1>
+  <div class="sub">Comment choisir entre les trois ?</div>
+  <div class="tbl-wrap">
+    <table class="memo">
+      <tr><th>Préposition</th><th>Espace</th><th>Temps</th></tr>
+      <tr><td class="word">in</td><td>à l'intérieur d'un espace fermé<span class="ex">in the room, in my bag</span></td><td>mois, année, siècle<span class="ex">in July, in 2026, in the 21st century</span></td></tr>
+      <tr><td class="word">on</td><td>sur une surface<span class="ex">on the table, on the wall</span></td><td>jours et dates précises<span class="ex">on Monday, on April 3rd</span></td></tr>
+      <tr><td class="word">at</td><td>un point précis, un lieu spécifique<span class="ex">at the door, at the bus stop</span></td><td>heures et moments précis<span class="ex">at 8 AM, at noon, at night</span></td></tr>
+    </table>
+  </div>
+  <div class="callout"><b>Exceptions à connaître :</b> <i>at night</i> (≠ in the night) · <i>at the weekend</i> (anglais britannique) / <i>on the weekend</i> (anglais américain)</div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Exercice — anglais</div>
+  <h1>In, on, at</h1>
+  <div class="sub">Clique sur ta réponse — la correction s'affiche aussitôt</div>
+  <div class="q-grid">
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="6"/></svg><span class="chip">Question 1</span>
+      <div class="q-sentence">I was born <span class="blank"></span> March, in 1998.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>for</div></div>
+      <div class="feedback" data-ok="in — un mois se dit toujours avec « in »." data-ko="Pas tout à fait : un mois se dit avec « in » → in March."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="50" y1="50" x2="50" y2="26" stroke="#2b7a78" stroke-width="6"/><line x1="50" y1="50" x2="68" y2="50" stroke="#2b7a78" stroke-width="6"/></svg><span class="chip">Question 2</span>
+      <div class="q-sentence">The shop opens <span class="blank"></span> 9 AM sharp.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>during</div></div>
+      <div class="feedback" data-ok="at — heure précise « 9 AM sharp »." data-ko="Pas tout à fait : heure précise → at."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="6"/><rect x="42" y="52" width="16" height="16" rx="3" fill="#3aafa9"/></svg><span class="chip">Question 3</span>
+      <div class="q-sentence">We're getting married <span class="blank"></span> June 14th.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>since</div></div>
+      <div class="feedback" data-ok="on — une date précise se dit avec « on »." data-ko="Pas tout à fait : une date précise → on June 14th."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="18" y="30" width="64" height="42" rx="4" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="18" y1="30" x2="82" y2="30" stroke="#2b7a78" stroke-width="5"/><circle cx="50" cy="50" r="14" fill="#3aafa9"/></svg><span class="chip">Question 4</span>
+      <div class="q-sentence">Your keys are <span class="blank"></span> the kitchen drawer.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>during</div></div>
+      <div class="feedback" data-ok="in — un tiroir est un espace fermé." data-ko="Pas tout à fait : un tiroir est un espace fermé → in."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="18" y="46" width="64" height="26" rx="4" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="18" y1="46" x2="82" y2="46" stroke="#2b7a78" stroke-width="5"/><circle cx="50" cy="32" r="14" fill="#3aafa9"/></svg><span class="chip">Question 5</span>
+      <div class="q-sentence">There's a book <span class="blank"></span> the table.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>by</div></div>
+      <div class="feedback" data-ok="on — une surface prend « on »." data-ko="Pas tout à fait : une surface → on."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="42" y="20" width="50" height="44" rx="4" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="42" y1="20" x2="92" y2="20" stroke="#2b7a78" stroke-width="5"/><circle cx="28" cy="54" r="15" fill="#3aafa9"/></svg><span class="chip">Question 6</span>
+      <div class="q-sentence">Meet me <span class="blank"></span> the bus stop, right in front of it.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>during</div></div>
+      <div class="feedback" data-ok="at — un point précis dans l'espace." data-ko="Pas tout à fait : un point précis → at."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><path d="M40,20 A30,30 0 1 0 40,80 A24,24 0 1 1 40,20 z" fill="#2b7a78"/></svg><span class="chip">Question 7</span>
+      <div class="q-sentence">I always sleep well <span class="blank"></span> night.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>during</div></div>
+      <div class="feedback" data-ok="at night — exception à connaître par cœur." data-ko="Pas tout à fait : c'est une exception → at night."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="6"/><line x1="30" y1="12" x2="30" y2="26" stroke="#2b7a78" stroke-width="6"/><line x1="70" y1="12" x2="70" y2="26" stroke="#2b7a78" stroke-width="6"/></svg><span class="chip">Question 8</span>
+      <div class="q-sentence">Christmas is always celebrated <span class="blank"></span> December.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>since</div></div>
+      <div class="feedback" data-ok="in — un mois se dit avec « in »." data-ko="Pas tout à fait : un mois → in December."></div></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Fiche mémo — anglais</div>
+  <h1>The possessive case</h1>
+  <div class="sub">Marie's ruler — à qui est-ce ?</div>
+  <div class="tbl-wrap">
+    <table class="memo">
+      <tr><th>Règle</th><th>Formation</th><th>Exemple</th></tr>
+      <tr><td class="word">nom singulier</td><td>nom + 's</td><td>Marie<b>'s</b> ruler<span class="ex">la règle de Marie</span></td></tr>
+      <tr><td class="word">nom pluriel régulier</td><td>nom + '</td><td>my parents<b>'</b> room<span class="ex">la chambre de mes parents</span></td></tr>
+      <tr><td class="word">pluriel irrégulier</td><td>nom + 's</td><td>the children<b>'s</b> toys<span class="ex">les jouets des enfants</span></td></tr>
+      <tr><td class="word">question</td><td>whose + nom ... ?</td><td><b>Whose</b> cat is it? It's Paul<b>'s</b>.<span class="ex">à qui est ce chat ? c'est celui de Paul</span></td></tr>
+    </table>
+  </div>
+  <div class="callout"><b>À retenir :</b> en anglais, le possesseur vient <i>avant</i> — contrairement au français « la règle <u>de</u> Marie », on dit <i>Marie<b>'s</b> ruler</i>, sans « of ».</div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Fiche mémo — anglais</div>
+  <h1>At, in, to — quick recap</h1>
+  <div class="sub">Lieu fixe, heure, mouvement</div>
+  <div class="tbl-wrap">
+    <table class="memo">
+      <tr><th>Préposition</th><th>Usage</th><th>Exemple</th></tr>
+      <tr><td class="word">at</td><td>lieu fixe (petit / précis)</td><td>at home<span class="ex">à la maison</span></td></tr>
+      <tr><td class="word">in</td><td>lieu fixe (ville, pays, grand espace)</td><td>in Lyon, in France<span class="ex">à/en (ville, pays)</span></td></tr>
+      <tr><td class="word">at</td><td>heure précise</td><td>at 8 o'clock<span class="ex">à 8 heures</span></td></tr>
+      <tr><td class="word">to</td><td>mouvement vers un lieu</td><td>go to bed, go to school<span class="ex">aller à/au</span></td></tr>
+      <tr><td class="word">from ... to</td><td>point de départ → arrivée</td><td>from Paris to London<span class="ex">de ... à</span></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Exercice — anglais</div>
+  <h1>Possessive case &amp; at/in/to</h1>
+  <div class="sub">Clique sur ta réponse — la correction s'affiche aussitôt</div>
+  <div class="q-grid">
+    <div class="q-block"><span class="chip">Question 1</span>
+      <div class="q-sentence">This is <span class="blank"></span> bike. (Leo)</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>Leo's</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>Leos'</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>Leo</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>of Leo</div></div>
+      <div class="feedback" data-ok="Leo's — nom singulier + 's." data-ko="Pas tout à fait : nom singulier → nom + 's → Leo's."></div></div>
+
+    <div class="q-block"><span class="chip">Question 2</span>
+      <div class="q-sentence">This is the <span class="blank"></span> playground. (the children, pluriel irrégulier)</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>childrens'</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>children's</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>childs'</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>of children</div></div>
+      <div class="feedback" data-ok="children's — pluriel irrégulier + 's." data-ko="Pas tout à fait : « children » est déjà pluriel, donc + 's → children's."></div></div>
+
+    <div class="q-block"><span class="chip">Question 3</span>
+      <div class="q-sentence">This is my <span class="blank"></span> car. (my parents, pluriel régulier)</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>parent's</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>parents'</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>parents's</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>parent</div></div>
+      <div class="feedback" data-ok="parents' — pluriel régulier, juste une apostrophe." data-ko="Pas tout à fait : pluriel régulier en -s → juste ' → parents'."></div></div>
+
+    <div class="q-block"><span class="chip">Question 4</span>
+      <div class="q-sentence"><span class="blank"></span> bag is this? — It's Paul's.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>Who</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>Whose</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>Which</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>What</div></div>
+      <div class="feedback" data-ok="Whose — pour demander à qui appartient quelque chose." data-ko="Pas tout à fait : demander le possesseur → Whose."></div></div>
+
+    <div class="q-block"><span class="chip">Question 5</span>
+      <div class="q-sentence">She stayed <span class="blank"></span> home all weekend.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>to</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>on</div></div>
+      <div class="feedback" data-ok="at home — expression fixe avec « at »." data-ko="Pas tout à fait : « at home » est une expression fixe."></div></div>
+
+    <div class="q-block"><span class="chip">Question 6</span>
+      <div class="q-sentence">They have lived <span class="blank"></span> Lyon for five years.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>at</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>to</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>on</div></div>
+      <div class="feedback" data-ok="in Lyon — une ville se dit avec « in »." data-ko="Pas tout à fait : une ville → in Lyon."></div></div>
+
+    <div class="q-block"><span class="chip">Question 7</span>
+      <div class="q-sentence">The kids go <span class="blank"></span> school every morning.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>in</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>to</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>from</div></div>
+      <div class="feedback" data-ok="to school — mouvement vers un lieu." data-ko="Pas tout à fait : mouvement vers un lieu → go to school."></div></div>
+
+    <div class="q-block"><span class="chip">Question 8</span>
+      <div class="q-sentence">The train goes <span class="blank"></span> Paris to Marseille.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>from</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>since</div></div>
+      <div class="feedback" data-ok="from ... to — point de départ vers l'arrivée." data-ko="Pas tout à fait : départ → arrivée = from ... to."></div></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Fiche mémo — anglais</div>
+  <h1>Relative pronouns</h1>
+  <div class="sub">Who, which, that... comment choisir ?</div>
+  <div class="tbl-wrap">
+    <table class="memo">
+      <tr><th>Pronom</th><th>Usage</th><th>Exemple</th></tr>
+      <tr><td class="word">who</td><td>sujet, pour une personne</td><td>the man <b>who</b> called<span class="ex">l'homme qui a appelé</span></td></tr>
+      <tr><td class="word">whom</td><td>complément, pour une personne (formel)</td><td>the man <b>whom</b> I met<span class="ex">l'homme que j'ai rencontré</span></td></tr>
+      <tr><td class="word">whose</td><td>possession</td><td>the man <b>whose</b> car is red<span class="ex">l'homme dont la voiture est rouge</span></td></tr>
+      <tr><td class="word">which</td><td>une chose ou un animal</td><td>the book <b>which</b> I read<span class="ex">le livre que j'ai lu</span></td></tr>
+      <tr><td class="word">that</td><td>personne ou chose (informel)</td><td>the book <b>that</b> I read<span class="ex">le livre que j'ai lu</span></td></tr>
+      <tr><td class="word">where</td><td>un lieu</td><td>the house <b>where</b> I grew up<span class="ex">la maison où j'ai grandi</span></td></tr>
+      <tr><td class="word">when</td><td>un moment, une époque</td><td>the day <b>when</b> we met<span class="ex">le jour où on s'est rencontrés</span></td></tr>
+      <tr><td class="word">why</td><td>une raison</td><td>the reason <b>why</b> I left<span class="ex">la raison pour laquelle je suis parti</span></td></tr>
+    </table>
+  </div>
+  <div class="callout"><b>À retenir :</b> <i>that</i> ne s'utilise jamais après une virgule. <i>Which</i> introduit une information supplémentaire, souvent après une virgule : « My car, which is red, is fast. »</div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Exercice — anglais</div>
+  <h1>Relative pronouns</h1>
+  <div class="sub">Clique sur ta réponse — la correction s'affiche aussitôt</div>
+  <div class="q-grid">
+    <div class="q-block"><span class="chip">Question 1</span>
+      <div class="q-sentence">The woman <span class="blank"></span> lives next door is a doctor.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>who</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>which</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>where</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>whose</div></div>
+      <div class="feedback" data-ok="who — sujet, la femme elle-même vit à côté." data-ko="Pas tout à fait : sujet + personne → who."></div></div>
+
+    <div class="q-block"><span class="chip">Question 2</span>
+      <div class="q-sentence">This is the book <span class="blank"></span> I told you about.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>that</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>who</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>whose</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>where</div></div>
+      <div class="feedback" data-ok="that — une chose, sans virgule (which serait aussi possible mais that est le plus naturel ici)." data-ko="Pas tout à fait : une chose, phrase informelle sans virgule → that."></div></div>
+
+    <div class="q-block"><span class="chip">Question 3</span>
+      <div class="q-sentence">I don't know the reason <span class="blank"></span> she left so suddenly.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>where</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>why</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>who</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>which</div></div>
+      <div class="feedback" data-ok="why — « the reason » appelle toujours why." data-ko="Pas tout à fait : une raison → why."></div></div>
+
+    <div class="q-block"><span class="chip">Question 4</span>
+      <div class="q-sentence">The man <span class="blank"></span> car was stolen last night is my neighbor.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>whose</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>who</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>which</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>where</div></div>
+      <div class="feedback" data-ok="whose — la voiture appartient à l'homme, c'est une possession." data-ko="Pas tout à fait : possession → whose."></div></div>
+
+    <div class="q-block"><span class="chip">Question 5</span>
+      <div class="q-sentence">That's the restaurant <span class="blank"></span> we had our first date.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>where</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>which</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>who</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>why</div></div>
+      <div class="feedback" data-ok="where — un restaurant est un lieu." data-ko="Pas tout à fait : un lieu → where."></div></div>
+
+    <div class="q-block"><span class="chip">Question 6</span>
+      <div class="q-sentence">Do you remember the day <span class="blank"></span> we first met?</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>when</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>who</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>whose</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>which</div></div>
+      <div class="feedback" data-ok="when — « the day » est un moment dans le temps." data-ko="Pas tout à fait : un moment → when."></div></div>
+
+    <div class="q-block"><span class="chip">Question 7</span>
+      <div class="q-sentence">She's the person <span class="blank"></span> helped me move last weekend.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>who</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>which</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>where</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>why</div></div>
+      <div class="feedback" data-ok="who — sujet, une personne." data-ko="Pas tout à fait : sujet + personne → who."></div></div>
+
+    <div class="q-block"><span class="chip">Question 8</span>
+      <div class="q-sentence">This is the laptop <span class="blank"></span> I bought last week.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>which</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>who</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>whose</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>where</div></div>
+      <div class="feedback" data-ok="which — une chose (that fonctionnerait aussi, which est ici l'option proposée)." data-ko="Pas tout à fait : une chose → which."></div></div>
+  </div>
+</section>
+
+
+<div class="note">Astuce impression : format A4. Le filigrane WordSip est composé de vrais éléments texte (pas une image de fond) : il s'imprime normalement sans réglage particulier.</div>
+<div class="corrige">
+  <h3>Corrigé</h3>
+  <ol>
+    <li><b>in</b><span class="why">elle est cachée à l'intérieur, invisible</span></li>
+    <li><b>on</b><span class="why">« on top of » = posé sur la surface</span></li>
+    <li><b>under</b><span class="why">hors de vue = en dessous, caché</span></li>
+    <li><b>between</b><span class="why">seule préposition qui relie naturellement « X and Y »</span></li>
+    <li><b>in front of</b><span class="why">« about to knock » = juste devant la porte</span></li>
+    <li><b>above</b><span class="why">« without touching » exclut on/under, il y a un espace</span></li>
+    <li><b>next to</b><span class="why">« almost touching » = contact direct, pas de distance</span></li>
+    <li><b>near</b><span class="why">« five-minute walk » = à distance, pas juste à côté</span></li>
+    <li><b>behind</b><span class="why">« so he wouldn't be seen » = caché derrière</span></li>
+    <li><b>below</b><span class="why">position plus vague/générale que « under » (pas forcément juste en dessous)</span></li>
+  </ol>
+</div>
+<div class="corrige">
+  <h3>Corrigé</h3>
+  <ol>
+    <li><b>up</b><span class="why">grimper « jusqu'en haut »</span></li>
+    <li><b>into</b><span class="why">entrer dans la boîte aux lettres</span></li>
+    <li><b>across</b><span class="why">traverser d'un côté à l'autre</span></li>
+    <li><b>over</b><span class="why">« bien au-dessus » du sommet</span></li>
+    <li><b>around</b><span class="why">« cercle complet »</span></li>
+    <li><b>through</b><span class="why">tunnel étroit = espace fermé traversé</span></li>
+    <li><b>off</b><span class="why">tombe de l'étagère, quitte la surface</span></li>
+    <li><b>out of</b><span class="why">sort du panier</span></li>
+  </ol>
+</div>
+<div class="corrige">
+  <h3>Corrigé</h3>
+  <ol>
+    <li><b>at</b><span class="why">heure précise, « not a minute later »</span></li>
+    <li><b>on</b><span class="why">jour de la semaine répété = on Sundays</span></li>
+    <li><b>for</b><span class="why">durée chiffrée « ten years »</span></li>
+    <li><b>since</b><span class="why">point de départ précis dans le passé</span></li>
+    <li><b>during</b><span class="why">pendant un événement (« the movie »)</span></li>
+    <li><b>before</b><span class="why">« not one minute after » = avant le début</span></li>
+    <li><b>until</b><span class="why">continuité sans interruption jusqu'à l'heure</span></li>
+    <li><b>by</b><span class="why">échéance « at the latest »</span></li>
+  </ol>
+</div>
+<div class="corrige">
+  <h3>Corrigé</h3>
+  <ol>
+    <li><b>in</b><span class="why">mois → in March</span></li>
+    <li><b>at</b><span class="why">heure précise → at 9 AM</span></li>
+    <li><b>on</b><span class="why">date précise → on June 14th</span></li>
+    <li><b>in</b><span class="why">espace fermé → in the drawer</span></li>
+    <li><b>on</b><span class="why">surface → on the table</span></li>
+    <li><b>at</b><span class="why">point précis → at the bus stop</span></li>
+    <li><b>at</b><span class="why">exception → at night</span></li>
+    <li><b>in</b><span class="why">mois → in December</span></li>
+  </ol>
+</div>
+<div class="corrige">
+  <h3>Corrigé</h3>
+  <ol>
+    <li><b>Leo's</b><span class="why">nom singulier + 's</span></li>
+    <li><b>children's</b><span class="why">pluriel irrégulier + 's</span></li>
+    <li><b>parents'</b><span class="why">pluriel régulier + '</span></li>
+    <li><b>Whose</b><span class="why">question sur le possesseur</span></li>
+    <li><b>at</b><span class="why">at home, expression fixe</span></li>
+    <li><b>in</b><span class="why">in Lyon, une ville</span></li>
+    <li><b>to</b><span class="why">go to school, mouvement</span></li>
+    <li><b>from</b><span class="why">from ... to, départ → arrivée</span></li>
+  </ol>
+</div>
+<div class="corrige">
+  <h3>Corrigé — Relative pronouns</h3>
+  <ol>
+    <li><b>who</b><span class="why">sujet, personne</span></li>
+    <li><b>that</b><span class="why">chose, informel</span></li>
+    <li><b>why</b><span class="why">the reason → why</span></li>
+    <li><b>whose</b><span class="why">possession</span></li>
+    <li><b>where</b><span class="why">un lieu</span></li>
+    <li><b>when</b><span class="why">un moment</span></li>
+    <li><b>who</b><span class="why">sujet, personne</span></li>
+    <li><b>which</b><span class="why">une chose</span></li>
+  </ol>
+</div>
+
+<script>
+function ans(el, isOk){
+  var block = el.closest('.q-block');
+  if(block.classList.contains('answered')) return;
+  block.classList.add('answered');
+  el.classList.add(isOk ? 'correct' : 'incorrect');
+  if(!isOk){
+    var opts = block.querySelectorAll('.opt');
+    opts.forEach(function(o){ if(o.getAttribute('onclick').indexOf(',true') !== -1) o.classList.add('correct'); });
+  }
+  var fb = block.querySelector('.feedback');
+  fb.textContent = (isOk ? '✓ ' : '✗ ') + (isOk ? fb.dataset.ok : fb.dataset.ko);
+  fb.className = 'feedback ' + (isOk ? 'fb-correct' : 'fb-incorrect');
+}
+</script>
+</body>
+</html>

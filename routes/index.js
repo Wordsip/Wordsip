@@ -61,6 +61,11 @@ router.get('/grammaire', (req, res) => {
   res.sendFile('grammaire.html', { root: 'public' });
 });
 
+// Fiches pédagogiques imprimables (prépositions, pronoms relatifs, etc.)
+router.get('/fiches', (req, res) => {
+  res.sendFile('fiches-en.html', { root: 'public' });
+});
+
 // Page admin
 router.get('/admin', (req, res) => {
   res.sendFile('admin.html', { root: 'public' });
