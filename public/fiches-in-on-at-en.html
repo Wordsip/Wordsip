@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WordSip — In / on / at (anglais)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-900:#17252a; --teal-700:#2b7a78; --teal-500:#3aafa9;
+    --mint-100:#eaf6f5; --coral:#e8734f; --line:#dceeed;
+    --paper:#ffffff; --page-bg:#f3faf9; color-scheme: light;
+  }
+  :root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+    --page-bg:#0e1716; --paper:#152321; --line:#233f3c; --teal-900:#eaf6f5;
+  }}
+  :root[data-theme="dark"]{ --page-bg:#0e1716; --paper:#152321; --line:#233f3c; --teal-900:#eaf6f5; }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{ margin:0; background:var(--page-bg); color:var(--teal-900);
+    font-family:'Nunito Sans','Segoe UI',Arial,sans-serif;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+  h1,h2,h3,.chip,.brand{font-family:'Fredoka','Segoe UI',sans-serif;}
+  .toolbar{ position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between;
+    gap:12px; padding:10px 18px; padding-top:calc(10px + env(safe-area-inset-top,0px)); background:var(--teal-700); color:#fff; }
+  .toolbar .brand{font-weight:600; font-size:1rem;}
+  .toolbar button{ background:#fff; color:var(--teal-700); border:none; border-radius:999px;
+    padding:8px 18px; font-weight:700; font-size:.85rem; cursor:pointer; font-family:'Nunito Sans',sans-serif; }
+  .toolbar button:hover{background:var(--mint-100);}
+  .sheet{ max-width:900px; margin:28px auto; background:var(--paper); border-radius:18px;
+    box-shadow:0 10px 30px rgba(23,37,42,.08); padding:40px 44px; position:relative; overflow:hidden; }
+  .sheet + .sheet{margin-top:36px;}
+  .watermark{ position:absolute; inset:0; z-index:0; pointer-events:none; display:grid;
+    grid-template-columns:repeat(4,1fr); gap:38px; transform:rotate(-18deg) scale(1.3); opacity:.05; }
+  .watermark span{font-family:'Fredoka',sans-serif; font-weight:700; font-size:1.3rem; color:var(--teal-900); white-space:nowrap;}
+  .sheet > *:not(.watermark){position:relative; z-index:1;}
+  .eyebrow{font-size:.8rem; color:var(--teal-500); font-weight:700; margin-bottom:4px;}
+  .sheet h1{font-size:1.8rem; color:var(--teal-900); margin:0 0 2px; font-weight:700;}
+  .sheet .sub{color:var(--teal-500); font-size:.95rem; margin-bottom:26px; font-style:italic;}
+  .prep-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px 26px;}
+  .prep-card{border:1.5px solid var(--line); border-radius:16px; padding:14px 16px 16px; display:flex; align-items:center; gap:14px;}
+  .prep-card svg{flex:0 0 auto; width:84px; height:68px;}
+  .prep-word{font-family:'Fredoka',sans-serif; font-weight:600; color:var(--teal-700); font-size:1.05rem; margin-bottom:2px;}
+  .prep-ex{font-size:.88rem; color:var(--teal-900); line-height:1.4;}
+  .prep-ex .fr{display:block; color:#7c9a97; font-size:.8rem; margin-top:2px;}
+  .q-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px 30px;}
+  .q-block{padding-bottom:16px; border-bottom:1px dashed var(--line);}
+  .q-block::after{content:"";display:table;clear:both;}
+  .q-icon{float:left; width:52px; height:42px; margin:0 10px 8px 0;}
+  .q-grid .q-block:nth-last-child(-n+2){border-bottom:none;}
+  .chip{display:inline-block; background:var(--coral); color:#fff; font-weight:600; font-size:.8rem; padding:5px 14px; border-radius:8px; margin-bottom:10px;}
+  .q-sentence{font-size:.96rem; margin-bottom:12px; line-height:1.5;}
+  .blank{display:inline-block; min-width:70px; border-bottom:2px solid var(--teal-500); height:1.1em; vertical-align:-4px; margin:0 3px;}
+  .opt-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .opt{display:flex; align-items:center; gap:10px; border:1.5px solid var(--line); border-radius:10px; padding:8px 12px; font-size:.9rem; cursor:pointer; user-select:none; transition:background .15s,border-color .15s;}
+  .opt:hover{border-color:var(--teal-500);}
+  .opt .num{width:20px; height:20px; border-radius:50%; border:1.5px solid var(--teal-500); color:var(--teal-700);
+    font-size:.72rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 auto;}
+  .opt.correct{background:#e6f7ec; border-color:#2f9e5c; color:#1f7a44; font-weight:700;}
+  .opt.correct .num{border-color:#2f9e5c; color:#1f7a44;}
+  .opt.incorrect{background:#fdecea; border-color:#d9503c; color:#b83f2e; font-weight:700;}
+  .opt.incorrect .num{border-color:#d9503c; color:#b83f2e;}
+  .q-block.answered .opt{cursor:default; pointer-events:none;}
+  .feedback{display:none; margin-top:10px; padding:8px 12px; border-radius:8px; font-size:.85rem; line-height:1.4;}
+  .feedback.fb-correct{display:block; background:#e6f7ec; color:#1f7a44;}
+  .feedback.fb-incorrect{display:block; background:#fdecea; color:#b83f2e;}
+  .corrige{display:none; max-width:900px; margin:20px auto 60px; padding:0 44px; font-size:.88rem; color:var(--teal-700);}
+  .corrige h3{font-size:1rem; margin-bottom:10px; color:var(--teal-900);}
+  .corrige ol{margin:0; padding-left:18px; columns:2; column-gap:36px;}
+  .corrige li{margin-bottom:8px; line-height:1.35;}
+  .corrige li b{color:var(--teal-900);}
+  .corrige li .why{display:block; color:#7c9a97; font-size:.82rem;}
+  .note{max-width:900px; margin:0 auto 30px; padding:0 44px; font-size:.85rem; color:#7c9a97;}
+  @media (max-width:640px){ .prep-grid,.q-grid{grid-template-columns:1fr;} .sheet{padding:28px 20px; margin:16px 12px;} .corrige,.note{padding:0 20px;} .corrige ol{columns:1;} }
+  @media print{
+    .toolbar,.note,.feedback{display:none !important;} body{background:#fff;}
+    .sheet{box-shadow:none; border-radius:0; margin:0; padding:26px 30px; page-break-after:always;}
+    .corrige{display:block; page-break-before:always; padding:26px 30px 40px;}
+    .opt.correct,.opt.incorrect{background:none; border-color:var(--line); color:inherit; font-weight:400;}
+    .watermark{opacity:.06;} @page{size:A4; margin:14mm;}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <span class="brand">WordSip · Fiches pédagogiques</span>
+  <button onclick="window.print()">Imprimer / PDF</button>
+</div>
+
+
+
+
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Fiche mémo — anglais</div>
+  <h1>In, on, at</h1>
+  <div class="sub">Comment choisir entre les trois ?</div>
+  <div class="tbl-wrap">
+    <table class="memo">
+      <tr><th>Préposition</th><th>Espace</th><th>Temps</th></tr>
+      <tr><td class="word">in</td><td>à l'intérieur d'un espace fermé<span class="ex">in the room, in my bag</span></td><td>mois, année, siècle<span class="ex">in July, in 2026, in the 21st century</span></td></tr>
+      <tr><td class="word">on</td><td>sur une surface<span class="ex">on the table, on the wall</span></td><td>jours et dates précises<span class="ex">on Monday, on April 3rd</span></td></tr>
+      <tr><td class="word">at</td><td>un point précis, un lieu spécifique<span class="ex">at the door, at the bus stop</span></td><td>heures et moments précis<span class="ex">at 8 AM, at noon, at night</span></td></tr>
+    </table>
+  </div>
+  <div class="callout"><b>Exceptions à connaître :</b> <i>at night</i> (≠ in the night) · <i>at the weekend</i> (anglais britannique) / <i>on the weekend</i> (anglais américain)</div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Exercice — anglais</div>
+  <h1>In, on, at</h1>
+  <div class="sub">Clique sur ta réponse — la correction s'affiche aussitôt</div>
+  <div class="q-grid">
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="6"/></svg><span class="chip">Question 1</span>
+      <div class="q-sentence">I was born <span class="blank"></span> March, in 1998.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>for</div></div>
+      <div class="feedback" data-ok="in — un mois se dit toujours avec « in »." data-ko="Pas tout à fait : un mois se dit avec « in » → in March."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="50" y1="50" x2="50" y2="26" stroke="#2b7a78" stroke-width="6"/><line x1="50" y1="50" x2="68" y2="50" stroke="#2b7a78" stroke-width="6"/></svg><span class="chip">Question 2</span>
+      <div class="q-sentence">The shop opens <span class="blank"></span> 9 AM sharp.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>during</div></div>
+      <div class="feedback" data-ok="at — heure précise « 9 AM sharp »." data-ko="Pas tout à fait : heure précise → at."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="6"/><rect x="42" y="52" width="16" height="16" rx="3" fill="#3aafa9"/></svg><span class="chip">Question 3</span>
+      <div class="q-sentence">We're getting married <span class="blank"></span> June 14th.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>since</div></div>
+      <div class="feedback" data-ok="on — une date précise se dit avec « on »." data-ko="Pas tout à fait : une date précise → on June 14th."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="18" y="30" width="64" height="42" rx="4" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="18" y1="30" x2="82" y2="30" stroke="#2b7a78" stroke-width="5"/><circle cx="50" cy="50" r="14" fill="#3aafa9"/></svg><span class="chip">Question 4</span>
+      <div class="q-sentence">Your keys are <span class="blank"></span> the kitchen drawer.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>during</div></div>
+      <div class="feedback" data-ok="in — un tiroir est un espace fermé." data-ko="Pas tout à fait : un tiroir est un espace fermé → in."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="18" y="46" width="64" height="26" rx="4" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="18" y1="46" x2="82" y2="46" stroke="#2b7a78" stroke-width="5"/><circle cx="50" cy="32" r="14" fill="#3aafa9"/></svg><span class="chip">Question 5</span>
+      <div class="q-sentence">There's a book <span class="blank"></span> the table.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>by</div></div>
+      <div class="feedback" data-ok="on — une surface prend « on »." data-ko="Pas tout à fait : une surface → on."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="42" y="20" width="50" height="44" rx="4" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="42" y1="20" x2="92" y2="20" stroke="#2b7a78" stroke-width="5"/><circle cx="28" cy="54" r="15" fill="#3aafa9"/></svg><span class="chip">Question 6</span>
+      <div class="q-sentence">Meet me <span class="blank"></span> the bus stop, right in front of it.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>during</div></div>
+      <div class="feedback" data-ok="at — un point précis dans l'espace." data-ko="Pas tout à fait : un point précis → at."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><path d="M40,20 A30,30 0 1 0 40,80 A24,24 0 1 1 40,20 z" fill="#2b7a78"/></svg><span class="chip">Question 7</span>
+      <div class="q-sentence">I always sleep well <span class="blank"></span> night.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>during</div></div>
+      <div class="feedback" data-ok="at night — exception à connaître par cœur." data-ko="Pas tout à fait : c'est une exception → at night."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="6"/><line x1="30" y1="12" x2="30" y2="26" stroke="#2b7a78" stroke-width="6"/><line x1="70" y1="12" x2="70" y2="26" stroke="#2b7a78" stroke-width="6"/></svg><span class="chip">Question 8</span>
+      <div class="q-sentence">Christmas is always celebrated <span class="blank"></span> December.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>since</div></div>
+      <div class="feedback" data-ok="in — un mois se dit avec « in »." data-ko="Pas tout à fait : un mois → in December."></div></div>
+  </div>
+</section>
+
+<div class="note">Astuce impression : format A4. Le filigrane WordSip est composé de vrais éléments texte (pas une image de fond) : il s'imprime normalement sans réglage particulier.</div>
+<div class="corrige">
+  <h3>Corrigé</h3>
+  <ol>
+    <li><b>in</b><span class="why">mois → in March</span></li>
+    <li><b>at</b><span class="why">heure précise → at 9 AM</span></li>
+    <li><b>on</b><span class="why">date précise → on June 14th</span></li>
+    <li><b>in</b><span class="why">espace fermé → in the drawer</span></li>
+    <li><b>on</b><span class="why">surface → on the table</span></li>
+    <li><b>at</b><span class="why">point précis → at the bus stop</span></li>
+    <li><b>at</b><span class="why">exception → at night</span></li>
+    <li><b>in</b><span class="why">mois → in December</span></li>
+  </ol>
+</div>
+<script>
+function ans(el, isOk){
+  var block = el.closest('.q-block');
+  if(block.classList.contains('answered')) return;
+  block.classList.add('answered');
+  el.classList.add(isOk ? 'correct' : 'incorrect');
+  if(!isOk){
+    var opts = block.querySelectorAll('.opt');
+    opts.forEach(function(o){ if(o.getAttribute('onclick').indexOf(',true') !== -1) o.classList.add('correct'); });
+  }
+  var fb = block.querySelector('.feedback');
+  fb.textContent = (isOk ? '✓ ' : '✗ ') + (isOk ? fb.dataset.ok : fb.dataset.ko);
+  fb.className = 'feedback ' + (isOk ? 'fb-correct' : 'fb-incorrect');
+}
+</script>
+</body>
+</html>

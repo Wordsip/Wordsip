@@ -956,6 +956,335 @@
         }
       ],
       "level": "niveau1"
+    },
+    {
+      "id": "prepositions-place",
+      "title": "Prépositions de lieu",
+      "subtitle": "In, on, under, between... où est-ce ?",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "in",
+          "rule": "à l'intérieur d'un espace fermé",
+          "examples": [
+            "The ball is in the box."
+          ]
+        },
+        {
+          "title": "on",
+          "rule": "posé sur une surface",
+          "examples": [
+            "The ball is on the box."
+          ]
+        },
+        {
+          "title": "under",
+          "rule": "en dessous, hors de vue",
+          "examples": [
+            "The ball is under the box."
+          ]
+        },
+        {
+          "title": "between",
+          "rule": "entre deux repères",
+          "examples": [
+            "The ball is between the boxes."
+          ]
+        },
+        {
+          "title": "in front of",
+          "rule": "juste devant",
+          "examples": [
+            "The ball is in front of the box."
+          ]
+        },
+        {
+          "title": "above",
+          "rule": "au-dessus, sans contact",
+          "examples": [
+            "The ball is above the box."
+          ]
+        },
+        {
+          "title": "next to",
+          "rule": "juste à côté, contact direct",
+          "examples": [
+            "The ball is next to the box."
+          ]
+        },
+        {
+          "title": "near",
+          "rule": "à proximité, à distance",
+          "examples": [
+            "The ball is near the box."
+          ]
+        },
+        {
+          "title": "behind",
+          "rule": "caché derrière",
+          "examples": [
+            "The ball is behind the box."
+          ]
+        },
+        {
+          "title": "below",
+          "rule": "position plus générale que « under »",
+          "examples": [
+            "The ball is below the shelf."
+          ]
+        }
+      ],
+      "level": "niveau1",
+      "printUrl": "/fiches-lieu-en.html"
+    },
+    {
+      "id": "prepositions-movement",
+      "title": "Prépositions de mouvement",
+      "subtitle": "Up, down, into, through... quel est le sens ?",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "up",
+          "rule": "vers le haut",
+          "examples": [
+            "The ball rolled up the stairs."
+          ]
+        },
+        {
+          "title": "down",
+          "rule": "vers le bas",
+          "examples": [
+            "The ball rolled down the stairs."
+          ]
+        },
+        {
+          "title": "into",
+          "rule": "entrer à l'intérieur",
+          "examples": [
+            "The ball rolled into the box."
+          ]
+        },
+        {
+          "title": "out of",
+          "rule": "sortir de l'intérieur",
+          "examples": [
+            "The ball rolled out of the box."
+          ]
+        },
+        {
+          "title": "onto",
+          "rule": "atterrir sur une surface (avec mouvement)",
+          "examples": [
+            "The ball jumped onto the box."
+          ]
+        },
+        {
+          "title": "off",
+          "rule": "quitter une surface",
+          "examples": [
+            "The ball fell off the box."
+          ]
+        },
+        {
+          "title": "over",
+          "rule": "par-dessus",
+          "examples": [
+            "The ball flew over the box."
+          ]
+        },
+        {
+          "title": "across",
+          "rule": "d'un côté à l'autre",
+          "examples": [
+            "The ball rolled across the room."
+          ]
+        },
+        {
+          "title": "around",
+          "rule": "tout autour",
+          "examples": [
+            "The ball rolled around the box."
+          ]
+        },
+        {
+          "title": "through",
+          "rule": "à travers un espace fermé",
+          "examples": [
+            "The ball went through the hoop."
+          ]
+        }
+      ],
+      "level": "niveau1",
+      "printUrl": "/fiches-mouvement-en.html"
+    },
+    {
+      "id": "prepositions-time",
+      "title": "Prépositions de temps",
+      "subtitle": "At, in, on, since, until... quand ?",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "at",
+          "rule": "heure ou moment précis",
+          "examples": [
+            "The class starts at 7 AM."
+          ]
+        },
+        {
+          "title": "in",
+          "rule": "mois, année, siècle",
+          "examples": [
+            "She was born in 1997."
+          ]
+        },
+        {
+          "title": "on",
+          "rule": "un jour ou une date précise",
+          "examples": [
+            "We're meeting on Monday."
+          ]
+        },
+        {
+          "title": "for",
+          "rule": "une durée chiffrée",
+          "examples": [
+            "He waited for two hours."
+          ]
+        },
+        {
+          "title": "since",
+          "rule": "un point de départ précis",
+          "examples": [
+            "She's been here since 8 AM."
+          ]
+        },
+        {
+          "title": "during",
+          "rule": "pendant un événement",
+          "examples": [
+            "He fell asleep during the night."
+          ]
+        },
+        {
+          "title": "before",
+          "rule": "avant un moment",
+          "examples": [
+            "Wash your hands before dinner."
+          ]
+        },
+        {
+          "title": "after",
+          "rule": "après un moment",
+          "examples": [
+            "We talked after the meeting."
+          ]
+        },
+        {
+          "title": "until",
+          "rule": "jusqu'à, sans interruption",
+          "examples": [
+            "The shop is open until Friday."
+          ]
+        },
+        {
+          "title": "by",
+          "rule": "au plus tard, une échéance",
+          "examples": [
+            "Finish the report by tomorrow."
+          ]
+        }
+      ],
+      "level": "niveau1",
+      "printUrl": "/fiches-temps-en.html"
+    },
+    {
+      "id": "in-on-at",
+      "title": "In / on / at",
+      "subtitle": "Comment choisir entre les trois ?",
+      "type": "reference",
+      "table": {
+        "headers": [
+          "Préposition",
+          "Espace",
+          "Temps"
+        ],
+        "rows": [
+          [
+            "in",
+            "à l'intérieur d'un espace fermé (in the room)",
+            "mois, année, siècle (in July, in 2026)"
+          ],
+          [
+            "on",
+            "sur une surface (on the table)",
+            "jours et dates précises (on Monday, on April 3rd)"
+          ],
+          [
+            "at",
+            "un point précis (at the door)",
+            "heures et moments précis (at 8 AM, at night)"
+          ]
+        ]
+      },
+      "level": "niveau1",
+      "printUrl": "/fiches-in-on-at-en.html"
+    },
+    {
+      "id": "relative-pronouns",
+      "title": "Relative pronouns",
+      "subtitle": "Who, which, that... comment choisir ?",
+      "type": "reference",
+      "table": {
+        "headers": [
+          "Pronom",
+          "Usage",
+          "Exemple"
+        ],
+        "rows": [
+          [
+            "who",
+            "sujet, pour une personne",
+            "the man who called"
+          ],
+          [
+            "whom",
+            "complément, personne (formel)",
+            "the man whom I met"
+          ],
+          [
+            "whose",
+            "possession",
+            "the man whose car is red"
+          ],
+          [
+            "which",
+            "une chose ou un animal",
+            "the book which I read"
+          ],
+          [
+            "that",
+            "personne ou chose (informel)",
+            "the book that I read"
+          ],
+          [
+            "where",
+            "un lieu",
+            "the house where I grew up"
+          ],
+          [
+            "when",
+            "un moment",
+            "the day when we met"
+          ],
+          [
+            "why",
+            "une raison",
+            "the reason why I left"
+          ]
+        ]
+      },
+      "level": "niveau1",
+      "printUrl": "/fiches-pronoms-relatifs-en.html"
     }
   ],
   "es": [

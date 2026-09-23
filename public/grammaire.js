@@ -733,6 +733,20 @@ function renderRuleLessonCard(lesson) {
       <p style="font-size:13px;color:#555;margin-top:4px;">${lesson.subtitle || ''}</p>
     </section>
     ${sectionsHtml}
+    ${renderPrintLink(lesson)}
+  `;
+}
+
+// Lien vers la fiche imprimable (avec dessins et exercice interactif),
+// affiché en bas de la leçon quand la fiche existe pour ce sujet.
+function renderPrintLink(lesson) {
+  if (!lesson.printUrl) return '';
+  return `
+    <div style="text-align:center;margin-top:16px;">
+      <a href="${lesson.printUrl}" target="_blank" rel="noopener" style="display:inline-block;padding:8px 18px;border-radius:999px;background:#2b7a78;color:#fff;text-decoration:none;font-size:13px;font-weight:600;">
+        🖨️ Version imprimable (avec exercice)
+      </a>
+    </div>
   `;
 }
 
@@ -758,6 +772,7 @@ function renderReferenceLessonCard(lesson) {
         </table>
       </div>
     </section>
+    ${renderPrintLink(lesson)}
   `;
 }
 

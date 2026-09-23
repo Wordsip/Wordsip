@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WordSip — Prépositions de temps (anglais)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-900:#17252a; --teal-700:#2b7a78; --teal-500:#3aafa9;
+    --mint-100:#eaf6f5; --coral:#e8734f; --line:#dceeed;
+    --paper:#ffffff; --page-bg:#f3faf9; color-scheme: light;
+  }
+  :root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){
+    --page-bg:#0e1716; --paper:#152321; --line:#233f3c; --teal-900:#eaf6f5;
+  }}
+  :root[data-theme="dark"]{ --page-bg:#0e1716; --paper:#152321; --line:#233f3c; --teal-900:#eaf6f5; }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{ margin:0; background:var(--page-bg); color:var(--teal-900);
+    font-family:'Nunito Sans','Segoe UI',Arial,sans-serif;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+  h1,h2,h3,.chip,.brand{font-family:'Fredoka','Segoe UI',sans-serif;}
+  .toolbar{ position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between;
+    gap:12px; padding:10px 18px; padding-top:calc(10px + env(safe-area-inset-top,0px)); background:var(--teal-700); color:#fff; }
+  .toolbar .brand{font-weight:600; font-size:1rem;}
+  .toolbar button{ background:#fff; color:var(--teal-700); border:none; border-radius:999px;
+    padding:8px 18px; font-weight:700; font-size:.85rem; cursor:pointer; font-family:'Nunito Sans',sans-serif; }
+  .toolbar button:hover{background:var(--mint-100);}
+  .sheet{ max-width:900px; margin:28px auto; background:var(--paper); border-radius:18px;
+    box-shadow:0 10px 30px rgba(23,37,42,.08); padding:40px 44px; position:relative; overflow:hidden; }
+  .sheet + .sheet{margin-top:36px;}
+  .watermark{ position:absolute; inset:0; z-index:0; pointer-events:none; display:grid;
+    grid-template-columns:repeat(4,1fr); gap:38px; transform:rotate(-18deg) scale(1.3); opacity:.05; }
+  .watermark span{font-family:'Fredoka',sans-serif; font-weight:700; font-size:1.3rem; color:var(--teal-900); white-space:nowrap;}
+  .sheet > *:not(.watermark){position:relative; z-index:1;}
+  .eyebrow{font-size:.8rem; color:var(--teal-500); font-weight:700; margin-bottom:4px;}
+  .sheet h1{font-size:1.8rem; color:var(--teal-900); margin:0 0 2px; font-weight:700;}
+  .sheet .sub{color:var(--teal-500); font-size:.95rem; margin-bottom:26px; font-style:italic;}
+  .prep-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px 26px;}
+  .prep-card{border:1.5px solid var(--line); border-radius:16px; padding:14px 16px 16px; display:flex; align-items:center; gap:14px;}
+  .prep-card svg{flex:0 0 auto; width:84px; height:68px;}
+  .prep-word{font-family:'Fredoka',sans-serif; font-weight:600; color:var(--teal-700); font-size:1.05rem; margin-bottom:2px;}
+  .prep-ex{font-size:.88rem; color:var(--teal-900); line-height:1.4;}
+  .prep-ex .fr{display:block; color:#7c9a97; font-size:.8rem; margin-top:2px;}
+  .q-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px 30px;}
+  .q-block{padding-bottom:16px; border-bottom:1px dashed var(--line);}
+  .q-block::after{content:"";display:table;clear:both;}
+  .q-icon{float:left; width:52px; height:42px; margin:0 10px 8px 0;}
+  .q-grid .q-block:nth-last-child(-n+2){border-bottom:none;}
+  .chip{display:inline-block; background:var(--coral); color:#fff; font-weight:600; font-size:.8rem; padding:5px 14px; border-radius:8px; margin-bottom:10px;}
+  .q-sentence{font-size:.96rem; margin-bottom:12px; line-height:1.5;}
+  .blank{display:inline-block; min-width:70px; border-bottom:2px solid var(--teal-500); height:1.1em; vertical-align:-4px; margin:0 3px;}
+  .opt-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .opt{display:flex; align-items:center; gap:10px; border:1.5px solid var(--line); border-radius:10px; padding:8px 12px; font-size:.9rem; cursor:pointer; user-select:none; transition:background .15s,border-color .15s;}
+  .opt:hover{border-color:var(--teal-500);}
+  .opt .num{width:20px; height:20px; border-radius:50%; border:1.5px solid var(--teal-500); color:var(--teal-700);
+    font-size:.72rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 auto;}
+  .opt.correct{background:#e6f7ec; border-color:#2f9e5c; color:#1f7a44; font-weight:700;}
+  .opt.correct .num{border-color:#2f9e5c; color:#1f7a44;}
+  .opt.incorrect{background:#fdecea; border-color:#d9503c; color:#b83f2e; font-weight:700;}
+  .opt.incorrect .num{border-color:#d9503c; color:#b83f2e;}
+  .q-block.answered .opt{cursor:default; pointer-events:none;}
+  .feedback{display:none; margin-top:10px; padding:8px 12px; border-radius:8px; font-size:.85rem; line-height:1.4;}
+  .feedback.fb-correct{display:block; background:#e6f7ec; color:#1f7a44;}
+  .feedback.fb-incorrect{display:block; background:#fdecea; color:#b83f2e;}
+  .corrige{display:none; max-width:900px; margin:20px auto 60px; padding:0 44px; font-size:.88rem; color:var(--teal-700);}
+  .corrige h3{font-size:1rem; margin-bottom:10px; color:var(--teal-900);}
+  .corrige ol{margin:0; padding-left:18px; columns:2; column-gap:36px;}
+  .corrige li{margin-bottom:8px; line-height:1.35;}
+  .corrige li b{color:var(--teal-900);}
+  .corrige li .why{display:block; color:#7c9a97; font-size:.82rem;}
+  .note{max-width:900px; margin:0 auto 30px; padding:0 44px; font-size:.85rem; color:#7c9a97;}
+  @media (max-width:640px){ .prep-grid,.q-grid{grid-template-columns:1fr;} .sheet{padding:28px 20px; margin:16px 12px;} .corrige,.note{padding:0 20px;} .corrige ol{columns:1;} }
+  @media print{
+    .toolbar,.note,.feedback{display:none !important;} body{background:#fff;}
+    .sheet{box-shadow:none; border-radius:0; margin:0; padding:26px 30px; page-break-after:always;}
+    .corrige{display:block; page-break-before:always; padding:26px 30px 40px;}
+    .opt.correct,.opt.incorrect{background:none; border-color:var(--line); color:inherit; font-weight:400;}
+    .watermark{opacity:.06;} @page{size:A4; margin:14mm;}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <span class="brand">WordSip · Fiches pédagogiques</span>
+  <button onclick="window.print()">Imprimer / PDF</button>
+</div>
+
+
+
+
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Fiche pédagogique — anglais</div>
+  <h1>Prepositions of time</h1>
+  <div class="sub">When is it?</div>
+  <div class="prep-grid">
+    <div class="prep-card"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="50" y1="50" x2="50" y2="26" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><line x1="50" y1="50" x2="68" y2="50" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/></svg><div><div class="prep-word">at</div><div class="prep-ex">The class starts <b>at</b> 7 AM.<span class="fr">à (heure précise)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="5"/><line x1="30" y1="12" x2="30" y2="26" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><line x1="70" y1="12" x2="70" y2="26" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/></svg><div><div class="prep-word">in</div><div class="prep-ex">She was born <b>in</b> 1997.<span class="fr">en (mois, année, siècle)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="5"/><rect x="42" y="52" width="16" height="16" rx="3" fill="#3aafa9"/></svg><div><div class="prep-word">on</div><div class="prep-ex">We're meeting <b>on</b> Monday.<span class="fr">un jour précis / une date</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><line x1="18" y1="50" x2="82" y2="50" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><line x1="18" y1="38" x2="18" y2="62" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><line x1="82" y1="38" x2="82" y2="62" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/></svg><div><div class="prep-word">for</div><div class="prep-ex">He waited <b>for</b> two hours.<span class="fr">pendant (durée)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><circle cx="35" cy="50" r="6" fill="#2b7a78"/><line x1="41" y1="50" x2="78" y2="50" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><path d="M70,42 L80,50 L70,58" stroke="#2b7a78" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">since</div><div class="prep-ex">She's been here <b>since</b> 8 AM.<span class="fr">depuis (point de départ)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><path d="M30,60 A20,20 0 1 1 62,30" fill="none" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><circle cx="72" cy="66" r="2.5" fill="#2b7a78"/><circle cx="78" cy="60" r="2.5" fill="#2b7a78"/><circle cx="82" cy="52" r="2.5" fill="#2b7a78"/></svg><div><div class="prep-word">during</div><div class="prep-ex">He fell asleep <b>during</b> the night.<span class="fr">pendant (un événement)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><circle cx="55" cy="50" r="30" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="55" y1="50" x2="55" y2="30" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><line x1="55" y1="50" x2="70" y2="50" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><path d="M18,50 L28,42 L28,58 z" fill="#2b7a78"/></svg><div><div class="prep-word">before</div><div class="prep-ex">Wash your hands <b>before</b> dinner.<span class="fr">avant</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><circle cx="45" cy="50" r="30" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="45" y1="50" x2="45" y2="30" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><line x1="45" y1="50" x2="60" y2="50" stroke="#2b7a78" stroke-width="5" stroke-linecap="round"/><path d="M82,50 L72,42 L72,58 z" fill="#2b7a78"/></svg><div><div class="prep-word">after</div><div class="prep-ex">We talked <b>after</b> the meeting.<span class="fr">après</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="5"/><line x1="66" y1="56" x2="66" y2="76" stroke="#e8734f" stroke-width="5" stroke-linecap="round"/><line x1="58" y1="76" x2="74" y2="76" stroke="#e8734f" stroke-width="5" stroke-linecap="round"/></svg><div><div class="prep-word">until</div><div class="prep-ex">The shop is open <b>until</b> Friday.<span class="fr">jusqu'à (sans interruption)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="5"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="5"/><path d="M50,52 L50,72" stroke="#e8734f" stroke-width="5" stroke-linecap="round"/><path d="M42,64 L50,74 L58,64" stroke="#e8734f" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">by</div><div class="prep-ex">Finish the report <b>by</b> tomorrow.<span class="fr">au plus tard, avant une échéance</span></div></div></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Exercice — anglais</div>
+  <h1>Prepositions of time</h1>
+  <div class="sub">Clique sur ta réponse — la correction s'affiche aussitôt</div>
+  <div class="q-grid">
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><circle cx="50" cy="50" r="34" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="50" y1="50" x2="50" y2="26" stroke="#2b7a78" stroke-width="6"/><line x1="50" y1="50" x2="68" y2="50" stroke="#2b7a78" stroke-width="6"/></svg><span class="chip">Question 1</span>
+      <div class="q-sentence">The train leaves <span class="blank"></span> exactly 9 o'clock, not a minute later.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>in</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>during</div></div>
+      <div class="feedback" data-ok="at — heure précise, « not a minute later »." data-ko="Pas tout à fait : heure précise → at."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="6"/><rect x="42" y="52" width="16" height="16" rx="3" fill="#3aafa9"/></svg><span class="chip">Question 2</span>
+      <div class="q-sentence">We always visit grandma <span class="blank"></span> Sundays, every single week.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>at</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>on</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>for</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>since</div></div>
+      <div class="feedback" data-ok="on — jour de la semaine répété : on Sundays." data-ko="Pas tout à fait : jour de la semaine → on."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><line x1="18" y1="50" x2="82" y2="50" stroke="#2b7a78" stroke-width="6"/><line x1="18" y1="38" x2="18" y2="62" stroke="#2b7a78" stroke-width="6"/><line x1="82" y1="38" x2="82" y2="62" stroke="#2b7a78" stroke-width="6"/></svg><span class="chip">Question 3</span>
+      <div class="q-sentence">They have lived in Paris <span class="blank"></span> ten years, and they're still there.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>since</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>for</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>until</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>by</div></div>
+      <div class="feedback" data-ok="for — durée chiffrée « ten years »." data-ko="Pas tout à fait : durée chiffrée → for."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><circle cx="35" cy="50" r="7" fill="#2b7a78"/><line x1="42" y1="50" x2="78" y2="50" stroke="#2b7a78" stroke-width="6"/><path d="M70,42 L80,50 L70,58" stroke="#2b7a78" stroke-width="6" fill="none"/></svg><span class="chip">Question 4</span>
+      <div class="q-sentence">I haven't seen her <span class="blank"></span> last Christmas — that was the last time.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>for</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>during</div><div class="opt" onclick="ans(this,true)"><span class="num">3</span>since</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>at</div></div>
+      <div class="feedback" data-ok="since — point de départ précis dans le passé." data-ko="Pas tout à fait : point de départ précis → since."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><path d="M30,60 A20,20 0 1 1 62,30" fill="none" stroke="#2b7a78" stroke-width="6"/><circle cx="72" cy="66" r="3" fill="#2b7a78"/><circle cx="78" cy="60" r="3" fill="#2b7a78"/></svg><span class="chip">Question 5</span>
+      <div class="q-sentence">The phone rang twice <span class="blank"></span> the movie, which was really annoying.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>during</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>for</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>at</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>on</div></div>
+      <div class="feedback" data-ok="during — pendant un événement (« the movie »)." data-ko="Pas tout à fait : pendant l'événement → during."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><circle cx="55" cy="50" r="30" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="55" y1="50" x2="55" y2="30" stroke="#2b7a78" stroke-width="6"/><path d="M18,50 L28,42 L28,58 z" fill="#2b7a78"/></svg><span class="chip">Question 6</span>
+      <div class="q-sentence">Please arrive <span class="blank"></span> the meeting starts, not one minute after.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>after</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>before</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>during</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>since</div></div>
+      <div class="feedback" data-ok="before — « not one minute after » = avant le début." data-ko="Pas tout à fait : « not one minute after » → before."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="6"/><line x1="66" y1="56" x2="66" y2="76" stroke="#e8734f" stroke-width="6"/><line x1="58" y1="76" x2="74" y2="76" stroke="#e8734f" stroke-width="6"/></svg><span class="chip">Question 7</span>
+      <div class="q-sentence">The library stays open <span class="blank"></span> 9 PM every night, with no break.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>by</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>until</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>since</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>during</div></div>
+      <div class="feedback" data-ok="until — continuité sans interruption jusqu'à l'heure." data-ko="Pas tout à fait : « with no break » = continuité → until."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 100"><rect x="14" y="20" width="72" height="66" rx="8" fill="none" stroke="#2b7a78" stroke-width="6"/><line x1="14" y1="40" x2="86" y2="40" stroke="#2b7a78" stroke-width="6"/><path d="M50,52 L50,72" stroke="#e8734f" stroke-width="6"/><path d="M42,64 L50,74 L58,64" stroke="#e8734f" stroke-width="6" fill="none"/></svg><span class="chip">Question 8</span>
+      <div class="q-sentence">You need to hand in the form <span class="blank"></span> Friday at the latest.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>until</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>by</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>for</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>in</div></div>
+      <div class="feedback" data-ok="by — échéance « at the latest »." data-ko="Pas tout à fait : « at the latest » = échéance → by."></div></div>
+  </div>
+</section>
+
+<div class="note">Astuce impression : format A4. Le filigrane WordSip est composé de vrais éléments texte (pas une image de fond) : il s'imprime normalement sans réglage particulier.</div>
+<div class="corrige">
+  <h3>Corrigé</h3>
+  <ol>
+    <li><b>at</b><span class="why">heure précise, « not a minute later »</span></li>
+    <li><b>on</b><span class="why">jour de la semaine répété = on Sundays</span></li>
+    <li><b>for</b><span class="why">durée chiffrée « ten years »</span></li>
+    <li><b>since</b><span class="why">point de départ précis dans le passé</span></li>
+    <li><b>during</b><span class="why">pendant un événement (« the movie »)</span></li>
+    <li><b>before</b><span class="why">« not one minute after » = avant le début</span></li>
+    <li><b>until</b><span class="why">continuité sans interruption jusqu'à l'heure</span></li>
+    <li><b>by</b><span class="why">échéance « at the latest »</span></li>
+  </ol>
+</div>
+<script>
+function ans(el, isOk){
+  var block = el.closest('.q-block');
+  if(block.classList.contains('answered')) return;
+  block.classList.add('answered');
+  el.classList.add(isOk ? 'correct' : 'incorrect');
+  if(!isOk){
+    var opts = block.querySelectorAll('.opt');
+    opts.forEach(function(o){ if(o.getAttribute('onclick').indexOf(',true') !== -1) o.classList.add('correct'); });
+  }
+  var fb = block.querySelector('.feedback');
+  fb.textContent = (isOk ? '✓ ' : '✗ ') + (isOk ? fb.dataset.ok : fb.dataset.ko);
+  fb.className = 'feedback ' + (isOk ? 'fb-correct' : 'fb-incorrect');
+}
+</script>
+</body>
+</html>
