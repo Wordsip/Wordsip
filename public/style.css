@@ -220,3 +220,18 @@ footer a { color: #2b7a78; }
   border-color: #2b7a78;
   background: #f4faf9;
 }
+.lesson-preview {
+  display: block;
+  font-size: 12px;
+  color: #2b7a78;
+  margin-top: 8px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height .18s ease, opacity .18s ease, margin-top .18s ease;
+}
+.lesson-menu-item:hover .lesson-preview,
+.lesson-menu-item:focus-visible .lesson-preview {
+  max-height: 60px;
+  opacity: 1;
+}

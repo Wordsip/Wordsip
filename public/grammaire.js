@@ -514,14 +514,33 @@ async function loadLessons() {
 // Menu de sélection : toutes les fiches sont listées, l'utilisateur choisit
 // celle qu'il veut étudier — les autres passent en arrière-plan, accessibles
 // via le bouton "Retour à la liste".
+// Construit un court aperçu du contenu d'une fiche (quelques éléments clés),
+// affiché uniquement au survol pour donner une idée du contenu sans cliquer.
+function buildLessonPreview(lesson) {
+  if (lesson.type === 'rule' && Array.isArray(lesson.sections)) {
+    return lesson.sections.slice(0, 5).map((s) => s.title).join(' · ');
+  }
+  if (lesson.type === 'reference' && lesson.table && Array.isArray(lesson.table.rows)) {
+    return lesson.table.rows.slice(0, 5).map((r) => r[0]).join(' · ');
+  }
+  if (Array.isArray(lesson.usages)) {
+    return lesson.usages.slice(0, 3).map((u) => u.title).join(' · ');
+  }
+  return '';
+}
+
 function renderLessonsMenu() {
   const menu = document.getElementById('lessons-menu');
-  menu.innerHTML = allLessons.map((lesson, i) => `
+  menu.innerHTML = allLessons.map((lesson, i) => {
+    const preview = buildLessonPreview(lesson);
+    return `
     <button type="button" class="lesson-menu-item" data-index="${i}">
       <span style="font-weight:600;">${lesson.title}</span>
       ${lesson.subtitle ? `<span style="display:block;font-size:12px;color:#999;margin-top:2px;">${lesson.subtitle}</span>` : ''}
+      ${preview ? `<span class="lesson-preview">${preview}</span>` : ''}
     </button>
-  `).join('');
+  `;
+  }).join('');
 
   menu.querySelectorAll('.lesson-menu-item').forEach((btn) => {
     btn.addEventListener('click', () => showLessonDetail(Number(btn.dataset.index)));

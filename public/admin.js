@@ -36,6 +36,12 @@ function updatePhoneticLabels() {
 document.getElementById('add-language').addEventListener('change', updatePhoneticLabels);
 updatePhoneticLabels();
 
+document.getElementById('admin-forgot-link').addEventListener('click', (e) => {
+  e.preventDefault();
+  const info = document.getElementById('admin-forgot-info');
+  info.style.display = info.style.display === 'none' ? 'block' : 'none';
+});
+
 document.getElementById('admin-login-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = document.getElementById('admin-email').value;

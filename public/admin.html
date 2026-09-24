@@ -30,6 +30,14 @@
         <button type="submit">Se connecter</button>
       </form>
       <p id="admin-login-message"></p>
+      <p style="text-align:center;margin-top:4px;">
+        <a href="#" id="admin-forgot-link" style="font-size:12px;color:#999;">Mot de passe oublié ?</a>
+      </p>
+      <p id="admin-forgot-info" style="display:none;font-size:12px;color:#666;background:#f4faf9;border-radius:8px;padding:10px 12px;margin-top:6px;">
+        Il n'y a pas de compte ni de récupération par email : ce code correspond à la variable d'environnement
+        <code>ADMIN_SECRET</code> définie sur Render (Dashboard → ton service → Environment). Vérifie sa valeur
+        là-bas, ou change-la si besoin (le nouveau code sera actif après le redéploiement automatique).
+      </p>
     </section>
 
     <!-- Panneau admin, caché tant qu'on n'est pas connecté -->
