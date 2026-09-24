@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piège grammatical — WordSip</title>
+  <title>Grammaire — WordSip</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -21,39 +21,9 @@
     </nav>
 
     <div class="tabs" style="display:flex;gap:8px;margin-bottom:16px;justify-content:center;flex-wrap:wrap;">
-      <button type="button" id="tab-comparison-btn" class="tab-btn tab-btn-active">Pièges de sens</button>
+      <button type="button" id="tab-lessons-btn" class="tab-btn tab-btn-active">Fiches de cours</button>
       <button type="button" id="tab-verbs-btn" class="tab-btn">Verbes irréguliers</button>
       <button type="button" id="tab-characters-btn" class="tab-btn">Caractères</button>
-      <button type="button" id="tab-lessons-btn" class="tab-btn">Fiches de cours</button>
-    </div>
-
-    <div id="comparison-tab">
-      <div id="loading">Chargement des points de grammaire...</div>
-      <div id="empty" style="display:none;text-align:center;color:#999;font-size:13px;padding:30px 0;">
-        Rien de disponible pour cette langue pour le moment.
-      </div>
-
-      <div id="comparison-menu"></div>
-
-      <div id="content" style="display:none;">
-        <button type="button" id="comparison-back-btn" style="width:auto;padding:6px 14px;font-size:13px;margin-bottom:10px;">← Retour à la liste</button>
-        <section class="word-card">
-          <p class="label">Piège grammatical</p>
-          <h1 id="comparison-title" style="font-size:24px;"></h1>
-          <p id="comparison-intro" style="font-size:14px;color:#555;margin-top:8px;"></p>
-        </section>
-
-        <div id="items-list"></div>
-
-        <section class="info-card" style="margin-top:16px;">
-          <p class="info-title">🎯 EXERCICE</p>
-          <p style="font-size:12px;color:#999;margin-bottom:10px;">Choisis le bon mot pour chaque phrase. Le score s'affiche à la fin.</p>
-          <div id="quiz-container"></div>
-          <div id="quiz-result" style="display:none;text-align:center;font-weight:600;margin-top:10px;"></div>
-          <button id="quiz-check-btn" style="margin-top:10px;">Vérifier mes réponses</button>
-          <button id="quiz-retry-btn" style="display:none;margin-top:10px;">Recommencer</button>
-        </section>
-      </div>
     </div>
 
     <div id="verbs-tab" style="display:none;">
@@ -103,7 +73,7 @@
       </div>
     </div>
 
-    <div id="lessons-tab" style="display:none;">
+    <div id="lessons-tab">
       <div id="lessons-loading">Chargement des fiches...</div>
       <div id="lessons-empty" style="display:none;text-align:center;color:#999;font-size:13px;padding:30px 0;">
         Rien de disponible pour cette langue pour le moment.

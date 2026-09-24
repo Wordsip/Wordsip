@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WordSip — Por / Para (espagnol)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+  :root{ --teal-900:#17252a; --teal-700:#2b7a78; --teal-500:#3aafa9; --mint-100:#eaf6f5; --coral:#e8734f; --line:#dceeed; --paper:#ffffff; --page-bg:#f3faf9; color-scheme:light; }
+  :root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){ --page-bg:#0e1716; --paper:#152321; --line:#233f3c; --teal-900:#eaf6f5; }}
+  :root[data-theme="dark"]{ --page-bg:#0e1716; --paper:#152321; --line:#233f3c; --teal-900:#eaf6f5; }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{ margin:0; background:var(--page-bg); color:var(--teal-900); font-family:'Nunito Sans','Segoe UI',Arial,sans-serif;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+  h1,.chip,.brand{font-family:'Fredoka','Segoe UI',sans-serif;}
+  .toolbar{position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:10px 18px; padding-top:calc(10px + env(safe-area-inset-top,0px)); background:var(--teal-700); color:#fff;}
+  .toolbar button{background:#fff; color:var(--teal-700); border:none; border-radius:999px; padding:8px 18px; font-weight:700; font-size:.85rem; cursor:pointer;}
+  .sheet{max-width:900px; margin:28px auto; background:var(--paper); border-radius:18px; box-shadow:0 10px 30px rgba(23,37,42,.08); padding:40px 44px; position:relative; overflow:hidden;}
+  .sheet + .sheet{margin-top:36px;}
+  .watermark{position:absolute; inset:0; z-index:0; pointer-events:none; display:grid; grid-template-columns:repeat(4,1fr); gap:38px; transform:rotate(-18deg) scale(1.3); opacity:.05;}
+  .watermark span{font-family:'Fredoka',sans-serif; font-weight:700; font-size:1.3rem; color:var(--teal-900); white-space:nowrap;}
+  .sheet > *:not(.watermark){position:relative; z-index:1;}
+  .eyebrow{font-size:.8rem; color:var(--teal-500); font-weight:700; margin-bottom:4px;}
+  .sheet h1{font-size:1.8rem; margin:0 0 2px; font-weight:700;}
+  .sheet .sub{color:var(--teal-500); font-size:.95rem; margin-bottom:26px; font-style:italic;}
+  .tbl-wrap{overflow-x:auto;}
+  table.memo{width:100%; border-collapse:collapse; font-size:.9rem;}
+  table.memo th{text-align:left; font-family:'Fredoka',sans-serif; color:#fff; background:var(--teal-700); padding:10px 14px; font-size:.88rem;}
+  table.memo th:first-child{border-radius:10px 0 0 0;} table.memo th:last-child{border-radius:0 10px 0 0;}
+  table.memo td{border-bottom:1px solid var(--line); padding:12px 14px; vertical-align:top;}
+  table.memo td.word{font-family:'Fredoka',sans-serif; font-weight:700; color:var(--teal-700); font-size:1rem;}
+  table.memo .ex{display:block; color:#7c9a97; font-size:.8rem; margin-top:3px;}
+  .callout{margin-top:18px; background:var(--mint-100); border-radius:12px; padding:14px 18px; font-size:.88rem;}
+  .callout b{color:var(--coral);}
+  .q-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px 30px; margin-top:8px;}
+  .q-block{padding-bottom:16px; border-bottom:1px dashed var(--line);}
+  .q-block::after{content:"";display:table;clear:both;}
+  .chip{display:inline-block; background:var(--coral); color:#fff; font-weight:600; font-size:.8rem; padding:5px 14px; border-radius:8px; margin-bottom:10px;}
+  .q-sentence{font-size:.96rem; margin-bottom:12px; line-height:1.5;}
+  .blank{display:inline-block; min-width:70px; border-bottom:2px solid var(--teal-500); height:1.1em; vertical-align:-4px; margin:0 3px;}
+  .opt-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .opt{display:flex; align-items:center; gap:10px; border:1.5px solid var(--line); border-radius:10px; padding:8px 12px; font-size:.9rem; cursor:pointer; user-select:none;}
+  .opt:hover{border-color:var(--teal-500);}
+  .opt .num{width:20px; height:20px; border-radius:50%; border:1.5px solid var(--teal-500); color:var(--teal-700); font-size:.72rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 auto;}
+  .opt.correct{background:#e6f7ec; border-color:#2f9e5c; color:#1f7a44; font-weight:700;}
+  .opt.correct .num{border-color:#2f9e5c; color:#1f7a44;}
+  .opt.incorrect{background:#fdecea; border-color:#d9503c; color:#b83f2e; font-weight:700;}
+  .opt.incorrect .num{border-color:#d9503c; color:#b83f2e;}
+  .q-block.answered .opt{cursor:default; pointer-events:none;}
+  .feedback{display:none; margin-top:10px; padding:8px 12px; border-radius:8px; font-size:.85rem; line-height:1.4;}
+  .feedback.fb-correct{display:block; background:#e6f7ec; color:#1f7a44;}
+  .feedback.fb-incorrect{display:block; background:#fdecea; color:#b83f2e;}
+  .corrige{display:none; max-width:900px; margin:20px auto 60px; padding:0 44px; font-size:.88rem; color:var(--teal-700);}
+  .corrige h3{font-size:1rem; margin-bottom:10px; color:var(--teal-900);}
+  .corrige ol{margin:0; padding-left:18px; columns:2; column-gap:36px;}
+  .corrige .why{display:block; color:#7c9a97; font-size:.8rem;}
+  .note{max-width:900px; margin:0 auto 30px; padding:0 44px; font-size:.85rem; color:#7c9a97;}
+  @media (max-width:640px){ .q-grid{grid-template-columns:1fr;} .sheet{padding:28px 20px; margin:16px 12px;} .corrige,.note{padding:0 20px;} }
+  @media print{ .toolbar,.note,.feedback{display:none !important;} body{background:#fff;} .sheet{box-shadow:none; border-radius:0; margin:0; padding:26px 30px; page-break-after:always;} .corrige{display:block; page-break-before:always; padding:26px 30px 40px;} .opt.correct,.opt.incorrect{background:none; border-color:var(--line); color:inherit; font-weight:400;} .watermark{opacity:.06;} @page{size:A4; margin:14mm;} }
+</style>
+</head>
+<body>
+<div class="toolbar"><span class="brand">WordSip · Fiches pédagogiques</span><button onclick="window.print()">Imprimer / PDF</button></div>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Fiche mémo — espagnol</div>
+  <h1>Por &amp; Para</h1>
+  <div class="sub">Le piège classique de l'espagnol</div>
+  <div class="tbl-wrap">
+    <table class="memo">
+      <tr><th>Uso</th><th>Por</th><th>Para</th></tr>
+      <tr><td class="word">causa / finalidad</td><td>Lo hice <b>por</b> amor.<span class="ex">à cause de, motivé par</span></td><td>Lo hice <b>para</b> aprobar.<span class="ex">dans le but de</span></td></tr>
+      <tr><td class="word">duración / plazo</td><td>Viajé <b>por</b> dos semanas.<span class="ex">durée (par)</span></td><td>Lo necesito <b>para</b> el lunes.<span class="ex">échéance</span></td></tr>
+      <tr><td class="word">medio / destinatario</td><td>Hablamos <b>por</b> teléfono.<span class="ex">moyen</span></td><td>Este regalo es <b>para</b> ti.<span class="ex">destinataire</span></td></tr>
+      <tr><td class="word">a través de / destino</td><td>Caminé <b>por</b> el parque.<span class="ex">à travers un lieu</span></td><td>Salgo <b>para</b> Madrid.<span class="ex">vers une destination</span></td></tr>
+      <tr><td class="word">precio / opinión</td><td>Lo compré <b>por</b> 20 euros.<span class="ex">échange, prix</span></td><td><b>Para</b> mí, es carísimo.<span class="ex">point de vue</span></td></tr>
+    </table>
+  </div>
+  <div class="callout"><b>Astuce :</b> pense « por » = cause, moyen, échange (regarde en arrière) — « para » = but, destinataire, destination (regarde en avant).</div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Ejercicio — espagnol</div>
+  <h1>Por &amp; Para</h1>
+  <div class="sub">Haz clic en tu respuesta — la corrección aparece al instante</div>
+  <div class="q-grid">
+    <div class="q-block"><span class="chip">Pregunta 1</span>
+      <div class="q-sentence">Necesito el informe <span class="blank"></span> el viernes, no más tarde.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>por</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>para</div></div>
+      <div class="feedback" data-ok="para — indica un plazo, una échéance." data-ko="No exactamente: una échéance → para."></div></div>
+
+    <div class="q-block"><span class="chip">Pregunta 2</span>
+      <div class="q-sentence">Lo hice <span class="blank"></span> amor, no esperaba nada a cambio.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>por</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>para</div></div>
+      <div class="feedback" data-ok="por — indica la causa, el motivo." data-ko="No exactamente: la causa, el motivo → por."></div></div>
+
+    <div class="q-block"><span class="chip">Pregunta 3</span>
+      <div class="q-sentence">Este regalo es <span class="blank"></span> ti, espero que te guste.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>por</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>para</div></div>
+      <div class="feedback" data-ok="para — indica el destinatario." data-ko="No exactamente: el destinatario → para."></div></div>
+
+    <div class="q-block"><span class="chip">Pregunta 4</span>
+      <div class="q-sentence">Caminamos <span class="blank"></span> el parque durante una hora entera.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>por</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>para</div></div>
+      <div class="feedback" data-ok="por — atravesar un lugar." data-ko="No exactamente: atravesar un lugar → por."></div></div>
+
+    <div class="q-block"><span class="chip">Pregunta 5</span>
+      <div class="q-sentence">Salgo <span class="blank"></span> Madrid mañana temprano.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>por</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>para</div></div>
+      <div class="feedback" data-ok="para — destino de un viaje." data-ko="No exactamente: destino de un viaje → para."></div></div>
+
+    <div class="q-block"><span class="chip">Pregunta 6</span>
+      <div class="q-sentence">Lo compré <span class="blank"></span> solo 20 euros, una ganga.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>por</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>para</div></div>
+      <div class="feedback" data-ok="por — precio, intercambio." data-ko="No exactamente: precio, intercambio → por."></div></div>
+
+    <div class="q-block"><span class="chip">Pregunta 7</span>
+      <div class="q-sentence"><span class="blank"></span> mí, esta película es la mejor del año.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>Por</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>Para</div></div>
+      <div class="feedback" data-ok="Para — expresa un punto de vista, una opinión." data-ko="No exactamente: un punto de vista → Para."></div></div>
+
+    <div class="q-block"><span class="chip">Pregunta 8</span>
+      <div class="q-sentence">Estudio <span class="blank"></span> aprender, no solo <span class="blank"></span> aprobar el examen.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>para / para</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>por / por</div></div>
+      <div class="feedback" data-ok="para — la finalidad, el objetivo de la acción." data-ko="No exactamente: la finalidad → para."></div></div>
+  </div>
+</section>
+
+<div class="note">Astuce impression : format A4. Le filigrane WordSip s'imprime normalement, ce sont de vrais éléments texte.</div>
+<div class="corrige">
+  <h3>Corrigé</h3>
+  <ol>
+    <li><b>para</b><span class="why">échéance</span></li>
+    <li><b>por</b><span class="why">causa</span></li>
+    <li><b>para</b><span class="why">destinatario</span></li>
+    <li><b>por</b><span class="why">à travers un lieu</span></li>
+    <li><b>para</b><span class="why">destination</span></li>
+    <li><b>por</b><span class="why">prix, échange</span></li>
+    <li><b>Para</b><span class="why">point de vue</span></li>
+    <li><b>para / para</b><span class="why">finalité</span></li>
+  </ol>
+</div>
+<script>
+function ans(el, isOk){
+  var block = el.closest('.q-block');
+  if(block.classList.contains('answered')) return;
+  block.classList.add('answered');
+  el.classList.add(isOk ? 'correct' : 'incorrect');
+  if(!isOk){
+    var opts = block.querySelectorAll('.opt');
+    opts.forEach(function(o){ if(o.getAttribute('onclick').indexOf(',true') !== -1) o.classList.add('correct'); });
+  }
+  var fb = block.querySelector('.feedback');
+  fb.textContent = (isOk ? '✓ ' : '✗ ') + (isOk ? fb.dataset.ok : fb.dataset.ko);
+  fb.className = 'feedback ' + (isOk ? 'fb-correct' : 'fb-incorrect');
+}
+</script>
+</body>
+</html>

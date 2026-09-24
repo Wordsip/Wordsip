@@ -1831,6 +1831,340 @@
         }
       ],
       "level": "niveau3"
+    },
+    {
+      "id": "preposiciones-lugar",
+      "title": "Preposiciones de lugar",
+      "subtitle": "En, sobre, debajo de... ¿dónde está?",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "en",
+          "rule": "dentro de un espacio cerrado",
+          "examples": [
+            "La pelota está en la caja."
+          ]
+        },
+        {
+          "title": "sobre",
+          "rule": "en contacto con una superficie",
+          "examples": [
+            "La pelota está sobre la caja."
+          ]
+        },
+        {
+          "title": "debajo de",
+          "rule": "por debajo, oculto",
+          "examples": [
+            "La pelota está debajo de la caja."
+          ]
+        },
+        {
+          "title": "entre",
+          "rule": "entre dos puntos de referencia",
+          "examples": [
+            "La pelota está entre las cajas."
+          ]
+        },
+        {
+          "title": "delante de",
+          "rule": "justo enfrente",
+          "examples": [
+            "La pelota está delante de la caja."
+          ]
+        },
+        {
+          "title": "detrás de",
+          "rule": "escondido detrás",
+          "examples": [
+            "La pelota está detrás de la caja."
+          ]
+        },
+        {
+          "title": "al lado de",
+          "rule": "justo al lado, en contacto",
+          "examples": [
+            "La pelota está al lado de la caja."
+          ]
+        },
+        {
+          "title": "cerca de",
+          "rule": "a poca distancia",
+          "examples": [
+            "La pelota está cerca de la caja."
+          ]
+        },
+        {
+          "title": "encima de",
+          "rule": "por encima, con o sin contacto",
+          "examples": [
+            "La pelota está encima de la caja."
+          ]
+        },
+        {
+          "title": "lejos de",
+          "rule": "a mucha distancia",
+          "examples": [
+            "La pelota está lejos de la caja."
+          ]
+        }
+      ],
+      "level": "niveau1",
+      "printUrl": "/fiches-lugar-es.html"
+    },
+    {
+      "id": "preposiciones-movimiento",
+      "title": "Preposiciones de movimiento",
+      "subtitle": "A, hacia, desde, por... ¿hacia dónde?",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "a",
+          "rule": "movimiento hacia un destino",
+          "examples": [
+            "Vamos a la playa."
+          ]
+        },
+        {
+          "title": "hacia",
+          "rule": "dirección aproximada",
+          "examples": [
+            "El barco navega hacia el norte."
+          ]
+        },
+        {
+          "title": "desde",
+          "rule": "punto de partida",
+          "examples": [
+            "Caminamos desde la estación."
+          ]
+        },
+        {
+          "title": "hasta",
+          "rule": "punto de llegada, límite",
+          "examples": [
+            "Corrimos hasta el parque."
+          ]
+        },
+        {
+          "title": "por",
+          "rule": "a través de un lugar",
+          "examples": [
+            "Pasamos por el túnel."
+          ]
+        },
+        {
+          "title": "a través de",
+          "rule": "atravesando un espacio",
+          "examples": [
+            "El río pasa a través del bosque."
+          ]
+        },
+        {
+          "title": "alrededor de",
+          "rule": "dando la vuelta",
+          "examples": [
+            "Caminamos alrededor del lago."
+          ]
+        },
+        {
+          "title": "dentro de",
+          "rule": "hacia el interior",
+          "examples": [
+            "El perro corrió dentro de la casa."
+          ]
+        },
+        {
+          "title": "fuera de",
+          "rule": "hacia el exterior",
+          "examples": [
+            "El gato saltó fuera de la caja."
+          ]
+        },
+        {
+          "title": "sobre",
+          "rule": "movimiento hacia encima",
+          "examples": [
+            "La pelota cayó sobre la mesa."
+          ]
+        }
+      ],
+      "level": "niveau1",
+      "printUrl": "/fiches-movimiento-es.html"
+    },
+    {
+      "id": "preposiciones-tiempo",
+      "title": "Preposiciones de tiempo",
+      "subtitle": "A, en, desde, hasta... ¿cuándo?",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "a",
+          "rule": "hora precisa",
+          "examples": [
+            "La clase empieza a las 7."
+          ]
+        },
+        {
+          "title": "en",
+          "rule": "mes, año, estación",
+          "examples": [
+            "Nací en 1997."
+          ]
+        },
+        {
+          "title": "desde",
+          "rule": "punto de partida",
+          "examples": [
+            "Vivo aquí desde 2020."
+          ]
+        },
+        {
+          "title": "hasta",
+          "rule": "punto final",
+          "examples": [
+            "Trabajo hasta las 6."
+          ]
+        },
+        {
+          "title": "durante",
+          "rule": "a lo largo de un evento",
+          "examples": [
+            "Me dormí durante la película."
+          ]
+        },
+        {
+          "title": "antes de",
+          "rule": "anterioridad",
+          "examples": [
+            "Lávate las manos antes de cenar."
+          ]
+        },
+        {
+          "title": "después de",
+          "rule": "posterioridad",
+          "examples": [
+            "Hablamos después de la reunión."
+          ]
+        },
+        {
+          "title": "dentro de",
+          "rule": "plazo futuro",
+          "examples": [
+            "Termino dentro de una hora."
+          ]
+        },
+        {
+          "title": "por",
+          "rule": "duración aproximada",
+          "examples": [
+            "Estudié por dos horas."
+          ]
+        },
+        {
+          "title": "hace",
+          "rule": "tiempo pasado desde un punto",
+          "examples": [
+            "Llegó hace una hora."
+          ]
+        }
+      ],
+      "level": "niveau1",
+      "printUrl": "/fiches-tiempo-es.html"
+    },
+    {
+      "id": "por-para",
+      "title": "Por y para",
+      "subtitle": "El clásico dolor de cabeza del español",
+      "type": "reference",
+      "table": {
+        "headers": [
+          "Uso",
+          "Por",
+          "Para"
+        ],
+        "rows": [
+          [
+            "causa / finalidad",
+            "Lo hice por amor (a causa de)",
+            "Lo hice para aprobar (con el objetivo de)"
+          ],
+          [
+            "duración / plazo",
+            "Viajé por dos semanas",
+            "Necesito el informe para el lunes"
+          ],
+          [
+            "medio / destinatario",
+            "Hablamos por teléfono",
+            "Este regalo es para ti"
+          ],
+          [
+            "a través de / destino",
+            "Caminé por el parque",
+            "Salgo para Madrid"
+          ],
+          [
+            "precio / opinión",
+            "Lo compré por 20 euros",
+            "Para mí, es carísimo"
+          ]
+        ]
+      },
+      "level": "niveau1",
+      "printUrl": "/fiches-por-para-es.html"
+    },
+    {
+      "id": "pronombres-relativos",
+      "title": "Pronombres relativos",
+      "subtitle": "Que, quien, cuyo... ¿cuál elegir?",
+      "type": "reference",
+      "table": {
+        "headers": [
+          "Pronombre",
+          "Uso",
+          "Ejemplo"
+        ],
+        "rows": [
+          [
+            "que",
+            "persona o cosa, el más frecuente",
+            "el libro que leí"
+          ],
+          [
+            "quien / quienes",
+            "solo personas, tras preposición o coma",
+            "la mujer con quien hablé"
+          ],
+          [
+            "cuyo / cuya",
+            "posesión (concuerda con lo poseído)",
+            "el hombre cuya casa es roja"
+          ],
+          [
+            "donde",
+            "un lugar",
+            "la casa donde vivo"
+          ],
+          [
+            "cuando",
+            "un momento",
+            "el día cuando nos conocimos"
+          ],
+          [
+            "el que / el cual",
+            "formal, tras preposiciones largas",
+            "el motivo por el cual me fui"
+          ],
+          [
+            "lo que",
+            "una idea completa, no un nombre concreto",
+            "no entendí lo que dijiste"
+          ]
+        ]
+      },
+      "level": "niveau1",
+      "printUrl": "/fiches-pronombres-relativos-es.html"
     }
   ],
   "it": [

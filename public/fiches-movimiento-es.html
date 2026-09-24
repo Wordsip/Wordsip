@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WordSip — Preposiciones de movimiento (espagnol)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+  :root{ --teal-900:#17252a; --teal-700:#2b7a78; --teal-500:#3aafa9; --mint-100:#eaf6f5; --coral:#e8734f; --line:#dceeed; --paper:#ffffff; --page-bg:#f3faf9; color-scheme:light; }
+  :root:not([data-theme="light"]){ @media (prefers-color-scheme: dark){ --page-bg:#0e1716; --paper:#152321; --line:#233f3c; --teal-900:#eaf6f5; }}
+  :root[data-theme="dark"]{ --page-bg:#0e1716; --paper:#152321; --line:#233f3c; --teal-900:#eaf6f5; }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{ margin:0; background:var(--page-bg); color:var(--teal-900); font-family:'Nunito Sans','Segoe UI',Arial,sans-serif;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+  h1,.chip,.brand{font-family:'Fredoka','Segoe UI',sans-serif;}
+  .toolbar{position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:10px 18px; padding-top:calc(10px + env(safe-area-inset-top,0px)); background:var(--teal-700); color:#fff;}
+  .toolbar button{background:#fff; color:var(--teal-700); border:none; border-radius:999px; padding:8px 18px; font-weight:700; font-size:.85rem; cursor:pointer;}
+  .sheet{max-width:900px; margin:28px auto; background:var(--paper); border-radius:18px; box-shadow:0 10px 30px rgba(23,37,42,.08); padding:40px 44px; position:relative; overflow:hidden;}
+  .sheet + .sheet{margin-top:36px;}
+  .watermark{position:absolute; inset:0; z-index:0; pointer-events:none; display:grid; grid-template-columns:repeat(4,1fr); gap:38px; transform:rotate(-18deg) scale(1.3); opacity:.05;}
+  .watermark span{font-family:'Fredoka',sans-serif; font-weight:700; font-size:1.3rem; color:var(--teal-900); white-space:nowrap;}
+  .sheet > *:not(.watermark){position:relative; z-index:1;}
+  .eyebrow{font-size:.8rem; color:var(--teal-500); font-weight:700; margin-bottom:4px;}
+  .sheet h1{font-size:1.8rem; margin:0 0 2px; font-weight:700;}
+  .sheet .sub{color:var(--teal-500); font-size:.95rem; margin-bottom:26px; font-style:italic;}
+  .prep-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px 26px;}
+  .prep-card{border:1.5px solid var(--line); border-radius:16px; padding:14px 16px; display:flex; align-items:center; gap:14px;}
+  .prep-card svg{flex:0 0 auto; width:80px; height:64px;}
+  .prep-word{font-family:'Fredoka',sans-serif; font-weight:600; color:var(--teal-700); font-size:1.05rem;}
+  .prep-ex{font-size:.88rem; line-height:1.4;}
+  .prep-ex .fr{display:block; color:#7c9a97; font-size:.8rem; margin-top:2px;}
+  .q-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px 30px;}
+  .q-block{padding-bottom:16px; border-bottom:1px dashed var(--line);}
+  .q-block::after{content:"";display:table;clear:both;}
+  .q-icon{float:left; width:52px; height:42px; margin:0 10px 8px 0;}
+  .chip{display:inline-block; background:var(--coral); color:#fff; font-weight:600; font-size:.8rem; padding:5px 14px; border-radius:8px; margin-bottom:10px;}
+  .q-sentence{font-size:.96rem; margin-bottom:12px; line-height:1.5;}
+  .blank{display:inline-block; min-width:70px; border-bottom:2px solid var(--teal-500); height:1.1em; vertical-align:-4px; margin:0 3px;}
+  .opt-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .opt{display:flex; align-items:center; gap:10px; border:1.5px solid var(--line); border-radius:10px; padding:8px 12px; font-size:.9rem; cursor:pointer; user-select:none;}
+  .opt:hover{border-color:var(--teal-500);}
+  .opt .num{width:20px; height:20px; border-radius:50%; border:1.5px solid var(--teal-500); color:var(--teal-700); font-size:.72rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 auto;}
+  .opt.correct{background:#e6f7ec; border-color:#2f9e5c; color:#1f7a44; font-weight:700;}
+  .opt.correct .num{border-color:#2f9e5c; color:#1f7a44;}
+  .opt.incorrect{background:#fdecea; border-color:#d9503c; color:#b83f2e; font-weight:700;}
+  .opt.incorrect .num{border-color:#d9503c; color:#b83f2e;}
+  .q-block.answered .opt{cursor:default; pointer-events:none;}
+  .feedback{display:none; margin-top:10px; padding:8px 12px; border-radius:8px; font-size:.85rem; line-height:1.4;}
+  .feedback.fb-correct{display:block; background:#e6f7ec; color:#1f7a44;}
+  .feedback.fb-incorrect{display:block; background:#fdecea; color:#b83f2e;}
+  .corrige{display:none; max-width:900px; margin:20px auto 60px; padding:0 44px; font-size:.88rem; color:var(--teal-700);}
+  .corrige h3{font-size:1rem; margin-bottom:10px; color:var(--teal-900);}
+  .corrige ol{margin:0; padding-left:18px; columns:2; column-gap:36px;}
+  .corrige .why{display:block; color:#7c9a97; font-size:.8rem;}
+  .note{max-width:900px; margin:0 auto 30px; padding:0 44px; font-size:.85rem; color:#7c9a97;}
+  @media (max-width:640px){ .prep-grid,.q-grid{grid-template-columns:1fr;} .sheet{padding:28px 20px; margin:16px 12px;} .corrige,.note{padding:0 20px;} }
+  @media print{ .toolbar,.note,.feedback{display:none !important;} body{background:#fff;} .sheet{box-shadow:none; border-radius:0; margin:0; padding:26px 30px; page-break-after:always;} .corrige{display:block; page-break-before:always; padding:26px 30px 40px;} .opt.correct,.opt.incorrect{background:none; border-color:var(--line); color:inherit; font-weight:400;} .watermark{opacity:.06;} @page{size:A4; margin:14mm;} }
+</style>
+</head>
+<body>
+<div class="toolbar"><span class="brand">WordSip · Fiches pédagogiques</span><button onclick="window.print()">Imprimer / PDF</button></div>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Fiche pédagogique — espagnol</div>
+  <h1>Preposiciones de movimiento</h1>
+  <div class="sub">¿Hacia dónde va?</div>
+  <div class="prep-grid">
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="28" y="50" width="44" height="24" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M50,45 L50,10" stroke="#2b7a78" stroke-width="4"/><path d="M43,20 L50,8 L57,20" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">a</div><div class="prep-ex">Vamos <b>a</b> la playa.<span class="fr">vers, à (destination)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="35" y="46" width="30" height="24" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M15,66 Q50,8 85,66" stroke="#2b7a78" stroke-width="4" fill="none"/><path d="M74,58 L86,66 L79,54" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">hacia</div><div class="prep-ex">El barco navega <b>hacia</b> el norte.<span class="fr">en direction de</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><circle cx="20" cy="50" r="10" fill="#3aafa9"/><path d="M28,50 L78,50" stroke="#2b7a78" stroke-width="4"/><path d="M70,42 L80,50 L70,58" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">desde</div><div class="prep-ex">Caminamos <b>desde</b> la estación.<span class="fr">depuis (origine)</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><circle cx="20" cy="50" r="10" fill="#3aafa9" opacity=".5"/><path d="M28,50 L70,50" stroke="#2b7a78" stroke-width="4"/><rect x="70" y="38" width="22" height="24" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/></svg><div><div class="prep-word">hasta</div><div class="prep-ex">Corrimos <b>hasta</b> el parque.<span class="fr">jusqu'à</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><ellipse cx="50" cy="40" rx="16" ry="30" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M14,40 L78,40" stroke="#2b7a78" stroke-width="4"/><path d="M70,32 L80,40 L70,48" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">por</div><div class="prep-ex">Pasamos <b>por</b> el túnel.<span class="fr">à travers, en passant par</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="8" y="30" width="26" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><rect x="66" y="30" width="26" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M34,47 L60,47" stroke="#2b7a78" stroke-width="4"/><path d="M52,40 L62,47 L52,54" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">a través de</div><div class="prep-ex">El río pasa <b>a través de</b>l bosque.<span class="fr">à travers</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="35" y="30" width="30" height="30" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M50,10 A30,30 0 1 1 21,42" stroke="#2b7a78" stroke-width="4" fill="none"/><path d="M13,35 L21,43 L29,34" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">alrededor de</div><div class="prep-ex">Caminamos <b>alrededor de</b>l lago.<span class="fr">autour de</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="20" y="38" width="60" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M15,10 Q55,10 50,34" stroke="#2b7a78" stroke-width="4" fill="none"/><path d="M42,28 L50,38 L58,26" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">dentro de</div><div class="prep-ex">El perro corrió <b>dentro de</b> la casa.<span class="fr">à l'intérieur de</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="20" y="38" width="60" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><path d="M50,36 Q45,10 85,10" stroke="#2b7a78" stroke-width="4" fill="none"/><path d="M74,4 L86,10 L76,18" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">fuera de</div><div class="prep-ex">El gato saltó <b>fuera de</b> la caja.<span class="fr">hors de</span></div></div></div>
+    <div class="prep-card"><svg viewBox="0 0 100 80"><rect x="26" y="44" width="48" height="26" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="26" y1="44" x2="74" y2="44" stroke="#2b7a78" stroke-width="4"/><path d="M15,12 Q55,12 50,40" stroke="#2b7a78" stroke-width="4" fill="none"/><path d="M42,32 L50,42 L58,30" stroke="#2b7a78" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div><div class="prep-word">sobre</div><div class="prep-ex">La pelota cayó <b>sobre</b> la mesa.<span class="fr">sur (avec mouvement)</span></div></div></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="watermark"><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span><span>WordSip</span></div>
+  <div class="eyebrow">Ejercicio — espagnol</div>
+  <h1>Preposiciones de movimiento</h1>
+  <div class="sub">Haz clic en tu respuesta — la corrección aparece al instante</div>
+  <div class="q-grid">
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="28" y="50" width="44" height="24" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M50,45 L50,10" stroke="#2b7a78" stroke-width="5"/></svg><span class="chip">Pregunta 1</span>
+      <div class="q-sentence">Salimos <span class="blank"></span> Madrid mañana por la mañana.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>para</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>desde</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>por</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>hasta</div></div>
+      <div class="feedback" data-ok="para — destino de un viaje (uso especial de « salir para »)." data-ko="No exactamente: destino del viaje → salir para Madrid."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><circle cx="20" cy="50" r="10" fill="#3aafa9"/><path d="M28,50 L78,50" stroke="#2b7a78" stroke-width="5"/></svg><span class="chip">Pregunta 2</span>
+      <div class="q-sentence">Caminamos <span class="blank"></span> la estación hasta el centro.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>desde</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>hacia</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>por</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>sobre</div></div>
+      <div class="feedback" data-ok="desde — punto de partida, junto con « hasta »." data-ko="No exactamente: punto de partida → desde."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><ellipse cx="50" cy="40" rx="16" ry="30" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M14,40 L84,40" stroke="#2b7a78" stroke-width="5"/></svg><span class="chip">Pregunta 3</span>
+      <div class="q-sentence">El ratón se coló <span class="blank"></span> el estrecho túnel hasta el otro lado.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>por</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>hacia</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>sobre</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>hasta</div></div>
+      <div class="feedback" data-ok="por — atravesar un espacio cerrado." data-ko="No exactamente: atravesar un túnel → por."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="35" y="30" width="30" height="30" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M50,10 A30,30 0 1 1 21,42" stroke="#2b7a78" stroke-width="5" fill="none"/></svg><span class="chip">Pregunta 4</span>
+      <div class="q-sentence">El perro corrió <span class="blank"></span> la fuente en un círculo completo.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>alrededor de</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>a través de</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>hacia</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>dentro de</div></div>
+      <div class="feedback" data-ok="alrededor de — « un círculo completo »." data-ko="No exactamente: un círculo completo → alrededor de."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="20" y="38" width="60" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M15,10 Q55,10 50,34" stroke="#2b7a78" stroke-width="5" fill="none"/></svg><span class="chip">Pregunta 5</span>
+      <div class="q-sentence">El niño corrió <span class="blank"></span> la casa cuando empezó a llover.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>dentro de</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>fuera de</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>hacia</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>sobre</div></div>
+      <div class="feedback" data-ok="dentro de — entra al interior para protegerse." data-ko="No exactamente: entra al interior → dentro de."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="20" y="38" width="60" height="34" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M50,36 Q45,10 85,10" stroke="#2b7a78" stroke-width="5" fill="none"/></svg><span class="chip">Pregunta 6</span>
+      <div class="q-sentence">El gatito saltó <span class="blank"></span> la cesta y salió corriendo.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>dentro de</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>fuera de</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>hacia</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>alrededor de</div></div>
+      <div class="feedback" data-ok="fuera de — sale al exterior, « salió corriendo »." data-ko="No exactamente: sale al exterior → fuera de."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="26" y="44" width="48" height="26" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/><path d="M50,42 Q55,12 85,12" stroke="#2b7a78" stroke-width="5" fill="none"/></svg><span class="chip">Pregunta 7</span>
+      <div class="q-sentence">El vaso se cayó y se rompió <span class="blank"></span> la mesa.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>sobre</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>desde</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>dentro de</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>alrededor de</div></div>
+      <div class="feedback" data-ok="sobre — cae encima de una superficie." data-ko="No exactamente: cae encima de la mesa → sobre."></div></div>
+
+    <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><circle cx="20" cy="50" r="10" fill="#3aafa9" opacity=".5"/><path d="M28,50 L70,50" stroke="#2b7a78" stroke-width="5"/><rect x="70" y="38" width="22" height="24" rx="3" fill="none" stroke="#2b7a78" stroke-width="5"/></svg><span class="chip">Pregunta 8</span>
+      <div class="q-sentence">Corrimos <span class="blank"></span> el parque sin parar ni un momento.</div>
+      <div class="opt-grid"><div class="opt" onclick="ans(this,true)"><span class="num">1</span>hasta</div><div class="opt" onclick="ans(this,false)"><span class="num">2</span>desde</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>hacia</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>por</div></div>
+      <div class="feedback" data-ok="hasta — indica el punto de llegada, sin parar." data-ko="No exactamente: punto de llegada, sin parar → hasta."></div></div>
+  </div>
+</section>
+
+<div class="note">Astuce impression : format A4. Le filigrane WordSip s'imprime normalement, ce sont de vrais éléments texte.</div>
+<div class="corrige">
+  <h3>Corrigé</h3>
+  <ol>
+    <li><b>para</b><span class="why">destino del viaje</span></li>
+    <li><b>desde</b><span class="why">punto de partida</span></li>
+    <li><b>por</b><span class="why">atravesar un túnel</span></li>
+    <li><b>alrededor de</b><span class="why">círculo completo</span></li>
+    <li><b>dentro de</b><span class="why">entra al interior</span></li>
+    <li><b>fuera de</b><span class="why">sale al exterior</span></li>
+    <li><b>sobre</b><span class="why">cae encima</span></li>
+    <li><b>hasta</b><span class="why">punto de llegada</span></li>
+  </ol>
+</div>
+<script>
+function ans(el, isOk){
+  var block = el.closest('.q-block');
+  if(block.classList.contains('answered')) return;
+  block.classList.add('answered');
+  el.classList.add(isOk ? 'correct' : 'incorrect');
+  if(!isOk){
+    var opts = block.querySelectorAll('.opt');
+    opts.forEach(function(o){ if(o.getAttribute('onclick').indexOf(',true') !== -1) o.classList.add('correct'); });
+  }
+  var fb = block.querySelector('.feedback');
+  fb.textContent = (isOk ? '✓ ' : '✗ ') + (isOk ? fb.dataset.ok : fb.dataset.ko);
+  fb.className = 'feedback ' + (isOk ? 'fb-correct' : 'fb-incorrect');
+}
+</script>
+</body>
+</html>
