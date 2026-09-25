@@ -29,12 +29,16 @@ async function loadWord() {
     setupGuestBanner(guestLang);
   } else {
     if (!email) {
-      document.getElementById('loading').textContent = 'Aucun compte trouvé. Retourne à l\'accueil pour t\'inscrire.';
+      document.getElementById('loading').innerHTML =
+        'Aucun compte trouvé. Retourne à l\'accueil pour te connecter.' +
+        '<br><a href="/" class="reveal-btn" style="display:inline-block;margin-top:14px;text-decoration:none;text-align:center;">Retour à l\'accueil</a>';
       return;
     }
     const res = await fetch(`/api/my-word?email=${encodeURIComponent(email)}`);
     if (!res.ok) {
-      document.getElementById('loading').textContent = 'Compte introuvable.';
+      document.getElementById('loading').innerHTML =
+        'Compte introuvable.' +
+        '<br><a href="/" class="reveal-btn" style="display:inline-block;margin-top:14px;text-decoration:none;text-align:center;">Retour à l\'accueil</a>';
       return;
     }
     const data = await res.json();

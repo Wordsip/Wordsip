@@ -559,6 +559,43 @@ router.delete('/api/account', async (req, res) => {
 
 const ADMIN_EMAIL = 'wordsip@protonmail.com';
 
+// Anti brute-force simple sur le code secret admin : bloque une IP après
+// plusieurs échecs, le temps d'un délai. Stockage en mémoire (Map) — suffisant
+// ici puisqu'il n'y a qu'un seul process/serveur ; se réinitialise si le
+// serveur redémarre, ce qui est sans conséquence pour ce cas d'usage.
+const loginAttempts = new Map(); // ip -> { count, firstAttempt, lockedUntil }
+const MAX_LOGIN_ATTEMPTS = 5;
+const ATTEMPT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes glissantes
+const LOCKOUT_MS = 15 * 60 * 1000; // durée du blocage une fois le seuil atteint
+
+function isLoginLocked(req, res) {
+  const entry = loginAttempts.get(req.ip);
+  if (entry && entry.lockedUntil && entry.lockedUntil > Date.now()) {
+    const minutes = Math.ceil((entry.lockedUntil - Date.now()) / 60000);
+    res.status(429).json({ error: `Trop de tentatives. Réessaie dans ${minutes} minute(s).` });
+    return true;
+  }
+  return false;
+}
+
+function registerFailedLogin(req) {
+  const now = Date.now();
+  const entry = loginAttempts.get(req.ip) || { count: 0, firstAttempt: now };
+  if (now - entry.firstAttempt > ATTEMPT_WINDOW_MS) {
+    entry.count = 0;
+    entry.firstAttempt = now;
+  }
+  entry.count += 1;
+  if (entry.count >= MAX_LOGIN_ATTEMPTS) {
+    entry.lockedUntil = now + LOCKOUT_MS;
+  }
+  loginAttempts.set(req.ip, entry);
+}
+
+function registerSuccessfulLogin(req) {
+  loginAttempts.delete(req.ip);
+}
+
 // Le secret admin est lu depuis un header (x-admin-secret), jamais depuis
 // l'URL : les query strings finissent dans les logs du serveur/du proxy et
 // dans l'historique du navigateur, ce qu'on veut éviter pour un secret.
@@ -566,11 +603,15 @@ const ADMIN_EMAIL = 'wordsip@protonmail.com';
 // tout le monde recharge la page admin, mais le header est la méthode
 // recommandée et c'est ce que public/admin.js utilise désormais.
 function checkAdminSecret(req, res) {
+  if (isLoginLocked(req, res)) return false;
+
   const provided = req.get('x-admin-secret') || req.query.secret || req.body.secret;
   if (!process.env.ADMIN_SECRET || provided !== process.env.ADMIN_SECRET) {
+    registerFailedLogin(req);
     res.status(403).json({ error: 'Accès refusé.' });
     return false;
   }
+  registerSuccessfulLogin(req);
   return true;
 }
 
@@ -657,15 +698,20 @@ router.post('/api/admin/set-password', async (req, res) => {
 
 // Connexion admin : vérifie l'email ET le code secret
 router.post('/api/admin/login', (req, res) => {
+  if (isLoginLocked(req, res)) return;
+
   const { email, secret } = req.body;
 
   if (email !== ADMIN_EMAIL) {
+    registerFailedLogin(req);
     return res.status(403).json({ error: 'Cet email n\'a pas les droits admin.' });
   }
   if (!process.env.ADMIN_SECRET || secret !== process.env.ADMIN_SECRET) {
+    registerFailedLogin(req);
     return res.status(403).json({ error: 'Code secret incorrect.' });
   }
 
+  registerSuccessfulLogin(req);
   res.json({ ok: true });
 });
 

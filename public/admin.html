@@ -16,6 +16,7 @@
 <body>
   <div class="container" style="max-width: 700px;">
     <header>
+      <a href="/" style="font-size:13px;color:#2b7a78;text-decoration:none;">← Retour au site</a>
       <h1>🛠️ Admin WordSip</h1>
     </header>
 
@@ -42,6 +43,9 @@
 
     <!-- Panneau admin, caché tant qu'on n'est pas connecté -->
     <section id="admin-panel" style="display:none;">
+      <p style="text-align:right;margin-bottom:8px;">
+        <a href="#" id="admin-logout-link" style="font-size:12px;color:#999;">Se déconnecter</a>
+      </p>
       <div class="signup-card">
         <h2>Ajouter un mot</h2>
         <form id="add-word-form">

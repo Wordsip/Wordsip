@@ -36,6 +36,28 @@ function updatePhoneticLabels() {
 document.getElementById('add-language').addEventListener('change', updatePhoneticLabels);
 updatePhoneticLabels();
 
+// Garde la session admin le temps de l'onglet (sessionStorage) pour ne pas
+// avoir à retaper le code à chaque retour sur la page — effacée à la
+// fermeture de l'onglet, ou via le lien "Se déconnecter" ci-dessous.
+const savedAdminSecret = sessionStorage.getItem('adminSecret');
+if (savedAdminSecret) {
+  adminSecret = savedAdminSecret;
+  document.getElementById('admin-login').style.display = 'none';
+  document.getElementById('admin-panel').style.display = 'block';
+  loadWords();
+  loadUsers();
+  loadBlacklist();
+}
+
+document.getElementById('admin-logout-link').addEventListener('click', (e) => {
+  e.preventDefault();
+  sessionStorage.removeItem('adminSecret');
+  adminSecret = null;
+  document.getElementById('admin-panel').style.display = 'none';
+  document.getElementById('admin-login').style.display = 'block';
+  document.getElementById('admin-secret').value = '';
+});
+
 document.getElementById('admin-forgot-link').addEventListener('click', (e) => {
   e.preventDefault();
   const info = document.getElementById('admin-forgot-info');
@@ -58,6 +80,7 @@ document.getElementById('admin-login-form').addEventListener('submit', async (e)
 
     if (res.ok) {
       adminSecret = secret;
+      sessionStorage.setItem('adminSecret', secret);
       document.getElementById('admin-login').style.display = 'none';
       document.getElementById('admin-panel').style.display = 'block';
       loadWords();
