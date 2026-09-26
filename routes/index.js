@@ -490,6 +490,55 @@ router.get('/api/dictee', async (req, res) => {
   }
 });
 
+// --- Apprentissage multi-langues ---
+// Le compte reste centré sur une "langue active" (utilisée partout ailleurs
+// dans le code : mot du jour, dictée, grammaire...), mais peut désormais
+// avoir plusieurs langues en parallèle, chacune avec sa propre progression
+// conservée indépendamment. Ces 3 routes exposent ce que services/userService
+// gère déjà en interne (tableau `languages`, langue active en miroir).
+
+// Liste des langues déjà ajoutées par l'utilisateur + celle actuellement
+// affichée — sert à construire le sélecteur de langues côté front.
+router.get('/api/user-languages', async (req, res) => {
+  try {
+    const { email } = req.query;
+    if (!email) return res.status(400).json({ error: 'Email requis.' });
+    const data = await userService.getUserLanguages(email);
+    res.json(data);
+  } catch (err) {
+    res.status(404).json({ error: err.message });
+  }
+});
+
+// Ajoute une nouvelle langue à l'apprentissage (progression vierge) et
+// bascule dessus tout de suite — répond avec le compte à jour + le premier
+// mot du jour de cette langue, pour rafraîchir l'écran sans appel de plus.
+router.post('/api/add-language', async (req, res) => {
+  try {
+    const { email, language, level } = req.body;
+    if (!email || !language) return res.status(400).json({ error: 'Email et langue requis.' });
+    const user = await userService.addLanguageToUser(email, language, level);
+    const word = await wordService.getWordForUser(user);
+    res.json({ user: userService.toSafeUser(user), word });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// Change la langue actuellement affichée (parmi celles déjà ajoutées) —
+// répond avec le compte à jour + le mot du jour de la langue choisie.
+router.post('/api/switch-language', async (req, res) => {
+  try {
+    const { email, language } = req.body;
+    if (!email || !language) return res.status(400).json({ error: 'Email et langue requis.' });
+    const user = await userService.switchActiveLanguage(email, language);
+    const word = await wordService.getWordForUser(user);
+    res.json({ user: userService.toSafeUser(user), word });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
 router.get('/api/preview/:language/:level', async (req, res) => {
   try {
     const { language, level } = req.params;

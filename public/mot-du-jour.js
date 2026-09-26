@@ -56,6 +56,133 @@ async function loadWord() {
   renderProgress();
   renderAdjacentWords();
   renderGrammarDayBanner();
+  renderLanguageSwitcher();
+}
+
+// --- Sélecteur multi-langues ---
+// L'utilisateur peut apprendre plusieurs langues en parallèle : chacune
+// garde sa propre progression (voir services/userService.js), et ce
+// sélecteur permet de passer de l'une à l'autre, ou d'en ajouter une
+// nouvelle, sans jamais perdre ce qui a déjà été appris ailleurs.
+const LANG_LABELS = { en: '🇬🇧 Anglais', es: '🇪🇸 Espagnol', it: '🇮🇹 Italien', ja: '🇯🇵 Japonais', zh: '🇨🇳 Chinois' };
+const ALL_LANGUAGES = ['en', 'es', 'it', 'ja', 'zh'];
+
+function renderLanguageSwitcher() {
+  const container = document.getElementById('language-switcher');
+  if (!container) return;
+
+  // Invité ou compte introuvable : pas de multi-langues, rien à afficher.
+  if (isGuest || !currentUser || !currentUser.pseudo) {
+    container.style.display = 'none';
+    return;
+  }
+
+  // Compte "ancienne structure" (pas encore de tableau `languages`, ce qui
+  // arrive tant qu'il n'a jamais ajouté ou changé de langue) : on affiche
+  // quand même le sélecteur, avec sa seule langue actuelle + le bouton "+"
+  // pour lui permettre d'en ajouter une sans étape technique particulière.
+  const languages = (Array.isArray(currentUser.languages) && currentUser.languages.length > 0)
+    ? currentUser.languages
+    : [{ language: currentUser.language, level: currentUser.level }];
+  const activeLanguage = currentUser.activeLanguage || currentUser.language;
+
+  const pillsHtml = languages.map((l) => `
+    <button type="button" class="lang-pill${l.language === activeLanguage ? ' active' : ''}" data-lang="${l.language}">
+      ${LANG_LABELS[l.language] || l.language}
+    </button>
+  `).join('');
+
+  const availableToAdd = ALL_LANGUAGES.filter((l) => !languages.some((existing) => existing.language === l));
+  const addButtonHtml = availableToAdd.length > 0
+    ? '<button type="button" class="lang-pill-add" id="lang-add-toggle-btn" title="Ajouter une langue">+</button>'
+    : '';
+
+  container.innerHTML = `
+    <div class="lang-switcher-row">${pillsHtml}${addButtonHtml}</div>
+    <div class="lang-add-panel" id="lang-add-panel" style="display:none;">
+      <h4>Ajouter une langue à ton apprentissage</h4>
+      ${availableToAdd.map((l) => `
+        <div class="lang-add-option">
+          <span>${LANG_LABELS[l]}</span>
+          <select id="lang-level-${l}">
+            <option value="niveau1">Niveau 1 — Collège</option>
+            <option value="niveau2">Niveau 2 — Lycée</option>
+            <option value="niveau3">Niveau 3 — Fac / Master / Pro</option>
+          </select>
+          <button type="button" data-add-lang="${l}">Ajouter</button>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  container.style.display = 'block';
+
+  container.querySelectorAll('.lang-pill[data-lang]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.lang === activeLanguage) return; // déjà la langue active
+      switchLanguage(btn.dataset.lang);
+    });
+  });
+
+  const toggleBtn = document.getElementById('lang-add-toggle-btn');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      const panel = document.getElementById('lang-add-panel');
+      panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    });
+  }
+
+  container.querySelectorAll('[data-add-lang]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.addLang;
+      const level = document.getElementById(`lang-level-${lang}`).value;
+      addLanguage(lang, level);
+    });
+  });
+}
+
+async function switchLanguage(language) {
+  document.getElementById('content').style.display = 'none';
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('loading').textContent = 'Changement de langue...';
+  try {
+    const res = await fetch('/api/switch-language', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, language }),
+    });
+    if (!res.ok) throw new Error();
+  } catch (err) {
+    alert('Impossible de changer de langue pour le moment.');
+  }
+  attemptCount = 1;
+  correctCount = 0;
+  await loadWord();
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
+}
+
+async function addLanguage(language, level) {
+  document.getElementById('content').style.display = 'none';
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('loading').textContent = 'Ajout de la langue...';
+  try {
+    const res = await fetch('/api/add-language', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, language, level }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || 'Erreur inconnue.');
+    }
+  } catch (err) {
+    alert(err.message || 'Impossible d\'ajouter cette langue pour le moment.');
+  }
+  attemptCount = 1;
+  correctCount = 0;
+  await loadWord();
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('content').style.display = 'block';
 }
 
 // --- Jour spécial grammaire ---

@@ -41,6 +41,10 @@ function toSafeUser(user) {
 
 const VALID_DAYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
+// Langues proposées à l'inscription et pour "ajouter une langue" — même
+// liste que les <select> du formulaire d'inscription et du panneau admin.
+const SUPPORTED_LANGUAGES = ['en', 'es', 'it', 'ja', 'zh'];
+
 // Réservé à l'admin (wordsip@protonmail.com) — personne d'autre ne peut
 // s'inscrire avec ce pseudo, qui identifie le créateur du site.
 const RESERVED_PSEUDO = 'wordsip';
@@ -100,6 +104,19 @@ async function addUser({
     // calculer un % d'avancement précis par niveau plutôt qu'un simple
     // compteur global. Vide à l'inscription.
     validatedWords: {},
+    // Apprentissage multi-langues : chaque langue ajoutée a sa propre entrée
+    // (niveau + progression), pour ne rien perdre en changeant de langue
+    // active. Les champs `language`/`level`/`wordsValidated`/`validatedWords`
+    // ci-dessus restent en miroir de l'entrée active — tout le reste du code
+    // (mot du jour, dictée, progression, cron...) continue de les lire tels
+    // quels sans rien savoir du multi-langues.
+    languages: [{
+      language,
+      level: LEVELS[level] ? level : 'niveau1',
+      wordsValidated: 0,
+      validatedWords: {},
+    }],
+    activeLanguage: language,
     createdAt: new Date().toISOString(),
   };
 
@@ -130,18 +147,27 @@ async function incrementWordsValidated(email) {
   const normalizedEmail = normalizeEmail(email);
   const emailHash = hashForLookup(normalizedEmail);
 
-  let result = await usersCollection().findOneAndUpdate(
-    { emailHash },
-    { $inc: { wordsValidated: 1 } },
-    { returnDocument: 'after' }
-  );
+  // Sait quelle langue est active pour aussi incrémenter son compteur dans
+  // le tableau `languages` (si le compte l'a déjà — comptes migrés/multi-
+  // langues) et ne pas perdre ce point de progression en changeant de langue
+  // ensuite. Sur un compte "ancienne structure" sans tableau, on incrémente
+  // seulement le champ miroir comme avant.
+  const existing = await findByEmail(email);
+  const activeLanguage = existing && (existing.activeLanguage || existing.language);
+  const hasLanguageEntry = existing && Array.isArray(existing.languages)
+    && existing.languages.some((l) => l.language === activeLanguage);
+
+  const update = { $inc: { wordsValidated: 1 } };
+  const options = { returnDocument: 'after' };
+  if (hasLanguageEntry) {
+    update.$inc['languages.$[elem].wordsValidated'] = 1;
+    options.arrayFilters = [{ 'elem.language': activeLanguage }];
+  }
+
+  let result = await usersCollection().findOneAndUpdate({ emailHash }, update, options);
 
   if (!result) {
-    result = await usersCollection().findOneAndUpdate(
-      { email: normalizedEmail },
-      { $inc: { wordsValidated: 1 } },
-      { returnDocument: 'after' }
-    );
+    result = await usersCollection().findOneAndUpdate({ email: normalizedEmail }, update, options);
   }
 
   if (!result) throw new Error('Utilisateur introuvable.');
@@ -158,19 +184,127 @@ async function markWordValidated(email, level, word) {
   const emailHash = hashForLookup(normalizedEmail);
   const setKey = `validatedWords.${level}`;
 
-  let result = await usersCollection().findOneAndUpdate(
-    { emailHash },
-    { $addToSet: { [setKey]: word } },
-    { returnDocument: 'after' }
-  );
+  // Même principe que ci-dessus : mirroir dans le tableau `languages` pour
+  // la langue active, quand le compte en a un.
+  const existing = await findByEmail(email);
+  const activeLanguage = existing && (existing.activeLanguage || existing.language);
+  const hasLanguageEntry = existing && Array.isArray(existing.languages)
+    && existing.languages.some((l) => l.language === activeLanguage);
+
+  const update = { $addToSet: { [setKey]: word } };
+  const options = { returnDocument: 'after' };
+  if (hasLanguageEntry) {
+    update.$addToSet[`languages.$[elem].validatedWords.${level}`] = word;
+    options.arrayFilters = [{ 'elem.language': activeLanguage }];
+  }
+
+  let result = await usersCollection().findOneAndUpdate({ emailHash }, update, options);
 
   if (!result) {
-    result = await usersCollection().findOneAndUpdate(
-      { email: normalizedEmail },
-      { $addToSet: { [setKey]: word } },
-      { returnDocument: 'after' }
-    );
+    result = await usersCollection().findOneAndUpdate({ email: normalizedEmail }, update, options);
   }
+
+  if (!result) throw new Error('Utilisateur introuvable.');
+  return toUsableUser(result);
+}
+
+// Donne le tableau `languages` de l'utilisateur, en migrant à la volée les
+// comptes créés avant le multi-langues (pas encore de tableau) : on
+// reconstruit une entrée unique à partir des champs miroir existants, sans
+// rien écrire en base tant que l'utilisateur n'ajoute pas vraiment de langue.
+function effectiveLanguages(user) {
+  if (Array.isArray(user.languages) && user.languages.length > 0) return user.languages;
+  return [{
+    language: user.language,
+    level: user.level,
+    wordsValidated: user.wordsValidated || 0,
+    validatedWords: user.validatedWords || {},
+  }];
+}
+
+async function getUserLanguages(email) {
+  const user = await findByEmail(email);
+  if (!user) throw new Error('Utilisateur introuvable.');
+  return {
+    languages: effectiveLanguages(user),
+    activeLanguage: user.activeLanguage || user.language,
+  };
+}
+
+// Ajoute une nouvelle langue à l'apprentissage de l'utilisateur (progression
+// vierge, niveau choisi) et bascule dessus tout de suite pour qu'il puisse
+// commencer à apprendre sans étape supplémentaire.
+async function addLanguageToUser(email, language, level) {
+  if (!SUPPORTED_LANGUAGES.includes(language)) {
+    throw new Error('Langue non reconnue.');
+  }
+  const user = await findByEmail(email);
+  if (!user) throw new Error('Utilisateur introuvable.');
+
+  const languages = effectiveLanguages(user);
+  if (languages.some((l) => l.language === language)) {
+    throw new Error('Cette langue est déjà dans ton apprentissage.');
+  }
+
+  languages.push({
+    language,
+    level: LEVELS[level] ? level : 'niveau1',
+    wordsValidated: 0,
+    validatedWords: {},
+  });
+
+  const normalizedEmail = normalizeEmail(email);
+  const emailHash = hashForLookup(normalizedEmail);
+  await usersCollection().updateOne({ emailHash }, { $set: { languages } });
+
+  // Bascule directement dessus, pour ne pas laisser l'utilisateur sur une
+  // langue qu'il vient tout juste de quitter mentalement.
+  return switchActiveLanguage(email, language);
+}
+
+// Change la langue actuellement affichée sur le site (mot du jour, dictée,
+// grammaire...) — sauvegarde d'abord la progression courante dans son
+// entrée du tableau `languages` (au cas où elle aurait divergé sur un compte
+// migré à la volée), puis remet les champs miroir à jour pour la nouvelle
+// langue choisie.
+async function switchActiveLanguage(email, language) {
+  const user = await findByEmail(email);
+  if (!user) throw new Error('Utilisateur introuvable.');
+
+  const currentActive = user.activeLanguage || user.language;
+  let languages = effectiveLanguages(user).map((l) => (
+    l.language === currentActive
+      ? {
+        ...l,
+        level: user.level,
+        wordsValidated: user.wordsValidated || 0,
+        validatedWords: user.validatedWords || {},
+      }
+      : l
+  ));
+
+  const target = languages.find((l) => l.language === language);
+  if (!target) {
+    throw new Error('Cette langue n\'a pas encore été ajoutée à ton apprentissage.');
+  }
+
+  const normalizedEmail = normalizeEmail(email);
+  const emailHash = hashForLookup(normalizedEmail);
+
+  const result = await usersCollection().findOneAndUpdate(
+    { emailHash },
+    {
+      $set: {
+        languages,
+        activeLanguage: language,
+        language: target.language,
+        level: target.level,
+        wordsValidated: target.wordsValidated || 0,
+        validatedWords: target.validatedWords || {},
+      },
+    },
+    { returnDocument: 'after' }
+  );
 
   if (!result) throw new Error('Utilisateur introuvable.');
   return toUsableUser(result);
@@ -294,4 +428,8 @@ module.exports = {
   normalizeEmail,
   deleteUser,
   trackLogin,
+  getUserLanguages,
+  addLanguageToUser,
+  switchActiveLanguage,
+  SUPPORTED_LANGUAGES,
 };

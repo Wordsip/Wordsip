@@ -266,3 +266,34 @@ footer a { color: #2b7a78; }
 .dictee-feedback { width: 100%; font-size: 13px; margin-top: 4px; }
 .dictee-feedback.ok { color: #1a7a3e; }
 .dictee-feedback.ko { color: #b83f2e; }
+
+/* --- Sélecteur multi-langues (page "Mon mot") --- */
+.lang-switcher-row {
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 4px;
+}
+.lang-pill {
+  border: 1.5px solid #dceeed; background: white; color: #555;
+  border-radius: 999px; padding: 6px 14px; font-size: 13px; font-weight: 600;
+  cursor: pointer; display: flex; align-items: center; gap: 6px;
+}
+.lang-pill.active { background: #2b7a78; border-color: #2b7a78; color: white; }
+.lang-pill-add {
+  border: 1.5px dashed #3aafa9; background: #f4faf9; color: #2b7a78;
+  border-radius: 999px; width: 32px; height: 32px; font-size: 16px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0;
+}
+.lang-add-panel {
+  margin-top: 10px; background: #f4faf9; border: 1px solid #d0f0ee; border-radius: 14px;
+  padding: 14px 16px;
+}
+.lang-add-panel h4 { font-size: 13px; margin: 0 0 10px; color: #17252a; }
+.lang-add-option {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 8px 0; border-bottom: 1px solid #e3f2f1;
+}
+.lang-add-option:last-of-type { border-bottom: none; }
+.lang-add-option select { padding: 5px 8px; border-radius: 8px; border: 1px solid #d0f0ee; font-size: 12px; }
+.lang-add-option button {
+  width: auto; padding: 6px 14px; font-size: 12px; background: #2b7a78; color: white;
+  border: none; border-radius: 999px; cursor: pointer;
+}
