@@ -330,6 +330,10 @@ function renderWord() {
   if (navGrammaireLink) {
     navGrammaireLink.href = `/grammaire${window.location.search}`;
   }
+  const navDicteeLink = document.getElementById('nav-dictee-link');
+  if (navDicteeLink) {
+    navDicteeLink.href = `/dictee${window.location.search}`;
+  }
 
   // Lien vers le panneau admin, visible uniquement pour ce compte précis —
   // pour tous les autres utilisateurs, le lien reste caché comme avant.

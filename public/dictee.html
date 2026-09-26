@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictée mensuelle — WordSip</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="dashboard-header">
+      <div class="logo">🥤 WordSip</div>
+      <span id="level-badge" class="badge badge-accent"></span>
+    </header>
+
+    <nav style="display:flex;justify-content:center;gap:16px;margin-bottom:16px;font-size:12px;flex-wrap:wrap;">
+      <a href="/mot-du-jour" id="nav-mot-link" style="color:#666;">Mon mot</a>
+      <a href="/grammaire" id="nav-grammaire-link" style="color:#666;">Grammaire</a>
+      <a href="/phonetique" id="nav-phonetique-link" style="color:#666;">Phonétique</a>
+      <a href="/dictee" style="color:#2b7a78;font-weight:600;">Dictée</a>
+    </nav>
+
+    <h2 style="text-align:center;margin-bottom:6px;">✍️ Dictée mensuelle</h2>
+    <p style="text-align:center;font-size:13px;color:#666;margin-bottom:20px;">Révise les mots appris ce mois-ci, et découvre un avant-goût du niveau suivant</p>
+
+    <div id="loading">Chargement...</div>
+
+    <!-- Compte non éligible (invité ou < 30 jours) -->
+    <div id="locked-content" style="display:none;">
+      <div class="info-card">
+        <p class="info-title" id="locked-title">🔒 DICTÉE PAS ENCORE DISPONIBLE</p>
+        <p id="locked-message"></p>
+      </div>
+    </div>
+
+    <!-- Dictée -->
+    <div id="dictee-content" style="display:none;">
+      <div class="info-card" style="margin-bottom:16px;">
+        <p class="info-title">🎯 COMMENT ÇA MARCHE</p>
+        <p>Clique sur 🔊 pour écouter chaque mot, écris ce que tu entends, puis vérifie. Les mots marqués <span style="color:#e8734f;font-weight:600;">🆕 nouveau</span> viennent du niveau suivant — normal de ne pas encore les connaître !</p>
+      </div>
+
+      <div id="dictee-list"></div>
+
+      <div style="text-align:center;margin-top:16px;">
+        <button id="check-all-btn">Vérifier toute la dictée</button>
+        <p id="dictee-score" style="display:none;font-weight:700;margin-top:10px;"></p>
+        <button id="new-series-btn" style="display:none;margin-top:8px;background:white;color:#2b7a78;border:1.5px solid #2b7a78;">Nouvelle série</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/dictee.js"></script>
+</body>
+</html>

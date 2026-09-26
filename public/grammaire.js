@@ -16,24 +16,35 @@ async function resolveLanguage() {
 }
 
 async function init() {
-  const navLinks = ['nav-mot-link', 'nav-phonetique-link'];
+  const navLinks = ['nav-mot-link', 'nav-phonetique-link', 'nav-dictee-link'];
   navLinks.forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.href = `${el.getAttribute('href')}${window.location.search}`;
   });
 
+  // L'onglet "Caractères" (hiragana/katakana, radicaux) n'a de sens que pour
+  // le japonais et le chinois — inutile de l'afficher pour les langues qui
+  // utilisent l'alphabet latin (anglais, espagnol, italien).
+  const lang = await resolveLanguage();
+  const charactersAvailable = lang === 'ja' || lang === 'zh';
+  document.getElementById('tab-characters-btn').style.display = charactersAvailable ? '' : 'none';
+
   // Les Fiches de cours sont maintenant l'onglet par défaut (plus de Pièges de sens).
   await loadLessons();
+
+  // Ouvre directement le bon onglet si l'URL le demande (ex. lien envoyé
+  // depuis la page mot du jour vers une fiche de cours précise) — sauf pour
+  // "characters" si cette langue n'a pas de fiches de caractères, auquel cas
+  // on reste sur les fiches de cours plutôt que d'ouvrir un onglet masqué.
+  const initialTab = params.get('tab');
+  if (initialTab && ['verbs', 'characters', 'lessons'].includes(initialTab)) {
+    if (initialTab !== 'characters' || charactersAvailable) {
+      switchTab(initialTab);
+    }
+  }
 }
 
 init();
-
-// Ouvre directement le bon onglet si l'URL le demande (ex. lien envoyé depuis
-// la page mot du jour vers une fiche de cours précise).
-const initialTab = params.get('tab');
-if (initialTab && ['verbs', 'characters', 'lessons'].includes(initialTab)) {
-  switchTab(initialTab);
-}
 
 // --- Onglets ---
 document.getElementById('tab-verbs-btn').addEventListener('click', () => switchTab('verbs'));
@@ -514,17 +525,25 @@ async function loadLessons() {
 // Menu de sélection : toutes les fiches sont listées, l'utilisateur choisit
 // celle qu'il veut étudier — les autres passent en arrière-plan, accessibles
 // via le bouton "Retour à la liste".
-// Construit un court aperçu du contenu d'une fiche (quelques éléments clés),
-// affiché uniquement au survol pour donner une idée du contenu sans cliquer.
+// Construit un aperçu complet du contenu d'une fiche (tous les points, avec
+// une vraie phrase de contenu et pas juste des titres), affiché au survol
+// pour donner une vision entière avant même de cliquer.
 function buildLessonPreview(lesson) {
   if (lesson.type === 'rule' && Array.isArray(lesson.sections)) {
-    return lesson.sections.slice(0, 5).map((s) => s.title).join(' · ');
+    return lesson.sections
+      .map((s) => `<b>${s.title}</b> — ${s.rule}`)
+      .join('<br>');
   }
   if (lesson.type === 'reference' && lesson.table && Array.isArray(lesson.table.rows)) {
-    return lesson.table.rows.slice(0, 5).map((r) => r[0]).join(' · ');
+    const headers = lesson.table.headers || [];
+    return lesson.table.rows
+      .map((r) => `<b>${r[0]}</b> — ${r.slice(1).map((cell, i) => `${headers[i + 1] ? headers[i + 1] + ' : ' : ''}${cell}`).join(' · ')}`)
+      .join('<br>');
   }
   if (Array.isArray(lesson.usages)) {
-    return lesson.usages.slice(0, 3).map((u) => u.title).join(' · ');
+    return lesson.usages
+      .map((u) => `<b>${u.title}</b> — ${u.description}`)
+      .join('<br>');
   }
   return '';
 }

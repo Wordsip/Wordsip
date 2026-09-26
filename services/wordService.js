@@ -12,6 +12,17 @@ const LEVELS = {
   niveau3: 'Niveau 3 — Fac / Master / Pro',
 };
 
+// Ordre des niveaux du plus simple au plus avancé — sert à trouver "le
+// niveau suivant" pour la dictée mensuelle (mots déjà appris + avant-goût du
+// niveau à venir). Renvoie null si l'utilisateur est déjà au niveau le plus
+// avancé (niveau3) : dans ce cas la dictée pioche uniquement dans niveau3.
+const LEVEL_ORDER = ['niveau1', 'niveau2', 'niveau3'];
+function getNextLevel(level) {
+  const index = LEVEL_ORDER.indexOf(level);
+  if (index === -1 || index === LEVEL_ORDER.length - 1) return null;
+  return LEVEL_ORDER[index + 1];
+}
+
 function wordsCollection() {
   return getDB().collection('words');
 }
@@ -302,6 +313,57 @@ async function reseedFromFile() {
   return { languages, count: languages.length };
 }
 
+// Mélange un tableau sur place (Fisher-Yates) — utilisé pour tirer une
+// sélection aléatoire de mots à chaque nouvelle dictée.
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Construit une dictée mensuelle : un mélange de mots déjà appris (pour
+// réviser l'orthographe) et de nouveaux mots piochés dans le niveau suivant
+// (pour donner un avant-goût de ce qui arrive). Débloquée uniquement après
+// 1 mois de compte (vérifié côté route, pas ici) — cette fonction se charge
+// seulement du contenu une fois qu'on sait que l'utilisateur y a droit.
+const LEARNED_COUNT = 5;
+const NEW_COUNT = 5;
+
+async function buildDictee(user) {
+  const languageWords = await getWordsForLanguage(user.language);
+  if (!languageWords) return null;
+
+  const level = getSubLevel(user);
+  const nextLevel = getNextLevel(level) || level; // niveau3 : repioche dans niveau3
+
+  const validatedAtLevel = (user.validatedWords && user.validatedWords[level]) || [];
+  const validatedAtNextLevel = (user.validatedWords && user.validatedWords[nextLevel]) || [];
+
+  const levelActiveWords = (languageWords[level] || []).filter((w) => !w.disabled);
+  const nextLevelActiveWords = (languageWords[nextLevel] || []).filter((w) => !w.disabled);
+
+  // Mots déjà validés par l'utilisateur à son niveau (révision) — on ne
+  // garde que ceux encore présents et actifs dans la base (un mot a pu être
+  // supprimé ou bloqué par l'admin depuis).
+  const learnedPool = levelActiveWords.filter((w) => validatedAtLevel.includes(w.word));
+
+  // Mots pas encore vus, piochés dans le niveau suivant (ou le même niveau
+  // s'il n'y en a pas, pour ne jamais renvoyer une dictée vide à niveau3).
+  const newPool = nextLevelActiveWords.filter((w) => !validatedAtNextLevel.includes(w.word));
+
+  const learnedPicks = shuffle(learnedPool).slice(0, LEARNED_COUNT)
+    .map((w) => ({ word: w.word, translation: w.translation, subLevel: level, isNew: false }));
+  const newPicks = shuffle(newPool).slice(0, NEW_COUNT)
+    .map((w) => ({ word: w.word, translation: w.translation, subLevel: nextLevel, isNew: true }));
+
+  const words = shuffle([...learnedPicks, ...newPicks]);
+
+  return { level, nextLevel: nextLevel === level ? null : nextLevel, words };
+}
+
 module.exports = {
   getAllWords,
   getWordsForLanguage,
@@ -310,8 +372,10 @@ module.exports = {
   getWeekWords,
   getFeaturedWordOfDay,
   getSubLevel,
+  getNextLevel,
   getLevelWordCounts,
   getUniqueCharacters,
+  buildDictee,
   addWord,
   updateWord,
   deleteWord,

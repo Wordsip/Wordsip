@@ -61,6 +61,11 @@ router.get('/grammaire', (req, res) => {
   res.sendFile('grammaire.html', { root: 'public' });
 });
 
+// Dictée mensuelle (mots appris + avant-goût du niveau suivant)
+router.get('/dictee', (req, res) => {
+  res.sendFile('dictee.html', { root: 'public' });
+});
+
 // Fiches pédagogiques imprimables (prépositions, pronoms relatifs, etc.)
 router.get('/fiches', (req, res) => {
   res.sendFile('fiches-en.html', { root: 'public' });
@@ -441,6 +446,47 @@ router.post('/api/validate-word', async (req, res) => {
     res.json({ wordsValidated: user.wordsValidated, progress });
   } catch (err) {
     res.status(404).json({ error: err.message });
+  }
+});
+
+// Dictée mensuelle : débloquée 30 jours après l'inscription, mélange de
+// mots déjà validés (révision de l'orthographe) et de nouveaux mots piochés
+// dans le niveau suivant (avant-goût de la suite). Réservée aux comptes
+// inscrits — le mode invité n'a pas d'historique de mots appris ni de date
+// d'inscription à 30 jours, donc rien de pertinent à proposer.
+const DICTEE_UNLOCK_DAYS = 30;
+router.get('/api/dictee', async (req, res) => {
+  try {
+    const { email } = req.query;
+    if (!email) {
+      return res.status(400).json({ error: 'La dictée est réservée aux comptes inscrits.' });
+    }
+    const user = await userService.findByEmail(email);
+    if (!user) return res.status(404).json({ error: 'Utilisateur introuvable.' });
+
+    const daysSinceSignup = Math.floor(
+      (Date.now() - new Date(user.createdAt).getTime()) / 86400000
+    );
+
+    if (daysSinceSignup < DICTEE_UNLOCK_DAYS) {
+      return res.json({
+        available: false,
+        daysRemaining: DICTEE_UNLOCK_DAYS - daysSinceSignup,
+        unlockDays: DICTEE_UNLOCK_DAYS,
+      });
+    }
+
+    const dictee = await wordService.buildDictee(user);
+    if (!dictee || dictee.words.length === 0) {
+      return res.json({
+        available: false,
+        notEnoughWords: true,
+      });
+    }
+
+    res.json({ available: true, ...dictee });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 });
 

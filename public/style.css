@@ -223,15 +223,46 @@ footer a { color: #2b7a78; }
 .lesson-preview {
   display: block;
   font-size: 12px;
+  line-height: 1.5;
   color: #2b7a78;
   margin-top: 8px;
   max-height: 0;
   opacity: 0;
-  overflow: hidden;
-  transition: max-height .18s ease, opacity .18s ease, margin-top .18s ease;
+  overflow-y: auto;
+  transition: max-height .22s ease, opacity .22s ease, margin-top .22s ease;
 }
 .lesson-menu-item:hover .lesson-preview,
 .lesson-menu-item:focus-visible .lesson-preview {
-  max-height: 60px;
+  max-height: 260px;
   opacity: 1;
 }
+
+/* --- Dictée mensuelle --- */
+.dictee-row {
+  background: white;
+  border: 1.5px solid #dceeed;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.dictee-row.correct { border-color: #2f9e5c; background: #f2fbf5; }
+.dictee-row.incorrect { border-color: #d9503c; background: #fdf2f0; }
+.dictee-play-btn {
+  width: 40px; height: 40px; border-radius: 50%; border: none;
+  background: #2b7a78; color: white; font-size: 16px; cursor: pointer; flex-shrink: 0;
+}
+.dictee-input {
+  flex: 1; min-width: 140px; padding: 8px 12px; border: 1px solid #d0f0ee;
+  border-radius: 8px; font-size: 14px;
+}
+.dictee-new-badge {
+  font-size: 11px; font-weight: 700; color: #e8734f; background: #fdece4;
+  border-radius: 999px; padding: 3px 10px; flex-shrink: 0;
+}
+.dictee-feedback { width: 100%; font-size: 13px; margin-top: 4px; }
+.dictee-feedback.ok { color: #1a7a3e; }
+.dictee-feedback.ko { color: #b83f2e; }
