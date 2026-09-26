@@ -243,6 +243,45 @@ async function deleteWord(language, subLevel, index) {
   }
 }
 
+// --- Compte de test (pour tester l'expérience utilisateur normale, séparé
+// du compte admin wordsip@protonmail.com) ---
+
+document.getElementById('test-account-form')?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const messageEl = document.getElementById('test-account-message');
+
+  const body = {
+    pseudo: document.getElementById('test-pseudo').value,
+    email: document.getElementById('test-email').value,
+    language: document.getElementById('test-language').value,
+    level: document.getElementById('test-level').value,
+    password: document.getElementById('test-password').value,
+    wordDays: ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'],
+    channel: 'site',
+  };
+
+  try {
+    const res = await adminFetch('/api/admin/recreate-account', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    const result = await res.json();
+
+    if (res.ok) {
+      messageEl.innerHTML = `✅ Compte de test prêt ! Connecte-toi avec <b>${body.email}</b> / le mot de passe saisi sur <a href="/" target="_blank">la page d'accueil</a> (clique sur « Déjà inscrit ? Se connecter »).`;
+      messageEl.style.color = 'green';
+      loadUsers();
+    } else {
+      messageEl.textContent = result.error;
+      messageEl.style.color = '#c0392b';
+    }
+  } catch (err) {
+    messageEl.textContent = 'Erreur lors de la création du compte de test.';
+    messageEl.style.color = '#c0392b';
+  }
+});
+
 // --- Utilisateurs ---
 
 async function loadUsers() {

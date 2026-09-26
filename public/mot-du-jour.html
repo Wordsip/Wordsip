@@ -77,7 +77,21 @@
       </section>
 
       <section class="exercise-card">
-        <p class="info-title">✏️ À TOI D'ÉCRIRE — <span id="attempt-count">1</span> / 4</p>
+        <p class="info-title" style="display:flex;align-items:center;gap:6px;">
+          ✏️ À TOI D'ÉCRIRE — <span id="attempt-count">1</span> / 4
+          <button id="exercise-help-btn" type="button" title="Comment ça marche ?"
+            style="width:18px;height:18px;border-radius:50%;background:#dceeed;color:#2b7a78;border:none;font-size:11px;font-weight:700;line-height:18px;padding:0;cursor:pointer;flex-shrink:0;">?</button>
+        </p>
+
+        <div id="exercise-help-popup" style="display:none;background:#eaf6f5;border:1px solid #2b7a78;border-radius:12px;padding:12px 14px;margin-bottom:12px;font-size:13px;line-height:1.5;color:#17252a;">
+          <p style="margin:0 0 6px;"><b>Comment marche le compteur ?</b></p>
+          <p style="margin:0 0 6px;">Un seul mot est proposé par jour, <b>le même pour tout le monde</b>. Se reconnecter plusieurs fois (même compte, autre appareil) réaffiche toujours ce même mot — ça ne fait rien avancer.</p>
+          <p style="margin:0 0 6px;">Le compteur n'augmente que si tu <b>réussis l'exercice</b> ci-dessous (tu tapes correctement l'orthographe) — et seulement pour un mot pas encore validé.</p>
+          <p style="margin:0;">Résultat : <b>+1 mot maximum par jour</b>. Reviens demain pour un nouveau mot et une nouvelle chance de faire progresser ton compteur !</p>
+          <button id="exercise-help-close" type="button" style="margin-top:8px;background:#2b7a78;color:#fff;border:none;border-radius:999px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer;">Compris</button>
+        </div>
+
+        <div id="already-validated-badge" class="badge badge-success" style="display:none;margin-bottom:12px;">✅ Mot du jour déjà validé — reviens demain pour un nouveau mot !</div>
 
         <div id="word-display" class="word-display"></div>
 

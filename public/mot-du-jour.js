@@ -1,6 +1,10 @@
 const params = new URLSearchParams(window.location.search);
 const email = params.get('email');
 const isGuest = params.get('guest') === 'true';
+// Aperçu illimité utilisé uniquement depuis le panneau admin (menu "Aperçu
+// par langue") : même mode invité, mais sans le blocage à 7 jours, pour
+// pouvoir tester chaque langue autant de fois que nécessaire.
+const isAdminPreview = isGuest && params.get('adminPreview') === 'true';
 
 // Compteur de visiteurs uniques pour le panneau admin — silencieux si ça
 // échoue, ne doit jamais gêner le reste de la page.
@@ -130,6 +134,11 @@ function setupGuestBanner(lang) {
 
   const banner = document.getElementById('channel-note');
   banner.style.display = 'block';
+
+  if (isAdminPreview) {
+    banner.textContent = '🛠️ Aperçu admin — langue : ' + lang.toUpperCase();
+    return;
+  }
 
   if (daysElapsed > 7) {
     document.getElementById('content').innerHTML =
@@ -300,6 +309,7 @@ function renderWord() {
     }
   }
 
+  renderAlreadyValidatedBadge();
   setupExercise();
 
   // Le lien vers la vidéo doit conserver l'email (ou le mode invité) pour que
@@ -382,6 +392,35 @@ function renderWord() {
 // un canevas dédié par caractère avec le mot du jour en transparence comme
 // modèle. Volontairement pas de reconnaissance d'écriture, juste un support
 // visuel au tracé ; la réponse de l'exercice reste le texte tapé.
+
+// Indique si le mot du jour affiché a déjà été validé aujourd'hui par cet
+// utilisateur — en mode invité il n'y a pas de suivi persistant, donc rien
+// à signaler. Sert uniquement à afficher un badge explicatif : l'exercice
+// reste accessible pour s'entraîner, mais ne fera plus avancer le compteur
+// tant que ce n'est pas un nouveau mot (demain).
+function isWordAlreadyValidated() {
+  if (isGuest || !currentUser || !currentWord) return false;
+  const validated = (currentUser.validatedWords && currentUser.validatedWords[currentWord.subLevel]) || [];
+  return validated.includes(currentWord.word);
+}
+
+function renderAlreadyValidatedBadge() {
+  const badge = document.getElementById('already-validated-badge');
+  if (!badge) return;
+  badge.style.display = isWordAlreadyValidated() ? 'block' : 'none';
+}
+
+// Petit "?" à côté du titre de l'exercice : explique pourquoi le compteur
+// n'augmente pas à chaque connexion (mot identique pour tout le monde un
+// jour donné, +1 mot maximum par jour). Évite la confusion pour les gens
+// qui se reconnectent plusieurs fois en espérant voir le compteur bouger.
+document.getElementById('exercise-help-btn')?.addEventListener('click', () => {
+  const popup = document.getElementById('exercise-help-popup');
+  popup.style.display = popup.style.display === 'none' ? 'block' : 'none';
+});
+document.getElementById('exercise-help-close')?.addEventListener('click', () => {
+  document.getElementById('exercise-help-popup').style.display = 'none';
+});
 
 function setupExercise() {
   document.getElementById('word-display').textContent = currentWord.word;
@@ -660,6 +699,15 @@ document.getElementById('check-btn')?.addEventListener('click', async () => {
         currentProgress = result.progress;
         renderProgress();
       }
+      // Met à jour localement la liste des mots validés (l'API ne renvoie que
+      // le résumé de progression, pas la liste complète) pour que le badge
+      // "déjà validé" apparaisse immédiatement, sans recharger la page.
+      if (!currentUser.validatedWords) currentUser.validatedWords = {};
+      if (!currentUser.validatedWords[currentWord.subLevel]) currentUser.validatedWords[currentWord.subLevel] = [];
+      if (!currentUser.validatedWords[currentWord.subLevel].includes(currentWord.word)) {
+        currentUser.validatedWords[currentWord.subLevel].push(currentWord.word);
+      }
+      renderAlreadyValidatedBadge();
     }
   } else {
     feedback.textContent = `❌ Pas tout à fait — la bonne orthographe est "${currentWord.word}"`;

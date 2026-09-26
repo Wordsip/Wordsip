@@ -99,6 +99,55 @@
       </div>
 
       <div class="signup-card">
+        <h2>🌍 Aperçu « Mon mot » par langue</h2>
+        <p style="font-size:12px;color:#666;margin-bottom:10px;">
+          Voir le site tel qu'un utilisateur le voit, dans chaque langue — sans limite de 7 jours (réservé à toi, via ce panneau admin).
+          S'ouvre dans un nouvel onglet.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <a href="/mot-du-jour?guest=true&adminPreview=true&lang=en" target="_blank" style="text-decoration:none;background:#2b7a78;color:#fff;border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;">🇬🇧 Anglais</a>
+          <a href="/mot-du-jour?guest=true&adminPreview=true&lang=es" target="_blank" style="text-decoration:none;background:#2b7a78;color:#fff;border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;">🇪🇸 Espagnol</a>
+          <a href="/mot-du-jour?guest=true&adminPreview=true&lang=it" target="_blank" style="text-decoration:none;background:#2b7a78;color:#fff;border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;">🇮🇹 Italien</a>
+          <a href="/mot-du-jour?guest=true&adminPreview=true&lang=ja" target="_blank" style="text-decoration:none;background:#2b7a78;color:#fff;border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;">🇯🇵 Japonais</a>
+          <a href="/mot-du-jour?guest=true&adminPreview=true&lang=zh" target="_blank" style="text-decoration:none;background:#2b7a78;color:#fff;border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;">🇨🇳 Chinois</a>
+        </div>
+        <p style="font-size:11px;color:#999;margin-top:8px;">
+          Cet aperçu utilise le mode « invité » (pas de compte, pas de compteur de progression) — pour tester l'expérience complète avec un vrai compte et sa progression, crée un compte de test ci-dessous.
+        </p>
+      </div>
+
+      <div class="signup-card">
+        <h2>🧪 Compte de test</h2>
+        <p style="font-size:12px;color:#666;margin-bottom:10px;">
+          Crée-toi un compte séparé de <code>wordsip@protonmail.com</code> (l'admin) pour tester l'expérience utilisateur normale — progression, connexion, tout. Relancer le formulaire avec le même email réutilise le compte (garde sa progression) et met juste à jour son mot de passe.
+        </p>
+        <form id="test-account-form">
+          <label>Pseudo</label>
+          <input type="text" id="test-pseudo" required placeholder="test">
+          <label>Email</label>
+          <input type="email" id="test-email" required placeholder="test@exemple.com">
+          <label>Langue</label>
+          <select id="test-language">
+            <option value="en">🇬🇧 Anglais</option>
+            <option value="es">🇪🇸 Espagnol</option>
+            <option value="it">🇮🇹 Italien</option>
+            <option value="ja">🇯🇵 Japonais</option>
+            <option value="zh">🇨🇳 Chinois</option>
+          </select>
+          <label>Niveau</label>
+          <select id="test-level">
+            <option value="niveau1">Niveau 1 — Collège (6e-5e-4e)</option>
+            <option value="niveau2">Niveau 2 — Lycée (3e-2nde-1re-Tle)</option>
+            <option value="niveau3">Niveau 3 — Fac / Master / Pro</option>
+          </select>
+          <label>Mot de passe (8 caractères min.)</label>
+          <input type="text" id="test-password" required minlength="8" placeholder="motdepasse123">
+          <button type="submit">Créer / mettre à jour ce compte de test</button>
+        </form>
+        <p id="test-account-message"></p>
+      </div>
+
+      <div class="signup-card">
         <h2>Utilisateurs inscrits</h2>
         <button onclick="loadUsers()" style="width:auto;padding:6px 14px;font-size:12px;">Rafraîchir</button>
         <p id="visit-stats" style="font-size:12px;color:#2b7a78;margin-top:8px;"></p>
