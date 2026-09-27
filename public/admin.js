@@ -1,5 +1,21 @@
 let adminSecret = null;
 
+// --- Onglets du panneau admin ---
+// Simple bascule d'affichage entre les sections, pour éviter d'avoir à tout
+// dérouler sur une seule longue page.
+document.querySelectorAll('.admin-tab-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.admin-tab-btn').forEach((b) => {
+      b.classList.toggle('tab-btn-active', b === btn);
+    });
+    document.querySelectorAll('.admin-tab-panel').forEach((panel) => {
+      panel.style.display = panel.dataset.tabPanel === tab ? 'block' : 'none';
+    });
+  });
+});
+
+
 // Envoie le secret admin dans un header plutôt que dans l'URL ou le corps :
 // une query string finit dans les logs serveur/proxy et dans l'historique
 // du navigateur, ce qu'on veut éviter pour un secret. Toutes les requêtes

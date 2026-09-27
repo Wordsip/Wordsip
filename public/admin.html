@@ -46,6 +46,18 @@
       <p style="text-align:right;margin-bottom:8px;">
         <a href="#" id="admin-logout-link" style="font-size:12px;color:#999;">Se déconnecter</a>
       </p>
+
+      <nav style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+        <button type="button" class="tab-btn tab-btn-active admin-tab-btn" data-tab="add-word">Ajouter un mot</button>
+        <button type="button" class="tab-btn admin-tab-btn" data-tab="existing-words">Mots existants</button>
+        <button type="button" class="tab-btn admin-tab-btn" data-tab="lang-preview">Aperçu « Mon mot » par langue</button>
+        <button type="button" class="tab-btn admin-tab-btn" data-tab="maintenance">Maintenance du contenu</button>
+        <button type="button" class="tab-btn admin-tab-btn" data-tab="test-account">Compte de test</button>
+        <button type="button" class="tab-btn admin-tab-btn" data-tab="users">Utilisateurs inscrits</button>
+        <button type="button" class="tab-btn admin-tab-btn" data-tab="blacklist">Liste noire d'emails</button>
+      </nav>
+
+      <div class="admin-tab-panel" data-tab-panel="add-word">
       <div class="signup-card">
         <h2>Ajouter un mot</h2>
         <form id="add-word-form">
@@ -84,7 +96,9 @@
         </form>
         <p id="add-word-message"></p>
       </div>
+      </div>
 
+      <div class="admin-tab-panel" data-tab-panel="existing-words" style="display:none;">
       <div class="signup-card">
         <h2>Mots existants</h2>
         <label>Filtrer par langue</label>
@@ -97,7 +111,9 @@
         </select>
         <div id="words-list" style="margin-top:14px;"></div>
       </div>
+      </div>
 
+      <div class="admin-tab-panel" data-tab-panel="lang-preview" style="display:none;">
       <div class="signup-card">
         <h2>🌍 Aperçu « Mon mot » par langue</h2>
         <p style="font-size:12px;color:#666;margin-bottom:10px;">
@@ -115,7 +131,9 @@
           Cet aperçu utilise le mode « invité » (pas de compte, pas de compteur de progression) — pour tester l'expérience complète avec un vrai compte et sa progression, crée un compte de test ci-dessous.
         </p>
       </div>
+      </div>
 
+      <div class="admin-tab-panel" data-tab-panel="maintenance" style="display:none;">
       <div class="signup-card">
         <h2>🔄 Maintenance du contenu</h2>
         <p style="font-size:12px;color:#666;margin-bottom:10px;">
@@ -126,7 +144,9 @@
         <button type="button" id="reseed-lessons-btn">Recharger les fiches de cours depuis le fichier</button>
         <p id="reseed-lessons-message"></p>
       </div>
+      </div>
 
+      <div class="admin-tab-panel" data-tab-panel="test-account" style="display:none;">
       <div class="signup-card">
         <h2>🧪 Compte de test</h2>
         <p style="font-size:12px;color:#666;margin-bottom:10px;">
@@ -157,14 +177,18 @@
         </form>
         <p id="test-account-message"></p>
       </div>
+      </div>
 
+      <div class="admin-tab-panel" data-tab-panel="users" style="display:none;">
       <div class="signup-card">
         <h2>Utilisateurs inscrits</h2>
         <button onclick="loadUsers()" style="width:auto;padding:6px 14px;font-size:12px;">Rafraîchir</button>
         <p id="visit-stats" style="font-size:12px;color:#2b7a78;margin-top:8px;"></p>
         <div id="users-list" style="margin-top:14px;"></div>
       </div>
+      </div>
 
+      <div class="admin-tab-panel" data-tab-panel="blacklist" style="display:none;">
       <div class="signup-card">
         <h2>Liste noire d'emails</h2>
         <form id="blacklist-form" style="display:flex;gap:8px;">
@@ -173,6 +197,7 @@
         </form>
         <p id="blacklist-message"></p>
         <div id="blacklist-list" style="margin-top:14px;"></div>
+      </div>
       </div>
     </section>
   </div>
