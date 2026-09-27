@@ -1,0 +1,125 @@
+/* Design partagé avec les fiches imprimables (fiches-*.html) — mêmes
+   couleurs, mêmes polices, mêmes composants (tableau mémo, encadré,
+   grille de prépositions), pour que la version site et la version PDF
+   se ressemblent vraiment. Chargé uniquement sur la page Grammaire. */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap');
+
+:root {
+  --fiche-teal-900: #17252a;
+  --fiche-teal-700: #2b7a78;
+  --fiche-teal-500: #3aafa9;
+  --fiche-mint-100: #eaf6f5;
+  --fiche-coral: #e8734f;
+  --fiche-line: #dceeed;
+  --fiche-paper: #ffffff;
+}
+
+.fiche-sheet {
+  background: var(--fiche-paper);
+  border: 1px solid var(--fiche-line);
+  border-radius: 18px;
+  box-shadow: 0 6px 22px rgba(23, 37, 42, .07);
+  padding: 22px 24px;
+  margin-top: 12px;
+  font-family: 'Nunito Sans', 'Segoe UI', Arial, sans-serif;
+  color: var(--fiche-teal-900);
+}
+.fiche-eyebrow {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: .78rem;
+  color: var(--fiche-teal-500);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.fiche-sheet h1 {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 1.5rem;
+  margin: 0 0 2px;
+  color: var(--fiche-teal-900);
+  font-weight: 700;
+}
+.fiche-sub {
+  color: var(--fiche-teal-500);
+  font-size: .9rem;
+  margin-bottom: 6px;
+  font-style: italic;
+}
+
+/* Grille de prépositions / règles — identique aux fiches imprimables */
+.prep-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 20px;
+  margin-top: 16px;
+}
+.prep-card {
+  border: 1.5px solid var(--fiche-line);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+.prep-word {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  color: var(--fiche-teal-700);
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+.prep-rule { font-size: .85rem; color: var(--fiche-teal-900); margin-bottom: 4px; }
+.prep-ex { font-size: .84rem; font-style: italic; color: #6b8f8c; }
+
+/* Tableau mémo — identique aux fiches imprimables */
+.tbl-wrap { overflow-x: auto; margin-top: 14px; }
+table.memo { width: 100%; border-collapse: collapse; font-size: .9rem; }
+table.memo th {
+  text-align: left;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  color: #fff;
+  background: var(--fiche-teal-700);
+  padding: 10px 14px;
+  font-size: .85rem;
+}
+table.memo th:first-child { border-radius: 10px 0 0 0; }
+table.memo th:last-child { border-radius: 0 10px 0 0; }
+table.memo td { border-bottom: 1px solid var(--fiche-line); padding: 10px 14px; vertical-align: top; }
+table.memo td.word { font-family: 'Fredoka', 'Segoe UI', sans-serif; font-weight: 700; color: var(--fiche-teal-700); font-size: .95rem; }
+table.memo .ex { display: block; color: #7c9a97; font-size: .78rem; margin-top: 3px; }
+
+/* Encadré "à retenir" — identique aux fiches imprimables */
+.callout {
+  margin-top: 16px;
+  background: var(--fiche-mint-100);
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: .85rem;
+}
+.callout b { color: var(--fiche-coral); }
+
+.fiche-print-link {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--fiche-teal-700);
+  color: #fff;
+  text-decoration: none;
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+/* Sous-blocs des fiches "temps verbaux" (marqueurs, usages, formes) — même
+   palette/police que le reste, même si ces fiches n'ont pas de version PDF */
+.fiche-block-title {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--fiche-teal-700);
+  margin-bottom: 8px;
+  letter-spacing: .3px;
+}
+.fiche-usage b { color: var(--fiche-teal-700); font-family: 'Fredoka', 'Segoe UI', sans-serif; }
+
+@media (max-width: 640px) {
+  .prep-grid { grid-template-columns: 1fr; }
+  .fiche-sheet { padding: 16px 16px; }
+}

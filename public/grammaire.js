@@ -593,26 +593,28 @@ function renderLessonCard(lesson) {
 
 // Fiches "règle" : plusieurs sous-points, chacun avec une règle de sens et
 // des exemples — pour les sujets qui n'ont pas de tableau de conjugaison
-// (modaux, articles, voix passive, pluriels...).
+// (modaux, articles, voix passive, pluriels, prépositions...). Rendu avec
+// exactement le même design que la fiche imprimable correspondante
+// (grille de cartes .prep-grid/.prep-card), pour que les deux versions
+// soient identiques visuellement.
 function renderRuleLessonCard(lesson) {
-  const sectionsHtml = lesson.sections.map((s) => `
-    <section class="info-card" style="margin-top:10px;">
-      <p class="info-title">${s.title.toUpperCase()}</p>
-      <p style="font-size:14px;">${s.rule}</p>
-      <p style="font-size:13px;color:#666;font-style:italic;margin-top:6px;">
-        ${s.examples.map((ex) => `« ${ex} »`).join('<br>')}
-      </p>
-    </section>
+  const cardsHtml = lesson.sections.map((s) => `
+    <div class="prep-card">
+      <div class="prep-word">${s.title}</div>
+      <div class="prep-rule">${s.rule}</div>
+      <div class="prep-ex">${s.examples.map((ex) => `« ${ex} »`).join('<br>')}</div>
+    </div>
   `).join('');
 
   return `
-    <section class="word-card" style="margin-top:10px;">
-      <p class="label">Fiche de cours</p>
-      <h1 style="font-size:22px;">${lesson.title}</h1>
-      <p style="font-size:13px;color:#555;margin-top:4px;">${lesson.subtitle || ''}</p>
+    <section class="fiche-sheet">
+      <div class="fiche-eyebrow">Fiche de cours</div>
+      <h1>${lesson.title}</h1>
+      <div class="fiche-sub">${lesson.subtitle || ''}</div>
+      <div class="prep-grid">${cardsHtml}</div>
+      ${lesson.note ? `<div class="callout">${lesson.note}</div>` : ''}
+      ${renderPrintLink(lesson)}
     </section>
-    ${sectionsHtml}
-    ${renderPrintLink(lesson)}
   `;
 }
 
@@ -621,8 +623,8 @@ function renderRuleLessonCard(lesson) {
 function renderPrintLink(lesson) {
   if (!lesson.printUrl) return '';
   return `
-    <div style="text-align:center;margin-top:16px;">
-      <a href="${lesson.printUrl}" target="_blank" rel="noopener" style="display:inline-block;padding:8px 18px;border-radius:999px;background:#2b7a78;color:#fff;text-decoration:none;font-size:13px;font-weight:600;">
+    <div style="text-align:center;">
+      <a href="${lesson.printUrl}" target="_blank" rel="noopener" class="fiche-print-link">
         🖨️ Version imprimable (avec exercice)
       </a>
     </div>
@@ -630,53 +632,56 @@ function renderPrintLink(lesson) {
 }
 
 // Fiches "référence" : un simple tableau (ex. pronoms sujet/complément/
-// possessifs), sans règle de sens à expliquer — juste une grille à consulter.
+// possessifs, in/on/at), sans règle de sens à expliquer — juste une grille
+// à consulter. Rendu avec le même tableau .memo que la fiche imprimable.
 function renderReferenceLessonCard(lesson) {
-  const headerHtml = lesson.table.headers.map((h) => `<th style="padding:6px 8px;">${h}</th>`).join('');
+  const headerHtml = lesson.table.headers.map((h) => `<th>${h}</th>`).join('');
   const rowsHtml = lesson.table.rows.map((row) => `
-    <tr>${row.map((cell) => `<td style="padding:6px 8px;border-bottom:1px solid #f0f0f0;">${cell}</td>`).join('')}</tr>
+    <tr>
+      <td class="word">${row[0]}</td>
+      ${row.slice(1).map((cell) => `<td>${cell}</td>`).join('')}
+    </tr>
   `).join('');
 
   return `
-    <section class="word-card" style="margin-top:10px;">
-      <p class="label">Fiche de cours</p>
-      <h1 style="font-size:22px;">${lesson.title}</h1>
-      <p style="font-size:13px;color:#555;margin-top:4px;">${lesson.subtitle || ''}</p>
-    </section>
-    <section class="info-card" style="margin-top:10px;">
-      <div style="overflow-x:auto;">
-        <table style="width:100%;border-collapse:collapse;font-size:13px;">
-          <thead><tr style="border-bottom:2px solid #d0f0ee;text-align:left;">${headerHtml}</tr></thead>
-          <tbody>${rowsHtml}</tbody>
+    <section class="fiche-sheet">
+      <div class="fiche-eyebrow">Fiche de cours</div>
+      <h1>${lesson.title}</h1>
+      <div class="fiche-sub">${lesson.subtitle || ''}</div>
+      <div class="tbl-wrap">
+        <table class="memo">
+          <tr>${headerHtml}</tr>
+          ${rowsHtml}
         </table>
       </div>
+      ${lesson.note ? `<div class="callout">${lesson.note}</div>` : ''}
+      ${renderPrintLink(lesson)}
     </section>
-    ${renderPrintLink(lesson)}
   `;
 }
 
 function renderTenseLessonCard(lesson) {
   const markersHtml = lesson.timeMarkers.map((m) => `
-    <li style="margin-bottom:4px;"><strong>${m.expression}</strong> — <span style="color:#666;">${m.translation}</span></li>
+    <li style="margin-bottom:5px;"><b>${m.expression}</b> — <span style="color:#6b8f8c;">${m.translation}</span></li>
   `).join('');
 
   const usagesHtml = lesson.usages.map((u) => `
-    <div style="margin-bottom:12px;">
-      <p style="font-weight:600;font-size:13px;color:#2b7a78;">${u.title}</p>
-      <p style="font-size:13px;margin:2px 0;">${u.description}</p>
-      <p style="font-size:13px;font-style:italic;color:#666;">« ${u.example} »</p>
+    <div class="fiche-usage" style="margin-bottom:12px;">
+      <p style="font-family:'Fredoka','Segoe UI',sans-serif;font-weight:600;font-size:.9rem;color:var(--fiche-teal-700);margin:0 0 2px;">${u.title}</p>
+      <p style="font-size:.87rem;margin:2px 0;">${u.description}</p>
+      <p style="font-size:.85rem;font-style:italic;color:#6b8f8c;">« ${u.example} »</p>
     </div>
   `).join('');
 
   const formsHtml = lesson.forms.map((form) => {
     const rows = form.rows.map((row) => `
-      <tr>${row.map((cell) => `<td style="padding:4px 8px;border-bottom:1px solid #f0f0f0;">${cell}</td>`).join('')}</tr>
+      <tr>${row.map((cell) => `<td style="padding:6px 10px;border-bottom:1px solid var(--fiche-line);font-size:.87rem;">${cell}</td>`).join('')}</tr>
     `).join('');
     return `
       <div style="flex:1;min-width:180px;">
-        <p style="font-weight:600;font-size:13px;color:#2b7a78;text-align:center;margin-bottom:4px;">${form.label}</p>
-        <p style="font-size:11px;color:#999;text-align:center;margin-bottom:6px;">${form.pattern}</p>
-        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <p style="font-family:'Fredoka','Segoe UI',sans-serif;font-weight:600;font-size:.88rem;color:var(--fiche-teal-700);text-align:center;margin-bottom:4px;">${form.label}</p>
+        <p style="font-size:.75rem;color:#999;text-align:center;margin-bottom:6px;">${form.pattern}</p>
+        <table style="width:100%;border-collapse:collapse;">
           <tbody>${rows}</tbody>
         </table>
       </div>
@@ -684,27 +689,27 @@ function renderTenseLessonCard(lesson) {
   }).join('');
 
   return `
-    <section class="word-card" style="margin-top:10px;">
-      <p class="label">Fiche de cours</p>
-      <h1 style="font-size:22px;">${lesson.title}</h1>
-      <p style="font-size:13px;color:#555;margin-top:4px;">${lesson.subtitle || ''}</p>
-    </section>
+    <section class="fiche-sheet">
+      <div class="fiche-eyebrow">Fiche de cours</div>
+      <h1>${lesson.title}</h1>
+      <div class="fiche-sub">${lesson.subtitle || ''}</div>
 
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;">
-      <section class="info-card" style="flex:1;min-width:220px;">
-        <p class="info-title">🕐 MARQUEURS DE TEMPS</p>
-        <ul style="font-size:13px;padding-left:18px;margin-top:8px;">${markersHtml}</ul>
-      </section>
-      <section class="info-card" style="flex:1;min-width:220px;">
-        <p class="info-title">✅ UTILISATION</p>
-        ${usagesHtml}
-      </section>
-    </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;">
+        <div style="flex:1;min-width:220px;">
+          <p class="fiche-block-title">🕐 MARQUEURS DE TEMPS</p>
+          <ul style="font-size:.87rem;padding-left:18px;margin:0;">${markersHtml}</ul>
+        </div>
+        <div style="flex:1;min-width:220px;">
+          <p class="fiche-block-title">✅ UTILISATION</p>
+          ${usagesHtml}
+        </div>
+      </div>
 
-    <section class="info-card" style="margin-top:12px;">
-      <p class="info-title">⚙️ FORMES</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;overflow-x:auto;">
-        ${formsHtml}
+      <div style="margin-top:14px;">
+        <p class="fiche-block-title">⚙️ FORMES</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;overflow-x:auto;">
+          ${formsHtml}
+        </div>
       </div>
     </section>
   `;

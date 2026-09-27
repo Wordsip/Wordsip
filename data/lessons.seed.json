@@ -955,7 +955,9 @@
           ]
         }
       ],
-      "level": "niveau1"
+      "note": "À retenir : en anglais, le possesseur vient avant — contrairement au français « la règle de Marie », on dit Marie's ruler, sans « of ».",
+      "level": "niveau1",
+      "printUrl": "/fiches-possessif-en.html"
     },
     {
       "id": "prepositions-place",
@@ -1226,6 +1228,7 @@
           ]
         ]
       },
+      "note": "Exceptions à connaître : at night (≠ in the night) · at the weekend (anglais britannique) / on the weekend (anglais américain)",
       "level": "niveau1",
       "printUrl": "/fiches-in-on-at-en.html"
     },
@@ -1283,6 +1286,7 @@
           ]
         ]
       },
+      "note": "That ne s'utilise jamais après une virgule. Which introduit une information supplémentaire, souvent après une virgule : « My car, which is red, is fast. »",
       "level": "niveau1",
       "printUrl": "/fiches-pronoms-relatifs-en.html"
     }
@@ -2111,6 +2115,7 @@
           ]
         ]
       },
+      "note": "Astuce : pense « por » = cause, moyen, échange (regarde en arrière) — « para » = but, destinataire, destination (regarde en avant).",
       "level": "niveau1",
       "printUrl": "/fiches-por-para-es.html"
     },
@@ -2163,6 +2168,7 @@
           ]
         ]
       },
+      "note": "Cuyo s'accorde avec la chose possédée, pas avec le possesseur — « el hombre cuya casa » (la maison, féminin), même si « el hombre » est masculin.",
       "level": "niveau1",
       "printUrl": "/fiches-pronombres-relativos-es.html"
     }
@@ -2725,6 +2731,87 @@
         }
       ],
       "level": "niveau3"
+    },
+    {
+      "id": "preposizioni-luogo",
+      "title": "Preposizioni di luogo",
+      "subtitle": "In, su, sotto, tra... dove si trova?",
+      "type": "rule",
+      "sections": [
+        { "title": "in", "rule": "à l'intérieur", "examples": ["La palla è in una scatola."] },
+        { "title": "su", "rule": "sur, en contact", "examples": ["La palla è su una scatola."] },
+        { "title": "sotto", "rule": "sous", "examples": ["La palla è sotto una scatola."] },
+        { "title": "tra / fra", "rule": "entre", "examples": ["La palla è tra due scatole."] },
+        { "title": "davanti a", "rule": "devant", "examples": ["La palla è davanti a una scatola."] },
+        { "title": "dietro", "rule": "derrière", "examples": ["La palla è dietro una scatola."] },
+        { "title": "accanto a", "rule": "à côté, contact", "examples": ["La palla è accanto a una scatola."] },
+        { "title": "vicino a", "rule": "à proximité", "examples": ["La palla è vicino a una scatola."] },
+        { "title": "sopra", "rule": "au-dessus, sans contact", "examples": ["La palla è sopra una scatola."] },
+        { "title": "lontano da", "rule": "loin de", "examples": ["La palla è lontano da una scatola."] }
+      ],
+      "level": "niveau1",
+      "printUrl": "/fiches-luogo-it.html"
+    },
+    {
+      "id": "preposizioni-movimento",
+      "title": "Preposizioni di movimento",
+      "subtitle": "Verso dove?",
+      "type": "rule",
+      "sections": [
+        { "title": "a", "rule": "vers, à (destination)", "examples": ["Andiamo a scuola."] },
+        { "title": "verso", "rule": "en direction de", "examples": ["La nave naviga verso nord."] },
+        { "title": "da", "rule": "depuis (origine)", "examples": ["Partiamo da quella stazione."] },
+        { "title": "fino a", "rule": "jusqu'à", "examples": ["Abbiamo corso fino al parco."] },
+        { "title": "per", "rule": "à travers, en passant par", "examples": ["Siamo passati per il tunnel."] },
+        { "title": "attraverso", "rule": "à travers", "examples": ["Il fiume scorre attraverso il bosco."] },
+        { "title": "intorno a", "rule": "autour de", "examples": ["Abbiamo camminato intorno al lago."] },
+        { "title": "dentro", "rule": "à l'intérieur de", "examples": ["Il cane è corso dentro casa."] },
+        { "title": "fuori", "rule": "hors de", "examples": ["Il gatto è saltato fuori dalla scatola."] },
+        { "title": "su", "rule": "sur (avec mouvement)", "examples": ["La palla è caduta sul tavolo."] }
+      ],
+      "level": "niveau1",
+      "printUrl": "/fiches-movimento-it.html"
+    },
+    {
+      "id": "preposizioni-tempo",
+      "title": "Preposizioni di tempo",
+      "subtitle": "Quando?",
+      "type": "rule",
+      "sections": [
+        { "title": "a", "rule": "à (heure précise)", "examples": ["La lezione inizia alle 7."] },
+        { "title": "in", "rule": "en (mois, année)", "examples": ["Sono nato nel 1997."] },
+        { "title": "da", "rule": "depuis", "examples": ["Vivo qui dal 2020."] },
+        { "title": "fino a", "rule": "jusqu'à", "examples": ["Lavoro fino alle 6."] },
+        { "title": "durante", "rule": "pendant", "examples": ["Mi sono addormentato durante il film."] },
+        { "title": "prima di", "rule": "avant", "examples": ["Lavati le mani prima di cena."] },
+        { "title": "dopo", "rule": "après", "examples": ["Abbiamo parlato dopo la riunione."] },
+        { "title": "tra / fra", "rule": "dans (délai futur)", "examples": ["Finisco tra un'ora."] },
+        { "title": "per", "rule": "pendant (durée)", "examples": ["Ho studiato per due ore."] },
+        { "title": "fa", "rule": "il y a (se place après)", "examples": ["È arrivato un'ora fa."] }
+      ],
+      "level": "niveau1",
+      "printUrl": "/fiches-tempo-it.html"
+    },
+    {
+      "id": "pronomi-relativi",
+      "title": "Pronomi relativi",
+      "subtitle": "Che, cui, dove... quale scegliere?",
+      "type": "reference",
+      "table": {
+        "headers": ["Pronome", "Uso", "Esempio"],
+        "rows": [
+          ["che", "persona o cosa, il più frequente", "il libro che ho letto"],
+          ["cui", "dopo una preposizione, persone e cose", "la persona con cui ho parlato"],
+          ["il cui / la cui", "possesso (concorda con la cosa posseduta)", "l'uomo la cui casa è rossa"],
+          ["dove", "un luogo", "la casa dove abito"],
+          ["in cui", "un momento", "il giorno in cui ci siamo conosciuti"],
+          ["il quale / la quale", "formale, dopo preposizioni lunghe", "il motivo per il quale sono partito"],
+          ["quello che / ciò che", "un'idea intera, non un nome preciso", "non ho capito quello che hai detto"]
+        ]
+      },
+      "note": "Cui è invariabile, ma l'articolo che lo precede (il/la/i/le cui) si accorda con la cosa posseduta, non con il possessore — « l'uomo la cui casa » (la casa, féminin), même si « l'uomo » est masculin.",
+      "level": "niveau1",
+      "printUrl": "/fiches-pronomi-relativi-it.html"
     }
   ],
   "ja": [],
