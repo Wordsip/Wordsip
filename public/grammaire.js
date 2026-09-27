@@ -591,6 +591,56 @@ function renderLessonCard(lesson) {
   return renderTenseLessonCard(lesson);
 }
 
+// Exercice interactif (question à choix, correction immédiate au clic) —
+// affiché directement dans l'onglet Grammaire quand la leçon en a un,
+// avec exactement le même contenu et le même style que la version
+// imprimable de cette fiche (voir buildFicheExerciseData en Python côté
+// data/lessons.seed.json).
+function renderExerciseSection(lesson) {
+  if (!Array.isArray(lesson.exercise) || lesson.exercise.length === 0) return '';
+
+  const questionsHtml = lesson.exercise.map((q, i) => {
+    const sentenceHtml = q.sentence.replace('___', '<span class="blank"></span>');
+    const optsHtml = q.options.map((opt, j) => `
+      <div class="opt" onclick="answerLessonExercise(this,${j === q.correctIndex})">
+        <span class="num">${j + 1}</span>${opt}
+      </div>
+    `).join('');
+    return `
+      <div class="q-block">
+        <span class="chip">Question ${i + 1}</span>
+        <div class="q-sentence">${sentenceHtml}</div>
+        <div class="opt-grid">${optsHtml}</div>
+        <div class="feedback" data-ok="${q.feedbackOk}" data-ko="${q.feedbackKo}"></div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="fiche-eyebrow" style="margin-top:20px;">Exercice</div>
+    <div class="fiche-sub" style="margin-bottom:0;">Clique sur ta réponse — la correction apparaît tout de suite</div>
+    <div class="q-grid">${questionsHtml}</div>
+  `;
+}
+
+// Gère le clic sur une réponse d'exercice — identique au script des fiches
+// imprimables : une seule tentative par question, la bonne réponse est
+// mise en évidence même en cas d'erreur.
+function answerLessonExercise(el, isOk) {
+  const block = el.closest('.q-block');
+  if (block.classList.contains('answered')) return;
+  block.classList.add('answered');
+  el.classList.add(isOk ? 'correct' : 'incorrect');
+  if (!isOk) {
+    block.querySelectorAll('.opt').forEach((o) => {
+      if (o.getAttribute('onclick').includes(',true')) o.classList.add('correct');
+    });
+  }
+  const fb = block.querySelector('.feedback');
+  fb.textContent = (isOk ? '✓ ' : '✗ ') + (isOk ? fb.dataset.ok : fb.dataset.ko);
+  fb.className = `feedback ${isOk ? 'fb-correct' : 'fb-incorrect'}`;
+}
+
 // Fiches "règle" : plusieurs sous-points, chacun avec une règle de sens et
 // des exemples — pour les sujets qui n'ont pas de tableau de conjugaison
 // (modaux, articles, voix passive, pluriels, prépositions...). Rendu avec
@@ -613,6 +663,7 @@ function renderRuleLessonCard(lesson) {
       <div class="fiche-sub">${lesson.subtitle || ''}</div>
       <div class="prep-grid">${cardsHtml}</div>
       ${lesson.note ? `<div class="callout">${lesson.note}</div>` : ''}
+      ${renderExerciseSection(lesson)}
       ${renderPrintLink(lesson)}
     </section>
   `;
@@ -655,6 +706,7 @@ function renderReferenceLessonCard(lesson) {
         </table>
       </div>
       ${lesson.note ? `<div class="callout">${lesson.note}</div>` : ''}
+      ${renderExerciseSection(lesson)}
       ${renderPrintLink(lesson)}
     </section>
   `;

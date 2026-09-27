@@ -122,4 +122,34 @@ table.memo .ex { display: block; color: #7c9a97; font-size: .78rem; margin-top: 
 @media (max-width: 640px) {
   .prep-grid { grid-template-columns: 1fr; }
   .fiche-sheet { padding: 16px 16px; }
+  .q-grid { grid-template-columns: 1fr; }
 }
+
+/* Exercice interactif — mêmes classes que la fiche imprimable, pour un
+   rendu et un comportement identiques directement dans l'onglet Grammaire */
+.q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 26px; margin-top: 18px; }
+.q-block { padding-bottom: 14px; border-bottom: 1px dashed var(--fiche-line); }
+.chip {
+  display: inline-block; background: var(--fiche-coral); color: #fff; font-weight: 600;
+  font-size: .78rem; padding: 4px 12px; border-radius: 8px; margin-bottom: 8px;
+}
+.q-sentence { font-size: .92rem; margin-bottom: 10px; line-height: 1.5; }
+.blank { display: inline-block; min-width: 60px; border-bottom: 2px solid var(--fiche-teal-500); height: 1.1em; vertical-align: -4px; margin: 0 2px; }
+.opt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+.opt {
+  display: flex; align-items: center; gap: 8px; border: 1.5px solid var(--fiche-line); border-radius: 10px;
+  padding: 7px 10px; font-size: .85rem; cursor: pointer; user-select: none;
+}
+.opt:hover { border-color: var(--fiche-teal-500); }
+.opt .num {
+  width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--fiche-teal-500); color: var(--fiche-teal-700);
+  font-size: .68rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: 0 0 auto;
+}
+.opt.correct { background: #e6f7ec; border-color: #2f9e5c; color: #1f7a44; font-weight: 700; }
+.opt.correct .num { border-color: #2f9e5c; color: #1f7a44; }
+.opt.incorrect { background: #fdecea; border-color: #d9503c; color: #b83f2e; font-weight: 700; }
+.opt.incorrect .num { border-color: #d9503c; color: #b83f2e; }
+.q-block.answered .opt { cursor: default; pointer-events: none; }
+.feedback { display: none; margin-top: 8px; padding: 7px 10px; border-radius: 8px; font-size: .8rem; line-height: 1.4; }
+.feedback.fb-correct { display: block; background: #e6f7ec; color: #1f7a44; }
+.feedback.fb-incorrect { display: block; background: #fdecea; color: #b83f2e; }

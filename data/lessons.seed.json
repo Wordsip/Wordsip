@@ -957,7 +957,105 @@
       ],
       "note": "À retenir : en anglais, le possesseur vient avant — contrairement au français « la règle de Marie », on dit Marie's ruler, sans « of ».",
       "level": "niveau1",
-      "printUrl": "/fiches-possessif-en.html"
+      "printUrl": "/fiches-possessif-en.html",
+      "exercise": [
+        {
+          "sentence": "This is <span class=\"blank\"></span> bike. (Leo)",
+          "options": [
+            "Leo's",
+            "Leos'",
+            "Leo",
+            "of Leo"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "Leo's — nom singulier + 's.",
+          "feedbackKo": "Pas tout à fait : nom singulier → nom + 's → Leo's."
+        },
+        {
+          "sentence": "This is the <span class=\"blank\"></span> playground. (the children, pluriel irrégulier)",
+          "options": [
+            "childrens'",
+            "children's",
+            "childs'",
+            "of children"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "children's — pluriel irrégulier + 's.",
+          "feedbackKo": "Pas tout à fait : « children » est déjà pluriel, donc + 's → children's."
+        },
+        {
+          "sentence": "This is my <span class=\"blank\"></span> car. (my parents, pluriel régulier)",
+          "options": [
+            "parent's",
+            "parents'",
+            "parents's",
+            "parent"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "parents' — pluriel régulier, juste une apostrophe.",
+          "feedbackKo": "Pas tout à fait : pluriel régulier en -s → juste ' → parents'."
+        },
+        {
+          "sentence": "<span class=\"blank\"></span> bag is this? — It's Paul's.",
+          "options": [
+            "Who",
+            "Whose",
+            "Which",
+            "What"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "Whose — pour demander à qui appartient quelque chose.",
+          "feedbackKo": "Pas tout à fait : demander le possesseur → Whose."
+        },
+        {
+          "sentence": "She stayed <span class=\"blank\"></span> home all weekend.",
+          "options": [
+            "at",
+            "in",
+            "to",
+            "on"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "at home — expression fixe avec « at ».",
+          "feedbackKo": "Pas tout à fait : « at home » est une expression fixe."
+        },
+        {
+          "sentence": "They have lived <span class=\"blank\"></span> Lyon for five years.",
+          "options": [
+            "at",
+            "in",
+            "to",
+            "on"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "in Lyon — une ville se dit avec « in ».",
+          "feedbackKo": "Pas tout à fait : une ville → in Lyon."
+        },
+        {
+          "sentence": "The kids go <span class=\"blank\"></span> school every morning.",
+          "options": [
+            "at",
+            "in",
+            "to",
+            "from"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "to school — mouvement vers un lieu.",
+          "feedbackKo": "Pas tout à fait : mouvement vers un lieu → go to school."
+        },
+        {
+          "sentence": "The train goes <span class=\"blank\"></span> Paris to Marseille.",
+          "options": [
+            "from",
+            "at",
+            "in",
+            "since"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "from ... to — point de départ vers l'arrivée.",
+          "feedbackKo": "Pas tout à fait : départ → arrivée = from ... to."
+        }
+      ]
     },
     {
       "id": "prepositions-place",
@@ -1037,7 +1135,129 @@
         }
       ],
       "level": "niveau1",
-      "printUrl": "/fiches-lieu-en.html"
+      "printUrl": "/fiches-lieu-en.html",
+      "exercise": [
+        {
+          "sentence": "The cat fell asleep curled up <span class=\"blank\"></span> the open cardboard box, completely hidden inside.",
+          "options": [
+            "in",
+            "on",
+            "near",
+            "above"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "in — elle est cachée à l'intérieur, invisible.",
+          "feedbackKo": "Pas tout à fait : le dessin montre la balle dedans → in — elle est cachée à l'intérieur, invisible."
+        },
+        {
+          "sentence": "He placed the lamp right <span class=\"blank\"></span> the top of the wooden table, in the middle.",
+          "options": [
+            "under",
+            "in",
+            "on",
+            "between"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "on — « on top of » = posé sur la surface.",
+          "feedbackKo": "Pas tout à fait : « on top of » = posé sur la surface → on."
+        },
+        {
+          "sentence": "The dog is hiding, completely out of sight, right <span class=\"blank\"></span> the sofa.",
+          "options": [
+            "on",
+            "under",
+            "next to",
+            "above"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "under — hors de vue, donc en dessous, caché.",
+          "feedbackKo": "Pas tout à fait : « out of sight » = hors de vue, donc en dessous → under."
+        },
+        {
+          "sentence": "The playground sits exactly halfway <span class=\"blank\"></span> the school and the church, the same distance from both.",
+          "options": [
+            "behind",
+            "between",
+            "near",
+            "under"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "between — seule préposition qui relie naturellement « X and Y ».",
+          "feedbackKo": "Pas tout à fait : elle relie deux repères « X and Y » → between."
+        },
+        {
+          "sentence": "She's standing only inches away, directly <span class=\"blank\"></span> the door, about to knock.",
+          "options": [
+            "under",
+            "behind",
+            "in front of",
+            "near"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "in front of — « about to knock » = juste devant la porte.",
+          "feedbackKo": "Pas tout à fait : « about to knock » = juste devant la porte → in front of."
+        },
+        {
+          "sentence": "The plane flew far <span class=\"blank\"></span> the clouds, without ever touching them.",
+          "options": [
+            "on",
+            "above",
+            "next to",
+            "under"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "above — « without touching » exclut on/under, il y a un espace.",
+          "feedbackKo": "Pas tout à fait : « without touching » exclut on/under → above."
+        },
+        {
+          "sentence": "The two friends sat so close their shoulders were almost touching, one <span class=\"blank\"></span> the other.",
+          "options": [
+            "near",
+            "next to",
+            "between",
+            "behind"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "next to — « almost touching » = contact direct, pas de distance.",
+          "feedbackKo": "Pas tout à fait : « almost touching » = contact direct → next to."
+        },
+        {
+          "sentence": "The bakery is a five-minute walk away, somewhere <span class=\"blank\"></span> the train station.",
+          "options": [
+            "next to",
+            "near",
+            "above",
+            "behind"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "near — « five-minute walk » = à distance, pas juste à côté.",
+          "feedbackKo": "Pas tout à fait : « five-minute walk » = à distance → near."
+        },
+        {
+          "sentence": "He tried to sneak up on his friend, staying <span class=\"blank\"></span> the tree so he wouldn't be seen.",
+          "options": [
+            "behind",
+            "in front of",
+            "above",
+            "near"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "behind — « so he wouldn't be seen » = caché derrière.",
+          "feedbackKo": "Pas tout à fait : « so he wouldn't be seen » = caché derrière → behind."
+        },
+        {
+          "sentence": "The ball rolled off the shelf and landed somewhere lower down, roughly <span class=\"blank\"></span> it.",
+          "options": [
+            "under",
+            "below",
+            "above",
+            "next to"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "below — position plus vague/générale que « under ».",
+          "feedbackKo": "Pas tout à fait : position plus large, pas forcément juste dessous → below."
+        }
+      ]
     },
     {
       "id": "prepositions-movement",
@@ -1117,7 +1337,105 @@
         }
       ],
       "level": "niveau1",
-      "printUrl": "/fiches-mouvement-en.html"
+      "printUrl": "/fiches-mouvement-en.html",
+      "exercise": [
+        {
+          "sentence": "The cat climbed <span class=\"blank\"></span> the tree, all the way to the top branch.",
+          "options": [
+            "down",
+            "up",
+            "across",
+            "through"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "up — grimper « jusqu'en haut ».",
+          "feedbackKo": "Pas tout à fait : « all the way to the top » = vers le haut → up."
+        },
+        {
+          "sentence": "She dropped the letter <span class=\"blank\"></span> the mailbox and heard it land at the bottom.",
+          "options": [
+            "onto",
+            "into",
+            "off",
+            "over"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "into — elle entre à l'intérieur de la boîte.",
+          "feedbackKo": "Pas tout à fait : « heard it land at the bottom » = elle entre dedans → into."
+        },
+        {
+          "sentence": "He walked <span class=\"blank\"></span> the busy street to reach the shop on the other side.",
+          "options": [
+            "around",
+            "across",
+            "past",
+            "along"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "across — traverser d'un côté à l'autre.",
+          "feedbackKo": "Pas tout à fait : « the other side » = traverser d'un bout à l'autre → across."
+        },
+        {
+          "sentence": "The plane flew <span class=\"blank\"></span> the mountain, staying well above its peak.",
+          "options": [
+            "under",
+            "over",
+            "through",
+            "into"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "over — « bien au-dessus » du sommet.",
+          "feedbackKo": "Pas tout à fait : « well above its peak » = par-dessus → over."
+        },
+        {
+          "sentence": "The dog ran <span class=\"blank\"></span> the fountain in a full circle, chasing its tail.",
+          "options": [
+            "around",
+            "along",
+            "past",
+            "into"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "around — « cercle complet ».",
+          "feedbackKo": "Pas tout à fait : « a full circle » → around."
+        },
+        {
+          "sentence": "The mouse squeezed <span class=\"blank\"></span> the narrow tunnel to the other side.",
+          "options": [
+            "through",
+            "over",
+            "onto",
+            "up"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "through — tunnel étroit = espace fermé traversé.",
+          "feedbackKo": "Pas tout à fait : un tunnel est un espace fermé qu'on traverse → through."
+        },
+        {
+          "sentence": "The vase slipped <span class=\"blank\"></span> the shelf and smashed on the floor below.",
+          "options": [
+            "onto",
+            "off",
+            "into",
+            "along"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "off — tombe de l'étagère, quitte la surface.",
+          "feedbackKo": "Pas tout à fait : elle quitte la surface de l'étagère → off."
+        },
+        {
+          "sentence": "The kitten jumped <span class=\"blank\"></span> the basket and ran away.",
+          "options": [
+            "into",
+            "out of",
+            "onto",
+            "around"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "out of — sort du panier.",
+          "feedbackKo": "Pas tout à fait : « ran away » = elle sort du panier → out of."
+        }
+      ]
     },
     {
       "id": "prepositions-time",
@@ -1197,7 +1515,105 @@
         }
       ],
       "level": "niveau1",
-      "printUrl": "/fiches-temps-en.html"
+      "printUrl": "/fiches-temps-en.html",
+      "exercise": [
+        {
+          "sentence": "The train leaves <span class=\"blank\"></span> exactly 9 o'clock, not a minute later.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "during"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "at — heure précise, « not a minute later ».",
+          "feedbackKo": "Pas tout à fait : heure précise → at."
+        },
+        {
+          "sentence": "We always visit grandma <span class=\"blank\"></span> Sundays, every single week.",
+          "options": [
+            "at",
+            "on",
+            "for",
+            "since"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "on — jour de la semaine répété : on Sundays.",
+          "feedbackKo": "Pas tout à fait : jour de la semaine → on."
+        },
+        {
+          "sentence": "They have lived in Paris <span class=\"blank\"></span> ten years, and they're still there.",
+          "options": [
+            "since",
+            "for",
+            "until",
+            "by"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "for — durée chiffrée « ten years ».",
+          "feedbackKo": "Pas tout à fait : durée chiffrée → for."
+        },
+        {
+          "sentence": "I haven't seen her <span class=\"blank\"></span> last Christmas — that was the last time.",
+          "options": [
+            "for",
+            "during",
+            "since",
+            "at"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "since — point de départ précis dans le passé.",
+          "feedbackKo": "Pas tout à fait : point de départ précis → since."
+        },
+        {
+          "sentence": "The phone rang twice <span class=\"blank\"></span> the movie, which was really annoying.",
+          "options": [
+            "during",
+            "for",
+            "at",
+            "on"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "during — pendant un événement (« the movie »).",
+          "feedbackKo": "Pas tout à fait : pendant l'événement → during."
+        },
+        {
+          "sentence": "Please arrive <span class=\"blank\"></span> the meeting starts, not one minute after.",
+          "options": [
+            "after",
+            "before",
+            "during",
+            "since"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "before — « not one minute after » = avant le début.",
+          "feedbackKo": "Pas tout à fait : « not one minute after » → before."
+        },
+        {
+          "sentence": "The library stays open <span class=\"blank\"></span> 9 PM every night, with no break.",
+          "options": [
+            "by",
+            "until",
+            "since",
+            "during"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "until — continuité sans interruption jusqu'à l'heure.",
+          "feedbackKo": "Pas tout à fait : « with no break » = continuité → until."
+        },
+        {
+          "sentence": "You need to hand in the form <span class=\"blank\"></span> Friday at the latest.",
+          "options": [
+            "until",
+            "by",
+            "for",
+            "in"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "by — échéance « at the latest ».",
+          "feedbackKo": "Pas tout à fait : « at the latest » = échéance → by."
+        }
+      ]
     },
     {
       "id": "in-on-at",
@@ -1230,7 +1646,105 @@
       },
       "note": "Exceptions à connaître : at night (≠ in the night) · at the weekend (anglais britannique) / on the weekend (anglais américain)",
       "level": "niveau1",
-      "printUrl": "/fiches-in-on-at-en.html"
+      "printUrl": "/fiches-in-on-at-en.html",
+      "exercise": [
+        {
+          "sentence": "I was born <span class=\"blank\"></span> March, in 1998.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "for"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "in — un mois se dit toujours avec « in ».",
+          "feedbackKo": "Pas tout à fait : un mois se dit avec « in » → in March."
+        },
+        {
+          "sentence": "The shop opens <span class=\"blank\"></span> 9 AM sharp.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "during"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "at — heure précise « 9 AM sharp ».",
+          "feedbackKo": "Pas tout à fait : heure précise → at."
+        },
+        {
+          "sentence": "We're getting married <span class=\"blank\"></span> June 14th.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "since"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "on — une date précise se dit avec « on ».",
+          "feedbackKo": "Pas tout à fait : une date précise → on June 14th."
+        },
+        {
+          "sentence": "Your keys are <span class=\"blank\"></span> the kitchen drawer.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "during"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "in — un tiroir est un espace fermé.",
+          "feedbackKo": "Pas tout à fait : un tiroir est un espace fermé → in."
+        },
+        {
+          "sentence": "There's a book <span class=\"blank\"></span> the table.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "on — une surface prend « on ».",
+          "feedbackKo": "Pas tout à fait : une surface → on."
+        },
+        {
+          "sentence": "Meet me <span class=\"blank\"></span> the bus stop, right in front of it.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "during"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "at — un point précis dans l'espace.",
+          "feedbackKo": "Pas tout à fait : un point précis → at."
+        },
+        {
+          "sentence": "I always sleep well <span class=\"blank\"></span> night.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "during"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "at night — exception à connaître par cœur.",
+          "feedbackKo": "Pas tout à fait : c'est une exception → at night."
+        },
+        {
+          "sentence": "Christmas is always celebrated <span class=\"blank\"></span> December.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "since"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "in — un mois se dit avec « in ».",
+          "feedbackKo": "Pas tout à fait : un mois → in December."
+        }
+      ]
     },
     {
       "id": "relative-pronouns",
@@ -1288,7 +1802,105 @@
       },
       "note": "That ne s'utilise jamais après une virgule. Which introduit une information supplémentaire, souvent après une virgule : « My car, which is red, is fast. »",
       "level": "niveau1",
-      "printUrl": "/fiches-pronoms-relatifs-en.html"
+      "printUrl": "/fiches-pronoms-relatifs-en.html",
+      "exercise": [
+        {
+          "sentence": "The woman <span class=\"blank\"></span> lives next door is a doctor.",
+          "options": [
+            "who",
+            "which",
+            "where",
+            "whose"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "who — sujet, la femme elle-même vit à côté.",
+          "feedbackKo": "Pas tout à fait : sujet + personne → who."
+        },
+        {
+          "sentence": "This is the book <span class=\"blank\"></span> I told you about.",
+          "options": [
+            "that",
+            "who",
+            "whose",
+            "where"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "that — une chose, sans virgule (which serait aussi possible mais that est le plus naturel ici).",
+          "feedbackKo": "Pas tout à fait : une chose, phrase informelle sans virgule → that."
+        },
+        {
+          "sentence": "I don't know the reason <span class=\"blank\"></span> she left so suddenly.",
+          "options": [
+            "where",
+            "why",
+            "who",
+            "which"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "why — « the reason » appelle toujours why.",
+          "feedbackKo": "Pas tout à fait : une raison → why."
+        },
+        {
+          "sentence": "The man <span class=\"blank\"></span> car was stolen last night is my neighbor.",
+          "options": [
+            "whose",
+            "who",
+            "which",
+            "where"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "whose — la voiture appartient à l'homme, c'est une possession.",
+          "feedbackKo": "Pas tout à fait : possession → whose."
+        },
+        {
+          "sentence": "That's the restaurant <span class=\"blank\"></span> we had our first date.",
+          "options": [
+            "where",
+            "which",
+            "who",
+            "why"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "where — un restaurant est un lieu.",
+          "feedbackKo": "Pas tout à fait : un lieu → where."
+        },
+        {
+          "sentence": "Do you remember the day <span class=\"blank\"></span> we first met?",
+          "options": [
+            "when",
+            "who",
+            "whose",
+            "which"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "when — « the day » est un moment dans le temps.",
+          "feedbackKo": "Pas tout à fait : un moment → when."
+        },
+        {
+          "sentence": "She's the person <span class=\"blank\"></span> helped me move last weekend.",
+          "options": [
+            "who",
+            "which",
+            "where",
+            "why"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "who — sujet, une personne.",
+          "feedbackKo": "Pas tout à fait : sujet + personne → who."
+        },
+        {
+          "sentence": "This is the laptop <span class=\"blank\"></span> I bought last week.",
+          "options": [
+            "which",
+            "who",
+            "whose",
+            "where"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "which — une chose (that fonctionnerait aussi, which est ici l'option proposée).",
+          "feedbackKo": "Pas tout à fait : une chose → which."
+        }
+      ]
     }
   ],
   "es": [
@@ -1914,7 +2526,105 @@
         }
       ],
       "level": "niveau1",
-      "printUrl": "/fiches-lugar-es.html"
+      "printUrl": "/fiches-lugar-es.html",
+      "exercise": [
+        {
+          "sentence": "El gato duerme acurrucado <span class=\"blank\"></span> la caja de cartón, completamente escondido dentro.",
+          "options": [
+            "en",
+            "sobre",
+            "cerca de",
+            "encima de"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "en — está oculto dentro, no encima.",
+          "feedbackKo": "No exactamente: está dentro, escondido → en."
+        },
+        {
+          "sentence": "Puso la lámpara justo <span class=\"blank\"></span> la mesa de madera, en el centro.",
+          "options": [
+            "debajo de",
+            "sobre",
+            "entre",
+            "lejos de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "sobre — en contacto con la superficie.",
+          "feedbackKo": "No exactamente: en contacto con la superficie → sobre."
+        },
+        {
+          "sentence": "El perro se esconde, completamente fuera de la vista, justo <span class=\"blank\"></span> el sofá.",
+          "options": [
+            "sobre",
+            "debajo de",
+            "al lado de",
+            "encima de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "debajo de — fuera de la vista, por debajo.",
+          "feedbackKo": "No exactamente: fuera de la vista = por debajo → debajo de."
+        },
+        {
+          "sentence": "El parque está exactamente a mitad de camino <span class=\"blank\"></span> la escuela y la iglesia.",
+          "options": [
+            "detrás de",
+            "entre",
+            "cerca de",
+            "debajo de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "entre — conecta dos referencias, « X y Y ».",
+          "feedbackKo": "No exactamente: conecta dos referencias → entre."
+        },
+        {
+          "sentence": "Está de pie, a pocos centímetros, justo <span class=\"blank\"></span> la puerta, a punto de tocar.",
+          "options": [
+            "debajo de",
+            "detrás de",
+            "delante de",
+            "cerca de"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "delante de — « a punto de tocar » = justo enfrente.",
+          "feedbackKo": "No exactamente: a punto de tocar → delante de."
+        },
+        {
+          "sentence": "El avión voló muy <span class=\"blank\"></span> las nubes, sin llegar a tocarlas.",
+          "options": [
+            "sobre",
+            "encima de",
+            "al lado de",
+            "debajo de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "encima de — « sin tocarlas » indica una separación.",
+          "feedbackKo": "No exactamente: sin tocarlas → encima de."
+        },
+        {
+          "sentence": "Los dos amigos se sentaron tan cerca que sus hombros casi se tocaban, uno <span class=\"blank\"></span> el otro.",
+          "options": [
+            "cerca de",
+            "al lado de",
+            "entre",
+            "detrás de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "al lado de — « casi se tocaban » = contacto directo.",
+          "feedbackKo": "No exactamente: casi se tocaban → al lado de."
+        },
+        {
+          "sentence": "La panadería está a cinco minutos a pie, un poco <span class=\"blank\"></span> la estación de tren.",
+          "options": [
+            "al lado de",
+            "cerca de",
+            "encima de",
+            "detrás de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "cerca de — « cinco minutos a pie » = a distancia.",
+          "feedbackKo": "No exactamente: a cinco minutos = a distancia → cerca de."
+        }
+      ]
     },
     {
       "id": "preposiciones-movimiento",
@@ -1994,7 +2704,105 @@
         }
       ],
       "level": "niveau1",
-      "printUrl": "/fiches-movimiento-es.html"
+      "printUrl": "/fiches-movimiento-es.html",
+      "exercise": [
+        {
+          "sentence": "Salimos <span class=\"blank\"></span> Madrid mañana por la mañana.",
+          "options": [
+            "para",
+            "desde",
+            "por",
+            "hasta"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "para — destino de un viaje (uso especial de « salir para »).",
+          "feedbackKo": "No exactamente: destino del viaje → salir para Madrid."
+        },
+        {
+          "sentence": "Caminamos <span class=\"blank\"></span> la estación hasta el centro.",
+          "options": [
+            "desde",
+            "hacia",
+            "por",
+            "sobre"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "desde — punto de partida, junto con « hasta ».",
+          "feedbackKo": "No exactamente: punto de partida → desde."
+        },
+        {
+          "sentence": "El ratón se coló <span class=\"blank\"></span> el estrecho túnel hasta el otro lado.",
+          "options": [
+            "por",
+            "hacia",
+            "sobre",
+            "hasta"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "por — atravesar un espacio cerrado.",
+          "feedbackKo": "No exactamente: atravesar un túnel → por."
+        },
+        {
+          "sentence": "El perro corrió <span class=\"blank\"></span> la fuente en un círculo completo.",
+          "options": [
+            "alrededor de",
+            "a través de",
+            "hacia",
+            "dentro de"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "alrededor de — « un círculo completo ».",
+          "feedbackKo": "No exactamente: un círculo completo → alrededor de."
+        },
+        {
+          "sentence": "El niño corrió <span class=\"blank\"></span> la casa cuando empezó a llover.",
+          "options": [
+            "dentro de",
+            "fuera de",
+            "hacia",
+            "sobre"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "dentro de — entra al interior para protegerse.",
+          "feedbackKo": "No exactamente: entra al interior → dentro de."
+        },
+        {
+          "sentence": "El gatito saltó <span class=\"blank\"></span> la cesta y salió corriendo.",
+          "options": [
+            "dentro de",
+            "fuera de",
+            "hacia",
+            "alrededor de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "fuera de — sale al exterior, « salió corriendo ».",
+          "feedbackKo": "No exactamente: sale al exterior → fuera de."
+        },
+        {
+          "sentence": "El vaso se cayó y se rompió <span class=\"blank\"></span> la mesa.",
+          "options": [
+            "sobre",
+            "desde",
+            "dentro de",
+            "alrededor de"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "sobre — cae encima de una superficie.",
+          "feedbackKo": "No exactamente: cae encima de la mesa → sobre."
+        },
+        {
+          "sentence": "Corrimos <span class=\"blank\"></span> el parque sin parar ni un momento.",
+          "options": [
+            "hasta",
+            "desde",
+            "hacia",
+            "por"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "hasta — indica el punto de llegada, sin parar.",
+          "feedbackKo": "No exactamente: punto de llegada, sin parar → hasta."
+        }
+      ]
     },
     {
       "id": "preposiciones-tiempo",
@@ -2074,7 +2882,105 @@
         }
       ],
       "level": "niveau1",
-      "printUrl": "/fiches-tiempo-es.html"
+      "printUrl": "/fiches-tiempo-es.html",
+      "exercise": [
+        {
+          "sentence": "El tren sale <span class=\"blank\"></span> las nueve en punto, ni un minuto más tarde.",
+          "options": [
+            "en",
+            "durante",
+            "a",
+            "hace"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "a — hora precisa, « ni un minuto más tarde ».",
+          "feedbackKo": "No exactamente: hora precisa → a."
+        },
+        {
+          "sentence": "Siempre visitamos a la abuela <span class=\"blank\"></span> agosto, todos los años.",
+          "options": [
+            "en",
+            "a",
+            "por",
+            "desde"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "en — un mes se dice siempre con « en ».",
+          "feedbackKo": "No exactamente: un mes → en agosto."
+        },
+        {
+          "sentence": "Viven en Lyon <span class=\"blank\"></span> 2015, y siguen allí.",
+          "options": [
+            "desde",
+            "por",
+            "hasta",
+            "durante"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "desde — un punto de partida preciso, todavía vigente.",
+          "feedbackKo": "No exactamente: punto de partida vigente → desde."
+        },
+        {
+          "sentence": "Estudié <span class=\"blank\"></span> tres horas seguidas, sin ninguna pausa.",
+          "options": [
+            "por",
+            "desde",
+            "hace",
+            "a"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "por — una duración medida en horas.",
+          "feedbackKo": "No exactamente: duración medida → por."
+        },
+        {
+          "sentence": "El teléfono sonó dos veces <span class=\"blank\"></span> la película, algo muy molesto.",
+          "options": [
+            "durante",
+            "por",
+            "a",
+            "en"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "durante — algo ocurre dentro de un evento.",
+          "feedbackKo": "No exactamente: dentro de un evento → durante."
+        },
+        {
+          "sentence": "Por favor llega <span class=\"blank\"></span> que empiece la reunión, no un minuto después.",
+          "options": [
+            "después de",
+            "antes de",
+            "durante",
+            "desde"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "antes de — « no un minuto después » = anterioridad.",
+          "feedbackKo": "No exactamente: no un minuto después → antes de."
+        },
+        {
+          "sentence": "Termino el informe <span class=\"blank\"></span> una hora, como muy tarde.",
+          "options": [
+            "dentro de",
+            "hace",
+            "desde",
+            "durante"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "dentro de — un plazo futuro, « como muy tarde ».",
+          "feedbackKo": "No exactamente: plazo futuro → dentro de."
+        },
+        {
+          "sentence": "Llegó <span class=\"blank\"></span> una hora — ya no está aquí.",
+          "options": [
+            "hace",
+            "dentro de",
+            "desde",
+            "en"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "hace — un momento pasado, « ya no está ».",
+          "feedbackKo": "No exactamente: momento pasado → hace."
+        }
+      ]
     },
     {
       "id": "por-para",
@@ -2117,7 +3023,89 @@
       },
       "note": "Astuce : pense « por » = cause, moyen, échange (regarde en arrière) — « para » = but, destinataire, destination (regarde en avant).",
       "level": "niveau1",
-      "printUrl": "/fiches-por-para-es.html"
+      "printUrl": "/fiches-por-para-es.html",
+      "exercise": [
+        {
+          "sentence": "Necesito el informe <span class=\"blank\"></span> el viernes, no más tarde.",
+          "options": [
+            "por",
+            "para"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "para — indica un plazo, una échéance.",
+          "feedbackKo": "No exactamente: una échéance → para."
+        },
+        {
+          "sentence": "Lo hice <span class=\"blank\"></span> amor, no esperaba nada a cambio.",
+          "options": [
+            "por",
+            "para"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "por — indica la causa, el motivo.",
+          "feedbackKo": "No exactamente: la causa, el motivo → por."
+        },
+        {
+          "sentence": "Este regalo es <span class=\"blank\"></span> ti, espero que te guste.",
+          "options": [
+            "por",
+            "para"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "para — indica el destinatario.",
+          "feedbackKo": "No exactamente: el destinatario → para."
+        },
+        {
+          "sentence": "Caminamos <span class=\"blank\"></span> el parque durante una hora entera.",
+          "options": [
+            "por",
+            "para"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "por — atravesar un lugar.",
+          "feedbackKo": "No exactamente: atravesar un lugar → por."
+        },
+        {
+          "sentence": "Salgo <span class=\"blank\"></span> Madrid mañana temprano.",
+          "options": [
+            "por",
+            "para"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "para — destino de un viaje.",
+          "feedbackKo": "No exactamente: destino de un viaje → para."
+        },
+        {
+          "sentence": "Lo compré <span class=\"blank\"></span> solo 20 euros, una ganga.",
+          "options": [
+            "por",
+            "para"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "por — precio, intercambio.",
+          "feedbackKo": "No exactamente: precio, intercambio → por."
+        },
+        {
+          "sentence": "<span class=\"blank\"></span> mí, esta película es la mejor del año.",
+          "options": [
+            "Por",
+            "Para"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "Para — expresa un punto de vista, una opinión.",
+          "feedbackKo": "No exactamente: un punto de vista → Para."
+        },
+        {
+          "sentence": "Estudio <span class=\"blank\"></span> aprender, no solo <span class=\"blank\"></span> aprobar el examen.",
+          "options": [
+            "para / para",
+            "por / por"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "para — la finalidad, el objetivo de la acción.",
+          "feedbackKo": "No exactamente: la finalidad → para."
+        }
+      ]
     },
     {
       "id": "pronombres-relativos",
@@ -2170,7 +3158,105 @@
       },
       "note": "Cuyo s'accorde avec la chose possédée, pas avec le possesseur — « el hombre cuya casa » (la maison, féminin), même si « el hombre » est masculin.",
       "level": "niveau1",
-      "printUrl": "/fiches-pronombres-relativos-es.html"
+      "printUrl": "/fiches-pronombres-relativos-es.html",
+      "exercise": [
+        {
+          "sentence": "La mujer <span class=\"blank\"></span> vive al lado es médica.",
+          "options": [
+            "que",
+            "donde",
+            "cuyo",
+            "cuando"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "que — sujet, la personne elle-même vit à côté.",
+          "feedbackKo": "No exactamente: sujeto, persona → que."
+        },
+        {
+          "sentence": "Este es el libro del <span class=\"blank\"></span> te hablé la semana pasada.",
+          "options": [
+            "que",
+            "quien",
+            "cuyo",
+            "donde"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "que — après une préposition + article (del que), pour une chose.",
+          "feedbackKo": "No exactamente: une chose, après préposition → del que."
+        },
+        {
+          "sentence": "No sé la razón <span class=\"blank\"></span> se fue tan de repente.",
+          "options": [
+            "donde",
+            "por la que",
+            "quien",
+            "cuyo"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "por la que — « la razón » appelle une préposition + relatif.",
+          "feedbackKo": "No exactamente: une raison → por la que."
+        },
+        {
+          "sentence": "El hombre <span class=\"blank\"></span> coche fue robado anoche es mi vecino.",
+          "options": [
+            "cuyo",
+            "que",
+            "quien",
+            "donde"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "cuyo — possession, s'accorde avec « coche » (masculin).",
+          "feedbackKo": "No exactamente: possession → cuyo."
+        },
+        {
+          "sentence": "Ese es el restaurante <span class=\"blank\"></span> tuvimos nuestra primera cita.",
+          "options": [
+            "donde",
+            "que",
+            "quien",
+            "por qué"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "donde — un restaurant est un lieu.",
+          "feedbackKo": "No exactamente: un lugar → donde."
+        },
+        {
+          "sentence": "¿Recuerdas el día <span class=\"blank\"></span> nos conocimos?",
+          "options": [
+            "cuando",
+            "quien",
+            "cuyo",
+            "que"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "cuando — « el día » est un moment dans le temps.",
+          "feedbackKo": "No exactamente: un momento → cuando."
+        },
+        {
+          "sentence": "Ella es la persona con <span class=\"blank\"></span> hablé ayer por teléfono.",
+          "options": [
+            "quien",
+            "que",
+            "donde",
+            "cuyo"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "quien — après une préposition (con), pour une personne.",
+          "feedbackKo": "No exactamente: personne après préposition → con quien."
+        },
+        {
+          "sentence": "No entendí <span class=\"blank\"></span> dijiste al final de la reunión.",
+          "options": [
+            "lo que",
+            "que",
+            "quien",
+            "donde"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "lo que — une idée complète, pas un nom précis.",
+          "feedbackKo": "No exactamente: une idée entière → lo que."
+        }
+      ]
     }
   ],
   "it": [
@@ -2738,19 +3824,177 @@
       "subtitle": "In, su, sotto, tra... dove si trova?",
       "type": "rule",
       "sections": [
-        { "title": "in", "rule": "à l'intérieur", "examples": ["La palla è in una scatola."] },
-        { "title": "su", "rule": "sur, en contact", "examples": ["La palla è su una scatola."] },
-        { "title": "sotto", "rule": "sous", "examples": ["La palla è sotto una scatola."] },
-        { "title": "tra / fra", "rule": "entre", "examples": ["La palla è tra due scatole."] },
-        { "title": "davanti a", "rule": "devant", "examples": ["La palla è davanti a una scatola."] },
-        { "title": "dietro", "rule": "derrière", "examples": ["La palla è dietro una scatola."] },
-        { "title": "accanto a", "rule": "à côté, contact", "examples": ["La palla è accanto a una scatola."] },
-        { "title": "vicino a", "rule": "à proximité", "examples": ["La palla è vicino a una scatola."] },
-        { "title": "sopra", "rule": "au-dessus, sans contact", "examples": ["La palla è sopra una scatola."] },
-        { "title": "lontano da", "rule": "loin de", "examples": ["La palla è lontano da una scatola."] }
+        {
+          "title": "in",
+          "rule": "à l'intérieur",
+          "examples": [
+            "La palla è in una scatola."
+          ]
+        },
+        {
+          "title": "su",
+          "rule": "sur, en contact",
+          "examples": [
+            "La palla è su una scatola."
+          ]
+        },
+        {
+          "title": "sotto",
+          "rule": "sous",
+          "examples": [
+            "La palla è sotto una scatola."
+          ]
+        },
+        {
+          "title": "tra / fra",
+          "rule": "entre",
+          "examples": [
+            "La palla è tra due scatole."
+          ]
+        },
+        {
+          "title": "davanti a",
+          "rule": "devant",
+          "examples": [
+            "La palla è davanti a una scatola."
+          ]
+        },
+        {
+          "title": "dietro",
+          "rule": "derrière",
+          "examples": [
+            "La palla è dietro una scatola."
+          ]
+        },
+        {
+          "title": "accanto a",
+          "rule": "à côté, contact",
+          "examples": [
+            "La palla è accanto a una scatola."
+          ]
+        },
+        {
+          "title": "vicino a",
+          "rule": "à proximité",
+          "examples": [
+            "La palla è vicino a una scatola."
+          ]
+        },
+        {
+          "title": "sopra",
+          "rule": "au-dessus, sans contact",
+          "examples": [
+            "La palla è sopra una scatola."
+          ]
+        },
+        {
+          "title": "lontano da",
+          "rule": "loin de",
+          "examples": [
+            "La palla è lontano da una scatola."
+          ]
+        }
       ],
       "level": "niveau1",
-      "printUrl": "/fiches-luogo-it.html"
+      "printUrl": "/fiches-luogo-it.html",
+      "exercise": [
+        {
+          "sentence": "Il gatto si è addormentato rannicchiato <span class=\"blank\"></span> la scatola di cartone aperta, completamente nascosto dentro.",
+          "options": [
+            "in",
+            "su",
+            "vicino a",
+            "sopra"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "in — è nascosto dentro, non sopra.",
+          "feedbackKo": "Non proprio: è nascosto dentro → in."
+        },
+        {
+          "sentence": "Ha messo la lampada proprio <span class=\"blank\"></span> il tavolo di legno, al centro.",
+          "options": [
+            "sotto",
+            "su",
+            "tra",
+            "lontano da"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "su — a contatto con la superficie.",
+          "feedbackKo": "Non proprio: a contatto con la superficie → su."
+        },
+        {
+          "sentence": "Il cane si nasconde, completamente fuori vista, proprio <span class=\"blank\"></span> il divano.",
+          "options": [
+            "su",
+            "sotto",
+            "accanto a",
+            "sopra"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "sotto — fuori vista, quindi sotto.",
+          "feedbackKo": "Non proprio: fuori vista = sotto → sotto."
+        },
+        {
+          "sentence": "Il parco si trova esattamente a metà strada <span class=\"blank\"></span> la scuola e la chiesa.",
+          "options": [
+            "dietro",
+            "tra",
+            "vicino a",
+            "sotto"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "tra — collega due punti di riferimento, «X e Y».",
+          "feedbackKo": "Non proprio: collega due riferimenti → tra."
+        },
+        {
+          "sentence": "È in piedi a pochi centimetri, proprio <span class=\"blank\"></span> la porta, pronta a bussare.",
+          "options": [
+            "sotto",
+            "dietro",
+            "davanti a",
+            "vicino a"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "davanti a — «pronta a bussare» = proprio di fronte.",
+          "feedbackKo": "Non proprio: pronta a bussare → davanti a."
+        },
+        {
+          "sentence": "L'aereo ha volato molto <span class=\"blank\"></span> le nuvole, senza mai toccarle.",
+          "options": [
+            "su",
+            "sopra",
+            "accanto a",
+            "sotto"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "sopra — «senza toccarle» indica una separazione.",
+          "feedbackKo": "Non proprio: senza toccarle → sopra."
+        },
+        {
+          "sentence": "I due amici si sono seduti così vicini che le spalle si toccavano quasi, uno <span class=\"blank\"></span> l'altro.",
+          "options": [
+            "vicino a",
+            "accanto a",
+            "tra",
+            "dietro"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "accanto a — «si toccavano quasi» = contatto diretto.",
+          "feedbackKo": "Non proprio: si toccavano quasi → accanto a."
+        },
+        {
+          "sentence": "La panetteria è a cinque minuti a piedi, un po' <span class=\"blank\"></span> la stazione.",
+          "options": [
+            "accanto a",
+            "vicino a",
+            "sopra",
+            "dietro"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "vicino a — «cinque minuti a piedi» = a distanza.",
+          "feedbackKo": "Non proprio: cinque minuti a piedi = a distanza → vicino a."
+        }
+      ]
     },
     {
       "id": "preposizioni-movimento",
@@ -2758,19 +4002,177 @@
       "subtitle": "Verso dove?",
       "type": "rule",
       "sections": [
-        { "title": "a", "rule": "vers, à (destination)", "examples": ["Andiamo a scuola."] },
-        { "title": "verso", "rule": "en direction de", "examples": ["La nave naviga verso nord."] },
-        { "title": "da", "rule": "depuis (origine)", "examples": ["Partiamo da quella stazione."] },
-        { "title": "fino a", "rule": "jusqu'à", "examples": ["Abbiamo corso fino al parco."] },
-        { "title": "per", "rule": "à travers, en passant par", "examples": ["Siamo passati per il tunnel."] },
-        { "title": "attraverso", "rule": "à travers", "examples": ["Il fiume scorre attraverso il bosco."] },
-        { "title": "intorno a", "rule": "autour de", "examples": ["Abbiamo camminato intorno al lago."] },
-        { "title": "dentro", "rule": "à l'intérieur de", "examples": ["Il cane è corso dentro casa."] },
-        { "title": "fuori", "rule": "hors de", "examples": ["Il gatto è saltato fuori dalla scatola."] },
-        { "title": "su", "rule": "sur (avec mouvement)", "examples": ["La palla è caduta sul tavolo."] }
+        {
+          "title": "a",
+          "rule": "vers, à (destination)",
+          "examples": [
+            "Andiamo a scuola."
+          ]
+        },
+        {
+          "title": "verso",
+          "rule": "en direction de",
+          "examples": [
+            "La nave naviga verso nord."
+          ]
+        },
+        {
+          "title": "da",
+          "rule": "depuis (origine)",
+          "examples": [
+            "Partiamo da quella stazione."
+          ]
+        },
+        {
+          "title": "fino a",
+          "rule": "jusqu'à",
+          "examples": [
+            "Abbiamo corso fino al parco."
+          ]
+        },
+        {
+          "title": "per",
+          "rule": "à travers, en passant par",
+          "examples": [
+            "Siamo passati per il tunnel."
+          ]
+        },
+        {
+          "title": "attraverso",
+          "rule": "à travers",
+          "examples": [
+            "Il fiume scorre attraverso il bosco."
+          ]
+        },
+        {
+          "title": "intorno a",
+          "rule": "autour de",
+          "examples": [
+            "Abbiamo camminato intorno al lago."
+          ]
+        },
+        {
+          "title": "dentro",
+          "rule": "à l'intérieur de",
+          "examples": [
+            "Il cane è corso dentro casa."
+          ]
+        },
+        {
+          "title": "fuori",
+          "rule": "hors de",
+          "examples": [
+            "Il gatto è saltato fuori dalla scatola."
+          ]
+        },
+        {
+          "title": "su",
+          "rule": "sur (avec mouvement)",
+          "examples": [
+            "La palla è caduta sul tavolo."
+          ]
+        }
       ],
       "level": "niveau1",
-      "printUrl": "/fiches-movimento-it.html"
+      "printUrl": "/fiches-movimento-it.html",
+      "exercise": [
+        {
+          "sentence": "Partiamo <span class=\"blank\"></span> Milano domani mattina.",
+          "options": [
+            "per",
+            "da",
+            "verso",
+            "fino a"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "per — « partire per » indica la destinazione di un viaggio.",
+          "feedbackKo": "Non proprio: destinazione del viaggio → partire per Milano."
+        },
+        {
+          "sentence": "Camminiamo <span class=\"blank\"></span> la stazione fino al centro.",
+          "options": [
+            "da",
+            "verso",
+            "per",
+            "su"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "da — punto di partenza, insieme a « fino a ».",
+          "feedbackKo": "Non proprio: punto di partenza → da."
+        },
+        {
+          "sentence": "Il topo si è infilato <span class=\"blank\"></span> lo stretto tunnel fino all'altro lato.",
+          "options": [
+            "per",
+            "verso",
+            "su",
+            "fino a"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "per — attraversare uno spazio chiuso.",
+          "feedbackKo": "Non proprio: attraversare il tunnel → per."
+        },
+        {
+          "sentence": "Il cane ha corso <span class=\"blank\"></span> la fontana, descrivendo un cerchio completo.",
+          "options": [
+            "intorno a",
+            "attraverso",
+            "verso",
+            "dentro"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "intorno a — « un cerchio completo ».",
+          "feedbackKo": "Non proprio: un cerchio completo → intorno a."
+        },
+        {
+          "sentence": "Il bambino è corso <span class=\"blank\"></span> casa quando ha iniziato a piovere.",
+          "options": [
+            "dentro",
+            "fuori",
+            "verso",
+            "su"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "dentro — entra all'interno per ripararsi.",
+          "feedbackKo": "Non proprio: entra all'interno → dentro."
+        },
+        {
+          "sentence": "Il gattino è saltato <span class=\"blank\"></span> dal cestino ed è scappato via.",
+          "options": [
+            "dentro",
+            "fuori",
+            "verso",
+            "intorno a"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "fuori — esce all'esterno, « è scappato via ».",
+          "feedbackKo": "Non proprio: esce all'esterno → fuori."
+        },
+        {
+          "sentence": "Il bicchiere è caduto e si è rotto <span class=\"blank\"></span> il tavolo.",
+          "options": [
+            "su",
+            "da",
+            "dentro",
+            "intorno a"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "su — cade sopra una superficie.",
+          "feedbackKo": "Non proprio: cade sul tavolo → su."
+        },
+        {
+          "sentence": "Abbiamo corso <span class=\"blank\"></span> il parco senza fermarci un attimo.",
+          "options": [
+            "fino a",
+            "da",
+            "verso",
+            "per"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "fino a — indica il punto d'arrivo, senza fermarsi.",
+          "feedbackKo": "Non proprio: punto d'arrivo, senza fermarsi → fino a."
+        }
+      ]
     },
     {
       "id": "preposizioni-tempo",
@@ -2778,19 +4180,177 @@
       "subtitle": "Quando?",
       "type": "rule",
       "sections": [
-        { "title": "a", "rule": "à (heure précise)", "examples": ["La lezione inizia alle 7."] },
-        { "title": "in", "rule": "en (mois, année)", "examples": ["Sono nato nel 1997."] },
-        { "title": "da", "rule": "depuis", "examples": ["Vivo qui dal 2020."] },
-        { "title": "fino a", "rule": "jusqu'à", "examples": ["Lavoro fino alle 6."] },
-        { "title": "durante", "rule": "pendant", "examples": ["Mi sono addormentato durante il film."] },
-        { "title": "prima di", "rule": "avant", "examples": ["Lavati le mani prima di cena."] },
-        { "title": "dopo", "rule": "après", "examples": ["Abbiamo parlato dopo la riunione."] },
-        { "title": "tra / fra", "rule": "dans (délai futur)", "examples": ["Finisco tra un'ora."] },
-        { "title": "per", "rule": "pendant (durée)", "examples": ["Ho studiato per due ore."] },
-        { "title": "fa", "rule": "il y a (se place après)", "examples": ["È arrivato un'ora fa."] }
+        {
+          "title": "a",
+          "rule": "à (heure précise)",
+          "examples": [
+            "La lezione inizia alle 7."
+          ]
+        },
+        {
+          "title": "in",
+          "rule": "en (mois, année)",
+          "examples": [
+            "Sono nato nel 1997."
+          ]
+        },
+        {
+          "title": "da",
+          "rule": "depuis",
+          "examples": [
+            "Vivo qui dal 2020."
+          ]
+        },
+        {
+          "title": "fino a",
+          "rule": "jusqu'à",
+          "examples": [
+            "Lavoro fino alle 6."
+          ]
+        },
+        {
+          "title": "durante",
+          "rule": "pendant",
+          "examples": [
+            "Mi sono addormentato durante il film."
+          ]
+        },
+        {
+          "title": "prima di",
+          "rule": "avant",
+          "examples": [
+            "Lavati le mani prima di cena."
+          ]
+        },
+        {
+          "title": "dopo",
+          "rule": "après",
+          "examples": [
+            "Abbiamo parlato dopo la riunione."
+          ]
+        },
+        {
+          "title": "tra / fra",
+          "rule": "dans (délai futur)",
+          "examples": [
+            "Finisco tra un'ora."
+          ]
+        },
+        {
+          "title": "per",
+          "rule": "pendant (durée)",
+          "examples": [
+            "Ho studiato per due ore."
+          ]
+        },
+        {
+          "title": "fa",
+          "rule": "il y a (se place après)",
+          "examples": [
+            "È arrivato un'ora fa."
+          ]
+        }
       ],
       "level": "niveau1",
-      "printUrl": "/fiches-tempo-it.html"
+      "printUrl": "/fiches-tempo-it.html",
+      "exercise": [
+        {
+          "sentence": "Il treno parte <span class=\"blank\"></span> le nove in punto, neanche un minuto più tardi.",
+          "options": [
+            "in",
+            "durante",
+            "a",
+            "fa"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "a — orario preciso, «neanche un minuto più tardi».",
+          "feedbackKo": "Non proprio: orario preciso → a."
+        },
+        {
+          "sentence": "Andiamo sempre dalla nonna <span class=\"blank\"></span> agosto, ogni anno.",
+          "options": [
+            "in",
+            "a",
+            "per",
+            "da"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "in — un mese si dice sempre con «in».",
+          "feedbackKo": "Non proprio: un mese → in agosto."
+        },
+        {
+          "sentence": "Vivono a Lione <span class=\"blank\"></span> il 2015, e ci vivono ancora.",
+          "options": [
+            "da",
+            "per",
+            "fino a",
+            "durante"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "da — un punto di partenza preciso, ancora valido.",
+          "feedbackKo": "Non proprio: punto di partenza ancora valido → da."
+        },
+        {
+          "sentence": "Ho studiato <span class=\"blank\"></span> tre ore di fila, senza nessuna pausa.",
+          "options": [
+            "per",
+            "da",
+            "fa",
+            "a"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "per — una durata misurata in ore.",
+          "feedbackKo": "Non proprio: durata misurata → per."
+        },
+        {
+          "sentence": "Il telefono ha squillato due volte <span class=\"blank\"></span> il film, una cosa molto fastidiosa.",
+          "options": [
+            "durante",
+            "per",
+            "a",
+            "in"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "durante — qualcosa accade dentro un evento.",
+          "feedbackKo": "Non proprio: dentro un evento → durante."
+        },
+        {
+          "sentence": "Per favore arriva <span class=\"blank\"></span> che inizi la riunione, non un minuto dopo.",
+          "options": [
+            "dopo",
+            "prima di",
+            "durante",
+            "da"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "prima di — «non un minuto dopo» = anteriorità.",
+          "feedbackKo": "Non proprio: non un minuto dopo → prima di."
+        },
+        {
+          "sentence": "Finisco la relazione <span class=\"blank\"></span> un'ora, al più tardi.",
+          "options": [
+            "tra",
+            "fa",
+            "da",
+            "durante"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "tra — una scadenza futura, «al più tardi».",
+          "feedbackKo": "Non proprio: scadenza futura → tra."
+        },
+        {
+          "sentence": "È arrivato un'ora <span class=\"blank\"></span> — non è più qui.",
+          "options": [
+            "fa",
+            "tra",
+            "da",
+            "in"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "fa — un momento passato, «non è più qui».",
+          "feedbackKo": "Non proprio: momento passato → fa."
+        }
+      ]
     },
     {
       "id": "pronomi-relativi",
@@ -2798,20 +4358,150 @@
       "subtitle": "Che, cui, dove... quale scegliere?",
       "type": "reference",
       "table": {
-        "headers": ["Pronome", "Uso", "Esempio"],
+        "headers": [
+          "Pronome",
+          "Uso",
+          "Esempio"
+        ],
         "rows": [
-          ["che", "persona o cosa, il più frequente", "il libro che ho letto"],
-          ["cui", "dopo una preposizione, persone e cose", "la persona con cui ho parlato"],
-          ["il cui / la cui", "possesso (concorda con la cosa posseduta)", "l'uomo la cui casa è rossa"],
-          ["dove", "un luogo", "la casa dove abito"],
-          ["in cui", "un momento", "il giorno in cui ci siamo conosciuti"],
-          ["il quale / la quale", "formale, dopo preposizioni lunghe", "il motivo per il quale sono partito"],
-          ["quello che / ciò che", "un'idea intera, non un nome preciso", "non ho capito quello che hai detto"]
+          [
+            "che",
+            "persona o cosa, il più frequente",
+            "il libro che ho letto"
+          ],
+          [
+            "cui",
+            "dopo una preposizione, persone e cose",
+            "la persona con cui ho parlato"
+          ],
+          [
+            "il cui / la cui",
+            "possesso (concorda con la cosa posseduta)",
+            "l'uomo la cui casa è rossa"
+          ],
+          [
+            "dove",
+            "un luogo",
+            "la casa dove abito"
+          ],
+          [
+            "in cui",
+            "un momento",
+            "il giorno in cui ci siamo conosciuti"
+          ],
+          [
+            "il quale / la quale",
+            "formale, dopo preposizioni lunghe",
+            "il motivo per il quale sono partito"
+          ],
+          [
+            "quello che / ciò che",
+            "un'idea intera, non un nome preciso",
+            "non ho capito quello che hai detto"
+          ]
         ]
       },
       "note": "Cui è invariabile, ma l'articolo che lo precede (il/la/i/le cui) si accorda con la cosa posseduta, non con il possessore — « l'uomo la cui casa » (la casa, féminin), même si « l'uomo » est masculin.",
       "level": "niveau1",
-      "printUrl": "/fiches-pronomi-relativi-it.html"
+      "printUrl": "/fiches-pronomi-relativi-it.html",
+      "exercise": [
+        {
+          "sentence": "La donna <span class=\"blank\"></span> vive accanto è medica.",
+          "options": [
+            "che",
+            "dove",
+            "la cui",
+            "in cui"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "che — soggetto, è la persona stessa che vive accanto.",
+          "feedbackKo": "Non proprio: soggetto, persona → che."
+        },
+        {
+          "sentence": "Questo è il libro di <span class=\"blank\"></span> ti ho parlato la settimana scorsa.",
+          "options": [
+            "cui",
+            "che",
+            "la cui",
+            "dove"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "cui — dopo preposizione (di cui), per una cosa.",
+          "feedbackKo": "Non proprio: una cosa, dopo preposizione → di cui."
+        },
+        {
+          "sentence": "Non so il motivo <span class=\"blank\"></span> se n'è andato così all'improvviso.",
+          "options": [
+            "dove",
+            "per cui",
+            "che",
+            "la cui"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "per cui — «il motivo» richiede preposizione + cui.",
+          "feedbackKo": "Non proprio: un motivo → per cui."
+        },
+        {
+          "sentence": "L'uomo <span class=\"blank\"></span> auto è stata rubata ieri notte è il mio vicino.",
+          "options": [
+            "la cui",
+            "che",
+            "cui",
+            "dove"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "la cui — possesso, si accorda con «auto» (femminile).",
+          "feedbackKo": "Non proprio: possesso → la cui."
+        },
+        {
+          "sentence": "Quello è il ristorante <span class=\"blank\"></span> abbiamo avuto il nostro primo appuntamento.",
+          "options": [
+            "dove",
+            "che",
+            "cui",
+            "per cui"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "dove — un ristorante è un luogo.",
+          "feedbackKo": "Non proprio: un luogo → dove."
+        },
+        {
+          "sentence": "Ricordi il giorno <span class=\"blank\"></span> ci siamo conosciuti?",
+          "options": [
+            "in cui",
+            "cui",
+            "che",
+            "la cui"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "in cui — «il giorno» è un momento nel tempo.",
+          "feedbackKo": "Non proprio: un momento → in cui."
+        },
+        {
+          "sentence": "Lei è la persona con <span class=\"blank\"></span> ho parlato ieri al telefono.",
+          "options": [
+            "cui",
+            "che",
+            "dove",
+            "la cui"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "cui — dopo preposizione (con), per una persona.",
+          "feedbackKo": "Non proprio: persona dopo preposizione → con cui."
+        },
+        {
+          "sentence": "Non ho capito <span class=\"blank\"></span> hai detto alla fine della riunione.",
+          "options": [
+            "quello che",
+            "che",
+            "cui",
+            "dove"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "quello che — un'idea intera, non un nome preciso.",
+          "feedbackKo": "Non proprio: un'idea intera → quello che."
+        }
+      ]
     }
   ],
   "ja": [],

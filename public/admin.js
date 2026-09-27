@@ -243,6 +243,28 @@ async function deleteWord(language, subLevel, index) {
   }
 }
 
+// --- Maintenance du contenu ---
+
+document.getElementById('reseed-lessons-btn')?.addEventListener('click', async () => {
+  const messageEl = document.getElementById('reseed-lessons-message');
+  messageEl.textContent = 'Rechargement en cours...';
+  messageEl.style.color = '#666';
+  try {
+    const res = await adminFetch('/api/admin/reseed-lessons');
+    const result = await res.json();
+    if (res.ok) {
+      messageEl.textContent = `✅ Fiches rechargées pour ${result.count} langue(s) : ${result.languages.join(', ')}.`;
+      messageEl.style.color = 'green';
+    } else {
+      messageEl.textContent = result.error;
+      messageEl.style.color = '#c0392b';
+    }
+  } catch (err) {
+    messageEl.textContent = 'Erreur lors du rechargement des fiches.';
+    messageEl.style.color = '#c0392b';
+  }
+});
+
 // --- Compte de test (pour tester l'expérience utilisateur normale, séparé
 // du compte admin wordsip@protonmail.com) ---
 
