@@ -95,6 +95,7 @@ let allVerbs = [];
 let verbQuestions = [];
 let verbsLoaded = false;
 let currentVerbLanguage = 'en';
+let lessonsLanguage = 'en'; // langue utilisée pour lire les fiches/exercices à voix haute
 let verbsStudyMode = true;
 const QUESTIONS_PER_ROUND = 10;
 
@@ -497,6 +498,7 @@ let allLessons = [];
 
 async function loadLessons() {
   const language = await resolveLanguage();
+  lessonsLanguage = language;
   try {
     const res = await fetch(`/api/lessons/${language}`);
     if (!res.ok) throw new Error('none');
@@ -601,6 +603,11 @@ function renderExerciseSection(lesson) {
 
   const questionsHtml = lesson.exercise.map((q, i) => {
     const sentenceHtml = q.sentence.replace('___', '<span class="blank"></span>');
+    const spokenSentence = q.sentence
+      .replace(/<span class="blank"><\/span>/g, '...')
+      .replace('___', '...')
+      .replace(/<[^>]+>/g, '')
+      .trim();
     const optsHtml = q.options.map((opt, j) => `
       <div class="opt" onclick="answerLessonExercise(this,${j === q.correctIndex})">
         <span class="num">${j + 1}</span>${opt}
@@ -610,6 +617,7 @@ function renderExerciseSection(lesson) {
       <div class="q-block">
         ${q.icon || ''}
         <span class="chip">Question ${i + 1}</span>
+        <button type="button" class="fiche-listen-btn" title="Écouter la phrase" ${listenAttrs(spokenSentence)}>🔊 Écouter</button>
         <div class="q-sentence">${sentenceHtml}</div>
         <div class="opt-grid">${optsHtml}</div>
         <div class="feedback" data-ok="${q.feedbackOk}" data-ko="${q.feedbackKo}"></div>
@@ -648,17 +656,44 @@ function answerLessonExercise(el, isOk) {
 // exactement le même design que la fiche imprimable correspondante
 // (grille de cartes .prep-grid/.prep-card), pour que les deux versions
 // soient identiques visuellement.
+// Lecture audio des fiches et exercices : un clic joue le texte en langue
+// cible (pas le français), pour habituer l'oreille — même moteur TTS que
+// "Mon mot". Le texte passe par un attribut data-* encodé en URI plutôt que
+// dans l'attribut onclick, pour ne jamais casser le HTML avec des quotes.
+function speakText(el) {
+  const text = decodeURIComponent(el.dataset.text || '');
+  const lang = el.dataset.lang || lessonsLanguage;
+  if (!text) return;
+  new Audio(`/api/tts?text=${encodeURIComponent(text)}&lang=${lang}`).play().catch(() => {});
+}
+
+function listenAttrs(text, lang) {
+  return `data-text="${encodeURIComponent(text)}" data-lang="${lang || lessonsLanguage}" onclick="speakText(this)"`;
+}
+
+// Certaines cellules de tableau mélangent explication française et exemple
+// en langue cible entre parenthèses, ex. "mois, année (in July, in 2026)" —
+// on ne lit que la partie entre parenthèses si elle existe, sinon la cellule
+// telle quelle (déjà en langue cible pour les tableaux de pronoms relatifs).
+function extractSpeakable(cell) {
+  const m = cell.match(/\(([^)]+)\)\s*$/);
+  return m ? m[1] : cell;
+}
+
 function renderRuleLessonCard(lesson) {
-  const cardsHtml = lesson.sections.map((s) => `
-    <div class="prep-card">
+  const cardsHtml = lesson.sections.map((s) => {
+    const spoken = `${s.title}. ${s.examples.join('. ')}`;
+    return `
+    <div class="prep-card" style="cursor:pointer;" title="Cliquer pour écouter" ${listenAttrs(spoken)}>
       ${s.icon || ''}
       <div>
-        <div class="prep-word">${s.title}</div>
+        <div class="prep-word">🔊 ${s.title}</div>
         <div class="prep-rule">${s.rule}</div>
         <div class="prep-ex">${s.examples.map((ex) => `« ${ex} »`).join('<br>')}</div>
       </div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 
   return `
     <section class="fiche-sheet">
@@ -691,12 +726,15 @@ function renderPrintLink(lesson) {
 // à consulter. Rendu avec le même tableau .memo que la fiche imprimable.
 function renderReferenceLessonCard(lesson) {
   const headerHtml = lesson.table.headers.map((h) => `<th>${h}</th>`).join('');
-  const rowsHtml = lesson.table.rows.map((row) => `
-    <tr>
-      <td class="word">${row[0]}</td>
+  const rowsHtml = lesson.table.rows.map((row) => {
+    const spoken = `${extractSpeakable(row[0])}. ${row.slice(1).map(extractSpeakable).join('. ')}`;
+    return `
+    <tr style="cursor:pointer;" title="Cliquer pour écouter" ${listenAttrs(spoken)}>
+      <td class="word">🔊 ${row[0]}</td>
       ${row.slice(1).map((cell) => `<td>${cell}</td>`).join('')}
     </tr>
-  `).join('');
+  `;
+  }).join('');
 
   return `
     <section class="fiche-sheet">
@@ -718,20 +756,20 @@ function renderReferenceLessonCard(lesson) {
 
 function renderTenseLessonCard(lesson) {
   const markersHtml = lesson.timeMarkers.map((m) => `
-    <li style="margin-bottom:5px;"><b>${m.expression}</b> — <span style="color:#6b8f8c;">${m.translation}</span></li>
+    <li style="margin-bottom:5px;cursor:pointer;" title="Cliquer pour écouter" ${listenAttrs(m.expression)}><b>🔊 ${m.expression}</b> — <span style="color:#6b8f8c;">${m.translation}</span></li>
   `).join('');
 
   const usagesHtml = lesson.usages.map((u) => `
     <div class="fiche-usage" style="margin-bottom:12px;">
       <p style="font-family:'Fredoka','Segoe UI',sans-serif;font-weight:600;font-size:.9rem;color:var(--fiche-teal-700);margin:0 0 2px;">${u.title}</p>
       <p style="font-size:.87rem;margin:2px 0;">${u.description}</p>
-      <p style="font-size:.85rem;font-style:italic;color:#6b8f8c;">« ${u.example} »</p>
+      <p style="font-size:.85rem;font-style:italic;color:#6b8f8c;cursor:pointer;" title="Cliquer pour écouter" ${listenAttrs(u.example)}>🔊 « ${u.example} »</p>
     </div>
   `).join('');
 
   const formsHtml = lesson.forms.map((form) => {
     const rows = form.rows.map((row) => `
-      <tr>${row.map((cell) => `<td style="padding:6px 10px;border-bottom:1px solid var(--fiche-line);font-size:.87rem;">${cell}</td>`).join('')}</tr>
+      <tr style="cursor:pointer;" title="Cliquer pour écouter" ${listenAttrs(row[0])}>${row.map((cell, i) => `<td style="padding:6px 10px;border-bottom:1px solid var(--fiche-line);font-size:.87rem;">${i === 0 ? '🔊 ' : ''}${cell}</td>`).join('')}</tr>
     `).join('');
     return `
       <div style="flex:1;min-width:180px;">
