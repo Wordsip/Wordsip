@@ -7,7 +7,7 @@ let dicteeWords = [];
 
 // Conserve la query string (email) sur les autres liens du menu, comme sur
 // les autres pages du site.
-['nav-mot-link', 'nav-grammaire-link', 'nav-phonetique-link'].forEach((id) => {
+['nav-mot-link', 'nav-grammaire-link', 'nav-phonetique-link', 'nav-histoire-link'].forEach((id) => {
   const el = document.getElementById(id);
   if (el) el.href = `${el.getAttribute('href')}${window.location.search}`;
 });

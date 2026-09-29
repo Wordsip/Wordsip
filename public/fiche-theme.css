@@ -57,7 +57,11 @@
   border: 1.5px solid var(--fiche-line);
   border-radius: 14px;
   padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
+.prep-card svg { flex: 0 0 auto; width: 72px; height: 58px; }
 .prep-word {
   font-family: 'Fredoka', 'Segoe UI', sans-serif;
   font-weight: 600;
@@ -150,6 +154,7 @@ table.memo .ex { display: block; color: #7c9a97; font-size: .78rem; margin-top: 
 .opt.incorrect { background: #fdecea; border-color: #d9503c; color: #b83f2e; font-weight: 700; }
 .opt.incorrect .num { border-color: #d9503c; color: #b83f2e; }
 .q-block.answered .opt { cursor: default; pointer-events: none; }
+.q-icon { float: left; width: 48px; height: 40px; margin: 0 10px 8px 0; }
 .feedback { display: none; margin-top: 8px; padding: 7px 10px; border-radius: 8px; font-size: .8rem; line-height: 1.4; }
 .feedback.fb-correct { display: block; background: #e6f7ec; color: #1f7a44; }
 .feedback.fb-incorrect { display: block; background: #fdecea; color: #b83f2e; }

@@ -16,7 +16,7 @@ async function resolveLanguage() {
 }
 
 async function init() {
-  const navLinks = ['nav-mot-link', 'nav-phonetique-link', 'nav-dictee-link'];
+  const navLinks = ['nav-mot-link', 'nav-phonetique-link', 'nav-dictee-link', 'nav-histoire-link'];
   navLinks.forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.href = `${el.getAttribute('href')}${window.location.search}`;
@@ -608,6 +608,7 @@ function renderExerciseSection(lesson) {
     `).join('');
     return `
       <div class="q-block">
+        ${q.icon || ''}
         <span class="chip">Question ${i + 1}</span>
         <div class="q-sentence">${sentenceHtml}</div>
         <div class="opt-grid">${optsHtml}</div>
@@ -650,9 +651,12 @@ function answerLessonExercise(el, isOk) {
 function renderRuleLessonCard(lesson) {
   const cardsHtml = lesson.sections.map((s) => `
     <div class="prep-card">
-      <div class="prep-word">${s.title}</div>
-      <div class="prep-rule">${s.rule}</div>
-      <div class="prep-ex">${s.examples.map((ex) => `« ${ex} »`).join('<br>')}</div>
+      ${s.icon || ''}
+      <div>
+        <div class="prep-word">${s.title}</div>
+        <div class="prep-rule">${s.rule}</div>
+        <div class="prep-ex">${s.examples.map((ex) => `« ${ex} »`).join('<br>')}</div>
+      </div>
     </div>
   `).join('');
 

@@ -297,3 +297,29 @@ footer a { color: #2b7a78; }
   width: auto; padding: 6px 14px; font-size: 12px; background: #2b7a78; color: white;
   border: none; border-radius: 999px; cursor: pointer;
 }
+
+/* --- Histoires (pré-écrites, débloquées par les mots appris) --- */
+.story-card {
+  background: white; border: 1.5px solid #dceeed; border-radius: 16px;
+  padding: 16px 18px; margin-bottom: 12px;
+}
+.story-card.locked { background: #f7fbfa; border-style: dashed; color: #7c9a97; }
+.story-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; cursor: pointer; }
+.story-num { font-size: 11px; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: .4px; }
+.story-title { font-weight: 700; color: #17252a; font-size: 1.02rem; margin: 2px 0 0; }
+.story-title-fr { font-size: 12px; color: #7c9a97; }
+.story-body { display: none; margin-top: 12px; }
+.story-card.open .story-body { display: block; }
+.story-text { font-size: 1.02rem; line-height: 1.75; margin: 0 0 12px; }
+.story-text b { color: #2b7a78; background: #eaf6f5; border-radius: 4px; padding: 0 3px; }
+.story-fr { font-size: .9rem; line-height: 1.6; color: #555; background: #f8f8f8; border-radius: 10px; padding: 10px 12px; margin-top: 10px; display: none; }
+.story-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.story-actions button { width: auto; padding: 7px 16px; font-size: 13px; }
+.story-actions .ghost { background: white; color: #2b7a78; border: 1.5px solid #2b7a78; }
+.story-glossary { margin-top: 12px; padding-top: 10px; border-top: 1px solid #eee; }
+.story-glossary span {
+  display: inline-block; background: #eaf5ff; border-radius: 8px; padding: 4px 9px;
+  margin: 3px 4px 0 0; font-size: .82rem;
+}
+.story-progress { height: 6px; background: #e3f2f1; border-radius: 999px; overflow: hidden; margin-top: 8px; }
+.story-progress > div { height: 100%; background: #3aafa9; }

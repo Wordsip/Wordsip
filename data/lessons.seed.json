@@ -1068,70 +1068,80 @@
           "rule": "à l'intérieur d'un espace fermé",
           "examples": [
             "The ball is in the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"30\" width=\"64\" height=\"42\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"18\" y1=\"30\" x2=\"82\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"50\" cy=\"50\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"45\" cy=\"47\" r=\"2\" fill=\"#17252a\"/><circle cx=\"55\" cy=\"47\" r=\"2\" fill=\"#17252a\"/><path d=\"M45 55 Q50 59 55 55\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "on",
           "rule": "posé sur une surface",
           "examples": [
             "The ball is on the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"46\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"18\" y1=\"46\" x2=\"82\" y2=\"46\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"50\" cy=\"32\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"45\" cy=\"29\" r=\"2\" fill=\"#17252a\"/><circle cx=\"55\" cy=\"29\" r=\"2\" fill=\"#17252a\"/><path d=\"M45 37 Q50 41 55 37\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "under",
           "rule": "en dessous, hors de vue",
           "examples": [
             "The ball is under the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"60\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"45\" cy=\"57\" r=\"2\" fill=\"#17252a\"/><circle cx=\"55\" cy=\"57\" r=\"2\" fill=\"#17252a\"/><path d=\"M45 65 Q50 69 55 65\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"18\" y=\"14\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"18\" y1=\"14\" x2=\"82\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"3\"/></svg>"
         },
         {
           "title": "between",
           "rule": "entre deux repères",
           "examples": [
             "The ball is between the boxes."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><rect x=\"62\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"50\" cy=\"50\" r=\"12\" fill=\"#3aafa9\"/><circle cx=\"46\" cy=\"47\" r=\"1.8\" fill=\"#17252a\"/><circle cx=\"54\" cy=\"47\" r=\"1.8\" fill=\"#17252a\"/><path d=\"M45 54 Q50 58 55 54\" stroke=\"#17252a\" stroke-width=\"1.8\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "in front of",
           "rule": "juste devant",
           "examples": [
             "The ball is in front of the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"42\" y=\"20\" width=\"50\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"42\" y1=\"20\" x2=\"92\" y2=\"20\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"30\" cy=\"54\" r=\"14\" fill=\"#3aafa9\"/><circle cx=\"25\" cy=\"51\" r=\"2\" fill=\"#17252a\"/><circle cx=\"35\" cy=\"51\" r=\"2\" fill=\"#17252a\"/><path d=\"M24 59 Q30 63 36 59\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "above",
           "rule": "au-dessus, sans contact",
           "examples": [
             "The ball is above the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"22\" y=\"48\" width=\"56\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"22\" y1=\"48\" x2=\"78\" y2=\"48\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"50\" cy=\"20\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"45\" cy=\"17\" r=\"2\" fill=\"#17252a\"/><circle cx=\"55\" cy=\"17\" r=\"2\" fill=\"#17252a\"/><path d=\"M45 25 Q50 29 55 25\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"34\" x2=\"50\" y2=\"44\" stroke=\"#dceeed\" stroke-width=\"2\" stroke-dasharray=\"2 3\"/></svg>"
         },
         {
           "title": "next to",
           "rule": "juste à côté, contact direct",
           "examples": [
             "The ball is next to the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"10\" y=\"26\" width=\"40\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"10\" y1=\"26\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"72\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"67\" cy=\"45\" r=\"2\" fill=\"#17252a\"/><circle cx=\"77\" cy=\"45\" r=\"2\" fill=\"#17252a\"/><path d=\"M67 53 Q72 57 77 53\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "near",
           "rule": "à proximité, à distance",
           "examples": [
             "The ball is near the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"6\" y=\"28\" width=\"34\" height=\"34\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"6\" y1=\"28\" x2=\"40\" y2=\"28\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"86\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"81\" cy=\"45\" r=\"2\" fill=\"#17252a\"/><circle cx=\"91\" cy=\"45\" r=\"2\" fill=\"#17252a\"/><path d=\"M81 53 Q86 57 91 53\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "behind",
           "rule": "caché derrière",
           "examples": [
             "The ball is behind the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"30\" y=\"18\" width=\"52\" height=\"46\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"30\" y1=\"18\" x2=\"82\" y2=\"18\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"24\" cy=\"52\" r=\"12\" fill=\"#3aafa9\" opacity=\".85\"/><circle cx=\"20\" cy=\"49\" r=\"1.8\" fill=\"#17252a\"/><circle cx=\"28\" cy=\"49\" r=\"1.8\" fill=\"#17252a\"/></svg>"
         },
         {
           "title": "below",
           "rule": "position plus générale que « under »",
           "examples": [
             "The ball is below the shelf."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"25\" cy=\"60\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"20\" cy=\"57\" r=\"2\" fill=\"#17252a\"/><circle cx=\"30\" cy=\"57\" r=\"2\" fill=\"#17252a\"/><rect x=\"50\" y=\"14\" width=\"42\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"50\" y1=\"14\" x2=\"92\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"3\"/></svg>"
         }
       ],
       "level": "niveau1",
@@ -1147,7 +1157,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "in — elle est cachée à l'intérieur, invisible.",
-          "feedbackKo": "Pas tout à fait : le dessin montre la balle dedans → in — elle est cachée à l'intérieur, invisible."
+          "feedbackKo": "Pas tout à fait : le dessin montre la balle dedans → in — elle est cachée à l'intérieur, invisible.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"30\" width=\"64\" height=\"42\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"30\" x2=\"82\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"50\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "He placed the lamp right <span class=\"blank\"></span> the top of the wooden table, in the middle.",
@@ -1159,7 +1170,8 @@
           ],
           "correctIndex": 2,
           "feedbackOk": "on — « on top of » = posé sur la surface.",
-          "feedbackKo": "Pas tout à fait : « on top of » = posé sur la surface → on."
+          "feedbackKo": "Pas tout à fait : « on top of » = posé sur la surface → on.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"46\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"46\" x2=\"82\" y2=\"46\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"32\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "The dog is hiding, completely out of sight, right <span class=\"blank\"></span> the sofa.",
@@ -1171,7 +1183,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "under — hors de vue, donc en dessous, caché.",
-          "feedbackKo": "Pas tout à fait : « out of sight » = hors de vue, donc en dessous → under."
+          "feedbackKo": "Pas tout à fait : « out of sight » = hors de vue, donc en dessous → under.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"60\" r=\"14\" fill=\"#3aafa9\"/><rect x=\"18\" y=\"14\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"14\" x2=\"82\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"4\"/></svg>"
         },
         {
           "sentence": "The playground sits exactly halfway <span class=\"blank\"></span> the school and the church, the same distance from both.",
@@ -1183,7 +1196,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "between — seule préposition qui relie naturellement « X and Y ».",
-          "feedbackKo": "Pas tout à fait : elle relie deux repères « X and Y » → between."
+          "feedbackKo": "Pas tout à fait : elle relie deux repères « X and Y » → between.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><rect x=\"62\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "She's standing only inches away, directly <span class=\"blank\"></span> the door, about to knock.",
@@ -1195,7 +1209,8 @@
           ],
           "correctIndex": 2,
           "feedbackOk": "in front of — « about to knock » = juste devant la porte.",
-          "feedbackKo": "Pas tout à fait : « about to knock » = juste devant la porte → in front of."
+          "feedbackKo": "Pas tout à fait : « about to knock » = juste devant la porte → in front of.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"42\" y=\"20\" width=\"50\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"42\" y1=\"20\" x2=\"92\" y2=\"20\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"28\" cy=\"54\" r=\"15\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "The plane flew far <span class=\"blank\"></span> the clouds, without ever touching them.",
@@ -1207,7 +1222,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "above — « without touching » exclut on/under, il y a un espace.",
-          "feedbackKo": "Pas tout à fait : « without touching » exclut on/under → above."
+          "feedbackKo": "Pas tout à fait : « without touching » exclut on/under → above.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"22\" y=\"48\" width=\"56\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"22\" y1=\"48\" x2=\"78\" y2=\"48\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"18\" r=\"13\" fill=\"#3aafa9\"/><line x1=\"50\" y1=\"32\" x2=\"50\" y2=\"44\" stroke=\"#dceeed\" stroke-width=\"3\" stroke-dasharray=\"2 3\"/></svg>"
         },
         {
           "sentence": "The two friends sat so close their shoulders were almost touching, one <span class=\"blank\"></span> the other.",
@@ -1219,7 +1235,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "next to — « almost touching » = contact direct, pas de distance.",
-          "feedbackKo": "Pas tout à fait : « almost touching » = contact direct → next to."
+          "feedbackKo": "Pas tout à fait : « almost touching » = contact direct → next to.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"10\" y=\"26\" width=\"40\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"10\" y1=\"26\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"72\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "The bakery is a five-minute walk away, somewhere <span class=\"blank\"></span> the train station.",
@@ -1231,7 +1248,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "near — « five-minute walk » = à distance, pas juste à côté.",
-          "feedbackKo": "Pas tout à fait : « five-minute walk » = à distance → near."
+          "feedbackKo": "Pas tout à fait : « five-minute walk » = à distance → near.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"6\" y=\"28\" width=\"34\" height=\"34\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"6\" y1=\"28\" x2=\"40\" y2=\"28\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"86\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "He tried to sneak up on his friend, staying <span class=\"blank\"></span> the tree so he wouldn't be seen.",
@@ -1243,7 +1261,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "behind — « so he wouldn't be seen » = caché derrière.",
-          "feedbackKo": "Pas tout à fait : « so he wouldn't be seen » = caché derrière → behind."
+          "feedbackKo": "Pas tout à fait : « so he wouldn't be seen » = caché derrière → behind.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"30\" y=\"18\" width=\"52\" height=\"46\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"30\" y1=\"18\" x2=\"82\" y2=\"18\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"24\" cy=\"52\" r=\"13\" fill=\"#3aafa9\" opacity=\".8\"/></svg>"
         },
         {
           "sentence": "The ball rolled off the shelf and landed somewhere lower down, roughly <span class=\"blank\"></span> it.",
@@ -1255,7 +1274,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "below — position plus vague/générale que « under ».",
-          "feedbackKo": "Pas tout à fait : position plus large, pas forcément juste dessous → below."
+          "feedbackKo": "Pas tout à fait : position plus large, pas forcément juste dessous → below.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"25\" cy=\"60\" r=\"14\" fill=\"#3aafa9\"/><rect x=\"50\" y=\"14\" width=\"42\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"50\" y1=\"14\" x2=\"92\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"4\"/></svg>"
         }
       ]
     },
@@ -1270,70 +1290,80 @@
           "rule": "vers le haut",
           "examples": [
             "The ball rolled up the stairs."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"28\" y=\"50\" width=\"44\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M50,45 L50,10\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M43,20 L50,8 L57,20\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "down",
           "rule": "vers le bas",
           "examples": [
             "The ball rolled down the stairs."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"28\" y=\"50\" width=\"44\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M50,10 L50,42\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M43,33 L50,45 L57,33\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "into",
           "rule": "entrer à l'intérieur",
           "examples": [
             "The ball rolled into the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"20\" y=\"38\" width=\"60\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M15,10 Q55,10 50,34\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M42,28 L50,38 L58,26\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "out of",
           "rule": "sortir de l'intérieur",
           "examples": [
             "The ball rolled out of the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"20\" y=\"38\" width=\"60\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M50,36 Q45,10 85,10\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M74,4 L86,10 L76,18\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "onto",
           "rule": "atterrir sur une surface (avec mouvement)",
           "examples": [
             "The ball jumped onto the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"26\" y=\"44\" width=\"48\" height=\"26\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"26\" y1=\"44\" x2=\"74\" y2=\"44\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M15,12 Q55,12 50,40\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M42,32 L50,42 L58,30\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "off",
           "rule": "quitter une surface",
           "examples": [
             "The ball fell off the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"26\" y=\"44\" width=\"48\" height=\"26\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"26\" y1=\"44\" x2=\"74\" y2=\"44\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M50,42 Q55,12 85,12\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M74,6 L86,12 L76,20\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "over",
           "rule": "par-dessus",
           "examples": [
             "The ball flew over the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"35\" y=\"46\" width=\"30\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M15,66 Q50,8 85,66\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M74,58 L86,66 L79,54\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "across",
           "rule": "d'un côté à l'autre",
           "examples": [
             "The ball rolled across the room."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"30\" width=\"26\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><rect x=\"66\" y=\"30\" width=\"26\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M34,47 L60,47\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M52,40 L62,47 L52,54\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "around",
           "rule": "tout autour",
           "examples": [
             "The ball rolled around the box."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"35\" y=\"30\" width=\"30\" height=\"30\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M50,10 A30,30 0 1 1 21,42\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M13,35 L21,43 L29,34\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "through",
           "rule": "à travers un espace fermé",
           "examples": [
             "The ball went through the hoop."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><ellipse cx=\"50\" cy=\"40\" rx=\"16\" ry=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M14,40 L78,40\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M70,32 L80,40 L70,48\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         }
       ],
       "level": "niveau1",
@@ -1349,7 +1379,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "up — grimper « jusqu'en haut ».",
-          "feedbackKo": "Pas tout à fait : « all the way to the top » = vers le haut → up."
+          "feedbackKo": "Pas tout à fait : « all the way to the top » = vers le haut → up.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"28\" y=\"50\" width=\"44\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,45 L50,10\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         },
         {
           "sentence": "She dropped the letter <span class=\"blank\"></span> the mailbox and heard it land at the bottom.",
@@ -1361,7 +1392,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "into — elle entre à l'intérieur de la boîte.",
-          "feedbackKo": "Pas tout à fait : « heard it land at the bottom » = elle entre dedans → into."
+          "feedbackKo": "Pas tout à fait : « heard it land at the bottom » = elle entre dedans → into.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"20\" y=\"38\" width=\"60\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M15,10 Q55,10 50,36\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "He walked <span class=\"blank\"></span> the busy street to reach the shop on the other side.",
@@ -1373,7 +1405,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "across — traverser d'un côté à l'autre.",
-          "feedbackKo": "Pas tout à fait : « the other side » = traverser d'un bout à l'autre → across."
+          "feedbackKo": "Pas tout à fait : « the other side » = traverser d'un bout à l'autre → across.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"30\" width=\"26\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><rect x=\"66\" y=\"30\" width=\"26\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M34,47 L62,47\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         },
         {
           "sentence": "The plane flew <span class=\"blank\"></span> the mountain, staying well above its peak.",
@@ -1385,7 +1418,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "over — « bien au-dessus » du sommet.",
-          "feedbackKo": "Pas tout à fait : « well above its peak » = par-dessus → over."
+          "feedbackKo": "Pas tout à fait : « well above its peak » = par-dessus → over.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"35\" y=\"46\" width=\"30\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M15,66 Q50,8 85,66\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "The dog ran <span class=\"blank\"></span> the fountain in a full circle, chasing its tail.",
@@ -1397,7 +1431,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "around — « cercle complet ».",
-          "feedbackKo": "Pas tout à fait : « a full circle » → around."
+          "feedbackKo": "Pas tout à fait : « a full circle » → around.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"35\" y=\"30\" width=\"30\" height=\"30\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,10 A30,30 0 1 1 21,42\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "The mouse squeezed <span class=\"blank\"></span> the narrow tunnel to the other side.",
@@ -1409,7 +1444,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "through — tunnel étroit = espace fermé traversé.",
-          "feedbackKo": "Pas tout à fait : un tunnel est un espace fermé qu'on traverse → through."
+          "feedbackKo": "Pas tout à fait : un tunnel est un espace fermé qu'on traverse → through.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><ellipse cx=\"50\" cy=\"40\" rx=\"16\" ry=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M14,40 L84,40\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         },
         {
           "sentence": "The vase slipped <span class=\"blank\"></span> the shelf and smashed on the floor below.",
@@ -1421,7 +1457,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "off — tombe de l'étagère, quitte la surface.",
-          "feedbackKo": "Pas tout à fait : elle quitte la surface de l'étagère → off."
+          "feedbackKo": "Pas tout à fait : elle quitte la surface de l'étagère → off.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"26\" y=\"44\" width=\"48\" height=\"26\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,42 Q55,12 85,12\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "The kitten jumped <span class=\"blank\"></span> the basket and ran away.",
@@ -1433,7 +1470,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "out of — sort du panier.",
-          "feedbackKo": "Pas tout à fait : « ran away » = elle sort du panier → out of."
+          "feedbackKo": "Pas tout à fait : « ran away » = elle sort du panier → out of.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"20\" y=\"38\" width=\"60\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,36 Q45,10 85,10\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         }
       ]
     },
@@ -1448,70 +1486,80 @@
           "rule": "heure ou moment précis",
           "examples": [
             "The class starts at 7 AM."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"34\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"50\" y1=\"50\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"50\" x2=\"68\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "in",
           "rule": "mois, année, siècle",
           "examples": [
             "She was born in 1997."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"30\" y1=\"12\" x2=\"30\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"12\" x2=\"70\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "on",
           "rule": "un jour ou une date précise",
           "examples": [
             "We're meeting on Monday."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"5\"/><rect x=\"42\" y=\"52\" width=\"16\" height=\"16\" rx=\"3\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "for",
           "rule": "une durée chiffrée",
           "examples": [
             "He waited for two hours."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><line x1=\"18\" y1=\"50\" x2=\"82\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"18\" y1=\"38\" x2=\"18\" y2=\"62\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"82\" y1=\"38\" x2=\"82\" y2=\"62\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "since",
           "rule": "un point de départ précis",
           "examples": [
             "She's been here since 8 AM."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"35\" cy=\"50\" r=\"6\" fill=\"#2b7a78\"/><line x1=\"41\" y1=\"50\" x2=\"78\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M70,42 L80,50 L70,58\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "during",
           "rule": "pendant un événement",
           "examples": [
             "He fell asleep during the night."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><path d=\"M30,60 A20,20 0 1 1 62,30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"66\" r=\"2.5\" fill=\"#2b7a78\"/><circle cx=\"78\" cy=\"60\" r=\"2.5\" fill=\"#2b7a78\"/><circle cx=\"82\" cy=\"52\" r=\"2.5\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "title": "before",
           "rule": "avant un moment",
           "examples": [
             "Wash your hands before dinner."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"55\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"55\" y1=\"50\" x2=\"55\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"55\" y1=\"50\" x2=\"70\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M18,50 L28,42 L28,58 z\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "title": "after",
           "rule": "après un moment",
           "examples": [
             "We talked after the meeting."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"45\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"45\" y1=\"50\" x2=\"45\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"45\" y1=\"50\" x2=\"60\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M82,50 L72,42 L72,58 z\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "title": "until",
           "rule": "jusqu'à, sans interruption",
           "examples": [
             "The shop is open until Friday."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"66\" y1=\"56\" x2=\"66\" y2=\"76\" stroke=\"#e8734f\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"58\" y1=\"76\" x2=\"74\" y2=\"76\" stroke=\"#e8734f\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "by",
           "rule": "au plus tard, une échéance",
           "examples": [
             "Finish the report by tomorrow."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,52 L50,72\" stroke=\"#e8734f\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M42,64 L50,74 L58,64\" stroke=\"#e8734f\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         }
       ],
       "level": "niveau1",
@@ -1527,7 +1575,8 @@
           ],
           "correctIndex": 2,
           "feedbackOk": "at — heure précise, « not a minute later ».",
-          "feedbackKo": "Pas tout à fait : heure précise → at."
+          "feedbackKo": "Pas tout à fait : heure précise → at.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"34\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"50\" y1=\"50\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"50\" y1=\"50\" x2=\"68\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"6\"/></svg>"
         },
         {
           "sentence": "We always visit grandma <span class=\"blank\"></span> Sundays, every single week.",
@@ -1539,7 +1588,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "on — jour de la semaine répété : on Sundays.",
-          "feedbackKo": "Pas tout à fait : jour de la semaine → on."
+          "feedbackKo": "Pas tout à fait : jour de la semaine → on.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"6\"/><rect x=\"42\" y=\"52\" width=\"16\" height=\"16\" rx=\"3\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "They have lived in Paris <span class=\"blank\"></span> ten years, and they're still there.",
@@ -1551,7 +1601,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "for — durée chiffrée « ten years ».",
-          "feedbackKo": "Pas tout à fait : durée chiffrée → for."
+          "feedbackKo": "Pas tout à fait : durée chiffrée → for.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><line x1=\"18\" y1=\"50\" x2=\"82\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"18\" y1=\"38\" x2=\"18\" y2=\"62\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"82\" y1=\"38\" x2=\"82\" y2=\"62\" stroke=\"#2b7a78\" stroke-width=\"6\"/></svg>"
         },
         {
           "sentence": "I haven't seen her <span class=\"blank\"></span> last Christmas — that was the last time.",
@@ -1563,7 +1614,8 @@
           ],
           "correctIndex": 2,
           "feedbackOk": "since — point de départ précis dans le passé.",
-          "feedbackKo": "Pas tout à fait : point de départ précis → since."
+          "feedbackKo": "Pas tout à fait : point de départ précis → since.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><circle cx=\"35\" cy=\"50\" r=\"7\" fill=\"#2b7a78\"/><line x1=\"42\" y1=\"50\" x2=\"78\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"6\"/><path d=\"M70,42 L80,50 L70,58\" stroke=\"#2b7a78\" stroke-width=\"6\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "The phone rang twice <span class=\"blank\"></span> the movie, which was really annoying.",
@@ -1575,7 +1627,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "during — pendant un événement (« the movie »).",
-          "feedbackKo": "Pas tout à fait : pendant l'événement → during."
+          "feedbackKo": "Pas tout à fait : pendant l'événement → during.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><path d=\"M30,60 A20,20 0 1 1 62,30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><circle cx=\"72\" cy=\"66\" r=\"3\" fill=\"#2b7a78\"/><circle cx=\"78\" cy=\"60\" r=\"3\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "sentence": "Please arrive <span class=\"blank\"></span> the meeting starts, not one minute after.",
@@ -1587,7 +1640,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "before — « not one minute after » = avant le début.",
-          "feedbackKo": "Pas tout à fait : « not one minute after » → before."
+          "feedbackKo": "Pas tout à fait : « not one minute after » → before.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><circle cx=\"55\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"55\" y1=\"50\" x2=\"55\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"6\"/><path d=\"M18,50 L28,42 L28,58 z\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "sentence": "The library stays open <span class=\"blank\"></span> 9 PM every night, with no break.",
@@ -1599,7 +1653,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "until — continuité sans interruption jusqu'à l'heure.",
-          "feedbackKo": "Pas tout à fait : « with no break » = continuité → until."
+          "feedbackKo": "Pas tout à fait : « with no break » = continuité → until.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"66\" y1=\"56\" x2=\"66\" y2=\"76\" stroke=\"#e8734f\" stroke-width=\"6\"/><line x1=\"58\" y1=\"76\" x2=\"74\" y2=\"76\" stroke=\"#e8734f\" stroke-width=\"6\"/></svg>"
         },
         {
           "sentence": "You need to hand in the form <span class=\"blank\"></span> Friday at the latest.",
@@ -1611,7 +1666,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "by — échéance « at the latest ».",
-          "feedbackKo": "Pas tout à fait : « at the latest » = échéance → by."
+          "feedbackKo": "Pas tout à fait : « at the latest » = échéance → by.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"6\"/><path d=\"M50,52 L50,72\" stroke=\"#e8734f\" stroke-width=\"6\"/><path d=\"M42,64 L50,74 L58,64\" stroke=\"#e8734f\" stroke-width=\"6\" fill=\"none\"/></svg>"
         }
       ]
     },
@@ -1658,7 +1714,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "in — un mois se dit toujours avec « in ».",
-          "feedbackKo": "Pas tout à fait : un mois se dit avec « in » → in March."
+          "feedbackKo": "Pas tout à fait : un mois se dit avec « in » → in March.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"6\"/></svg>"
         },
         {
           "sentence": "The shop opens <span class=\"blank\"></span> 9 AM sharp.",
@@ -1670,7 +1727,8 @@
           ],
           "correctIndex": 2,
           "feedbackOk": "at — heure précise « 9 AM sharp ».",
-          "feedbackKo": "Pas tout à fait : heure précise → at."
+          "feedbackKo": "Pas tout à fait : heure précise → at.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"34\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"50\" y1=\"50\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"50\" y1=\"50\" x2=\"68\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"6\"/></svg>"
         },
         {
           "sentence": "We're getting married <span class=\"blank\"></span> June 14th.",
@@ -1682,7 +1740,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "on — une date précise se dit avec « on ».",
-          "feedbackKo": "Pas tout à fait : une date précise → on June 14th."
+          "feedbackKo": "Pas tout à fait : une date précise → on June 14th.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"6\"/><rect x=\"42\" y=\"52\" width=\"16\" height=\"16\" rx=\"3\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "Your keys are <span class=\"blank\"></span> the kitchen drawer.",
@@ -1694,7 +1753,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "in — un tiroir est un espace fermé.",
-          "feedbackKo": "Pas tout à fait : un tiroir est un espace fermé → in."
+          "feedbackKo": "Pas tout à fait : un tiroir est un espace fermé → in.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"30\" width=\"64\" height=\"42\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"18\" y1=\"30\" x2=\"82\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"50\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "There's a book <span class=\"blank\"></span> the table.",
@@ -1706,7 +1766,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "on — une surface prend « on ».",
-          "feedbackKo": "Pas tout à fait : une surface → on."
+          "feedbackKo": "Pas tout à fait : une surface → on.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"46\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"18\" y1=\"46\" x2=\"82\" y2=\"46\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"32\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "Meet me <span class=\"blank\"></span> the bus stop, right in front of it.",
@@ -1718,7 +1779,8 @@
           ],
           "correctIndex": 2,
           "feedbackOk": "at — un point précis dans l'espace.",
-          "feedbackKo": "Pas tout à fait : un point précis → at."
+          "feedbackKo": "Pas tout à fait : un point précis → at.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"42\" y=\"20\" width=\"50\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"42\" y1=\"20\" x2=\"92\" y2=\"20\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"28\" cy=\"54\" r=\"15\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "I always sleep well <span class=\"blank\"></span> night.",
@@ -1730,7 +1792,8 @@
           ],
           "correctIndex": 2,
           "feedbackOk": "at night — exception à connaître par cœur.",
-          "feedbackKo": "Pas tout à fait : c'est une exception → at night."
+          "feedbackKo": "Pas tout à fait : c'est une exception → at night.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><path d=\"M40,20 A30,30 0 1 0 40,80 A24,24 0 1 1 40,20 z\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "sentence": "Christmas is always celebrated <span class=\"blank\"></span> December.",
@@ -1742,7 +1805,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "in — un mois se dit avec « in ».",
-          "feedbackKo": "Pas tout à fait : un mois → in December."
+          "feedbackKo": "Pas tout à fait : un mois → in December.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"30\" y1=\"12\" x2=\"30\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"70\" y1=\"12\" x2=\"70\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"6\"/></svg>"
         }
       ]
     },
@@ -2459,70 +2523,80 @@
           "rule": "dentro de un espacio cerrado",
           "examples": [
             "La pelota está en la caja."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"30\" width=\"64\" height=\"42\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"30\" x2=\"82\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"50\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "sobre",
           "rule": "en contacto con una superficie",
           "examples": [
             "La pelota está sobre la caja."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"46\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"46\" x2=\"82\" y2=\"46\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"32\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "debajo de",
           "rule": "por debajo, oculto",
           "examples": [
             "La pelota está debajo de la caja."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"60\" r=\"14\" fill=\"#3aafa9\"/><rect x=\"18\" y=\"14\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"14\" x2=\"82\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"4\"/></svg>"
         },
         {
           "title": "entre",
           "rule": "entre dos puntos de referencia",
           "examples": [
             "La pelota está entre las cajas."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><rect x=\"62\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "delante de",
           "rule": "justo enfrente",
           "examples": [
             "La pelota está delante de la caja."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"42\" y=\"20\" width=\"50\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"42\" y1=\"20\" x2=\"92\" y2=\"20\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"28\" cy=\"54\" r=\"15\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "detrás de",
           "rule": "escondido detrás",
           "examples": [
             "La pelota está detrás de la caja."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"30\" y=\"18\" width=\"52\" height=\"46\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"30\" y1=\"18\" x2=\"82\" y2=\"18\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"24\" cy=\"52\" r=\"13\" fill=\"#3aafa9\" opacity=\".8\"/></svg>"
         },
         {
           "title": "al lado de",
           "rule": "justo al lado, en contacto",
           "examples": [
             "La pelota está al lado de la caja."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"10\" y=\"26\" width=\"40\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"10\" y1=\"26\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"72\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "cerca de",
           "rule": "a poca distancia",
           "examples": [
             "La pelota está cerca de la caja."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"6\" y=\"28\" width=\"34\" height=\"34\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"6\" y1=\"28\" x2=\"40\" y2=\"28\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"86\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "encima de",
           "rule": "por encima, con o sin contacto",
           "examples": [
             "La pelota está encima de la caja."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"22\" y=\"48\" width=\"56\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"22\" y1=\"48\" x2=\"78\" y2=\"48\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"18\" r=\"13\" fill=\"#3aafa9\"/><line x1=\"50\" y1=\"32\" x2=\"50\" y2=\"44\" stroke=\"#dceeed\" stroke-width=\"3\" stroke-dasharray=\"2 3\"/></svg>"
         },
         {
           "title": "lejos de",
           "rule": "a mucha distancia",
           "examples": [
             "La pelota está lejos de la caja."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"4\" y=\"40\" width=\"20\" height=\"20\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"92\" cy=\"50\" r=\"10\" fill=\"#3aafa9\"/><line x1=\"26\" y1=\"50\" x2=\"80\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"3\" stroke-dasharray=\"4 4\"/></svg>"
         }
       ],
       "level": "niveau1",
@@ -2538,7 +2612,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "en — está oculto dentro, no encima.",
-          "feedbackKo": "No exactamente: está dentro, escondido → en."
+          "feedbackKo": "No exactamente: está dentro, escondido → en.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"30\" width=\"64\" height=\"42\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"18\" y1=\"30\" x2=\"82\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"50\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "Puso la lámpara justo <span class=\"blank\"></span> la mesa de madera, en el centro.",
@@ -2550,7 +2625,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "sobre — en contacto con la superficie.",
-          "feedbackKo": "No exactamente: en contacto con la superficie → sobre."
+          "feedbackKo": "No exactamente: en contacto con la superficie → sobre.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"46\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"18\" y1=\"46\" x2=\"82\" y2=\"46\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"32\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "El perro se esconde, completamente fuera de la vista, justo <span class=\"blank\"></span> el sofá.",
@@ -2562,7 +2638,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "debajo de — fuera de la vista, por debajo.",
-          "feedbackKo": "No exactamente: fuera de la vista = por debajo → debajo de."
+          "feedbackKo": "No exactamente: fuera de la vista = por debajo → debajo de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"60\" r=\"14\" fill=\"#3aafa9\"/><rect x=\"18\" y=\"14\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"18\" y1=\"14\" x2=\"82\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         },
         {
           "sentence": "El parque está exactamente a mitad de camino <span class=\"blank\"></span> la escuela y la iglesia.",
@@ -2574,7 +2651,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "entre — conecta dos referencias, « X y Y ».",
-          "feedbackKo": "No exactamente: conecta dos referencias → entre."
+          "feedbackKo": "No exactamente: conecta dos referencias → entre.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><rect x=\"62\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "Está de pie, a pocos centímetros, justo <span class=\"blank\"></span> la puerta, a punto de tocar.",
@@ -2586,7 +2664,8 @@
           ],
           "correctIndex": 2,
           "feedbackOk": "delante de — « a punto de tocar » = justo enfrente.",
-          "feedbackKo": "No exactamente: a punto de tocar → delante de."
+          "feedbackKo": "No exactamente: a punto de tocar → delante de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"42\" y=\"20\" width=\"50\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"42\" y1=\"20\" x2=\"92\" y2=\"20\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"28\" cy=\"54\" r=\"15\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "El avión voló muy <span class=\"blank\"></span> las nubes, sin llegar a tocarlas.",
@@ -2598,7 +2677,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "encima de — « sin tocarlas » indica una separación.",
-          "feedbackKo": "No exactamente: sin tocarlas → encima de."
+          "feedbackKo": "No exactamente: sin tocarlas → encima de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"22\" y=\"48\" width=\"56\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"22\" y1=\"48\" x2=\"78\" y2=\"48\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"18\" r=\"13\" fill=\"#3aafa9\"/><line x1=\"50\" y1=\"32\" x2=\"50\" y2=\"44\" stroke=\"#dceeed\" stroke-width=\"3\" stroke-dasharray=\"2 3\"/></svg>"
         },
         {
           "sentence": "Los dos amigos se sentaron tan cerca que sus hombros casi se tocaban, uno <span class=\"blank\"></span> el otro.",
@@ -2610,7 +2690,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "al lado de — « casi se tocaban » = contacto directo.",
-          "feedbackKo": "No exactamente: casi se tocaban → al lado de."
+          "feedbackKo": "No exactamente: casi se tocaban → al lado de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"10\" y=\"26\" width=\"40\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"10\" y1=\"26\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"72\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "La panadería está a cinco minutos a pie, un poco <span class=\"blank\"></span> la estación de tren.",
@@ -2622,7 +2703,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "cerca de — « cinco minutos a pie » = a distancia.",
-          "feedbackKo": "No exactamente: a cinco minutos = a distancia → cerca de."
+          "feedbackKo": "No exactamente: a cinco minutos = a distancia → cerca de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"6\" y=\"28\" width=\"34\" height=\"34\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"6\" y1=\"28\" x2=\"40\" y2=\"28\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"86\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         }
       ]
     },
@@ -2637,70 +2719,80 @@
           "rule": "movimiento hacia un destino",
           "examples": [
             "Vamos a la playa."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"28\" y=\"50\" width=\"44\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M50,45 L50,10\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M43,20 L50,8 L57,20\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "hacia",
           "rule": "dirección aproximada",
           "examples": [
             "El barco navega hacia el norte."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"35\" y=\"46\" width=\"30\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M15,66 Q50,8 85,66\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M74,58 L86,66 L79,54\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "desde",
           "rule": "punto de partida",
           "examples": [
             "Caminamos desde la estación."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"20\" cy=\"50\" r=\"10\" fill=\"#3aafa9\"/><path d=\"M28,50 L78,50\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M70,42 L80,50 L70,58\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "hasta",
           "rule": "punto de llegada, límite",
           "examples": [
             "Corrimos hasta el parque."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"20\" cy=\"50\" r=\"10\" fill=\"#3aafa9\" opacity=\".5\"/><path d=\"M28,50 L70,50\" stroke=\"#2b7a78\" stroke-width=\"4\"/><rect x=\"70\" y=\"38\" width=\"22\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/></svg>"
         },
         {
           "title": "por",
           "rule": "a través de un lugar",
           "examples": [
             "Pasamos por el túnel."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><ellipse cx=\"50\" cy=\"40\" rx=\"16\" ry=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M14,40 L78,40\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M70,32 L80,40 L70,48\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "a través de",
           "rule": "atravesando un espacio",
           "examples": [
             "El río pasa a través del bosque."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"30\" width=\"26\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><rect x=\"66\" y=\"30\" width=\"26\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M34,47 L60,47\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M52,40 L62,47 L52,54\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "alrededor de",
           "rule": "dando la vuelta",
           "examples": [
             "Caminamos alrededor del lago."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"35\" y=\"30\" width=\"30\" height=\"30\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M50,10 A30,30 0 1 1 21,42\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M13,35 L21,43 L29,34\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "dentro de",
           "rule": "hacia el interior",
           "examples": [
             "El perro corrió dentro de la casa."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"20\" y=\"38\" width=\"60\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M15,10 Q55,10 50,34\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M42,28 L50,38 L58,26\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "fuera de",
           "rule": "hacia el exterior",
           "examples": [
             "El gato saltó fuera de la caja."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"20\" y=\"38\" width=\"60\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M50,36 Q45,10 85,10\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M74,4 L86,10 L76,18\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "sobre",
           "rule": "movimiento hacia encima",
           "examples": [
             "La pelota cayó sobre la mesa."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"26\" y=\"44\" width=\"48\" height=\"26\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"26\" y1=\"44\" x2=\"74\" y2=\"44\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M15,12 Q55,12 50,40\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M42,32 L50,42 L58,30\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         }
       ],
       "level": "niveau1",
@@ -2716,7 +2808,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "para — destino de un viaje (uso especial de « salir para »).",
-          "feedbackKo": "No exactamente: destino del viaje → salir para Madrid."
+          "feedbackKo": "No exactamente: destino del viaje → salir para Madrid.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"28\" y=\"50\" width=\"44\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,45 L50,10\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         },
         {
           "sentence": "Caminamos <span class=\"blank\"></span> la estación hasta el centro.",
@@ -2728,7 +2821,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "desde — punto de partida, junto con « hasta ».",
-          "feedbackKo": "No exactamente: punto de partida → desde."
+          "feedbackKo": "No exactamente: punto de partida → desde.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"20\" cy=\"50\" r=\"10\" fill=\"#3aafa9\"/><path d=\"M28,50 L78,50\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         },
         {
           "sentence": "El ratón se coló <span class=\"blank\"></span> el estrecho túnel hasta el otro lado.",
@@ -2740,7 +2834,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "por — atravesar un espacio cerrado.",
-          "feedbackKo": "No exactamente: atravesar un túnel → por."
+          "feedbackKo": "No exactamente: atravesar un túnel → por.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><ellipse cx=\"50\" cy=\"40\" rx=\"16\" ry=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M14,40 L84,40\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         },
         {
           "sentence": "El perro corrió <span class=\"blank\"></span> la fuente en un círculo completo.",
@@ -2752,7 +2847,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "alrededor de — « un círculo completo ».",
-          "feedbackKo": "No exactamente: un círculo completo → alrededor de."
+          "feedbackKo": "No exactamente: un círculo completo → alrededor de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"35\" y=\"30\" width=\"30\" height=\"30\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,10 A30,30 0 1 1 21,42\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "El niño corrió <span class=\"blank\"></span> la casa cuando empezó a llover.",
@@ -2764,7 +2860,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "dentro de — entra al interior para protegerse.",
-          "feedbackKo": "No exactamente: entra al interior → dentro de."
+          "feedbackKo": "No exactamente: entra al interior → dentro de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"20\" y=\"38\" width=\"60\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M15,10 Q55,10 50,34\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "El gatito saltó <span class=\"blank\"></span> la cesta y salió corriendo.",
@@ -2776,7 +2873,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "fuera de — sale al exterior, « salió corriendo ».",
-          "feedbackKo": "No exactamente: sale al exterior → fuera de."
+          "feedbackKo": "No exactamente: sale al exterior → fuera de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"20\" y=\"38\" width=\"60\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,36 Q45,10 85,10\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "El vaso se cayó y se rompió <span class=\"blank\"></span> la mesa.",
@@ -2788,7 +2886,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "sobre — cae encima de una superficie.",
-          "feedbackKo": "No exactamente: cae encima de la mesa → sobre."
+          "feedbackKo": "No exactamente: cae encima de la mesa → sobre.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"26\" y=\"44\" width=\"48\" height=\"26\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,42 Q55,12 85,12\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "Corrimos <span class=\"blank\"></span> el parque sin parar ni un momento.",
@@ -2800,7 +2899,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "hasta — indica el punto de llegada, sin parar.",
-          "feedbackKo": "No exactamente: punto de llegada, sin parar → hasta."
+          "feedbackKo": "No exactamente: punto de llegada, sin parar → hasta.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"20\" cy=\"50\" r=\"10\" fill=\"#3aafa9\" opacity=\".5\"/><path d=\"M28,50 L70,50\" stroke=\"#2b7a78\" stroke-width=\"5\"/><rect x=\"70\" y=\"38\" width=\"22\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         }
       ]
     },
@@ -2815,70 +2915,80 @@
           "rule": "hora precisa",
           "examples": [
             "La clase empieza a las 7."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"34\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"50\" y1=\"50\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"50\" x2=\"68\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "en",
           "rule": "mes, año, estación",
           "examples": [
             "Nací en 1997."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"30\" y1=\"12\" x2=\"30\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"12\" x2=\"70\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "desde",
           "rule": "punto de partida",
           "examples": [
             "Vivo aquí desde 2020."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"35\" cy=\"50\" r=\"6\" fill=\"#2b7a78\"/><line x1=\"41\" y1=\"50\" x2=\"78\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M70,42 L80,50 L70,58\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "hasta",
           "rule": "punto final",
           "examples": [
             "Trabajo hasta las 6."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"35\" cy=\"50\" r=\"6\" fill=\"#2b7a78\" opacity=\".5\"/><line x1=\"41\" y1=\"50\" x2=\"70\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"78\" cy=\"50\" r=\"6\" fill=\"#e8734f\"/></svg>"
         },
         {
           "title": "durante",
           "rule": "a lo largo de un evento",
           "examples": [
             "Me dormí durante la película."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><path d=\"M30,60 A20,20 0 1 1 62,30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"66\" r=\"2.5\" fill=\"#2b7a78\"/><circle cx=\"78\" cy=\"60\" r=\"2.5\" fill=\"#2b7a78\"/><circle cx=\"82\" cy=\"52\" r=\"2.5\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "title": "antes de",
           "rule": "anterioridad",
           "examples": [
             "Lávate las manos antes de cenar."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"55\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"55\" y1=\"50\" x2=\"55\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"55\" y1=\"50\" x2=\"70\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M18,50 L28,42 L28,58 z\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "title": "después de",
           "rule": "posterioridad",
           "examples": [
             "Hablamos después de la reunión."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"45\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"45\" y1=\"50\" x2=\"45\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"45\" y1=\"50\" x2=\"60\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M82,50 L72,42 L72,58 z\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "title": "dentro de",
           "rule": "plazo futuro",
           "examples": [
             "Termino dentro de una hora."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,52 L50,72\" stroke=\"#e8734f\" stroke-width=\"5\"/><path d=\"M42,64 L50,74 L58,64\" stroke=\"#e8734f\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "title": "por",
           "rule": "duración aproximada",
           "examples": [
             "Estudié por dos horas."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><line x1=\"18\" y1=\"50\" x2=\"82\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"18\" y1=\"38\" x2=\"18\" y2=\"62\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"82\" y1=\"38\" x2=\"82\" y2=\"62\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "hace",
           "rule": "tiempo pasado desde un punto",
           "examples": [
             "Llegó hace una hora."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"34\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M35,65 L65,35\" stroke=\"#e8734f\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
         }
       ],
       "level": "niveau1",
@@ -2894,7 +3004,8 @@
           ],
           "correctIndex": 2,
           "feedbackOk": "a — hora precisa, « ni un minuto más tarde ».",
-          "feedbackKo": "No exactamente: hora precisa → a."
+          "feedbackKo": "No exactamente: hora precisa → a.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"34\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"50\" y1=\"50\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"50\" y1=\"50\" x2=\"68\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"6\"/></svg>"
         },
         {
           "sentence": "Siempre visitamos a la abuela <span class=\"blank\"></span> agosto, todos los años.",
@@ -2906,7 +3017,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "en — un mes se dice siempre con « en ».",
-          "feedbackKo": "No exactamente: un mes → en agosto."
+          "feedbackKo": "No exactamente: un mes → en agosto.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"6\"/></svg>"
         },
         {
           "sentence": "Viven en Lyon <span class=\"blank\"></span> 2015, y siguen allí.",
@@ -2918,7 +3030,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "desde — un punto de partida preciso, todavía vigente.",
-          "feedbackKo": "No exactamente: punto de partida vigente → desde."
+          "feedbackKo": "No exactamente: punto de partida vigente → desde.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><circle cx=\"35\" cy=\"50\" r=\"7\" fill=\"#2b7a78\"/><line x1=\"42\" y1=\"50\" x2=\"78\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"6\"/><path d=\"M70,42 L80,50 L70,58\" stroke=\"#2b7a78\" stroke-width=\"6\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "Estudié <span class=\"blank\"></span> tres horas seguidas, sin ninguna pausa.",
@@ -2930,7 +3043,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "por — una duración medida en horas.",
-          "feedbackKo": "No exactamente: duración medida → por."
+          "feedbackKo": "No exactamente: duración medida → por.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><line x1=\"18\" y1=\"50\" x2=\"82\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"18\" y1=\"38\" x2=\"18\" y2=\"62\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"82\" y1=\"38\" x2=\"82\" y2=\"62\" stroke=\"#2b7a78\" stroke-width=\"6\"/></svg>"
         },
         {
           "sentence": "El teléfono sonó dos veces <span class=\"blank\"></span> la película, algo muy molesto.",
@@ -2942,7 +3056,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "durante — algo ocurre dentro de un evento.",
-          "feedbackKo": "No exactamente: dentro de un evento → durante."
+          "feedbackKo": "No exactamente: dentro de un evento → durante.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><path d=\"M30,60 A20,20 0 1 1 62,30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><circle cx=\"72\" cy=\"66\" r=\"3\" fill=\"#2b7a78\"/><circle cx=\"78\" cy=\"60\" r=\"3\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "sentence": "Por favor llega <span class=\"blank\"></span> que empiece la reunión, no un minuto después.",
@@ -2954,7 +3069,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "antes de — « no un minuto después » = anterioridad.",
-          "feedbackKo": "No exactamente: no un minuto después → antes de."
+          "feedbackKo": "No exactamente: no un minuto después → antes de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><circle cx=\"55\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"55\" y1=\"50\" x2=\"55\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"6\"/><path d=\"M18,50 L28,42 L28,58 z\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "sentence": "Termino el informe <span class=\"blank\"></span> una hora, como muy tarde.",
@@ -2966,7 +3082,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "dentro de — un plazo futuro, « como muy tarde ».",
-          "feedbackKo": "No exactamente: plazo futuro → dentro de."
+          "feedbackKo": "No exactamente: plazo futuro → dentro de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"6\"/><path d=\"M50,52 L50,72\" stroke=\"#e8734f\" stroke-width=\"6\"/><path d=\"M42,64 L50,74 L58,64\" stroke=\"#e8734f\" stroke-width=\"6\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "Llegó <span class=\"blank\"></span> una hora — ya no está aquí.",
@@ -2978,7 +3095,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "hace — un momento pasado, « ya no está ».",
-          "feedbackKo": "No exactamente: momento pasado → hace."
+          "feedbackKo": "No exactamente: momento pasado → hace.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"34\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><path d=\"M35,65 L65,35\" stroke=\"#e8734f\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>"
         }
       ]
     },
@@ -3829,70 +3947,80 @@
           "rule": "à l'intérieur",
           "examples": [
             "La palla è in una scatola."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"30\" width=\"64\" height=\"42\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"30\" x2=\"82\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"50\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "su",
           "rule": "sur, en contact",
           "examples": [
             "La palla è su una scatola."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"46\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"46\" x2=\"82\" y2=\"46\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"32\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "sotto",
           "rule": "sous",
           "examples": [
             "La palla è sotto una scatola."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"60\" r=\"14\" fill=\"#3aafa9\"/><rect x=\"18\" y=\"14\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"14\" x2=\"82\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"4\"/></svg>"
         },
         {
           "title": "tra / fra",
           "rule": "entre",
           "examples": [
             "La palla è tra due scatole."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><rect x=\"62\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "davanti a",
           "rule": "devant",
           "examples": [
             "La palla è davanti a una scatola."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"42\" y=\"20\" width=\"50\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"42\" y1=\"20\" x2=\"92\" y2=\"20\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"28\" cy=\"54\" r=\"15\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "dietro",
           "rule": "derrière",
           "examples": [
             "La palla è dietro una scatola."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"30\" y=\"18\" width=\"52\" height=\"46\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"30\" y1=\"18\" x2=\"82\" y2=\"18\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"24\" cy=\"52\" r=\"13\" fill=\"#3aafa9\" opacity=\".8\"/></svg>"
         },
         {
           "title": "accanto a",
           "rule": "à côté, contact",
           "examples": [
             "La palla è accanto a una scatola."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"10\" y=\"26\" width=\"40\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"10\" y1=\"26\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"72\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "vicino a",
           "rule": "à proximité",
           "examples": [
             "La palla è vicino a una scatola."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"6\" y=\"28\" width=\"34\" height=\"34\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"6\" y1=\"28\" x2=\"40\" y2=\"28\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"86\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "title": "sopra",
           "rule": "au-dessus, sans contact",
           "examples": [
             "La palla è sopra una scatola."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"22\" y=\"48\" width=\"56\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"22\" y1=\"48\" x2=\"78\" y2=\"48\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"18\" r=\"13\" fill=\"#3aafa9\"/><line x1=\"50\" y1=\"32\" x2=\"50\" y2=\"44\" stroke=\"#dceeed\" stroke-width=\"3\" stroke-dasharray=\"2 3\"/></svg>"
         },
         {
           "title": "lontano da",
           "rule": "loin de",
           "examples": [
             "La palla è lontano da una scatola."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"4\" y=\"40\" width=\"20\" height=\"20\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"92\" cy=\"50\" r=\"10\" fill=\"#3aafa9\"/><line x1=\"26\" y1=\"50\" x2=\"80\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"3\" stroke-dasharray=\"4 4\"/></svg>"
         }
       ],
       "level": "niveau1",
@@ -3908,7 +4036,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "in — è nascosto dentro, non sopra.",
-          "feedbackKo": "Non proprio: è nascosto dentro → in."
+          "feedbackKo": "Non proprio: è nascosto dentro → in.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"30\" width=\"64\" height=\"42\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"18\" y1=\"30\" x2=\"82\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"50\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "Ha messo la lampada proprio <span class=\"blank\"></span> il tavolo di legno, al centro.",
@@ -3920,7 +4049,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "su — a contatto con la superficie.",
-          "feedbackKo": "Non proprio: a contatto con la superficie → su."
+          "feedbackKo": "Non proprio: a contatto con la superficie → su.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"46\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"18\" y1=\"46\" x2=\"82\" y2=\"46\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"32\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "Il cane si nasconde, completamente fuori vista, proprio <span class=\"blank\"></span> il divano.",
@@ -3932,7 +4062,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "sotto — fuori vista, quindi sotto.",
-          "feedbackKo": "Non proprio: fuori vista = sotto → sotto."
+          "feedbackKo": "Non proprio: fuori vista = sotto → sotto.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"60\" r=\"14\" fill=\"#3aafa9\"/><rect x=\"18\" y=\"14\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"18\" y1=\"14\" x2=\"82\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         },
         {
           "sentence": "Il parco si trova esattamente a metà strada <span class=\"blank\"></span> la scuola e la chiesa.",
@@ -3944,7 +4075,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "tra — collega due punti di riferimento, «X e Y».",
-          "feedbackKo": "Non proprio: collega due riferimenti → tra."
+          "feedbackKo": "Non proprio: collega due riferimenti → tra.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><rect x=\"62\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "È in piedi a pochi centimetri, proprio <span class=\"blank\"></span> la porta, pronta a bussare.",
@@ -3956,7 +4088,8 @@
           ],
           "correctIndex": 2,
           "feedbackOk": "davanti a — «pronta a bussare» = proprio di fronte.",
-          "feedbackKo": "Non proprio: pronta a bussare → davanti a."
+          "feedbackKo": "Non proprio: pronta a bussare → davanti a.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"42\" y=\"20\" width=\"50\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"42\" y1=\"20\" x2=\"92\" y2=\"20\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"28\" cy=\"54\" r=\"15\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "L'aereo ha volato molto <span class=\"blank\"></span> le nuvole, senza mai toccarle.",
@@ -3968,7 +4101,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "sopra — «senza toccarle» indica una separazione.",
-          "feedbackKo": "Non proprio: senza toccarle → sopra."
+          "feedbackKo": "Non proprio: senza toccarle → sopra.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"22\" y=\"48\" width=\"56\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"22\" y1=\"48\" x2=\"78\" y2=\"48\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"18\" r=\"13\" fill=\"#3aafa9\"/><line x1=\"50\" y1=\"32\" x2=\"50\" y2=\"44\" stroke=\"#dceeed\" stroke-width=\"3\" stroke-dasharray=\"2 3\"/></svg>"
         },
         {
           "sentence": "I due amici si sono seduti così vicini che le spalle si toccavano quasi, uno <span class=\"blank\"></span> l'altro.",
@@ -3980,7 +4114,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "accanto a — «si toccavano quasi» = contatto diretto.",
-          "feedbackKo": "Non proprio: si toccavano quasi → accanto a."
+          "feedbackKo": "Non proprio: si toccavano quasi → accanto a.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"10\" y=\"26\" width=\"40\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"10\" y1=\"26\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"72\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         },
         {
           "sentence": "La panetteria è a cinque minuti a piedi, un po' <span class=\"blank\"></span> la stazione.",
@@ -3992,7 +4127,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "vicino a — «cinque minuti a piedi» = a distanza.",
-          "feedbackKo": "Non proprio: cinque minuti a piedi = a distanza → vicino a."
+          "feedbackKo": "Non proprio: cinque minuti a piedi = a distanza → vicino a.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"6\" y=\"28\" width=\"34\" height=\"34\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"6\" y1=\"28\" x2=\"40\" y2=\"28\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"86\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
         }
       ]
     },
@@ -4007,70 +4143,80 @@
           "rule": "vers, à (destination)",
           "examples": [
             "Andiamo a scuola."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"28\" y=\"50\" width=\"44\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M50,45 L50,10\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M43,20 L50,8 L57,20\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "verso",
           "rule": "en direction de",
           "examples": [
             "La nave naviga verso nord."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"35\" y=\"46\" width=\"30\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M15,66 Q50,8 85,66\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M74,58 L86,66 L79,54\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "da",
           "rule": "depuis (origine)",
           "examples": [
             "Partiamo da quella stazione."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"20\" cy=\"50\" r=\"10\" fill=\"#3aafa9\"/><path d=\"M28,50 L78,50\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M70,42 L80,50 L70,58\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "fino a",
           "rule": "jusqu'à",
           "examples": [
             "Abbiamo corso fino al parco."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"20\" cy=\"50\" r=\"10\" fill=\"#3aafa9\" opacity=\".5\"/><path d=\"M28,50 L70,50\" stroke=\"#2b7a78\" stroke-width=\"4\"/><rect x=\"70\" y=\"38\" width=\"22\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/></svg>"
         },
         {
           "title": "per",
           "rule": "à travers, en passant par",
           "examples": [
             "Siamo passati per il tunnel."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><ellipse cx=\"50\" cy=\"40\" rx=\"16\" ry=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M14,40 L78,40\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M70,32 L80,40 L70,48\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "attraverso",
           "rule": "à travers",
           "examples": [
             "Il fiume scorre attraverso il bosco."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"30\" width=\"26\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><rect x=\"66\" y=\"30\" width=\"26\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M34,47 L60,47\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M52,40 L62,47 L52,54\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "intorno a",
           "rule": "autour de",
           "examples": [
             "Abbiamo camminato intorno al lago."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"35\" y=\"30\" width=\"30\" height=\"30\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M50,10 A30,30 0 1 1 21,42\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M13,35 L21,43 L29,34\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "dentro",
           "rule": "à l'intérieur de",
           "examples": [
             "Il cane è corso dentro casa."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"20\" y=\"38\" width=\"60\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M15,10 Q55,10 50,34\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M42,28 L50,38 L58,26\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "fuori",
           "rule": "hors de",
           "examples": [
             "Il gatto è saltato fuori dalla scatola."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"20\" y=\"38\" width=\"60\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M50,36 Q45,10 85,10\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M74,4 L86,10 L76,18\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "su",
           "rule": "sur (avec mouvement)",
           "examples": [
             "La palla è caduta sul tavolo."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"26\" y=\"44\" width=\"48\" height=\"26\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"26\" y1=\"44\" x2=\"74\" y2=\"44\" stroke=\"#2b7a78\" stroke-width=\"4\"/><path d=\"M15,12 Q55,12 50,40\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\"/><path d=\"M42,32 L50,42 L58,30\" stroke=\"#2b7a78\" stroke-width=\"4\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         }
       ],
       "level": "niveau1",
@@ -4086,7 +4232,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "per — « partire per » indica la destinazione di un viaggio.",
-          "feedbackKo": "Non proprio: destinazione del viaggio → partire per Milano."
+          "feedbackKo": "Non proprio: destinazione del viaggio → partire per Milano.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"28\" y=\"50\" width=\"44\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,45 L50,10\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         },
         {
           "sentence": "Camminiamo <span class=\"blank\"></span> la stazione fino al centro.",
@@ -4098,7 +4245,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "da — punto di partenza, insieme a « fino a ».",
-          "feedbackKo": "Non proprio: punto di partenza → da."
+          "feedbackKo": "Non proprio: punto di partenza → da.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"20\" cy=\"50\" r=\"10\" fill=\"#3aafa9\"/><path d=\"M28,50 L78,50\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         },
         {
           "sentence": "Il topo si è infilato <span class=\"blank\"></span> lo stretto tunnel fino all'altro lato.",
@@ -4110,7 +4258,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "per — attraversare uno spazio chiuso.",
-          "feedbackKo": "Non proprio: attraversare il tunnel → per."
+          "feedbackKo": "Non proprio: attraversare il tunnel → per.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><ellipse cx=\"50\" cy=\"40\" rx=\"16\" ry=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M14,40 L84,40\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         },
         {
           "sentence": "Il cane ha corso <span class=\"blank\"></span> la fontana, descrivendo un cerchio completo.",
@@ -4122,7 +4271,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "intorno a — « un cerchio completo ».",
-          "feedbackKo": "Non proprio: un cerchio completo → intorno a."
+          "feedbackKo": "Non proprio: un cerchio completo → intorno a.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"35\" y=\"30\" width=\"30\" height=\"30\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,10 A30,30 0 1 1 21,42\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "Il bambino è corso <span class=\"blank\"></span> casa quando ha iniziato a piovere.",
@@ -4134,7 +4284,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "dentro — entra all'interno per ripararsi.",
-          "feedbackKo": "Non proprio: entra all'interno → dentro."
+          "feedbackKo": "Non proprio: entra all'interno → dentro.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"20\" y=\"38\" width=\"60\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M15,10 Q55,10 50,34\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "Il gattino è saltato <span class=\"blank\"></span> dal cestino ed è scappato via.",
@@ -4146,7 +4297,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "fuori — esce all'esterno, « è scappato via ».",
-          "feedbackKo": "Non proprio: esce all'esterno → fuori."
+          "feedbackKo": "Non proprio: esce all'esterno → fuori.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"20\" y=\"38\" width=\"60\" height=\"34\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,36 Q45,10 85,10\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "Il bicchiere è caduto e si è rotto <span class=\"blank\"></span> il tavolo.",
@@ -4158,7 +4310,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "su — cade sopra una superficie.",
-          "feedbackKo": "Non proprio: cade sul tavolo → su."
+          "feedbackKo": "Non proprio: cade sul tavolo → su.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"26\" y=\"44\" width=\"48\" height=\"26\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"26\" y1=\"44\" x2=\"74\" y2=\"44\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M15,12 Q55,12 50,40\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "Abbiamo corso <span class=\"blank\"></span> il parco senza fermarci un attimo.",
@@ -4170,7 +4323,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "fino a — indica il punto d'arrivo, senza fermarsi.",
-          "feedbackKo": "Non proprio: punto d'arrivo, senza fermarsi → fino a."
+          "feedbackKo": "Non proprio: punto d'arrivo, senza fermarsi → fino a.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"20\" cy=\"50\" r=\"10\" fill=\"#3aafa9\" opacity=\".5\"/><path d=\"M28,50 L70,50\" stroke=\"#2b7a78\" stroke-width=\"5\"/><rect x=\"70\" y=\"38\" width=\"22\" height=\"24\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
         }
       ]
     },
@@ -4185,70 +4339,80 @@
           "rule": "à (heure précise)",
           "examples": [
             "La lezione inizia alle 7."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"34\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"50\" y1=\"50\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"50\" x2=\"68\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "in",
           "rule": "en (mois, année)",
           "examples": [
             "Sono nato nel 1997."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"30\" y1=\"12\" x2=\"30\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"70\" y1=\"12\" x2=\"70\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "da",
           "rule": "depuis",
           "examples": [
             "Vivo qui dal 2020."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"35\" cy=\"50\" r=\"6\" fill=\"#2b7a78\"/><line x1=\"41\" y1=\"50\" x2=\"78\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M70,42 L80,50 L70,58\" stroke=\"#2b7a78\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"
         },
         {
           "title": "fino a",
           "rule": "jusqu'à",
           "examples": [
             "Lavoro fino alle 6."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"35\" cy=\"50\" r=\"6\" fill=\"#2b7a78\" opacity=\".5\"/><line x1=\"41\" y1=\"50\" x2=\"70\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"78\" cy=\"50\" r=\"6\" fill=\"#e8734f\"/></svg>"
         },
         {
           "title": "durante",
           "rule": "pendant",
           "examples": [
             "Mi sono addormentato durante il film."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><path d=\"M30,60 A20,20 0 1 1 62,30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"72\" cy=\"66\" r=\"2.5\" fill=\"#2b7a78\"/><circle cx=\"78\" cy=\"60\" r=\"2.5\" fill=\"#2b7a78\"/><circle cx=\"82\" cy=\"52\" r=\"2.5\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "title": "prima di",
           "rule": "avant",
           "examples": [
             "Lavati le mani prima di cena."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"55\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"55\" y1=\"50\" x2=\"55\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"55\" y1=\"50\" x2=\"70\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M18,50 L28,42 L28,58 z\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "title": "dopo",
           "rule": "après",
           "examples": [
             "Abbiamo parlato dopo la riunione."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"45\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"45\" y1=\"50\" x2=\"45\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"45\" y1=\"50\" x2=\"60\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><path d=\"M82,50 L72,42 L72,58 z\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "title": "tra / fra",
           "rule": "dans (délai futur)",
           "examples": [
             "Finisco tra un'ora."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M50,52 L50,72\" stroke=\"#e8734f\" stroke-width=\"5\"/><path d=\"M42,64 L50,74 L58,64\" stroke=\"#e8734f\" stroke-width=\"5\" fill=\"none\"/></svg>"
         },
         {
           "title": "per",
           "rule": "pendant (durée)",
           "examples": [
             "Ho studiato per due ore."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><line x1=\"18\" y1=\"50\" x2=\"82\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"18\" y1=\"38\" x2=\"18\" y2=\"62\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"82\" y1=\"38\" x2=\"82\" y2=\"62\" stroke=\"#2b7a78\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
         },
         {
           "title": "fa",
           "rule": "il y a (se place après)",
           "examples": [
             "È arrivato un'ora fa."
-          ]
+          ],
+          "icon": "<svg viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"34\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><path d=\"M35,65 L65,35\" stroke=\"#e8734f\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
         }
       ],
       "level": "niveau1",
@@ -4264,7 +4428,8 @@
           ],
           "correctIndex": 2,
           "feedbackOk": "a — orario preciso, «neanche un minuto più tardi».",
-          "feedbackKo": "Non proprio: orario preciso → a."
+          "feedbackKo": "Non proprio: orario preciso → a.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"34\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"50\" y1=\"50\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"50\" y1=\"50\" x2=\"68\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"6\"/></svg>"
         },
         {
           "sentence": "Andiamo sempre dalla nonna <span class=\"blank\"></span> agosto, ogni anno.",
@@ -4276,7 +4441,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "in — un mese si dice sempre con «in».",
-          "feedbackKo": "Non proprio: un mese → in agosto."
+          "feedbackKo": "Non proprio: un mese → in agosto.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"6\"/></svg>"
         },
         {
           "sentence": "Vivono a Lione <span class=\"blank\"></span> il 2015, e ci vivono ancora.",
@@ -4288,7 +4454,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "da — un punto di partenza preciso, ancora valido.",
-          "feedbackKo": "Non proprio: punto di partenza ancora valido → da."
+          "feedbackKo": "Non proprio: punto di partenza ancora valido → da.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><circle cx=\"35\" cy=\"50\" r=\"7\" fill=\"#2b7a78\"/><line x1=\"42\" y1=\"50\" x2=\"78\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"6\"/><path d=\"M70,42 L80,50 L70,58\" stroke=\"#2b7a78\" stroke-width=\"6\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "Ho studiato <span class=\"blank\"></span> tre ore di fila, senza nessuna pausa.",
@@ -4300,7 +4467,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "per — una durata misurata in ore.",
-          "feedbackKo": "Non proprio: durata misurata → per."
+          "feedbackKo": "Non proprio: durata misurata → per.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><line x1=\"18\" y1=\"50\" x2=\"82\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"18\" y1=\"38\" x2=\"18\" y2=\"62\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"82\" y1=\"38\" x2=\"82\" y2=\"62\" stroke=\"#2b7a78\" stroke-width=\"6\"/></svg>"
         },
         {
           "sentence": "Il telefono ha squillato due volte <span class=\"blank\"></span> il film, una cosa molto fastidiosa.",
@@ -4312,7 +4480,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "durante — qualcosa accade dentro un evento.",
-          "feedbackKo": "Non proprio: dentro un evento → durante."
+          "feedbackKo": "Non proprio: dentro un evento → durante.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><path d=\"M30,60 A20,20 0 1 1 62,30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><circle cx=\"72\" cy=\"66\" r=\"3\" fill=\"#2b7a78\"/><circle cx=\"78\" cy=\"60\" r=\"3\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "sentence": "Per favore arriva <span class=\"blank\"></span> che inizi la riunione, non un minuto dopo.",
@@ -4324,7 +4493,8 @@
           ],
           "correctIndex": 1,
           "feedbackOk": "prima di — «non un minuto dopo» = anteriorità.",
-          "feedbackKo": "Non proprio: non un minuto dopo → prima di."
+          "feedbackKo": "Non proprio: non un minuto dopo → prima di.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><circle cx=\"55\" cy=\"50\" r=\"30\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"55\" y1=\"50\" x2=\"55\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"6\"/><path d=\"M18,50 L28,42 L28,58 z\" fill=\"#2b7a78\"/></svg>"
         },
         {
           "sentence": "Finisco la relazione <span class=\"blank\"></span> un'ora, al più tardi.",
@@ -4336,7 +4506,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "tra — una scadenza futura, «al più tardi».",
-          "feedbackKo": "Non proprio: scadenza futura → tra."
+          "feedbackKo": "Non proprio: scadenza futura → tra.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><rect x=\"14\" y=\"20\" width=\"72\" height=\"66\" rx=\"8\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><line x1=\"14\" y1=\"40\" x2=\"86\" y2=\"40\" stroke=\"#2b7a78\" stroke-width=\"6\"/><path d=\"M50,52 L50,72\" stroke=\"#e8734f\" stroke-width=\"6\"/><path d=\"M42,64 L50,74 L58,64\" stroke=\"#e8734f\" stroke-width=\"6\" fill=\"none\"/></svg>"
         },
         {
           "sentence": "È arrivato un'ora <span class=\"blank\"></span> — non è più qui.",
@@ -4348,7 +4519,8 @@
           ],
           "correctIndex": 0,
           "feedbackOk": "fa — un momento passato, «non è più qui».",
-          "feedbackKo": "Non proprio: momento passato → fa."
+          "feedbackKo": "Non proprio: momento passato → fa.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 100\"><circle cx=\"50\" cy=\"50\" r=\"34\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"6\"/><path d=\"M35,65 L65,35\" stroke=\"#e8734f\" stroke-width=\"6\" stroke-linecap=\"round\"/></svg>"
         }
       ]
     },

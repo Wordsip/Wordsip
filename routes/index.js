@@ -18,6 +18,7 @@ const comparisonService = require('../services/comparisonService');
 const irregularVerbsService = require('../services/irregularVerbsService');
 const characterService = require('../services/characterService');
 const lessonService = require('../services/lessonService');
+const storyService = require('../services/storyService');
 const { rateLimit } = require('../services/rateLimiter');
 
 const LATEST_VIDEO_FILE = path.join(__dirname, '..', 'data', 'latest-video.json');
@@ -64,6 +65,11 @@ router.get('/grammaire', (req, res) => {
 // Dictée mensuelle (mots appris + avant-goût du niveau suivant)
 router.get('/dictee', (req, res) => {
   res.sendFile('dictee.html', { root: 'public' });
+});
+
+// Histoire de la semaine (récap audio des mots appris ces 7 derniers jours)
+router.get('/histoire', (req, res) => {
+  res.sendFile('histoire.html', { root: 'public' });
 });
 
 // Fiches pédagogiques imprimables (prépositions, pronoms relatifs, etc.)
@@ -446,6 +452,51 @@ router.post('/api/validate-word', async (req, res) => {
     res.json({ wordsValidated: user.wordsValidated, progress });
   } catch (err) {
     res.status(404).json({ error: err.message });
+  }
+});
+
+// Histoires courtes pré-écrites (gratuites, sans API), liées à l'étape
+// d'apprentissage : chaque histoire utilise des mots précis de la banque, et
+// se débloque quand l'utilisateur en a validé assez — voir
+// services/storyService.js. Comptes inscrits ; `preview=true&language=xx`
+// (utilisé par l'aperçu admin) ouvre toutes les histoires d'une langue.
+async function resolveStoryContext(req) {
+  const { email, preview, language } = req.query;
+  if (preview === 'true' && language) {
+    return { language, level: null, validatedWords: [], preview: true };
+  }
+  if (!email) return { error: 'Les histoires sont réservées aux comptes inscrits.', status: 400 };
+  const user = await userService.findByEmail(email);
+  if (!user) return { error: 'Utilisateur introuvable.', status: 404 };
+  const level = wordService.getSubLevel(user);
+  return {
+    language: user.language,
+    level,
+    validatedWords: (user.validatedWords && user.validatedWords[level]) || [],
+    preview: false,
+  };
+}
+
+router.get('/api/stories', async (req, res) => {
+  try {
+    const ctx = await resolveStoryContext(req);
+    if (ctx.error) return res.status(ctx.status).json({ error: ctx.error });
+    const stories = await storyService.listStories(ctx);
+    res.json({ language: ctx.language, level: ctx.level, preview: ctx.preview, stories });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get('/api/stories/:id', async (req, res) => {
+  try {
+    const ctx = await resolveStoryContext(req);
+    if (ctx.error) return res.status(ctx.status).json({ error: ctx.error });
+    const story = await storyService.getStory(req.params.id, ctx);
+    if (!story) return res.status(404).json({ error: 'Histoire introuvable.' });
+    res.json({ language: ctx.language, story });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
   }
 });
 

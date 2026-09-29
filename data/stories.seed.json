@@ -1,0 +1,928 @@
+{
+  "en": {
+    "niveau1": [
+      {
+        "id": "en-1-1",
+        "title": "A New Friend",
+        "titleFr": "Un nouvel ami",
+        "sentences": [
+          {
+            "text": "[[Hello|Hello]]! My [[name|Name]] is Anna.",
+            "fr": "Bonjour ! Je m'appelle Anna."
+          },
+          {
+            "text": "Today I meet a new [[friend|Friend]] at the park.",
+            "fr": "Aujourd'hui, je rencontre un nouvel ami au parc."
+          },
+          {
+            "text": "He is [[happy|Happy]] and he [[has|Have]] a [[small|Small]] dog.",
+            "fr": "Il est content et il a un petit chien."
+          },
+          {
+            "text": "It is a very [[good|Good]] dog.",
+            "fr": "C'est un très bon chien."
+          },
+          {
+            "text": "[[Thank you|Thank you]] for the fun day.",
+            "fr": "Merci pour cette journée amusante."
+          },
+          {
+            "text": "[[Goodbye|Goodbye]], see you tomorrow!",
+            "fr": "Au revoir, à demain !"
+          }
+        ]
+      },
+      {
+        "id": "en-1-2",
+        "title": "At Home",
+        "titleFr": "À la maison",
+        "sentences": [
+          {
+            "text": "This is my [[house|House]].",
+            "fr": "Voici ma maison."
+          },
+          {
+            "text": "I [[have|Have]] a big [[family|Family]].",
+            "fr": "J'ai une grande famille."
+          },
+          {
+            "text": "The coffee is [[hot|Hot]], so I ask for [[water|Water]].",
+            "fr": "Le café est chaud, alors je demande de l'eau."
+          },
+          {
+            "text": "I need [[help|Help]], [[please|Please]].",
+            "fr": "J'ai besoin d'aide, s'il te plaît."
+          },
+          {
+            "text": "At [[night|Night]] it is [[cold|Cold]], but I [[like|Like]] my bed.",
+            "fr": "La nuit, il fait froid, mais j'aime bien mon lit."
+          }
+        ]
+      },
+      {
+        "id": "en-1-3",
+        "title": "A Day at School",
+        "titleFr": "Une journée d'école",
+        "sentences": [
+          {
+            "text": "Every [[morning|Morning]], the [[children|Child]] go to [[school|School]].",
+            "fr": "Chaque matin, les enfants vont à l'école."
+          },
+          {
+            "text": "A [[woman|Woman]] is the teacher and a [[man|Man]] is the director.",
+            "fr": "Une femme est la professeure et un homme est le directeur."
+          },
+          {
+            "text": "There is a lot of [[work|Work]] all [[day|Day]] long.",
+            "fr": "Il y a beaucoup de travail toute la journée."
+          },
+          {
+            "text": "How much [[time|Time]] do we have?",
+            "fr": "Combien de temps avons-nous ?"
+          },
+          {
+            "text": "[[Excuse me|Excuse me]]! [[Sorry|Sorry]], I am late.",
+            "fr": "Excusez-moi ! Désolé, je suis en retard."
+          },
+          {
+            "text": "This [[week|Week]] we visit a very [[beautiful|Beautiful]] city.",
+            "fr": "Cette semaine, nous visitons une très belle ville."
+          }
+        ]
+      }
+    ],
+    "niveau2": [
+      {
+        "id": "en-2-1",
+        "title": "My Family",
+        "titleFr": "Ma famille",
+        "sentences": [
+          {
+            "text": "My [[mother|Mother]] and my [[father|Father]] live in a [[big|Big]] house.",
+            "fr": "Ma mère et mon père vivent dans une grande maison."
+          },
+          {
+            "text": "My [[brother|Brother]] and my [[sister|Sister]] [[love|Love]] [[red|Red]] and [[blue|Blue]].",
+            "fr": "Mon frère et ma sœur aiment le rouge et le bleu."
+          },
+          {
+            "text": "I have [[two|Two]] cats: [[one|One]] is [[white|White]] and the other is [[black|Black]].",
+            "fr": "J'ai deux chats : l'un est blanc et l'autre est noir."
+          },
+          {
+            "text": "Every evening we [[eat|Eat]] and [[drink|Drink]] together.",
+            "fr": "Chaque soir, nous mangeons et buvons ensemble."
+          },
+          {
+            "text": "Then we [[sleep|Sleep]] and dream of a beach.",
+            "fr": "Ensuite, nous dormons et rêvons d'une plage."
+          }
+        ]
+      },
+      {
+        "id": "en-2-2",
+        "title": "Plans for Today",
+        "titleFr": "Aujourd'hui et demain",
+        "sentences": [
+          {
+            "text": "[[Yesterday|Yesterday]] I stayed home, but [[today|Today]] I [[want|Want]] to [[go|Go]] to the market.",
+            "fr": "Hier je suis resté à la maison, mais aujourd'hui je veux aller au marché."
+          },
+          {
+            "text": "[[Where|Where]] is the market? It is very close.",
+            "fr": "Où est le marché ? — Tout près."
+          },
+          {
+            "text": "[[Why|Why]] do you [[buy|Buy]] a gift? It is my friend's birthday.",
+            "fr": "Pourquoi achètes-tu un cadeau ? — C'est l'anniversaire de mon ami."
+          },
+          {
+            "text": "[[When|When]] will you [[come|Come]]? [[Tomorrow|Tomorrow]], at ten.",
+            "fr": "Quand viens-tu ? — Demain, à dix heures."
+          },
+          {
+            "text": "[[How|How]] are you? I want to [[see|See]] you and [[speak|Speak]] with you.",
+            "fr": "Comment vas-tu ? Je veux te voir et te parler."
+          }
+        ]
+      }
+    ],
+    "niveau3": [
+      {
+        "id": "en-3-1",
+        "title": "The Project Meeting",
+        "titleFr": "La réunion de projet",
+        "sentences": [
+          {
+            "text": "My [[colleague|Colleague]] called a [[meeting|Meeting]] about the new project.",
+            "fr": "Mon collègue a convoqué une réunion sur le nouveau projet."
+          },
+          {
+            "text": "The [[deadline|Deadline]] is close, so we must [[analyze|Analyze]] every detail.",
+            "fr": "L'échéance approche, nous devons donc analyser chaque détail."
+          },
+          {
+            "text": "[[Furthermore|Furthermore]], the plan must be [[feasible|Feasible]] with our budget.",
+            "fr": "De plus, le plan doit être réalisable avec notre budget."
+          },
+          {
+            "text": "The [[entrepreneur|Entrepreneur]] wants to [[negotiate|Negotiate]] with our partners.",
+            "fr": "L'entrepreneur veut négocier avec nos partenaires."
+          },
+          {
+            "text": "[[Nevertheless|Nevertheless]], we want to [[implement|Implement]] the first [[draft|Draft]] next week.",
+            "fr": "Néanmoins, nous voulons mettre en œuvre la première ébauche la semaine prochaine."
+          },
+          {
+            "text": "[[Consequently|Consequently]], every [[stakeholder|Stakeholder]] will be informed and we can [[accomplish|Accomplish]] our goal.",
+            "fr": "Par conséquent, chaque partie prenante sera informée et nous pourrons atteindre notre objectif."
+          }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "niveau1": [
+      {
+        "id": "es-1-1",
+        "title": "Un nuevo amigo",
+        "titleFr": "Un nouvel ami",
+        "sentences": [
+          {
+            "text": "¡[[Hola|Hola]]! Mi [[nombre|Nombre]] es Ana.",
+            "fr": "Bonjour ! Je m'appelle Ana."
+          },
+          {
+            "text": "Hoy conozco a un nuevo [[amigo|Amigo]] en el parque.",
+            "fr": "Aujourd'hui, je rencontre un nouvel ami au parc."
+          },
+          {
+            "text": "Está [[feliz|Feliz]] y [[tiene|Tener]] un perro [[pequeño|Pequeño]].",
+            "fr": "Il est content et il a un petit chien."
+          },
+          {
+            "text": "Es un perro muy [[bueno|Bueno]].",
+            "fr": "C'est un très bon chien."
+          },
+          {
+            "text": "[[Gracias|Gracias]] por el día tan divertido.",
+            "fr": "Merci pour cette journée amusante."
+          },
+          {
+            "text": "¡[[Adiós|Adiós]], hasta mañana!",
+            "fr": "Au revoir, à demain !"
+          }
+        ]
+      },
+      {
+        "id": "es-1-2",
+        "title": "En casa",
+        "titleFr": "À la maison",
+        "sentences": [
+          {
+            "text": "Esta es mi [[casa|Casa]].",
+            "fr": "Voici ma maison."
+          },
+          {
+            "text": "Yo [[tengo|Tener]] una [[familia|Familia]] grande.",
+            "fr": "J'ai une grande famille."
+          },
+          {
+            "text": "El café está [[caliente|Caliente]], por eso pido [[agua|Agua]].",
+            "fr": "Le café est chaud, alors je demande de l'eau."
+          },
+          {
+            "text": "Necesito [[ayuda|Ayuda]], [[por favor|Por favor]].",
+            "fr": "J'ai besoin d'aide, s'il te plaît."
+          },
+          {
+            "text": "Por la [[noche|Noche]] hace [[frío|Frío]], pero me [[gusta|Gustar]] mi cama.",
+            "fr": "La nuit, il fait froid, mais j'aime bien mon lit."
+          }
+        ]
+      },
+      {
+        "id": "es-1-3",
+        "title": "Un día en la escuela",
+        "titleFr": "Une journée d'école",
+        "sentences": [
+          {
+            "text": "Cada mañana, los [[niños|Niño]] van a la [[escuela|Escuela]].",
+            "fr": "Chaque matin, les enfants vont à l'école."
+          },
+          {
+            "text": "Una [[mujer|Mujer]] es la profesora y un [[hombre|Hombre]] es el director.",
+            "fr": "Une femme est la professeure et un homme est le directeur."
+          },
+          {
+            "text": "Hay mucho [[trabajo|Trabajo]] todo el [[día|Día]].",
+            "fr": "Il y a beaucoup de travail toute la journée."
+          },
+          {
+            "text": "¿Cuánto [[tiempo|Tiempo]] tenemos?",
+            "fr": "Combien de temps avons-nous ?"
+          },
+          {
+            "text": "¡[[Perdón|Perdón]]! [[Lo siento|Lo siento]], llego tarde.",
+            "fr": "Excusez-moi ! Désolé, je suis en retard."
+          },
+          {
+            "text": "Esta [[semana|Semana]] visitamos una [[ciudad|Ciudad]] muy [[hermosa|Hermoso]].",
+            "fr": "Cette semaine, nous visitons une très belle ville."
+          }
+        ]
+      }
+    ],
+    "niveau2": [
+      {
+        "id": "es-2-1",
+        "title": "Mi familia",
+        "titleFr": "Ma famille",
+        "sentences": [
+          {
+            "text": "Mi [[madre|Madre]] y mi [[padre|Padre]] viven en una casa [[grande|Grande]].",
+            "fr": "Ma mère et mon père vivent dans une grande maison."
+          },
+          {
+            "text": "Mi [[hermano|Hermano]] y mi [[hermana|Hermana]] [[aman|Amar]] el [[rojo|Rojo]] y el [[azul|Azul]].",
+            "fr": "Mon frère et ma sœur aiment le rouge et le bleu."
+          },
+          {
+            "text": "Tengo [[dos|Dos]] gatos: [[uno|Uno]] es [[blanco|Blanco]] y el otro es [[negro|Negro]].",
+            "fr": "J'ai deux chats : l'un est blanc et l'autre est noir."
+          },
+          {
+            "text": "Cada noche [[comemos|Comer]] y [[bebemos|Beber]] juntos.",
+            "fr": "Chaque soir, nous mangeons et buvons ensemble."
+          },
+          {
+            "text": "Después [[dormimos|Dormir]] y soñamos con una playa.",
+            "fr": "Ensuite, nous dormons et rêvons d'une plage."
+          }
+        ]
+      },
+      {
+        "id": "es-2-2",
+        "title": "Planes para hoy",
+        "titleFr": "Aujourd'hui et demain",
+        "sentences": [
+          {
+            "text": "[[Ayer|Ayer]] me quedé en casa, pero [[hoy|Hoy]] [[quiero|Querer]] [[ir|Ir]] al mercado.",
+            "fr": "Hier je suis resté à la maison, mais aujourd'hui je veux aller au marché."
+          },
+          {
+            "text": "¿[[Dónde|Dónde]] está el mercado? Está muy cerca.",
+            "fr": "Où est le marché ? — Tout près."
+          },
+          {
+            "text": "¿[[Por qué|Por qué]] [[compras|Comprar]] un regalo? Es el cumpleaños de mi amigo.",
+            "fr": "Pourquoi achètes-tu un cadeau ? — C'est l'anniversaire de mon ami."
+          },
+          {
+            "text": "¿[[Cuándo|Cuándo]] vas a [[venir|Venir]]? [[Mañana|Mañana]], a las diez.",
+            "fr": "Quand viens-tu ? — Demain, à dix heures."
+          },
+          {
+            "text": "¿[[Cómo|Cómo]] estás? Quiero [[verte|Ver]] y [[hablar|Hablar]] contigo.",
+            "fr": "Comment vas-tu ? Je veux te voir et te parler."
+          }
+        ]
+      }
+    ],
+    "niveau3": [
+      {
+        "id": "es-3-1",
+        "title": "La reunión del proyecto",
+        "titleFr": "La réunion de projet",
+        "sentences": [
+          {
+            "text": "Mi [[colega|Colega]] convocó una [[reunión|Reunión]] sobre el nuevo proyecto.",
+            "fr": "Mon collègue a convoqué une réunion sur le nouveau projet."
+          },
+          {
+            "text": "El [[plazo|Plazo]] se acerca, por eso debemos [[analizar|Analizar]] cada detalle.",
+            "fr": "L'échéance approche, nous devons donc analyser chaque détail."
+          },
+          {
+            "text": "[[Además|Además]], el plan debe ser [[viable|Viable]] con nuestro presupuesto.",
+            "fr": "De plus, le plan doit être réalisable avec notre budget."
+          },
+          {
+            "text": "El [[emprendedor|Emprendedor]] quiere [[negociar|Negociar]] con nuestros socios.",
+            "fr": "L'entrepreneur veut négocier avec nos partenaires."
+          },
+          {
+            "text": "[[Sin embargo|Sin embargo]], queremos [[implementar|Implementar]] el primer [[borrador|Borrador]] la próxima semana.",
+            "fr": "Néanmoins, nous voulons mettre en œuvre la première ébauche la semaine prochaine."
+          },
+          {
+            "text": "[[Por consiguiente|Por consiguiente]], cada [[parte interesada|Parte interesada]] estará informada y podremos [[lograr|Lograr]] nuestro objetivo.",
+            "fr": "Par conséquent, chaque partie prenante sera informée et nous pourrons atteindre notre objectif."
+          }
+        ]
+      }
+    ]
+  },
+  "it": {
+    "niveau1": [
+      {
+        "id": "it-1-1",
+        "title": "Un nuovo amico",
+        "titleFr": "Un nouvel ami",
+        "sentences": [
+          {
+            "text": "[[Ciao|Ciao]]! Il mio [[nome|Nome]] è Anna.",
+            "fr": "Bonjour ! Je m'appelle Anna."
+          },
+          {
+            "text": "Oggi incontro un nuovo [[amico|Amico]] al parco.",
+            "fr": "Aujourd'hui, je rencontre un nouvel ami au parc."
+          },
+          {
+            "text": "È [[felice|Felice]] e [[ha|Avere]] un cane [[piccolo|Piccolo]].",
+            "fr": "Il est content et il a un petit chien."
+          },
+          {
+            "text": "È un cane molto [[buono|Buono]].",
+            "fr": "C'est un très bon chien."
+          },
+          {
+            "text": "[[Grazie|Grazie]] per la giornata divertente.",
+            "fr": "Merci pour cette journée amusante."
+          },
+          {
+            "text": "[[Arrivederci|Arrivederci]], a domani!",
+            "fr": "Au revoir, à demain !"
+          }
+        ]
+      },
+      {
+        "id": "it-1-2",
+        "title": "A casa",
+        "titleFr": "À la maison",
+        "sentences": [
+          {
+            "text": "Questa è la mia [[casa|Casa]].",
+            "fr": "Voici ma maison."
+          },
+          {
+            "text": "[[Ho|Avere]] una [[famiglia|Famiglia]] grande.",
+            "fr": "J'ai une grande famille."
+          },
+          {
+            "text": "Il caffè è [[caldo|Caldo]], quindi chiedo dell'[[acqua|Acqua]].",
+            "fr": "Le café est chaud, alors je demande de l'eau."
+          },
+          {
+            "text": "Ho bisogno di [[aiuto|Aiuto]], [[per favore|Per favore]].",
+            "fr": "J'ai besoin d'aide, s'il te plaît."
+          },
+          {
+            "text": "Di [[notte|Notte]] fa [[freddo|Freddo]], ma mi [[piace|Piacere]] il mio letto.",
+            "fr": "La nuit, il fait froid, mais j'aime bien mon lit."
+          }
+        ]
+      },
+      {
+        "id": "it-1-3",
+        "title": "Una giornata a scuola",
+        "titleFr": "Une journée d'école",
+        "sentences": [
+          {
+            "text": "Ogni [[mattina|Mattina]], i [[bambini|Bambino]] vanno a [[scuola|Scuola]].",
+            "fr": "Chaque matin, les enfants vont à l'école."
+          },
+          {
+            "text": "Una [[donna|Donna]] è la maestra e un [[uomo|Uomo]] è il direttore.",
+            "fr": "Une femme est la professeure et un homme est le directeur."
+          },
+          {
+            "text": "C'è molto [[lavoro|Lavoro]] per tutto il [[giorno|Giorno]].",
+            "fr": "Il y a beaucoup de travail toute la journée."
+          },
+          {
+            "text": "Quanto [[tempo|Tempo]] abbiamo?",
+            "fr": "Combien de temps avons-nous ?"
+          },
+          {
+            "text": "[[Permesso|Permesso]]! [[Scusa|Scusa]], sono in ritardo.",
+            "fr": "Excusez-moi ! Désolé, je suis en retard."
+          },
+          {
+            "text": "Questa [[settimana|Settimana]] visitiamo una città molto [[bella|Bello]].",
+            "fr": "Cette semaine, nous visitons une très belle ville."
+          }
+        ]
+      }
+    ],
+    "niveau2": [
+      {
+        "id": "it-2-1",
+        "title": "La mia famiglia",
+        "titleFr": "Ma famille",
+        "sentences": [
+          {
+            "text": "Mia [[madre|Madre]] e mio [[padre|Padre]] vivono in una casa [[grande|Grande]].",
+            "fr": "Ma mère et mon père vivent dans une grande maison."
+          },
+          {
+            "text": "Mio [[fratello|Fratello]] e mia [[sorella|Sorella]] [[amano|Amare]] il [[rosso|Rosso]] e il [[blu|Blu]].",
+            "fr": "Mon frère et ma sœur aiment le rouge et le bleu."
+          },
+          {
+            "text": "Ho [[due|Due]] gatti: [[uno|Uno]] è [[bianco|Bianco]] e l'altro è [[nero|Nero]].",
+            "fr": "J'ai deux chats : l'un est blanc et l'autre est noir."
+          },
+          {
+            "text": "Ogni sera [[mangiamo|Mangiare]] e [[beviamo|Bere]] insieme.",
+            "fr": "Chaque soir, nous mangeons et buvons ensemble."
+          },
+          {
+            "text": "Poi [[dormiamo|Dormire]] e sogniamo una spiaggia.",
+            "fr": "Ensuite, nous dormons et rêvons d'une plage."
+          }
+        ]
+      },
+      {
+        "id": "it-2-2",
+        "title": "Programmi per oggi",
+        "titleFr": "Aujourd'hui et demain",
+        "sentences": [
+          {
+            "text": "[[Ieri|Ieri]] sono rimasto a casa, ma [[oggi|Oggi]] [[voglio|Volere]] [[andare|Andare]] al mercato.",
+            "fr": "Hier je suis resté à la maison, mais aujourd'hui je veux aller au marché."
+          },
+          {
+            "text": "[[Dove|Dove]] è il mercato? È molto vicino.",
+            "fr": "Où est le marché ? — Tout près."
+          },
+          {
+            "text": "[[Perché|Perché]] [[compri|Comprare]] un regalo? È il compleanno di un amico.",
+            "fr": "Pourquoi achètes-tu un cadeau ? — C'est l'anniversaire de mon ami."
+          },
+          {
+            "text": "[[Quando|Quando]] vuoi [[venire|Venire]]? [[Domani|Domani]], alle dieci.",
+            "fr": "Quand viens-tu ? — Demain, à dix heures."
+          },
+          {
+            "text": "[[Come|Come]] stai? Voglio [[vedere|Vedere]] te e [[parlare|Parlare]] con te.",
+            "fr": "Comment vas-tu ? Je veux te voir et te parler."
+          }
+        ]
+      }
+    ],
+    "niveau3": [
+      {
+        "id": "it-3-1",
+        "title": "La riunione di progetto",
+        "titleFr": "La réunion de projet",
+        "sentences": [
+          {
+            "text": "Il mio [[collega|Collega]] ha convocato una [[riunione|Riunione]] sul nuovo progetto.",
+            "fr": "Mon collègue a convoqué une réunion sur le nouveau projet."
+          },
+          {
+            "text": "La [[scadenza|Scadenza]] è vicina, quindi dobbiamo [[analizzare|Analizzare]] ogni dettaglio.",
+            "fr": "L'échéance approche, nous devons donc analyser chaque détail."
+          },
+          {
+            "text": "[[Inoltre|Inoltre]], il piano deve essere [[fattibile|Fattibile]] con il nostro budget.",
+            "fr": "De plus, le plan doit être réalisable avec notre budget."
+          },
+          {
+            "text": "L'[[imprenditore|Imprenditore]] vuole [[negoziare|Negoziare]] con i nostri partner.",
+            "fr": "L'entrepreneur veut négocier avec nos partenaires."
+          },
+          {
+            "text": "[[Tuttavia|Tuttavia]], vogliamo [[implementare|Implementare]] la prima [[bozza|Bozza]] la settimana prossima.",
+            "fr": "Néanmoins, nous voulons mettre en œuvre la première ébauche la semaine prochaine."
+          },
+          {
+            "text": "[[Di conseguenza|Di conseguenza]], ogni [[portatore di interesse|Portatore di interesse]] sarà informato e potremo [[realizzare|Realizzare]] il nostro obiettivo.",
+            "fr": "Par conséquent, chaque partie prenante sera informée et nous pourrons atteindre notre objectif."
+          }
+        ]
+      }
+    ]
+  },
+  "ja": {
+    "niveau1": [
+      {
+        "id": "ja-1-1",
+        "title": "新しい友達",
+        "titleFr": "Un nouvel ami",
+        "sentences": [
+          {
+            "text": "[[こんにちは|こんにちは]]！私の[[名前|名前]]はアンナです。",
+            "fr": "Bonjour ! Je m'appelle Anna."
+          },
+          {
+            "text": "今日、公園で新しい[[友達|友達]]に会いました。",
+            "fr": "Aujourd'hui, j'ai rencontré un nouvel ami au parc."
+          },
+          {
+            "text": "彼は[[幸せ|幸せ]]で、[[小さい|小さい]]犬がいます。",
+            "fr": "Il est heureux et il a un petit chien."
+          },
+          {
+            "text": "これは[[いい|いい]]犬です。",
+            "fr": "C'est un bon chien."
+          },
+          {
+            "text": "楽しい一日を[[ありがとう|ありがとう]]。",
+            "fr": "Merci pour cette journée amusante."
+          },
+          {
+            "text": "[[さようなら|さようなら]]、また明日！",
+            "fr": "Au revoir, à demain !"
+          }
+        ]
+      },
+      {
+        "id": "ja-1-2",
+        "title": "家で",
+        "titleFr": "À la maison",
+        "sentences": [
+          {
+            "text": "これは私の[[家|家]]です。",
+            "fr": "Voici ma maison."
+          },
+          {
+            "text": "[[家族|家族]]は五人で、庭が[[あります|あります]]。",
+            "fr": "Nous sommes cinq dans la famille, et il y a un jardin."
+          },
+          {
+            "text": "今日は[[暑い|暑い]]ので、[[水|水]]を[[お願いします|お願いします]]。",
+            "fr": "Comme il fait chaud aujourd'hui, de l'eau s'il vous plaît."
+          },
+          {
+            "text": "[[夜|夜]]は[[寒い|寒い]]ですが、私は自分のベッドが[[好き|好き]]です。",
+            "fr": "La nuit il fait froid, mais j'aime mon lit."
+          },
+          {
+            "text": "友達が「[[助けて|助けて]]」と言いました。",
+            "fr": "Mon ami a dit : « Aide-moi ! »"
+          }
+        ]
+      },
+      {
+        "id": "ja-1-3",
+        "title": "学校の一日",
+        "titleFr": "Une journée d'école",
+        "sentences": [
+          {
+            "text": "毎[[朝|朝]]、[[子供|子供]]たちは[[学校|学校]]へ行きます。",
+            "fr": "Chaque matin, les enfants vont à l'école."
+          },
+          {
+            "text": "[[女|女]]の先生と[[男|男]]の校長先生がいます。",
+            "fr": "Il y a une enseignante et un directeur."
+          },
+          {
+            "text": "先生は一[[日|日]]じゅう[[仕事|仕事]]をします。",
+            "fr": "Le professeur travaille toute la journée."
+          },
+          {
+            "text": "[[時間|時間]]がありません！",
+            "fr": "Nous n'avons pas le temps !"
+          },
+          {
+            "text": "[[すみません|すみません]]、遅れました。",
+            "fr": "Excusez-moi, je suis en retard."
+          },
+          {
+            "text": "一[[週間|週間]]に一回、[[きれい|きれい]]な公園へ行きます。",
+            "fr": "Une fois par semaine, nous allons dans un beau parc."
+          }
+        ]
+      }
+    ],
+    "niveau2": [
+      {
+        "id": "ja-2-1",
+        "title": "私の家族",
+        "titleFr": "Ma famille",
+        "sentences": [
+          {
+            "text": "[[母|母]]と[[父|父]]は[[大きい|大きい]]家に住んでいます。",
+            "fr": "Ma mère et mon père vivent dans une grande maison."
+          },
+          {
+            "text": "[[兄|兄]]と[[姉|姉]]は[[赤|赤]]と[[青|青]]が好きです。",
+            "fr": "Mon frère aîné et ma sœur aînée aiment le rouge et le bleu."
+          },
+          {
+            "text": "私は猫が[[二|二]]匹います。[[白|白]]い猫と[[黒|黒]]い猫です。",
+            "fr": "J'ai deux chats. Un chat blanc et un chat noir."
+          },
+          {
+            "text": "毎晩、家族でご飯を[[食べる|食べる]]のが好きです。",
+            "fr": "Chaque soir, j'aime manger le repas en famille."
+          },
+          {
+            "text": "そして、お茶を[[飲む|飲む]]のも好きです。",
+            "fr": "Et j'aime aussi boire du thé."
+          },
+          {
+            "text": "それから、[[寝る|寝る]]前に本を読みます。",
+            "fr": "Ensuite, je lis un livre avant de dormir."
+          }
+        ]
+      },
+      {
+        "id": "ja-2-2",
+        "title": "今日と明日",
+        "titleFr": "Aujourd'hui et demain",
+        "sentences": [
+          {
+            "text": "[[昨日|昨日]]は家にいましたが、[[今日|今日]]は市場に[[行く|行く]]つもりです。",
+            "fr": "Hier j'étais à la maison, mais aujourd'hui j'ai l'intention d'aller au marché."
+          },
+          {
+            "text": "市場は[[どこ|どこ]]ですか。すぐ近くです。",
+            "fr": "Où est le marché ? Tout près."
+          },
+          {
+            "text": "[[なぜ|なぜ]]プレゼントを[[買う|買う]]のですか。友達の誕生日だからです。",
+            "fr": "Pourquoi achètes-tu un cadeau ? Parce que c'est l'anniversaire d'un ami."
+          },
+          {
+            "text": "[[いつ|いつ]][[来る|来る]]のですか。[[明日|明日]]の十時です。",
+            "fr": "Quand viens-tu ? Demain à dix heures."
+          },
+          {
+            "text": "友達を[[見る|見る]]のと、たくさん[[話す|話す]]のが楽しみです。",
+            "fr": "J'ai hâte de voir mes amis et de beaucoup parler."
+          },
+          {
+            "text": "私は新しい本が[[欲しい|欲しい]]です。",
+            "fr": "Je veux un nouveau livre."
+          }
+        ]
+      }
+    ],
+    "niveau3": [
+      {
+        "id": "ja-3-1",
+        "title": "プロジェクト会議",
+        "titleFr": "La réunion de projet",
+        "sentences": [
+          {
+            "text": "私の[[同僚|同僚]]が新しいプロジェクトの[[会議|会議]]を開きました。",
+            "fr": "Mon collègue a organisé une réunion sur le nouveau projet."
+          },
+          {
+            "text": "[[締め切り|締め切り]]が近いので、すべての詳細を[[分析する|分析する]]必要があります。",
+            "fr": "L'échéance approche, nous devons donc analyser chaque détail."
+          },
+          {
+            "text": "[[さらに|さらに]]、計画は予算内で[[実現可能|実現可能]]でなければなりません。",
+            "fr": "De plus, le plan doit être réalisable dans le budget."
+          },
+          {
+            "text": "[[起業家|起業家]]は私たちのパートナーと[[交渉する|交渉する]]つもりです。",
+            "fr": "L'entrepreneur compte négocier avec nos partenaires."
+          },
+          {
+            "text": "[[それにもかかわらず|それにもかかわらず]]、来週、最初の[[下書き|下書き]]を[[実施する|実施する]]予定です。",
+            "fr": "Néanmoins, nous prévoyons de mettre en œuvre la première ébauche la semaine prochaine."
+          },
+          {
+            "text": "[[その結果|その結果]]、[[利害関係者|利害関係者]]全員に連絡が届き、目標を[[達成する|達成する]]ことができます。",
+            "fr": "Par conséquent, toutes les parties prenantes sont informées et nous pouvons atteindre notre objectif."
+          }
+        ]
+      }
+    ]
+  },
+  "zh": {
+    "niveau1": [
+      {
+        "id": "zh-1-1",
+        "title": "新朋友",
+        "titleFr": "Un nouvel ami",
+        "sentences": [
+          {
+            "text": "[[你好|你好]]！我的[[名字|名字]]是安娜。",
+            "fr": "Bonjour ! Je m'appelle Anna."
+          },
+          {
+            "text": "今天我在公园认识了一个新[[朋友|朋友]]。",
+            "fr": "Aujourd'hui, j'ai rencontré un nouvel ami au parc."
+          },
+          {
+            "text": "他很[[开心|开心]]，他[[有|有]]一只[[小|小]]狗。",
+            "fr": "Il est content, et il a un petit chien."
+          },
+          {
+            "text": "这是一只很[[好|好]]的狗。",
+            "fr": "C'est un très bon chien."
+          },
+          {
+            "text": "[[谢谢|谢谢]]你，今天很有趣！",
+            "fr": "Merci, aujourd'hui c'était amusant !"
+          },
+          {
+            "text": "[[再见|再见]]，明天见！",
+            "fr": "Au revoir, à demain !"
+          }
+        ]
+      },
+      {
+        "id": "zh-1-2",
+        "title": "在家",
+        "titleFr": "À la maison",
+        "sentences": [
+          {
+            "text": "这是我的[[家|家]]。",
+            "fr": "Voici ma maison."
+          },
+          {
+            "text": "我的[[家人|家人]]很多，我们[[有|有]]一个大花园。",
+            "fr": "Ma famille est nombreuse, nous avons un grand jardin."
+          },
+          {
+            "text": "今天很[[热|热]]，[[请|请]]给我[[水|水]]。",
+            "fr": "Il fait très chaud aujourd'hui, donnez-moi de l'eau s'il vous plaît."
+          },
+          {
+            "text": "我需要[[帮助|帮助]]。",
+            "fr": "J'ai besoin d'aide."
+          },
+          {
+            "text": "[[晚上|晚上]]很[[冷|冷]]，但是我[[喜欢|喜欢]]我的床。",
+            "fr": "Le soir il fait froid, mais j'aime bien mon lit."
+          }
+        ]
+      },
+      {
+        "id": "zh-1-3",
+        "title": "学校的一天",
+        "titleFr": "Une journée d'école",
+        "sentences": [
+          {
+            "text": "每天[[早上|早上]]，[[孩子|孩子]]们去[[学校|学校]]。",
+            "fr": "Chaque matin, les enfants vont à l'école."
+          },
+          {
+            "text": "一个[[女人|女人]]是老师，一个[[男人|男人]]是校长。",
+            "fr": "Une femme est la professeure et un homme est le directeur."
+          },
+          {
+            "text": "老师每[[天|天]]都很忙，[[工作|工作]]很多。",
+            "fr": "Le professeur est occupé chaque jour, il y a beaucoup de travail."
+          },
+          {
+            "text": "我们没有[[时间|时间]]了！",
+            "fr": "Nous n'avons plus le temps !"
+          },
+          {
+            "text": "[[打扰一下|打扰一下]]，我可以进来吗？",
+            "fr": "Excusez-moi, puis-je entrer ?"
+          },
+          {
+            "text": "[[对不起|对不起]]，我迟到了。",
+            "fr": "Désolé, je suis en retard."
+          },
+          {
+            "text": "每个[[星期|星期]]我们去一次[[漂亮|漂亮]]的公园。",
+            "fr": "Chaque semaine, nous allons une fois dans un beau parc."
+          }
+        ]
+      }
+    ],
+    "niveau2": [
+      {
+        "id": "zh-2-1",
+        "title": "我的家人",
+        "titleFr": "Ma famille",
+        "sentences": [
+          {
+            "text": "我的[[妈妈|妈妈]]和[[爸爸|爸爸]]住在一个[[大|大]]房子里。",
+            "fr": "Ma mère et mon père vivent dans une grande maison."
+          },
+          {
+            "text": "我的[[哥哥|哥哥]]和[[姐姐|姐姐]][[爱|爱]][[红色|红色]]和[[蓝色|蓝色]]。",
+            "fr": "Mon frère aîné et ma sœur aînée adorent le rouge et le bleu."
+          },
+          {
+            "text": "我有[[一|一]]只[[白色|白色]]的猫和[[一|一]]只[[黑色|黑色]]的猫。",
+            "fr": "J'ai un chat blanc et un chat noir."
+          },
+          {
+            "text": "每天晚上我们一起[[吃|吃]]饭，一起[[喝|喝]]茶。",
+            "fr": "Chaque soir, nous mangeons et buvons du thé ensemble."
+          },
+          {
+            "text": "然后我们[[睡觉|睡觉]]，梦见一片海滩。",
+            "fr": "Ensuite, nous dormons et rêvons d'une plage."
+          }
+        ]
+      },
+      {
+        "id": "zh-2-2",
+        "title": "今天和明天",
+        "titleFr": "Aujourd'hui et demain",
+        "sentences": [
+          {
+            "text": "[[昨天|昨天]]我在家，[[今天|今天]]我[[想要|想要]][[去|去]]市场。",
+            "fr": "Hier j'étais à la maison, aujourd'hui je veux aller au marché."
+          },
+          {
+            "text": "市场在[[哪里|哪里]]？很近。",
+            "fr": "Où est le marché ? C'est tout près."
+          },
+          {
+            "text": "你[[为什么|为什么]][[买|买]]礼物？因为今天是朋友的生日。",
+            "fr": "Pourquoi achètes-tu un cadeau ? Parce qu'aujourd'hui c'est l'anniversaire d'un ami."
+          },
+          {
+            "text": "你[[什么时候|什么时候]][[来|来]]？[[明天|明天]]十点。",
+            "fr": "Quand viens-tu ? Demain à dix heures."
+          },
+          {
+            "text": "我想[[看|看]]我的朋友，也想和他们[[说|说]]话。",
+            "fr": "Je veux voir mes amis et aussi leur parler."
+          },
+          {
+            "text": "你[[怎么|怎么]]去？坐公共汽车。",
+            "fr": "Comment y vas-tu ? En bus."
+          }
+        ]
+      }
+    ],
+    "niveau3": [
+      {
+        "id": "zh-3-1",
+        "title": "项目会议",
+        "titleFr": "La réunion de projet",
+        "sentences": [
+          {
+            "text": "我的[[同事|同事]]召开了一个关于新项目的[[会议|会议]]。",
+            "fr": "Mon collègue a organisé une réunion sur le nouveau projet."
+          },
+          {
+            "text": "[[截止日期|截止日期]]快到了，所以我们必须[[分析|分析]]每个细节。",
+            "fr": "La date limite approche, nous devons donc analyser chaque détail."
+          },
+          {
+            "text": "[[此外|此外]]，计划必须在预算内[[可行|可行]]。",
+            "fr": "De plus, le plan doit être réalisable dans le budget."
+          },
+          {
+            "text": "[[企业家|企业家]]想和我们的合作伙伴[[谈判|谈判]]。",
+            "fr": "L'entrepreneur veut négocier avec nos partenaires."
+          },
+          {
+            "text": "[[尽管如此|尽管如此]]，我们下周还是要[[实施|实施]]第一份[[草稿|草稿]]。",
+            "fr": "Néanmoins, la semaine prochaine nous allons quand même mettre en œuvre la première ébauche."
+          },
+          {
+            "text": "[[因此|因此]]，每位[[利益相关者|利益相关者]]都会收到通知，我们能够[[实现|实现]]目标。",
+            "fr": "Par conséquent, chaque partie prenante sera informée et nous pourrons atteindre l'objectif."
+          }
+        ]
+      }
+    ]
+  }
+}
