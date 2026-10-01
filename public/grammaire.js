@@ -569,18 +569,76 @@ function buildLessonPreview(lesson) {
   return '';
 }
 
-function renderLessonsMenu() {
-  const menu = document.getElementById('lessons-menu');
-  menu.innerHTML = allLessons.map((lesson, i) => {
-    const preview = buildLessonPreview(lesson);
-    return `
-    <button type="button" class="lesson-menu-item" data-index="${i}">
+// Catégories affichées dans cet ordre — une leçon sans `category` (ancien
+// contenu pas encore retaggé, ou futures fiches caractères ja/zh) tombe par
+// défaut dans "Grammaire" plutôt que de disparaître.
+const LESSON_CATEGORIES = [
+  { key: 'grammaire', label: '📚 Grammaire' },
+  { key: 'vocabulaire', label: '🔤 Vocabulaire' },
+];
+
+// Sous-catégories du vocabulaire, pour que la liste reste lisible même une
+// fois les ~20 thèmes ajoutés (couleurs, corps, maison, animaux...) — une
+// leçon de vocabulaire sans `subcategory` tombe dans "bases" par défaut.
+const VOCAB_SUBCATEGORIES = [
+  { key: 'bases', label: 'Les bases' },
+  { key: 'corps-sante', label: 'Corps & santé' },
+  { key: 'maison-quotidien', label: 'Maison & quotidien' },
+  { key: 'monde-autour', label: 'Le monde autour de nous' },
+  { key: 'vie-sociale', label: 'Vie sociale' },
+];
+
+function itemHtml({ lesson, index }) {
+  const preview = buildLessonPreview(lesson);
+  return `
+    <button type="button" class="lesson-menu-item" data-index="${index}">
       <span style="font-weight:600;">${lesson.title}</span>
       ${lesson.subtitle ? `<span style="display:block;font-size:12px;color:#999;margin-top:2px;">${lesson.subtitle}</span>` : ''}
       ${preview ? `<span class="lesson-preview">${preview}</span>` : ''}
     </button>
   `;
-  }).join('');
+}
+
+function renderLessonsMenu() {
+  const menu = document.getElementById('lessons-menu');
+
+  const groups = {};
+  allLessons.forEach((lesson, i) => {
+    const key = lesson.category || 'grammaire';
+    if (!groups[key]) groups[key] = [];
+    groups[key].push({ lesson, index: i });
+  });
+
+  // Le vocabulaire se subdivise encore par sous-catégorie ; la grammaire
+  // reste une seule liste pour l'instant (pas encore assez de fiches pour
+  // justifier une subdivision supplémentaire).
+  function renderCategoryBody(key, items) {
+    if (key !== 'vocabulaire') {
+      return `<div>${items.map(itemHtml).join('')}</div>`;
+    }
+    const subgroups = {};
+    items.forEach((item) => {
+      const subKey = item.lesson.subcategory || 'bases';
+      if (!subgroups[subKey]) subgroups[subKey] = [];
+      subgroups[subKey].push(item);
+    });
+    return VOCAB_SUBCATEGORIES
+      .filter((sc) => subgroups[sc.key] && subgroups[sc.key].length > 0)
+      .map((sc) => `
+        <p style="font-size:11px;font-weight:700;color:#999;letter-spacing:.3px;margin:12px 0 6px;">${sc.label}</p>
+        <div>${subgroups[sc.key].map(itemHtml).join('')}</div>
+      `).join('');
+  }
+
+  // Chaque catégorie (et chaque sous-catégorie) dans son propre conteneur :
+  // .lesson-menu-item:first-child (qui annule le décalage de pile -30px) ne
+  // cible sinon que le tout premier bouton de la page entière.
+  menu.innerHTML = LESSON_CATEGORIES
+    .filter((c) => groups[c.key] && groups[c.key].length > 0)
+    .map((c) => `
+      <p style="font-size:12px;font-weight:700;color:#2b7a78;letter-spacing:.4px;margin:18px 0 8px;">${c.label}</p>
+      ${renderCategoryBody(c.key, groups[c.key])}
+    `).join('');
 
   menu.querySelectorAll('.lesson-menu-item').forEach((btn) => {
     btn.addEventListener('click', () => showLessonDetail(Number(btn.dataset.index)));
