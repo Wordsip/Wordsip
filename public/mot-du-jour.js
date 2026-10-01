@@ -1,5 +1,5 @@
 const params = new URLSearchParams(window.location.search);
-const email = params.get('email');
+let email = params.get('email');
 const isGuest = params.get('guest') === 'true';
 // Aperçu illimité utilisé uniquement depuis le panneau admin (menu "Aperçu
 // par langue") : même mode invité, mais sans le blocage à 7 jours, pour
@@ -470,6 +470,22 @@ function renderWord() {
     navAdminLink.style.display = '';
   }
 
+  // Déconnexion (supprime le cookie de session) — masqué en mode invité,
+  // pas de session à quitter dans ce cas.
+  const navLogoutLink = document.getElementById('nav-logout-link');
+  if (navLogoutLink && !isGuest) {
+    navLogoutLink.style.display = '';
+    navLogoutLink.addEventListener('click', async (e) => {
+      e.preventDefault();
+      try {
+        await fetch('/api/logout', { method: 'POST' });
+      } catch (err) {
+        // Silencieux : au pire le cookie reste, la reconnexion reste possible
+      }
+      window.location.href = '/';
+    });
+  }
+
   // Suppression de compte, cachée en mode invité (pas de vrai compte à supprimer)
   const deleteLink = document.getElementById('delete-account-link');
   if (deleteLink) {
@@ -882,4 +898,24 @@ async function loadExpressionOfWeek() {
   }
 }
 
-loadWord();
+// Connexion persistante : si l'URL n'a pas d'email (lien direct, favori,
+// onglet précédent...) mais qu'un cookie de session valide existe (créé à
+// la connexion ou à l'inscription), on récupère l'email automatiquement au
+// lieu d'afficher "Aucun compte trouvé". Invité et aperçu admin inchangés.
+async function resolveSessionEmail() {
+  if (email || isGuest) return;
+  try {
+    const res = await fetch('/api/session');
+    const data = await res.json();
+    if (data.email) {
+      email = data.email;
+      const url = new URL(window.location.href);
+      url.searchParams.set('email', email);
+      window.history.replaceState({}, '', url);
+    }
+  } catch (err) {
+    // Silencieux : au pire on retombe sur l'écran "Aucun compte trouvé"
+  }
+}
+
+resolveSessionEmail().then(loadWord);

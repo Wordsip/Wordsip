@@ -1,8 +1,25 @@
 const params = new URLSearchParams(window.location.search);
-const email = params.get('email');
+let email = params.get('email');
 const isGuest = params.get('guest') === 'true';
 
 fetch('/api/track-visit', { method: 'POST' }).catch(() => {});
+
+// Connexion persistante : si l'URL n'a pas d'email mais qu'un cookie de
+// session valide existe, on le récupère automatiquement (voir la même
+// logique dans mot-du-jour.js pour le détail).
+async function resolveSessionEmail() {
+  if (email || isGuest) return;
+  try {
+    const res = await fetch('/api/session');
+    const data = await res.json();
+    if (data.email) {
+      email = data.email;
+      const url = new URL(window.location.href);
+      url.searchParams.set('email', email);
+      window.history.replaceState({}, '', url);
+    }
+  } catch (err) { /* silencieux */ }
+}
 
 async function resolveLanguage() {
   if (email) {
@@ -16,6 +33,8 @@ async function resolveLanguage() {
 }
 
 async function init() {
+  await resolveSessionEmail();
+
   const navLinks = ['nav-mot-link', 'nav-phonetique-link', 'nav-dictee-link', 'nav-histoire-link'];
   navLinks.forEach((id) => {
     const el = document.getElementById(id);
@@ -616,8 +635,10 @@ function renderExerciseSection(lesson) {
     return `
       <div class="q-block">
         ${q.icon || ''}
-        <span class="chip">Question ${i + 1}</span>
-        <button type="button" class="fiche-listen-btn" title="Écouter la phrase" ${listenAttrs(spokenSentence)}>🔊 Écouter</button>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap;">
+          <span class="chip" style="margin-bottom:0;">Question ${i + 1}</span>
+          <button type="button" class="fiche-listen-btn" title="Écouter la phrase" ${listenAttrs(spokenSentence)}>🔊 Écouter</button>
+        </div>
         <div class="q-sentence">${sentenceHtml}</div>
         <div class="opt-grid">${optsHtml}</div>
         <div class="feedback" data-ok="${q.feedbackOk}" data-ko="${q.feedbackKo}"></div>

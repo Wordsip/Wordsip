@@ -1,18 +1,37 @@
 const params = new URLSearchParams(window.location.search);
-const email = params.get('email');
+let email = params.get('email');
 
 fetch('/api/track-visit', { method: 'POST' }).catch(() => {});
 
 let dicteeWords = [];
 
-// Conserve la query string (email) sur les autres liens du menu, comme sur
-// les autres pages du site.
-['nav-mot-link', 'nav-grammaire-link', 'nav-phonetique-link', 'nav-histoire-link'].forEach((id) => {
-  const el = document.getElementById(id);
-  if (el) el.href = `${el.getAttribute('href')}${window.location.search}`;
-});
+// Connexion persistante : si l'URL n'a pas d'email mais qu'un cookie de
+// session valide existe, on le récupère automatiquement (voir la même
+// logique dans mot-du-jour.js pour le détail).
+async function resolveSessionEmail() {
+  if (email) return;
+  try {
+    const res = await fetch('/api/session');
+    const data = await res.json();
+    if (data.email) {
+      email = data.email;
+      const url = new URL(window.location.href);
+      url.searchParams.set('email', email);
+      window.history.replaceState({}, '', url);
+    }
+  } catch (err) { /* silencieux */ }
+}
 
 async function init() {
+  await resolveSessionEmail();
+
+  // Conserve la query string (email) sur les autres liens du menu, comme sur
+  // les autres pages du site.
+  ['nav-mot-link', 'nav-grammaire-link', 'nav-phonetique-link', 'nav-histoire-link'].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.href = `${el.getAttribute('href')}${window.location.search}`;
+  });
+
   if (!email) {
     showLocked(
       '🔒 CONNEXION REQUISE',

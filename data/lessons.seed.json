@@ -1965,6 +1965,398 @@
           "feedbackKo": "Pas tout à fait : une chose → which."
         }
       ]
+    },
+    {
+      "id": "couleurs",
+      "title": "Colors",
+      "subtitle": "Les couleurs de base",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "Red",
+          "rule": "Rouge",
+          "examples": [
+            "The apple is red."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"#e74c3c\" stroke=\"#dceeed\" stroke-width=\"3\"/></svg>"
+        },
+        {
+          "title": "Orange",
+          "rule": "Orange",
+          "examples": [
+            "I love orange sunsets."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"#f39c12\" stroke=\"#dceeed\" stroke-width=\"3\"/></svg>"
+        },
+        {
+          "title": "Yellow",
+          "rule": "Jaune",
+          "examples": [
+            "The sun is yellow."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"#f1c40f\" stroke=\"#dceeed\" stroke-width=\"3\"/></svg>"
+        },
+        {
+          "title": "Green",
+          "rule": "Vert",
+          "examples": [
+            "The grass is green."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"#2ecc71\" stroke=\"#dceeed\" stroke-width=\"3\"/></svg>"
+        },
+        {
+          "title": "Blue",
+          "rule": "Bleu",
+          "examples": [
+            "The sky is blue today."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"#3498db\" stroke=\"#dceeed\" stroke-width=\"3\"/></svg>"
+        },
+        {
+          "title": "Purple",
+          "rule": "Violet",
+          "examples": [
+            "She has a purple bag."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"#9b59b6\" stroke=\"#dceeed\" stroke-width=\"3\"/></svg>"
+        },
+        {
+          "title": "Pink",
+          "rule": "Rose",
+          "examples": [
+            "My sister likes pink shoes."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"#ff6fa5\" stroke=\"#dceeed\" stroke-width=\"3\"/></svg>"
+        },
+        {
+          "title": "Brown",
+          "rule": "Marron",
+          "examples": [
+            "The dog has brown fur."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"#8b5e3c\" stroke=\"#dceeed\" stroke-width=\"3\"/></svg>"
+        },
+        {
+          "title": "Black",
+          "rule": "Noir",
+          "examples": [
+            "He is wearing a black coat."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"#2c3e50\" stroke=\"#dceeed\" stroke-width=\"3\"/></svg>"
+        },
+        {
+          "title": "White",
+          "rule": "Blanc",
+          "examples": [
+            "The snow is white."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"#ffffff\" stroke=\"#dceeed\" stroke-width=\"3\"/></svg>"
+        }
+      ],
+      "level": "niveau1",
+      "printUrl": "/fiches-couleurs-en.html",
+      "exercise": [
+        {
+          "sentence": "The sky is <span class=\"blank\"></span> on a clear day.",
+          "options": [
+            "blue",
+            "red",
+            "brown",
+            "yellow"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "blue — le ciel est bleu par temps clair.",
+          "feedbackKo": "Pas tout à fait : le ciel par temps clair → blue.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "Bananas are usually <span class=\"blank\"></span> when ripe.",
+          "options": [
+            "green",
+            "yellow",
+            "purple",
+            "black"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "yellow — une banane mûre est jaune.",
+          "feedbackKo": "Pas tout à fait : une banane mûre → yellow.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "Fresh grass in spring is <span class=\"blank\"></span>.",
+          "options": [
+            "orange",
+            "white",
+            "green",
+            "pink"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "green — l'herbe fraîche est verte.",
+          "feedbackKo": "Pas tout à fait : l'herbe → green.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "Fire engines are traditionally painted <span class=\"blank\"></span>.",
+          "options": [
+            "blue",
+            "red",
+            "brown",
+            "white"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "red — les camions de pompiers sont rouges.",
+          "feedbackKo": "Pas tout à fait : camion de pompiers → red.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "Snow falling in winter is <span class=\"blank\"></span>.",
+          "options": [
+            "black",
+            "orange",
+            "purple",
+            "white"
+          ],
+          "correctIndex": 3,
+          "feedbackOk": "white — la neige est blanche.",
+          "feedbackKo": "Pas tout à fait : la neige → white.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "A pumpkin at Halloween is <span class=\"blank\"></span>.",
+          "options": [
+            "pink",
+            "blue",
+            "orange",
+            "green"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "orange — la citrouille d'Halloween est orange.",
+          "feedbackKo": "Pas tout à fait : citrouille d'Halloween → orange.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "Chocolate is a deep <span class=\"blank\"></span> color.",
+          "options": [
+            "yellow",
+            "white",
+            "brown",
+            "purple"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "brown — le chocolat est marron.",
+          "feedbackKo": "Pas tout à fait : le chocolat → brown.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "Lavender flowers are famous for being <span class=\"blank\"></span>.",
+          "options": [
+            "red",
+            "black",
+            "orange",
+            "purple"
+          ],
+          "correctIndex": 3,
+          "feedbackOk": "purple — la lavande est violette.",
+          "feedbackKo": "Pas tout à fait : la lavande → purple.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        }
+      ]
+    },
+    {
+      "id": "nombres",
+      "title": "Numbers 1-10",
+      "subtitle": "Compter de 1 à 10",
+      "type": "rule",
+      "sections": [
+        {
+          "title": "One",
+          "rule": "Un",
+          "examples": [
+            "I have one brother."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><text x=\"50\" y=\"40\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Fredoka, sans-serif\" font-size=\"34\" font-weight=\"700\" fill=\"#2b7a78\">1</text></svg>"
+        },
+        {
+          "title": "Two",
+          "rule": "Deux",
+          "examples": [
+            "She has two cats."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><text x=\"50\" y=\"40\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Fredoka, sans-serif\" font-size=\"34\" font-weight=\"700\" fill=\"#2b7a78\">2</text></svg>"
+        },
+        {
+          "title": "Three",
+          "rule": "Trois",
+          "examples": [
+            "We need three chairs."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><text x=\"50\" y=\"40\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Fredoka, sans-serif\" font-size=\"34\" font-weight=\"700\" fill=\"#2b7a78\">3</text></svg>"
+        },
+        {
+          "title": "Four",
+          "rule": "Quatre",
+          "examples": [
+            "There are four seasons."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><text x=\"50\" y=\"40\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Fredoka, sans-serif\" font-size=\"34\" font-weight=\"700\" fill=\"#2b7a78\">4</text></svg>"
+        },
+        {
+          "title": "Five",
+          "rule": "Cinq",
+          "examples": [
+            "I wake up at five."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><text x=\"50\" y=\"40\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Fredoka, sans-serif\" font-size=\"34\" font-weight=\"700\" fill=\"#2b7a78\">5</text></svg>"
+        },
+        {
+          "title": "Six",
+          "rule": "Six",
+          "examples": [
+            "The shop opens at six."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><text x=\"50\" y=\"40\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Fredoka, sans-serif\" font-size=\"34\" font-weight=\"700\" fill=\"#2b7a78\">6</text></svg>"
+        },
+        {
+          "title": "Seven",
+          "rule": "Sept",
+          "examples": [
+            "There are seven days in a week."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><text x=\"50\" y=\"40\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Fredoka, sans-serif\" font-size=\"34\" font-weight=\"700\" fill=\"#2b7a78\">7</text></svg>"
+        },
+        {
+          "title": "Eight",
+          "rule": "Huit",
+          "examples": [
+            "My class starts at eight."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><text x=\"50\" y=\"40\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Fredoka, sans-serif\" font-size=\"34\" font-weight=\"700\" fill=\"#2b7a78\">8</text></svg>"
+        },
+        {
+          "title": "Nine",
+          "rule": "Neuf",
+          "examples": [
+            "The train leaves at nine."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><text x=\"50\" y=\"40\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Fredoka, sans-serif\" font-size=\"34\" font-weight=\"700\" fill=\"#2b7a78\">9</text></svg>"
+        },
+        {
+          "title": "Ten",
+          "rule": "Dix",
+          "examples": [
+            "Count from one to ten."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"28\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><text x=\"50\" y=\"40\" text-anchor=\"middle\" dominant-baseline=\"central\" font-family=\"Fredoka, sans-serif\" font-size=\"34\" font-weight=\"700\" fill=\"#2b7a78\">10</text></svg>"
+        }
+      ],
+      "level": "niveau1",
+      "printUrl": "/fiches-nombres-en.html",
+      "exercise": [
+        {
+          "sentence": "A triangle has <span class=\"blank\"></span> sides.",
+          "options": [
+            "two",
+            "three",
+            "four",
+            "five"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "three — un triangle a trois côtés.",
+          "feedbackKo": "Pas tout à fait : un triangle → three côtés.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "Most people have <span class=\"blank\"></span> fingers on one hand.",
+          "options": [
+            "four",
+            "six",
+            "five",
+            "ten"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "five — on a cinq doigts par main.",
+          "feedbackKo": "Pas tout à fait : une main → five doigts.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "A week has <span class=\"blank\"></span> days.",
+          "options": [
+            "six",
+            "eight",
+            "five",
+            "seven"
+          ],
+          "correctIndex": 3,
+          "feedbackOk": "seven — une semaine a sept jours.",
+          "feedbackKo": "Pas tout à fait : une semaine → seven jours.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "A bicycle has <span class=\"blank\"></span> wheels.",
+          "options": [
+            "two",
+            "three",
+            "one",
+            "four"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "two — un vélo a deux roues.",
+          "feedbackKo": "Pas tout à fait : un vélo → two roues.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "There is only <span class=\"blank\"></span> sun in our sky.",
+          "options": [
+            "two",
+            "three",
+            "one",
+            "ten"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "one — il n'y a qu'un seul soleil.",
+          "feedbackKo": "Pas tout à fait : un seul soleil → one.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "A car usually has <span class=\"blank\"></span> wheels.",
+          "options": [
+            "three",
+            "four",
+            "six",
+            "two"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "four — une voiture a quatre roues.",
+          "feedbackKo": "Pas tout à fait : une voiture → four roues.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "An octopus has <span class=\"blank\"></span> legs.",
+          "options": [
+            "six",
+            "nine",
+            "eight",
+            "ten"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "eight — une pieuvre a huit tentacules.",
+          "feedbackKo": "Pas tout à fait : une pieuvre → eight.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        },
+        {
+          "sentence": "Count from one to <span class=\"blank\"></span>.",
+          "options": [
+            "eight",
+            "nine",
+            "seven",
+            "ten"
+          ],
+          "correctIndex": 3,
+          "feedbackOk": "ten — on compte de un à dix.",
+          "feedbackKo": "Pas tout à fait : la dizaine complète → ten.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"40\" r=\"22\" fill=\"#2b7a78\"/></svg>"
+        }
+      ]
     }
   ],
   "es": [

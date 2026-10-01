@@ -19,9 +19,42 @@ const irregularVerbsService = require('../services/irregularVerbsService');
 const characterService = require('../services/characterService');
 const lessonService = require('../services/lessonService');
 const storyService = require('../services/storyService');
+const sessionService = require('../services/sessionService');
 const { rateLimit } = require('../services/rateLimiter');
 
 const LATEST_VIDEO_FILE = path.join(__dirname, '..', 'data', 'latest-video.json');
+
+// --- Connexion persistante (cookie de session) ---
+// Le cookie ne contient qu'un jeton aléatoire (voir services/sessionService),
+// jamais l'email en clair. httpOnly empêche tout script côté navigateur de
+// le lire (protection contre le vol par XSS) ; secure + sameSite=lax
+// protègent contre l'interception et l'envoi depuis un site tiers, tout en
+// laissant fonctionner les liens normaux (ex. cliquer un lien vers le site
+// depuis un email). 30 jours de validité, comme sessionService.SESSION_DAYS.
+const SESSION_COOKIE_NAME = 'wordsip_session';
+
+function readSessionCookie(req) {
+  const header = req.headers.cookie;
+  if (!header) return null;
+  const match = header.split(';').map((p) => p.trim()).find((p) => p.startsWith(`${SESSION_COOKIE_NAME}=`));
+  if (!match) return null;
+  return decodeURIComponent(match.slice(SESSION_COOKIE_NAME.length + 1));
+}
+
+async function setSessionCookie(res, email) {
+  const { token } = await sessionService.createSession(email);
+  res.cookie(SESSION_COOKIE_NAME, token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'lax',
+    maxAge: sessionService.SESSION_DAYS * 86400000,
+    path: '/',
+  });
+}
+
+function clearSessionCookie(res) {
+  res.clearCookie(SESSION_COOKIE_NAME, { path: '/' });
+}
 
 // Enregistre une visite (IP hachée, jamais stockée en clair) — appelé depuis
 // le front à chaque chargement des pages publiques, pour le compteur
@@ -182,10 +215,31 @@ router.post('/api/login', async (req, res) => {
     const passwordOk = await userService.verifyPassword(user, password);
     if (!passwordOk) return res.status(403).json({ error: 'Mot de passe incorrect.' });
 
+    await setSessionCookie(res, user.email);
     res.json({ email: user.email });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
+});
+
+// Résout la session à partir du cookie (voir setSessionCookie) — utilisée
+// par le front quand l'URL n'a pas de ?email=, pour retrouver qui est
+// connecté sans repasser par le formulaire (persistance de connexion).
+router.get('/api/session', async (req, res) => {
+  try {
+    const token = readSessionCookie(req);
+    const email = await sessionService.getEmailFromToken(token);
+    res.json({ email: email || null });
+  } catch (err) {
+    res.json({ email: null });
+  }
+});
+
+router.post('/api/logout', async (req, res) => {
+  const token = readSessionCookie(req);
+  await sessionService.deleteSession(token);
+  clearSessionCookie(res);
+  res.json({ ok: true });
 });
 
 // --- Tâches planifiées déclenchées en externe (cron-job.org) ---
@@ -401,6 +455,7 @@ router.post('/api/signup', async (req, res) => {
       revealSeconds: parseInt(revealSeconds, 10) || 10,
     });
 
+    await setSessionCookie(res, user.email);
     res.status(201).json({ message: 'Inscription réussie !', user });
 
     // Envoi de l'email de bienvenue en arrière-plan, sans bloquer la réponse

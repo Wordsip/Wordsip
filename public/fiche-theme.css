@@ -156,9 +156,9 @@ table.memo .ex { display: block; color: #7c9a97; font-size: .78rem; margin-top: 
 .q-block.answered .opt { cursor: default; pointer-events: none; }
 .q-icon { float: left; width: 48px; height: 40px; margin: 0 10px 8px 0; }
 .fiche-listen-btn {
-  display: inline-block; float: right; background: var(--fiche-mint-100); color: var(--fiche-teal-700);
+  display: inline-flex; align-items: center; gap: 4px; background: var(--fiche-mint-100); color: var(--fiche-teal-700);
   border: 1.5px solid var(--fiche-teal-500); border-radius: 999px; padding: 4px 12px;
-  font-size: .78rem; font-weight: 600; cursor: pointer; margin-bottom: 6px;
+  font-size: .78rem; font-weight: 600; cursor: pointer;
 }
 .fiche-listen-btn:hover { background: var(--fiche-teal-500); color: #fff; }
 .prep-card:hover, table.memo tr[data-lang]:hover { background: var(--fiche-mint-100); }
