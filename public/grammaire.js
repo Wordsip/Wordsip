@@ -147,14 +147,17 @@ function renderVerbStudyTable() {
   const labels = VERB_FORM_LABELS[currentVerbLanguage] || VERB_FORM_LABELS.en;
   const container = document.getElementById('verbs-quiz-container');
 
-  const rows = allVerbs.map((v) => `
-    <tr>
-      <td style="padding:6px 8px;font-weight:600;">${v.base}</td>
+  const rows = allVerbs.map((v) => {
+    const spoken = `${v.base}. ${v.past}. ${v.participle}`;
+    return `
+    <tr style="cursor:pointer;" title="Cliquer pour écouter" ${listenAttrs(spoken, currentVerbLanguage)}>
+      <td style="padding:6px 8px;font-weight:600;">🔊 ${v.base}</td>
       <td style="padding:6px 8px;color:#666;font-size:12px;">${v.translation}</td>
       <td style="padding:6px 8px;">${v.past}</td>
       <td style="padding:6px 8px;">${v.participle}</td>
     </tr>
-  `).join('');
+  `;
+  }).join('');
 
   container.innerHTML = `
     <div style="overflow-x:auto;">
@@ -176,6 +179,8 @@ function renderVerbStudyTable() {
   document.getElementById('verbs-quiz-check-btn').style.display = 'inline-block';
   document.getElementById('verbs-quiz-check-btn').onclick = startVerbQuiz;
   document.getElementById('verbs-quiz-retry-btn').style.display = 'none';
+  const flipSection = document.getElementById('verbs-flip-section');
+  if (flipSection) flipSection.style.display = 'none';
   document.getElementById('verbs-quiz-result').style.display = 'none';
 }
 
@@ -226,6 +231,7 @@ function renderVerbQuiz() {
       <p style="font-size:14px;margin-bottom:6px;">
         ${i + 1}. <strong>${q.base}</strong> <span style="color:#999;font-size:12px;">(${q.translation})</span>
         — donne le <strong>${q.formLabel}</strong>
+        <button type="button" class="fiche-listen-btn" style="margin-left:6px;" ${listenAttrs(q.base, currentVerbLanguage)}>🔊</button>
       </p>
       ${q.type === 'multiple_choice'
         ? `<div style="display:flex;gap:8px;flex-wrap:wrap;">
@@ -312,6 +318,108 @@ document.getElementById('verbs-quiz-retry-btn').addEventListener('click', () => 
   // Repasse par la table de révision avant une nouvelle série, plutôt que
   // d'enchaîner directement sur un nouveau quiz à froid.
   renderVerbStudyTable();
+});
+
+// --- Jeu de cartes (verbes irréguliers) ---
+// Une carte à la fois : face avant le verbe de base (+ audio), on écrit la
+// forme demandée, la carte se retourne pour montrer si c'est correct.
+let flipDeck = [];
+let flipIndex = 0;
+let flipScore = 0;
+
+function buildFlipDeck() {
+  const labels = VERB_FORM_LABELS[currentVerbLanguage] || VERB_FORM_LABELS.en;
+  const shuffled = [...allVerbs].sort(() => Math.random() - 0.5);
+  const chosen = shuffled.slice(0, Math.min(QUESTIONS_PER_ROUND, shuffled.length));
+  return chosen.map((verb) => {
+    const formKey = Math.random() < 0.5 ? 'past' : 'participle';
+    return {
+      base: verb.base,
+      translation: verb.translation,
+      formKey,
+      formLabel: labels[formKey],
+      correctVariants: formVariants(verb[formKey]),
+    };
+  });
+}
+
+function startVerbFlipGame() {
+  flipDeck = buildFlipDeck();
+  flipIndex = 0;
+  flipScore = 0;
+  document.getElementById('verbs-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.getElementById('verbs-flip-section').style.display = 'block';
+  document.getElementById('flip-card-final').style.display = 'none';
+  renderFlipCard();
+}
+
+function renderFlipCard() {
+  const card = flipDeck[flipIndex];
+  document.getElementById('flip-card-inner').style.transform = 'rotateY(0deg)';
+  document.getElementById('flip-card-num').textContent = flipIndex + 1;
+  document.getElementById('flip-card-total').textContent = flipDeck.length;
+  document.getElementById('flip-card-score').textContent = flipScore;
+  document.getElementById('flip-card-base').textContent = card.base;
+  document.getElementById('flip-card-translation').textContent = card.translation;
+  document.getElementById('flip-card-prompt').textContent = `Écris le ${card.formLabel}`;
+  const listenBtn = document.getElementById('flip-card-listen-btn');
+  listenBtn.dataset.text = encodeURIComponent(card.base);
+  listenBtn.dataset.lang = currentVerbLanguage;
+
+  const input = document.getElementById('flip-card-input');
+  input.value = '';
+  input.disabled = false;
+  input.style.borderColor = '';
+  document.getElementById('flip-card-check-btn').style.display = 'inline-block';
+  document.getElementById('flip-card-next-btn').style.display = 'none';
+  input.focus();
+}
+
+function checkFlipCard() {
+  const card = flipDeck[flipIndex];
+  const input = document.getElementById('flip-card-input');
+  const value = input.value.trim().toLowerCase();
+  const isCorrect = card.correctVariants.some((v) => v.toLowerCase() === value);
+
+  if (isCorrect) flipScore += 1;
+  document.getElementById('flip-card-score').textContent = flipScore;
+  input.disabled = true;
+  input.style.borderColor = isCorrect ? '#1a7a3e' : '#c0392b';
+
+  document.getElementById('flip-card-feedback').textContent = isCorrect ? '✓ Correct !' : '✗ Pas tout à fait';
+  document.getElementById('flip-card-feedback').style.color = isCorrect ? '#1a7a3e' : '#b83f2e';
+  document.getElementById('flip-card-answer').textContent = isCorrect ? '' : `Réponse : ${card.correctVariants.join(' / ')}`;
+
+  document.getElementById('flip-card-inner').style.transform = 'rotateY(180deg)';
+  document.getElementById('flip-card-check-btn').style.display = 'none';
+  document.getElementById('flip-card-next-btn').style.display = 'inline-block';
+
+  const isLast = flipIndex === flipDeck.length - 1;
+  document.getElementById('flip-card-next-btn').textContent = isLast ? 'Voir le résultat' : 'Carte suivante →';
+}
+
+function nextFlipCard() {
+  if (flipIndex === flipDeck.length - 1) {
+    const finalEl = document.getElementById('flip-card-final');
+    finalEl.style.display = 'block';
+    finalEl.style.color = flipScore === flipDeck.length ? '#1a7a3e' : '#333';
+    finalEl.textContent = `Terminé ! ${flipScore} / ${flipDeck.length} cartes réussies.`;
+    document.getElementById('flip-card-next-btn').style.display = 'none';
+    return;
+  }
+  flipIndex += 1;
+  renderFlipCard();
+}
+
+document.getElementById('verbs-flip-launch-btn').addEventListener('click', startVerbFlipGame);
+document.getElementById('flip-card-check-btn').addEventListener('click', checkFlipCard);
+document.getElementById('flip-card-next-btn').addEventListener('click', nextFlipCard);
+document.getElementById('flip-card-listen-btn').addEventListener('click', function () { speakText(this); });
+document.getElementById('flip-card-input').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !document.getElementById('flip-card-input').disabled) checkFlipCard();
+});
+document.getElementById('flip-card-exit-btn').addEventListener('click', () => {
+  document.getElementById('verbs-flip-section').style.display = 'none';
 });
 
 // --- Fiches de caractères (japonais : hiragana/katakana, chinois : radicaux) ---

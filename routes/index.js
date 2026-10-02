@@ -163,9 +163,11 @@ router.get('/api/account-status', async (req, res) => {
   try {
     const { email } = req.query;
     if (!email) return res.status(400).json({ error: 'Email requis.' });
-    if (email.trim().toLowerCase() !== ADMIN_EMAIL) {
-      return res.json({ exists: false, hasPassword: false });
-    }
+    // Vérifie le VRAI statut du compte, quel qu'il soit — pas seulement
+    // l'admin. La création de mot de passe en libre-service (ci-dessous,
+    // /api/create-password) reste volontairement réservée à l'admin : pour
+    // les autres comptes (ex. comptes de test), le mot de passe est défini
+    // par l'admin via le panneau /admin, pas auto-créable depuis cet écran.
     const user = await userService.findByEmail(email);
     res.json({ exists: !!user, hasPassword: !!(user && user.passwordHash) });
   } catch (err) {

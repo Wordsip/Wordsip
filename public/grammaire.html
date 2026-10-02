@@ -45,8 +45,42 @@
         <section class="info-card" style="margin-top:16px;">
           <div id="verbs-quiz-container"></div>
           <div id="verbs-quiz-result" style="display:none;text-align:center;font-weight:600;margin-top:10px;"></div>
-          <button id="verbs-quiz-check-btn" style="margin-top:10px;">Vérifier mes réponses</button>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
+            <button id="verbs-quiz-check-btn">Vérifier mes réponses</button>
+            <button id="verbs-flip-launch-btn" style="background:white;color:#2b7a78;border:1.5px solid #2b7a78;">🎴 Jeu de cartes</button>
+          </div>
           <button id="verbs-quiz-retry-btn" style="display:none;margin-top:10px;">Nouvelle série</button>
+        </section>
+
+        <!-- Jeu de cartes : une carte à la fois, on la retourne et on écrit
+             la bonne forme — bascule avec le quiz classique ci-dessus. -->
+        <section class="info-card" id="verbs-flip-section" style="display:none;margin-top:16px;text-align:center;">
+          <p style="font-size:12px;color:#999;margin-bottom:12px;">Carte <span id="flip-card-num">1</span> / <span id="flip-card-total">10</span> · Score : <span id="flip-card-score">0</span></p>
+
+          <div id="flip-card-scene" style="perspective:1000px;max-width:360px;margin:0 auto;">
+            <div id="flip-card-inner" style="position:relative;width:100%;min-height:170px;transition:transform .5s;transform-style:preserve-3d;">
+              <div id="flip-card-front" style="position:absolute;inset:0;backface-visibility:hidden;border:2px solid #2b7a78;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;background:#fff;">
+                <p id="flip-card-base" style="font-size:1.6rem;font-weight:700;color:#17252a;margin:0;"></p>
+                <p id="flip-card-translation" style="font-size:.9rem;color:#999;margin:4px 0 10px;"></p>
+                <button type="button" id="flip-card-listen-btn" class="fiche-listen-btn" style="margin-bottom:10px;">🔊 Écouter</button>
+                <p id="flip-card-prompt" style="font-size:.85rem;color:#2b7a78;font-weight:600;"></p>
+              </div>
+              <div id="flip-card-back" style="position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);border:2px solid #3aafa9;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;background:#eaf6f5;">
+                <p id="flip-card-feedback" style="font-size:1rem;font-weight:700;margin:0 0 6px;"></p>
+                <p id="flip-card-answer" style="font-size:.9rem;color:#555;"></p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px;">
+            <input type="text" id="flip-card-input" placeholder="Écris ta réponse..." style="max-width:260px;text-align:center;">
+          </div>
+          <div style="display:flex;gap:10px;justify-content:center;margin-top:12px;flex-wrap:wrap;">
+            <button type="button" id="flip-card-check-btn">Vérifier</button>
+            <button type="button" id="flip-card-next-btn" style="display:none;">Carte suivante →</button>
+            <button type="button" id="flip-card-exit-btn" style="background:white;color:#999;border:1.5px solid #ddd;">Quitter le jeu</button>
+          </div>
+          <p id="flip-card-final" style="display:none;font-weight:700;margin-top:14px;"></p>
         </section>
       </div>
     </div>
