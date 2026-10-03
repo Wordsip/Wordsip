@@ -95,7 +95,7 @@ router.get('/grammaire', (req, res) => {
   res.sendFile('grammaire.html', { root: 'public' });
 });
 
-// Dictée mensuelle (mots appris + avant-goût du niveau suivant)
+// Dictée (mots appris + avant-goût du niveau suivant, 4 lignes max)
 router.get('/dictee', (req, res) => {
   res.sendFile('dictee.html', { root: 'public' });
 });
@@ -557,12 +557,13 @@ router.get('/api/stories/:id', async (req, res) => {
   }
 });
 
-// Dictée mensuelle : débloquée 30 jours après l'inscription, mélange de
-// mots déjà validés (révision de l'orthographe) et de nouveaux mots piochés
-// dans le niveau suivant (avant-goût de la suite). Réservée aux comptes
-// inscrits — le mode invité n'a pas d'historique de mots appris ni de date
-// d'inscription à 30 jours, donc rien de pertinent à proposer.
-const DICTEE_UNLOCK_DAYS = 30;
+// Dictée courte (texte suivi, 4 lignes max) : débloquée à partir de 6 mots
+// appris (pas une histoire de date). Construite uniquement avec les phrases
+// d'exemple des mots déjà validés par l'utilisateur — ces mots sont mis en
+// surbrillance côté front dans la correction. Réservée aux comptes inscrits
+// — le mode invité n'a pas d'historique de mots appris, donc rien de
+// pertinent à construire.
+const DICTEE_UNLOCK_WORDS = 6;
 router.get('/api/dictee', async (req, res) => {
   try {
     const { email } = req.query;
@@ -572,15 +573,14 @@ router.get('/api/dictee', async (req, res) => {
     const user = await userService.findByEmail(email);
     if (!user) return res.status(404).json({ error: 'Utilisateur introuvable.' });
 
-    const daysSinceSignup = Math.floor(
-      (Date.now() - new Date(user.createdAt).getTime()) / 86400000
-    );
+    const level = wordService.getSubLevel(user);
+    const wordsLearned = ((user.validatedWords && user.validatedWords[level]) || []).length;
 
-    if (daysSinceSignup < DICTEE_UNLOCK_DAYS) {
+    if (wordsLearned < DICTEE_UNLOCK_WORDS) {
       return res.json({
         available: false,
-        daysRemaining: DICTEE_UNLOCK_DAYS - daysSinceSignup,
-        unlockDays: DICTEE_UNLOCK_DAYS,
+        wordsLearned,
+        unlockWords: DICTEE_UNLOCK_WORDS,
       });
     }
 

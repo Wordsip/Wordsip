@@ -3,8 +3,6 @@ let email = params.get('email');
 
 fetch('/api/track-visit', { method: 'POST' }).catch(() => {});
 
-let dicteeWords = [];
-
 // Connexion persistante : si l'URL n'a pas d'email mais qu'un cookie de
 // session valide existe, on le récupère automatiquement (voir la même
 // logique dans mot-du-jour.js pour le détail).
@@ -35,7 +33,7 @@ async function init() {
   if (!email) {
     showLocked(
       '🔒 CONNEXION REQUISE',
-      'La dictée mensuelle est réservée aux comptes inscrits — elle se base sur tes mots déjà appris. ' +
+      'La dictée est réservée aux comptes inscrits — elle se base sur tes mots déjà appris. ' +
       '<br><a href="/" class="reveal-btn" style="display:inline-block;margin-top:12px;text-decoration:none;text-align:center;">Retour à l\'accueil</a>'
     );
     return;
@@ -58,11 +56,11 @@ async function init() {
           'Il n\'y a pas encore assez de mots validés ou disponibles pour composer ta dictée. Reviens un peu plus tard, après avoir appris quelques mots de plus !'
         );
       } else {
-        const days = data.daysRemaining;
+        const remaining = (data.unlockWords || 6) - (data.wordsLearned || 0);
         showLocked(
           '🔒 DICTÉE PAS ENCORE DISPONIBLE',
-          `La dictée mensuelle se débloque après ${data.unlockDays || 30} jours de compte, pour avoir de vrais mots appris à réviser. ` +
-          `Encore <b>${days} jour${days > 1 ? 's' : ''}</b> avant de pouvoir la faire !`
+          `La dictée se débloque à partir de ${data.unlockWords || 6} mots appris, pour avoir de vrais mots à réviser. ` +
+          `Tu en as <b>${data.wordsLearned || 0}</b> pour l'instant — encore <b>${remaining} mot${remaining > 1 ? 's' : ''}</b> à apprendre sur "Mon mot" !`
         );
       }
       return;
@@ -75,7 +73,6 @@ async function init() {
 
     document.getElementById('level-badge').textContent = data.level.replace('niveau', 'Niveau ');
 
-    dicteeWords = data.words;
     renderDictee(data, lang);
     document.getElementById('loading').style.display = 'none';
     document.getElementById('dictee-content').style.display = 'block';
@@ -101,65 +98,72 @@ function showLocked(title, message) {
   document.getElementById('locked-content').style.display = 'block';
 }
 
+// Normalise pour comparer sans se faire piéger par la casse, les espaces en
+// trop, ou une ponctuation finale oubliée — la dictée reste une dictée,
+// mais un point final manquant ne doit pas annuler tout le reste.
 function normalize(str) {
-  return (str || '').trim().toLowerCase();
+  return (str || '')
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .replace(/[.,!?;:]+$/g, '');
+}
+
+// Met en gras/surbrillance chaque mot appris là où il apparaît dans le
+// texte correct (recherche insensible à la casse, sur un mot entier).
+function highlightLearnedWords(text, words) {
+  let html = text;
+  words.forEach((w) => {
+    const re = new RegExp(`\\b(${w.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})\\b`, 'gi');
+    html = html.replace(re, '<b style="color:#2b7a78;background:#eaf6f5;border-radius:4px;padding:1px 3px;">$1</b>');
+  });
+  return html;
 }
 
 function renderDictee(data, lang) {
-  const list = document.getElementById('dictee-list');
-  list.innerHTML = data.words.map((w, i) => `
-    <div class="dictee-row" id="dictee-row-${i}" data-word="${encodeURIComponent(w.word)}">
-      <button type="button" class="dictee-play-btn" data-index="${i}" title="Écouter">🔊</button>
-      <input type="text" class="dictee-input" id="dictee-input-${i}" placeholder="Écris ce que tu entends...">
-      ${w.isNew ? '<span class="dictee-new-badge">🆕 nouveau — niveau suivant</span>' : '<span class="dictee-new-badge" style="color:#2b7a78;background:#e6f7ec;">✅ déjà appris</span>'}
-      <div class="dictee-feedback" id="dictee-feedback-${i}" style="display:none;"></div>
-    </div>
-  `).join('');
+  document.getElementById('dictee-play-btn').onclick = () => {
+    const audio = new Audio(`/api/tts?text=${encodeURIComponent(data.text)}&lang=${lang}`);
+    audio.play().catch(() => {});
+  };
 
-  list.querySelectorAll('.dictee-play-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const i = Number(btn.dataset.index);
-      const audio = new Audio(`/api/tts?text=${encodeURIComponent(dicteeWords[i].word)}&lang=${lang}`);
-      audio.play().catch(() => {});
-    });
-  });
-
-  document.getElementById('check-all-btn').addEventListener('click', checkAll);
-  document.getElementById('new-series-btn').addEventListener('click', () => {
+  document.getElementById('check-all-btn').onclick = () => checkDictee(data);
+  document.getElementById('new-series-btn').onclick = () => {
     document.getElementById('dictee-content').style.display = 'none';
+    document.getElementById('dictee-result').style.display = 'none';
+    document.getElementById('dictee-input').value = '';
+    document.getElementById('dictee-input').disabled = false;
+    document.getElementById('check-all-btn').style.display = 'inline-block';
+    document.getElementById('new-series-btn').style.display = 'none';
     document.getElementById('loading').style.display = 'block';
-    document.getElementById('loading').textContent = 'Nouvelle série en préparation...';
+    document.getElementById('loading').textContent = 'Nouvelle dictée en préparation...';
     init();
-  });
+  };
 }
 
-function checkAll() {
-  let correct = 0;
-  dicteeWords.forEach((w, i) => {
-    const input = document.getElementById(`dictee-input-${i}`);
-    const row = document.getElementById(`dictee-row-${i}`);
-    const feedback = document.getElementById(`dictee-feedback-${i}`);
-    const isCorrect = normalize(input.value) === normalize(w.word);
+function checkDictee(data) {
+  const input = document.getElementById('dictee-input');
+  const userText = input.value;
 
-    row.classList.remove('correct', 'incorrect');
-    row.classList.add(isCorrect ? 'correct' : 'incorrect');
-    input.disabled = true;
-
-    feedback.style.display = 'block';
-    feedback.className = `dictee-feedback ${isCorrect ? 'ok' : 'ko'}`;
-    feedback.textContent = isCorrect
-      ? `✓ Correct ! (${w.translation})`
-      : `✗ La bonne orthographe était : « ${w.word} » (${w.translation})`;
-
-    if (isCorrect) correct += 1;
+  // Comparaison phrase par phrase (plus juste qu'un simple égal/différent
+  // sur tout le texte : une seule faute ne doit pas tout faire échouer).
+  const correctSentences = data.text.split(/(?<=[.!?])\s+/).filter(Boolean);
+  const userSentences = userText.split(/(?<=[.!?])\s+/).filter(Boolean);
+  let correctCount = 0;
+  correctSentences.forEach((s, i) => {
+    if (normalize(userSentences[i]) === normalize(s)) correctCount += 1;
   });
 
+  input.disabled = true;
   document.getElementById('check-all-btn').style.display = 'none';
-  const scoreEl = document.getElementById('dictee-score');
-  scoreEl.style.display = 'block';
-  scoreEl.style.color = correct === dicteeWords.length ? '#1a7a3e' : '#333';
-  scoreEl.textContent = `${correct} / ${dicteeWords.length} mots bien orthographiés`;
   document.getElementById('new-series-btn').style.display = 'inline-block';
+
+  const scoreLabel = document.getElementById('dictee-score-label');
+  const allCorrect = correctCount === correctSentences.length;
+  scoreLabel.textContent = `${allCorrect ? '✅' : '📝'} ${correctCount} / ${correctSentences.length} phrases correctes`;
+  scoreLabel.style.color = allCorrect ? '#1a7a3e' : '#17252a';
+
+  document.getElementById('dictee-correct-text').innerHTML = highlightLearnedWords(data.text, data.words);
+  document.getElementById('dictee-result').style.display = 'block';
 }
 
 init();

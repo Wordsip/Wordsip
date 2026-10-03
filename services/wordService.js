@@ -324,44 +324,53 @@ function shuffle(arr) {
   return a;
 }
 
-// Construit une dictée mensuelle : un mélange de mots déjà appris (pour
-// réviser l'orthographe) et de nouveaux mots piochés dans le niveau suivant
-// (pour donner un avant-goût de ce qui arrive). Débloquée uniquement après
-// 1 mois de compte (vérifié côté route, pas ici) — cette fonction se charge
-// seulement du contenu une fois qu'on sait que l'utilisateur y a droit.
-const LEARNED_COUNT = 5;
-const NEW_COUNT = 5;
+// Construit une dictée courte (4 lignes maximum) : moitié mots déjà appris
+// (pour réviser l'orthographe — mis en surbrillance côté front) et moitié
+// nouveaux mots piochés dans le niveau suivant (avant-goût de ce qui
+// arrive). Débloquée à partir de 6 mots appris (vérifié côté route, pas
+// ici) — cette fonction se charge seulement du contenu une fois qu'on sait
+// que l'utilisateur y a droit.
+// Une vraie dictée doit être un texte suivi à écouter et transcrire — pas
+// une liste de mots isolés. On la construit avec les phrases d'exemple déjà
+// écrites pour les mots que l'utilisateur a réellement appris (jamais de
+// texte inventé), en s'arrêtant autour de 4 lignes pour rester courte.
+// Débloquée à partir de DICTEE_UNLOCK_WORDS mots appris (voir la route) —
+// le contenu reflète donc ce seuil : jusqu'à ce nombre de mots piochés
+// parmi les mots validés, pas juste 2 comme avant.
+const DICTEE_MAX_WORDS = 6;
+const DICTEE_MAX_CHARS = 320; // ~4 lignes à l'écran
 
 async function buildDictee(user) {
   const languageWords = await getWordsForLanguage(user.language);
   if (!languageWords) return null;
 
   const level = getSubLevel(user);
-  const nextLevel = getNextLevel(level) || level; // niveau3 : repioche dans niveau3
-
   const validatedAtLevel = (user.validatedWords && user.validatedWords[level]) || [];
-  const validatedAtNextLevel = (user.validatedWords && user.validatedWords[nextLevel]) || [];
-
   const levelActiveWords = (languageWords[level] || []).filter((w) => !w.disabled);
-  const nextLevelActiveWords = (languageWords[nextLevel] || []).filter((w) => !w.disabled);
 
-  // Mots déjà validés par l'utilisateur à son niveau (révision) — on ne
-  // garde que ceux encore présents et actifs dans la base (un mot a pu être
-  // supprimé ou bloqué par l'admin depuis).
+  // Mots déjà validés par l'utilisateur — seuls ceux encore présents et
+  // actifs dans la base sont utilisables (un mot a pu être supprimé ou
+  // bloqué par l'admin depuis sa validation).
   const learnedPool = levelActiveWords.filter((w) => validatedAtLevel.includes(w.word));
+  if (learnedPool.length === 0) return { level, text: '', words: [] };
 
-  // Mots pas encore vus, piochés dans le niveau suivant (ou le même niveau
-  // s'il n'y en a pas, pour ne jamais renvoyer une dictée vide à niveau3).
-  const newPool = nextLevelActiveWords.filter((w) => !validatedAtNextLevel.includes(w.word));
+  const picks = shuffle(learnedPool).slice(0, DICTEE_MAX_WORDS);
 
-  const learnedPicks = shuffle(learnedPool).slice(0, LEARNED_COUNT)
-    .map((w) => ({ word: w.word, translation: w.translation, subLevel: level, isNew: false }));
-  const newPicks = shuffle(newPool).slice(0, NEW_COUNT)
-    .map((w) => ({ word: w.word, translation: w.translation, subLevel: nextLevel, isNew: true }));
+  // Assemble les phrases d'exemple une par une, sans dépasser la longueur
+  // visée — s'arrête dès qu'ajouter la phrase suivante ferait déborder les
+  // 4 lignes, plutôt que de tout mettre puis couper au milieu d'une phrase.
+  const used = [];
+  let text = '';
+  for (const w of picks) {
+    const sentence = (w.examples && w.examples[0]) || w.word;
+    const candidate = text ? `${text} ${sentence}` : sentence;
+    if (candidate.length > DICTEE_MAX_CHARS && used.length > 0) break;
+    text = candidate;
+    used.push({ word: w.word, translation: w.translation });
+    if (text.length > DICTEE_MAX_CHARS) break;
+  }
 
-  const words = shuffle([...learnedPicks, ...newPicks]);
-
-  return { level, nextLevel: nextLevel === level ? null : nextLevel, words };
+  return { level, text, words: used };
 }
 
 module.exports = {

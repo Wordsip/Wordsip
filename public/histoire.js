@@ -1,5 +1,5 @@
 const params = new URLSearchParams(window.location.search);
-const email = params.get('email');
+let email = params.get('email');
 // Aperçu admin : toutes les histoires d'une langue, sans compte ni déblocage
 const isPreview = params.get('adminPreview') === 'true' && params.get('lang');
 const previewLang = params.get('lang');
@@ -8,6 +8,23 @@ const previewLang = params.get('lang');
   const el = document.getElementById(id);
   if (el) el.href = `${el.getAttribute('href')}${window.location.search}`;
 });
+
+// Connexion persistante : si l'URL n'a pas d'email mais qu'un cookie de
+// session valide existe, on le récupère automatiquement (voir la même
+// logique dans mot-du-jour.js pour le détail).
+async function resolveSessionEmail() {
+  if (email || isPreview) return;
+  try {
+    const res = await fetch('/api/session');
+    const data = await res.json();
+    if (data.email) {
+      email = data.email;
+      const url = new URL(window.location.href);
+      url.searchParams.set('email', email);
+      window.history.replaceState({}, '', url);
+    }
+  } catch (err) { /* silencieux */ }
+}
 
 const CJK = ['ja', 'zh'];
 let language = 'en';
@@ -27,6 +44,7 @@ function showLocked(title, message) {
 }
 
 async function init() {
+  await resolveSessionEmail();
   if (!email && !isPreview) {
     showLocked('🔒 CONNEXION REQUISE',
       "Les histoires se débloquent avec les mots que tu apprends — il faut un compte pour ça." +

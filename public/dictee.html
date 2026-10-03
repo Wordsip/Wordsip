@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dictée mensuelle — WordSip</title>
+  <title>Dictée — WordSip</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -21,12 +21,12 @@
       <a href="/histoire" id="nav-histoire-link" style="color:#666;">Histoires</a>
     </nav>
 
-    <h2 style="text-align:center;margin-bottom:6px;">✍️ Dictée mensuelle</h2>
-    <p style="text-align:center;font-size:13px;color:#666;margin-bottom:20px;">Révise les mots appris ce mois-ci, et découvre un avant-goût du niveau suivant</p>
+    <h2 style="text-align:center;margin-bottom:6px;">✍️ Dictée</h2>
+    <p style="text-align:center;font-size:13px;color:#666;margin-bottom:20px;">Un petit texte (4 lignes max) construit avec tes mots déjà appris</p>
 
     <div id="loading">Chargement...</div>
 
-    <!-- Compte non éligible (invité ou < 30 jours) -->
+    <!-- Compte non éligible (invité ou moins de 6 mots appris) -->
     <div id="locked-content" style="display:none;">
       <div class="info-card">
         <p class="info-title" id="locked-title">🔒 DICTÉE PAS ENCORE DISPONIBLE</p>
@@ -38,15 +38,27 @@
     <div id="dictee-content" style="display:none;">
       <div class="info-card" style="margin-bottom:16px;">
         <p class="info-title">🎯 COMMENT ÇA MARCHE</p>
-        <p>Clique sur 🔊 pour écouter chaque mot, écris ce que tu entends, puis vérifie. Les mots marqués <span style="color:#e8734f;font-weight:600;">🆕 nouveau</span> viennent du niveau suivant — normal de ne pas encore les connaître !</p>
+        <p>Écoute le texte (bouton 🔊), écris ce que tu entends dans la zone ci-dessous, puis vérifie. Les mots que tu as déjà appris apparaîtront en <span style="color:#2b7a78;font-weight:600;">surbrillance</span> dans la correction.</p>
       </div>
 
-      <div id="dictee-list"></div>
+      <div class="info-card" style="text-align:center;margin-bottom:16px;">
+        <button type="button" id="dictee-play-btn" style="width:auto;padding:10px 22px;">🔊 Écouter la dictée</button>
+        <p style="font-size:11px;color:#999;margin-top:8px;">Tu peux réécouter autant de fois que tu veux</p>
+      </div>
+
+      <textarea id="dictee-input" rows="4" placeholder="Écris ici ce que tu entends..." style="width:100%;box-sizing:border-box;font-size:1rem;padding:12px;border-radius:12px;border:1.5px solid #d0f0ee;resize:vertical;"></textarea>
 
       <div style="text-align:center;margin-top:16px;">
-        <button id="check-all-btn">Vérifier toute la dictée</button>
-        <p id="dictee-score" style="display:none;font-weight:700;margin-top:10px;"></p>
-        <button id="new-series-btn" style="display:none;margin-top:8px;background:white;color:#2b7a78;border:1.5px solid #2b7a78;">Nouvelle série</button>
+        <button id="check-all-btn">Vérifier ma dictée</button>
+        <button id="new-series-btn" style="display:none;margin-top:8px;background:white;color:#2b7a78;border:1.5px solid #2b7a78;">Nouvelle dictée</button>
+      </div>
+
+      <div id="dictee-result" style="display:none;margin-top:18px;">
+        <div class="info-card">
+          <p class="info-title" id="dictee-score-label"></p>
+          <p style="font-size:12px;color:#999;margin-bottom:6px;">Le texte correct (mots appris en surbrillance) :</p>
+          <p id="dictee-correct-text" style="font-size:1rem;line-height:1.7;"></p>
+        </div>
       </div>
     </div>
   </div>
