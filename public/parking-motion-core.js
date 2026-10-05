@@ -6,5 +6,6 @@
     const u=(t-a[0])/(b[0]-a[0]),s=u*u*(3-2*u);return {x:a[1]+(b[1]-a[1])*s,y:a[2]+(b[2]-a[2])*s,angle:a[3]+(b[3]-a[3])*s};
   }
   function canValidate(selected,count,busy,passed){return !busy&&!passed&&selected.length===count;}
-  const api={layout,pose,canValidate};if(typeof module==='object'&&module.exports)module.exports=api;else root.WordSipParkingMotion=api;
+  function obstaclePose(t,home,board){t=Math.max(0,Math.min(1,t));const smooth=u=>u*u*(3-2*u);if(t<.5)return {x:home.x+(board.lane-home.x)*smooth(t*2),y:home.y,angle:0};if(t<.65)return {x:board.lane,y:home.y,angle:-90*smooth((t-.5)/.15)};return {x:board.lane,y:home.y+(-100-home.y)*smooth((t-.65)/.35),angle:-90};}
+  const api={layout,pose,canValidate,obstaclePose};if(typeof module==='object'&&module.exports)module.exports=api;else root.WordSipParkingMotion=api;
 })(typeof window!=='undefined'?window:globalThis);

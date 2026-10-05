@@ -1,5 +1,6 @@
 (() => {
   const $=id=>document.getElementById(id),G=WordSipLearningGames,params=new URLSearchParams(location.search);
+  const pageGame=location.pathname.split('/')[2];
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   let language=params.get('lang')||'en',lessons=[],active='matching',score=0,selection=null,matched=[],ballRound=0,ballPrompts=[],ballLocation=[320,365],oddRound=0,loadVersion=0,level=params.get('level')||'niveau1',profileEmail=params.get('email'),pathMode=false,pathThemes=[],roundIndex=0,audioOverride=null,pathData=null;
   let difficulty={pairs:4,oddOptions:4,positions:['inside','on','above','below']};
@@ -23,20 +24,21 @@
     gameGeneration++;WordSipAdventures.dispose();WordSipBilliards.dispose();activeAudio?.pause();activeAudio=null;
     active=game;directionSeries++;encouragement=WordSipEncouragement.create();$('game-encouragement').textContent='À vous de jouer. Prenez votre temps.';score=0;selection=null;matched=[];ballRound=0;oddRound=0;roundIndex=0;$('learning-score').textContent=0;$('game-panel').hidden=false;$('game-title').textContent=names[game];$('game-next').hidden=true;feedback('');
     document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));
-    if(game==='billiards'){const generation=gameGeneration;WordSipBilliards.mount({language,level,direction:$('games-direction').value,isActive:()=>gameGeneration===generation,onAnswer:updateScore,feedback}).catch(error=>{if(gameGeneration===generation)feedback(error.message,false);});}else if(['kart','house','body','parking'].includes(game)){const generation=gameGeneration;WordSipAdventures.mount(game,{language,level,direction:$('games-direction').value,vocabulary:currentLesson().vocabulary,isActive:()=>gameGeneration===generation,onAnswer:updateScore,feedback}).catch(error=>{if(gameGeneration===generation)feedback(error.message,false);});}else if(game==='matching')startMatching();else if(game==='ball'){ballPrompts=G.shuffle(difficulty.positions);renderBall();}else if(game==='odd')renderOdd();else if(game==='verbs')renderVerbs();else if(game==='images')renderImages();else renderListening();
-    $('game-panel').scrollIntoView({block:'start',behavior:'instant'});
+    if(game==='billiards'){const generation=gameGeneration;WordSipBilliards.mount({language,level,pageView:!!pageGame,direction:$('games-direction').value,isActive:()=>gameGeneration===generation,onAnswer:updateScore,feedback}).catch(error=>{if(gameGeneration===generation)feedback(error.message,false);});}else if(['kart','house','body','parking'].includes(game)){const generation=gameGeneration;WordSipAdventures.mount(game,{language,level,pageView:!!pageGame,direction:$('games-direction').value,vocabulary:currentLesson().vocabulary,isActive:()=>gameGeneration===generation,onAnswer:updateScore,feedback}).catch(error=>{if(gameGeneration===generation)feedback(error.message,false);});}else if(game==='matching')startMatching();else if(game==='ball'){ballPrompts=G.shuffle(difficulty.positions);renderBall();}else if(game==='odd')renderOdd();else if(game==='verbs')renderVerbs();else if(game==='images')renderImages();else renderListening();
+    if(!pageGame){const q=new URLSearchParams(location.search);q.set('lang',language);q.set('level',level);q.set('theme',$('games-theme').value);q.set('direction',$('games-direction').value);location.href='/jeux/'+game+'?'+q;}else window.scrollTo(0,0);
   }
   function startMatching(){
     const reverse=WordSipDirection.reverse($('games-direction').value,directionSeries),bank=G.shuffle(currentLesson().vocabulary).slice(0,difficulty.pairs).map((v,i)=>({...v,id:String(i)}));
-    $('game-instructions').textContent=`Cliquez sur un mot, puis sur sa traduction française. Reliez les ${bank.length} paires ; vous pouvez aussi commencer par la traduction.`;
-    $('game-area').innerHTML=`<div class="game-steps"><span>1 · Sélectionnez un mot</span><span>2 · Touchez sa traduction</span><span>3 · La liaison apparaît</span></div><div class="matching-board"><svg class="matching-lines" aria-hidden="true"></svg><div class="matching-column" style="order:${reverse?2:0}"><h3>Langue étudiée</h3>${bank.map(v=>`<button class="matching-choice" data-pair="${v.id}" data-side="word">${esc(v.term)}</button>`).join('')}</div><div class="matching-column" style="order:${reverse?0:2}"><h3>Français</h3>${G.shuffle(bank).map(v=>`<button class="matching-choice" data-pair="${v.id}" data-side="fr">${esc(v.translation)}</button>`).join('')}</div></div>`;
+    const norm=v=>String(v).normalize('NFC').trim().toLocaleLowerCase();const intruder=G.shuffle(lessons.filter(l=>l.id!==currentLesson().id).flatMap(l=>l.vocabulary)).find(v=>!bank.some(b=>norm(b.term)===norm(v.term)||norm(b.translation)===norm(v.translation)));const choices=G.shuffle([...bank,...(intruder?[{...intruder,id:'intruder'}]:[])]);
+    $('game-instructions').textContent=`Cliquez sur un mot, puis sur sa traduction française. Reliez les ${bank.length} paires ; vous pouvez aussi commencer par la traduction.${intruder?' Un mot intrus n’a pas de traduction en face : laissez-le sans liaison.':''}`;
+    $('game-area').innerHTML=`<div class="game-steps"><span>1 · Sélectionnez un mot</span><span>2 · Touchez sa traduction</span><span>3 · La liaison apparaît</span></div><div class="matching-board"><svg class="matching-lines" aria-hidden="true"></svg><div class="matching-column" style="order:${reverse?2:0}"><h3>Langue étudiée</h3>${choices.map(v=>`<button class="matching-choice" data-pair="${v.id}" data-side="word">${esc(v.term)}</button>`).join('')}</div><div class="matching-column" style="order:${reverse?0:2}"><h3>Français</h3>${G.shuffle(bank).map(v=>`<button class="matching-choice" data-pair="${v.id}" data-side="fr">${esc(v.translation)}</button>`).join('')}</div></div>`;
     $('game-area').querySelectorAll('.matching-choice').forEach(b=>b.onclick=()=>{
       if(!selection||selection.dataset.side===b.dataset.side){selection?.classList.remove('selected');selection=b;b.classList.add('selected');return;}
       const correct=G.matches(selection.dataset.pair,b.dataset.pair);updateScore(correct);
       if(correct){selection.disabled=b.disabled=true;selection.classList.add('matched');b.classList.add('matched');matched.push(b.dataset.pair);feedback('Bonne association ! +10 points.');}
       else feedback('Ces deux mots ne correspondent pas. −5 points. Essayez une autre traduction.',false);
       selection.classList.remove('selected');selection=null;drawLinks();
-      if(matched.length===bank.length){feedback('Toutes les traductions sont retrouvées. Changez de thème ou recommencez pour une autre sélection.');}
+      if(matched.length===bank.length){feedback('Toutes les traductions sont retrouvées ; le mot sans partenaire reste de côté. Changez de thème ou recommencez pour une autre sélection.');}
     });
   }
   function drawLinks(){
@@ -167,7 +169,7 @@
   }
   async function load(){
     const version=++loadVersion;gameGeneration++;WordSipAdventures.dispose();WordSipBilliards.dispose();activeAudio?.pause();activeAudio=null;links();$('games-error').textContent='';$('game-panel').hidden=true;
-    try{const r=await fetch('/api/learning-games/'+language);if(!r.ok)throw new Error('Impossible de charger les jeux.');const data=await r.json();if(version!==loadVersion)return;lessons=data.lessons;$('games-theme').replaceChildren();for(const lesson of lessons){const option=document.createElement('option');option.value=lesson.id;option.textContent=lesson.title;$('games-theme').append(option);}if(!lessons.length)throw new Error('Aucune fiche disponible dans cette langue.');await WordSipHelp.setLanguage(language);try{await loadPath();}catch{$('path-status').textContent='Le parcours est indisponible. Les jeux en accès libre restent utilisables.';}}
+    try{const r=await fetch('/api/learning-games/'+language);if(!r.ok)throw new Error('Impossible de charger les jeux.');const data=await r.json();if(version!==loadVersion)return;lessons=data.lessons;$('games-theme').replaceChildren();for(const lesson of lessons){const option=document.createElement('option');option.value=lesson.id;option.textContent=lesson.title;$('games-theme').append(option);}if(!lessons.length)throw new Error('Aucune fiche disponible dans cette langue.');if(params.get('theme')&&lessons.some(l=>l.id===params.get('theme')))$('games-theme').value=params.get('theme');await WordSipHelp.setLanguage(language);try{await loadPath();}catch{$('path-status').textContent='Le parcours est indisponible. Les jeux en accès libre restent utilisables.';}if(pageGame&&names[pageGame])choose(pageGame);}
     catch(error){if(version===loadVersion){lessons=[];$('games-error').textContent=error.message;}}
   }
   document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{pathMode=false;audioOverride=null;choose(b.dataset.game);});$('game-restart').onclick=()=>choose(active);$('games-theme').onchange=()=>{pathMode=false;audioOverride=null;if(!$('game-panel').hidden&&['matching','images','listening','kart'].includes(active))choose(active);};
@@ -175,6 +177,6 @@
   const context=location.search;$('games-back').href='/grammaire'+context;$('games-word').href='/mot-du-jour'+context;$('weekly-game').href='/jeu-semaine'+context;
   (async()=>{
     if(params.get('guest')!=='true')try{let email=params.get('email');if(!email){const r=await fetch('/api/session');email=(await r.json()).email;}if(email){profileEmail=email;const r=await fetch('/api/my-word?email='+encodeURIComponent(email));const user=(await r.json()).user;if(!params.get('lang'))language=user?.language||language;level=user?.level||level;}}catch{}
-    if(!instructions[language])language='en';$('games-language').value=language;load();
+    if(params.get('direction'))$('games-direction').value=params.get('direction');if(!instructions[language])language='en';$('games-language').value=language;load();
   })();
 })();

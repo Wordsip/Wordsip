@@ -3,21 +3,21 @@
   const colors=['#edb94c','#5eb5a1','#a491d0','#63abd1','#ea8d77','#93b95e','#d894b4'];
   let dispose=()=>{};
   function mount(root,options){
-    dispose();let alive=true,frame=0,index=0,tiles=[],selected=[],passed=false,busy=false,board=null,drag=null;
+    dispose();let alive=true,frame=0,index=0,tiles=[],selected=[],passed=false,busy=false,board=null,drag=null,obstacles=[];
     const french=[['J’ai','une','voiture'],['J’ai','dix-huit','ans'],['Mon','nom','est','Alex'],['J’habite','à','Paris'],['Cette','voiture','est','super']];
     const reversed=i=>WordSipDirection.reverse(options.direction||'mixed',i);
     const rounds=options.bank.parking.map((q,i)=>reversed(i)?{prompt:q.words.join(['ja','zh'].includes(options.language)?'':' '),words:options.language==='zh'&&i===1?['Cette','année,','j’ai','dix-huit','ans']:french[i],extras:['train','demain'],note:'Construisez sa traduction française.'+(q.register?' '+q.note:'')}:q);
     const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
     const observer=new ResizeObserver(()=>{const host=root.querySelector('.parking-drive-board');if(alive&&!busy&&!drag&&host&&board&&(host.clientWidth<520)!==(board.width<500))drawLot();});
     dispose=()=>{alive=false;cancelAnimationFrame(frame);observer.disconnect();};
-    document.getElementById('game-instructions').textContent='Glissez un bus vers l’avant (↑) pour le faire sortir. Il roule jusqu’à la sortie, puis son mot rejoint votre phrase. Faites sortir les mots dans le bon ordre.';
+    document.getElementById('game-instructions').textContent='Glissez un bus vers l’avant (↑) pour le faire sortir. Il roule jusqu’à la sortie, puis son mot rejoint votre phrase. Les bus gris sans mots bloquent les allées : libérez-les de droite à gauche, puis faites sortir les mots dans le bon ordre.';
     function busMarkup(word,i){
       const c=colors[i%colors.length],size=board.width<500?16:20;
       return `<g class="moving-bus" data-bus="${i}" role="button" tabindex="0" aria-label="Faire sortir le bus ${esc(word)}" aria-disabled="${selected.includes(i)}"><rect class="bus-hit" x="-63" y="-51" width="126" height="102" rx="12" fill="transparent" pointer-events="all"/><g class="bus-vehicle"><ellipse cx="0" cy="9" rx="49" ry="25" fill="#17354255"/><rect x="-35" y="-27" width="18" height="9" rx="4" fill="#203747"/><rect x="18" y="-27" width="18" height="9" rx="4" fill="#203747"/><rect x="-35" y="18" width="18" height="9" rx="4" fill="#203747"/><rect x="18" y="18" width="18" height="9" rx="4" fill="#203747"/><rect x="-47" y="-21" width="94" height="42" rx="12" fill="${c}" stroke="#365363" stroke-width="2"/><rect x="-35" y="-15" width="56" height="30" rx="5" fill="#ffffff22"/><path d="M27-16H38Q43 0 38 16H27Z" fill="#284e67"/><path d="M-38-15V15M-23-15V15M-8-15V15M7-15V15" stroke="#c7e7ed" stroke-width="4"/><rect x="39" y="-18" width="5" height="7" rx="2" fill="#fff3ba"/><rect x="39" y="11" width="5" height="7" rx="2" fill="#fff3ba"/><path class="bus-exhaust" d="M-52-6L-66-6M-52 6L-73 6" stroke="#d9f1df" stroke-width="3" stroke-linecap="round"/></g><g class="bus-word"><rect x="${board.width<500?-63:-88}" y="-13" width="${board.width<500?126:176}" height="27" rx="9" fill="#fff9eb" stroke="#c8b78e"/><text x="0" y="1" font-size="${size}" text-anchor="middle" dominant-baseline="middle" fill="#294655" font-weight="700" ${word.length>13?'textLength="'+(board.width<500?115:162)+'" lengthAdjust="spacingAndGlyphs"':''}>${esc(word)}</text></g></g>`;
     }
     function prepare(){
-      selected=[];passed=false;busy=false;drag=null;tiles=WordSipLearningGames.shuffle([...rounds[index].words,...(options.level==='niveau1'?[]:rounds[index].extras)]);
-      const q=rounds[index];root.innerHTML=`<div class="parking-request"><span>Phrase ${index+1} / ${rounds.length} · ${reversed(index)?'Vers le français':'Vers la langue apprise'}</span><h3>${esc(q.prompt)}</h3><p>${q.words.length} mots ou blocs · ${esc(q.note)}</p></div><p id="parking-motion-status" role="status">Choisissez le premier mot et faites avancer son bus.</p><div class="parking-drive-board"></div><div class="sentence-slots" role="group" aria-label="Votre phrase"></div><div class="ball-controls"><button id="parking-check" type="button" disabled>Vérifier la phrase</button><button id="parking-reset" type="button">Rentrer tous les bus</button><button id="parking-next" type="button" hidden>Phrase suivante</button></div><p class="adventure-access">Souris ou doigt : glissez vers le haut. Un clic fait aussi sortir le bus. Au clavier : Entrée ou flèche ↑. Cliquez sur un mot de la phrase pour voir son bus revenir à sa place.</p>`;
+      selected=[];passed=false;busy=false;drag=null;obstacles=[];tiles=WordSipLearningGames.shuffle([...rounds[index].words,...(options.level==='niveau1'?[]:rounds[index].extras)]);
+      const q=rounds[index];root.innerHTML=`<div class="parking-request"><span>Phrase ${index+1} / ${rounds.length} · ${reversed(index)?'Vers le français':'Vers la langue apprise'}</span><h3>${esc(q.prompt)}</h3><p>${q.words.length} mots ou blocs · ${esc(q.note)}</p></div><p id="parking-motion-status" role="status">Choisissez le premier mot et faites avancer son bus.</p><div class="parking-drive-board"></div><div class="sentence-slots" role="group" aria-label="Votre phrase"></div><div class="ball-controls"><button id="parking-check" type="button" disabled>Vérifier la phrase</button><button id="parking-reset" type="button">Rentrer tous les bus</button><button id="parking-next" type="button" hidden>Phrase suivante</button></div><p class="adventure-access">Bus gris : glissez à droite (ou clic / Entrée / →). Bus avec mot : glissez vers le haut. Un clic fait aussi sortir le bus. Au clavier : Entrée ou flèche ↑. Cliquez sur un mot de la phrase pour voir son bus revenir à sa place.</p>`;
       drawLot();drawSentence();observer.disconnect();observer.observe(root.querySelector('.parking-drive-board'));
       root.querySelector('#parking-reset').onclick=()=>{if(!busy&&!passed)prepare();};
       root.querySelector('#parking-check').onclick=()=>{
@@ -33,8 +33,15 @@
     function drawLot(){
       const host=root.querySelector('.parking-drive-board');if(!host)return;
       board=WordSipParkingMotion.layout(tiles.length,host.clientWidth<520);
-      const rows=Math.ceil(tiles.length/2),laneWidth=board.width<500?48:65;
-      host.innerHTML=`<svg class="parking-motion-scene" viewBox="0 0 ${board.width} ${board.height}" role="group" aria-label="Parking : avancez les bus vers la sortie"><defs><linearGradient id="parking-ground" x2="1" y2="1"><stop stop-color="#dcece1"/><stop offset="1" stop-color="#b8d6c8"/></linearGradient></defs><rect width="${board.width}" height="${board.height}" rx="24" fill="url(#parking-ground)"/><rect x="${board.lane-laneWidth/2}" y="0" width="${laneWidth}" height="${board.height}" fill="#596e7b"/>${Array.from({length:rows},(_,i)=>`<path d="M20 ${60+i*130}H${board.lane}" stroke="#596e7b" stroke-width="43"/><path d="M30 ${60+i*130}H${board.lane-35}" stroke="#e6e9d1" stroke-width="2" stroke-dasharray="14 12"/>`).join('')}<path d="M${board.lane} 25V${board.height-20}" stroke="#e8efd5" stroke-width="2" stroke-dasharray="15 15"/><rect x="${board.lane-36}" y="6" width="72" height="27" rx="7" fill="#f4d796"/><text x="${board.lane}" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#425f68">SORTIE ↑</text>${board.homes.map(h=>`<path d="M${h.x-50} ${h.y-39}V${h.y+46}H${h.x+50}V${h.y-39}" fill="none" stroke="#fcf5d8" stroke-width="3"/><text x="${h.x}" y="${h.y+69}" text-anchor="middle" font-size="16" fill="#4a7866">↑</text>`).join('')}<g class="moving-buses">${tiles.map(busMarkup).join('')}</g></svg>`;
+      const rows=Math.ceil(tiles.length/2);if(!obstacles.length)obstacles=Array.from({length:rows*2},(_,i)=>({row:Math.floor(i/2),slot:i%2,gone:false}));const laneWidth=board.width<500?48:65;
+      host.innerHTML=`<svg class="parking-motion-scene" viewBox="0 0 ${board.width} ${board.height}" role="group" aria-label="Parking : avancez les bus vers la sortie"><defs><linearGradient id="parking-ground" x2="1" y2="1"><stop stop-color="#dcece1"/><stop offset="1" stop-color="#b8d6c8"/></linearGradient></defs><rect width="${board.width}" height="${board.height}" rx="24" fill="url(#parking-ground)"/><rect x="${board.lane-laneWidth/2}" y="0" width="${laneWidth}" height="${board.height}" fill="#596e7b"/>${Array.from({length:rows},(_,i)=>`<path d="M20 ${60+i*130}H${board.lane}" stroke="#596e7b" stroke-width="43"/><path d="M30 ${60+i*130}H${board.lane-35}" stroke="#e6e9d1" stroke-width="2" stroke-dasharray="14 12"/>`).join('')}<path d="M${board.lane} 25V${board.height-20}" stroke="#e8efd5" stroke-width="2" stroke-dasharray="15 15"/><rect x="${board.lane-36}" y="6" width="72" height="27" rx="7" fill="#f4d796"/><text x="${board.lane}" y="24" text-anchor="middle" font-size="14" font-weight="700" fill="#425f68">SORTIE ↑</text>${board.homes.map(h=>`<path d="M${h.x-50} ${h.y-39}V${h.y+46}H${h.x+50}V${h.y-39}" fill="none" stroke="#fcf5d8" stroke-width="3"/><text x="${h.x}" y="${h.y+69}" text-anchor="middle" font-size="16" fill="#4a7866">↑</text>`).join('')}<g class="moving-buses">${tiles.map(busMarkup).join('')}${obstacles.map((o,i)=>`<g data-obstacle="${i}" class="obstacle-bus" role="button" tabindex="${o.gone?-1:0}" aria-label="Dégager le bus obstacle ${i+1}" ${o.gone?'visibility="hidden"':''}><rect x="-40" y="-18" width="80" height="36" rx="10" fill="#7c8997" stroke="#344757" stroke-width="2"/><path d="M-25-13V13M-10-13V13M5-13V13" stroke="#bddeeb" stroke-width="5"/><rect x="24" y="-12" width="10" height="24" rx="3" fill="#244559"/><path d="M-26 0H15M9-5L15 0L9 5" stroke="#fff" stroke-width="2" fill="none"/></g>`).join('')}</g></svg>`;
+      root.querySelectorAll('[data-obstacle]').forEach(bus=>{
+        const id=Number(bus.dataset.obstacle),o=obstacles[id],home=obstacleHome(o);bus.setAttribute('transform',`translate(${home.x},${home.y})`);
+        bus.onclick=()=>clearObstacle(id);bus.onkeydown=e=>{if(['Enter',' ','ArrowRight'].includes(e.key)){e.preventDefault();clearObstacle(id);}};
+        let start=null;bus.onpointerdown=e=>{if(busy||passed||o.gone||e.button>0)return;e.preventDefault();start=e.clientX;bus.setPointerCapture(e.pointerId);};
+        bus.onpointerup=e=>{if(start===null)return;const delta=e.clientX-start;start=null;if(bus.hasPointerCapture(e.pointerId))bus.releasePointerCapture(e.pointerId);if(delta>14)clearObstacle(id);};
+        bus.onpointercancel=()=>{start=null;};
+      });
       root.querySelectorAll('[data-bus]').forEach(bus=>{
         const id=Number(bus.dataset.bus);place(bus,0,id);if(selected.includes(id)){bus.setAttribute('visibility','hidden');bus.setAttribute('tabindex','-1');}
         bus.onclick=()=>depart(id);
@@ -44,6 +51,15 @@
         bus.onpointerup=e=>{if(!drag||drag.id!==id)return;const d=drag;drag=null;if(bus.hasPointerCapture(e.pointerId))bus.releasePointerCapture(e.pointerId);bus.classList.remove('dragging');place(bus,0,id);if(e.clientY-d.y<-14)depart(id);else if(d.moved){bus.dataset.suppressClick='yes';options.feedback('Faites glisser le bus vers l’avant : ↑. Aucun point retiré.');}};
         bus.onpointercancel=e=>{drag=null;if(bus.hasPointerCapture(e.pointerId))bus.releasePointerCapture(e.pointerId);bus.classList.remove('dragging');place(bus,0,id);};
       });
+    }
+    function obstacleHome(o){return {x:board.lane-(o.slot===0?184:80),y:60+o.row*130};}
+    function clearObstacle(id){
+      const o=obstacles[id];if(!alive||busy||passed||o.gone)return;
+      if(o.slot===0&&!obstacles[id+1].gone){options.feedback('Le bus gris à droite bloque celui-ci. Dégagez-le en premier.',false);return;}
+      const bus=root.querySelector(`[data-obstacle="${id}"]`),home=obstacleHome(o);busy=true;controls();
+      root.querySelector('#parking-motion-status').textContent='Le bus obstacle libère l’allée…';let elapsed=0,last=null;const duration=reduced?1:1600;
+      const step=now=>{if(!alive||!options.isActive())return;if(last!==null)elapsed+=Math.min(40,Math.max(0,now-last));last=now;const t=Math.min(1,elapsed/duration),p=WordSipParkingMotion.obstaclePose(t,home,board);bus.setAttribute('transform',`translate(${p.x},${p.y}) rotate(${p.angle})`);
+        if(t<1){frame=requestAnimationFrame(step);return;}frame=0;o.gone=true;busy=false;bus.setAttribute('visibility','hidden');bus.setAttribute('tabindex','-1');controls();root.querySelector('#parking-motion-status').textContent='Obstacle dégagé. Aucun mot ajouté à la phrase.';};frame=requestAnimationFrame(step);
     }
     function place(bus,t,id,dy=0){const p=WordSipParkingMotion.pose(t,board.homes[id],board);bus.setAttribute('transform',`translate(${p.x},${p.y+dy})`);bus.querySelector('.bus-vehicle').setAttribute('transform',`rotate(${p.angle})`);}
     function controls(){
@@ -64,6 +80,7 @@
     function depart(id){
       const bus=root.querySelector(`[data-bus="${id}"]`);if(bus?.dataset.suppressClick){delete bus.dataset.suppressClick;return;}
       if(!alive||busy||passed||selected.includes(id)||selected.length>=rounds[index].words.length)return;
+      if(obstacles.some(o=>o.row===Math.floor(id/2)&&!o.gone)){options.feedback('Allée bloquée : déplacez les bus gris vers la droite avant ce mot.',false);return;}
       animate(id,false,()=>{selected.push(id);bus.setAttribute('visibility','hidden');bus.setAttribute('tabindex','-1');drawSentence();});
     }
     function drawSentence(){

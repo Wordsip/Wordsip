@@ -34,7 +34,7 @@
       root.querySelectorAll('[data-pocket]').forEach(p=>p.onclick=()=>{if(selected)shoot(p);else options.feedback('Saisissez la boule et glissez-la dans un trou, ou sélectionnez-la d’abord au clavier.');});
       root.querySelector('#pool-next').onclick=()=>{if(++index===rounds.length){root.innerHTML='<div class="game-result"><strong>Table terminée !</strong><p>Vous avez classé les huit mots en tenant compte de leur phrase.</p></div>';}else{options.feedback('');prepare();}};
     }
-    prepare();root.closest('#game-panel').scrollIntoView({block:'start',behavior:'instant'});
+    prepare();if(!options.pageView)root.closest('#game-panel').scrollIntoView({block:'start',behavior:'instant'});else window.scrollTo(0,0);
   }
   window.WordSipBilliards={mount,dispose:()=>dispose()};
 })();

@@ -38,6 +38,7 @@ const learningPathService = require('../services/learningPathService');
 
 router.get('/jeu-semaine', (req, res) => res.sendFile('jeu-semaine.html', { root: 'public' }));
 router.get('/fiche-quotidien', (req, res) => res.sendFile('fiche-quotidien.html', { root: 'public' }));
+router.get('/jeux/:game', (req,res) => {const games=['matching','ball','odd','verbs','images','listening','kart','house','body','billiards','parking'];if(!games.includes(req.params.game))return res.status(404).send('Jeu introuvable');res.sendFile('jeux.html',{root:'public'});});
 router.get('/jeux', (req, res) => res.sendFile('jeux.html', { root: 'public' }));
 router.get('/api/learning-games/:language', async (req, res) => {
   if (!weekGameService.LANGUAGES.includes(req.params.language)) return res.status(400).json({error:'Langue non reconnue.'});
