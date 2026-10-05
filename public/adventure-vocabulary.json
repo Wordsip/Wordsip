@@ -1,1 +1,1360 @@
-{"en": {"rooms": [{"id": "living", "translation": "salon", "word": "living room"}, {"id": "bedroom", "translation": "chambre", "word": "bedroom"}, {"id": "kitchen", "translation": "cuisine", "word": "kitchen"}, {"id": "bathroom", "translation": "salle de bains", "word": "bathroom"}], "house": [{"id": "bed", "translation": "un lit", "icon": "🛏️", "zones": ["bedroom"], "word": "bed"}, {"id": "sofa", "translation": "un canapé", "icon": "🛋️", "zones": ["living"], "word": "sofa"}, {"id": "fridge", "translation": "un réfrigérateur", "icon": "🧊", "zones": ["kitchen"], "word": "fridge"}, {"id": "shower", "translation": "une douche", "icon": "🚿", "zones": ["bathroom"], "word": "shower"}, {"id": "table", "translation": "une table", "icon": "🪑", "zones": ["living", "kitchen", "bedroom"], "word": "table"}, {"id": "lamp", "translation": "une lampe", "icon": "💡", "zones": ["living", "bedroom"], "word": "lamp"}, {"id": "stove", "translation": "une cuisinière", "icon": "🍳", "zones": ["kitchen"], "word": "stove"}, {"id": "basin", "translation": "un lavabo", "icon": "🚰", "zones": ["bathroom"], "word": "washbasin"}], "body": [{"id": "head", "translation": "la tête", "icon": "🙂", "zones": ["head", "eyes", "ears", "nose", "mouth"], "word": "head"}, {"id": "eyes", "translation": "les yeux", "icon": "👀", "zones": ["eyes"], "word": "eyes"}, {"id": "ears", "translation": "les oreilles", "icon": "👂", "zones": ["ears"], "word": "ears"}, {"id": "nose", "translation": "le nez", "icon": "👃", "zones": ["nose"], "word": "nose"}, {"id": "mouth", "translation": "la bouche", "icon": "👄", "zones": ["mouth"], "word": "mouth"}, {"id": "arms", "translation": "les bras", "icon": "💪", "zones": ["arms"], "word": "arms"}, {"id": "hands", "translation": "les mains", "icon": "✋", "zones": ["hands"], "word": "hands"}, {"id": "legs", "translation": "les jambes", "icon": "🦵", "zones": ["legs"], "word": "legs"}, {"id": "feet", "translation": "les pieds", "icon": "🦶", "zones": ["feet"], "word": "feet"}, {"id": "torso", "translation": "le torse", "icon": "👕", "zones": ["torso"], "word": "torso"}], "parking": [{"prompt": "J’ai une voiture.", "words": ["I", "have", "a", "car"], "extras": ["train", "are"], "note": "Gardez les articles et les terminaisons."}, {"prompt": "J’ai dix-huit ans.", "words": ["I", "am", "eighteen", "years", "old"], "extras": ["train", "are"], "note": "Gardez les articles et les terminaisons."}, {"prompt": "Mon nom est Alex.", "words": ["My", "name", "is", "Alex"], "extras": ["train", "are"], "note": "Gardez les articles et les terminaisons."}, {"prompt": "J’habite à Paris.", "words": ["I", "live", "in", "Paris"], "extras": ["train", "are"], "note": "Gardez les articles et les terminaisons."}, {"prompt": "J’aime cette voiture rouge.", "words": ["I", "like", "this", "red", "car"], "extras": ["train", "are"], "note": "Gardez les articles et les terminaisons."}]}, "es": {"rooms": [{"id": "living", "translation": "salon", "word": "salón"}, {"id": "bedroom", "translation": "chambre", "word": "dormitorio"}, {"id": "kitchen", "translation": "cuisine", "word": "cocina"}, {"id": "bathroom", "translation": "salle de bains", "word": "baño"}], "house": [{"id": "bed", "translation": "un lit", "icon": "🛏️", "zones": ["bedroom"], "word": "cama"}, {"id": "sofa", "translation": "un canapé", "icon": "🛋️", "zones": ["living"], "word": "sofá"}, {"id": "fridge", "translation": "un réfrigérateur", "icon": "🧊", "zones": ["kitchen"], "word": "nevera"}, {"id": "shower", "translation": "une douche", "icon": "🚿", "zones": ["bathroom"], "word": "ducha"}, {"id": "table", "translation": "une table", "icon": "🪑", "zones": ["living", "kitchen", "bedroom"], "word": "mesa"}, {"id": "lamp", "translation": "une lampe", "icon": "💡", "zones": ["living", "bedroom"], "word": "lámpara"}, {"id": "stove", "translation": "une cuisinière", "icon": "🍳", "zones": ["kitchen"], "word": "cocina"}, {"id": "basin", "translation": "un lavabo", "icon": "🚰", "zones": ["bathroom"], "word": "lavabo"}], "body": [{"id": "head", "translation": "la tête", "icon": "🙂", "zones": ["head", "eyes", "ears", "nose", "mouth"], "word": "cabeza"}, {"id": "eyes", "translation": "les yeux", "icon": "👀", "zones": ["eyes"], "word": "ojos"}, {"id": "ears", "translation": "les oreilles", "icon": "👂", "zones": ["ears"], "word": "orejas"}, {"id": "nose", "translation": "le nez", "icon": "👃", "zones": ["nose"], "word": "nariz"}, {"id": "mouth", "translation": "la bouche", "icon": "👄", "zones": ["mouth"], "word": "boca"}, {"id": "arms", "translation": "les bras", "icon": "💪", "zones": ["arms"], "word": "brazos"}, {"id": "hands", "translation": "les mains", "icon": "✋", "zones": ["hands"], "word": "manos"}, {"id": "legs", "translation": "les jambes", "icon": "🦵", "zones": ["legs"], "word": "piernas"}, {"id": "feet", "translation": "les pieds", "icon": "🦶", "zones": ["feet"], "word": "pies"}, {"id": "torso", "translation": "le torse", "icon": "👕", "zones": ["torso"], "word": "torso"}], "parking": [{"prompt": "J’ai une voiture.", "words": ["Yo", "tengo", "un", "coche"], "extras": ["tren", "eres"], "note": "Gardez les articles et les terminaisons."}, {"prompt": "J’ai dix-huit ans.", "words": ["Yo", "tengo", "dieciocho", "años"], "extras": ["tren", "eres"], "note": "Gardez les articles et les terminaisons."}, {"prompt": "Mon nom est Alex.", "words": ["Mi", "nombre", "es", "Alex"], "extras": ["tren", "eres"], "note": "Gardez les articles et les terminaisons."}, {"prompt": "J’habite à Paris.", "words": ["Yo", "vivo", "en", "París"], "extras": ["tren", "eres"], "note": "Gardez les articles et les terminaisons."}, {"prompt": "J’aime cette voiture rouge.", "words": ["Me", "gusta", "este", "coche", "rojo"], "extras": ["tren", "eres"], "note": "Gardez les articles et les terminaisons."}]}, "it": {"rooms": [{"id": "living", "translation": "salon", "word": "soggiorno"}, {"id": "bedroom", "translation": "chambre", "word": "camera da letto"}, {"id": "kitchen", "translation": "cuisine", "word": "cucina"}, {"id": "bathroom", "translation": "salle de bains", "word": "bagno"}], "house": [{"id": "bed", "translation": "un lit", "icon": "🛏️", "zones": ["bedroom"], "word": "letto"}, {"id": "sofa", "translation": "un canapé", "icon": "🛋️", "zones": ["living"], "word": "divano"}, {"id": "fridge", "translation": "un réfrigérateur", "icon": "🧊", "zones": ["kitchen"], "word": "frigorifero"}, {"id": "shower", "translation": "une douche", "icon": "🚿", "zones": ["bathroom"], "word": "doccia"}, {"id": "table", "translation": "une table", "icon": "🪑", "zones": ["living", "kitchen", "bedroom"], "word": "tavolo"}, {"id": "lamp", "translation": "une lampe", "icon": "💡", "zones": ["living", "bedroom"], "word": "lampada"}, {"id": "stove", "translation": "une cuisinière", "icon": "🍳", "zones": ["kitchen"], "word": "fornello"}, {"id": "basin", "translation": "un lavabo", "icon": "🚰", "zones": ["bathroom"], "word": "lavandino"}], "body": [{"id": "head", "translation": "la tête", "icon": "🙂", "zones": ["head", "eyes", "ears", "nose", "mouth"], "word": "testa"}, {"id": "eyes", "translation": "les yeux", "icon": "👀", "zones": ["eyes"], "word": "occhi"}, {"id": "ears", "translation": "les oreilles", "icon": "👂", "zones": ["ears"], "word": "orecchie"}, {"id": "nose", "translation": "le nez", "icon": "👃", "zones": ["nose"], "word": "naso"}, {"id": "mouth", "translation": "la bouche", "icon": "👄", "zones": ["mouth"], "word": "bocca"}, {"id": "arms", "translation": "les bras", "icon": "💪", "zones": ["arms"], "word": "braccia"}, {"id": "hands", "translation": "les mains", "icon": "✋", "zones": ["hands"], "word": "mani"}, {"id": "legs", "translation": "les jambes", "icon": "🦵", "zones": ["legs"], "word": "gambe"}, {"id": "feet", "translation": "les pieds", "icon": "🦶", "zones": ["feet"], "word": "piedi"}, {"id": "torso", "translation": "le torse", "icon": "👕", "zones": ["torso"], "word": "torso"}], "parking": [{"prompt": "J’ai une voiture.", "words": ["Io", "ho", "una", "macchina"], "extras": ["treno", "sei"], "note": "Gardez les articles et les terminaisons."}, {"prompt": "J’ai dix-huit ans.", "words": ["Io", "ho", "diciotto", "anni"], "extras": ["treno", "sei"], "note": "Gardez les articles et les terminaisons."}, {"prompt": "Mon nom est Alex.", "words": ["Il", "mio", "nome", "è", "Alex"], "extras": ["treno", "sei"], "note": "Gardez les articles et les terminaisons."}, {"prompt": "J’habite à Paris.", "words": ["Io", "vivo", "a", "Parigi"], "extras": ["treno", "sei"], "note": "Gardez les articles et les terminaisons."}, {"prompt": "J’aime cette voiture rouge.", "words": ["Mi", "piace", "questa", "macchina", "rossa"], "extras": ["treno", "sei"], "note": "Gardez les articles et les terminaisons."}]}, "ja": {"rooms": [{"id": "living", "translation": "salon", "word": "リビング"}, {"id": "bedroom", "translation": "chambre", "word": "寝室"}, {"id": "kitchen", "translation": "cuisine", "word": "キッチン"}, {"id": "bathroom", "translation": "salle de bains", "word": "浴室"}], "house": [{"id": "bed", "translation": "un lit", "icon": "🛏️", "zones": ["bedroom"], "word": "ベッド"}, {"id": "sofa", "translation": "un canapé", "icon": "🛋️", "zones": ["living"], "word": "ソファ"}, {"id": "fridge", "translation": "un réfrigérateur", "icon": "🧊", "zones": ["kitchen"], "word": "冷蔵庫"}, {"id": "shower", "translation": "une douche", "icon": "🚿", "zones": ["bathroom"], "word": "シャワー"}, {"id": "table", "translation": "une table", "icon": "🪑", "zones": ["living", "kitchen", "bedroom"], "word": "テーブル"}, {"id": "lamp", "translation": "une lampe", "icon": "💡", "zones": ["living", "bedroom"], "word": "ランプ"}, {"id": "stove", "translation": "une cuisinière", "icon": "🍳", "zones": ["kitchen"], "word": "コンロ"}, {"id": "basin", "translation": "un lavabo", "icon": "🚰", "zones": ["bathroom"], "word": "洗面台"}], "body": [{"id": "head", "translation": "la tête", "icon": "🙂", "zones": ["head", "eyes", "ears", "nose", "mouth"], "word": "頭"}, {"id": "eyes", "translation": "les yeux", "icon": "👀", "zones": ["eyes"], "word": "目"}, {"id": "ears", "translation": "les oreilles", "icon": "👂", "zones": ["ears"], "word": "耳"}, {"id": "nose", "translation": "le nez", "icon": "👃", "zones": ["nose"], "word": "鼻"}, {"id": "mouth", "translation": "la bouche", "icon": "👄", "zones": ["mouth"], "word": "口"}, {"id": "arms", "translation": "les bras", "icon": "💪", "zones": ["arms"], "word": "腕"}, {"id": "hands", "translation": "les mains", "icon": "✋", "zones": ["hands"], "word": "手"}, {"id": "legs", "translation": "les jambes", "icon": "🦵", "zones": ["legs"], "word": "脚"}, {"id": "feet", "translation": "les pieds", "icon": "🦶", "zones": ["feet"], "word": "足"}, {"id": "torso", "translation": "le torse", "icon": "👕", "zones": ["torso"], "word": "胴体"}], "parking": [{"prompt": "J’ai une voiture.", "words": ["私", "は", "車", "を", "持っています"], "extras": ["電車", "あなた"], "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."}, {"prompt": "J’ai dix-huit ans.", "words": ["私", "は", "18", "歳", "です"], "extras": ["電車", "あなた"], "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."}, {"prompt": "Mon nom est Alex.", "words": ["私", "の", "名前", "は", "Alexです"], "extras": ["電車", "あなた"], "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."}, {"prompt": "J’habite à Paris.", "words": ["私", "は", "パリ", "に", "住んでいます"], "extras": ["電車", "あなた"], "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."}, {"prompt": "J’aime cette voiture rouge.", "words": ["私", "は", "この赤い車", "が", "好きです"], "extras": ["電車", "あなた"], "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."}]}, "zh": {"rooms": [{"id": "living", "translation": "salon", "word": "客厅"}, {"id": "bedroom", "translation": "chambre", "word": "卧室"}, {"id": "kitchen", "translation": "cuisine", "word": "厨房"}, {"id": "bathroom", "translation": "salle de bains", "word": "浴室"}], "house": [{"id": "bed", "translation": "un lit", "icon": "🛏️", "zones": ["bedroom"], "word": "床"}, {"id": "sofa", "translation": "un canapé", "icon": "🛋️", "zones": ["living"], "word": "沙发"}, {"id": "fridge", "translation": "un réfrigérateur", "icon": "🧊", "zones": ["kitchen"], "word": "冰箱"}, {"id": "shower", "translation": "une douche", "icon": "🚿", "zones": ["bathroom"], "word": "淋浴"}, {"id": "table", "translation": "une table", "icon": "🪑", "zones": ["living", "kitchen", "bedroom"], "word": "桌子"}, {"id": "lamp", "translation": "une lampe", "icon": "💡", "zones": ["living", "bedroom"], "word": "台灯"}, {"id": "stove", "translation": "une cuisinière", "icon": "🍳", "zones": ["kitchen"], "word": "炉灶"}, {"id": "basin", "translation": "un lavabo", "icon": "🚰", "zones": ["bathroom"], "word": "洗手盆"}], "body": [{"id": "head", "translation": "la tête", "icon": "🙂", "zones": ["head", "eyes", "ears", "nose", "mouth"], "word": "头"}, {"id": "eyes", "translation": "les yeux", "icon": "👀", "zones": ["eyes"], "word": "眼睛"}, {"id": "ears", "translation": "les oreilles", "icon": "👂", "zones": ["ears"], "word": "耳朵"}, {"id": "nose", "translation": "le nez", "icon": "👃", "zones": ["nose"], "word": "鼻子"}, {"id": "mouth", "translation": "la bouche", "icon": "👄", "zones": ["mouth"], "word": "嘴"}, {"id": "arms", "translation": "les bras", "icon": "💪", "zones": ["arms"], "word": "手臂"}, {"id": "hands", "translation": "les mains", "icon": "✋", "zones": ["hands"], "word": "手"}, {"id": "legs", "translation": "les jambes", "icon": "🦵", "zones": ["legs"], "word": "腿"}, {"id": "feet", "translation": "les pieds", "icon": "🦶", "zones": ["feet"], "word": "脚"}, {"id": "torso", "translation": "le torse", "icon": "👕", "zones": ["torso"], "word": "躯干"}], "parking": [{"prompt": "J’ai une voiture.", "words": ["我", "有", "一辆", "车"], "extras": ["火车", "你"], "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."}, {"prompt": "Cette année, j’ai dix-huit ans.", "words": ["我", "今年", "十八", "岁"], "extras": ["火车", "你"], "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."}, {"prompt": "Mon nom est Alex.", "words": ["我", "的", "名字", "是", "Alex"], "extras": ["火车", "你"], "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."}, {"prompt": "J’habite à Paris.", "words": ["我", "住", "在", "巴黎"], "extras": ["火车", "你"], "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."}, {"prompt": "J’aime cette voiture rouge.", "words": ["我", "喜欢", "这辆", "红色", "车"], "extras": ["火车", "你"], "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."}]}}
+{
+  "en": {
+    "rooms": [
+      {
+        "id": "living",
+        "translation": "salon",
+        "word": "living room"
+      },
+      {
+        "id": "bedroom",
+        "translation": "chambre",
+        "word": "bedroom"
+      },
+      {
+        "id": "kitchen",
+        "translation": "cuisine",
+        "word": "kitchen"
+      },
+      {
+        "id": "bathroom",
+        "translation": "salle de bains",
+        "word": "bathroom"
+      }
+    ],
+    "house": [
+      {
+        "id": "bed",
+        "translation": "un lit",
+        "icon": "🛏️",
+        "zones": [
+          "bedroom"
+        ],
+        "word": "bed"
+      },
+      {
+        "id": "sofa",
+        "translation": "un canapé",
+        "icon": "🛋️",
+        "zones": [
+          "living"
+        ],
+        "word": "sofa"
+      },
+      {
+        "id": "fridge",
+        "translation": "un réfrigérateur",
+        "icon": "🧊",
+        "zones": [
+          "kitchen"
+        ],
+        "word": "fridge"
+      },
+      {
+        "id": "shower",
+        "translation": "une douche",
+        "icon": "🚿",
+        "zones": [
+          "bathroom"
+        ],
+        "word": "shower"
+      },
+      {
+        "id": "table",
+        "translation": "une table",
+        "icon": "🪑",
+        "zones": [
+          "living",
+          "kitchen",
+          "bedroom"
+        ],
+        "word": "table"
+      },
+      {
+        "id": "lamp",
+        "translation": "une lampe",
+        "icon": "💡",
+        "zones": [
+          "living",
+          "bedroom"
+        ],
+        "word": "lamp"
+      },
+      {
+        "id": "stove",
+        "translation": "une cuisinière",
+        "icon": "🍳",
+        "zones": [
+          "kitchen"
+        ],
+        "word": "stove"
+      },
+      {
+        "id": "basin",
+        "translation": "un lavabo",
+        "icon": "🚰",
+        "zones": [
+          "bathroom"
+        ],
+        "word": "washbasin"
+      }
+    ],
+    "body": [
+      {
+        "id": "head",
+        "translation": "la tête",
+        "icon": "🙂",
+        "zones": [
+          "head",
+          "eyes",
+          "ears",
+          "nose",
+          "mouth"
+        ],
+        "word": "head"
+      },
+      {
+        "id": "eyes",
+        "translation": "les yeux",
+        "icon": "👀",
+        "zones": [
+          "eyes"
+        ],
+        "word": "eyes"
+      },
+      {
+        "id": "ears",
+        "translation": "les oreilles",
+        "icon": "👂",
+        "zones": [
+          "ears"
+        ],
+        "word": "ears"
+      },
+      {
+        "id": "nose",
+        "translation": "le nez",
+        "icon": "👃",
+        "zones": [
+          "nose"
+        ],
+        "word": "nose"
+      },
+      {
+        "id": "mouth",
+        "translation": "la bouche",
+        "icon": "👄",
+        "zones": [
+          "mouth"
+        ],
+        "word": "mouth"
+      },
+      {
+        "id": "arms",
+        "translation": "les bras",
+        "icon": "💪",
+        "zones": [
+          "arms"
+        ],
+        "word": "arms"
+      },
+      {
+        "id": "hands",
+        "translation": "les mains",
+        "icon": "✋",
+        "zones": [
+          "hands"
+        ],
+        "word": "hands"
+      },
+      {
+        "id": "legs",
+        "translation": "les jambes",
+        "icon": "🦵",
+        "zones": [
+          "legs"
+        ],
+        "word": "legs"
+      },
+      {
+        "id": "feet",
+        "translation": "les pieds",
+        "icon": "🦶",
+        "zones": [
+          "feet"
+        ],
+        "word": "feet"
+      },
+      {
+        "id": "torso",
+        "translation": "le torse",
+        "icon": "👕",
+        "zones": [
+          "torso"
+        ],
+        "word": "torso"
+      }
+    ],
+    "parking": [
+      {
+        "prompt": "J’ai une voiture.",
+        "words": [
+          "I",
+          "have",
+          "a",
+          "car"
+        ],
+        "extras": [
+          "train",
+          "are"
+        ],
+        "note": "Gardez les articles et les terminaisons."
+      },
+      {
+        "prompt": "J’ai dix-huit ans.",
+        "words": [
+          "I",
+          "am",
+          "eighteen",
+          "years",
+          "old"
+        ],
+        "extras": [
+          "train",
+          "are"
+        ],
+        "note": "Gardez les articles et les terminaisons."
+      },
+      {
+        "prompt": "Mon nom est Alex.",
+        "words": [
+          "My",
+          "name",
+          "is",
+          "Alex"
+        ],
+        "extras": [
+          "train",
+          "are"
+        ],
+        "note": "Gardez les articles et les terminaisons."
+      },
+      {
+        "prompt": "J’habite à Paris.",
+        "words": [
+          "I",
+          "live",
+          "in",
+          "Paris"
+        ],
+        "extras": [
+          "train",
+          "are"
+        ],
+        "note": "Gardez les articles et les terminaisons."
+      },
+      {
+        "prompt": "Cette voiture est super.",
+        "words": [
+          "This",
+          "car",
+          "is",
+          "cool"
+        ],
+        "extras": [
+          "train",
+          "are"
+        ],
+        "note": "Expression familière : cool signifie super dans cette phrase.",
+        "register": "familier"
+      }
+    ]
+  },
+  "es": {
+    "rooms": [
+      {
+        "id": "living",
+        "translation": "salon",
+        "word": "salón"
+      },
+      {
+        "id": "bedroom",
+        "translation": "chambre",
+        "word": "dormitorio"
+      },
+      {
+        "id": "kitchen",
+        "translation": "cuisine",
+        "word": "cocina"
+      },
+      {
+        "id": "bathroom",
+        "translation": "salle de bains",
+        "word": "baño"
+      }
+    ],
+    "house": [
+      {
+        "id": "bed",
+        "translation": "un lit",
+        "icon": "🛏️",
+        "zones": [
+          "bedroom"
+        ],
+        "word": "cama"
+      },
+      {
+        "id": "sofa",
+        "translation": "un canapé",
+        "icon": "🛋️",
+        "zones": [
+          "living"
+        ],
+        "word": "sofá"
+      },
+      {
+        "id": "fridge",
+        "translation": "un réfrigérateur",
+        "icon": "🧊",
+        "zones": [
+          "kitchen"
+        ],
+        "word": "nevera"
+      },
+      {
+        "id": "shower",
+        "translation": "une douche",
+        "icon": "🚿",
+        "zones": [
+          "bathroom"
+        ],
+        "word": "ducha"
+      },
+      {
+        "id": "table",
+        "translation": "une table",
+        "icon": "🪑",
+        "zones": [
+          "living",
+          "kitchen",
+          "bedroom"
+        ],
+        "word": "mesa"
+      },
+      {
+        "id": "lamp",
+        "translation": "une lampe",
+        "icon": "💡",
+        "zones": [
+          "living",
+          "bedroom"
+        ],
+        "word": "lámpara"
+      },
+      {
+        "id": "stove",
+        "translation": "une cuisinière",
+        "icon": "🍳",
+        "zones": [
+          "kitchen"
+        ],
+        "word": "cocina"
+      },
+      {
+        "id": "basin",
+        "translation": "un lavabo",
+        "icon": "🚰",
+        "zones": [
+          "bathroom"
+        ],
+        "word": "lavabo"
+      }
+    ],
+    "body": [
+      {
+        "id": "head",
+        "translation": "la tête",
+        "icon": "🙂",
+        "zones": [
+          "head",
+          "eyes",
+          "ears",
+          "nose",
+          "mouth"
+        ],
+        "word": "cabeza"
+      },
+      {
+        "id": "eyes",
+        "translation": "les yeux",
+        "icon": "👀",
+        "zones": [
+          "eyes"
+        ],
+        "word": "ojos"
+      },
+      {
+        "id": "ears",
+        "translation": "les oreilles",
+        "icon": "👂",
+        "zones": [
+          "ears"
+        ],
+        "word": "orejas"
+      },
+      {
+        "id": "nose",
+        "translation": "le nez",
+        "icon": "👃",
+        "zones": [
+          "nose"
+        ],
+        "word": "nariz"
+      },
+      {
+        "id": "mouth",
+        "translation": "la bouche",
+        "icon": "👄",
+        "zones": [
+          "mouth"
+        ],
+        "word": "boca"
+      },
+      {
+        "id": "arms",
+        "translation": "les bras",
+        "icon": "💪",
+        "zones": [
+          "arms"
+        ],
+        "word": "brazos"
+      },
+      {
+        "id": "hands",
+        "translation": "les mains",
+        "icon": "✋",
+        "zones": [
+          "hands"
+        ],
+        "word": "manos"
+      },
+      {
+        "id": "legs",
+        "translation": "les jambes",
+        "icon": "🦵",
+        "zones": [
+          "legs"
+        ],
+        "word": "piernas"
+      },
+      {
+        "id": "feet",
+        "translation": "les pieds",
+        "icon": "🦶",
+        "zones": [
+          "feet"
+        ],
+        "word": "pies"
+      },
+      {
+        "id": "torso",
+        "translation": "le torse",
+        "icon": "👕",
+        "zones": [
+          "torso"
+        ],
+        "word": "torso"
+      }
+    ],
+    "parking": [
+      {
+        "prompt": "J’ai une voiture.",
+        "words": [
+          "Yo",
+          "tengo",
+          "un",
+          "coche"
+        ],
+        "extras": [
+          "tren",
+          "eres"
+        ],
+        "note": "Gardez les articles et les terminaisons."
+      },
+      {
+        "prompt": "J’ai dix-huit ans.",
+        "words": [
+          "Yo",
+          "tengo",
+          "dieciocho",
+          "años"
+        ],
+        "extras": [
+          "tren",
+          "eres"
+        ],
+        "note": "Gardez les articles et les terminaisons."
+      },
+      {
+        "prompt": "Mon nom est Alex.",
+        "words": [
+          "Mi",
+          "nombre",
+          "es",
+          "Alex"
+        ],
+        "extras": [
+          "tren",
+          "eres"
+        ],
+        "note": "Gardez les articles et les terminaisons."
+      },
+      {
+        "prompt": "J’habite à Paris.",
+        "words": [
+          "Yo",
+          "vivo",
+          "en",
+          "París"
+        ],
+        "extras": [
+          "tren",
+          "eres"
+        ],
+        "note": "Gardez les articles et les terminaisons."
+      },
+      {
+        "prompt": "Cette voiture est super.",
+        "words": [
+          "Este",
+          "coche",
+          "es",
+          "guay"
+        ],
+        "extras": [
+          "tren",
+          "eres"
+        ],
+        "note": "Expression familière d’Espagne : guay signifie super.",
+        "register": "familier"
+      }
+    ]
+  },
+  "it": {
+    "rooms": [
+      {
+        "id": "living",
+        "translation": "salon",
+        "word": "soggiorno"
+      },
+      {
+        "id": "bedroom",
+        "translation": "chambre",
+        "word": "camera da letto"
+      },
+      {
+        "id": "kitchen",
+        "translation": "cuisine",
+        "word": "cucina"
+      },
+      {
+        "id": "bathroom",
+        "translation": "salle de bains",
+        "word": "bagno"
+      }
+    ],
+    "house": [
+      {
+        "id": "bed",
+        "translation": "un lit",
+        "icon": "🛏️",
+        "zones": [
+          "bedroom"
+        ],
+        "word": "letto"
+      },
+      {
+        "id": "sofa",
+        "translation": "un canapé",
+        "icon": "🛋️",
+        "zones": [
+          "living"
+        ],
+        "word": "divano"
+      },
+      {
+        "id": "fridge",
+        "translation": "un réfrigérateur",
+        "icon": "🧊",
+        "zones": [
+          "kitchen"
+        ],
+        "word": "frigorifero"
+      },
+      {
+        "id": "shower",
+        "translation": "une douche",
+        "icon": "🚿",
+        "zones": [
+          "bathroom"
+        ],
+        "word": "doccia"
+      },
+      {
+        "id": "table",
+        "translation": "une table",
+        "icon": "🪑",
+        "zones": [
+          "living",
+          "kitchen",
+          "bedroom"
+        ],
+        "word": "tavolo"
+      },
+      {
+        "id": "lamp",
+        "translation": "une lampe",
+        "icon": "💡",
+        "zones": [
+          "living",
+          "bedroom"
+        ],
+        "word": "lampada"
+      },
+      {
+        "id": "stove",
+        "translation": "une cuisinière",
+        "icon": "🍳",
+        "zones": [
+          "kitchen"
+        ],
+        "word": "fornello"
+      },
+      {
+        "id": "basin",
+        "translation": "un lavabo",
+        "icon": "🚰",
+        "zones": [
+          "bathroom"
+        ],
+        "word": "lavandino"
+      }
+    ],
+    "body": [
+      {
+        "id": "head",
+        "translation": "la tête",
+        "icon": "🙂",
+        "zones": [
+          "head",
+          "eyes",
+          "ears",
+          "nose",
+          "mouth"
+        ],
+        "word": "testa"
+      },
+      {
+        "id": "eyes",
+        "translation": "les yeux",
+        "icon": "👀",
+        "zones": [
+          "eyes"
+        ],
+        "word": "occhi"
+      },
+      {
+        "id": "ears",
+        "translation": "les oreilles",
+        "icon": "👂",
+        "zones": [
+          "ears"
+        ],
+        "word": "orecchie"
+      },
+      {
+        "id": "nose",
+        "translation": "le nez",
+        "icon": "👃",
+        "zones": [
+          "nose"
+        ],
+        "word": "naso"
+      },
+      {
+        "id": "mouth",
+        "translation": "la bouche",
+        "icon": "👄",
+        "zones": [
+          "mouth"
+        ],
+        "word": "bocca"
+      },
+      {
+        "id": "arms",
+        "translation": "les bras",
+        "icon": "💪",
+        "zones": [
+          "arms"
+        ],
+        "word": "braccia"
+      },
+      {
+        "id": "hands",
+        "translation": "les mains",
+        "icon": "✋",
+        "zones": [
+          "hands"
+        ],
+        "word": "mani"
+      },
+      {
+        "id": "legs",
+        "translation": "les jambes",
+        "icon": "🦵",
+        "zones": [
+          "legs"
+        ],
+        "word": "gambe"
+      },
+      {
+        "id": "feet",
+        "translation": "les pieds",
+        "icon": "🦶",
+        "zones": [
+          "feet"
+        ],
+        "word": "piedi"
+      },
+      {
+        "id": "torso",
+        "translation": "le torse",
+        "icon": "👕",
+        "zones": [
+          "torso"
+        ],
+        "word": "torso"
+      }
+    ],
+    "parking": [
+      {
+        "prompt": "J’ai une voiture.",
+        "words": [
+          "Io",
+          "ho",
+          "una",
+          "macchina"
+        ],
+        "extras": [
+          "treno",
+          "sei"
+        ],
+        "note": "Gardez les articles et les terminaisons."
+      },
+      {
+        "prompt": "J’ai dix-huit ans.",
+        "words": [
+          "Io",
+          "ho",
+          "diciotto",
+          "anni"
+        ],
+        "extras": [
+          "treno",
+          "sei"
+        ],
+        "note": "Gardez les articles et les terminaisons."
+      },
+      {
+        "prompt": "Mon nom est Alex.",
+        "words": [
+          "Il",
+          "mio",
+          "nome",
+          "è",
+          "Alex"
+        ],
+        "extras": [
+          "treno",
+          "sei"
+        ],
+        "note": "Gardez les articles et les terminaisons."
+      },
+      {
+        "prompt": "J’habite à Paris.",
+        "words": [
+          "Io",
+          "vivo",
+          "a",
+          "Parigi"
+        ],
+        "extras": [
+          "treno",
+          "sei"
+        ],
+        "note": "Gardez les articles et les terminaisons."
+      },
+      {
+        "prompt": "Cette voiture est super.",
+        "words": [
+          "Questa",
+          "macchina",
+          "è",
+          "figa"
+        ],
+        "extras": [
+          "treno",
+          "sei"
+        ],
+        "note": "Expression familière et argotique : figa signifie cool ici. À réserver aux échanges informels.",
+        "register": "familier"
+      }
+    ]
+  },
+  "ja": {
+    "rooms": [
+      {
+        "id": "living",
+        "translation": "salon",
+        "word": "リビング"
+      },
+      {
+        "id": "bedroom",
+        "translation": "chambre",
+        "word": "寝室"
+      },
+      {
+        "id": "kitchen",
+        "translation": "cuisine",
+        "word": "キッチン"
+      },
+      {
+        "id": "bathroom",
+        "translation": "salle de bains",
+        "word": "浴室"
+      }
+    ],
+    "house": [
+      {
+        "id": "bed",
+        "translation": "un lit",
+        "icon": "🛏️",
+        "zones": [
+          "bedroom"
+        ],
+        "word": "ベッド"
+      },
+      {
+        "id": "sofa",
+        "translation": "un canapé",
+        "icon": "🛋️",
+        "zones": [
+          "living"
+        ],
+        "word": "ソファ"
+      },
+      {
+        "id": "fridge",
+        "translation": "un réfrigérateur",
+        "icon": "🧊",
+        "zones": [
+          "kitchen"
+        ],
+        "word": "冷蔵庫"
+      },
+      {
+        "id": "shower",
+        "translation": "une douche",
+        "icon": "🚿",
+        "zones": [
+          "bathroom"
+        ],
+        "word": "シャワー"
+      },
+      {
+        "id": "table",
+        "translation": "une table",
+        "icon": "🪑",
+        "zones": [
+          "living",
+          "kitchen",
+          "bedroom"
+        ],
+        "word": "テーブル"
+      },
+      {
+        "id": "lamp",
+        "translation": "une lampe",
+        "icon": "💡",
+        "zones": [
+          "living",
+          "bedroom"
+        ],
+        "word": "ランプ"
+      },
+      {
+        "id": "stove",
+        "translation": "une cuisinière",
+        "icon": "🍳",
+        "zones": [
+          "kitchen"
+        ],
+        "word": "コンロ"
+      },
+      {
+        "id": "basin",
+        "translation": "un lavabo",
+        "icon": "🚰",
+        "zones": [
+          "bathroom"
+        ],
+        "word": "洗面台"
+      }
+    ],
+    "body": [
+      {
+        "id": "head",
+        "translation": "la tête",
+        "icon": "🙂",
+        "zones": [
+          "head",
+          "eyes",
+          "ears",
+          "nose",
+          "mouth"
+        ],
+        "word": "頭"
+      },
+      {
+        "id": "eyes",
+        "translation": "les yeux",
+        "icon": "👀",
+        "zones": [
+          "eyes"
+        ],
+        "word": "目"
+      },
+      {
+        "id": "ears",
+        "translation": "les oreilles",
+        "icon": "👂",
+        "zones": [
+          "ears"
+        ],
+        "word": "耳"
+      },
+      {
+        "id": "nose",
+        "translation": "le nez",
+        "icon": "👃",
+        "zones": [
+          "nose"
+        ],
+        "word": "鼻"
+      },
+      {
+        "id": "mouth",
+        "translation": "la bouche",
+        "icon": "👄",
+        "zones": [
+          "mouth"
+        ],
+        "word": "口"
+      },
+      {
+        "id": "arms",
+        "translation": "les bras",
+        "icon": "💪",
+        "zones": [
+          "arms"
+        ],
+        "word": "腕"
+      },
+      {
+        "id": "hands",
+        "translation": "les mains",
+        "icon": "✋",
+        "zones": [
+          "hands"
+        ],
+        "word": "手"
+      },
+      {
+        "id": "legs",
+        "translation": "les jambes",
+        "icon": "🦵",
+        "zones": [
+          "legs"
+        ],
+        "word": "脚"
+      },
+      {
+        "id": "feet",
+        "translation": "les pieds",
+        "icon": "🦶",
+        "zones": [
+          "feet"
+        ],
+        "word": "足"
+      },
+      {
+        "id": "torso",
+        "translation": "le torse",
+        "icon": "👕",
+        "zones": [
+          "torso"
+        ],
+        "word": "胴体"
+      }
+    ],
+    "parking": [
+      {
+        "prompt": "J’ai une voiture.",
+        "words": [
+          "私",
+          "は",
+          "車",
+          "を",
+          "持っています"
+        ],
+        "extras": [
+          "電車",
+          "あなた"
+        ],
+        "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."
+      },
+      {
+        "prompt": "J’ai dix-huit ans.",
+        "words": [
+          "私",
+          "は",
+          "18",
+          "歳",
+          "です"
+        ],
+        "extras": [
+          "電車",
+          "あなた"
+        ],
+        "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."
+      },
+      {
+        "prompt": "Mon nom est Alex.",
+        "words": [
+          "私",
+          "の",
+          "名前",
+          "は",
+          "Alexです"
+        ],
+        "extras": [
+          "電車",
+          "あなた"
+        ],
+        "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."
+      },
+      {
+        "prompt": "J’habite à Paris.",
+        "words": [
+          "私",
+          "は",
+          "パリ",
+          "に",
+          "住んでいます"
+        ],
+        "extras": [
+          "電車",
+          "あなた"
+        ],
+        "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."
+      },
+      {
+        "prompt": "Cette voiture est super.",
+        "words": [
+          "この",
+          "車",
+          "めっちゃ",
+          "いい",
+          "ね"
+        ],
+        "extras": [
+          "電車",
+          "あなた"
+        ],
+        "note": "Expression familière : めっちゃ renforce いい, comme vraiment super. Ne pas employer telle quelle dans un échange formel.",
+        "register": "familier"
+      }
+    ]
+  },
+  "zh": {
+    "rooms": [
+      {
+        "id": "living",
+        "translation": "salon",
+        "word": "客厅"
+      },
+      {
+        "id": "bedroom",
+        "translation": "chambre",
+        "word": "卧室"
+      },
+      {
+        "id": "kitchen",
+        "translation": "cuisine",
+        "word": "厨房"
+      },
+      {
+        "id": "bathroom",
+        "translation": "salle de bains",
+        "word": "浴室"
+      }
+    ],
+    "house": [
+      {
+        "id": "bed",
+        "translation": "un lit",
+        "icon": "🛏️",
+        "zones": [
+          "bedroom"
+        ],
+        "word": "床"
+      },
+      {
+        "id": "sofa",
+        "translation": "un canapé",
+        "icon": "🛋️",
+        "zones": [
+          "living"
+        ],
+        "word": "沙发"
+      },
+      {
+        "id": "fridge",
+        "translation": "un réfrigérateur",
+        "icon": "🧊",
+        "zones": [
+          "kitchen"
+        ],
+        "word": "冰箱"
+      },
+      {
+        "id": "shower",
+        "translation": "une douche",
+        "icon": "🚿",
+        "zones": [
+          "bathroom"
+        ],
+        "word": "淋浴"
+      },
+      {
+        "id": "table",
+        "translation": "une table",
+        "icon": "🪑",
+        "zones": [
+          "living",
+          "kitchen",
+          "bedroom"
+        ],
+        "word": "桌子"
+      },
+      {
+        "id": "lamp",
+        "translation": "une lampe",
+        "icon": "💡",
+        "zones": [
+          "living",
+          "bedroom"
+        ],
+        "word": "台灯"
+      },
+      {
+        "id": "stove",
+        "translation": "une cuisinière",
+        "icon": "🍳",
+        "zones": [
+          "kitchen"
+        ],
+        "word": "炉灶"
+      },
+      {
+        "id": "basin",
+        "translation": "un lavabo",
+        "icon": "🚰",
+        "zones": [
+          "bathroom"
+        ],
+        "word": "洗手盆"
+      }
+    ],
+    "body": [
+      {
+        "id": "head",
+        "translation": "la tête",
+        "icon": "🙂",
+        "zones": [
+          "head",
+          "eyes",
+          "ears",
+          "nose",
+          "mouth"
+        ],
+        "word": "头"
+      },
+      {
+        "id": "eyes",
+        "translation": "les yeux",
+        "icon": "👀",
+        "zones": [
+          "eyes"
+        ],
+        "word": "眼睛"
+      },
+      {
+        "id": "ears",
+        "translation": "les oreilles",
+        "icon": "👂",
+        "zones": [
+          "ears"
+        ],
+        "word": "耳朵"
+      },
+      {
+        "id": "nose",
+        "translation": "le nez",
+        "icon": "👃",
+        "zones": [
+          "nose"
+        ],
+        "word": "鼻子"
+      },
+      {
+        "id": "mouth",
+        "translation": "la bouche",
+        "icon": "👄",
+        "zones": [
+          "mouth"
+        ],
+        "word": "嘴"
+      },
+      {
+        "id": "arms",
+        "translation": "les bras",
+        "icon": "💪",
+        "zones": [
+          "arms"
+        ],
+        "word": "手臂"
+      },
+      {
+        "id": "hands",
+        "translation": "les mains",
+        "icon": "✋",
+        "zones": [
+          "hands"
+        ],
+        "word": "手"
+      },
+      {
+        "id": "legs",
+        "translation": "les jambes",
+        "icon": "🦵",
+        "zones": [
+          "legs"
+        ],
+        "word": "腿"
+      },
+      {
+        "id": "feet",
+        "translation": "les pieds",
+        "icon": "🦶",
+        "zones": [
+          "feet"
+        ],
+        "word": "脚"
+      },
+      {
+        "id": "torso",
+        "translation": "le torse",
+        "icon": "👕",
+        "zones": [
+          "torso"
+        ],
+        "word": "躯干"
+      }
+    ],
+    "parking": [
+      {
+        "prompt": "J’ai une voiture.",
+        "words": [
+          "我",
+          "有",
+          "一辆",
+          "车"
+        ],
+        "extras": [
+          "火车",
+          "你"
+        ],
+        "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."
+      },
+      {
+        "prompt": "Cette année, j’ai dix-huit ans.",
+        "words": [
+          "我",
+          "今年",
+          "十八",
+          "岁"
+        ],
+        "extras": [
+          "火车",
+          "你"
+        ],
+        "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."
+      },
+      {
+        "prompt": "Mon nom est Alex.",
+        "words": [
+          "我",
+          "的",
+          "名字",
+          "是",
+          "Alex"
+        ],
+        "extras": [
+          "火车",
+          "你"
+        ],
+        "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."
+      },
+      {
+        "prompt": "J’habite à Paris.",
+        "words": [
+          "我",
+          "住",
+          "在",
+          "巴黎"
+        ],
+        "extras": [
+          "火车",
+          "你"
+        ],
+        "note": "En japonais et en chinois, les bus portent des blocs de mots ou des particules."
+      },
+      {
+        "prompt": "Cette voiture est super.",
+        "words": [
+          "这辆",
+          "车",
+          "真",
+          "酷"
+        ],
+        "extras": [
+          "火车",
+          "你"
+        ],
+        "note": "Expression familière : 酷 signifie cool ; 真 renforce le compliment.",
+        "register": "familier"
+      }
+    ]
+  }
+}

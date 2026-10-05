@@ -46,7 +46,7 @@
   }
   function renderBall(){
     if(ballRound>=ballPrompts.length){result();return;}
-    const key=ballPrompts[ballRound],reverse=WordSipDirection.reverse($('games-direction').value,ballRound),phrase=reverse?meanings[key]:instructions[language][key];ballLocation=[570,365];
+    const key=ballPrompts[ballRound],reverse=false,phrase=reverse?meanings[key]:instructions[language][key];ballLocation=[570,365];
     $('game-instructions').innerHTML=`<span class="ball-progress">Consigne ${ballRound+1}/${ballPrompts.length}</span><br><span class="vocab-word" role="button" tabindex="0" data-vocab-term="${esc(phrase)}" data-vocab-translation="${esc(reverse?instructions[language][key]:meanings[key])}">${esc(phrase)}</span>`;
     $('game-area').innerHTML=`<div class="game-steps"><span>1 · Lisez ou écoutez</span><span>2 · Saisissez la balle</span><span>3 · Déplacez et relâchez</span></div><div class="ball-free-board">${WordSipVisuals.ballScene('start',true)}</div><div class="ball-controls"><button id="ball-listen" type="button">🔊 Écouter la consigne</button><button id="ball-check" type="button" disabled>Vérifier ma position</button></div><p class="ball-progress">Maintenez le bouton de la souris sur la balle, déplacez-la, puis relâchez : votre position est vérifiée. Sur écran tactile, glissez avec le doigt. Au clavier : flèches sur la balle, puis Entrée.</p>`;
     const svg=$('game-area').querySelector('.interactive-scene'),ball=$('learning-ball'),front=svg.querySelector('[data-ball-front]');
@@ -82,7 +82,7 @@
     $('ball-listen').onclick=()=>{const generation=gameGeneration;activeAudio?.pause();activeAudio=new Audio('/api/tts?text='+encodeURIComponent(phrase)+'&lang='+(reverse?'fr':language));activeAudio.play().catch(()=>{if(generation===gameGeneration)feedback('Audio indisponible. La consigne écrite reste utilisable.',false);});};
   }
   function renderOdd(){
-    const reverse=WordSipDirection.reverse($('games-direction').value,oddRound);
+    const reverse=false;
     if(oddRound>=5){result();return;}
     const safeThemes=(pathMode?pathThemes:lessons).filter(l=>!l.id.includes('heures')&&!l.id.includes('positions'));
     if(safeThemes.length<2){$('game-area').textContent='Consultez deux fiches de vocabulaire de thèmes différents pour ce jeu.';return;}
@@ -96,7 +96,7 @@
   function next(callback){$('game-next').hidden=false;$('game-next').onclick=()=>{gameGeneration++;WordSipAdventures.dispose();WordSipBilliards.dispose();activeAudio?.pause();activeAudio=null;roundIndex++;feedback('');$('game-next').hidden=true;callback();};}
   const illustrations={vetements:['👔','👕','👖','👗','🧥','👞','🧦','🎩'],cuisine:['🍳','🫕','🍳','🔪','🥄','🍞','💧','🧑‍🍳'],lieux:['🏫','🚉','🛒','🏥','💊','🍽️','🌳','📚']};
   function renderImages(){
-    const reverse=WordSipDirection.reverse($('games-direction').value,directionSeries);let lesson=currentLesson(),theme=Object.keys(illustrations).find(k=>lesson.id.includes(k));
+    const reverse=false;let lesson=currentLesson(),theme=Object.keys(illustrations).find(k=>lesson.id.includes(k));
     if(!theme&&lesson.id.includes('couleurs'))theme='couleurs';
     if(!theme){$('game-area').textContent='Choisissez Couleurs, Lieux, Vêtements ou Cuisine pour jouer avec les images.';return;}
     const bank=G.shuffle(lesson.vocabulary.map((v,i)=>({...v,index:i}))).slice(0,3);let selected=null,done=0;
@@ -112,7 +112,7 @@
   }
   function renderListening(){
     if(roundIndex>=Math.min(5,difficulty.pairs)){result();return;}
-    const reverse=WordSipDirection.reverse($('games-direction').value,roundIndex),bank=audioOverride||currentLesson().vocabulary,word=bank[roundIndex%bank.length],text=reverse?word.translation:(word.term||word.word);const audioLang=reverse?'fr':language;
+    const reverse=false,bank=audioOverride||currentLesson().vocabulary,word=bank[roundIndex%bank.length],text=reverse?word.translation:(word.term||word.word);const audioLang=reverse?'fr':language;
     $('game-instructions').textContent=`Mot ${roundIndex+1} — Écoutez, puis écrivez ce que vous entendez. Aucun mot ni traduction n’est affiché avant votre réponse.`;
     $('game-area').innerHTML='<div class="game-steps"><span>1 · Écoutez</span><span>2 · Écrivez</span><span>3 · Vérifiez</span></div><div class="sound-game"><div class="sound-orb" aria-hidden="true">♫</div><button id="sound-play" type="button">🔊 Écouter / réécouter</button><label>Le mot entendu<input id="sound-answer" autocomplete="off" autocapitalize="none" spellcheck="false"></label><button id="sound-check" type="button" disabled>Vérifier</button><p id="sound-status" role="status"></p></div>';
     let checked=false,heard=false;const generation=gameGeneration,status=$('sound-status'),checkButton=$('sound-check');

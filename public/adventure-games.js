@@ -20,52 +20,27 @@
     return shapes[o.id]?`<svg viewBox="0 0 80 68" aria-hidden="true">${shapes[o.id]}</svg>`:o.icon;
   }
   async function mount(game,options){
-    stop();let alive=true,audio=null,frame=0,ghost=null;
+    stop();WordSipParking.dispose();let alive=true,audio=null,frame=0,ghost=null;
     const root=document.getElementById('game-area');
-    stop=()=>{alive=false;audio?.pause();cancelAnimationFrame(frame);ghost?.remove();};
+    stop=()=>{WordSipParking.dispose();alive=false;audio?.pause();cancelAnimationFrame(frame);ghost?.remove();};
     root.innerHTML='<p>Préparation du jeu…</p>';
     const data=await fetch('/adventure-vocabulary.json').then(r=>{if(!r.ok)throw Error('Vocabulaire indisponible.');return r.json();});
     if(!alive||!options.isActive())return;
     const bank=data[options.language]||data.en;const reverseAt=i=>WordSipDirection.reverse(options.direction||'to-language',i);
     if(game==='kart'){kart();root.closest('#game-panel').scrollIntoView({block:'start',behavior:'instant'});return;}
-    if(game==='parking'){parking();root.closest('#game-panel').scrollIntoView({block:'start',behavior:'instant'});return;}
+    if(game==='parking'){WordSipParking.mount(root,{...options,bank});root.closest('#game-panel').scrollIntoView({block:'start',behavior:'instant'});return;}
     placement();root.closest('#game-panel').scrollIntoView({block:'start',behavior:'instant'});
-    function parking(){
-      const french=[['J’ai','une','voiture'],['J’ai','dix-huit','ans'],['Mon','nom','est','Alex'],['J’habite','à','Paris'],['J’aime','cette','voiture','rouge']];const rounds=bank.parking.map((q,i)=>reverseAt(i)?{prompt:q.words.join(['ja','zh'].includes(options.language)?'':' '),words:options.language==='zh'&&i===1?['Cette','année,','j’ai','dix-huit','ans']:french[i],extras:['train','demain'],note:'Reconstituez la traduction française complète.'}:q);let index=0,selected=[],passed=false,tiles=[];
-      document.getElementById('game-instructions').textContent='Faites sortir les bus dans le bon ordre pour construire la phrase demandée. Un bus choisi ajoute son mot à votre phrase.';
-      function prepare(){
-        const question=rounds[index];selected=[];passed=false;tiles=shuffle([...question.words,...(options.level==='niveau1'?[]:question.extras)]);
-        root.innerHTML=`<div class="parking-request"><span>Phrase ${index+1} / ${rounds.length}</span><h3>${esc(question.prompt)}</h3><p>${question.words.length} mots ou blocs · ${esc(question.note)}</p></div><div class="parking-lot"><div class="parking-exit" aria-hidden="true">SORTIE ↑</div><div class="parked-buses">${tiles.map((word,i)=>`<button class="word-bus bus-tone-${i%4}" type="button" data-bus="${i}" aria-label="Faire sortir le bus ${esc(word)}"><span class="bus-windows" aria-hidden="true">▱ ▱ ▱</span><strong>${esc(word)}</strong><span class="bus-wheels" aria-hidden="true"></span></button>`).join('')}</div></div><div class="sentence-slots" role="group" aria-label="Votre phrase"></div><div class="ball-controls"><button id="parking-check" type="button" disabled>Vérifier la phrase</button><button id="parking-reset" type="button">Rentrer tous les bus</button><button id="parking-next" type="button" hidden>Phrase suivante</button></div><p class="adventure-access">Cliquez sur un bus pour le faire sortir. Cliquez sur un mot de votre phrase pour annuler ce choix et remettre son bus au parking.</p>`;
-        root.querySelectorAll('[data-bus]').forEach(button=>button.onclick=()=>{if(passed||button.disabled)return;button.disabled=true;button.classList.add('departed');selected.push(Number(button.dataset.bus));drawSentence();});
-        root.querySelector('#parking-reset').onclick=()=>{if(!passed)prepare();};
-        root.querySelector('#parking-check').onclick=()=>{
-          if(passed)return;const answer=selected.map(i=>tiles[i]);
-          const norm=x=>x.normalize('NFC').trim().toLocaleLowerCase();
-          const correct=answer.length===question.words.length&&answer.every((w,i)=>norm(w)===norm(question.words[i]));options.onAnswer(correct);
-          if(correct){passed=true;root.querySelector('#parking-check').disabled=true;root.querySelector('#parking-reset').disabled=true;root.querySelector('#parking-next').hidden=false;options.feedback('Phrase correcte ! +10. '+question.words.join(['ja','zh'].includes(options.language)?'':' ')+' — '+question.prompt);}
-          else options.feedback('−5 points. Vérifiez l’ordre des mots. Vous pouvez annuler des mots ou rentrer tous les bus. Réponse : '+question.words.join(['ja','zh'].includes(options.language)?'':' ')+'.',false);
-        };
-        root.querySelector('#parking-next').onclick=()=>{if(++index>=rounds.length){root.innerHTML='<div class="game-result"><strong>Parking libéré !</strong><p>Cinq phrases ont été reconstruites. Recommencez dans cette langue ou choisissez une autre langue.</p></div>';}else{options.feedback('');prepare();}};
-        drawSentence();
-      }
-      function drawSentence(){
-        const area=root.querySelector('.sentence-slots');area.innerHTML=selected.map((id,i)=>`<button type="button" data-undo="${i}" aria-label="Annuler le mot ${esc(tiles[id])}">${esc(tiles[id])} <small>×</small></button>`).join('')||'<span>Votre phrase se construit ici…</span>';
-        area.querySelectorAll('[data-undo]').forEach(button=>button.onclick=()=>{if(passed)return;const [id]=selected.splice(Number(button.dataset.undo),1),bus=root.querySelector(`[data-bus="${id}"]`);bus.disabled=false;bus.classList.remove('departed');drawSentence();});
-        root.querySelector('#parking-check').disabled=selected.length!==rounds[index].words.length;
-      }
-      prepare();
-    }
     function placement(){
-      const objects=shuffle(bank[game==='house'?'house':'body']).slice(0,options.level==='niveau1'?6:10).map((o,i)=>({...o,label:reverseAt(i)?o.translation:o.word}));let selected=null,done=0,dragging=null;const suppressed=new Set();
+      const objects=shuffle(bank[game==='house'?'house':'body']).slice(0,options.level==='niveau1'?6:10).map((o,i)=>({...o,label:o.word}));let selected=null,done=0,dragging=null;const suppressed=new Set();
       document.getElementById('game-instructions').textContent=game==='house'?'Glissez les objets dans les pièces où ils peuvent se trouver. Certains objets ont plusieurs emplacements valides.':'Glissez chaque étiquette sur la partie du corps correspondante.';
-      const rooms=bank.rooms.map(room=>`<button class="house-room room-${room.id}" data-zone="${room.id}" type="button"><span class="room-wall"></span><strong>${esc(room.word)}</strong><div class="room-objects"></div></button>`).join('');
-      root.innerHTML=`<div class="game-steps"><span>1 · Saisissez un objet</span><span>2 · Glissez vers son emplacement</span><span>3 · Relâchez</span></div><div class="placement-workbench ${game}"><div class="placement-board ${game}">${game==='house'?'<div class="house-plan">'+rooms+'</div>':bodyScene()}</div><div class="object-tray">${objects.map((o,i)=>`<button type="button" class="object-token" data-object="${i}" aria-label="Déplacer ${esc(o.label)}"><span aria-hidden="true">${objectImage(o)}</span><strong>${esc(o.label)}</strong></button>`).join('')}</div></div><p class="placement-progress" role="status">0 / ${objects.length} placés</p><details class="adventure-help"><summary>Afficher le vocabulaire français pour réviser</summary><p>${(game==='house'?[...bank.rooms,...objects]:objects).map(o=>esc(o.word)+' — '+esc(o.translation)).join(' · ')}</p></details><p class="adventure-access">Souris ou doigt : glissez un objet. Au clavier : sélectionnez une étiquette, puis activez son emplacement avec Entrée.</p>`;
-      const tokens=[...root.querySelectorAll('[data-object]')];
+      const rooms=bank.rooms.map(room=>`<div class="house-cell room-${room.id}"><div class="wall-face wall-back" aria-hidden="true"><span class="house-window"></span></div><div class="wall-face wall-left" aria-hidden="true"></div><button class="house-room room-${room.id}" data-zone="${room.id}" type="button"><strong>${esc(room.word)}</strong><div class="room-objects"></div></button></div>`).join('');
+      root.innerHTML=`<div class="game-steps"><span>1 · Saisissez un objet</span><span>2 · Glissez vers son emplacement</span><span>3 · Relâchez</span></div><div class="placement-workbench ${game}"><div class="placement-board ${game}">${game==='house'?'<div class="house-camera"><div class="house-plan">'+rooms+'</div></div><div class="house-view-controls"><button type="button" id="house-turn-left">↶ Vue gauche</button><button type="button" id="house-view-front">Vue initiale</button><button type="button" id="house-turn-right">Vue droite ↷</button></div>':bodyScene()}</div><div class="object-tray">${objects.map((o,i)=>`<button type="button" class="object-token" data-object="${i}" aria-label="Déplacer ${esc(o.label)}"><span aria-hidden="true">${objectImage(o)}</span><strong>${esc(o.label)}</strong></button>`).join('')}</div></div><p class="placement-progress" role="status">0 / ${objects.length} placés</p><details class="adventure-help"><summary>Afficher le vocabulaire français pour réviser</summary><p>${(game==='house'?[...bank.rooms,...objects]:objects).map(o=>esc(o.word)+' — '+esc(o.translation)).join(' · ')}</p></details><p class="adventure-access">Souris ou doigt : glissez un objet. Au clavier : sélectionnez une étiquette, puis activez son emplacement avec Entrée.</p>`;
+      const tokens=[...root.querySelectorAll('[data-object]')];if(game==='house'){let angle=-28;const plan=root.querySelector('.house-plan'),turn=delta=>{angle=Math.max(-55,Math.min(25,angle+delta));plan.style.setProperty('--house-angle',angle+'deg');};root.querySelector('#house-turn-left').onclick=()=>turn(-15);root.querySelector('#house-turn-right').onclick=()=>turn(15);root.querySelector('#house-view-front').onclick=()=>{angle=-28;turn(0);};}
       function drop(token,zone){
         if(!zone||token.disabled)return;const o=objects[Number(token.dataset.object)];const correct=o.zones.includes(zone.dataset.zone);options.onAnswer(correct);
         if(correct){token.disabled=true;token.classList.remove('selected');selected=null;done++;zone.classList.add('zone-success');
           if(game==='body'){const locations={head:[200,19],eyes:[312,60],ears:[312,94],nose:[312,128],mouth:[312,155],torso:[60,140],arms:[40,216],hands:[337,343],legs:[294,392],feet:[200,500]};const [lx,ly]=locations[o.id];const ns='http://www.w3.org/2000/svg',g=document.createElementNS(ns,'g'),line=document.createElementNS(ns,'line'),label=document.createElementNS(ns,'text');g.setAttribute('class','body-label');for(const[k,v]of Object.entries({x1:Number(zone.getAttribute('x'))+Number(zone.getAttribute('width'))/2,y1:Number(zone.getAttribute('y'))+Number(zone.getAttribute('height'))/2,x2:lx,y2:ly}))line.setAttribute(k,v);label.setAttribute('x',lx);label.setAttribute('y',ly);label.setAttribute('text-anchor','middle');label.textContent=o.word;g.append(line,label);root.querySelector('svg').append(g);}
-          if(game==='house'){const badge=document.createElement('span');badge.className='placed-object';badge.textContent=o.icon+' '+o.word;zone.querySelector('.room-objects').append(badge);}
+          if(game==='house'){const badge=document.createElement('span');badge.className='placed-object';badge.innerHTML=objectImage(o)+'<strong>'+esc(o.word)+'</strong>';badge.setAttribute('title',o.word);zone.querySelector('.room-objects').append(badge);}
           root.querySelector('.placement-progress').textContent=done+' / '+objects.length+' placés';options.feedback('Bien placé ! '+o.word+' — '+o.translation+' · +10.');
           if(done===objects.length)options.feedback('Tous les éléments sont placés ! Changez de langue ou recommencez pour réviser.');
         }else options.feedback('Cet emplacement ne convient pas. −5. Reprenez l’objet et essayez ailleurs.',false);
@@ -84,32 +59,39 @@
     }
     function kart(){
       const vocabulary=options.vocabulary?.length>=3?options.vocabulary.map(v=>({word:(v.term||v.word).split(' / ')[0],translation:v.translation})):bank.house;
-      const words=[...new Map(vocabulary.map(w=>[w.word,w])).values()];let round=0,lane=1,progress=0,moving=false,last=0,choice=[],answer=null,heard=false,finished=false;
-      document.getElementById('game-instructions').textContent='Écoutez le mot, puis conduisez le kart sur la voie qui porte ce mot. Les flèches ou les trois boutons changent de voie.';
-      root.innerHTML='<div class="kart-hud"><strong id="kart-round">Étape 1 / 8</strong><span id="kart-status" role="status">Écoutez avant de conduire.</span></div><svg id="kart-road" viewBox="0 0 720 430" tabindex="0" role="group" aria-label="Route du kart, flèches gauche et droite pour changer de voie"><defs><linearGradient id="kart-sky" x2="0" y2="1"><stop stop-color="#b9dff4"/><stop offset="1" stop-color="#eff5ed"/></linearGradient></defs><rect width="720" height="430" rx="18" fill="url(#kart-sky)"/><circle cx="590" cy="65" r="27" fill="#ffdd87"/><path d="M0 130L90 52 190 130 310 66 440 130 566 61 720 130V430H0Z" fill="#a5c8b3"/><path d="M0 170H720V430H0Z" fill="#70a18c"/><path d="M305 120H415L650 430H70Z" fill="#496375"/><path d="M305 120L70 430M415 120L650 430" stroke="#f2d9b2" stroke-width="8"/><path d="M340 120L263 430M380 120L457 430" stroke="#ecf0d8" stroke-width="4" stroke-dasharray="18 15"/><g id="kart-signs"></g><g id="kart-car"><ellipse cx="0" cy="17" rx="32" ry="8" fill="#1c2d4244"/><rect x="-28" y="-18" width="12" height="38" rx="5" fill="#26394b"/><rect x="16" y="-18" width="12" height="38" rx="5" fill="#26394b"/><path d="M-22 20L-18-26Q0-41 18-26L22 20Z" fill="#db695d" stroke="#8d443f" stroke-width="2"/><path d="M-12-14Q0-24 12-14L14 2H-14Z" fill="#a9d9e9"/><rect x="-19" y="10" width="38" height="8" rx="3" fill="#ffcc7f"/></g></svg><div class="kart-controls"><button id="kart-left" type="button">← Gauche</button><button id="kart-center" type="button">Centre</button><button id="kart-right" type="button">Droite →</button></div><div class="ball-controls"><button id="kart-sound" type="button">🔊 Écouter et démarrer</button><button id="kart-next" type="button" hidden>Prochain mot</button></div>';
+      const words=[...new Map(vocabulary.map(w=>[w.word,w])).values()];let round=0,lane=1,progress=0,moving=false,last=0,roadPhase=0,carX=360,speed=1,offsets=[],crossed=[],choice=[],answer=null,heard=false,finished=false;
+      document.getElementById('game-instructions').textContent='Écoutez le mot, puis conduisez le kart sur la voie qui porte ce mot. ← et → dirigent le kart ; ↑ accélère et ↓ ralentit. Les mots arrivent à des distances différentes. Cliquez sur Écouter pour partir.';
+      root.innerHTML='<div class="kart-hud"><strong id="kart-round">Étape 1 / 8</strong><span id="kart-status" role="status">Écoutez avant de conduire.</span></div><svg id="kart-road" viewBox="0 0 720 430" tabindex="0" role="group" aria-label="Route du kart, flèches gauche et droite pour changer de voie"><defs><linearGradient id="kart-sky" x2="0" y2="1"><stop stop-color="#b9dff4"/><stop offset="1" stop-color="#eff5ed"/></linearGradient></defs><rect width="720" height="430" rx="18" fill="url(#kart-sky)"/><circle cx="590" cy="65" r="27" fill="#ffdd87"/><path d="M0 130L90 52 190 130 310 66 440 130 566 61 720 130V430H0Z" fill="#a5c8b3"/><path d="M0 170H720V430H0Z" fill="#70a18c"/><path d="M305 120H415L650 430H70Z" fill="#496375"/><path d="M305 120L70 430M415 120L650 430" stroke="#f2d9b2" stroke-width="8"/><path d="M340 120L263 430M380 120L457 430" stroke="#ecf0d8" stroke-width="4" stroke-dasharray="18 15"/><g id="kart-motion"></g><g id="kart-signs"></g><g id="kart-car"><path d="M-10 35L-14 50M10 35L14 52" stroke="#eae8bf" stroke-width="4" opacity=".7"/><ellipse cx="0" cy="17" rx="32" ry="8" fill="#1c2d4244"/><rect x="-28" y="-18" width="12" height="38" rx="5" fill="#26394b"/><rect x="16" y="-18" width="12" height="38" rx="5" fill="#26394b"/><path d="M-22 20L-18-26Q0-41 18-26L22 20Z" fill="#db695d" stroke="#8d443f" stroke-width="2"/><path d="M-12-14Q0-24 12-14L14 2H-14Z" fill="#a9d9e9"/><rect x="-19" y="10" width="38" height="8" rx="3" fill="#ffcc7f"/></g></svg><div class="kart-controls"><button id="kart-left" type="button">← Gauche</button><button id="kart-center" type="button">Centre</button><button id="kart-right" type="button">Droite →</button></div><div class="ball-controls"><button id="kart-sound" type="button">🔊 Écouter et démarrer</button><button id="kart-next" type="button" hidden>Prochain mot</button></div>';
       const road=root.querySelector('#kart-road'),car=root.querySelector('#kart-car'),status=root.querySelector('#kart-status'),sound=root.querySelector('#kart-sound'),next=root.querySelector('#kart-next');
       function draw(){
-        car.setAttribute('transform',`translate(${360+(lane-1)*164},365)`);
-        const y=140+progress*240,spread=65+progress*170,scale=.55+progress*.55;
-        root.querySelector('#kart-signs').innerHTML=choice.map((w,i)=>`<g transform="translate(${360+(i-1)*spread},${y}) scale(${scale})"><rect x="-73" y="-35" width="146" height="65" rx="14" fill="${['#eed6ac','#c4e4d3','#d5c8ee'][i]}" stroke="#496375" stroke-width="2"/><text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="#263b56" font-size="16" font-weight="700" ${(reverseAt(round)?w.translation:w.word).length>15?'textLength="125"':''} lengthAdjust="spacingAndGlyphs">${esc(reverseAt(round)?w.translation:w.word)}</text></g>`).join('');
+        car.setAttribute('transform',`translate(${carX},${365+(moving?Math.sin(roadPhase*18)*2:0)}) rotate(${Math.max(-12,Math.min(12,(360+(lane-1)*164-carX)/9))})`);root.querySelector('#kart-motion').innerHTML=Array.from({length:10},(_,i)=>{const p=(i/10+roadPhase)%1,y=122+p*p*307,spread=15+p*p*90;return `<path d="M${360-spread} ${y}l-4 ${8+p*16}M${360+spread} ${y}l4 ${8+p*16}" stroke="#eef0d6" stroke-width="${2+p*4}"/><path d="M${300-p*220} ${y}l-8 8M${420+p*220} ${y}l8 8" stroke="#c8da9c" stroke-width="${4+p*6}"/>`;}).join('');
+        const position=i=>Math.max(0,progress+.26-offsets[i]);
+        root.querySelector('#kart-signs').innerHTML=choice.map((w,i)=>crossed[i]?'':`<g transform="translate(${360+(i-1)*(65+position(i)*170)},${140+position(i)*250}) scale(${.65+position(i)*.55})"><rect x="-73" y="-35" width="146" height="65" rx="14" fill="${['#eed6ac','#c4e4d3','#d5c8ee'][i]}" stroke="#496375" stroke-width="2"/><text x="0" y="0" text-anchor="middle" dominant-baseline="middle" fill="#263b56" font-size="16" font-weight="700" ${w.word.length>15?'textLength="125"':''} lengthAdjust="spacingAndGlyphs">${esc(w.word)}</text></g>`).join('');
       }
       function prepare(){
-        moving=false;heard=false;progress=0;answer=words[round%words.length];choice=shuffle([answer,...shuffle(words.filter(w=>w.word!==answer.word)).slice(0,2)]);finished=false;
-        root.querySelector('#kart-round').textContent='Étape '+(round+1)+' / 8';status.textContent=reverseAt(round)?'Écoutez dans la langue apprise ; trouvez le sens français.':'Écoutez en français ; trouvez le mot dans la langue apprise.';sound.disabled=false;sound.textContent='🔊 Écouter et démarrer';next.hidden=true;draw();
+        moving=false;heard=false;progress=0;speed=1;offsets=shuffle([0,.13,.26]);crossed=[false,false,false];answer=words[round%words.length];choice=shuffle([answer,...shuffle(words.filter(w=>w.word!==answer.word)).slice(0,2)]);finished=false;
+        root.querySelector('#kart-round').textContent='Étape '+(round+1)+' / 8';status.textContent='Écoutez le mot dans la langue apprise, puis rejoignez-le. Flèches : ← → diriger · ↑ accélérer · ↓ ralentir.';sound.disabled=false;sound.textContent='🔊 Écouter et démarrer';next.hidden=true;draw();
       }
       function play(){
-        if(finished)return;audio?.pause();audio=new Audio('/api/tts?text='+encodeURIComponent(reverseAt(round)?answer.word:answer.translation)+'&lang='+(reverseAt(round)?options.language:'fr'));
+        if(finished)return;audio?.pause();audio=new Audio('/api/tts?text='+encodeURIComponent(answer.word)+'&lang='+options.language);
         audio.onplaying=()=>{if(!alive||!options.isActive()){audio.pause();return;}heard=true;moving=true;last=performance.now();status.textContent='À vous : choisissez la bonne voie.';sound.textContent='🔊 Réécouter';road.focus();};
         const failed=()=>{if(!alive)return;moving=false;status.textContent='Son indisponible. Réessayez : aucun point perdu.';sound.disabled=false;};audio.onerror=failed;audio.play().catch(failed);
       }
       function tick(time){
         if(!alive||!options.isActive())return;
         const dt=Math.min(.05,(time-last)/1000||0);last=time;
-        if(moving&&heard){progress+=dt/(options.level==='niveau1'?10:options.level==='niveau2'?8:6);if(progress>=.9){moving=false;finished=true;const correct=choice[lane].word===answer.word;options.onAnswer(correct);options.feedback((correct?'Bonne voie ! +10. ':'Mauvaise voie : −5. ')+answer.word+' — '+answer.translation,correct);status.textContent=correct?'Mot retrouvé !':'Regardez la correction puis poursuivez.';sound.disabled=true;next.hidden=false;}}
+        carX+=(360+(lane-1)*164-carX)*Math.min(1,dt*12);
+        if(moving&&heard){roadPhase=(roadPhase+dt*speed*.72)%1;progress+=dt*speed/(options.level==='niveau1'?10:options.level==='niveau2'?8:6);
+          for(let i=0;i<choice.length;i++)if(!crossed[i]&&progress+.26-offsets[i]>=.9){crossed[i]=true;const hitsLane=Math.abs(carX-(360+(i-1)*164))<65;
+            if(hitsLane){finish(choice[i].word===answer.word);break;}
+            if(choice[i].word===answer.word){finish(false);break;}
+          }
+        }
         draw();frame=requestAnimationFrame(tick);
       }
-      for(const[id,value]of [['kart-left',0],['kart-center',1],['kart-right',2]])root.querySelector('#'+id).onclick=()=>{lane=value;draw();};
-      road.onkeydown=e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();lane=Math.max(0,Math.min(2,lane+(e.key==='ArrowLeft'?-1:1)));draw();}};
+      function finish(correct){moving=false;finished=true;options.onAnswer(correct);options.feedback((correct?'Mot attrapé ! +10. ':'Mot manqué ou mauvaise cible : −5. ')+answer.word+' — '+answer.translation,correct);status.textContent=correct?'Bonne trajectoire !':'Regardez la correction puis poursuivez.';sound.disabled=true;next.hidden=false;}
+      for(const[id,value]of [['kart-left',0],['kart-center',1],['kart-right',2]])root.querySelector('#'+id).onclick=()=>{lane=value;carX=360+(lane-1)*164;draw();};
+      road.onkeydown=e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key))return;e.preventDefault();if(e.key==='ArrowUp')speed=Math.min(1.6,speed+.2);else if(e.key==='ArrowDown')speed=Math.max(.5,speed-.2);else lane=Math.max(0,Math.min(2,lane+(e.key==='ArrowLeft'?-1:1)));draw();};
       sound.onclick=play;next.onclick=()=>{if(++round>=8){moving=false;finished=true;cancelAnimationFrame(frame);root.innerHTML='<div class="game-result"><strong>Parcours terminé !</strong><p>Huit mots ont été écoutés. Recommencez ou choisissez un autre thème.</p></div>';alive=false;audio?.pause();}else prepare();};
       prepare();frame=requestAnimationFrame(tick);
       document.addEventListener('visibilitychange',visibility);
@@ -119,3 +101,4 @@
   }
   window.WordSipAdventures={mount,dispose:()=>stop()};
 })();
+
