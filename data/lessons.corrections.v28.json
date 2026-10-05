@@ -1,0 +1,672 @@
+{
+  "en": {
+    "prepositions-place": {
+      "sections": [
+        {
+          "title": "in",
+          "rule": "à l'intérieur d'un espace fermé",
+          "examples": [
+            "The ball is in the box."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"30\" width=\"64\" height=\"42\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"18\" y1=\"30\" x2=\"82\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"50\" cy=\"50\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"45\" cy=\"47\" r=\"2\" fill=\"#17252a\"/><circle cx=\"55\" cy=\"47\" r=\"2\" fill=\"#17252a\"/><path d=\"M45 55 Q50 59 55 55\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
+        },
+        {
+          "title": "on",
+          "rule": "posé sur une surface",
+          "examples": [
+            "The ball is on the box."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"46\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"18\" y1=\"46\" x2=\"82\" y2=\"46\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"50\" cy=\"32\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"45\" cy=\"29\" r=\"2\" fill=\"#17252a\"/><circle cx=\"55\" cy=\"29\" r=\"2\" fill=\"#17252a\"/><path d=\"M45 37 Q50 41 55 37\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
+        },
+        {
+          "title": "under",
+          "rule": "en dessous ; la visibilité ne détermine pas cette préposition",
+          "examples": [
+            "The ball is under the box."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"60\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"45\" cy=\"57\" r=\"2\" fill=\"#17252a\"/><circle cx=\"55\" cy=\"57\" r=\"2\" fill=\"#17252a\"/><path d=\"M45 65 Q50 69 55 65\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/><rect x=\"18\" y=\"14\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"18\" y1=\"14\" x2=\"82\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"3\"/></svg>"
+        },
+        {
+          "title": "between",
+          "rule": "entre deux repères",
+          "examples": [
+            "The ball is between the boxes."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><rect x=\"62\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"50\" cy=\"50\" r=\"12\" fill=\"#3aafa9\"/><circle cx=\"46\" cy=\"47\" r=\"1.8\" fill=\"#17252a\"/><circle cx=\"54\" cy=\"47\" r=\"1.8\" fill=\"#17252a\"/><path d=\"M45 54 Q50 58 55 54\" stroke=\"#17252a\" stroke-width=\"1.8\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
+        },
+        {
+          "title": "in front of",
+          "rule": "juste devant",
+          "examples": [
+            "The ball is in front of the box."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"42\" y=\"20\" width=\"50\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"42\" y1=\"20\" x2=\"92\" y2=\"20\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"30\" cy=\"54\" r=\"14\" fill=\"#3aafa9\"/><circle cx=\"25\" cy=\"51\" r=\"2\" fill=\"#17252a\"/><circle cx=\"35\" cy=\"51\" r=\"2\" fill=\"#17252a\"/><path d=\"M24 59 Q30 63 36 59\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
+        },
+        {
+          "title": "above",
+          "rule": "au-dessus, sans contact",
+          "examples": [
+            "The ball is above the box."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"22\" y=\"48\" width=\"56\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"22\" y1=\"48\" x2=\"78\" y2=\"48\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"50\" cy=\"20\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"45\" cy=\"17\" r=\"2\" fill=\"#17252a\"/><circle cx=\"55\" cy=\"17\" r=\"2\" fill=\"#17252a\"/><path d=\"M45 25 Q50 29 55 25\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/><line x1=\"50\" y1=\"34\" x2=\"50\" y2=\"44\" stroke=\"#dceeed\" stroke-width=\"2\" stroke-dasharray=\"2 3\"/></svg>"
+        },
+        {
+          "title": "next to",
+          "rule": "juste à côté ; sans obligation de contact",
+          "examples": [
+            "The ball is next to the box."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"10\" y=\"26\" width=\"40\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"10\" y1=\"26\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"72\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"67\" cy=\"45\" r=\"2\" fill=\"#17252a\"/><circle cx=\"77\" cy=\"45\" r=\"2\" fill=\"#17252a\"/><path d=\"M67 53 Q72 57 77 53\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
+        },
+        {
+          "title": "near",
+          "rule": "à proximité ; ne signifie pas nécessairement juste à côté",
+          "examples": [
+            "The ball is near the box."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"6\" y=\"28\" width=\"34\" height=\"34\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"6\" y1=\"28\" x2=\"40\" y2=\"28\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"86\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"81\" cy=\"45\" r=\"2\" fill=\"#17252a\"/><circle cx=\"91\" cy=\"45\" r=\"2\" fill=\"#17252a\"/><path d=\"M81 53 Q86 57 91 53\" stroke=\"#17252a\" stroke-width=\"2\" fill=\"none\" stroke-linecap=\"round\"/></svg>"
+        },
+        {
+          "title": "behind",
+          "rule": "derrière ; l’objet peut rester visible",
+          "examples": [
+            "The ball is behind the box."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"30\" y=\"18\" width=\"52\" height=\"46\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"30\" y1=\"18\" x2=\"82\" y2=\"18\" stroke=\"#2b7a78\" stroke-width=\"3\"/><circle cx=\"24\" cy=\"52\" r=\"12\" fill=\"#3aafa9\" opacity=\".85\"/><circle cx=\"20\" cy=\"49\" r=\"1.8\" fill=\"#17252a\"/><circle cx=\"28\" cy=\"49\" r=\"1.8\" fill=\"#17252a\"/></svg>"
+        },
+        {
+          "title": "below",
+          "rule": "position plus générale que « under »",
+          "examples": [
+            "The ball is below the shelf."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"25\" cy=\"60\" r=\"13\" fill=\"#3aafa9\"/><circle cx=\"20\" cy=\"57\" r=\"2\" fill=\"#17252a\"/><circle cx=\"30\" cy=\"57\" r=\"2\" fill=\"#17252a\"/><rect x=\"50\" y=\"14\" width=\"42\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"3\"/><line x1=\"50\" y1=\"14\" x2=\"92\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"3\"/></svg>"
+        }
+      ],
+      "exercise": [
+        {
+          "sentence": "The cat fell asleep curled up <span class=\"blank\"></span> the open cardboard box, completely hidden inside.",
+          "options": [
+            "in",
+            "on",
+            "near",
+            "above"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "in — elle est cachée à l'intérieur, invisible.",
+          "feedbackKo": "Pas tout à fait : le dessin montre la balle dedans → in — elle est cachée à l'intérieur, invisible.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"30\" width=\"64\" height=\"42\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"30\" x2=\"82\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"50\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "sentence": "He placed the lamp right <span class=\"blank\"></span> the top of the wooden table, in the middle.",
+          "options": [
+            "under",
+            "in",
+            "on",
+            "between"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "on — « on top of » = posé sur la surface.",
+          "feedbackKo": "Pas tout à fait : « on top of » = posé sur la surface → on.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"46\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"46\" x2=\"82\" y2=\"46\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"32\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "sentence": "The dog is hiding, completely out of sight, right <span class=\"blank\"></span> the sofa.",
+          "options": [
+            "on",
+            "under",
+            "next to",
+            "above"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "under — sous le repère dans cette phrase ; la visibilité n’est pas le critère.",
+          "feedbackKo": "Pas tout à fait : « out of sight » = ici sous le repère → under.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"60\" r=\"14\" fill=\"#3aafa9\"/><rect x=\"18\" y=\"14\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"14\" x2=\"82\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"4\"/></svg>"
+        },
+        {
+          "sentence": "The playground sits exactly halfway <span class=\"blank\"></span> the school and the church, the same distance from both.",
+          "options": [
+            "behind",
+            "between",
+            "near",
+            "under"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "between — seule préposition qui relie naturellement « X and Y ».",
+          "feedbackKo": "Pas tout à fait : elle relie deux repères « X and Y » → between.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><rect x=\"62\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "sentence": "She's standing only inches away, directly <span class=\"blank\"></span> the door, about to knock.",
+          "options": [
+            "under",
+            "behind",
+            "in front of",
+            "near"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "in front of — « about to knock » = juste devant la porte.",
+          "feedbackKo": "Pas tout à fait : « about to knock » = juste devant la porte → in front of.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"42\" y=\"20\" width=\"50\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"42\" y1=\"20\" x2=\"92\" y2=\"20\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"28\" cy=\"54\" r=\"15\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "sentence": "The plane flew far <span class=\"blank\"></span> the clouds, without ever touching them.",
+          "options": [
+            "on",
+            "above",
+            "next to",
+            "under"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "above — « without touching » exclut on/under, il y a un espace.",
+          "feedbackKo": "Pas tout à fait : « without touching » exclut on/under → above.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"22\" y=\"48\" width=\"56\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"22\" y1=\"48\" x2=\"78\" y2=\"48\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"18\" r=\"13\" fill=\"#3aafa9\"/><line x1=\"50\" y1=\"32\" x2=\"50\" y2=\"44\" stroke=\"#dceeed\" stroke-width=\"3\" stroke-dasharray=\"2 3\"/></svg>"
+        },
+        {
+          "sentence": "The two friends sat so close their shoulders were almost touching, one <span class=\"blank\"></span> the other.",
+          "options": [
+            "near",
+            "next to",
+            "between",
+            "behind"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "next to — « almost touching » = proximité immédiate, sans toucher nécessairement.",
+          "feedbackKo": "Pas tout à fait : « almost touching » = proximité immédiate → next to.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"10\" y=\"26\" width=\"40\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"10\" y1=\"26\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"72\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "sentence": "The bakery is a five-minute walk away, somewhere <span class=\"blank\"></span> the train station.",
+          "options": [
+            "next to",
+            "near",
+            "above",
+            "behind"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "near — « five-minute walk » = à distance, pas juste à côté.",
+          "feedbackKo": "Pas tout à fait : « five-minute walk » = à distance → near.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"6\" y=\"28\" width=\"34\" height=\"34\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"6\" y1=\"28\" x2=\"40\" y2=\"28\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"86\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "sentence": "He tried to sneak up on his friend, staying <span class=\"blank\"></span> the tree so he wouldn't be seen.",
+          "options": [
+            "behind",
+            "in front of",
+            "above",
+            "near"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "behind — « so he wouldn't be seen » = caché derrière.",
+          "feedbackKo": "Pas tout à fait : « so he wouldn't be seen » = caché derrière → behind.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"30\" y=\"18\" width=\"52\" height=\"46\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"30\" y1=\"18\" x2=\"82\" y2=\"18\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"24\" cy=\"52\" r=\"13\" fill=\"#3aafa9\" opacity=\".8\"/></svg>"
+        },
+        {
+          "sentence": "The ball rolled off the shelf and landed somewhere lower down, roughly <span class=\"blank\"></span> it.",
+          "options": [
+            "under",
+            "below",
+            "above",
+            "next to"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "below — position plus vague/générale que « under ».",
+          "feedbackKo": "Pas tout à fait : position plus large, pas forcément juste dessous → below.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"25\" cy=\"60\" r=\"14\" fill=\"#3aafa9\"/><rect x=\"50\" y=\"14\" width=\"42\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"50\" y1=\"14\" x2=\"92\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"4\"/></svg>"
+        }
+      ]
+    },
+    "plurals": {
+      "sections": [
+        {
+          "title": "Régulier : +S",
+          "rule": "La grande majorité des noms.",
+          "examples": [
+            "cat → cats",
+            "book → books"
+          ]
+        },
+        {
+          "title": "+ES après -s/-x/-ch/-sh",
+          "rule": "Pour faciliter la prononciation.",
+          "examples": [
+            "box → boxes",
+            "watch → watches"
+          ]
+        },
+        {
+          "title": "Consonne + Y → -IES",
+          "rule": "Le y devient ie devant le s.",
+          "examples": [
+            "city → cities",
+            "baby → babies"
+          ]
+        },
+        {
+          "title": "-F/-FE → -VES",
+          "rule": "Certains noms changent -f/-fe en -ves : knife → knives, leaf → leaves. D’autres prennent -s : roof → roofs, chief → chiefs.",
+          "examples": [
+            "leaf → leaves",
+            "knife → knives"
+          ]
+        },
+        {
+          "title": "Pluriels irréguliers",
+          "rule": "Aucune règle, à mémoriser un par un.",
+          "examples": [
+            "child → children",
+            "man → men",
+            "tooth → teeth"
+          ]
+        },
+        {
+          "title": "Invariables",
+          "rule": "Même forme au singulier et au pluriel.",
+          "examples": [
+            "sheep → sheep",
+            "fish → fish"
+          ]
+        }
+      ]
+    }
+  },
+  "es": {
+    "plurales": {
+      "sections": [
+        {
+          "title": "Voyelle non accentuée → +S",
+          "rule": "Les noms terminés par une voyelle non accentuée, ou par á/é/ó accentués, prennent généralement -s : casa → casas, café → cafés.",
+          "examples": [
+            "casa → casas",
+            "coche → coches"
+          ]
+        },
+        {
+          "title": "Consonne ou voyelle accentuée → +ES",
+          "rule": "Beaucoup de noms terminés par une consonne prennent -es : papel → papeles. Avec í/ú accentués, -s ou -es peuvent être admis : rubí → rubís / rubíes. Il existe des cas particuliers.",
+          "examples": [
+            "ciudad → ciudades",
+            "autobús → autobuses"
+          ]
+        },
+        {
+          "title": "-Z → -CES",
+          "rule": "Le z devient c devant es.",
+          "examples": [
+            "luz → luces",
+            "pez → peces"
+          ]
+        }
+      ]
+    },
+    "posesivos": {
+      "sections": [
+        {
+          "title": "Adjectifs possessifs courts",
+          "rule": "Mi/tu/su/nuestro/vuestro/su se placent avant le nom. Les formes longues peuvent suivre le nom ; elles s’accordent avec ce qui est possédé.",
+          "examples": [
+            "mi casa",
+            "su coche"
+          ]
+        },
+        {
+          "title": "Pronoms possessifs (forme longue)",
+          "rule": "Mío/tuyo/suyo… peuvent suivre un nom sans article propre : un amigo mío. Pour reprendre un nom déjà connu, article + possessif : el mío.",
+          "examples": [
+            "Este libro es mío.",
+            "la casa mía"
+          ]
+        },
+        {
+          "title": "Piège : SU est ambigu",
+          "rule": "'Su' peut vouloir dire son/sa/leur — seul le contexte lève l'ambiguïté.",
+          "examples": [
+            "su casa (= his/her/their house)"
+          ]
+        }
+      ]
+    },
+    "preposiciones-lugar": {
+      "sections": [
+        {
+          "title": "en",
+          "rule": "dentro de un espacio cerrado",
+          "examples": [
+            "La pelota está en la caja."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"30\" width=\"64\" height=\"42\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"30\" x2=\"82\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"50\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "title": "sobre",
+          "rule": "en contacto con una superficie",
+          "examples": [
+            "La pelota está sobre la caja."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"46\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"46\" x2=\"82\" y2=\"46\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"32\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "title": "debajo de",
+          "rule": "sous ; ne signifie pas nécessairement caché",
+          "examples": [
+            "La pelota está debajo de la caja."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"60\" r=\"14\" fill=\"#3aafa9\"/><rect x=\"18\" y=\"14\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"14\" x2=\"82\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"4\"/></svg>"
+        },
+        {
+          "title": "entre",
+          "rule": "entre dos puntos de referencia",
+          "examples": [
+            "La pelota está entre las cajas."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><rect x=\"62\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "title": "delante de",
+          "rule": "justo enfrente",
+          "examples": [
+            "La pelota está delante de la caja."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"42\" y=\"20\" width=\"50\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"42\" y1=\"20\" x2=\"92\" y2=\"20\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"28\" cy=\"54\" r=\"15\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "title": "detrás de",
+          "rule": "derrière ; sans obligation d’être caché",
+          "examples": [
+            "La pelota está detrás de la caja."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"30\" y=\"18\" width=\"52\" height=\"46\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"30\" y1=\"18\" x2=\"82\" y2=\"18\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"24\" cy=\"52\" r=\"13\" fill=\"#3aafa9\" opacity=\".8\"/></svg>"
+        },
+        {
+          "title": "al lado de",
+          "rule": "juste à côté ; sans obligation de contact",
+          "examples": [
+            "La pelota está al lado de la caja."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"10\" y=\"26\" width=\"40\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"10\" y1=\"26\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"72\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "title": "cerca de",
+          "rule": "a poca distancia",
+          "examples": [
+            "La pelota está cerca de la caja."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"6\" y=\"28\" width=\"34\" height=\"34\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"6\" y1=\"28\" x2=\"40\" y2=\"28\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"86\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "title": "encima de",
+          "rule": "por encima, con o sin contacto",
+          "examples": [
+            "La pelota está encima de la caja."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"22\" y=\"48\" width=\"56\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"22\" y1=\"48\" x2=\"78\" y2=\"48\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"18\" r=\"13\" fill=\"#3aafa9\"/><line x1=\"50\" y1=\"32\" x2=\"50\" y2=\"44\" stroke=\"#dceeed\" stroke-width=\"3\" stroke-dasharray=\"2 3\"/></svg>"
+        },
+        {
+          "title": "lejos de",
+          "rule": "a mucha distancia",
+          "examples": [
+            "La pelota está lejos de la caja."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"4\" y=\"40\" width=\"20\" height=\"20\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"92\" cy=\"50\" r=\"10\" fill=\"#3aafa9\"/><line x1=\"26\" y1=\"50\" x2=\"80\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"3\" stroke-dasharray=\"4 4\"/></svg>"
+        }
+      ],
+      "exercise": [
+        {
+          "sentence": "El gato duerme acurrucado <span class=\"blank\"></span> la caja de cartón, completamente escondido dentro.",
+          "options": [
+            "en",
+            "sobre",
+            "cerca de",
+            "encima de"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "en — está oculto dentro, no encima.",
+          "feedbackKo": "No exactamente: está dentro, escondido → en.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"30\" width=\"64\" height=\"42\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"18\" y1=\"30\" x2=\"82\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"50\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "sentence": "Puso la lámpara justo <span class=\"blank\"></span> la mesa de madera, en el centro.",
+          "options": [
+            "debajo de",
+            "sobre",
+            "entre",
+            "lejos de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "sobre — en contacto con la superficie.",
+          "feedbackKo": "No exactamente: en contacto con la superficie → sobre.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"46\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"18\" y1=\"46\" x2=\"82\" y2=\"46\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"32\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "sentence": "El perro se esconde, completamente fuera de la vista, justo <span class=\"blank\"></span> el sofá.",
+          "options": [
+            "sobre",
+            "debajo de",
+            "al lado de",
+            "encima de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "debajo de — fuera de la vista, por debajo.",
+          "feedbackKo": "No exactamente: fuera de la vista = por debajo → debajo de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"60\" r=\"14\" fill=\"#3aafa9\"/><rect x=\"18\" y=\"14\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"18\" y1=\"14\" x2=\"82\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"5\"/></svg>"
+        },
+        {
+          "sentence": "El parque está exactamente a mitad de camino <span class=\"blank\"></span> la escuela y la iglesia.",
+          "options": [
+            "detrás de",
+            "entre",
+            "cerca de",
+            "debajo de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "entre — conecta dos referencias, « X y Y ».",
+          "feedbackKo": "No exactamente: conecta dos referencias → entre.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><rect x=\"62\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "sentence": "Está de pie, a pocos centímetros, justo <span class=\"blank\"></span> la puerta, a punto de tocar.",
+          "options": [
+            "debajo de",
+            "detrás de",
+            "delante de",
+            "cerca de"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "delante de — « a punto de tocar » = justo enfrente.",
+          "feedbackKo": "No exactamente: a punto de tocar → delante de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"42\" y=\"20\" width=\"50\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"42\" y1=\"20\" x2=\"92\" y2=\"20\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"28\" cy=\"54\" r=\"15\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "sentence": "El avión voló muy <span class=\"blank\"></span> las nubes, sin llegar a tocarlas.",
+          "options": [
+            "sobre",
+            "encima de",
+            "al lado de",
+            "debajo de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "encima de — « sin tocarlas » indica una separación.",
+          "feedbackKo": "No exactamente: sin tocarlas → encima de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"22\" y=\"48\" width=\"56\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"22\" y1=\"48\" x2=\"78\" y2=\"48\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"50\" cy=\"18\" r=\"13\" fill=\"#3aafa9\"/><line x1=\"50\" y1=\"32\" x2=\"50\" y2=\"44\" stroke=\"#dceeed\" stroke-width=\"3\" stroke-dasharray=\"2 3\"/></svg>"
+        },
+        {
+          "sentence": "Los dos amigos se sentaron tan cerca que sus hombros casi se tocaban, uno <span class=\"blank\"></span> el otro.",
+          "options": [
+            "cerca de",
+            "al lado de",
+            "entre",
+            "detrás de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "al lado de — « casi se tocaban » = proximidad inmediata, sin contacto obligatorio.",
+          "feedbackKo": "No exactamente: casi se tocaban → al lado de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"10\" y=\"26\" width=\"40\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"10\" y1=\"26\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"72\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "sentence": "La panadería está a cinco minutos a pie, un poco <span class=\"blank\"></span> la estación de tren.",
+          "options": [
+            "al lado de",
+            "cerca de",
+            "encima de",
+            "detrás de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "cerca de — « cinco minutos a pie » = a distancia.",
+          "feedbackKo": "No exactamente: a cinco minutos = a distancia → cerca de.",
+          "icon": "<svg class=\"q-icon\" viewBox=\"0 0 100 80\"><rect x=\"6\" y=\"28\" width=\"34\" height=\"34\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"5\"/><line x1=\"6\" y1=\"28\" x2=\"40\" y2=\"28\" stroke=\"#2b7a78\" stroke-width=\"5\"/><circle cx=\"86\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        }
+      ]
+    }
+  },
+  "it": {
+    "preposizioni-luogo": {
+      "sections": [
+        {
+          "title": "in",
+          "rule": "à l'intérieur",
+          "examples": [
+            "La palla è in una scatola."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"30\" width=\"64\" height=\"42\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"30\" x2=\"82\" y2=\"30\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"50\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "title": "su",
+          "rule": "sur, en contact",
+          "examples": [
+            "La palla è su una scatola."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"18\" y=\"46\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"46\" x2=\"82\" y2=\"46\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"32\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "title": "sotto",
+          "rule": "sous",
+          "examples": [
+            "La palla è sotto una scatola."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><circle cx=\"50\" cy=\"60\" r=\"14\" fill=\"#3aafa9\"/><rect x=\"18\" y=\"14\" width=\"64\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"18\" y1=\"14\" x2=\"82\" y2=\"14\" stroke=\"#2b7a78\" stroke-width=\"4\"/></svg>"
+        },
+        {
+          "title": "tra / fra",
+          "rule": "entre",
+          "examples": [
+            "La palla è tra due scatole."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"8\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><rect x=\"62\" y=\"26\" width=\"30\" height=\"40\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"48\" r=\"13\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "title": "davanti a",
+          "rule": "devant",
+          "examples": [
+            "La palla è davanti a una scatola."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"42\" y=\"20\" width=\"50\" height=\"44\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"42\" y1=\"20\" x2=\"92\" y2=\"20\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"28\" cy=\"54\" r=\"15\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "title": "dietro",
+          "rule": "derrière",
+          "examples": [
+            "La palla è dietro una scatola."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"30\" y=\"18\" width=\"52\" height=\"46\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"30\" y1=\"18\" x2=\"82\" y2=\"18\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"24\" cy=\"52\" r=\"13\" fill=\"#3aafa9\" opacity=\".8\"/></svg>"
+        },
+        {
+          "title": "accanto a",
+          "rule": "juste à côté ; sans obligation de contact",
+          "examples": [
+            "La palla è accanto a una scatola."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"10\" y=\"26\" width=\"40\" height=\"40\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"10\" y1=\"26\" x2=\"50\" y2=\"26\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"72\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "title": "vicino a",
+          "rule": "à proximité",
+          "examples": [
+            "La palla è vicino a una scatola."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"6\" y=\"28\" width=\"34\" height=\"34\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"6\" y1=\"28\" x2=\"40\" y2=\"28\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"86\" cy=\"48\" r=\"14\" fill=\"#3aafa9\"/></svg>"
+        },
+        {
+          "title": "sopra",
+          "rule": "au-dessus ou sur, selon le contexte ; le contact est possible",
+          "examples": [
+            "La palla è sopra una scatola."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"22\" y=\"48\" width=\"56\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><line x1=\"22\" y1=\"48\" x2=\"78\" y2=\"48\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"50\" cy=\"18\" r=\"13\" fill=\"#3aafa9\"/><line x1=\"50\" y1=\"32\" x2=\"50\" y2=\"44\" stroke=\"#dceeed\" stroke-width=\"3\" stroke-dasharray=\"2 3\"/></svg>"
+        },
+        {
+          "title": "lontano da",
+          "rule": "loin de",
+          "examples": [
+            "La palla è lontano da una scatola."
+          ],
+          "icon": "<svg viewBox=\"0 0 100 80\"><rect x=\"4\" y=\"40\" width=\"20\" height=\"20\" rx=\"3\" fill=\"none\" stroke=\"#2b7a78\" stroke-width=\"4\"/><circle cx=\"92\" cy=\"50\" r=\"10\" fill=\"#3aafa9\"/><line x1=\"26\" y1=\"50\" x2=\"80\" y2=\"50\" stroke=\"#2b7a78\" stroke-width=\"3\" stroke-dasharray=\"4 4\"/></svg>"
+        }
+      ]
+    },
+    "possessivi": {
+      "sections": [
+        {
+          "title": "Article + possessif + nom",
+          "rule": "Contrairement au français/anglais, l'italien garde l'article devant le possessif.",
+          "examples": [
+            "il mio libro (pas juste 'mio libro')",
+            "la mia casa"
+          ]
+        },
+        {
+          "title": "Exception : la famille au singulier",
+          "rule": "Avec beaucoup de noms de parenté au singulier, on omet l’article : mio padre, mia madre. Exceptions : il loro padre, formes affectueuses ou modifiées (la mia mamma, il mio fratello maggiore), et pluriel (i miei fratelli).",
+          "examples": [
+            "mia madre (pas 'la mia madre')",
+            "mio padre"
+          ]
+        },
+        {
+          "title": "Accord en genre et nombre",
+          "rule": "Le possessif s'accorde avec l'objet possédé, pas le possesseur.",
+          "examples": [
+            "il suo libro (à lui ou à elle)",
+            "la sua casa"
+          ]
+        }
+      ]
+    },
+    "modali": {
+      "sections": [
+        {
+          "title": "POTERE",
+          "rule": "Capacità generale o permesso — 'potere' fare qualcosa nel senso ampio.",
+          "examples": [
+            "Posso nuotare molto bene.",
+            "Puoi aiutarmi?"
+          ]
+        },
+        {
+          "title": "DOVERE",
+          "rule": "Obbligo morale o esterno, oppure deduzione logica secondo il contesto.",
+          "examples": [
+            "Devi studiare di più.",
+            "Deve essere a casa a quest'ora."
+          ]
+        },
+        {
+          "title": "SAPERE",
+          "rule": "Competenza acquisita, sapere fare qualcosa grazie a un apprendimento — diverso da 'potere', che è la capacità fisica o il permesso.",
+          "examples": [
+            "So nuotare.",
+            "Non so guidare la moto."
+          ]
+        },
+        {
+          "title": "Il piège potere vs sapere",
+          "rule": "Posso nuotare : je peux nager, les circonstances me le permettent. So nuotare : je sais nager, j’en ai appris la technique. Le français distingue lui aussi pouvoir et savoir.",
+          "examples": [
+            "Non posso nuotare oggi, la piscina è chiusa.",
+            "Non so nuotare, non ho mai imparato."
+          ]
+        }
+      ]
+    }
+  },
+  "ja": {},
+  "zh": {}
+}

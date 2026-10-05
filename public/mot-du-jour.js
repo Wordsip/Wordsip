@@ -388,6 +388,15 @@ function renderWord() {
   document.getElementById('word-main').textContent = currentWord.word;
   document.getElementById('word-phonetic').textContent = formatPhonetic(currentWord.phonetic);
   document.getElementById('word-translation').textContent = currentWord.translation;
+  const helpLanguage = currentUser.language || params.get('lang') || 'en';
+  const helpLevel = currentWord.subLevel || currentUser.level || params.get('level') || 'niveau1';
+  window.WordSipHelp?.setLanguage(helpLanguage).then(() => {
+    window.WordSipHelp.register(currentWord.word, currentWord.translation, currentWord.grammar?.nature || '');
+    window.WordSipHelp.refresh();
+  });
+  window.WordSipHistory?.record({ profile: isGuest ? 'guest' : (currentUser.email || email), language: helpLanguage, level: helpLevel, word: currentWord.word, translation: currentWord.translation });
+  if (!isGuest) fetch('/api/word-seen', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: currentUser.email || email, word: currentWord.word }) }).catch(() => {});
+
 
   // Bouton audio : joue la prononciation du mot via le service de synthèse vocale
   const playBtn = document.getElementById('play-audio-btn');

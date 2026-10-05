@@ -70,6 +70,7 @@ async function init() {
     // déduit du user) : une seule requête à /api/my-word pour la récupérer,
     // avant de construire les boutons audio qui en ont besoin.
     const lang = await fetchUserLanguage();
+    window.WordSipHelp?.setLanguage(lang);
 
     document.getElementById('level-badge').textContent = data.level.replace('niveau', 'Niveau ');
 

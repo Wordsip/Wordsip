@@ -45,6 +45,7 @@ async function init() {
   // le japonais et le chinois — inutile de l'afficher pour les langues qui
   // utilisent l'alphabet latin (anglais, espagnol, italien).
   const lang = await resolveLanguage();
+  window.WordSipHelp?.setLanguage(lang);
   const charactersAvailable = lang === 'ja' || lang === 'zh';
   document.getElementById('tab-characters-btn').style.display = charactersAvailable ? '' : 'none';
 
@@ -139,6 +140,7 @@ async function loadIrregularVerbs() {
   renderVerbStudyTable();
   document.getElementById('verbs-loading').style.display = 'none';
   document.getElementById('verbs-content').style.display = 'block';
+  trackLesson({id:'__irregular_verbs__'});
 }
 
 // Vue "réviser" : tableau complet des verbes avec leurs formes, à parcourir
@@ -151,10 +153,10 @@ function renderVerbStudyTable() {
     const spoken = `${v.base}. ${v.past}. ${v.participle}`;
     return `
     <tr style="cursor:pointer;" title="Cliquer pour écouter" ${listenAttrs(spoken, currentVerbLanguage)}>
-      <td style="padding:6px 8px;font-weight:600;">🔊 ${v.base}</td>
+      <td style="padding:6px 8px;font-weight:600;">🔊 ${vocabHelp(v.base,v.translation,'Verbe à l’infinitif.')}</td>
       <td style="padding:6px 8px;color:#666;font-size:12px;">${v.translation}</td>
-      <td style="padding:6px 8px;">${v.past}</td>
-      <td style="padding:6px 8px;">${v.participle}</td>
+      <td style="padding:6px 8px;">${vocabHelp(v.past,v.translation,labels.past)}</td>
+      <td style="padding:6px 8px;">${vocabHelp(v.participle,v.translation,labels.participle)}</td>
     </tr>
   `;
   }).join('');
@@ -484,7 +486,7 @@ function renderCharacterTables() {
       if (!charSets[setName]) return '';
       const cells = charSets[setName].map((c) => `
         <div style="text-align:center;padding:6px;background:white;border-radius:8px;">
-          <div style="font-size:22px;">${c.char}</div>
+          <div style="font-size:22px;">${vocabHelp(c.char, `Lecture : ${c.romaji}`, 'Syllabe de l’alphabet japonais.')}</div>
           <div style="font-size:11px;color:#999;">${c.romaji}</div>
         </div>
       `).join('');
@@ -515,7 +517,7 @@ function renderCharacterTables() {
             <tbody>
               ${charSets.radicals.map((r) => `
                 <tr>
-                  <td style="padding:6px 8px;font-size:20px;">${r.char}</td>
+                  <td style="padding:6px 8px;font-size:20px;">${vocabHelp(r.char, r.meaning, `Lecture : ${r.pinyin}`)}</td>
                   <td style="padding:6px 8px;color:#666;">${r.pinyin}</td>
                   <td style="padding:6px 8px;">${r.meaning}</td>
                   <td style="padding:6px 8px;color:#666;font-size:12px;">${r.example}</td>
@@ -626,6 +628,7 @@ let allLessons = [];
 async function loadLessons() {
   const language = await resolveLanguage();
   lessonsLanguage = language;
+  window.WordSipHelp?.setLanguage(language);
   try {
     const res = await fetch(`/api/lessons/${language}`);
     if (!res.ok) throw new Error('none');
@@ -658,6 +661,7 @@ async function loadLessons() {
 // une vraie phrase de contenu et pas juste des titres), affiché au survol
 // pour donner une vision entière avant même de cliquer.
 function buildLessonPreview(lesson) {
+  if (lesson.type === 'vocabulary') return lesson.objective;
   if (lesson.type === 'rule' && Array.isArray(lesson.sections)) {
     return lesson.sections
       .map((s) => `<b>${s.title}</b> — ${s.rule}`)
@@ -681,8 +685,8 @@ function buildLessonPreview(lesson) {
 // contenu pas encore retaggé, ou futures fiches caractères ja/zh) tombe par
 // défaut dans "Grammaire" plutôt que de disparaître.
 const LESSON_CATEGORIES = [
-  { key: 'grammaire', label: '📚 Grammaire' },
   { key: 'vocabulaire', label: '🔤 Vocabulaire' },
+  { key: 'grammaire', label: '📚 Grammaire' },
 ];
 
 // Sous-catégories du vocabulaire, pour que la liste reste lisible même une
@@ -701,6 +705,7 @@ function itemHtml({ lesson, index }) {
   return `
     <button type="button" class="lesson-menu-item" data-index="${index}">
       <span style="font-weight:600;">${lesson.title}</span>
+      ${lesson.learningOrder ? `<span class="learning-badge">Parcours quotidien · étape ${lesson.learningOrder}/6</span>` : ''}
       ${lesson.subtitle ? `<span style="display:block;font-size:12px;color:#999;margin-top:2px;">${lesson.subtitle}</span>` : ''}
       ${preview ? `<span class="lesson-preview">${preview}</span>` : ''}
     </button>
@@ -724,13 +729,15 @@ function renderLessonsMenu() {
     if (key !== 'vocabulaire') {
       return `<div>${items.map(itemHtml).join('')}</div>`;
     }
+    const daily = items.filter(item=>item.lesson.type==='vocabulary').sort((a,b)=>a.lesson.learningOrder-b.lesson.learningOrder);
+    items = items.filter(item=>item.lesson.type!=='vocabulary');
     const subgroups = {};
     items.forEach((item) => {
       const subKey = item.lesson.subcategory || 'bases';
       if (!subgroups[subKey]) subgroups[subKey] = [];
       subgroups[subKey].push(item);
     });
-    return VOCAB_SUBCATEGORIES
+    return (daily.length ? `<p class="learning-path-title">🌱 Commencer : le quotidien en six étapes</p><p class="learning-path-note">Couleurs → heures → lieux → positions → vêtements → cuisine. Une fiche à la fois ; écoutez, répondez puis formulez une phrase.</p><div>${daily.map(itemHtml).join('')}</div>` : '') + VOCAB_SUBCATEGORIES
       .filter((sc) => subgroups[sc.key] && subgroups[sc.key].length > 0)
       .map((sc) => `
         <p style="font-size:11px;font-weight:700;color:#999;letter-spacing:.3px;margin:12px 0 6px;">${sc.label}</p>
@@ -760,6 +767,20 @@ function showLessonDetail(index) {
   renderLessons([allLessons[index]]);
   document.getElementById('lessons-menu').style.display = 'none';
   document.getElementById('lessons-detail').style.display = 'block';
+  trackLesson(allLessons[index]);
+}
+
+async function trackLesson(lesson){
+  if(!lesson)return;
+  let level=params.get('level')||'niveau1';
+  if(!isGuest&&email){
+    try{
+      const r=await fetch('/api/lesson-seen',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,lessonId:lesson.id})});
+      if(!r.ok)return;
+    }catch{return;}
+  }else window.WordSipLessonHistory?.record({profile:'guest',language:lessonsLanguage,level,lessonId:lesson.id});
+  const container=document.getElementById('lessons-content');
+  const link=document.createElement('a');link.className='learning-next-game';link.href='/jeux'+location.search;link.textContent='🎮 Continuer dans les jeux de mon parcours de la semaine';container.append(link);
 }
 
 document.getElementById('lessons-back-btn').addEventListener('click', () => {
@@ -773,6 +794,7 @@ function renderLessons(lessons) {
 }
 
 function renderLessonCard(lesson) {
+  if (lesson.type === 'vocabulary') return window.WordSipSheets.render(lesson, lessonsLanguage);
   if (lesson.type === 'rule') return renderRuleLessonCard(lesson);
   if (lesson.type === 'reference') return renderReferenceLessonCard(lesson);
   return renderTenseLessonCard(lesson);
@@ -867,6 +889,11 @@ function extractSpeakable(cell) {
   return m ? m[1] : cell;
 }
 
+function vocabHelp(term, translation, definition = '') {
+  const escape = (value) => String(value).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  return `<span class="vocab-word" role="button" tabindex="0" data-vocab-term="${escape(term)}" data-vocab-translation="${escape(translation)}" data-vocab-definition="${escape(definition)}" aria-label="Définition de ${escape(term)}">${escape(term)}</span>`;
+}
+
 function renderRuleLessonCard(lesson) {
   const cardsHtml = lesson.sections.map((s) => {
     const spoken = `${s.title}. ${s.examples.join('. ')}`;
@@ -874,7 +901,7 @@ function renderRuleLessonCard(lesson) {
     <div class="prep-card" style="cursor:pointer;" title="Cliquer pour écouter" ${listenAttrs(spoken)}>
       ${s.icon || ''}
       <div>
-        <div class="prep-word">🔊 ${s.title}</div>
+        <div class="prep-word">${vocabHelp(s.title, s.rule, "Usage expliqué par cette fiche.")}</div>
         <div class="prep-rule">${s.rule}</div>
         <div class="prep-ex">${s.examples.map((ex) => `« ${ex} »`).join('<br>')}</div>
       </div>
@@ -901,7 +928,7 @@ function renderPrintLink(lesson) {
   if (!lesson.printUrl) return '';
   return `
     <div style="text-align:center;">
-      <a href="${lesson.printUrl}" target="_blank" rel="noopener" class="fiche-print-link">
+      <a href="${lesson.printUrl}${window.location.search}" target="_blank" rel="noopener" class="fiche-print-link">
         🖨️ Version imprimable (avec exercice)
       </a>
     </div>
@@ -943,7 +970,7 @@ function renderReferenceLessonCard(lesson) {
 
 function renderTenseLessonCard(lesson) {
   const markersHtml = lesson.timeMarkers.map((m) => `
-    <li style="margin-bottom:5px;cursor:pointer;" title="Cliquer pour écouter" ${listenAttrs(m.expression)}><b>🔊 ${m.expression}</b> — <span style="color:#6b8f8c;">${m.translation}</span></li>
+    <li style="margin-bottom:5px;cursor:pointer;" title="Cliquer pour écouter" ${listenAttrs(m.expression)}><b>${vocabHelp(m.expression,m.translation,"Marqueur de temps.")}</b></li>
   `).join('');
 
   const usagesHtml = lesson.usages.map((u) => `

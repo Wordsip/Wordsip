@@ -82,6 +82,7 @@
     .watermark{opacity:.06;} @page{size:A4; margin:14mm;}
   }
 </style>
+<link rel="stylesheet" href="/vocabulary-help.css">
 </head>
 <body>
 <div class="toolbar">
@@ -153,7 +154,7 @@
     <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><circle cx="50" cy="60" r="14" fill="#3aafa9"/><rect x="18" y="14" width="64" height="26" rx="4" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="18" y1="14" x2="82" y2="14" stroke="#2b7a78" stroke-width="4"/></svg><span class="chip">Question 3</span>
       <div class="q-sentence">The dog is hiding, completely out of sight, right <span class="blank"></span> the sofa.</div>
       <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>on</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>under</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>next to</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>above</div></div>
-      <div class="feedback" data-ok="under — hors de vue, donc en dessous, caché." data-ko="Pas tout à fait : « out of sight » = hors de vue, donc en dessous → under."></div></div>
+      <div class="feedback" data-ok="under — sous le repère dans cette phrase ; la visibilité n’est pas le critère." data-ko="Pas tout à fait : « out of sight » = ici sous le repère → under."></div></div>
 
     <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="8" y="26" width="30" height="40" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><rect x="62" y="26" width="30" height="40" rx="3" fill="none" stroke="#2b7a78" stroke-width="4"/><circle cx="50" cy="48" r="13" fill="#3aafa9"/></svg><span class="chip">Question 4</span>
       <div class="q-sentence">The playground sits exactly halfway <span class="blank"></span> the school and the church, the same distance from both.</div>
@@ -173,7 +174,7 @@
     <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="10" y="26" width="40" height="40" rx="4" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="10" y1="26" x2="50" y2="26" stroke="#2b7a78" stroke-width="4"/><circle cx="72" cy="48" r="14" fill="#3aafa9"/></svg><span class="chip">Question 7</span>
       <div class="q-sentence">The two friends sat so close their shoulders were almost touching, one <span class="blank"></span> the other.</div>
       <div class="opt-grid"><div class="opt" onclick="ans(this,false)"><span class="num">1</span>near</div><div class="opt" onclick="ans(this,true)"><span class="num">2</span>next to</div><div class="opt" onclick="ans(this,false)"><span class="num">3</span>between</div><div class="opt" onclick="ans(this,false)"><span class="num">4</span>behind</div></div>
-      <div class="feedback" data-ok="next to — « almost touching » = contact direct, pas de distance." data-ko="Pas tout à fait : « almost touching » = contact direct → next to."></div></div>
+      <div class="feedback" data-ok="next to — « almost touching » = proximité immédiate, sans toucher nécessairement." data-ko="Pas tout à fait : « almost touching » = proximité immédiate → next to."></div></div>
 
     <div class="q-block"><svg class="q-icon" viewBox="0 0 100 80"><rect x="6" y="28" width="34" height="34" rx="4" fill="none" stroke="#2b7a78" stroke-width="4"/><line x1="6" y1="28" x2="40" y2="28" stroke="#2b7a78" stroke-width="4"/><circle cx="86" cy="48" r="14" fill="#3aafa9"/></svg><span class="chip">Question 8</span>
       <div class="q-sentence">The bakery is a five-minute walk away, somewhere <span class="blank"></span> the train station.</div>
@@ -198,16 +199,17 @@
   <ol>
     <li><b>in</b><span class="why">elle est cachée à l'intérieur, invisible</span></li>
     <li><b>on</b><span class="why">« on top of » = posé sur la surface</span></li>
-    <li><b>under</b><span class="why">hors de vue = en dessous, caché</span></li>
+    <li><b>under</b><span class="why">ici sous le repère ; la visibilité n’est pas le critère</span></li>
     <li><b>between</b><span class="why">seule préposition qui relie naturellement « X and Y »</span></li>
     <li><b>in front of</b><span class="why">« about to knock » = juste devant la porte</span></li>
     <li><b>above</b><span class="why">« without touching » exclut on/under, il y a un espace</span></li>
-    <li><b>next to</b><span class="why">« almost touching » = contact direct, pas de distance</span></li>
+    <li><b>next to</b><span class="why">« almost touching » = proximité immédiate, sans toucher nécessairement</span></li>
     <li><b>near</b><span class="why">« five-minute walk » = à distance, pas juste à côté</span></li>
     <li><b>behind</b><span class="why">« so he wouldn't be seen » = caché derrière</span></li>
     <li><b>below</b><span class="why">position plus vague/générale que « under » (pas forcément juste en dessous)</span></li>
   </ol>
 </div>
+<script src="/vocabulary-help.js"></script>
 <script>
 function ans(el, isOk){
   var block = el.closest('.q-block');

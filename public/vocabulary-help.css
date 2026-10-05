@@ -1,0 +1,9 @@
+.vocab-word{cursor:help;text-decoration:underline;text-decoration-style:dotted;text-decoration-color:#3aafa9;text-underline-offset:4px;border-radius:3px;}
+.vocab-word:focus-visible{outline:2px solid #e8734f;outline-offset:3px;}
+.vocab-hint{font:13px/1.5 'Segoe UI',sans-serif;color:var(--teal-700,#2b7a78);max-width:900px;margin:12px auto;padding:0 18px;}
+.vocab-dialog{border:1px solid #b5dcd7;border-radius:20px;padding:24px;max-width:min(440px,calc(100vw - 32px));color:#17252a;background:#fff;box-shadow:0 20px 80px #001e2355;}
+.vocab-dialog::backdrop{background:#081d2d66;}
+.vocab-dialog h2{margin:0 0 12px;font-size:24px;overflow-wrap:anywhere;}.vocab-dialog p{line-height:1.6;}
+.vocab-dialog .vocab-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}.vocab-dialog button{width:auto;min-height:42px;padding:9px 16px;border-radius:12px;cursor:pointer;background:#2b7a78;border:0;color:#fff;font-weight:700;}.vocab-dialog button:last-child{background:#eaf6f5;color:#2b7a78;}
+.vocab-on-demand{display:none!important;}
+@media print{.vocab-dialog,.vocab-hint{display:none!important;}.vocab-word{text-decoration:none;}.vocab-on-demand{display:block!important;}}

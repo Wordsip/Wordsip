@@ -60,6 +60,7 @@
   @media (max-width:640px){ .prep-grid,.q-grid{grid-template-columns:1fr;} .sheet{padding:28px 20px; margin:16px 12px;} .corrige,.note{padding:0 20px;} }
   @media print{ .toolbar,.note,.feedback{display:none !important;} body{background:#fff;} .sheet{box-shadow:none; border-radius:0; margin:0; padding:26px 30px; page-break-after:always;} .corrige{display:block; page-break-before:always; padding:26px 30px 40px;} .opt.correct,.opt.incorrect{background:none; border-color:var(--line); color:inherit; font-weight:400;} .watermark{opacity:.06;} @page{size:A4; margin:14mm;} }
 </style>
+<link rel="stylesheet" href="/vocabulary-help.css">
 </head>
 <body>
 <div class="toolbar"><span class="brand">WordSip · Fiches pédagogiques</span><button onclick="window.print()">Imprimer / PDF</button></div>
@@ -145,6 +146,7 @@
     <li><b>hasta</b><span class="why">punto de llegada</span></li>
   </ol>
 </div>
+<script src="/vocabulary-help.js"></script>
 <script>
 function ans(el, isOk){
   var block = el.closest('.q-block');

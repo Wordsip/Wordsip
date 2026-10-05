@@ -60,6 +60,7 @@ async function init() {
     }
     const data = await res.json();
     language = data.language;
+    window.WordSipHelp?.setLanguage(language);
     document.getElementById('level-badge').textContent =
       isPreview ? 'Aperçu admin' : data.level.replace('niveau', 'Niveau ');
 

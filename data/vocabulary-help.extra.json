@@ -1,0 +1,3662 @@
+{
+  "en": [
+    {
+      "term": "Red",
+      "translation": "« The apple is red. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Orange",
+      "translation": "« I love orange sunsets. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Yellow",
+      "translation": "« The sun is yellow. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Green",
+      "translation": "« The grass is green. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Blue",
+      "translation": "« The sky is blue today. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Purple",
+      "translation": "« She has a purple bag. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Pink",
+      "translation": "« My sister likes pink shoes. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Brown",
+      "translation": "« The dog has brown fur. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Black",
+      "translation": "« He is wearing a black coat. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "White",
+      "translation": "« The snow is white. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "in",
+      "translation": "dans",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "on",
+      "translation": "sur",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "under",
+      "translation": "sous (juste en dessous)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "below",
+      "translation": "en dessous (position plus large/vague)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "between",
+      "translation": "entre",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "behind",
+      "translation": "derrière",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "in front of",
+      "translation": "devant",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "next to",
+      "translation": "juste à côté, presque collé",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "near",
+      "translation": "proche, mais avec un peu de distance",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "above",
+      "translation": "au-dessus (sans toucher)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "up",
+      "translation": "vers le haut",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "down",
+      "translation": "vers le bas",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "into",
+      "translation": "à l'intérieur de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "out of",
+      "translation": "hors de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "onto",
+      "translation": "sur (avec mouvement)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "off",
+      "translation": "hors de, de dessus",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "over",
+      "translation": "par-dessus",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "across",
+      "translation": "à travers, d'un côté à l'autre",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "around",
+      "translation": "autour de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "through",
+      "translation": "à travers (un espace fermé)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "One",
+      "translation": "« I have one brother. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Two",
+      "translation": "« She has two cats. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Three",
+      "translation": "« We need three chairs. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Four",
+      "translation": "« There are four seasons. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Five",
+      "translation": "« I wake up at five. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Six",
+      "translation": "« The shop opens at six. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Seven",
+      "translation": "« There are seven days in a week. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Eight",
+      "translation": "« My class starts at eight. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Nine",
+      "translation": "« The train leaves at nine. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Ten",
+      "translation": "« Count from one to ten. »",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "lieu fixe",
+      "translation": "petit / précis",
+      "definition": "Référence de la fiche."
+    },
+    {
+      "term": "lieu fixe",
+      "translation": "ville, pays, grand espace",
+      "definition": "Référence de la fiche."
+    },
+    {
+      "term": "in Lyon, in Franceà/en",
+      "translation": "ville, pays",
+      "definition": "Référence de la fiche."
+    },
+    {
+      "term": "complément, pour une personne",
+      "translation": "formel",
+      "definition": "Référence de la fiche."
+    },
+    {
+      "term": "personne ou chose",
+      "translation": "informel",
+      "definition": "Référence de la fiche."
+    },
+    {
+      "term": "at",
+      "translation": "à (heure précise)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "in",
+      "translation": "en (mois, année, siècle)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "on",
+      "translation": "un jour précis / une date",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "for",
+      "translation": "pendant (durée)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "since",
+      "translation": "depuis (point de départ)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "during",
+      "translation": "pendant (un événement)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "before",
+      "translation": "avant",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "after",
+      "translation": "après",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "until",
+      "translation": "jusqu'à (sans interruption)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "by",
+      "translation": "au plus tard, avant une échéance",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "I",
+      "translation": "je",
+      "definition": ""
+    },
+    {
+      "term": "you",
+      "translation": "tu / vous",
+      "definition": ""
+    },
+    {
+      "term": "he",
+      "translation": "il",
+      "definition": ""
+    },
+    {
+      "term": "she",
+      "translation": "elle",
+      "definition": ""
+    },
+    {
+      "term": "it",
+      "translation": "il / elle (chose, animal)",
+      "definition": ""
+    },
+    {
+      "term": "we",
+      "translation": "nous",
+      "definition": ""
+    },
+    {
+      "term": "they",
+      "translation": "ils / elles",
+      "definition": ""
+    },
+    {
+      "term": "me",
+      "translation": "moi / me",
+      "definition": ""
+    },
+    {
+      "term": "him",
+      "translation": "lui",
+      "definition": ""
+    },
+    {
+      "term": "her",
+      "translation": "elle / lui / son",
+      "definition": ""
+    },
+    {
+      "term": "us",
+      "translation": "nous",
+      "definition": ""
+    },
+    {
+      "term": "them",
+      "translation": "eux / elles",
+      "definition": ""
+    },
+    {
+      "term": "my",
+      "translation": "mon / ma / mes",
+      "definition": ""
+    },
+    {
+      "term": "your",
+      "translation": "ton / ta / tes / votre",
+      "definition": ""
+    },
+    {
+      "term": "his",
+      "translation": "son / sa / ses (à lui)",
+      "definition": ""
+    },
+    {
+      "term": "our",
+      "translation": "notre / nos",
+      "definition": ""
+    },
+    {
+      "term": "their",
+      "translation": "leur / leurs",
+      "definition": ""
+    },
+    {
+      "term": "mine",
+      "translation": "le mien / la mienne",
+      "definition": ""
+    },
+    {
+      "term": "yours",
+      "translation": "le tien / le vôtre",
+      "definition": ""
+    },
+    {
+      "term": "hers",
+      "translation": "le sien (à elle)",
+      "definition": ""
+    },
+    {
+      "term": "ours",
+      "translation": "le nôtre",
+      "definition": ""
+    },
+    {
+      "term": "theirs",
+      "translation": "le leur",
+      "definition": ""
+    },
+    {
+      "term": "who",
+      "translation": "qui",
+      "definition": ""
+    },
+    {
+      "term": "whom",
+      "translation": "qui (complément)",
+      "definition": ""
+    },
+    {
+      "term": "whose",
+      "translation": "dont / à qui",
+      "definition": ""
+    },
+    {
+      "term": "which",
+      "translation": "lequel / laquelle",
+      "definition": ""
+    },
+    {
+      "term": "that",
+      "translation": "que / cela",
+      "definition": ""
+    },
+    {
+      "term": "what",
+      "translation": "quoi / quel",
+      "definition": ""
+    },
+    {
+      "term": "where",
+      "translation": "où",
+      "definition": ""
+    },
+    {
+      "term": "when",
+      "translation": "quand",
+      "definition": ""
+    },
+    {
+      "term": "why",
+      "translation": "pourquoi",
+      "definition": ""
+    },
+    {
+      "term": "how",
+      "translation": "comment",
+      "definition": ""
+    },
+    {
+      "term": "the",
+      "translation": "le / la / les",
+      "definition": ""
+    },
+    {
+      "term": "a",
+      "translation": "un / une",
+      "definition": ""
+    },
+    {
+      "term": "an",
+      "translation": "un / une (devant un son voyelle)",
+      "definition": ""
+    },
+    {
+      "term": "am",
+      "translation": "suis",
+      "definition": ""
+    },
+    {
+      "term": "is",
+      "translation": "est",
+      "definition": ""
+    },
+    {
+      "term": "are",
+      "translation": "es / sommes / êtes / sont",
+      "definition": ""
+    },
+    {
+      "term": "was",
+      "translation": "étais / était",
+      "definition": ""
+    },
+    {
+      "term": "were",
+      "translation": "étais / étions / étiez / étaient",
+      "definition": ""
+    },
+    {
+      "term": "been",
+      "translation": "été",
+      "definition": ""
+    },
+    {
+      "term": "being",
+      "translation": "étant / en train d’être",
+      "definition": ""
+    },
+    {
+      "term": "have",
+      "translation": "avoir / ai / avons",
+      "definition": ""
+    },
+    {
+      "term": "has",
+      "translation": "a (avoir)",
+      "definition": ""
+    },
+    {
+      "term": "had",
+      "translation": "avais / avait / avions / avaient",
+      "definition": ""
+    },
+    {
+      "term": "do",
+      "translation": "faire ; auxiliaire de question",
+      "definition": ""
+    },
+    {
+      "term": "does",
+      "translation": "fait ; auxiliaire à la 3e personne",
+      "definition": ""
+    },
+    {
+      "term": "did",
+      "translation": "a fait ; auxiliaire au passé",
+      "definition": ""
+    },
+    {
+      "term": "will",
+      "translation": "auxiliaire du futur",
+      "definition": ""
+    },
+    {
+      "term": "would",
+      "translation": "auxiliaire du conditionnel",
+      "definition": ""
+    },
+    {
+      "term": "can",
+      "translation": "pouvoir / savoir faire",
+      "definition": ""
+    },
+    {
+      "term": "could",
+      "translation": "pouvait / pourrait",
+      "definition": ""
+    },
+    {
+      "term": "must",
+      "translation": "devoir / il faut",
+      "definition": ""
+    },
+    {
+      "term": "should",
+      "translation": "devrait",
+      "definition": ""
+    },
+    {
+      "term": "may",
+      "translation": "peut / permission ou possibilité",
+      "definition": ""
+    },
+    {
+      "term": "might",
+      "translation": "pourrait / possibilité",
+      "definition": ""
+    },
+    {
+      "term": "not",
+      "translation": "ne… pas",
+      "definition": ""
+    },
+    {
+      "term": "never",
+      "translation": "jamais",
+      "definition": ""
+    },
+    {
+      "term": "always",
+      "translation": "toujours",
+      "definition": ""
+    },
+    {
+      "term": "often",
+      "translation": "souvent",
+      "definition": ""
+    },
+    {
+      "term": "sometimes",
+      "translation": "parfois",
+      "definition": ""
+    },
+    {
+      "term": "usually",
+      "translation": "habituellement",
+      "definition": ""
+    },
+    {
+      "term": "now",
+      "translation": "maintenant",
+      "definition": ""
+    },
+    {
+      "term": "today",
+      "translation": "aujourd’hui",
+      "definition": ""
+    },
+    {
+      "term": "tomorrow",
+      "translation": "demain",
+      "definition": ""
+    },
+    {
+      "term": "yesterday",
+      "translation": "hier",
+      "definition": ""
+    },
+    {
+      "term": "morning",
+      "translation": "matin",
+      "definition": ""
+    },
+    {
+      "term": "afternoon",
+      "translation": "après-midi",
+      "definition": ""
+    },
+    {
+      "term": "evening",
+      "translation": "soir",
+      "definition": ""
+    },
+    {
+      "term": "night",
+      "translation": "nuit",
+      "definition": ""
+    },
+    {
+      "term": "day",
+      "translation": "jour",
+      "definition": ""
+    },
+    {
+      "term": "week",
+      "translation": "semaine",
+      "definition": ""
+    },
+    {
+      "term": "month",
+      "translation": "mois",
+      "definition": ""
+    },
+    {
+      "term": "year",
+      "translation": "année",
+      "definition": ""
+    },
+    {
+      "term": "hour",
+      "translation": "heure",
+      "definition": ""
+    },
+    {
+      "term": "minute",
+      "translation": "minute",
+      "definition": ""
+    },
+    {
+      "term": "Monday",
+      "translation": "lundi",
+      "definition": ""
+    },
+    {
+      "term": "Tuesday",
+      "translation": "mardi",
+      "definition": ""
+    },
+    {
+      "term": "Wednesday",
+      "translation": "mercredi",
+      "definition": ""
+    },
+    {
+      "term": "Thursday",
+      "translation": "jeudi",
+      "definition": ""
+    },
+    {
+      "term": "Friday",
+      "translation": "vendredi",
+      "definition": ""
+    },
+    {
+      "term": "Saturday",
+      "translation": "samedi",
+      "definition": ""
+    },
+    {
+      "term": "Sunday",
+      "translation": "dimanche",
+      "definition": ""
+    },
+    {
+      "term": "and",
+      "translation": "et",
+      "definition": ""
+    },
+    {
+      "term": "but",
+      "translation": "mais",
+      "definition": ""
+    },
+    {
+      "term": "or",
+      "translation": "ou",
+      "definition": ""
+    },
+    {
+      "term": "because",
+      "translation": "parce que",
+      "definition": ""
+    },
+    {
+      "term": "so",
+      "translation": "donc / ainsi",
+      "definition": ""
+    },
+    {
+      "term": "if",
+      "translation": "si",
+      "definition": ""
+    },
+    {
+      "term": "although",
+      "translation": "bien que",
+      "definition": ""
+    },
+    {
+      "term": "while",
+      "translation": "pendant que / alors que",
+      "definition": ""
+    },
+    {
+      "term": "in",
+      "translation": "dans / en",
+      "definition": ""
+    },
+    {
+      "term": "on",
+      "translation": "sur / le (jour)",
+      "definition": ""
+    },
+    {
+      "term": "at",
+      "translation": "à (lieu ou heure précis)",
+      "definition": ""
+    },
+    {
+      "term": "to",
+      "translation": "à / vers / pour",
+      "definition": ""
+    },
+    {
+      "term": "from",
+      "translation": "de / depuis",
+      "definition": ""
+    },
+    {
+      "term": "with",
+      "translation": "avec",
+      "definition": ""
+    },
+    {
+      "term": "without",
+      "translation": "sans",
+      "definition": ""
+    },
+    {
+      "term": "for",
+      "translation": "pour / pendant",
+      "definition": ""
+    },
+    {
+      "term": "since",
+      "translation": "depuis un point de départ",
+      "definition": ""
+    },
+    {
+      "term": "during",
+      "translation": "pendant un événement",
+      "definition": ""
+    },
+    {
+      "term": "before",
+      "translation": "avant",
+      "definition": ""
+    },
+    {
+      "term": "after",
+      "translation": "après",
+      "definition": ""
+    },
+    {
+      "term": "until",
+      "translation": "jusqu’à",
+      "definition": ""
+    },
+    {
+      "term": "by",
+      "translation": "par / au plus tard",
+      "definition": ""
+    },
+    {
+      "term": "near",
+      "translation": "près de",
+      "definition": ""
+    },
+    {
+      "term": "next to",
+      "translation": "à côté de",
+      "definition": ""
+    },
+    {
+      "term": "between",
+      "translation": "entre deux éléments",
+      "definition": ""
+    },
+    {
+      "term": "among",
+      "translation": "parmi",
+      "definition": ""
+    },
+    {
+      "term": "behind",
+      "translation": "derrière",
+      "definition": ""
+    },
+    {
+      "term": "in front of",
+      "translation": "devant",
+      "definition": ""
+    },
+    {
+      "term": "above",
+      "translation": "au-dessus de",
+      "definition": ""
+    },
+    {
+      "term": "below",
+      "translation": "au-dessous de",
+      "definition": ""
+    },
+    {
+      "term": "under",
+      "translation": "sous",
+      "definition": ""
+    },
+    {
+      "term": "over",
+      "translation": "au-dessus de / par-dessus",
+      "definition": ""
+    },
+    {
+      "term": "into",
+      "translation": "vers l’intérieur de",
+      "definition": ""
+    },
+    {
+      "term": "out of",
+      "translation": "hors de",
+      "definition": ""
+    },
+    {
+      "term": "through",
+      "translation": "à travers",
+      "definition": ""
+    },
+    {
+      "term": "across",
+      "translation": "de l’autre côté / à travers",
+      "definition": ""
+    },
+    {
+      "term": "along",
+      "translation": "le long de",
+      "definition": ""
+    },
+    {
+      "term": "towards",
+      "translation": "vers",
+      "definition": ""
+    },
+    {
+      "term": "away from",
+      "translation": "loin de / en s’éloignant de",
+      "definition": ""
+    },
+    {
+      "term": "up",
+      "translation": "vers le haut",
+      "definition": ""
+    },
+    {
+      "term": "down",
+      "translation": "vers le bas",
+      "definition": ""
+    },
+    {
+      "term": "here",
+      "translation": "ici",
+      "definition": ""
+    },
+    {
+      "term": "there",
+      "translation": "là",
+      "definition": ""
+    },
+    {
+      "term": "this",
+      "translation": "ce / cette",
+      "definition": ""
+    },
+    {
+      "term": "these",
+      "translation": "ces",
+      "definition": ""
+    },
+    {
+      "term": "those",
+      "translation": "ces… là",
+      "definition": ""
+    },
+    {
+      "term": "some",
+      "translation": "quelques / du / de la",
+      "definition": ""
+    },
+    {
+      "term": "any",
+      "translation": "du / des / n’importe quel",
+      "definition": ""
+    },
+    {
+      "term": "much",
+      "translation": "beaucoup (indénombrable)",
+      "definition": ""
+    },
+    {
+      "term": "many",
+      "translation": "beaucoup (dénombrable)",
+      "definition": ""
+    },
+    {
+      "term": "few",
+      "translation": "peu de (dénombrable)",
+      "definition": ""
+    },
+    {
+      "term": "little",
+      "translation": "peu de / petit",
+      "definition": ""
+    },
+    {
+      "term": "all",
+      "translation": "tout / tous",
+      "definition": ""
+    },
+    {
+      "term": "each",
+      "translation": "chaque",
+      "definition": ""
+    },
+    {
+      "term": "every",
+      "translation": "chaque / tous les",
+      "definition": ""
+    },
+    {
+      "term": "both",
+      "translation": "les deux",
+      "definition": ""
+    },
+    {
+      "term": "either",
+      "translation": "l’un ou l’autre",
+      "definition": ""
+    },
+    {
+      "term": "neither",
+      "translation": "ni l’un ni l’autre",
+      "definition": ""
+    },
+    {
+      "term": "more",
+      "translation": "plus",
+      "definition": ""
+    },
+    {
+      "term": "most",
+      "translation": "le plus / la plupart",
+      "definition": ""
+    },
+    {
+      "term": "less",
+      "translation": "moins",
+      "definition": ""
+    },
+    {
+      "term": "good",
+      "translation": "bon",
+      "definition": ""
+    },
+    {
+      "term": "better",
+      "translation": "meilleur",
+      "definition": ""
+    },
+    {
+      "term": "best",
+      "translation": "le meilleur",
+      "definition": ""
+    },
+    {
+      "term": "bad",
+      "translation": "mauvais",
+      "definition": ""
+    },
+    {
+      "term": "worse",
+      "translation": "pire",
+      "definition": ""
+    },
+    {
+      "term": "worst",
+      "translation": "le pire",
+      "definition": ""
+    },
+    {
+      "term": "big",
+      "translation": "grand",
+      "definition": ""
+    },
+    {
+      "term": "small",
+      "translation": "petit",
+      "definition": ""
+    },
+    {
+      "term": "new",
+      "translation": "nouveau",
+      "definition": ""
+    },
+    {
+      "term": "old",
+      "translation": "vieux / ancien",
+      "definition": ""
+    },
+    {
+      "term": "early",
+      "translation": "tôt",
+      "definition": ""
+    },
+    {
+      "term": "late",
+      "translation": "tard / en retard",
+      "definition": ""
+    },
+    {
+      "term": "happy",
+      "translation": "heureux",
+      "definition": ""
+    },
+    {
+      "term": "tired",
+      "translation": "fatigué",
+      "definition": ""
+    },
+    {
+      "term": "red",
+      "translation": "rouge",
+      "definition": ""
+    },
+    {
+      "term": "blue",
+      "translation": "bleu",
+      "definition": ""
+    },
+    {
+      "term": "green",
+      "translation": "vert",
+      "definition": ""
+    },
+    {
+      "term": "yellow",
+      "translation": "jaune",
+      "definition": ""
+    },
+    {
+      "term": "black",
+      "translation": "noir",
+      "definition": ""
+    },
+    {
+      "term": "white",
+      "translation": "blanc",
+      "definition": ""
+    },
+    {
+      "term": "orange",
+      "translation": "orange",
+      "definition": ""
+    },
+    {
+      "term": "pink",
+      "translation": "rose",
+      "definition": ""
+    },
+    {
+      "term": "purple",
+      "translation": "violet",
+      "definition": ""
+    },
+    {
+      "term": "brown",
+      "translation": "marron",
+      "definition": ""
+    },
+    {
+      "term": "grey",
+      "translation": "gris",
+      "definition": ""
+    },
+    {
+      "term": "gray",
+      "translation": "gris",
+      "definition": ""
+    },
+    {
+      "term": "one",
+      "translation": "un",
+      "definition": ""
+    },
+    {
+      "term": "two",
+      "translation": "deux",
+      "definition": ""
+    },
+    {
+      "term": "three",
+      "translation": "trois",
+      "definition": ""
+    },
+    {
+      "term": "four",
+      "translation": "quatre",
+      "definition": ""
+    },
+    {
+      "term": "five",
+      "translation": "cinq",
+      "definition": ""
+    },
+    {
+      "term": "six",
+      "translation": "six",
+      "definition": ""
+    },
+    {
+      "term": "seven",
+      "translation": "sept",
+      "definition": ""
+    },
+    {
+      "term": "eight",
+      "translation": "huit",
+      "definition": ""
+    },
+    {
+      "term": "nine",
+      "translation": "neuf",
+      "definition": ""
+    },
+    {
+      "term": "ten",
+      "translation": "dix",
+      "definition": ""
+    },
+    {
+      "term": "first",
+      "translation": "premier",
+      "definition": ""
+    },
+    {
+      "term": "second",
+      "translation": "deuxième",
+      "definition": ""
+    },
+    {
+      "term": "third",
+      "translation": "troisième",
+      "definition": ""
+    },
+    {
+      "term": "playing",
+      "translation": "en train de jouer",
+      "definition": ""
+    },
+    {
+      "term": "working",
+      "translation": "en train de travailler",
+      "definition": ""
+    },
+    {
+      "term": "cooking",
+      "translation": "en train de cuisiner",
+      "definition": ""
+    },
+    {
+      "term": "reading",
+      "translation": "en train de lire",
+      "definition": ""
+    },
+    {
+      "term": "writing",
+      "translation": "en train d’écrire",
+      "definition": ""
+    },
+    {
+      "term": "go",
+      "translation": "aller",
+      "definition": ""
+    },
+    {
+      "term": "goes",
+      "translation": "va",
+      "definition": ""
+    },
+    {
+      "term": "went",
+      "translation": "est allé / alla",
+      "definition": ""
+    },
+    {
+      "term": "gone",
+      "translation": "allé",
+      "definition": ""
+    },
+    {
+      "term": "come",
+      "translation": "venir",
+      "definition": ""
+    },
+    {
+      "term": "came",
+      "translation": "est venu",
+      "definition": ""
+    },
+    {
+      "term": "eat",
+      "translation": "manger",
+      "definition": ""
+    },
+    {
+      "term": "ate",
+      "translation": "a mangé",
+      "definition": ""
+    },
+    {
+      "term": "eaten",
+      "translation": "mangé",
+      "definition": ""
+    },
+    {
+      "term": "drink",
+      "translation": "boire",
+      "definition": ""
+    },
+    {
+      "term": "drank",
+      "translation": "a bu",
+      "definition": ""
+    },
+    {
+      "term": "drunk",
+      "translation": "bu",
+      "definition": ""
+    },
+    {
+      "term": "take",
+      "translation": "prendre",
+      "definition": ""
+    },
+    {
+      "term": "took",
+      "translation": "a pris",
+      "definition": ""
+    },
+    {
+      "term": "taken",
+      "translation": "pris",
+      "definition": ""
+    },
+    {
+      "term": "see",
+      "translation": "voir",
+      "definition": ""
+    },
+    {
+      "term": "saw",
+      "translation": "a vu",
+      "definition": ""
+    },
+    {
+      "term": "seen",
+      "translation": "vu",
+      "definition": ""
+    },
+    {
+      "term": "make",
+      "translation": "faire / fabriquer",
+      "definition": ""
+    },
+    {
+      "term": "made",
+      "translation": "fait / fabriqué",
+      "definition": ""
+    },
+    {
+      "term": "get",
+      "translation": "obtenir / devenir",
+      "definition": ""
+    },
+    {
+      "term": "got",
+      "translation": "a obtenu",
+      "definition": ""
+    },
+    {
+      "term": "give",
+      "translation": "donner",
+      "definition": ""
+    },
+    {
+      "term": "gave",
+      "translation": "a donné",
+      "definition": ""
+    },
+    {
+      "term": "given",
+      "translation": "donné",
+      "definition": ""
+    },
+    {
+      "term": "know",
+      "translation": "savoir / connaître",
+      "definition": ""
+    },
+    {
+      "term": "knew",
+      "translation": "savait / connaissait",
+      "definition": ""
+    },
+    {
+      "term": "known",
+      "translation": "su / connu",
+      "definition": ""
+    },
+    {
+      "term": "say",
+      "translation": "dire",
+      "definition": ""
+    },
+    {
+      "term": "said",
+      "translation": "a dit",
+      "definition": ""
+    },
+    {
+      "term": "think",
+      "translation": "penser",
+      "definition": ""
+    },
+    {
+      "term": "thought",
+      "translation": "a pensé",
+      "definition": ""
+    },
+    {
+      "term": "learn",
+      "translation": "apprendre",
+      "definition": ""
+    },
+    {
+      "term": "study",
+      "translation": "étudier",
+      "definition": ""
+    },
+    {
+      "term": "live",
+      "translation": "vivre / habiter",
+      "definition": ""
+    },
+    {
+      "term": "work",
+      "translation": "travailler / travail",
+      "definition": ""
+    },
+    {
+      "term": "play",
+      "translation": "jouer",
+      "definition": ""
+    },
+    {
+      "term": "school",
+      "translation": "école",
+      "definition": ""
+    },
+    {
+      "term": "class",
+      "translation": "cours / classe",
+      "definition": ""
+    },
+    {
+      "term": "train",
+      "translation": "train",
+      "definition": ""
+    },
+    {
+      "term": "plane",
+      "translation": "avion",
+      "definition": ""
+    },
+    {
+      "term": "shop",
+      "translation": "magasin",
+      "definition": ""
+    },
+    {
+      "term": "library",
+      "translation": "bibliothèque",
+      "definition": ""
+    },
+    {
+      "term": "house",
+      "translation": "maison",
+      "definition": ""
+    },
+    {
+      "term": "home",
+      "translation": "chez soi / maison",
+      "definition": ""
+    },
+    {
+      "term": "room",
+      "translation": "pièce / chambre",
+      "definition": ""
+    },
+    {
+      "term": "table",
+      "translation": "table",
+      "definition": ""
+    },
+    {
+      "term": "chair",
+      "translation": "chaise",
+      "definition": ""
+    },
+    {
+      "term": "book",
+      "translation": "livre",
+      "definition": ""
+    },
+    {
+      "term": "coffee",
+      "translation": "café",
+      "definition": ""
+    },
+    {
+      "term": "tea",
+      "translation": "thé",
+      "definition": ""
+    },
+    {
+      "term": "water",
+      "translation": "eau",
+      "definition": ""
+    },
+    {
+      "term": "dinner",
+      "translation": "dîner",
+      "definition": ""
+    },
+    {
+      "term": "friend",
+      "translation": "ami",
+      "definition": ""
+    },
+    {
+      "term": "children",
+      "translation": "enfants",
+      "definition": ""
+    },
+    {
+      "term": "family",
+      "translation": "famille",
+      "definition": ""
+    },
+    {
+      "term": "mother",
+      "translation": "mère",
+      "definition": ""
+    },
+    {
+      "term": "father",
+      "translation": "père",
+      "definition": ""
+    },
+    {
+      "term": "report",
+      "translation": "rapport",
+      "definition": ""
+    },
+    {
+      "term": "meeting",
+      "translation": "réunion",
+      "definition": ""
+    },
+    {
+      "term": "car",
+      "translation": "voiture",
+      "definition": ""
+    },
+    {
+      "term": "street",
+      "translation": "rue",
+      "definition": ""
+    },
+    {
+      "term": "park",
+      "translation": "parc",
+      "definition": ""
+    },
+    {
+      "term": "city",
+      "translation": "ville",
+      "definition": ""
+    },
+    {
+      "term": "door",
+      "translation": "porte",
+      "definition": ""
+    },
+    {
+      "term": "window",
+      "translation": "fenêtre",
+      "definition": ""
+    },
+    {
+      "term": "people",
+      "translation": "gens / personnes",
+      "definition": ""
+    }
+  ],
+  "es": [
+    {
+      "term": "en",
+      "translation": "à l'intérieur",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "sobre",
+      "translation": "sur, en contact",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "debajo de",
+      "translation": "sous",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "entre",
+      "translation": "entre",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "delante de",
+      "translation": "devant",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "detrás de",
+      "translation": "derrière",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "al lado de",
+      "translation": "à côté de",
+      "definition": "Indique la proximité ; le contact n’est pas obligatoire."
+    },
+    {
+      "term": "cerca de",
+      "translation": "à proximité",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "encima de",
+      "translation": "au-dessus, sans contact",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "lejos de",
+      "translation": "loin de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "a",
+      "translation": "vers, à (destination)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "hacia",
+      "translation": "en direction de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "desde",
+      "translation": "depuis (origine)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "hasta",
+      "translation": "jusqu'à",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "por",
+      "translation": "à travers, en passant par",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "a través de",
+      "translation": "à travers",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "alrededor de",
+      "translation": "autour de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "dentro de",
+      "translation": "à l'intérieur de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "fuera de",
+      "translation": "hors de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "sobre",
+      "translation": "sur (avec mouvement)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "Viajé por dos semanas.durée",
+      "translation": "par",
+      "definition": "Référence de la fiche."
+    },
+    {
+      "term": "posesión",
+      "translation": "concuerda con lo poseído",
+      "definition": "Référence de la fiche."
+    },
+    {
+      "term": "a",
+      "translation": "à (heure précise)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "en",
+      "translation": "en (mois, année)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "desde",
+      "translation": "depuis",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "hasta",
+      "translation": "jusqu'à",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "durante",
+      "translation": "pendant",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "antes de",
+      "translation": "avant",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "después de",
+      "translation": "après",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "dentro de",
+      "translation": "dans (délai futur)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "por",
+      "translation": "pendant (durée)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "hace",
+      "translation": "il y a",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "yo",
+      "translation": "je",
+      "definition": ""
+    },
+    {
+      "term": "tú",
+      "translation": "tu",
+      "definition": ""
+    },
+    {
+      "term": "él",
+      "translation": "il",
+      "definition": ""
+    },
+    {
+      "term": "ella",
+      "translation": "elle",
+      "definition": ""
+    },
+    {
+      "term": "usted",
+      "translation": "vous (politesse)",
+      "definition": ""
+    },
+    {
+      "term": "nosotros",
+      "translation": "nous",
+      "definition": ""
+    },
+    {
+      "term": "vosotros",
+      "translation": "vous",
+      "definition": ""
+    },
+    {
+      "term": "ellos",
+      "translation": "ils",
+      "definition": ""
+    },
+    {
+      "term": "ellas",
+      "translation": "elles",
+      "definition": ""
+    },
+    {
+      "term": "ustedes",
+      "translation": "vous",
+      "definition": ""
+    },
+    {
+      "term": "mi",
+      "translation": "mon / ma",
+      "definition": ""
+    },
+    {
+      "term": "mis",
+      "translation": "mes",
+      "definition": ""
+    },
+    {
+      "term": "tu",
+      "translation": "ton / ta",
+      "definition": ""
+    },
+    {
+      "term": "sus",
+      "translation": "ses / leurs",
+      "definition": ""
+    },
+    {
+      "term": "nuestro",
+      "translation": "notre",
+      "definition": ""
+    },
+    {
+      "term": "qué",
+      "translation": "quoi / quel",
+      "definition": ""
+    },
+    {
+      "term": "quién",
+      "translation": "qui",
+      "definition": ""
+    },
+    {
+      "term": "dónde",
+      "translation": "où",
+      "definition": ""
+    },
+    {
+      "term": "cuándo",
+      "translation": "quand",
+      "definition": ""
+    },
+    {
+      "term": "cómo",
+      "translation": "comment",
+      "definition": ""
+    },
+    {
+      "term": "por qué",
+      "translation": "pourquoi",
+      "definition": ""
+    },
+    {
+      "term": "porque",
+      "translation": "parce que",
+      "definition": ""
+    },
+    {
+      "term": "y",
+      "translation": "et",
+      "definition": ""
+    },
+    {
+      "term": "e",
+      "translation": "et (devant le son i)",
+      "definition": ""
+    },
+    {
+      "term": "o",
+      "translation": "ou",
+      "definition": ""
+    },
+    {
+      "term": "u",
+      "translation": "ou (devant le son o)",
+      "definition": ""
+    },
+    {
+      "term": "pero",
+      "translation": "mais",
+      "definition": ""
+    },
+    {
+      "term": "así que",
+      "translation": "donc",
+      "definition": ""
+    },
+    {
+      "term": "si",
+      "translation": "si",
+      "definition": ""
+    },
+    {
+      "term": "sí",
+      "translation": "oui",
+      "definition": ""
+    },
+    {
+      "term": "no",
+      "translation": "non / ne… pas",
+      "definition": ""
+    },
+    {
+      "term": "el",
+      "translation": "le",
+      "definition": ""
+    },
+    {
+      "term": "la",
+      "translation": "la",
+      "definition": ""
+    },
+    {
+      "term": "los",
+      "translation": "les",
+      "definition": ""
+    },
+    {
+      "term": "las",
+      "translation": "les",
+      "definition": ""
+    },
+    {
+      "term": "un",
+      "translation": "un",
+      "definition": ""
+    },
+    {
+      "term": "una",
+      "translation": "une",
+      "definition": ""
+    },
+    {
+      "term": "en",
+      "translation": "dans / en",
+      "definition": ""
+    },
+    {
+      "term": "a",
+      "translation": "à / vers",
+      "definition": ""
+    },
+    {
+      "term": "de",
+      "translation": "de",
+      "definition": ""
+    },
+    {
+      "term": "con",
+      "translation": "avec",
+      "definition": ""
+    },
+    {
+      "term": "sin",
+      "translation": "sans",
+      "definition": ""
+    },
+    {
+      "term": "por",
+      "translation": "par / pour (cause, moyen)",
+      "definition": ""
+    },
+    {
+      "term": "para",
+      "translation": "pour (but, destinataire)",
+      "definition": ""
+    },
+    {
+      "term": "sobre",
+      "translation": "sur / au sujet de",
+      "definition": ""
+    },
+    {
+      "term": "debajo de",
+      "translation": "sous",
+      "definition": ""
+    },
+    {
+      "term": "encima de",
+      "translation": "au-dessus de",
+      "definition": ""
+    },
+    {
+      "term": "delante de",
+      "translation": "devant",
+      "definition": ""
+    },
+    {
+      "term": "detrás de",
+      "translation": "derrière",
+      "definition": ""
+    },
+    {
+      "term": "al lado de",
+      "translation": "à côté de",
+      "definition": "Indique la proximité ; le contact n’est pas obligatoire."
+    },
+    {
+      "term": "entre",
+      "translation": "entre",
+      "definition": ""
+    },
+    {
+      "term": "cerca de",
+      "translation": "près de",
+      "definition": ""
+    },
+    {
+      "term": "lejos de",
+      "translation": "loin de",
+      "definition": ""
+    },
+    {
+      "term": "dentro de",
+      "translation": "à l’intérieur de",
+      "definition": ""
+    },
+    {
+      "term": "fuera de",
+      "translation": "à l’extérieur de",
+      "definition": ""
+    },
+    {
+      "term": "hacia",
+      "translation": "vers",
+      "definition": ""
+    },
+    {
+      "term": "hasta",
+      "translation": "jusqu’à",
+      "definition": ""
+    },
+    {
+      "term": "desde",
+      "translation": "depuis",
+      "definition": ""
+    },
+    {
+      "term": "durante",
+      "translation": "pendant",
+      "definition": ""
+    },
+    {
+      "term": "antes de",
+      "translation": "avant",
+      "definition": ""
+    },
+    {
+      "term": "después de",
+      "translation": "après",
+      "definition": ""
+    },
+    {
+      "term": "ahora",
+      "translation": "maintenant",
+      "definition": ""
+    },
+    {
+      "term": "hoy",
+      "translation": "aujourd’hui",
+      "definition": ""
+    },
+    {
+      "term": "ayer",
+      "translation": "hier",
+      "definition": ""
+    },
+    {
+      "term": "mañana",
+      "translation": "demain / matin",
+      "definition": ""
+    },
+    {
+      "term": "siempre",
+      "translation": "toujours",
+      "definition": ""
+    },
+    {
+      "term": "nunca",
+      "translation": "jamais",
+      "definition": ""
+    },
+    {
+      "term": "a veces",
+      "translation": "parfois",
+      "definition": ""
+    },
+    {
+      "term": "a menudo",
+      "translation": "souvent",
+      "definition": ""
+    },
+    {
+      "term": "todos los días",
+      "translation": "tous les jours",
+      "definition": ""
+    },
+    {
+      "term": "cada",
+      "translation": "chaque",
+      "definition": ""
+    },
+    {
+      "term": "soy",
+      "translation": "je suis (ser)",
+      "definition": ""
+    },
+    {
+      "term": "eres",
+      "translation": "tu es (ser)",
+      "definition": ""
+    },
+    {
+      "term": "es",
+      "translation": "est (ser)",
+      "definition": ""
+    },
+    {
+      "term": "somos",
+      "translation": "nous sommes (ser)",
+      "definition": ""
+    },
+    {
+      "term": "son",
+      "translation": "sont (ser)",
+      "definition": ""
+    },
+    {
+      "term": "estoy",
+      "translation": "je suis (estar)",
+      "definition": ""
+    },
+    {
+      "term": "está",
+      "translation": "est (estar)",
+      "definition": ""
+    },
+    {
+      "term": "están",
+      "translation": "sont (estar)",
+      "definition": ""
+    },
+    {
+      "term": "hay",
+      "translation": "il y a",
+      "definition": ""
+    },
+    {
+      "term": "tengo",
+      "translation": "j’ai",
+      "definition": ""
+    },
+    {
+      "term": "tiene",
+      "translation": "a (avoir)",
+      "definition": ""
+    },
+    {
+      "term": "hablar",
+      "translation": "parler",
+      "definition": ""
+    },
+    {
+      "term": "hablo",
+      "translation": "je parle",
+      "definition": ""
+    },
+    {
+      "term": "hablas",
+      "translation": "tu parles",
+      "definition": ""
+    },
+    {
+      "term": "habla",
+      "translation": "parle",
+      "definition": ""
+    },
+    {
+      "term": "hablamos",
+      "translation": "nous parlons",
+      "definition": ""
+    },
+    {
+      "term": "habláis",
+      "translation": "vous parlez",
+      "definition": ""
+    },
+    {
+      "term": "hablan",
+      "translation": "ils parlent",
+      "definition": ""
+    },
+    {
+      "term": "comer",
+      "translation": "manger",
+      "definition": ""
+    },
+    {
+      "term": "como",
+      "translation": "je mange / comme",
+      "definition": ""
+    },
+    {
+      "term": "comes",
+      "translation": "tu manges",
+      "definition": ""
+    },
+    {
+      "term": "come",
+      "translation": "mange",
+      "definition": ""
+    },
+    {
+      "term": "comemos",
+      "translation": "nous mangeons",
+      "definition": ""
+    },
+    {
+      "term": "coméis",
+      "translation": "vous mangez",
+      "definition": ""
+    },
+    {
+      "term": "comen",
+      "translation": "ils mangent",
+      "definition": ""
+    },
+    {
+      "term": "vivir",
+      "translation": "vivre / habiter",
+      "definition": ""
+    },
+    {
+      "term": "vivo",
+      "translation": "je vis",
+      "definition": ""
+    },
+    {
+      "term": "vives",
+      "translation": "tu vis",
+      "definition": ""
+    },
+    {
+      "term": "vive",
+      "translation": "vit",
+      "definition": ""
+    },
+    {
+      "term": "vivimos",
+      "translation": "nous vivons",
+      "definition": ""
+    },
+    {
+      "term": "vivís",
+      "translation": "vous vivez",
+      "definition": ""
+    },
+    {
+      "term": "viven",
+      "translation": "ils vivent",
+      "definition": ""
+    },
+    {
+      "term": "ir",
+      "translation": "aller",
+      "definition": ""
+    },
+    {
+      "term": "voy",
+      "translation": "je vais",
+      "definition": ""
+    },
+    {
+      "term": "va",
+      "translation": "va",
+      "definition": ""
+    },
+    {
+      "term": "hacer",
+      "translation": "faire",
+      "definition": ""
+    },
+    {
+      "term": "haces",
+      "translation": "tu fais",
+      "definition": ""
+    },
+    {
+      "term": "trabajo",
+      "translation": "je travaille / travail",
+      "definition": ""
+    },
+    {
+      "term": "trabajar",
+      "translation": "travailler",
+      "definition": ""
+    },
+    {
+      "term": "agua",
+      "translation": "eau",
+      "definition": ""
+    },
+    {
+      "term": "café",
+      "translation": "café",
+      "definition": ""
+    },
+    {
+      "term": "casa",
+      "translation": "maison",
+      "definition": ""
+    },
+    {
+      "term": "día",
+      "translation": "jour",
+      "definition": ""
+    },
+    {
+      "term": "semana",
+      "translation": "semaine",
+      "definition": ""
+    },
+    {
+      "term": "mes",
+      "translation": "mois",
+      "definition": ""
+    },
+    {
+      "term": "año",
+      "translation": "année",
+      "definition": ""
+    },
+    {
+      "term": "libro",
+      "translation": "livre",
+      "definition": ""
+    },
+    {
+      "term": "escuela",
+      "translation": "école",
+      "definition": ""
+    },
+    {
+      "term": "ciudad",
+      "translation": "ville",
+      "definition": ""
+    },
+    {
+      "term": "tiempo",
+      "translation": "temps",
+      "definition": ""
+    },
+    {
+      "term": "rojo",
+      "translation": "rouge",
+      "definition": ""
+    },
+    {
+      "term": "azul",
+      "translation": "bleu",
+      "definition": ""
+    },
+    {
+      "term": "verde",
+      "translation": "vert",
+      "definition": ""
+    },
+    {
+      "term": "blanco",
+      "translation": "blanc",
+      "definition": ""
+    },
+    {
+      "term": "negro",
+      "translation": "noir",
+      "definition": ""
+    },
+    {
+      "term": "uno",
+      "translation": "un",
+      "definition": ""
+    },
+    {
+      "term": "dos",
+      "translation": "deux",
+      "definition": ""
+    },
+    {
+      "term": "tres",
+      "translation": "trois",
+      "definition": ""
+    },
+    {
+      "term": "cuatro",
+      "translation": "quatre",
+      "definition": ""
+    },
+    {
+      "term": "cinco",
+      "translation": "cinq",
+      "definition": ""
+    }
+  ],
+  "it": [
+    {
+      "term": "in",
+      "translation": "à l'intérieur",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "su",
+      "translation": "sur, en contact",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "sotto",
+      "translation": "sous",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "tra / fra",
+      "translation": "entre",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "davanti a",
+      "translation": "devant",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "dietro",
+      "translation": "derrière",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "accanto a",
+      "translation": "à côté de",
+      "definition": "Indique la proximité ; le contact n’est pas obligatoire."
+    },
+    {
+      "term": "vicino a",
+      "translation": "à proximité",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "sopra",
+      "translation": "au-dessus, sans contact",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "lontano da",
+      "translation": "loin de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "a",
+      "translation": "vers, à (destination)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "verso",
+      "translation": "en direction de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "da",
+      "translation": "depuis (origine)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "fino a",
+      "translation": "jusqu'à",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "per",
+      "translation": "à travers, en passant par",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "attraverso",
+      "translation": "à travers",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "intorno a",
+      "translation": "autour de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "dentro",
+      "translation": "à l'intérieur de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "fuori",
+      "translation": "hors de",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "su",
+      "translation": "sur (avec mouvement)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "possesso",
+      "translation": "concorda con la cosa posseduta",
+      "definition": "Référence de la fiche."
+    },
+    {
+      "term": "a",
+      "translation": "à (heure précise)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "in",
+      "translation": "en (mois, année)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "da",
+      "translation": "depuis",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "fino a",
+      "translation": "jusqu'à",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "durante",
+      "translation": "pendant",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "prima di",
+      "translation": "avant",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "dopo",
+      "translation": "après",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "tra / fra",
+      "translation": "dans (délai futur)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "per",
+      "translation": "pendant (durée)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "fa",
+      "translation": "il y a (se place après)",
+      "definition": "Sens indiqué sur cette fiche."
+    },
+    {
+      "term": "io",
+      "translation": "je",
+      "definition": ""
+    },
+    {
+      "term": "tu",
+      "translation": "tu",
+      "definition": ""
+    },
+    {
+      "term": "lui",
+      "translation": "il / lui",
+      "definition": ""
+    },
+    {
+      "term": "lei",
+      "translation": "elle / vous (politesse)",
+      "definition": ""
+    },
+    {
+      "term": "noi",
+      "translation": "nous",
+      "definition": ""
+    },
+    {
+      "term": "voi",
+      "translation": "vous",
+      "definition": ""
+    },
+    {
+      "term": "loro",
+      "translation": "ils / elles",
+      "definition": ""
+    },
+    {
+      "term": "mi",
+      "translation": "me",
+      "definition": ""
+    },
+    {
+      "term": "ti",
+      "translation": "te",
+      "definition": ""
+    },
+    {
+      "term": "il",
+      "translation": "le",
+      "definition": ""
+    },
+    {
+      "term": "lo",
+      "translation": "le",
+      "definition": ""
+    },
+    {
+      "term": "la",
+      "translation": "la",
+      "definition": ""
+    },
+    {
+      "term": "gli",
+      "translation": "les / lui",
+      "definition": ""
+    },
+    {
+      "term": "le",
+      "translation": "les / lui",
+      "definition": ""
+    },
+    {
+      "term": "un",
+      "translation": "un",
+      "definition": ""
+    },
+    {
+      "term": "una",
+      "translation": "une",
+      "definition": ""
+    },
+    {
+      "term": "mio",
+      "translation": "mon / le mien",
+      "definition": ""
+    },
+    {
+      "term": "tuo",
+      "translation": "ton / le tien",
+      "definition": ""
+    },
+    {
+      "term": "suo",
+      "translation": "son / le sien",
+      "definition": ""
+    },
+    {
+      "term": "nostro",
+      "translation": "notre",
+      "definition": ""
+    },
+    {
+      "term": "vostro",
+      "translation": "votre",
+      "definition": ""
+    },
+    {
+      "term": "chi",
+      "translation": "qui",
+      "definition": ""
+    },
+    {
+      "term": "che",
+      "translation": "que / quoi",
+      "definition": ""
+    },
+    {
+      "term": "dove",
+      "translation": "où",
+      "definition": ""
+    },
+    {
+      "term": "quando",
+      "translation": "quand",
+      "definition": ""
+    },
+    {
+      "term": "come",
+      "translation": "comment / comme",
+      "definition": ""
+    },
+    {
+      "term": "perché",
+      "translation": "pourquoi / parce que",
+      "definition": ""
+    },
+    {
+      "term": "e",
+      "translation": "et",
+      "definition": ""
+    },
+    {
+      "term": "ma",
+      "translation": "mais",
+      "definition": ""
+    },
+    {
+      "term": "o",
+      "translation": "ou",
+      "definition": ""
+    },
+    {
+      "term": "quindi",
+      "translation": "donc",
+      "definition": ""
+    },
+    {
+      "term": "se",
+      "translation": "si",
+      "definition": ""
+    },
+    {
+      "term": "sì",
+      "translation": "oui",
+      "definition": ""
+    },
+    {
+      "term": "no",
+      "translation": "non",
+      "definition": ""
+    },
+    {
+      "term": "non",
+      "translation": "ne… pas",
+      "definition": ""
+    },
+    {
+      "term": "in",
+      "translation": "dans / en",
+      "definition": ""
+    },
+    {
+      "term": "a",
+      "translation": "à / vers",
+      "definition": ""
+    },
+    {
+      "term": "di",
+      "translation": "de",
+      "definition": ""
+    },
+    {
+      "term": "da",
+      "translation": "de / chez / depuis",
+      "definition": ""
+    },
+    {
+      "term": "con",
+      "translation": "avec",
+      "definition": ""
+    },
+    {
+      "term": "senza",
+      "translation": "sans",
+      "definition": ""
+    },
+    {
+      "term": "per",
+      "translation": "pour / par",
+      "definition": ""
+    },
+    {
+      "term": "su",
+      "translation": "sur",
+      "definition": ""
+    },
+    {
+      "term": "sotto",
+      "translation": "sous",
+      "definition": ""
+    },
+    {
+      "term": "sopra",
+      "translation": "au-dessus de",
+      "definition": ""
+    },
+    {
+      "term": "davanti a",
+      "translation": "devant",
+      "definition": ""
+    },
+    {
+      "term": "dietro",
+      "translation": "derrière",
+      "definition": ""
+    },
+    {
+      "term": "vicino a",
+      "translation": "près de",
+      "definition": ""
+    },
+    {
+      "term": "lontano da",
+      "translation": "loin de",
+      "definition": ""
+    },
+    {
+      "term": "tra",
+      "translation": "entre / dans (durée)",
+      "definition": ""
+    },
+    {
+      "term": "fra",
+      "translation": "entre / dans (durée)",
+      "definition": ""
+    },
+    {
+      "term": "dentro",
+      "translation": "à l’intérieur",
+      "definition": ""
+    },
+    {
+      "term": "fuori",
+      "translation": "à l’extérieur",
+      "definition": ""
+    },
+    {
+      "term": "verso",
+      "translation": "vers",
+      "definition": ""
+    },
+    {
+      "term": "fino a",
+      "translation": "jusqu’à",
+      "definition": ""
+    },
+    {
+      "term": "prima di",
+      "translation": "avant",
+      "definition": ""
+    },
+    {
+      "term": "dopo",
+      "translation": "après",
+      "definition": ""
+    },
+    {
+      "term": "durante",
+      "translation": "pendant",
+      "definition": ""
+    },
+    {
+      "term": "adesso",
+      "translation": "maintenant",
+      "definition": ""
+    },
+    {
+      "term": "ora",
+      "translation": "maintenant / heure",
+      "definition": ""
+    },
+    {
+      "term": "oggi",
+      "translation": "aujourd’hui",
+      "definition": ""
+    },
+    {
+      "term": "ieri",
+      "translation": "hier",
+      "definition": ""
+    },
+    {
+      "term": "domani",
+      "translation": "demain",
+      "definition": ""
+    },
+    {
+      "term": "sempre",
+      "translation": "toujours",
+      "definition": ""
+    },
+    {
+      "term": "mai",
+      "translation": "jamais",
+      "definition": ""
+    },
+    {
+      "term": "spesso",
+      "translation": "souvent",
+      "definition": ""
+    },
+    {
+      "term": "di solito",
+      "translation": "d’habitude",
+      "definition": ""
+    },
+    {
+      "term": "a volte",
+      "translation": "parfois",
+      "definition": ""
+    },
+    {
+      "term": "ogni",
+      "translation": "chaque",
+      "definition": ""
+    },
+    {
+      "term": "sono",
+      "translation": "suis / sont",
+      "definition": ""
+    },
+    {
+      "term": "sei",
+      "translation": "es / six",
+      "definition": ""
+    },
+    {
+      "term": "è",
+      "translation": "est",
+      "definition": ""
+    },
+    {
+      "term": "siamo",
+      "translation": "sommes",
+      "definition": ""
+    },
+    {
+      "term": "siete",
+      "translation": "êtes",
+      "definition": ""
+    },
+    {
+      "term": "ho",
+      "translation": "j’ai",
+      "definition": ""
+    },
+    {
+      "term": "hai",
+      "translation": "tu as",
+      "definition": ""
+    },
+    {
+      "term": "ha",
+      "translation": "a (avoir)",
+      "definition": ""
+    },
+    {
+      "term": "abbiamo",
+      "translation": "avons",
+      "definition": ""
+    },
+    {
+      "term": "avete",
+      "translation": "avez",
+      "definition": ""
+    },
+    {
+      "term": "hanno",
+      "translation": "ont",
+      "definition": ""
+    },
+    {
+      "term": "parlare",
+      "translation": "parler",
+      "definition": ""
+    },
+    {
+      "term": "parlo",
+      "translation": "je parle",
+      "definition": ""
+    },
+    {
+      "term": "parli",
+      "translation": "tu parles",
+      "definition": ""
+    },
+    {
+      "term": "parla",
+      "translation": "parle",
+      "definition": ""
+    },
+    {
+      "term": "parliamo",
+      "translation": "nous parlons",
+      "definition": ""
+    },
+    {
+      "term": "parlate",
+      "translation": "vous parlez",
+      "definition": ""
+    },
+    {
+      "term": "parlano",
+      "translation": "ils parlent",
+      "definition": ""
+    },
+    {
+      "term": "credere",
+      "translation": "croire",
+      "definition": ""
+    },
+    {
+      "term": "credo",
+      "translation": "je crois",
+      "definition": ""
+    },
+    {
+      "term": "credi",
+      "translation": "tu crois",
+      "definition": ""
+    },
+    {
+      "term": "crede",
+      "translation": "croit",
+      "definition": ""
+    },
+    {
+      "term": "crediamo",
+      "translation": "nous croyons",
+      "definition": ""
+    },
+    {
+      "term": "credete",
+      "translation": "vous croyez",
+      "definition": ""
+    },
+    {
+      "term": "credono",
+      "translation": "ils croient",
+      "definition": ""
+    },
+    {
+      "term": "dormire",
+      "translation": "dormir",
+      "definition": ""
+    },
+    {
+      "term": "dormo",
+      "translation": "je dors",
+      "definition": ""
+    },
+    {
+      "term": "dormi",
+      "translation": "tu dors",
+      "definition": ""
+    },
+    {
+      "term": "dorme",
+      "translation": "dort",
+      "definition": ""
+    },
+    {
+      "term": "dormiamo",
+      "translation": "nous dormons",
+      "definition": ""
+    },
+    {
+      "term": "dormite",
+      "translation": "vous dormez",
+      "definition": ""
+    },
+    {
+      "term": "dormono",
+      "translation": "ils dorment",
+      "definition": ""
+    },
+    {
+      "term": "andare",
+      "translation": "aller",
+      "definition": ""
+    },
+    {
+      "term": "vado",
+      "translation": "je vais",
+      "definition": ""
+    },
+    {
+      "term": "va",
+      "translation": "va",
+      "definition": ""
+    },
+    {
+      "term": "fare",
+      "translation": "faire",
+      "definition": ""
+    },
+    {
+      "term": "fai",
+      "translation": "tu fais",
+      "definition": ""
+    },
+    {
+      "term": "lavoro",
+      "translation": "je travaille / travail",
+      "definition": ""
+    },
+    {
+      "term": "lavorare",
+      "translation": "travailler",
+      "definition": ""
+    },
+    {
+      "term": "casa",
+      "translation": "maison",
+      "definition": ""
+    },
+    {
+      "term": "libro",
+      "translation": "livre",
+      "definition": ""
+    },
+    {
+      "term": "acqua",
+      "translation": "eau",
+      "definition": ""
+    },
+    {
+      "term": "caffè",
+      "translation": "café",
+      "definition": ""
+    },
+    {
+      "term": "giorno",
+      "translation": "jour",
+      "definition": ""
+    },
+    {
+      "term": "settimana",
+      "translation": "semaine",
+      "definition": ""
+    },
+    {
+      "term": "mese",
+      "translation": "mois",
+      "definition": ""
+    },
+    {
+      "term": "anno",
+      "translation": "année",
+      "definition": ""
+    },
+    {
+      "term": "scuola",
+      "translation": "école",
+      "definition": ""
+    },
+    {
+      "term": "città",
+      "translation": "ville",
+      "definition": ""
+    },
+    {
+      "term": "tempo",
+      "translation": "temps",
+      "definition": ""
+    },
+    {
+      "term": "rosso",
+      "translation": "rouge",
+      "definition": ""
+    },
+    {
+      "term": "blu",
+      "translation": "bleu",
+      "definition": ""
+    },
+    {
+      "term": "verde",
+      "translation": "vert",
+      "definition": ""
+    },
+    {
+      "term": "bianco",
+      "translation": "blanc",
+      "definition": ""
+    },
+    {
+      "term": "nero",
+      "translation": "noir",
+      "definition": ""
+    },
+    {
+      "term": "uno",
+      "translation": "un",
+      "definition": ""
+    },
+    {
+      "term": "due",
+      "translation": "deux",
+      "definition": ""
+    },
+    {
+      "term": "tre",
+      "translation": "trois",
+      "definition": ""
+    },
+    {
+      "term": "quattro",
+      "translation": "quatre",
+      "definition": ""
+    },
+    {
+      "term": "cinque",
+      "translation": "cinq",
+      "definition": ""
+    }
+  ],
+  "ja": [
+    {
+      "term": "私",
+      "translation": "je / moi",
+      "definition": ""
+    },
+    {
+      "term": "わたし",
+      "translation": "je / moi",
+      "definition": ""
+    },
+    {
+      "term": "あなた",
+      "translation": "tu / vous",
+      "definition": ""
+    },
+    {
+      "term": "彼",
+      "translation": "il / lui",
+      "definition": ""
+    },
+    {
+      "term": "彼女",
+      "translation": "elle",
+      "definition": ""
+    },
+    {
+      "term": "私たち",
+      "translation": "nous",
+      "definition": ""
+    },
+    {
+      "term": "これ",
+      "translation": "ceci",
+      "definition": ""
+    },
+    {
+      "term": "それ",
+      "translation": "cela (près de l’autre)",
+      "definition": ""
+    },
+    {
+      "term": "あれ",
+      "translation": "cela (éloigné)",
+      "definition": ""
+    },
+    {
+      "term": "ここ",
+      "translation": "ici",
+      "definition": ""
+    },
+    {
+      "term": "そこ",
+      "translation": "là",
+      "definition": ""
+    },
+    {
+      "term": "どこ",
+      "translation": "où",
+      "definition": ""
+    },
+    {
+      "term": "何",
+      "translation": "quoi",
+      "definition": ""
+    },
+    {
+      "term": "いつ",
+      "translation": "quand",
+      "definition": ""
+    },
+    {
+      "term": "なぜ",
+      "translation": "pourquoi",
+      "definition": ""
+    },
+    {
+      "term": "今",
+      "translation": "maintenant",
+      "definition": ""
+    },
+    {
+      "term": "今日",
+      "translation": "aujourd’hui",
+      "definition": ""
+    },
+    {
+      "term": "明日",
+      "translation": "demain",
+      "definition": ""
+    },
+    {
+      "term": "昨日",
+      "translation": "hier",
+      "definition": ""
+    },
+    {
+      "term": "毎日",
+      "translation": "chaque jour",
+      "definition": ""
+    },
+    {
+      "term": "は",
+      "translation": "particule du thème (se prononce wa)",
+      "definition": ""
+    },
+    {
+      "term": "が",
+      "translation": "particule du sujet",
+      "definition": ""
+    },
+    {
+      "term": "を",
+      "translation": "particule du complément direct (o)",
+      "definition": ""
+    },
+    {
+      "term": "に",
+      "translation": "particule de destination, heure ou emplacement",
+      "definition": ""
+    },
+    {
+      "term": "で",
+      "translation": "particule du lieu d’action ou du moyen",
+      "definition": ""
+    },
+    {
+      "term": "と",
+      "translation": "et / avec / citation",
+      "definition": ""
+    },
+    {
+      "term": "の",
+      "translation": "possession ou relation entre noms",
+      "definition": ""
+    },
+    {
+      "term": "です",
+      "translation": "forme polie de la copule",
+      "definition": ""
+    },
+    {
+      "term": "ます",
+      "translation": "terminaison verbale polie",
+      "definition": ""
+    },
+    {
+      "term": "ません",
+      "translation": "négation polie",
+      "definition": ""
+    },
+    {
+      "term": "でした",
+      "translation": "forme passée polie de です",
+      "definition": ""
+    },
+    {
+      "term": "ありがとう",
+      "translation": "merci",
+      "definition": ""
+    },
+    {
+      "term": "おはよう",
+      "translation": "bonjour (matin)",
+      "definition": ""
+    },
+    {
+      "term": "こんばんは",
+      "translation": "bonsoir",
+      "definition": ""
+    },
+    {
+      "term": "はい",
+      "translation": "oui",
+      "definition": ""
+    },
+    {
+      "term": "いいえ",
+      "translation": "non",
+      "definition": ""
+    },
+    {
+      "term": "水",
+      "translation": "eau",
+      "definition": ""
+    },
+    {
+      "term": "学校",
+      "translation": "école",
+      "definition": ""
+    },
+    {
+      "term": "家",
+      "translation": "maison",
+      "definition": ""
+    },
+    {
+      "term": "本",
+      "translation": "livre",
+      "definition": ""
+    },
+    {
+      "term": "人",
+      "translation": "personne",
+      "definition": ""
+    },
+    {
+      "term": "食べる",
+      "translation": "manger",
+      "definition": ""
+    },
+    {
+      "term": "飲む",
+      "translation": "boire",
+      "definition": ""
+    },
+    {
+      "term": "行く",
+      "translation": "aller",
+      "definition": ""
+    },
+    {
+      "term": "来る",
+      "translation": "venir",
+      "definition": ""
+    },
+    {
+      "term": "見る",
+      "translation": "voir",
+      "definition": ""
+    },
+    {
+      "term": "勉強",
+      "translation": "étude / études",
+      "definition": ""
+    }
+  ],
+  "zh": [
+    {
+      "term": "我",
+      "translation": "je / moi",
+      "definition": ""
+    },
+    {
+      "term": "你",
+      "translation": "tu / toi",
+      "definition": ""
+    },
+    {
+      "term": "您",
+      "translation": "vous (politesse)",
+      "definition": ""
+    },
+    {
+      "term": "他",
+      "translation": "il / lui",
+      "definition": ""
+    },
+    {
+      "term": "她",
+      "translation": "elle",
+      "definition": ""
+    },
+    {
+      "term": "我们",
+      "translation": "nous",
+      "definition": ""
+    },
+    {
+      "term": "你们",
+      "translation": "vous",
+      "definition": ""
+    },
+    {
+      "term": "他们",
+      "translation": "ils / eux",
+      "definition": ""
+    },
+    {
+      "term": "这",
+      "translation": "ceci / ce",
+      "definition": ""
+    },
+    {
+      "term": "那",
+      "translation": "cela / ce… là",
+      "definition": ""
+    },
+    {
+      "term": "这里",
+      "translation": "ici",
+      "definition": ""
+    },
+    {
+      "term": "那里",
+      "translation": "là",
+      "definition": ""
+    },
+    {
+      "term": "哪里",
+      "translation": "où",
+      "definition": ""
+    },
+    {
+      "term": "什么",
+      "translation": "quoi",
+      "definition": ""
+    },
+    {
+      "term": "谁",
+      "translation": "qui",
+      "definition": ""
+    },
+    {
+      "term": "什么时候",
+      "translation": "quand",
+      "definition": ""
+    },
+    {
+      "term": "为什么",
+      "translation": "pourquoi",
+      "definition": ""
+    },
+    {
+      "term": "怎么",
+      "translation": "comment",
+      "definition": ""
+    },
+    {
+      "term": "现在",
+      "translation": "maintenant",
+      "definition": ""
+    },
+    {
+      "term": "今天",
+      "translation": "aujourd’hui",
+      "definition": ""
+    },
+    {
+      "term": "明天",
+      "translation": "demain",
+      "definition": ""
+    },
+    {
+      "term": "昨天",
+      "translation": "hier",
+      "definition": ""
+    },
+    {
+      "term": "每天",
+      "translation": "chaque jour",
+      "definition": ""
+    },
+    {
+      "term": "是",
+      "translation": "être (identification)",
+      "definition": ""
+    },
+    {
+      "term": "有",
+      "translation": "avoir / il y a",
+      "definition": ""
+    },
+    {
+      "term": "在",
+      "translation": "à / en train de (selon contexte)",
+      "definition": ""
+    },
+    {
+      "term": "不",
+      "translation": "ne… pas (négation)",
+      "definition": ""
+    },
+    {
+      "term": "没",
+      "translation": "ne… pas / absence, fait non accompli",
+      "definition": ""
+    },
+    {
+      "term": "的",
+      "translation": "particule de possession ou de description",
+      "definition": ""
+    },
+    {
+      "term": "了",
+      "translation": "particule de changement ou d’accomplissement",
+      "definition": ""
+    },
+    {
+      "term": "吗",
+      "translation": "particule de question oui/non",
+      "definition": ""
+    },
+    {
+      "term": "和",
+      "translation": "et / avec",
+      "definition": ""
+    },
+    {
+      "term": "也",
+      "translation": "aussi",
+      "definition": ""
+    },
+    {
+      "term": "都",
+      "translation": "tous / toutes",
+      "definition": ""
+    },
+    {
+      "term": "很",
+      "translation": "très / marqueur devant un adjectif",
+      "definition": ""
+    },
+    {
+      "term": "个",
+      "translation": "classificateur général",
+      "definition": ""
+    },
+    {
+      "term": "谢谢",
+      "translation": "merci",
+      "definition": ""
+    },
+    {
+      "term": "再见",
+      "translation": "au revoir",
+      "definition": ""
+    },
+    {
+      "term": "好",
+      "translation": "bon / bien",
+      "definition": ""
+    },
+    {
+      "term": "水",
+      "translation": "eau",
+      "definition": ""
+    },
+    {
+      "term": "学校",
+      "translation": "école",
+      "definition": ""
+    },
+    {
+      "term": "家",
+      "translation": "maison / famille",
+      "definition": ""
+    },
+    {
+      "term": "书",
+      "translation": "livre",
+      "definition": ""
+    },
+    {
+      "term": "人",
+      "translation": "personne",
+      "definition": ""
+    },
+    {
+      "term": "吃",
+      "translation": "manger",
+      "definition": ""
+    },
+    {
+      "term": "喝",
+      "translation": "boire",
+      "definition": ""
+    },
+    {
+      "term": "去",
+      "translation": "aller",
+      "definition": ""
+    },
+    {
+      "term": "来",
+      "translation": "venir",
+      "definition": ""
+    },
+    {
+      "term": "看",
+      "translation": "voir / regarder",
+      "definition": ""
+    },
+    {
+      "term": "学习",
+      "translation": "étudier / apprendre",
+      "definition": ""
+    }
+  ]
+}

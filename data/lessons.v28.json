@@ -1,0 +1,3412 @@
+{
+  "en": [
+    {
+      "id": "couleurs",
+      "type": "vocabulary",
+      "title": "Couleurs — décrire un objet",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "bases",
+      "level": "niveau1",
+      "learningOrder": 1,
+      "objective": "Reconnaître huit couleurs et décrire la couleur d’un vêtement.",
+      "prerequisites": "Aucun prérequis ; commencer par quatre couleurs.",
+      "vocabulary": [
+        {
+          "term": "red",
+          "translation": "rouge",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#dc3535"
+        },
+        {
+          "term": "blue",
+          "translation": "bleu",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#287ad3"
+        },
+        {
+          "term": "green",
+          "translation": "vert",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#22894e"
+        },
+        {
+          "term": "yellow",
+          "translation": "jaune",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#f5d849"
+        },
+        {
+          "term": "black",
+          "translation": "noir",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#202020"
+        },
+        {
+          "term": "white",
+          "translation": "blanc",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#ffffff"
+        },
+        {
+          "term": "purple",
+          "translation": "violet",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#8653b5"
+        },
+        {
+          "term": "orange",
+          "translation": "orange",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#ed8b2f"
+        }
+      ],
+      "examples": [
+        {
+          "text": "The coat is blue.",
+          "translation": "Le manteau est bleu.",
+          "reading": ""
+        },
+        {
+          "text": "I have a red shirt.",
+          "translation": "J’ai une chemise rouge.",
+          "reading": ""
+        }
+      ],
+      "note": "L’adjectif de couleur se place généralement avant le nom et ne s’accorde pas : a red shirt, red shirts. Pour décrire : the coat is blue. Il n’y a pas de -s ajouté à blue au pluriel.",
+      "exercise": [
+        {
+          "sentence": "Quelle couleur signifie bleu ?",
+          "options": [
+            "red",
+            "blue",
+            "green"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "blue — C’est le mot correspondant à bleu, pas à rouge ni à vert.",
+          "feedbackKo": "Réponse : blue — C’est le mot correspondant à bleu, pas à rouge ni à vert."
+        },
+        {
+          "sentence": "Quelle couleur signifie jaune ?",
+          "options": [
+            "yellow",
+            "black",
+            "white"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "yellow — Le jaune se distingue du noir et du blanc.",
+          "feedbackKo": "Réponse : yellow — Le jaune se distingue du noir et du blanc."
+        },
+        {
+          "sentence": "Quelle couleur signifie violet ?",
+          "options": [
+            "orange",
+            "green",
+            "purple"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "purple — Violet et orange sont deux couleurs différentes.",
+          "feedbackKo": "Réponse : purple — Violet et orange sont deux couleurs différentes."
+        }
+      ],
+      "task": "Décris deux objets autour de toi avec deux couleurs différentes.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-heures",
+      "type": "vocabulary",
+      "title": "Heures — demander et donner l’heure",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "bases",
+      "level": "niveau1",
+      "learningOrder": 2,
+      "objective": "Demander l’heure et distinguer heure ronde, quart, demie et moins le quart.",
+      "prerequisites": "Reconnaître les nombres 1 à 12 ; travailler d’abord les heures rondes.",
+      "vocabulary": [
+        {
+          "term": "What time is it?",
+          "translation": "Quelle heure est-il ?",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "It's one o'clock.",
+          "translation": "Il est une heure.",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "It's two o'clock.",
+          "translation": "Il est deux heures.",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "quarter past three",
+          "translation": "trois heures et quart (03:15)",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "half past three",
+          "translation": "trois heures et demie (03:30)",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "quarter to four",
+          "translation": "quatre heures moins le quart (03:45)",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "noon",
+          "translation": "midi",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "midnight",
+          "translation": "minuit",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "What time is it? It's half past three.",
+          "translation": "Quelle heure est-il ? Il est trois heures et demie.",
+          "reading": ""
+        },
+        {
+          "text": "The train leaves at quarter to four.",
+          "translation": "Le train part à quatre heures moins le quart.",
+          "reading": ""
+        }
+      ],
+      "note": "On peut dire three fifteen / three thirty / three forty-five. Past signifie après l’heure ; to annonce l’heure suivante. O’clock sert aux heures rondes. Une heure précise prend at. Préciser AM (avant midi) ou PM (après midi) si nécessaire.",
+      "exercise": [
+        {
+          "sentence": "Tu veux demander l’heure. Quelle expression choisir ?",
+          "options": [
+            "What time is it?",
+            "noon",
+            "midnight"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "What time is it? — La première expression sert à demander l’heure ; midi et minuit donnent un moment.",
+          "feedbackKo": "Réponse : What time is it? — La première expression sert à demander l’heure ; midi et minuit donnent un moment."
+        },
+        {
+          "sentence": "Il est 03:30. Quelle expression convient ?",
+          "options": [
+            "quarter past three",
+            "half past three",
+            "quarter to four"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "half past three — La demi-heure correspond à 30 minutes. Le quart vaut 15 minutes.",
+          "feedbackKo": "Réponse : half past three — La demi-heure correspond à 30 minutes. Le quart vaut 15 minutes."
+        },
+        {
+          "sentence": "Tu lis 03:45. Quelle expression convient ?",
+          "options": [
+            "half past three",
+            "quarter to four",
+            "quarter past three"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "quarter to four — 03:45 correspond à trois heures quarante-cinq, ou quatre heures moins le quart.",
+          "feedbackKo": "Réponse : quarter to four — 03:45 correspond à trois heures quarante-cinq, ou quatre heures moins le quart."
+        }
+      ],
+      "task": "Donne l’heure actuelle puis l’heure d’un rendez-vous imaginaire.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-lieux",
+      "type": "vocabulary",
+      "title": "Lieux — se repérer en ville",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "monde-autour",
+      "level": "niveau1",
+      "learningOrder": 3,
+      "objective": "Nommer huit lieux et demander où se trouve la gare.",
+      "prerequisites": "Savoir reprendre une question courte ; étudier ensuite les prépositions de lieu.",
+      "vocabulary": [
+        {
+          "term": "the school",
+          "translation": "l’école",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "the station",
+          "translation": "la gare",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "the supermarket",
+          "translation": "le supermarché",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "the hospital",
+          "translation": "l’hôpital",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "the pharmacy",
+          "translation": "la pharmacie",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "the restaurant",
+          "translation": "le restaurant",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "the park",
+          "translation": "le parc",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "the library",
+          "translation": "la bibliothèque",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "Where is the station?",
+          "translation": "Où est la gare ?",
+          "reading": ""
+        },
+        {
+          "text": "The pharmacy is next to the supermarket.",
+          "translation": "La pharmacie est à côté du supermarché.",
+          "reading": ""
+        }
+      ],
+      "note": "Where is…? demande où se trouve un lieu singulier. Next to signifie à côté de. Library signifie bibliothèque ; une librairie se dit bookshop ou bookstore.",
+      "exercise": [
+        {
+          "sentence": "Tu veux prendre le train. Quel lieu cherches-tu ?",
+          "options": [
+            "the pharmacy",
+            "the station",
+            "the library"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "the station — Pour prendre le train, on va à la gare ; la pharmacie et la bibliothèque ont d’autres fonctions.",
+          "feedbackKo": "Réponse : the station — Pour prendre le train, on va à la gare ; la pharmacie et la bibliothèque ont d’autres fonctions."
+        },
+        {
+          "sentence": "Tu dois acheter un médicament. Quel lieu choisir ?",
+          "options": [
+            "the pharmacy",
+            "the school",
+            "the park"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "the pharmacy — La pharmacie est le lieu associé à l’achat de médicaments.",
+          "feedbackKo": "Réponse : the pharmacy — La pharmacie est le lieu associé à l’achat de médicaments."
+        },
+        {
+          "sentence": "Tu veux emprunter un livre. Quel lieu choisir ?",
+          "options": [
+            "the hospital",
+            "the restaurant",
+            "the library"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "the library — Une bibliothèque permet d’emprunter des livres ; ce n’est pas une librairie.",
+          "feedbackKo": "Réponse : the library — Une bibliothèque permet d’emprunter des livres ; ce n’est pas une librairie."
+        }
+      ],
+      "task": "Demande où se trouve la gare puis situe la pharmacie près d’un autre lieu.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-vetements",
+      "type": "vocabulary",
+      "title": "Vêtements — décrire ce que l’on porte",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "maison-quotidien",
+      "level": "niveau1",
+      "learningOrder": 5,
+      "objective": "Nommer huit vêtements et décrire une tenue simple.",
+      "prerequisites": "Commencer par les couleurs pour pouvoir décrire une tenue.",
+      "vocabulary": [
+        {
+          "term": "a shirt",
+          "translation": "une chemise",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "a T-shirt",
+          "translation": "un tee-shirt",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "trousers",
+          "translation": "un pantalon (anglais britannique)",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "a dress",
+          "translation": "une robe",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "a coat",
+          "translation": "un manteau",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "shoes",
+          "translation": "des chaussures",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "socks",
+          "translation": "des chaussettes",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "a hat",
+          "translation": "un chapeau",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "I am wearing a coat.",
+          "translation": "Je porte un manteau.",
+          "reading": ""
+        },
+        {
+          "text": "These shoes are black.",
+          "translation": "Ces chaussures sont noires.",
+          "reading": ""
+        }
+      ],
+      "note": "Trousers désigne un seul pantalon mais est grammaticalement pluriel, comme shoes et socks : these trousers are… On dit aussi a pair of trousers. Wear indique ce que l’on porte ; put on désigne l’action de s’habiller.",
+      "exercise": [
+        {
+          "sentence": "Quel mot désigne une chemise ?",
+          "options": [
+            "a shirt",
+            "a T-shirt",
+            "a coat"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "a shirt — La chemise n’est ni le tee-shirt ni le manteau.",
+          "feedbackKo": "Réponse : a shirt — La chemise n’est ni le tee-shirt ni le manteau."
+        },
+        {
+          "sentence": "Quel mot désigne un pantalon ?",
+          "options": [
+            "shoes",
+            "trousers",
+            "a dress"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "trousers — Le pantalon couvre les jambes ; ne pas le confondre avec les chaussures ou la robe.",
+          "feedbackKo": "Réponse : trousers — Le pantalon couvre les jambes ; ne pas le confondre avec les chaussures ou la robe."
+        },
+        {
+          "sentence": "Quel mot désigne les chaussettes ?",
+          "options": [
+            "a hat",
+            "shoes",
+            "socks"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "socks — Les chaussettes se portent à l’intérieur des chaussures.",
+          "feedbackKo": "Réponse : socks — Les chaussettes se portent à l’intérieur des chaussures."
+        }
+      ],
+      "task": "Décris un vêtement que tu portes, puis sa couleur.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-cuisine",
+      "type": "vocabulary",
+      "title": "Cuisine — objets et gestes du quotidien",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "maison-quotidien",
+      "level": "niveau1",
+      "learningOrder": 6,
+      "objective": "Reconnaître les ustensiles essentiels et exprimer un besoin simple.",
+      "prerequisites": "Retenir d’abord les objets ; apprendre ensuite la phrase exprimant un besoin.",
+      "vocabulary": [
+        {
+          "term": "the kitchen",
+          "translation": "la cuisine (pièce)",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "a saucepan",
+          "translation": "une casserole",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "a frying pan",
+          "translation": "une poêle",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "a knife",
+          "translation": "un couteau",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "a spoon",
+          "translation": "une cuillère",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "bread",
+          "translation": "du pain",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "water",
+          "translation": "de l’eau",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "to cook",
+          "translation": "cuisiner ; faire cuire",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "I need a spoon.",
+          "translation": "J’ai besoin d’une cuillère.",
+          "reading": ""
+        },
+        {
+          "text": "I cook in the kitchen.",
+          "translation": "Je cuisine dans la cuisine.",
+          "reading": ""
+        }
+      ],
+      "note": "Kitchen désigne la pièce ; cuisine peut désigner un style culinaire. Bread et water sont généralement indénombrables : some bread, some water. A knife devient knives au pluriel. Faire attention à la différence saucepan / frying pan.",
+      "exercise": [
+        {
+          "sentence": "Quel ustensile est une poêle ?",
+          "options": [
+            "a saucepan",
+            "a frying pan",
+            "a knife"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "a frying pan — La poêle sert notamment à cuire ou à faire revenir des aliments ; ce n’est ni une casserole ni un couteau.",
+          "feedbackKo": "Réponse : a frying pan — La poêle sert notamment à cuire ou à faire revenir des aliments ; ce n’est ni une casserole ni un couteau."
+        },
+        {
+          "sentence": "Quel objet choisir pour manger une soupe ?",
+          "options": [
+            "a spoon",
+            "a knife",
+            "a saucepan"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "a spoon — Une cuillère convient pour manger une soupe.",
+          "feedbackKo": "Réponse : a spoon — Une cuillère convient pour manger une soupe."
+        },
+        {
+          "sentence": "Quel mot signifie cuisiner ou préparer un repas ?",
+          "options": [
+            "water",
+            "bread",
+            "to cook"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "to cook — Le dernier terme désigne l’action ; les autres désignent l’eau et le pain.",
+          "feedbackKo": "Réponse : to cook — Le dernier terme désigne l’action ; les autres désignent l’eau et le pain."
+        }
+      ],
+      "task": "Dis où tu cuisines et quel ustensile il te faut pour manger une soupe.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-positions",
+      "type": "vocabulary",
+      "title": "Positions — situer un objet",
+      "subtitle": "Préparer le jeu de la balle",
+      "category": "vocabulaire",
+      "subcategory": "monde-autour",
+      "level": "niveau1",
+      "learningOrder": 4,
+      "objective": "Distinguer intérieur, contact, au-dessus, dessous et côtés.",
+      "prerequisites": "Repérer la boîte de référence et se placer face à l’écran.",
+      "vocabulary": [
+        {
+          "term": "inside",
+          "translation": "dans, à l’intérieur",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "on",
+          "translation": "sur, avec contact",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "above",
+          "translation": "au-dessus, sans contact",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "below",
+          "translation": "sous, en dessous",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "to the left of",
+          "translation": "à gauche de",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "to the right of",
+          "translation": "à droite de",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "next to",
+          "translation": "juste à côté de",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        }
+      ],
+      "examples": [
+        {
+          "text": "The ball is inside the box.",
+          "translation": "La balle est dans la boîte.",
+          "reading": ""
+        },
+        {
+          "text": "The ball is next to the box.",
+          "translation": "La balle est à côté de la boîte.",
+          "reading": ""
+        }
+      ],
+      "note": "Dans le jeu, « sur » signifie en contact et « au-dessus » signifie plus haut sans contact. Les langues n’utilisent pas toujours deux mots différents : les consignes précisent le contact si nécessaire. À gauche et à droite sont vus depuis votre place face à l’écran. « À côté » accepte les deux côtés, sans obligation de toucher. Les lectures entre parenthèses servent à comprendre la précision de sens.",
+      "task": "Place un objet dans une boîte, sur elle, puis juste à côté et décris sa position.",
+      "review": "Retrouve trois positions sans afficher le sens, puis joue à la balle. Reviens demain, dans trois jours et dans une semaine.",
+      "revision": "v28",
+      "exercise": [
+        {
+          "sentence": "La balle touche le dessus de la boîte. Quelle expression choisir ?",
+          "options": [
+            "on",
+            "above",
+            "inside"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "sur, avec contact.",
+          "feedbackKo": "Réponse : on — sur, avec contact."
+        },
+        {
+          "sentence": "La balle est à l’intérieur. Quelle expression choisir ?",
+          "options": [
+            "below",
+            "inside",
+            "next to"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "dans, à l’intérieur.",
+          "feedbackKo": "Réponse : inside — dans, à l’intérieur."
+        },
+        {
+          "sentence": "La balle est juste à côté. Quelle expression choisir ?",
+          "options": [
+            "to the left of",
+            "next to",
+            "above"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "juste à côté de.",
+          "feedbackKo": "Réponse : next to — juste à côté de."
+        }
+      ]
+    }
+  ],
+  "es": [
+    {
+      "id": "quotidien-couleurs",
+      "type": "vocabulary",
+      "title": "Couleurs — décrire un objet",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "bases",
+      "level": "niveau1",
+      "learningOrder": 1,
+      "objective": "Reconnaître huit couleurs et décrire la couleur d’un vêtement.",
+      "prerequisites": "Aucun prérequis ; commencer par quatre couleurs.",
+      "vocabulary": [
+        {
+          "term": "rojo / roja",
+          "translation": "rouge",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#dc3535"
+        },
+        {
+          "term": "azul",
+          "translation": "bleu",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#287ad3"
+        },
+        {
+          "term": "verde",
+          "translation": "vert",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#22894e"
+        },
+        {
+          "term": "amarillo / amarilla",
+          "translation": "jaune",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#f5d849"
+        },
+        {
+          "term": "negro / negra",
+          "translation": "noir",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#202020"
+        },
+        {
+          "term": "blanco / blanca",
+          "translation": "blanc",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#ffffff"
+        },
+        {
+          "term": "morado / morada",
+          "translation": "violet",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#8653b5"
+        },
+        {
+          "term": "naranja",
+          "translation": "orange",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#ed8b2f"
+        }
+      ],
+      "examples": [
+        {
+          "text": "El abrigo es azul.",
+          "translation": "Le manteau est bleu.",
+          "reading": ""
+        },
+        {
+          "text": "Tengo una camisa roja.",
+          "translation": "J’ai une chemise rouge.",
+          "reading": ""
+        }
+      ],
+      "note": "Rojo, amarillo, negro, blanco et morado s’accordent en genre et en nombre : una camisa roja, unas camisas rojas. Azul et verde ont la même forme au masculin et au féminin ; au pluriel : azules, verdes. Naranja se rencontre comme adjectif de couleur : una camisa naranja.",
+      "exercise": [
+        {
+          "sentence": "Quelle couleur signifie bleu ?",
+          "options": [
+            "rojo / roja",
+            "azul",
+            "verde"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "azul — C’est le mot correspondant à bleu, pas à rouge ni à vert.",
+          "feedbackKo": "Réponse : azul — C’est le mot correspondant à bleu, pas à rouge ni à vert."
+        },
+        {
+          "sentence": "Quelle couleur signifie jaune ?",
+          "options": [
+            "amarillo / amarilla",
+            "negro / negra",
+            "blanco / blanca"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "amarillo / amarilla — Le jaune se distingue du noir et du blanc.",
+          "feedbackKo": "Réponse : amarillo / amarilla — Le jaune se distingue du noir et du blanc."
+        },
+        {
+          "sentence": "Quelle couleur signifie violet ?",
+          "options": [
+            "naranja",
+            "verde",
+            "morado / morada"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "morado / morada — Violet et orange sont deux couleurs différentes.",
+          "feedbackKo": "Réponse : morado / morada — Violet et orange sont deux couleurs différentes."
+        }
+      ],
+      "task": "Décris deux objets autour de toi avec deux couleurs différentes.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-heures",
+      "type": "vocabulary",
+      "title": "Heures — demander et donner l’heure",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "bases",
+      "level": "niveau1",
+      "learningOrder": 2,
+      "objective": "Demander l’heure et distinguer heure ronde, quart, demie et moins le quart.",
+      "prerequisites": "Reconnaître les nombres 1 à 12 ; travailler d’abord les heures rondes.",
+      "vocabulary": [
+        {
+          "term": "¿Qué hora es?",
+          "translation": "Quelle heure est-il ?",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "Es la una.",
+          "translation": "Il est une heure.",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "Son las dos.",
+          "translation": "Il est deux heures.",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "Son las tres y cuarto.",
+          "translation": "Il est trois heures et quart (03:15).",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "Son las tres y media.",
+          "translation": "Il est trois heures et demie (03:30).",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "Son las cuatro menos cuarto.",
+          "translation": "Il est quatre heures moins le quart (03:45).",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "el mediodía",
+          "translation": "midi",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "la medianoche",
+          "translation": "minuit",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "¿Qué hora es? Son las tres y media.",
+          "translation": "Quelle heure est-il ? Il est trois heures et demie.",
+          "reading": ""
+        },
+        {
+          "text": "El tren sale a las cuatro menos cuarto.",
+          "translation": "Le train part à quatre heures moins le quart.",
+          "reading": ""
+        }
+      ],
+      "note": "Es la una au singulier ; son las dos, tres… au pluriel. Y ajoute les minutes ; menos annonce l’heure suivante. Pour un horaire : a la una, a las dos. On peut aussi lire les chiffres : las tres y quince.",
+      "exercise": [
+        {
+          "sentence": "Tu veux demander l’heure. Quelle expression choisir ?",
+          "options": [
+            "¿Qué hora es?",
+            "el mediodía",
+            "la medianoche"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "¿Qué hora es? — La première expression sert à demander l’heure ; midi et minuit donnent un moment.",
+          "feedbackKo": "Réponse : ¿Qué hora es? — La première expression sert à demander l’heure ; midi et minuit donnent un moment."
+        },
+        {
+          "sentence": "Il est 03:30. Quelle expression convient ?",
+          "options": [
+            "Son las tres y cuarto.",
+            "Son las tres y media.",
+            "Son las cuatro menos cuarto."
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "Son las tres y media. — La demi-heure correspond à 30 minutes. Le quart vaut 15 minutes.",
+          "feedbackKo": "Réponse : Son las tres y media. — La demi-heure correspond à 30 minutes. Le quart vaut 15 minutes."
+        },
+        {
+          "sentence": "Tu lis 03:45. Quelle expression convient ?",
+          "options": [
+            "Son las tres y media.",
+            "Son las cuatro menos cuarto.",
+            "Son las tres y cuarto."
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "Son las cuatro menos cuarto. — 03:45 correspond à trois heures quarante-cinq, ou quatre heures moins le quart.",
+          "feedbackKo": "Réponse : Son las cuatro menos cuarto. — 03:45 correspond à trois heures quarante-cinq, ou quatre heures moins le quart."
+        }
+      ],
+      "task": "Donne l’heure actuelle puis l’heure d’un rendez-vous imaginaire.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-lieux",
+      "type": "vocabulary",
+      "title": "Lieux — se repérer en ville",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "monde-autour",
+      "level": "niveau1",
+      "learningOrder": 3,
+      "objective": "Nommer huit lieux et demander où se trouve la gare.",
+      "prerequisites": "Savoir reprendre une question courte ; étudier ensuite les prépositions de lieu.",
+      "vocabulary": [
+        {
+          "term": "la escuela",
+          "translation": "l’école",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "la estación",
+          "translation": "la gare",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "el supermercado",
+          "translation": "le supermarché",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "el hospital",
+          "translation": "l’hôpital",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "la farmacia",
+          "translation": "la pharmacie",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "el restaurante",
+          "translation": "le restaurant",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "el parque",
+          "translation": "le parc",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "la biblioteca",
+          "translation": "la bibliothèque",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "¿Dónde está la estación?",
+          "translation": "Où est la gare ?",
+          "reading": ""
+        },
+        {
+          "text": "La farmacia está al lado del supermercado.",
+          "translation": "La pharmacie est à côté du supermarché.",
+          "reading": ""
+        }
+      ],
+      "note": "Pour situer un lieu, on utilise estar : ¿Dónde está la estación? Al lado de signifie à côté de. De + el devient del : al lado del supermercado. Biblioteca signifie bibliothèque.",
+      "exercise": [
+        {
+          "sentence": "Tu veux prendre le train. Quel lieu cherches-tu ?",
+          "options": [
+            "la farmacia",
+            "la estación",
+            "la biblioteca"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "la estación — Pour prendre le train, on va à la gare ; la pharmacie et la bibliothèque ont d’autres fonctions.",
+          "feedbackKo": "Réponse : la estación — Pour prendre le train, on va à la gare ; la pharmacie et la bibliothèque ont d’autres fonctions."
+        },
+        {
+          "sentence": "Tu dois acheter un médicament. Quel lieu choisir ?",
+          "options": [
+            "la farmacia",
+            "la escuela",
+            "el parque"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "la farmacia — La pharmacie est le lieu associé à l’achat de médicaments.",
+          "feedbackKo": "Réponse : la farmacia — La pharmacie est le lieu associé à l’achat de médicaments."
+        },
+        {
+          "sentence": "Tu veux emprunter un livre. Quel lieu choisir ?",
+          "options": [
+            "el hospital",
+            "el restaurante",
+            "la biblioteca"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "la biblioteca — Une bibliothèque permet d’emprunter des livres ; ce n’est pas une librairie.",
+          "feedbackKo": "Réponse : la biblioteca — Une bibliothèque permet d’emprunter des livres ; ce n’est pas une librairie."
+        }
+      ],
+      "task": "Demande où se trouve la gare puis situe la pharmacie près d’un autre lieu.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-vetements",
+      "type": "vocabulary",
+      "title": "Vêtements — décrire ce que l’on porte",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "maison-quotidien",
+      "level": "niveau1",
+      "learningOrder": 5,
+      "objective": "Nommer huit vêtements et décrire une tenue simple.",
+      "prerequisites": "Commencer par les couleurs pour pouvoir décrire une tenue.",
+      "vocabulary": [
+        {
+          "term": "una camisa",
+          "translation": "une chemise",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "una camiseta",
+          "translation": "un tee-shirt",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "unos pantalones",
+          "translation": "un pantalon",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "un vestido",
+          "translation": "une robe",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "un abrigo",
+          "translation": "un manteau",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "unos zapatos",
+          "translation": "des chaussures",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "unos calcetines",
+          "translation": "des chaussettes",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "un sombrero",
+          "translation": "un chapeau",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "Llevo un abrigo.",
+          "translation": "Je porte un manteau.",
+          "reading": ""
+        },
+        {
+          "text": "Estos zapatos son negros.",
+          "translation": "Ces chaussures sont noires.",
+          "reading": ""
+        }
+      ],
+      "note": "Les noms sont appris avec leur article pour retenir le genre. Pantalones est fréquemment employé au pluriel pour un pantalon ; pantalón au singulier existe aussi. Llevar signifie porter un vêtement : llevo un abrigo.",
+      "exercise": [
+        {
+          "sentence": "Quel mot désigne une chemise ?",
+          "options": [
+            "una camisa",
+            "una camiseta",
+            "un abrigo"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "una camisa — La chemise n’est ni le tee-shirt ni le manteau.",
+          "feedbackKo": "Réponse : una camisa — La chemise n’est ni le tee-shirt ni le manteau."
+        },
+        {
+          "sentence": "Quel mot désigne un pantalon ?",
+          "options": [
+            "unos zapatos",
+            "unos pantalones",
+            "un vestido"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "unos pantalones — Le pantalon couvre les jambes ; ne pas le confondre avec les chaussures ou la robe.",
+          "feedbackKo": "Réponse : unos pantalones — Le pantalon couvre les jambes ; ne pas le confondre avec les chaussures ou la robe."
+        },
+        {
+          "sentence": "Quel mot désigne les chaussettes ?",
+          "options": [
+            "un sombrero",
+            "unos zapatos",
+            "unos calcetines"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "unos calcetines — Les chaussettes se portent à l’intérieur des chaussures.",
+          "feedbackKo": "Réponse : unos calcetines — Les chaussettes se portent à l’intérieur des chaussures."
+        }
+      ],
+      "task": "Décris un vêtement que tu portes, puis sa couleur.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-cuisine",
+      "type": "vocabulary",
+      "title": "Cuisine — objets et gestes du quotidien",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "maison-quotidien",
+      "level": "niveau1",
+      "learningOrder": 6,
+      "objective": "Reconnaître les ustensiles essentiels et exprimer un besoin simple.",
+      "prerequisites": "Retenir d’abord les objets ; apprendre ensuite la phrase exprimant un besoin.",
+      "vocabulary": [
+        {
+          "term": "la cocina",
+          "translation": "la cuisine (pièce)",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "una cacerola",
+          "translation": "une casserole",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "una sartén",
+          "translation": "une poêle",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "un cuchillo",
+          "translation": "un couteau",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "una cuchara",
+          "translation": "une cuillère",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "el pan",
+          "translation": "le pain",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "el agua",
+          "translation": "l’eau",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "cocinar",
+          "translation": "cuisiner",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "Necesito una cuchara.",
+          "translation": "J’ai besoin d’une cuillère.",
+          "reading": ""
+        },
+        {
+          "text": "Cocino en la cocina.",
+          "translation": "Je cuisine dans la cuisine.",
+          "reading": ""
+        }
+      ],
+      "note": "Agua est un nom féminin, mais prend el au singulier devant son a tonique : el agua fría ; au pluriel las aguas. Cocina désigne la pièce, cocinar l’action. Una sartén sert à frire ; une cacerola est une casserole.",
+      "exercise": [
+        {
+          "sentence": "Quel ustensile est une poêle ?",
+          "options": [
+            "una cacerola",
+            "una sartén",
+            "un cuchillo"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "una sartén — La poêle sert notamment à cuire ou à faire revenir des aliments ; ce n’est ni une casserole ni un couteau.",
+          "feedbackKo": "Réponse : una sartén — La poêle sert notamment à cuire ou à faire revenir des aliments ; ce n’est ni une casserole ni un couteau."
+        },
+        {
+          "sentence": "Quel objet choisir pour manger une soupe ?",
+          "options": [
+            "una cuchara",
+            "un cuchillo",
+            "una cacerola"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "una cuchara — Une cuillère convient pour manger une soupe.",
+          "feedbackKo": "Réponse : una cuchara — Une cuillère convient pour manger une soupe."
+        },
+        {
+          "sentence": "Quel mot signifie cuisiner ou préparer un repas ?",
+          "options": [
+            "el agua",
+            "el pan",
+            "cocinar"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "cocinar — Le dernier terme désigne l’action ; les autres désignent l’eau et le pain.",
+          "feedbackKo": "Réponse : cocinar — Le dernier terme désigne l’action ; les autres désignent l’eau et le pain."
+        }
+      ],
+      "task": "Dis où tu cuisines et quel ustensile il te faut pour manger une soupe.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-positions",
+      "type": "vocabulary",
+      "title": "Positions — situer un objet",
+      "subtitle": "Préparer le jeu de la balle",
+      "category": "vocabulaire",
+      "subcategory": "monde-autour",
+      "level": "niveau1",
+      "learningOrder": 4,
+      "objective": "Distinguer intérieur, contact, au-dessus, dessous et côtés.",
+      "prerequisites": "Repérer la boîte de référence et se placer face à l’écran.",
+      "vocabulary": [
+        {
+          "term": "dentro de",
+          "translation": "dans, à l’intérieur",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "sobre (con contacto)",
+          "translation": "sur, avec contact",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "por encima de (sin contacto)",
+          "translation": "au-dessus, sans contact",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "debajo de",
+          "translation": "sous, en dessous",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "a la izquierda de",
+          "translation": "à gauche de",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "a la derecha de",
+          "translation": "à droite de",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "al lado de",
+          "translation": "juste à côté de",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        }
+      ],
+      "examples": [
+        {
+          "text": "La pelota está dentro de la caja.",
+          "translation": "La balle est dans la boîte.",
+          "reading": ""
+        },
+        {
+          "text": "La pelota está al lado de la caja.",
+          "translation": "La balle est à côté de la boîte.",
+          "reading": ""
+        }
+      ],
+      "note": "Dans le jeu, « sur » signifie en contact et « au-dessus » signifie plus haut sans contact. Les langues n’utilisent pas toujours deux mots différents : les consignes précisent le contact si nécessaire. À gauche et à droite sont vus depuis votre place face à l’écran. « À côté » accepte les deux côtés, sans obligation de toucher. Les lectures entre parenthèses servent à comprendre la précision de sens.",
+      "task": "Place un objet dans une boîte, sur elle, puis juste à côté et décris sa position.",
+      "review": "Retrouve trois positions sans afficher le sens, puis joue à la balle. Reviens demain, dans trois jours et dans une semaine.",
+      "revision": "v28",
+      "exercise": [
+        {
+          "sentence": "La balle touche le dessus de la boîte. Quelle expression choisir ?",
+          "options": [
+            "sobre (con contacto)",
+            "por encima de (sin contacto)",
+            "dentro de"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "sur, avec contact.",
+          "feedbackKo": "Réponse : sobre (con contacto) — sur, avec contact."
+        },
+        {
+          "sentence": "La balle est à l’intérieur. Quelle expression choisir ?",
+          "options": [
+            "debajo de",
+            "dentro de",
+            "al lado de"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "dans, à l’intérieur.",
+          "feedbackKo": "Réponse : dentro de — dans, à l’intérieur."
+        },
+        {
+          "sentence": "La balle est juste à côté. Quelle expression choisir ?",
+          "options": [
+            "a la izquierda de",
+            "al lado de",
+            "por encima de (sin contacto)"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "juste à côté de.",
+          "feedbackKo": "Réponse : al lado de — juste à côté de."
+        }
+      ]
+    }
+  ],
+  "it": [
+    {
+      "id": "quotidien-couleurs",
+      "type": "vocabulary",
+      "title": "Couleurs — décrire un objet",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "bases",
+      "level": "niveau1",
+      "learningOrder": 1,
+      "objective": "Reconnaître huit couleurs et décrire la couleur d’un vêtement.",
+      "prerequisites": "Aucun prérequis ; commencer par quatre couleurs.",
+      "vocabulary": [
+        {
+          "term": "rosso / rossa",
+          "translation": "rouge",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#dc3535"
+        },
+        {
+          "term": "blu",
+          "translation": "bleu",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#287ad3"
+        },
+        {
+          "term": "verde",
+          "translation": "vert",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#22894e"
+        },
+        {
+          "term": "giallo / gialla",
+          "translation": "jaune",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#f5d849"
+        },
+        {
+          "term": "nero / nera",
+          "translation": "noir",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#202020"
+        },
+        {
+          "term": "bianco / bianca",
+          "translation": "blanc",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#ffffff"
+        },
+        {
+          "term": "viola",
+          "translation": "violet",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#8653b5"
+        },
+        {
+          "term": "arancione",
+          "translation": "orange",
+          "reading": "",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#ed8b2f"
+        }
+      ],
+      "examples": [
+        {
+          "text": "Il cappotto è blu.",
+          "translation": "Le manteau est bleu.",
+          "reading": ""
+        },
+        {
+          "text": "Ho una camicia rossa.",
+          "translation": "J’ai une chemise rouge.",
+          "reading": ""
+        }
+      ],
+      "note": "Rosso, giallo, nero et bianco s’accordent : una camicia rossa, due camicie rosse. Verde devient verdi au pluriel ; arancione devient arancioni. Blu et viola restent généralement invariables : scarpe blu.",
+      "exercise": [
+        {
+          "sentence": "Quelle couleur signifie bleu ?",
+          "options": [
+            "rosso / rossa",
+            "blu",
+            "verde"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "blu — C’est le mot correspondant à bleu, pas à rouge ni à vert.",
+          "feedbackKo": "Réponse : blu — C’est le mot correspondant à bleu, pas à rouge ni à vert."
+        },
+        {
+          "sentence": "Quelle couleur signifie jaune ?",
+          "options": [
+            "giallo / gialla",
+            "nero / nera",
+            "bianco / bianca"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "giallo / gialla — Le jaune se distingue du noir et du blanc.",
+          "feedbackKo": "Réponse : giallo / gialla — Le jaune se distingue du noir et du blanc."
+        },
+        {
+          "sentence": "Quelle couleur signifie violet ?",
+          "options": [
+            "arancione",
+            "verde",
+            "viola"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "viola — Violet et orange sont deux couleurs différentes.",
+          "feedbackKo": "Réponse : viola — Violet et orange sont deux couleurs différentes."
+        }
+      ],
+      "task": "Décris deux objets autour de toi avec deux couleurs différentes.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-heures",
+      "type": "vocabulary",
+      "title": "Heures — demander et donner l’heure",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "bases",
+      "level": "niveau1",
+      "learningOrder": 2,
+      "objective": "Demander l’heure et distinguer heure ronde, quart, demie et moins le quart.",
+      "prerequisites": "Reconnaître les nombres 1 à 12 ; travailler d’abord les heures rondes.",
+      "vocabulary": [
+        {
+          "term": "Che ore sono?",
+          "translation": "Quelle heure est-il ?",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "È l'una.",
+          "translation": "Il est une heure.",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "Sono le due.",
+          "translation": "Il est deux heures.",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "Sono le tre e un quarto.",
+          "translation": "Il est trois heures et quart (03:15).",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "Sono le tre e mezza.",
+          "translation": "Il est trois heures et demie (03:30).",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "Sono le quattro meno un quarto.",
+          "translation": "Il est quatre heures moins le quart (03:45).",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "mezzogiorno",
+          "translation": "midi",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "mezzanotte",
+          "translation": "minuit",
+          "reading": "",
+          "definition": "Heures : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "Che ore sono? Sono le tre e mezza.",
+          "translation": "Quelle heure est-il ? Il est trois heures et demie.",
+          "reading": ""
+        },
+        {
+          "text": "Il treno parte alle quattro meno un quarto.",
+          "translation": "Le train part à quatre heures moins le quart.",
+          "reading": ""
+        }
+      ],
+      "note": "È l’una au singulier ; sono le due, tre… au pluriel. E ajoute les minutes ; meno annonce l’heure suivante. Mezza indique la demi-heure. Pour un horaire : all’una, alle due. On peut aussi dire le tre e quindici.",
+      "exercise": [
+        {
+          "sentence": "Tu veux demander l’heure. Quelle expression choisir ?",
+          "options": [
+            "Che ore sono?",
+            "mezzogiorno",
+            "mezzanotte"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "Che ore sono? — La première expression sert à demander l’heure ; midi et minuit donnent un moment.",
+          "feedbackKo": "Réponse : Che ore sono? — La première expression sert à demander l’heure ; midi et minuit donnent un moment."
+        },
+        {
+          "sentence": "Il est 03:30. Quelle expression convient ?",
+          "options": [
+            "Sono le tre e un quarto.",
+            "Sono le tre e mezza.",
+            "Sono le quattro meno un quarto."
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "Sono le tre e mezza. — La demi-heure correspond à 30 minutes. Le quart vaut 15 minutes.",
+          "feedbackKo": "Réponse : Sono le tre e mezza. — La demi-heure correspond à 30 minutes. Le quart vaut 15 minutes."
+        },
+        {
+          "sentence": "Tu lis 03:45. Quelle expression convient ?",
+          "options": [
+            "Sono le tre e mezza.",
+            "Sono le quattro meno un quarto.",
+            "Sono le tre e un quarto."
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "Sono le quattro meno un quarto. — 03:45 correspond à trois heures quarante-cinq, ou quatre heures moins le quart.",
+          "feedbackKo": "Réponse : Sono le quattro meno un quarto. — 03:45 correspond à trois heures quarante-cinq, ou quatre heures moins le quart."
+        }
+      ],
+      "task": "Donne l’heure actuelle puis l’heure d’un rendez-vous imaginaire.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-lieux",
+      "type": "vocabulary",
+      "title": "Lieux — se repérer en ville",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "monde-autour",
+      "level": "niveau1",
+      "learningOrder": 3,
+      "objective": "Nommer huit lieux et demander où se trouve la gare.",
+      "prerequisites": "Savoir reprendre une question courte ; étudier ensuite les prépositions de lieu.",
+      "vocabulary": [
+        {
+          "term": "la scuola",
+          "translation": "l’école",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "la stazione",
+          "translation": "la gare",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "il supermercato",
+          "translation": "le supermarché",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "l'ospedale",
+          "translation": "l’hôpital",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "la farmacia",
+          "translation": "la pharmacie",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "il ristorante",
+          "translation": "le restaurant",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "il parco",
+          "translation": "le parc",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "la biblioteca",
+          "translation": "la bibliothèque",
+          "reading": "",
+          "definition": "Lieux : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "Dov'è la stazione?",
+          "translation": "Où est la gare ?",
+          "reading": ""
+        },
+        {
+          "text": "La farmacia è accanto al supermercato.",
+          "translation": "La pharmacie est à côté du supermarché.",
+          "reading": ""
+        }
+      ],
+      "note": "Dov’è…? demande où se trouve un lieu singulier. Accanto a signifie à côté de ; a + il devient al : accanto al supermercato. Biblioteca signifie bibliothèque.",
+      "exercise": [
+        {
+          "sentence": "Tu veux prendre le train. Quel lieu cherches-tu ?",
+          "options": [
+            "la farmacia",
+            "la stazione",
+            "la biblioteca"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "la stazione — Pour prendre le train, on va à la gare ; la pharmacie et la bibliothèque ont d’autres fonctions.",
+          "feedbackKo": "Réponse : la stazione — Pour prendre le train, on va à la gare ; la pharmacie et la bibliothèque ont d’autres fonctions."
+        },
+        {
+          "sentence": "Tu dois acheter un médicament. Quel lieu choisir ?",
+          "options": [
+            "la farmacia",
+            "la scuola",
+            "il parco"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "la farmacia — La pharmacie est le lieu associé à l’achat de médicaments.",
+          "feedbackKo": "Réponse : la farmacia — La pharmacie est le lieu associé à l’achat de médicaments."
+        },
+        {
+          "sentence": "Tu veux emprunter un livre. Quel lieu choisir ?",
+          "options": [
+            "l'ospedale",
+            "il ristorante",
+            "la biblioteca"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "la biblioteca — Une bibliothèque permet d’emprunter des livres ; ce n’est pas une librairie.",
+          "feedbackKo": "Réponse : la biblioteca — Une bibliothèque permet d’emprunter des livres ; ce n’est pas une librairie."
+        }
+      ],
+      "task": "Demande où se trouve la gare puis situe la pharmacie près d’un autre lieu.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-vetements",
+      "type": "vocabulary",
+      "title": "Vêtements — décrire ce que l’on porte",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "maison-quotidien",
+      "level": "niveau1",
+      "learningOrder": 5,
+      "objective": "Nommer huit vêtements et décrire une tenue simple.",
+      "prerequisites": "Commencer par les couleurs pour pouvoir décrire une tenue.",
+      "vocabulary": [
+        {
+          "term": "una camicia",
+          "translation": "une chemise",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "una maglietta",
+          "translation": "un tee-shirt",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "dei pantaloni",
+          "translation": "un pantalon",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "un vestito",
+          "translation": "une robe (dans cette fiche)",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "un cappotto",
+          "translation": "un manteau",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "delle scarpe",
+          "translation": "des chaussures",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "dei calzini",
+          "translation": "des chaussettes",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "un cappello",
+          "translation": "un chapeau",
+          "reading": "",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "Indosso un cappotto.",
+          "translation": "Je porte un manteau.",
+          "reading": ""
+        },
+        {
+          "text": "Queste scarpe sono nere.",
+          "translation": "Ces chaussures sont noires.",
+          "reading": ""
+        }
+      ],
+      "note": "Pantaloni, scarpe et calzini sont au pluriel. Indossare signifie porter un vêtement. Vestito peut désigner une robe ou un vêtement/costume selon le contexte : ici, une robe. Retenir les articles avec les noms.",
+      "exercise": [
+        {
+          "sentence": "Quel mot désigne une chemise ?",
+          "options": [
+            "una camicia",
+            "una maglietta",
+            "un cappotto"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "una camicia — La chemise n’est ni le tee-shirt ni le manteau.",
+          "feedbackKo": "Réponse : una camicia — La chemise n’est ni le tee-shirt ni le manteau."
+        },
+        {
+          "sentence": "Quel mot désigne un pantalon ?",
+          "options": [
+            "delle scarpe",
+            "dei pantaloni",
+            "un vestito"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "dei pantaloni — Le pantalon couvre les jambes ; ne pas le confondre avec les chaussures ou la robe.",
+          "feedbackKo": "Réponse : dei pantaloni — Le pantalon couvre les jambes ; ne pas le confondre avec les chaussures ou la robe."
+        },
+        {
+          "sentence": "Quel mot désigne les chaussettes ?",
+          "options": [
+            "un cappello",
+            "delle scarpe",
+            "dei calzini"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "dei calzini — Les chaussettes se portent à l’intérieur des chaussures.",
+          "feedbackKo": "Réponse : dei calzini — Les chaussettes se portent à l’intérieur des chaussures."
+        }
+      ],
+      "task": "Décris un vêtement que tu portes, puis sa couleur.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-cuisine",
+      "type": "vocabulary",
+      "title": "Cuisine — objets et gestes du quotidien",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "maison-quotidien",
+      "level": "niveau1",
+      "learningOrder": 6,
+      "objective": "Reconnaître les ustensiles essentiels et exprimer un besoin simple.",
+      "prerequisites": "Retenir d’abord les objets ; apprendre ensuite la phrase exprimant un besoin.",
+      "vocabulary": [
+        {
+          "term": "la cucina",
+          "translation": "la cuisine (pièce)",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "una pentola",
+          "translation": "une casserole",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "una padella",
+          "translation": "une poêle",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "un coltello",
+          "translation": "un couteau",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "un cucchiaio",
+          "translation": "une cuillère",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "il pane",
+          "translation": "le pain",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "l'acqua",
+          "translation": "l’eau",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "cucinare",
+          "translation": "cuisiner",
+          "reading": "",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "Mi serve un cucchiaio.",
+          "translation": "J’ai besoin d’une cuillère.",
+          "reading": ""
+        },
+        {
+          "text": "Cucino in cucina.",
+          "translation": "Je cuisine dans la cuisine.",
+          "reading": ""
+        }
+      ],
+      "note": "Cucina désigne la pièce, cucinare l’action. Mi serve un cucchiaio signifie j’ai besoin d’une cuillère ; mi servono due cucchiai pour deux. L’acqua s’écrit avec une apostrophe. Coltello devient coltelli.",
+      "exercise": [
+        {
+          "sentence": "Quel ustensile est une poêle ?",
+          "options": [
+            "una pentola",
+            "una padella",
+            "un coltello"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "una padella — La poêle sert notamment à cuire ou à faire revenir des aliments ; ce n’est ni une casserole ni un couteau.",
+          "feedbackKo": "Réponse : una padella — La poêle sert notamment à cuire ou à faire revenir des aliments ; ce n’est ni une casserole ni un couteau."
+        },
+        {
+          "sentence": "Quel objet choisir pour manger une soupe ?",
+          "options": [
+            "un cucchiaio",
+            "un coltello",
+            "una pentola"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "un cucchiaio — Une cuillère convient pour manger une soupe.",
+          "feedbackKo": "Réponse : un cucchiaio — Une cuillère convient pour manger une soupe."
+        },
+        {
+          "sentence": "Quel mot signifie cuisiner ou préparer un repas ?",
+          "options": [
+            "l'acqua",
+            "il pane",
+            "cucinare"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "cucinare — Le dernier terme désigne l’action ; les autres désignent l’eau et le pain.",
+          "feedbackKo": "Réponse : cucinare — Le dernier terme désigne l’action ; les autres désignent l’eau et le pain."
+        }
+      ],
+      "task": "Dis où tu cuisines et quel ustensile il te faut pour manger une soupe.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-positions",
+      "type": "vocabulary",
+      "title": "Positions — situer un objet",
+      "subtitle": "Préparer le jeu de la balle",
+      "category": "vocabulaire",
+      "subcategory": "monde-autour",
+      "level": "niveau1",
+      "learningOrder": 4,
+      "objective": "Distinguer intérieur, contact, au-dessus, dessous et côtés.",
+      "prerequisites": "Repérer la boîte de référence et se placer face à l’écran.",
+      "vocabulary": [
+        {
+          "term": "dentro",
+          "translation": "dans, à l’intérieur",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "su (a contatto)",
+          "translation": "sur, avec contact",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "sopra (senza contatto)",
+          "translation": "au-dessus, sans contact",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "sotto",
+          "translation": "sous, en dessous",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "a sinistra di",
+          "translation": "à gauche de",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "a destra di",
+          "translation": "à droite de",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "accanto a",
+          "translation": "juste à côté de",
+          "reading": "",
+          "definition": "Position de la balle par rapport à la boîte."
+        }
+      ],
+      "examples": [
+        {
+          "text": "La palla è dentro la scatola.",
+          "translation": "La balle est dans la boîte.",
+          "reading": ""
+        },
+        {
+          "text": "La palla è accanto alla scatola.",
+          "translation": "La balle est à côté de la boîte.",
+          "reading": ""
+        }
+      ],
+      "note": "Dans le jeu, « sur » signifie en contact et « au-dessus » signifie plus haut sans contact. Les langues n’utilisent pas toujours deux mots différents : les consignes précisent le contact si nécessaire. À gauche et à droite sont vus depuis votre place face à l’écran. « À côté » accepte les deux côtés, sans obligation de toucher. Les lectures entre parenthèses servent à comprendre la précision de sens.",
+      "task": "Place un objet dans une boîte, sur elle, puis juste à côté et décris sa position.",
+      "review": "Retrouve trois positions sans afficher le sens, puis joue à la balle. Reviens demain, dans trois jours et dans une semaine.",
+      "revision": "v28",
+      "exercise": [
+        {
+          "sentence": "La balle touche le dessus de la boîte. Quelle expression choisir ?",
+          "options": [
+            "su (a contatto)",
+            "sopra (senza contatto)",
+            "dentro"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "sur, avec contact.",
+          "feedbackKo": "Réponse : su (a contatto) — sur, avec contact."
+        },
+        {
+          "sentence": "La balle est à l’intérieur. Quelle expression choisir ?",
+          "options": [
+            "sotto",
+            "dentro",
+            "accanto a"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "dans, à l’intérieur.",
+          "feedbackKo": "Réponse : dentro — dans, à l’intérieur."
+        },
+        {
+          "sentence": "La balle est juste à côté. Quelle expression choisir ?",
+          "options": [
+            "a sinistra di",
+            "accanto a",
+            "sopra (senza contatto)"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "juste à côté de.",
+          "feedbackKo": "Réponse : accanto a — juste à côté de."
+        }
+      ]
+    }
+  ],
+  "ja": [
+    {
+      "id": "quotidien-couleurs",
+      "type": "vocabulary",
+      "title": "Couleurs — décrire un objet",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "bases",
+      "level": "niveau1",
+      "learningOrder": 1,
+      "objective": "Reconnaître huit couleurs et décrire la couleur d’un vêtement.",
+      "prerequisites": "Aucun prérequis ; commencer par quatre couleurs.",
+      "vocabulary": [
+        {
+          "term": "赤",
+          "translation": "rouge",
+          "reading": "aka",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#dc3535"
+        },
+        {
+          "term": "青",
+          "translation": "bleu",
+          "reading": "ao",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#287ad3"
+        },
+        {
+          "term": "緑",
+          "translation": "vert",
+          "reading": "midori",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#22894e"
+        },
+        {
+          "term": "黄色",
+          "translation": "jaune",
+          "reading": "kiiro",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#f5d849"
+        },
+        {
+          "term": "黒",
+          "translation": "noir",
+          "reading": "kuro",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#202020"
+        },
+        {
+          "term": "白",
+          "translation": "blanc",
+          "reading": "shiro",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#ffffff"
+        },
+        {
+          "term": "紫",
+          "translation": "violet",
+          "reading": "murasaki",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#8653b5"
+        },
+        {
+          "term": "オレンジ",
+          "translation": "orange (couleur ou fruit selon le contexte)",
+          "reading": "orenji",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#ed8b2f"
+        }
+      ],
+      "examples": [
+        {
+          "text": "コートは青いです。",
+          "translation": "Le manteau est bleu.",
+          "reading": "kōto wa aoi desu"
+        },
+        {
+          "text": "赤いシャツを持っています。",
+          "translation": "J’ai une chemise rouge.",
+          "reading": "akai shatsu o motte imasu"
+        }
+      ],
+      "note": "Les noms de couleurs ne suivent pas tous la même construction : 赤いシャツ (chemise rouge), mais 緑のシャツ (chemise verte). Ne pas fabriquer 緑い. Les mots japonais ne prennent pas une terminaison française de genre ou de pluriel.",
+      "exercise": [
+        {
+          "sentence": "Quelle couleur signifie bleu ?",
+          "options": [
+            "赤",
+            "青",
+            "緑"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "青 — C’est le mot correspondant à bleu, pas à rouge ni à vert.",
+          "feedbackKo": "Réponse : 青 — C’est le mot correspondant à bleu, pas à rouge ni à vert."
+        },
+        {
+          "sentence": "Quelle couleur signifie jaune ?",
+          "options": [
+            "黄色",
+            "黒",
+            "白"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "黄色 — Le jaune se distingue du noir et du blanc.",
+          "feedbackKo": "Réponse : 黄色 — Le jaune se distingue du noir et du blanc."
+        },
+        {
+          "sentence": "Quelle couleur signifie violet ?",
+          "options": [
+            "オレンジ",
+            "緑",
+            "紫"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "紫 — Violet et orange sont deux couleurs différentes.",
+          "feedbackKo": "Réponse : 紫 — Violet et orange sont deux couleurs différentes."
+        }
+      ],
+      "task": "Décris deux objets autour de toi avec deux couleurs différentes.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-heures",
+      "type": "vocabulary",
+      "title": "Heures — demander et donner l’heure",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "bases",
+      "level": "niveau1",
+      "learningOrder": 2,
+      "objective": "Demander l’heure et distinguer heure ronde, quart, demie et moins le quart.",
+      "prerequisites": "Reconnaître les nombres 1 à 12 ; travailler d’abord les heures rondes.",
+      "vocabulary": [
+        {
+          "term": "何時ですか。",
+          "translation": "Quelle heure est-il ?",
+          "reading": "nanji desu ka",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "1時です。",
+          "translation": "Il est une heure.",
+          "reading": "ichiji desu",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "2時です。",
+          "translation": "Il est deux heures.",
+          "reading": "niji desu",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "3時15分",
+          "translation": "trois heures et quart (03:15)",
+          "reading": "sanji jūgofun",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "3時半",
+          "translation": "trois heures et demie (03:30)",
+          "reading": "sanji han",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "3時45分",
+          "translation": "trois heures quarante-cinq (03:45)",
+          "reading": "sanji yonjūgofun",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "正午",
+          "translation": "midi",
+          "reading": "shōgo",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "午前0時",
+          "translation": "minuit",
+          "reading": "gozen reiji",
+          "definition": "Heures : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "何時ですか。3時半です。",
+          "translation": "Quelle heure est-il ? Il est trois heures et demie.",
+          "reading": "nanji desu ka. sanji han desu"
+        },
+        {
+          "text": "電車は3時45分に出ます。",
+          "translation": "Le train part à trois heures quarante-cinq.",
+          "reading": "densha wa sanji yonjūgofun ni demasu"
+        }
+      ],
+      "note": "時 (ji) indique l’heure ; 分 (fun/pun selon le nombre) les minutes ; 半 (han) la demi-heure. Retenir les lectures particulières : 4時 yoji, 7時 shichiji, 9時 kuji. 午前 gozen = avant midi ; 午後 gogo = après midi. に marque l’heure d’une action : 3時に…",
+      "exercise": [
+        {
+          "sentence": "Tu veux demander l’heure. Quelle expression choisir ?",
+          "options": [
+            "何時ですか。",
+            "正午",
+            "午前0時"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "何時ですか。 — La première expression sert à demander l’heure ; midi et minuit donnent un moment.",
+          "feedbackKo": "Réponse : 何時ですか。 — La première expression sert à demander l’heure ; midi et minuit donnent un moment."
+        },
+        {
+          "sentence": "Il est 03:30. Quelle expression convient ?",
+          "options": [
+            "3時15分",
+            "3時半",
+            "3時45分"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "3時半 — La demi-heure correspond à 30 minutes. Le quart vaut 15 minutes.",
+          "feedbackKo": "Réponse : 3時半 — La demi-heure correspond à 30 minutes. Le quart vaut 15 minutes."
+        },
+        {
+          "sentence": "Tu lis 03:45. Quelle expression convient ?",
+          "options": [
+            "3時半",
+            "3時45分",
+            "3時15分"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "3時45分 — 03:45 correspond à trois heures quarante-cinq, ou quatre heures moins le quart.",
+          "feedbackKo": "Réponse : 3時45分 — 03:45 correspond à trois heures quarante-cinq, ou quatre heures moins le quart."
+        }
+      ],
+      "task": "Donne l’heure actuelle puis l’heure d’un rendez-vous imaginaire.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-lieux",
+      "type": "vocabulary",
+      "title": "Lieux — se repérer en ville",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "monde-autour",
+      "level": "niveau1",
+      "learningOrder": 3,
+      "objective": "Nommer huit lieux et demander où se trouve la gare.",
+      "prerequisites": "Savoir reprendre une question courte ; étudier ensuite les prépositions de lieu.",
+      "vocabulary": [
+        {
+          "term": "学校",
+          "translation": "l’école",
+          "reading": "gakkō",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "駅",
+          "translation": "la gare",
+          "reading": "eki",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "スーパー",
+          "translation": "le supermarché",
+          "reading": "sūpā",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "病院",
+          "translation": "l’hôpital",
+          "reading": "byōin",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "薬局",
+          "translation": "la pharmacie",
+          "reading": "yakkyoku",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "レストラン",
+          "translation": "le restaurant",
+          "reading": "resutoran",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "公園",
+          "translation": "le parc",
+          "reading": "kōen",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "図書館",
+          "translation": "la bibliothèque",
+          "reading": "toshokan",
+          "definition": "Lieux : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "駅はどこですか。",
+          "translation": "Où est la gare ?",
+          "reading": "eki wa doko desu ka"
+        },
+        {
+          "text": "薬局はスーパーの隣です。",
+          "translation": "La pharmacie est à côté du supermarché.",
+          "reading": "yakkyoku wa sūpā no tonari desu"
+        }
+      ],
+      "note": "Lieu + はどこですか demande où il se trouve. の relie le repère à sa position : スーパーの隣 (à côté du supermarché). Les espaces de la lecture latine servent à apprendre ; le japonais s’écrit habituellement sans espaces.",
+      "exercise": [
+        {
+          "sentence": "Tu veux prendre le train. Quel lieu cherches-tu ?",
+          "options": [
+            "薬局",
+            "駅",
+            "図書館"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "駅 — Pour prendre le train, on va à la gare ; la pharmacie et la bibliothèque ont d’autres fonctions.",
+          "feedbackKo": "Réponse : 駅 — Pour prendre le train, on va à la gare ; la pharmacie et la bibliothèque ont d’autres fonctions."
+        },
+        {
+          "sentence": "Tu dois acheter un médicament. Quel lieu choisir ?",
+          "options": [
+            "薬局",
+            "学校",
+            "公園"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "薬局 — La pharmacie est le lieu associé à l’achat de médicaments.",
+          "feedbackKo": "Réponse : 薬局 — La pharmacie est le lieu associé à l’achat de médicaments."
+        },
+        {
+          "sentence": "Tu veux emprunter un livre. Quel lieu choisir ?",
+          "options": [
+            "病院",
+            "レストラン",
+            "図書館"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "図書館 — Une bibliothèque permet d’emprunter des livres ; ce n’est pas une librairie.",
+          "feedbackKo": "Réponse : 図書館 — Une bibliothèque permet d’emprunter des livres ; ce n’est pas une librairie."
+        }
+      ],
+      "task": "Demande où se trouve la gare puis situe la pharmacie près d’un autre lieu.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-vetements",
+      "type": "vocabulary",
+      "title": "Vêtements — décrire ce que l’on porte",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "maison-quotidien",
+      "level": "niveau1",
+      "learningOrder": 5,
+      "objective": "Nommer huit vêtements et décrire une tenue simple.",
+      "prerequisites": "Commencer par les couleurs pour pouvoir décrire une tenue.",
+      "vocabulary": [
+        {
+          "term": "シャツ",
+          "translation": "une chemise",
+          "reading": "shatsu",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "Tシャツ",
+          "translation": "un tee-shirt",
+          "reading": "tīshatsu",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "ズボン",
+          "translation": "un pantalon",
+          "reading": "zubon",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "ワンピース",
+          "translation": "une robe",
+          "reading": "wanpīsu",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "コート",
+          "translation": "un manteau",
+          "reading": "kōto",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "靴",
+          "translation": "des chaussures",
+          "reading": "kutsu",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "靴下",
+          "translation": "des chaussettes",
+          "reading": "kutsushita",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "帽子",
+          "translation": "un chapeau",
+          "reading": "bōshi",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "コートを着ています。",
+          "translation": "Je porte un manteau.",
+          "reading": "kōto o kite imasu"
+        },
+        {
+          "text": "この靴は黒いです。",
+          "translation": "Ces chaussures sont noires.",
+          "reading": "kono kutsu wa kuroi desu"
+        }
+      ],
+      "note": "着る (kiru) sert notamment pour les vêtements du haut ; 履く (haku) pour pantalon, chaussures et chaussettes ; かぶる (kaburu) pour un chapeau. 着ています décrit le vêtement porté maintenant. 靴 peut désigner une ou plusieurs chaussures selon le contexte.",
+      "exercise": [
+        {
+          "sentence": "Quel mot désigne une chemise ?",
+          "options": [
+            "シャツ",
+            "Tシャツ",
+            "コート"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "シャツ — La chemise n’est ni le tee-shirt ni le manteau.",
+          "feedbackKo": "Réponse : シャツ — La chemise n’est ni le tee-shirt ni le manteau."
+        },
+        {
+          "sentence": "Quel mot désigne un pantalon ?",
+          "options": [
+            "靴",
+            "ズボン",
+            "ワンピース"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "ズボン — Le pantalon couvre les jambes ; ne pas le confondre avec les chaussures ou la robe.",
+          "feedbackKo": "Réponse : ズボン — Le pantalon couvre les jambes ; ne pas le confondre avec les chaussures ou la robe."
+        },
+        {
+          "sentence": "Quel mot désigne les chaussettes ?",
+          "options": [
+            "帽子",
+            "靴",
+            "靴下"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "靴下 — Les chaussettes se portent à l’intérieur des chaussures.",
+          "feedbackKo": "Réponse : 靴下 — Les chaussettes se portent à l’intérieur des chaussures."
+        }
+      ],
+      "task": "Décris un vêtement que tu portes, puis sa couleur.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-cuisine",
+      "type": "vocabulary",
+      "title": "Cuisine — objets et gestes du quotidien",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "maison-quotidien",
+      "level": "niveau1",
+      "learningOrder": 6,
+      "objective": "Reconnaître les ustensiles essentiels et exprimer un besoin simple.",
+      "prerequisites": "Retenir d’abord les objets ; apprendre ensuite la phrase exprimant un besoin.",
+      "vocabulary": [
+        {
+          "term": "台所",
+          "translation": "la cuisine (pièce)",
+          "reading": "daidokoro",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "鍋",
+          "translation": "une casserole ; une marmite",
+          "reading": "nabe",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "フライパン",
+          "translation": "une poêle",
+          "reading": "furaipan",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "包丁",
+          "translation": "un couteau de cuisine",
+          "reading": "hōchō",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "スプーン",
+          "translation": "une cuillère",
+          "reading": "supūn",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "パン",
+          "translation": "du pain",
+          "reading": "pan",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "水",
+          "translation": "de l’eau",
+          "reading": "mizu",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "料理する",
+          "translation": "cuisiner",
+          "reading": "ryōri suru",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "スプーンが必要です。",
+          "translation": "J’ai besoin d’une cuillère.",
+          "reading": "supūn ga hitsuyō desu"
+        },
+        {
+          "text": "台所で料理します。",
+          "translation": "Je cuisine dans la cuisine.",
+          "reading": "daidokoro de ryōri shimasu"
+        }
+      ],
+      "note": "料理する signifie cuisiner ; 料理します est sa forme polie. で marque le lieu de l’action : 台所で料理します. 包丁 est un couteau de cuisine. La lecture latine accompagne les caractères, sans remplacer l’écoute.",
+      "exercise": [
+        {
+          "sentence": "Quel ustensile est une poêle ?",
+          "options": [
+            "鍋",
+            "フライパン",
+            "包丁"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "フライパン — La poêle sert notamment à cuire ou à faire revenir des aliments ; ce n’est ni une casserole ni un couteau.",
+          "feedbackKo": "Réponse : フライパン — La poêle sert notamment à cuire ou à faire revenir des aliments ; ce n’est ni une casserole ni un couteau."
+        },
+        {
+          "sentence": "Quel objet choisir pour manger une soupe ?",
+          "options": [
+            "スプーン",
+            "包丁",
+            "鍋"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "スプーン — Une cuillère convient pour manger une soupe.",
+          "feedbackKo": "Réponse : スプーン — Une cuillère convient pour manger une soupe."
+        },
+        {
+          "sentence": "Quel mot signifie cuisiner ou préparer un repas ?",
+          "options": [
+            "水",
+            "パン",
+            "料理する"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "料理する — Le dernier terme désigne l’action ; les autres désignent l’eau et le pain.",
+          "feedbackKo": "Réponse : 料理する — Le dernier terme désigne l’action ; les autres désignent l’eau et le pain."
+        }
+      ],
+      "task": "Dis où tu cuisines et quel ustensile il te faut pour manger une soupe.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-positions",
+      "type": "vocabulary",
+      "title": "Positions — situer un objet",
+      "subtitle": "Préparer le jeu de la balle",
+      "category": "vocabulaire",
+      "subcategory": "monde-autour",
+      "level": "niveau1",
+      "learningOrder": 4,
+      "objective": "Distinguer intérieur, contact, au-dessus, dessous et côtés.",
+      "prerequisites": "Repérer la boîte de référence et se placer face à l’écran.",
+      "vocabulary": [
+        {
+          "term": "中",
+          "translation": "dans, à l’intérieur",
+          "reading": "naka",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "上（接触）",
+          "translation": "sur, avec contact",
+          "reading": "ue (sesshoku)",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "上のほう（非接触）",
+          "translation": "au-dessus, sans contact",
+          "reading": "ue no hō (hi-sesshoku)",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "下",
+          "translation": "sous, en dessous",
+          "reading": "shita",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "左",
+          "translation": "à gauche de",
+          "reading": "hidari",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "右",
+          "translation": "à droite de",
+          "reading": "migi",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "隣",
+          "translation": "juste à côté de",
+          "reading": "tonari",
+          "definition": "Position de la balle par rapport à la boîte."
+        }
+      ],
+      "examples": [
+        {
+          "text": "ボールは箱の中にあります。",
+          "translation": "La balle est dans la boîte.",
+          "reading": "bōru wa hako no naka ni arimasu"
+        },
+        {
+          "text": "ボールは箱の隣にあります。",
+          "translation": "La balle est à côté de la boîte.",
+          "reading": "bōru wa hako no tonari ni arimasu"
+        }
+      ],
+      "note": "Dans le jeu, « sur » signifie en contact et « au-dessus » signifie plus haut sans contact. Les langues n’utilisent pas toujours deux mots différents : les consignes précisent le contact si nécessaire. À gauche et à droite sont vus depuis votre place face à l’écran. « À côté » accepte les deux côtés, sans obligation de toucher. Les lectures entre parenthèses servent à comprendre la précision de sens.",
+      "task": "Place un objet dans une boîte, sur elle, puis juste à côté et décris sa position.",
+      "review": "Retrouve trois positions sans afficher le sens, puis joue à la balle. Reviens demain, dans trois jours et dans une semaine.",
+      "revision": "v28",
+      "exercise": [
+        {
+          "sentence": "La balle touche le dessus de la boîte. Quelle expression choisir ?",
+          "options": [
+            "上（接触）",
+            "上のほう（非接触）",
+            "中"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "sur, avec contact.",
+          "feedbackKo": "Réponse : 上（接触） — sur, avec contact."
+        },
+        {
+          "sentence": "La balle est à l’intérieur. Quelle expression choisir ?",
+          "options": [
+            "下",
+            "中",
+            "隣"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "dans, à l’intérieur.",
+          "feedbackKo": "Réponse : 中 — dans, à l’intérieur."
+        },
+        {
+          "sentence": "La balle est juste à côté. Quelle expression choisir ?",
+          "options": [
+            "左",
+            "隣",
+            "上のほう（非接触）"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "juste à côté de.",
+          "feedbackKo": "Réponse : 隣 — juste à côté de."
+        }
+      ]
+    }
+  ],
+  "zh": [
+    {
+      "id": "quotidien-couleurs",
+      "type": "vocabulary",
+      "title": "Couleurs — décrire un objet",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "bases",
+      "level": "niveau1",
+      "learningOrder": 1,
+      "objective": "Reconnaître huit couleurs et décrire la couleur d’un vêtement.",
+      "prerequisites": "Aucun prérequis ; commencer par quatre couleurs.",
+      "vocabulary": [
+        {
+          "term": "红色",
+          "translation": "rouge",
+          "reading": "hóngsè",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#dc3535"
+        },
+        {
+          "term": "蓝色",
+          "translation": "bleu",
+          "reading": "lánsè",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#287ad3"
+        },
+        {
+          "term": "绿色",
+          "translation": "vert",
+          "reading": "lǜsè",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#22894e"
+        },
+        {
+          "term": "黄色",
+          "translation": "jaune",
+          "reading": "huángsè",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#f5d849"
+        },
+        {
+          "term": "黑色",
+          "translation": "noir",
+          "reading": "hēisè",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#202020"
+        },
+        {
+          "term": "白色",
+          "translation": "blanc",
+          "reading": "báisè",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#ffffff"
+        },
+        {
+          "term": "紫色",
+          "translation": "violet",
+          "reading": "zǐsè",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#8653b5"
+        },
+        {
+          "term": "橙色",
+          "translation": "orange",
+          "reading": "chéngsè",
+          "definition": "Couleurs : sens employé dans cette fiche.",
+          "swatch": "#ed8b2f"
+        }
+      ],
+      "examples": [
+        {
+          "text": "大衣是蓝色的。",
+          "translation": "Le manteau est bleu.",
+          "reading": "dàyī shì lánsè de"
+        },
+        {
+          "text": "我有一件红色的衬衫。",
+          "translation": "J’ai une chemise rouge.",
+          "reading": "wǒ yǒu yī jiàn hóngsè de chènshān"
+        }
+      ],
+      "note": "色 signifie couleur. Devant un nom, on peut employer 红色的… : 红色的衬衫, une chemise rouge. Pour décrire : 大衣是蓝色的. Les mots ne s’accordent pas au féminin ou au pluriel français.",
+      "exercise": [
+        {
+          "sentence": "Quelle couleur signifie bleu ?",
+          "options": [
+            "红色",
+            "蓝色",
+            "绿色"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "蓝色 — C’est le mot correspondant à bleu, pas à rouge ni à vert.",
+          "feedbackKo": "Réponse : 蓝色 — C’est le mot correspondant à bleu, pas à rouge ni à vert."
+        },
+        {
+          "sentence": "Quelle couleur signifie jaune ?",
+          "options": [
+            "黄色",
+            "黑色",
+            "白色"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "黄色 — Le jaune se distingue du noir et du blanc.",
+          "feedbackKo": "Réponse : 黄色 — Le jaune se distingue du noir et du blanc."
+        },
+        {
+          "sentence": "Quelle couleur signifie violet ?",
+          "options": [
+            "橙色",
+            "绿色",
+            "紫色"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "紫色 — Violet et orange sont deux couleurs différentes.",
+          "feedbackKo": "Réponse : 紫色 — Violet et orange sont deux couleurs différentes."
+        }
+      ],
+      "task": "Décris deux objets autour de toi avec deux couleurs différentes.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-heures",
+      "type": "vocabulary",
+      "title": "Heures — demander et donner l’heure",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "bases",
+      "level": "niveau1",
+      "learningOrder": 2,
+      "objective": "Demander l’heure et distinguer heure ronde, quart, demie et moins le quart.",
+      "prerequisites": "Reconnaître les nombres 1 à 12 ; travailler d’abord les heures rondes.",
+      "vocabulary": [
+        {
+          "term": "现在几点？",
+          "translation": "Quelle heure est-il maintenant ?",
+          "reading": "xiànzài jǐ diǎn",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "一点",
+          "translation": "une heure (01:00)",
+          "reading": "yī diǎn",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "两点",
+          "translation": "deux heures (02:00)",
+          "reading": "liǎng diǎn",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "三点一刻",
+          "translation": "trois heures et quart (03:15)",
+          "reading": "sān diǎn yī kè",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "三点半",
+          "translation": "trois heures et demie (03:30)",
+          "reading": "sān diǎn bàn",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "三点四十五分",
+          "translation": "trois heures quarante-cinq (03:45)",
+          "reading": "sān diǎn sìshíwǔ fēn",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "中午",
+          "translation": "midi ; milieu de journée",
+          "reading": "zhōngwǔ",
+          "definition": "Heures : sens employé dans cette fiche."
+        },
+        {
+          "term": "午夜",
+          "translation": "minuit",
+          "reading": "wǔyè",
+          "definition": "Heures : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "现在几点？三点半。",
+          "translation": "Quelle heure est-il maintenant ? Trois heures et demie.",
+          "reading": "xiànzài jǐ diǎn? sān diǎn bàn"
+        },
+        {
+          "text": "火车三点四十五分出发。",
+          "translation": "Le train part à trois heures quarante-cinq.",
+          "reading": "huǒchē sān diǎn sìshíwǔ fēn chūfā"
+        }
+      ],
+      "note": "点 indique l’heure ; 分 les minutes ; 半 la demi-heure ; 一刻 un quart d’heure. Deux heures se dit 两点, tandis que douze heures se dit 十二点. 上午 = matin, 下午 = après-midi ; placer cette précision avant l’heure. La lecture pinyin affiche ici les tons de base ; 一 peut changer de ton à l’oral.",
+      "exercise": [
+        {
+          "sentence": "Tu veux demander l’heure. Quelle expression choisir ?",
+          "options": [
+            "现在几点？",
+            "中午",
+            "午夜"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "现在几点？ — La première expression sert à demander l’heure ; midi et minuit donnent un moment.",
+          "feedbackKo": "Réponse : 现在几点？ — La première expression sert à demander l’heure ; midi et minuit donnent un moment."
+        },
+        {
+          "sentence": "Il est 03:30. Quelle expression convient ?",
+          "options": [
+            "三点一刻",
+            "三点半",
+            "三点四十五分"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "三点半 — La demi-heure correspond à 30 minutes. Le quart vaut 15 minutes.",
+          "feedbackKo": "Réponse : 三点半 — La demi-heure correspond à 30 minutes. Le quart vaut 15 minutes."
+        },
+        {
+          "sentence": "Tu lis 03:45. Quelle expression convient ?",
+          "options": [
+            "三点半",
+            "三点四十五分",
+            "三点一刻"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "三点四十五分 — 03:45 correspond à trois heures quarante-cinq, ou quatre heures moins le quart.",
+          "feedbackKo": "Réponse : 三点四十五分 — 03:45 correspond à trois heures quarante-cinq, ou quatre heures moins le quart."
+        }
+      ],
+      "task": "Donne l’heure actuelle puis l’heure d’un rendez-vous imaginaire.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-lieux",
+      "type": "vocabulary",
+      "title": "Lieux — se repérer en ville",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "monde-autour",
+      "level": "niveau1",
+      "learningOrder": 3,
+      "objective": "Nommer huit lieux et demander où se trouve la gare.",
+      "prerequisites": "Savoir reprendre une question courte ; étudier ensuite les prépositions de lieu.",
+      "vocabulary": [
+        {
+          "term": "学校",
+          "translation": "l’école",
+          "reading": "xuéxiào",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "火车站",
+          "translation": "la gare",
+          "reading": "huǒchēzhàn",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "超市",
+          "translation": "le supermarché",
+          "reading": "chāoshì",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "医院",
+          "translation": "l’hôpital",
+          "reading": "yīyuàn",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "药店",
+          "translation": "la pharmacie",
+          "reading": "yàodiàn",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "餐厅",
+          "translation": "le restaurant",
+          "reading": "cāntīng",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "公园",
+          "translation": "le parc",
+          "reading": "gōngyuán",
+          "definition": "Lieux : sens employé dans cette fiche."
+        },
+        {
+          "term": "图书馆",
+          "translation": "la bibliothèque",
+          "reading": "túshūguǎn",
+          "definition": "Lieux : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "火车站在哪里？",
+          "translation": "Où est la gare ?",
+          "reading": "huǒchēzhàn zài nǎlǐ"
+        },
+        {
+          "text": "药店在超市旁边。",
+          "translation": "La pharmacie est à côté du supermarché.",
+          "reading": "yàodiàn zài chāoshì pángbiān"
+        }
+      ],
+      "note": "在哪里 demande où quelque chose se trouve. 在 permet de situer : 药店在超市旁边. 旁边 signifie à côté. Le pinyin aide à prononcer, mais les tons doivent être conservés.",
+      "exercise": [
+        {
+          "sentence": "Tu veux prendre le train. Quel lieu cherches-tu ?",
+          "options": [
+            "药店",
+            "火车站",
+            "图书馆"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "火车站 — Pour prendre le train, on va à la gare ; la pharmacie et la bibliothèque ont d’autres fonctions.",
+          "feedbackKo": "Réponse : 火车站 — Pour prendre le train, on va à la gare ; la pharmacie et la bibliothèque ont d’autres fonctions."
+        },
+        {
+          "sentence": "Tu dois acheter un médicament. Quel lieu choisir ?",
+          "options": [
+            "药店",
+            "学校",
+            "公园"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "药店 — La pharmacie est le lieu associé à l’achat de médicaments.",
+          "feedbackKo": "Réponse : 药店 — La pharmacie est le lieu associé à l’achat de médicaments."
+        },
+        {
+          "sentence": "Tu veux emprunter un livre. Quel lieu choisir ?",
+          "options": [
+            "医院",
+            "餐厅",
+            "图书馆"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "图书馆 — Une bibliothèque permet d’emprunter des livres ; ce n’est pas une librairie.",
+          "feedbackKo": "Réponse : 图书馆 — Une bibliothèque permet d’emprunter des livres ; ce n’est pas une librairie."
+        }
+      ],
+      "task": "Demande où se trouve la gare puis situe la pharmacie près d’un autre lieu.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-vetements",
+      "type": "vocabulary",
+      "title": "Vêtements — décrire ce que l’on porte",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "maison-quotidien",
+      "level": "niveau1",
+      "learningOrder": 5,
+      "objective": "Nommer huit vêtements et décrire une tenue simple.",
+      "prerequisites": "Commencer par les couleurs pour pouvoir décrire une tenue.",
+      "vocabulary": [
+        {
+          "term": "衬衫",
+          "translation": "une chemise",
+          "reading": "chènshān",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "T恤",
+          "translation": "un tee-shirt",
+          "reading": "T xù",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "裤子",
+          "translation": "un pantalon",
+          "reading": "kùzi",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "连衣裙",
+          "translation": "une robe",
+          "reading": "liányīqún",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "大衣",
+          "translation": "un manteau",
+          "reading": "dàyī",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "鞋子",
+          "translation": "des chaussures",
+          "reading": "xiézi",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "袜子",
+          "translation": "des chaussettes",
+          "reading": "wàzi",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        },
+        {
+          "term": "帽子",
+          "translation": "un chapeau",
+          "reading": "màozi",
+          "definition": "Vêtements : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "我穿着大衣。",
+          "translation": "Je porte un manteau.",
+          "reading": "wǒ chuānzhe dàyī"
+        },
+        {
+          "text": "这双鞋子是黑色的。",
+          "translation": "Ces chaussures sont noires.",
+          "reading": "zhè shuāng xiézi shì hēisè de"
+        }
+      ],
+      "note": "穿 signifie porter un vêtement ou des chaussures ; 穿着 décrit ce qui est porté. Les quantités utilisent des classificateurs : 一件衬衫 (une chemise), 一双鞋子 (une paire de chaussures). 件 convient à beaucoup de vêtements ; 双 aux paires.",
+      "exercise": [
+        {
+          "sentence": "Quel mot désigne une chemise ?",
+          "options": [
+            "衬衫",
+            "T恤",
+            "大衣"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "衬衫 — La chemise n’est ni le tee-shirt ni le manteau.",
+          "feedbackKo": "Réponse : 衬衫 — La chemise n’est ni le tee-shirt ni le manteau."
+        },
+        {
+          "sentence": "Quel mot désigne un pantalon ?",
+          "options": [
+            "鞋子",
+            "裤子",
+            "连衣裙"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "裤子 — Le pantalon couvre les jambes ; ne pas le confondre avec les chaussures ou la robe.",
+          "feedbackKo": "Réponse : 裤子 — Le pantalon couvre les jambes ; ne pas le confondre avec les chaussures ou la robe."
+        },
+        {
+          "sentence": "Quel mot désigne les chaussettes ?",
+          "options": [
+            "帽子",
+            "鞋子",
+            "袜子"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "袜子 — Les chaussettes se portent à l’intérieur des chaussures.",
+          "feedbackKo": "Réponse : 袜子 — Les chaussettes se portent à l’intérieur des chaussures."
+        }
+      ],
+      "task": "Décris un vêtement que tu portes, puis sa couleur.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-cuisine",
+      "type": "vocabulary",
+      "title": "Cuisine — objets et gestes du quotidien",
+      "subtitle": "Découvrir → écouter → comprendre → répondre → réutiliser",
+      "category": "vocabulaire",
+      "subcategory": "maison-quotidien",
+      "level": "niveau1",
+      "learningOrder": 6,
+      "objective": "Reconnaître les ustensiles essentiels et exprimer un besoin simple.",
+      "prerequisites": "Retenir d’abord les objets ; apprendre ensuite la phrase exprimant un besoin.",
+      "vocabulary": [
+        {
+          "term": "厨房",
+          "translation": "la cuisine (pièce)",
+          "reading": "chúfáng",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "锅",
+          "translation": "une casserole ; un récipient pour cuire",
+          "reading": "guō",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "平底锅",
+          "translation": "une poêle",
+          "reading": "píngdǐguō",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "菜刀",
+          "translation": "un couteau de cuisine",
+          "reading": "càidāo",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "勺子",
+          "translation": "une cuillère",
+          "reading": "sháozi",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "面包",
+          "translation": "du pain",
+          "reading": "miànbāo",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "水",
+          "translation": "de l’eau",
+          "reading": "shuǐ",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        },
+        {
+          "term": "做饭",
+          "translation": "cuisiner ; préparer un repas",
+          "reading": "zuò fàn",
+          "definition": "Cuisine : sens employé dans cette fiche."
+        }
+      ],
+      "examples": [
+        {
+          "text": "我需要一个勺子。",
+          "translation": "J’ai besoin d’une cuillère.",
+          "reading": "wǒ xūyào yī ge sháozi"
+        },
+        {
+          "text": "我在厨房做饭。",
+          "translation": "Je cuisine dans la cuisine.",
+          "reading": "wǒ zài chúfáng zuò fàn"
+        }
+      ],
+      "note": "做饭 signifie préparer un repas. 在厨房 fait situer l’action dans la cuisine. Pour compter une cuillère, 一个勺子 convient ; ne pas ajouter une terminaison de pluriel française aux mots chinois. 锅 est général, 平底锅 précise une poêle à fond plat.",
+      "exercise": [
+        {
+          "sentence": "Quel ustensile est une poêle ?",
+          "options": [
+            "锅",
+            "平底锅",
+            "菜刀"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "平底锅 — La poêle sert notamment à cuire ou à faire revenir des aliments ; ce n’est ni une casserole ni un couteau.",
+          "feedbackKo": "Réponse : 平底锅 — La poêle sert notamment à cuire ou à faire revenir des aliments ; ce n’est ni une casserole ni un couteau."
+        },
+        {
+          "sentence": "Quel objet choisir pour manger une soupe ?",
+          "options": [
+            "勺子",
+            "菜刀",
+            "锅"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "勺子 — Une cuillère convient pour manger une soupe.",
+          "feedbackKo": "Réponse : 勺子 — Une cuillère convient pour manger une soupe."
+        },
+        {
+          "sentence": "Quel mot signifie cuisiner ou préparer un repas ?",
+          "options": [
+            "水",
+            "面包",
+            "做饭"
+          ],
+          "correctIndex": 2,
+          "feedbackOk": "做饭 — Le dernier terme désigne l’action ; les autres désignent l’eau et le pain.",
+          "feedbackKo": "Réponse : 做饭 — Le dernier terme désigne l’action ; les autres désignent l’eau et le pain."
+        }
+      ],
+      "task": "Dis où tu cuisines et quel ustensile il te faut pour manger une soupe.",
+      "review": "Sans afficher le sens : retrouve quatre mots, puis prononce une phrase. Recommence demain, dans trois jours et dans une semaine.",
+      "revision": "v28"
+    },
+    {
+      "id": "quotidien-positions",
+      "type": "vocabulary",
+      "title": "Positions — situer un objet",
+      "subtitle": "Préparer le jeu de la balle",
+      "category": "vocabulaire",
+      "subcategory": "monde-autour",
+      "level": "niveau1",
+      "learningOrder": 4,
+      "objective": "Distinguer intérieur, contact, au-dessus, dessous et côtés.",
+      "prerequisites": "Repérer la boîte de référence et se placer face à l’écran.",
+      "vocabulary": [
+        {
+          "term": "里面",
+          "translation": "dans, à l’intérieur",
+          "reading": "lǐmiàn",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "上（接触）",
+          "translation": "sur, avec contact",
+          "reading": "shàng (jiēchù)",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "上方（不接触）",
+          "translation": "au-dessus, sans contact",
+          "reading": "shàngfāng (bù jiēchù)",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "下面",
+          "translation": "sous, en dessous",
+          "reading": "xiàmiàn",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "左边",
+          "translation": "à gauche de",
+          "reading": "zuǒbiān",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "右边",
+          "translation": "à droite de",
+          "reading": "yòubiān",
+          "definition": "Position de la balle par rapport à la boîte."
+        },
+        {
+          "term": "旁边",
+          "translation": "juste à côté de",
+          "reading": "pángbiān",
+          "definition": "Position de la balle par rapport à la boîte."
+        }
+      ],
+      "examples": [
+        {
+          "text": "球在盒子里面。",
+          "translation": "La balle est dans la boîte.",
+          "reading": "qiú zài hézi lǐmiàn"
+        },
+        {
+          "text": "球在盒子旁边。",
+          "translation": "La balle est à côté de la boîte.",
+          "reading": "qiú zài hézi pángbiān"
+        }
+      ],
+      "note": "Dans le jeu, « sur » signifie en contact et « au-dessus » signifie plus haut sans contact. Les langues n’utilisent pas toujours deux mots différents : les consignes précisent le contact si nécessaire. À gauche et à droite sont vus depuis votre place face à l’écran. « À côté » accepte les deux côtés, sans obligation de toucher. Les lectures entre parenthèses servent à comprendre la précision de sens.",
+      "task": "Place un objet dans une boîte, sur elle, puis juste à côté et décris sa position.",
+      "review": "Retrouve trois positions sans afficher le sens, puis joue à la balle. Reviens demain, dans trois jours et dans une semaine.",
+      "revision": "v28",
+      "exercise": [
+        {
+          "sentence": "La balle touche le dessus de la boîte. Quelle expression choisir ?",
+          "options": [
+            "上（接触）",
+            "上方（不接触）",
+            "里面"
+          ],
+          "correctIndex": 0,
+          "feedbackOk": "sur, avec contact.",
+          "feedbackKo": "Réponse : 上（接触） — sur, avec contact."
+        },
+        {
+          "sentence": "La balle est à l’intérieur. Quelle expression choisir ?",
+          "options": [
+            "下面",
+            "里面",
+            "旁边"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "dans, à l’intérieur.",
+          "feedbackKo": "Réponse : 里面 — dans, à l’intérieur."
+        },
+        {
+          "sentence": "La balle est juste à côté. Quelle expression choisir ?",
+          "options": [
+            "左边",
+            "旁边",
+            "上方（不接触）"
+          ],
+          "correctIndex": 1,
+          "feedbackOk": "juste à côté de.",
+          "feedbackKo": "Réponse : 旁边 — juste à côté de."
+        }
+      ]
+    }
+  ]
+}
