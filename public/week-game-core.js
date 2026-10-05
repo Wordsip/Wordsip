@@ -14,10 +14,10 @@
     return {prompt,correct,reverse,options,pair};
   }
   // A pair is true when both sides belong together, including alternate translations.
-  function pairRound(words,index=0,distractors=words,random=Math.random){
+  function pairRound(words,index=0,distractors=words,random=Math.random,reverseOverride){
     const clean=[...new Map(words.filter(w=>w.word&&w.translation).map(w=>[normal(w.word)+'|'+normal(w.translation),w])).values()];
     if(!clean.length)return null;
-    const pair=clean[index%clean.length],reverse=Math.floor(index/clean.length)%2===1;
+    const pair=clean[index%clean.length],reverse=typeof reverseOverride==='boolean'?reverseOverride:Math.floor(index/clean.length)%2===1;
     const pool=[...clean,...distractors].filter(w=>w.word&&w.translation);
     const prompt=reverse?pair.word:pair.translation,correct=reverse?pair.translation:pair.word;
     const valid=new Set(pool.filter(w=>normal(reverse?w.word:w.translation)===normal(prompt)).map(w=>normal(reverse?w.translation:w.word)));

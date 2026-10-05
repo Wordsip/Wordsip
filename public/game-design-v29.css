@@ -14,3 +14,8 @@ body{background:radial-gradient(ellipse at 15% 0,#dff0ff,transparent 45%),radial
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.game-card:hover,.matching-choice:hover,.odd-choices button:hover,.picture-word:hover{transform:none}}
 
 .verb-orb{margin:0 auto 4px;padding:18px 26px;border-radius:20px;font-size:32px;font-weight:800;background:linear-gradient(135deg,#c6e6ed,#7699c7);color:#fff;border-bottom:5px solid #587fa6;box-shadow:inset 2px 2px 4px #ffffff66,0 10px 18px #284e7022;transform:rotate(-5deg)}
+
+.ball-free-board{max-width:680px;margin:0 auto}.ball-free-board .ball-scene{max-width:none;width:100%;box-shadow:0 6px 0 #c4d4e5}.ball-token.dragging{cursor:grabbing;filter:drop-shadow(0 4px 3px #6e274955)}.ball-token.placed{cursor:default}.ball-free-board .ball-scene{user-select:none;-webkit-user-select:none}
+
+
+.game-encouragement{margin:16px 0;padding:10px 16px;border-radius:12px;background:linear-gradient(110deg,#e7f6eb,#e5f1fb);border:1px solid #c6e2d2;color:#2b6d61;font-size:13px;font-weight:600}.game-encouragement:before{content:"✦ ";color:#c59141}

@@ -2,9 +2,9 @@
 (() => {
   let serial=0;
   function ballScene(position='start',interactive=false){
-    const id='scene'+serial++,points={inside:[320,200],above:[320,70],below:[320,315],left:[155,200],right:[485,200],on:[320,122],next:[450,200],start:[320,365]};
+    const id='scene'+serial++,points={inside:[320,200],above:[320,70],below:[320,315],left:[155,200],right:[485,200],on:[320,122],next:[450,200],start:[570,365]};
     const[x,y]=points[position]||points.start;
-    const ball=`<circle ${interactive?'id="learning-ball" tabindex="0" role="slider" aria-label="Balle : flèches pour déplacer, Entrée pour vérifier" aria-valuemin="0" aria-valuemax="640" aria-valuenow="${x}"':''} class="ball-token" cx="${x}" cy="${y}" r="18" fill="url(#${id}-ball)" stroke="#942942" stroke-width="1.5"/>`;
+    const ball=`<circle ${interactive?`id="learning-ball" tabindex="0" role="slider" aria-label="Balle : flèches pour déplacer, Entrée pour vérifier" aria-valuemin="0" aria-valuemax="640" aria-valuenow="${x}"`:''} class="ball-token" cx="${x}" cy="${y}" r="18" fill="url(#${id}-ball)" stroke="#942942" stroke-width="1.5"/>`;
     return `<svg class="ball-scene ${interactive?'interactive-scene':'mini-scene'}" viewBox="0 0 640 400" ${interactive?'aria-label="Une boîte transparente surélevée et une balle à placer" role="group"':'aria-hidden="true"'}>
     <defs><linearGradient id="${id}-wall" x2="0" y2="1"><stop stop-color="#edf7ff"/><stop offset="1" stop-color="#d3e6f5"/></linearGradient><linearGradient id="${id}-glass" x2="1" y2="1"><stop stop-color="#d7eeff" stop-opacity=".35"/><stop offset="1" stop-color="#76b4e4" stop-opacity=".2"/></linearGradient><radialGradient id="${id}-ball" cx=".3" cy=".25" r=".8"><stop stop-color="#ffe1cf"/><stop offset=".25" stop-color="#ff786e"/><stop offset=".8" stop-color="#df365b"/><stop offset="1" stop-color="#a12751"/></radialGradient></defs>
     <rect width="640" height="400" rx="20" fill="url(#${id}-wall)"/><path d="M0 280L640 280V400H0Z" fill="#c7ddeb"/><path d="M0 280H640M60 400L240 280M210 400L300 280M430 400L360 280M580 400L420 280" stroke="#adc9dd" stroke-width="2"/>
@@ -14,7 +14,7 @@
     <path d="M250 140L290 110H430L390 140ZM390 140L430 110V230L390 260" fill="#b6d8ee" fill-opacity=".55" stroke="#437f9e" stroke-width="3"/>
     <path d="M290 110V230H430M290 230L250 260" fill="none" stroke="#76a6c0" stroke-dasharray="6 6" stroke-width="2"/>
     ${position==='inside'?ball:''}
-    <rect x="250" y="140" width="140" height="120" fill="url(#${id}-glass)" stroke="#437f9e" stroke-width="3"/>
+    <rect data-ball-front="true" x="250" y="140" width="140" height="120" fill="url(#${id}-glass)" stroke="#437f9e" stroke-width="3"/>
     <path d="M263 155L278 145M265 173L298 147" stroke="white" stroke-opacity=".8" stroke-width="5"/>
     ${position==='on'?'<ellipse cx="320" cy="143" rx="16" ry="4" fill="#466980" opacity=".4"/>':''}
     ${position==='above'?'<path d="M320 93V107" stroke="#527c98" stroke-dasharray="3 3" stroke-width="2"/>':''}

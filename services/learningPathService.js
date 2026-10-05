@@ -9,6 +9,7 @@ function buildPath(lessons,studiedIds,wordCount,level){
   const studied=lessons.filter(l=>studiedIds.includes(l.id)),vocabulary=studied.filter(l=>l.type==='vocabulary'&&!l.id.includes('positions'));
   const recommendations=vocabulary.map(l=>({game:'matching',lessonId:l.id,title:'Relier les mots : '+l.title.split(' — ')[0],reason:'Après la fiche que vous avez consultée cette semaine.'}));
   for(const l of vocabulary){
+    recommendations.push({game:'kart',lessonId:l.id,title:'Kart : '+l.title.split(' — ')[0],reason:'Reconnaître à l’oreille les mots de cette fiche.'});
     recommendations.push({game:'listening',lessonId:l.id,title:'Écouter et écrire : '+l.title.split(' — ')[0],reason:'Réutiliser le vocabulaire de cette fiche.'});
     if(!l.id.includes('heures'))recommendations.push({game:'images',lessonId:l.id,title:'Images : '+l.title.split(' — ')[0],reason:'Associer vos mots étudiés aux images.'});
   }

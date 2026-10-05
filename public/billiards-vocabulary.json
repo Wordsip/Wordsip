@@ -1,0 +1,292 @@
+{
+  "en": [
+    {
+      "word": "I",
+      "sentence": "I have a car.",
+      "category": "sujet",
+      "frenchWord": "Je",
+      "frenchSentence": "Je possède une voiture."
+    },
+    {
+      "word": "We",
+      "sentence": "We eat an apple.",
+      "category": "sujet",
+      "frenchWord": "Nous",
+      "frenchSentence": "Nous mangeons une pomme."
+    },
+    {
+      "word": "eats",
+      "sentence": "She eats an apple.",
+      "category": "verbe",
+      "frenchWord": "mange",
+      "frenchSentence": "Elle mange une pomme."
+    },
+    {
+      "word": "sleeps",
+      "sentence": "The cat sleeps.",
+      "category": "verbe",
+      "frenchWord": "dort",
+      "frenchSentence": "Le chat dort."
+    },
+    {
+      "word": "car",
+      "sentence": "I have a car.",
+      "category": "nom",
+      "frenchWord": "voiture",
+      "frenchSentence": "Je possède une voiture."
+    },
+    {
+      "word": "apple",
+      "sentence": "She eats an apple.",
+      "category": "nom",
+      "frenchWord": "pomme",
+      "frenchSentence": "Elle mange une pomme."
+    },
+    {
+      "word": "red",
+      "sentence": "I see a red car.",
+      "category": "adjectif",
+      "frenchWord": "rouge",
+      "frenchSentence": "Je vois une voiture rouge."
+    },
+    {
+      "word": "small",
+      "sentence": "I see a small cat.",
+      "category": "adjectif",
+      "frenchWord": "petit",
+      "frenchSentence": "Je vois un petit chat."
+    }
+  ],
+  "es": [
+    {
+      "word": "Yo",
+      "sentence": "Yo tengo un coche.",
+      "category": "sujet",
+      "frenchWord": "Je",
+      "frenchSentence": "Je possède une voiture."
+    },
+    {
+      "word": "Nosotros",
+      "sentence": "Nosotros comemos una manzana.",
+      "category": "sujet",
+      "frenchWord": "Nous",
+      "frenchSentence": "Nous mangeons une pomme."
+    },
+    {
+      "word": "come",
+      "sentence": "Ella come una manzana.",
+      "category": "verbe",
+      "frenchWord": "mange",
+      "frenchSentence": "Elle mange une pomme."
+    },
+    {
+      "word": "duerme",
+      "sentence": "El gato duerme.",
+      "category": "verbe",
+      "frenchWord": "dort",
+      "frenchSentence": "Le chat dort."
+    },
+    {
+      "word": "coche",
+      "sentence": "Yo tengo un coche.",
+      "category": "nom",
+      "frenchWord": "voiture",
+      "frenchSentence": "Je possède une voiture."
+    },
+    {
+      "word": "manzana",
+      "sentence": "Ella come una manzana.",
+      "category": "nom",
+      "frenchWord": "pomme",
+      "frenchSentence": "Elle mange une pomme."
+    },
+    {
+      "word": "rojo",
+      "sentence": "Veo un coche rojo.",
+      "category": "adjectif",
+      "frenchWord": "rouge",
+      "frenchSentence": "Je vois une voiture rouge."
+    },
+    {
+      "word": "pequeño",
+      "sentence": "Veo un gato pequeño.",
+      "category": "adjectif",
+      "frenchWord": "petit",
+      "frenchSentence": "Je vois un petit chat."
+    }
+  ],
+  "it": [
+    {
+      "word": "Io",
+      "sentence": "Io ho una macchina.",
+      "category": "sujet",
+      "frenchWord": "Je",
+      "frenchSentence": "Je possède une voiture."
+    },
+    {
+      "word": "Noi",
+      "sentence": "Noi mangiamo una mela.",
+      "category": "sujet",
+      "frenchWord": "Nous",
+      "frenchSentence": "Nous mangeons une pomme."
+    },
+    {
+      "word": "mangia",
+      "sentence": "Lei mangia una mela.",
+      "category": "verbe",
+      "frenchWord": "mange",
+      "frenchSentence": "Elle mange une pomme."
+    },
+    {
+      "word": "dorme",
+      "sentence": "Il gatto dorme.",
+      "category": "verbe",
+      "frenchWord": "dort",
+      "frenchSentence": "Le chat dort."
+    },
+    {
+      "word": "macchina",
+      "sentence": "Io ho una macchina.",
+      "category": "nom",
+      "frenchWord": "voiture",
+      "frenchSentence": "Je possède une voiture."
+    },
+    {
+      "word": "mela",
+      "sentence": "Lei mangia una mela.",
+      "category": "nom",
+      "frenchWord": "pomme",
+      "frenchSentence": "Elle mange une pomme."
+    },
+    {
+      "word": "rossa",
+      "sentence": "Vedo una macchina rossa.",
+      "category": "adjectif",
+      "frenchWord": "rouge",
+      "frenchSentence": "Je vois une voiture rouge."
+    },
+    {
+      "word": "piccolo",
+      "sentence": "Vedo un gatto piccolo.",
+      "category": "adjectif",
+      "frenchWord": "petit",
+      "frenchSentence": "Je vois un petit chat."
+    }
+  ],
+  "ja": [
+    {
+      "word": "私",
+      "sentence": "私は車を持っています。",
+      "category": "sujet",
+      "frenchWord": "Je",
+      "frenchSentence": "Je possède une voiture."
+    },
+    {
+      "word": "私たち",
+      "sentence": "私たちはりんごを食べます。",
+      "category": "sujet",
+      "frenchWord": "Nous",
+      "frenchSentence": "Nous mangeons une pomme."
+    },
+    {
+      "word": "食べます",
+      "sentence": "彼女はりんごを食べます。",
+      "category": "verbe",
+      "frenchWord": "mange",
+      "frenchSentence": "Elle mange une pomme."
+    },
+    {
+      "word": "寝ます",
+      "sentence": "猫は寝ます。",
+      "category": "verbe",
+      "frenchWord": "dort",
+      "frenchSentence": "Le chat dort."
+    },
+    {
+      "word": "車",
+      "sentence": "私は車を持っています。",
+      "category": "nom",
+      "frenchWord": "voiture",
+      "frenchSentence": "Je possède une voiture."
+    },
+    {
+      "word": "りんご",
+      "sentence": "彼女はりんごを食べます。",
+      "category": "nom",
+      "frenchWord": "pomme",
+      "frenchSentence": "Elle mange une pomme."
+    },
+    {
+      "word": "赤い",
+      "sentence": "赤い車を見ます。",
+      "category": "adjectif",
+      "frenchWord": "rouge",
+      "frenchSentence": "Je vois une voiture rouge."
+    },
+    {
+      "word": "小さい",
+      "sentence": "小さい猫を見ます。",
+      "category": "adjectif",
+      "frenchWord": "petit",
+      "frenchSentence": "Je vois un petit chat."
+    }
+  ],
+  "zh": [
+    {
+      "word": "我",
+      "sentence": "我有一辆车。",
+      "category": "sujet",
+      "frenchWord": "Je",
+      "frenchSentence": "Je possède une voiture."
+    },
+    {
+      "word": "我们",
+      "sentence": "我们吃一个苹果。",
+      "category": "sujet",
+      "frenchWord": "Nous",
+      "frenchSentence": "Nous mangeons une pomme."
+    },
+    {
+      "word": "吃",
+      "sentence": "她吃一个苹果。",
+      "category": "verbe",
+      "frenchWord": "mange",
+      "frenchSentence": "Elle mange une pomme."
+    },
+    {
+      "word": "睡觉",
+      "sentence": "猫睡觉。",
+      "category": "verbe",
+      "frenchWord": "dort",
+      "frenchSentence": "Le chat dort."
+    },
+    {
+      "word": "车",
+      "sentence": "我有一辆车。",
+      "category": "nom",
+      "frenchWord": "voiture",
+      "frenchSentence": "Je possède une voiture."
+    },
+    {
+      "word": "苹果",
+      "sentence": "她吃一个苹果。",
+      "category": "nom",
+      "frenchWord": "pomme",
+      "frenchSentence": "Elle mange une pomme."
+    },
+    {
+      "word": "红色",
+      "sentence": "我看见一辆红色的车。",
+      "category": "adjectif",
+      "frenchWord": "rouge",
+      "frenchSentence": "Je vois une voiture rouge."
+    },
+    {
+      "word": "小",
+      "sentence": "我看见一只小猫。",
+      "category": "adjectif",
+      "frenchWord": "petit",
+      "frenchSentence": "Je vois un petit chat."
+    }
+  ]
+}
