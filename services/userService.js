@@ -35,7 +35,7 @@ function toUsableUser(doc) {
 // pouvoir être exfiltré depuis le navigateur).
 function toSafeUser(user) {
   if (!user) return null;
-  const { passwordHash, emailHash, emailEncrypted, ...safe } = user;
+  const { passwordHash, emailHash, emailEncrypted, wordHistory, lessonHistory, ...safe } = user;
   return safe;
 }
 
@@ -414,7 +414,29 @@ async function trackLogin(email) {
   }
 }
 
+async function recordWordSeen(email, entry, now = new Date()) {
+  const existing = await findByEmail(email);
+  if (!existing) throw new Error('Utilisateur introuvable.');
+  const date = now.toISOString().slice(0, 10);
+  const same = (existing.wordHistory || []).some((h) => h.language === entry.language && h.level === entry.level && h.word === entry.word && String(h.seenAt).slice(0, 10) === date);
+  if (same) return;
+  const update = { $push: { wordHistory: { $each: [{ ...entry, seenAt: now.toISOString() }], $slice: -1000 } } };
+  const result = await usersCollection().updateOne({ emailHash: hashForLookup(normalizeEmail(email)) }, update);
+  if (!result.matchedCount) await usersCollection().updateOne({ email: normalizeEmail(email) }, update);
+}
+
+async function recordLessonSeen(email, entry, now=new Date()) {
+  const existing=await findByEmail(email);if(!existing)throw new Error('Utilisateur introuvable.');
+  const day=now.toISOString().slice(0,10);
+  if((existing.lessonHistory||[]).some(h=>h.language===entry.language&&h.level===entry.level&&h.lessonId===entry.lessonId&&String(h.seenAt).slice(0,10)===day))return;
+  const update={$push:{lessonHistory:{$each:[{...entry,seenAt:now.toISOString()}],$slice:-1000}}};
+  const result=await usersCollection().updateOne({emailHash:hashForLookup(normalizeEmail(email))},update);
+  if(!result.matchedCount)await usersCollection().updateOne({email:normalizeEmail(email)},update);
+}
+
 module.exports = {
+  recordLessonSeen,
+  recordWordSeen,
   addUser,
   getAllUsers,
   findByEmail,

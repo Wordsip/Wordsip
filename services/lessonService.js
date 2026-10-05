@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { getDB } = require('./db');
+const { mergeLessons } = require('./lessonContentService');
 
 const SEED_FILE = path.join(__dirname, '..', 'data', 'lessons.seed.json');
 
@@ -45,7 +46,7 @@ async function reseedFromFile() {
 
 async function getLessonsForLanguage(language) {
   const doc = await lessonsCollection().findOne({ _id: language });
-  return doc?.lessons || [];
+  return mergeLessons(language, doc?.lessons || []);
 }
 
 module.exports = { seedIfEmpty, reseedFromFile, getLessonsForLanguage };

@@ -32,6 +32,74 @@ const LATEST_VIDEO_FILE = path.join(__dirname, '..', 'data', 'latest-video.json'
 // laissant fonctionner les liens normaux (ex. cliquer un lien vers le site
 // depuis un email). 30 jours de validité, comme sessionService.SESSION_DAYS.
 const SESSION_COOKIE_NAME = 'wordsip_session';
+const weekGameService = require('../services/weekGameService');
+const vocabularyHelpService = require('../services/vocabularyHelpService');
+const learningPathService = require('../services/learningPathService');
+
+router.get('/jeu-semaine', (req, res) => res.sendFile('jeu-semaine.html', { root: 'public' }));
+router.get('/fiche-quotidien', (req, res) => res.sendFile('fiche-quotidien.html', { root: 'public' }));
+router.get('/jeux', (req, res) => res.sendFile('jeux.html', { root: 'public' }));
+router.get('/api/learning-games/:language', async (req, res) => {
+  if (!weekGameService.LANGUAGES.includes(req.params.language)) return res.status(400).json({error:'Langue non reconnue.'});
+  try {
+    const lessons = (await lessonService.getLessonsForLanguage(req.params.language)).filter(l=>l.type==='vocabulary');
+    res.json({language:req.params.language,lessons});
+  } catch {res.status(500).json({error:'Impossible de charger les fiches des jeux.'});}
+});
+router.post('/api/lesson-seen',async(req,res)=>{
+  try{
+    const user=await gameUser(req);if(!user)return res.status(404).json({error:'Utilisateur introuvable.'});
+    const lessons=await lessonService.getLessonsForLanguage(user.language);
+    const verbReference=req.body.lessonId==='__irregular_verbs__'&&(await irregularVerbsService.getVerbsForLanguage(user.language)).length>0;
+    if(!verbReference&&!lessons.some(l=>l.id===req.body.lessonId))return res.status(400).json({error:'Fiche introuvable dans la langue active.'});
+    await userService.recordLessonSeen(user.email,{language:user.language,level:wordService.getSubLevel(user),lessonId:req.body.lessonId});res.json({ok:true});
+  }catch{res.status(500).json({error:'Impossible d’enregistrer la fiche consultée.'});}
+});
+router.get('/api/learning-path',async(req,res)=>{
+  try{
+    const user=await gameUser(req);if(!user)return res.status(404).json({error:'Utilisateur introuvable.'});
+    const level=wordService.getSubLevel(user),lessons=await lessonService.getLessonsForLanguage(user.language);
+    const ids=learningPathService.selectWeekLessons(user.lessonHistory,user.language,level);
+    const words=weekGameService.selectWeekWords(user.wordHistory,user.language,level);
+    res.json({...learningPathService.buildPath(lessons,ids,words.length,level),words,language:user.language,from:weekGameService.weekStart().toISOString()});
+  }catch{res.status(500).json({error:'Impossible de charger le parcours.'});}
+});
+
+router.get('/api/vocabulary-help/:language', (req, res) => {
+  try { res.json({ language: req.params.language, entries: vocabularyHelpService.getGlossary(req.params.language) }); }
+  catch (error) { res.status(400).json({ error: error.message }); }
+});
+
+async function gameUser(req) {
+  const token = readSessionCookie(req);
+  const sessionEmail = token ? await sessionService.getEmailFromToken(token) : null;
+  const email = sessionEmail || req.query.email || req.body?.email;
+  return email ? userService.findByEmail(email) : null;
+}
+
+router.post('/api/word-seen', async (req, res) => {
+  try {
+    const user = await gameUser(req);
+    if (!user) return res.status(404).json({ error: 'Utilisateur introuvable.' });
+    const language = user.language, level = wordService.getSubLevel(user);
+    const bank = await wordService.getWordsForLanguage(language);
+    const list = bank?.[level]?.length ? bank[level] : bank?.niveau1 || [];
+    const word = list.find((w) => !w.disabled && w.word === req.body.word);
+    if (!word) return res.status(400).json({ error: 'Mot absent du niveau actif.' });
+    await userService.recordWordSeen(user.email, { language, level, word: word.word, translation: word.translation });
+    res.json({ ok: true });
+  } catch (error) { res.status(500).json({ error: 'Impossible d’enregistrer le mot consulté.' }); }
+});
+
+router.get('/api/week-game', async (req, res) => {
+  try {
+    const user = await gameUser(req);
+    if (!user) return res.status(404).json({ error: 'Connecte-toi pour retrouver tes mots de la semaine.' });
+    const level = wordService.getSubLevel(user);
+    const words = weekGameService.selectWeekWords(user.wordHistory, user.language, level);
+    res.json({ language: user.language, level, words, from: weekGameService.weekStart().toISOString() });
+  } catch (error) { res.status(500).json({ error: 'Impossible de charger tes mots de la semaine.' }); }
+});
 
 function readSessionCookie(req) {
   const header = req.headers.cookie;
