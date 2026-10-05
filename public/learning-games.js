@@ -24,11 +24,12 @@
     active=game;score=0;selection=null;matched=[];ballRound=0;oddRound=0;roundIndex=0;$('learning-score').textContent=0;$('game-panel').hidden=false;$('game-title').textContent=names[game];$('game-next').hidden=true;feedback('');
     document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));
     if(game==='matching')startMatching();else if(game==='ball'){ballPrompts=G.shuffle(difficulty.positions);renderBall();}else if(game==='odd')renderOdd();else if(game==='verbs')renderVerbs();else if(game==='images')renderImages();else renderListening();
+    $('game-panel').scrollIntoView({block:'start',behavior:'instant'});
   }
   function startMatching(){
     const bank=G.shuffle(currentLesson().vocabulary).slice(0,difficulty.pairs).map((v,i)=>({...v,id:String(i)}));
     $('game-instructions').textContent=`Cliquez sur un mot, puis sur sa traduction française. Reliez les ${bank.length} paires ; vous pouvez aussi commencer par la traduction.`;
-    $('game-area').innerHTML=`<div class="matching-board"><svg class="matching-lines" aria-hidden="true"></svg><div class="matching-column"><h3>Langue étudiée</h3>${bank.map(v=>`<button class="matching-choice" data-pair="${v.id}" data-side="word">${esc(v.term)}</button>`).join('')}</div><div class="matching-column"><h3>Français</h3>${G.shuffle(bank).map(v=>`<button class="matching-choice" data-pair="${v.id}" data-side="fr">${esc(v.translation)}</button>`).join('')}</div></div>`;
+    $('game-area').innerHTML=`<div class="game-steps"><span>1 · Sélectionnez un mot</span><span>2 · Touchez sa traduction</span><span>3 · La liaison apparaît</span></div><div class="matching-board"><svg class="matching-lines" aria-hidden="true"></svg><div class="matching-column"><h3>Langue étudiée</h3>${bank.map(v=>`<button class="matching-choice" data-pair="${v.id}" data-side="word">${esc(v.term)}</button>`).join('')}</div><div class="matching-column"><h3>Français</h3>${G.shuffle(bank).map(v=>`<button class="matching-choice" data-pair="${v.id}" data-side="fr">${esc(v.translation)}</button>`).join('')}</div></div>`;
     $('game-area').querySelectorAll('.matching-choice').forEach(b=>b.onclick=()=>{
       if(!selection||selection.dataset.side===b.dataset.side){selection?.classList.remove('selected');selection=b;b.classList.add('selected');return;}
       const correct=G.matches(selection.dataset.pair,b.dataset.pair);updateScore(correct);
@@ -47,23 +48,40 @@
     if(ballRound>=ballPrompts.length){result();return;}
     const key=ballPrompts[ballRound],phrase=instructions[language][key];ballLocation=[320,365];
     $('game-instructions').innerHTML=`<span class="ball-progress">Consigne ${ballRound+1}/${ballPrompts.length}</span><br><span class="vocab-word" role="button" tabindex="0" data-vocab-term="${esc(phrase)}" data-vocab-translation="${esc(meanings[key])}">${esc(phrase)}</span>`;
-    const drops=Object.entries(G.positions).map(([id,[x,y]],i)=>`<g data-drop="${id}" role="button" tabindex="0" aria-label="Emplacement ${i+1}"><circle class="ball-drop" cx="${x}" cy="${y}" r="24"></circle><text x="${x}" y="${y+5}" text-anchor="middle" font-size="14" fill="#526c70">${i+1}</text></g>`).join('');
-    $('game-area').innerHTML=`<svg class="ball-scene" viewBox="0 0 640 400" aria-label="Une boîte au centre, sept emplacements et une balle à déplacer"><rect class="ball-ref" x="250" y="140" width="140" height="120" rx="4"></rect>${drops}<circle id="learning-ball" class="ball-token" cx="320" cy="365" r="18" tabindex="0" role="slider" aria-label="Balle : utiliser les flèches puis Entrée pour vérifier" aria-valuemin="0" aria-valuemax="640" aria-valuenow="320"></circle></svg><div class="ball-controls"><button id="ball-listen" type="button">🔊 Écouter la consigne</button><button id="ball-check" type="button">Vérifier ma position</button></div><p class="ball-progress">Glissez la balle vers un cercle, ou cliquez sur un emplacement puis sur Vérifier. Au clavier : Tab pour choisir un emplacement, Entrée pour y poser la balle ; ou flèches sur la balle, puis Entrée. Les numéros ne donnent pas les traductions.</p>`;
-    const svg=$('game-area').querySelector('svg'),ball=$('learning-ball');let dragging=false,checked=false;
-    function move(x,y){ballLocation=[Math.max(18,Math.min(622,x)),Math.max(18,Math.min(382,y))];ball.setAttribute('cx',ballLocation[0]);ball.setAttribute('cy',ballLocation[1]);ball.setAttribute('aria-valuenow',Math.round(ballLocation[0]));ball.setAttribute('aria-valuetext',`Position ${Math.round(ballLocation[0])}, ${Math.round(ballLocation[1])}`);}
+    // Next to and right/left can both describe the same placement. Never oppose those legitimate answers.
+    const candidates=G.shuffle(difficulty.positions.filter(id=>key==='next'?!['left','right'].includes(id):['left','right'].includes(key)?id!=='next':true));
+    let selected=null,checked=false;
+    $('game-area').innerHTML=`<div class="game-steps"><span>1 · Lisez ou écoutez</span><span>2 · Choisissez la scène</span><span>3 · Vérifiez</span></div><div class="ball-workbench"><div class="ball-main">${WordSipVisuals.ballScene('start',true)}<p class="scene-caption">Votre placement</p></div><div class="ball-options">${candidates.map((id,i)=>`<button type="button" class="ball-option" data-position="${id}" aria-label="Scène ${i+1} : ${esc(meanings[id])}" aria-pressed="false">${WordSipVisuals.ballScene(id)}<span>Scène ${i+1}</span></button>`).join('')}</div></div><div class="ball-controls"><button id="ball-listen" type="button">🔊 Écouter la consigne</button><button id="ball-check" type="button" disabled>Vérifier mon choix</button></div><p class="ball-progress">Cliquez sur une scène pour placer la balle, puis vérifiez. Vous pouvez aussi déplacer la balle dans la grande scène avec la souris, le toucher ou les flèches du clavier. La boîte est transparente pour voir la balle à l’intérieur.</p>`;
+    let svg=$('game-area').querySelector('.interactive-scene'),ball=$('learning-ball'),dragging=false;
+    function bindBall(){
+      ball.onpointerdown=e=>{if(checked)return;e.preventDefault();dragging=true;ball.setPointerCapture(e.pointerId);};
+      ball.onpointermove=e=>{if(!dragging)return;const p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;const at=p.matrixTransform(svg.getScreenCTM().inverse());move(at.x,at.y);};
+      ball.onpointerup=()=>{dragging=false;};ball.onpointercancel=()=>dragging=false;
+      ball.onkeydown=e=>{if(checked)return;if(e.key==='Enter'){e.preventDefault();check();return;}const delta={ArrowLeft:[-10,0],ArrowRight:[10,0],ArrowUp:[0,-10],ArrowDown:[0,10]}[e.key];if(delta){e.preventDefault();move(ballLocation[0]+delta[0],ballLocation[1]+delta[1]);}};
+    }
+    function move(x,y){
+      if(checked)return;selected=null;ballLocation=[Math.max(18,Math.min(622,x)),Math.max(18,Math.min(382,y))];
+      $('game-area').querySelectorAll('[data-position]').forEach(b=>b.setAttribute('aria-pressed','false'));
+      ball.setAttribute('cx',ballLocation[0]);ball.setAttribute('cy',ballLocation[1]);ball.setAttribute('aria-valuenow',Math.round(ballLocation[0]));$('ball-check').disabled=false;
+      // Keep the transparent front face in front of the ball when it is inside.
+      const fronts=svg.querySelectorAll('rect');const front=fronts[1];if(x>=268&&x<=372&&y>=158&&y<=242&&front)svg.insertBefore(ball,front);else svg.append(ball);
+    }
     function check(){
       if(checked)return;
-      const[x,y]=ballLocation;let correct=G.placement(key,x,y);
+      const[x,y]=ballLocation;
+      const correct=selected?selected===key:G.placement(key,x,y)||(key==='right'&&G.placement('next',x,y))||(key==='left'&&Math.hypot(x-210,y-200)<=24);
       updateScore(correct);
-      if(correct){checked=true;feedback('Bonne position ! '+meanings[key]+' +10 points.');$('game-next').hidden=false;$('game-next').onclick=()=>{ballRound++;feedback('');$('game-next').hidden=true;renderBall();};}
-      else feedback('Pas encore. −5 points. '+meanings[key]+' Replacez la balle puis vérifiez.',false);
+      if(correct){checked=true;$('ball-check').disabled=true;feedback('Bonne position ! '+meanings[key]+' +10 points.');$('game-next').hidden=false;$('game-next').onclick=()=>{gameGeneration++;activeAudio?.pause();activeAudio=null;ballRound++;feedback('');$('game-next').hidden=true;renderBall();};}
+      else feedback('−5 points. '+meanings[key]+' Observez le contact et la distance, puis essayez à nouveau.',false);
     }
-    ball.onpointerdown=e=>{if(checked)return;e.preventDefault();dragging=true;ball.setPointerCapture(e.pointerId);};
-    ball.onpointermove=e=>{if(!dragging)return;const p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;const at=p.matrixTransform(svg.getScreenCTM().inverse());move(at.x,at.y);};
-    ball.onpointerup=()=>{if(dragging){dragging=false;check();}};ball.onpointercancel=()=>dragging=false;
-    ball.onkeydown=e=>{if(checked)return;if(e.key==='Enter'){e.preventDefault();check();return;}const step=20;if(e.key==='ArrowLeft')move(ballLocation[0]-step,ballLocation[1]);else if(e.key==='ArrowRight')move(ballLocation[0]+step,ballLocation[1]);else if(e.key==='ArrowUp')move(ballLocation[0],ballLocation[1]-step);else if(e.key==='ArrowDown')move(ballLocation[0],ballLocation[1]+step);else return;e.preventDefault();};
-    svg.querySelectorAll('[data-drop]').forEach(g=>{const place=()=>{if(!checked)move(...G.positions[g.dataset.drop]);};g.onclick=place;g.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();place();}};});
-    $('ball-check').onclick=check;$('ball-listen').onclick=()=>new Audio('/api/tts?text='+encodeURIComponent(phrase)+'&lang='+language).play().catch(()=>{});
+    $('game-area').querySelectorAll('[data-position]').forEach(b=>b.onclick=()=>{
+      if(checked)return;selected=b.dataset.position;ballLocation=G.positions[selected].slice();
+      $('game-area').querySelectorAll('[data-position]').forEach(a=>a.setAttribute('aria-pressed',String(a===b)));
+      $('game-area').querySelector('.ball-main').innerHTML=WordSipVisuals.ballScene(selected,true)+'<p class="scene-caption">Votre placement · '+b.textContent.trim()+'</p>';
+      svg=$('game-area').querySelector('.interactive-scene');ball=$('learning-ball');bindBall();$('ball-check').disabled=false;feedback('Scène choisie. Vérifiez quand vous êtes prêt.');
+    });
+    bindBall();$('ball-check').onclick=check;
+    $('ball-listen').onclick=()=>{const generation=gameGeneration;activeAudio?.pause();activeAudio=new Audio('/api/tts?text='+encodeURIComponent(phrase)+'&lang='+language);activeAudio.play().catch(()=>{if(generation===gameGeneration)feedback('Audio indisponible. La consigne écrite reste utilisable.',false);});};
   }
   function renderOdd(){
     if(oddRound>=5){result();return;}
@@ -73,7 +91,7 @@
     const ordinary=G.shuffle(theme.vocabulary).slice(0,difficulty.oddOptions-1).map(v=>({...v,odd:false})),intruder={...G.shuffle(other.vocabulary)[0],odd:true};
     const options=G.shuffle([...ordinary,intruder]);
     $('game-instructions').textContent=`Série ${oddRound+1}/5 — Quel mot n’appartient pas au thème « ${theme.title.split(' — ')[0]} » ?`;
-    $('game-area').innerHTML=`<div class="odd-choices">${options.map((v,i)=>`<button type="button" data-odd-index="${i}">${esc(v.term)}</button>`).join('')}</div>`;
+    $('game-area').innerHTML=`<div class="game-steps"><span>1 · Repérez le thème</span><span>2 · Écartez le mot différent</span></div><div class="odd-choices">${options.map((v,i)=>`<button type="button" data-odd-index="${i}">${esc(v.term)}</button>`).join('')}</div>`;
     $('game-area').querySelectorAll('button').forEach(b=>b.onclick=()=>{const v=options[Number(b.dataset.oddIndex)];updateScore(v.odd);b.classList.add(v.odd?'right':'wrong');$('game-area').querySelectorAll('button').forEach(a=>{a.disabled=true;if(options[Number(a.dataset.oddIndex)].odd)a.classList.add('right');});feedback(`${v.odd?'Bonne réponse ! +10.':'−5 points.'} L’intrus est ${intruder.term} (${intruder.translation}), thème ${other.title.split(' — ')[0].toLowerCase()}.`,v.odd);$('game-next').hidden=false;$('game-next').onclick=()=>{oddRound++;feedback('');$('game-next').hidden=true;renderOdd();};});
   }
   function next(callback){$('game-next').hidden=false;$('game-next').onclick=()=>{gameGeneration++;activeAudio?.pause();activeAudio=null;roundIndex++;feedback('');$('game-next').hidden=true;callback();};}
@@ -84,12 +102,12 @@
     if(!theme){$('game-area').textContent='Choisissez Couleurs, Lieux, Vêtements ou Cuisine pour jouer avec les images.';return;}
     const bank=G.shuffle(lesson.vocabulary.map((v,i)=>({...v,index:i}))).slice(0,3);let selected=null,done=0;
     $('game-instructions').textContent='Sélectionnez un mot, puis placez-le sous la bonne illustration en cliquant sur son emplacement. Le clavier et le toucher fonctionnent aussi.';
-    const picture=v=>theme==='couleurs'?`<svg viewBox="0 0 120 100" role="img" aria-label="${esc(v.translation)}"><circle cx="60" cy="50" r="35" fill="${esc(v.swatch)}" stroke="#526c70" stroke-width="2"/></svg>`:`<svg viewBox="0 0 120 100" role="img" aria-label="${esc(v.translation)}"><rect x="1" y="1" width="118" height="98" rx="14" fill="#eaf6f5"/><text x="60" y="67" font-size="55" text-anchor="middle">${illustrations[theme][v.index]}</text></svg>`;
+    const picture=v=>WordSipVisuals.picture(theme,v.index,v.swatch,v.translation);
     // The kitchen room and cooking action are contextual phrases, not distinct object drawings.
     const filtered=bank.filter(v=>!(theme==='cuisine'&&[0,7].includes(v.index)));
     const choices=filtered.length===3?filtered:G.shuffle(lesson.vocabulary.map((v,i)=>({...v,index:i})).filter(v=>theme!=='cuisine'||![0,7].includes(v.index))).slice(0,3);
-    const specialPicture=v=>theme==='cuisine'&&v.index===1?'<svg viewBox="0 0 120 100" role="img" aria-label="Casserole"><path d="M30 35H90V75Q60 90 30 75Z" fill="#91b5bb" stroke="#2b7a78" stroke-width="3"/><path d="M30 45H15V62H30M90 45H105V62H90" fill="none" stroke="#2b7a78" stroke-width="5"/></svg>':picture(v);
-    $('game-area').innerHTML=`<div class="picture-grid">${choices.map(v=>`<div class="picture-card">${specialPicture(v)}<button class="picture-drop" data-picture-id="${v.index}" aria-label="Placer le mot sous l’illustration : ${esc(v.translation)}">Placer ici</button></div>`).join('')}</div><div class="picture-words">${G.shuffle(choices).map(v=>`<button class="picture-word" data-picture-word="${v.index}">${esc(v.term)}</button>`).join('')}</div>`;
+    const specialPicture=picture;
+    $('game-area').innerHTML=`<div class="game-steps"><span>1 · Choisissez une étiquette</span><span>2 · Placez-la sous l’image</span></div><div class="picture-grid">${choices.map(v=>`<div class="picture-card">${specialPicture(v)}<button class="picture-drop" data-picture-id="${v.index}" aria-label="Placer le mot sous l’illustration : ${esc(v.translation)}">Placer ici</button></div>`).join('')}</div><div class="picture-words">${G.shuffle(choices).map(v=>`<button class="picture-word" data-picture-word="${v.index}">${esc(v.term)}</button>`).join('')}</div>`;
     $('game-area').querySelectorAll('[data-picture-word]').forEach(b=>b.onclick=()=>{$('game-area').querySelectorAll('.selected').forEach(el=>el.classList.remove('selected'));selected=b;b.classList.add('selected');});
     $('game-area').querySelectorAll('[data-picture-id]').forEach(b=>b.onclick=()=>{if(!selected){feedback('Choisissez d’abord un mot.',false);return;}const correct=selected.dataset.pictureWord===b.dataset.pictureId;updateScore(correct);if(correct){b.textContent=selected.textContent;b.disabled=selected.disabled=true;b.classList.add('matched');selected.classList.remove('selected');selected=null;done++;feedback('Le mot est placé sous la bonne image. +10.');if(done===3){feedback('Les trois images sont associées. Recommencez pour découvrir d’autres mots.');}}else{feedback('Ce mot ne désigne pas cette image. −5. Essayez un autre emplacement.',false);}});
   }
@@ -97,7 +115,7 @@
     if(roundIndex>=Math.min(5,difficulty.pairs)){result();return;}
     const bank=audioOverride||currentLesson().vocabulary,word=bank[roundIndex%bank.length],text=word.term||word.word;
     $('game-instructions').textContent=`Mot ${roundIndex+1} — Écoutez, puis écrivez ce que vous entendez. Aucun mot ni traduction n’est affiché avant votre réponse.`;
-    $('game-area').innerHTML='<div class="sound-game"><button id="sound-play" type="button">🔊 Écouter / réécouter</button><label>Le mot entendu<input id="sound-answer" autocomplete="off" autocapitalize="none" spellcheck="false"></label><button id="sound-check" type="button" disabled>Vérifier</button><p id="sound-status" role="status"></p></div>';
+    $('game-area').innerHTML='<div class="game-steps"><span>1 · Écoutez</span><span>2 · Écrivez</span><span>3 · Vérifiez</span></div><div class="sound-game"><div class="sound-orb" aria-hidden="true">♫</div><button id="sound-play" type="button">🔊 Écouter / réécouter</button><label>Le mot entendu<input id="sound-answer" autocomplete="off" autocapitalize="none" spellcheck="false"></label><button id="sound-check" type="button" disabled>Vérifier</button><p id="sound-status" role="status"></p></div>';
     let checked=false,heard=false;const generation=gameGeneration,status=$('sound-status'),checkButton=$('sound-check');
     $('sound-play').onclick=()=>{activeAudio?.pause();const audio=activeAudio=new Audio('/api/tts?text='+encodeURIComponent(text.split(' / ')[0])+'&lang='+language);audio.onplaying=()=>{if(generation!==gameGeneration){audio.pause();return;}heard=true;checkButton.disabled=false;status.textContent='Écoute en cours…';};audio.onended=()=>{status.textContent='Vous pouvez réécouter.';};audio.onerror=()=>{status.textContent='Le son est indisponible. Réessayez ; aucune réponse n’est comptée sans lecture audio.';};audio.play().catch(()=>{status.textContent='Lecture impossible. Cliquez à nouveau sur Écouter.';});};
     const check=()=>{if(checked||!heard)return;const value=$('sound-answer').value;if(!value.trim()){feedback('Écrivez le mot entendu avant de vérifier.',false);return;}const answers=text.split(' / ');if(level==='niveau1'&&word.reading)answers.push(word.reading);const correct=WordSipVerbs.accepts(value,answers);updateScore(correct);checked=true;$('sound-answer').disabled=true;$('sound-check').disabled=true;feedback(`${correct?'Bonne transcription ! +10.':'−5 points.'} Réponse : ${text} — ${word.translation}${word.reading?' · '+word.reading:''}.`,correct);next(renderListening);};
@@ -113,7 +131,7 @@
       const round=WordSipVerbs.presentRound(language,offset,level);answers=[round.answer];question=`Présent : ${round.person} + ${round.verb.base} (${round.verb.translation})`;
       rule=round.ending?`${round.verb.stem} + ${round.ending} → ${round.answer}.`:`Verbe irrégulier : retenir la forme entière ${round.answer}.`;
       if(round.ending&&level!=='niveau3')tiles=[...new Set(round.verb.endings)];
-      if(tiles){$('game-instructions').textContent=question;$('game-area').innerHTML=`<p class="verb-stem">${esc(round.stem)} + <strong>?</strong></p><div class="odd-choices">${G.shuffle(tiles).map(t=>`<button data-ending="${esc(t)}">-${esc(t)}</button>`).join('')}</div><p>Choisissez la terminaison. Les accents font partie de la forme.</p>`;$('game-area').querySelectorAll('[data-ending]').forEach(b=>b.onclick=()=>{const correct=b.dataset.ending===round.ending;updateScore(correct);$('game-area').querySelectorAll('button').forEach(a=>{a.disabled=true;if(a.dataset.ending===round.ending)a.classList.add('right');});if(!correct)b.classList.add('wrong');feedback((correct?'Bonne terminaison ! +10.':'−5 points. ')+rule,correct);next(renderVerbs);});return;}
+      if(tiles){$('game-instructions').textContent=question;$('game-area').innerHTML=`<div class="game-steps"><span>1 · Repérez la personne</span><span>2 · Assemblez la terminaison</span></div><p class="verb-stem">${esc(round.stem)} + <strong>?</strong></p><div class="odd-choices">${G.shuffle(tiles).map(t=>`<button data-ending="${esc(t)}">-${esc(t)}</button>`).join('')}</div><p>Choisissez la terminaison. Les accents font partie de la forme.</p>`;$('game-area').querySelectorAll('[data-ending]').forEach(b=>b.onclick=()=>{const correct=b.dataset.ending===round.ending;updateScore(correct);$('game-area').querySelectorAll('button').forEach(a=>{a.disabled=true;if(a.dataset.ending===round.ending)a.classList.add('right');});if(!correct)b.classList.add('wrong');feedback((correct?'Bonne terminaison ! +10.':'−5 points. ')+rule,correct);next(renderVerbs);});return;}
     }else if(language==='ja'){
       const forms=[['する','します','faire'],['来る','来ます','venir']],row=forms[roundIndex%2];question=`Forme polie au présent/non-passé : ${row[0]} (${row[2]})`;
       answers=[row[1]];if(level==='niveau1')answers.push(roundIndex%2?'kimasu':'shimasu');rule=`${row[0]} → ${row[1]}. Le non-passé japonais couvre le présent et le futur selon le contexte.`;
@@ -121,7 +139,7 @@
       try{const r=await fetch('/api/irregular-verbs/en');if(!r.ok)throw new Error();const {verbs}=await r.json();const bank=level==='niveau1'?verbs.slice(0,10):verbs,verb=bank[Math.floor(roundIndex/2)%bank.length],form=roundIndex%2?'participle':'past';question=`${form==='past'?'Prétérit':'Participe passé'} : ${verb.base} (${verb.translation})`;answers=String(verb[form]).split('/').map(s=>s.trim());if(verb.base==='get'&&form==='participle')answers=['got','gotten'];rule=`${verb.base} → ${verb.past} → ${verb.participle}${verb.base==='get'?' ; got est aussi un participe passé britannique.':''}`;}catch{if(generation===gameGeneration)$('game-area').textContent='Les verbes ne sont pas disponibles. Réessayez plus tard.';return;}
     }
     if(generation!==gameGeneration)return;
-    $('game-instructions').textContent=question;$('game-area').innerHTML='<div class="sound-game"><label>La forme du verbe<input id="verb-answer" autocomplete="off" autocapitalize="none" spellcheck="false"></label><button id="verb-check" type="button">Vérifier</button></div>';let checked=false;
+    $('game-instructions').textContent=question;$('game-area').innerHTML='<div class="game-steps"><span>1 · Identifiez la forme demandée</span><span>2 · Écrivez le verbe</span><span>3 · Vérifiez</span></div><div class="sound-game"><div class="verb-orb" aria-hidden="true">Aa</div><label>La forme du verbe<input id="verb-answer" autocomplete="off" autocapitalize="none" spellcheck="false"></label><button id="verb-check" type="button">Vérifier</button></div>';let checked=false;
     const check=()=>{if(checked)return;const value=$('verb-answer').value;if(!value.trim())return;checked=true;const correct=WordSipVerbs.accepts(value,answers);updateScore(correct);$('verb-answer').disabled=$('verb-check').disabled=true;feedback(`${correct?'Bonne forme ! +10.':'−5 points. Réponse : '+answers.join(' / ')+'. '}${rule}`,correct);next(renderVerbs);};$('verb-check').onclick=check;$('verb-answer').onkeydown=e=>{if(e.key==='Enter')check();};
   }
   async function loadPath(){

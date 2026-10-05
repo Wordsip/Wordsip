@@ -13,6 +13,21 @@
     const options=shuffle([correct,...wrong],random).map(label=>({label,correct:reverse?clean.some(w=>normal(w.word)===normal(label)&&normal(w.translation)===normal(prompt)):normal(label)===normal(correct)}));
     return {prompt,correct,reverse,options,pair};
   }
+  // A pair is true when both sides belong together, including alternate translations.
+  function pairRound(words,index=0,distractors=words,random=Math.random){
+    const clean=[...new Map(words.filter(w=>w.word&&w.translation).map(w=>[normal(w.word)+'|'+normal(w.translation),w])).values()];
+    if(!clean.length)return null;
+    const pair=clean[index%clean.length],reverse=Math.floor(index/clean.length)%2===1;
+    const pool=[...clean,...distractors].filter(w=>w.word&&w.translation);
+    const prompt=reverse?pair.word:pair.translation,correct=reverse?pair.translation:pair.word;
+    const valid=new Set(pool.filter(w=>normal(reverse?w.word:w.translation)===normal(prompt)).map(w=>normal(reverse?w.translation:w.word)));
+    const candidates=[...new Map(pool.map(w=>[normal(reverse?w.translation:w.word),reverse?w.translation:w.word])).values()];
+    const tokens=value=>normal(value).split(/[^\p{L}]+/u).filter(t=>t.length>2);
+    const related=value=>tokens(value).filter(t=>tokens(correct).includes(t)).length;
+    const wrong=shuffle(candidates.filter(v=>!valid.has(normal(v))),random).sort((a,b)=>related(b)-related(a)).slice(0,3);
+    const options=shuffle([correct,...wrong],random).map(value=>({left:prompt,right:value,label:prompt+' / '+value,correct:valid.has(normal(value))}));
+    return {prompt,correct,reverse,options,pair};
+  }
   function scoreHit(score,correct){return score+(correct?10:-5);}
-  return {normal,shuffle,round,scoreHit};
+  return {normal,shuffle,round,pairRound,scoreHit};
 });
