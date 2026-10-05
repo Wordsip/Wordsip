@@ -919,3 +919,15 @@ async function resolveSessionEmail() {
 }
 
 resolveSessionEmail().then(loadWord);
+
+// --- Anti-triche : flouter le mot dès qu'on fait défiler la page ---
+// Une fois qu'on a commencé à descendre (vers l'exercice, les mots voisins,
+// etc.), le mot du jour se floute pour qu'on ne puisse pas remonter d'un
+// oeil discret le relire pendant qu'on écrit. Il redevient net seulement
+// quand on est revenu tout en haut de la page.
+const SCROLL_BLUR_THRESHOLD = 40; // px — tolère un petit scroll involontaire
+window.addEventListener('scroll', () => {
+  const wordDisplay = document.getElementById('word-display');
+  if (!wordDisplay) return;
+  wordDisplay.classList.toggle('scroll-blurred', window.scrollY > SCROLL_BLUR_THRESHOLD);
+}, { passive: true });

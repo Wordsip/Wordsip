@@ -110,7 +110,12 @@ footer a { color: #2b7a78; }
 .word-display {
   text-align: center; font-size: 20px; font-weight: 600; letter-spacing: 2px;
   background: white; padding: 14px; border-radius: 12px; margin-bottom: 10px;
+  transition: filter .25s ease;
 }
+/* Anti-triche : flouté dès qu'on a fait défiler la page vers le bas
+   (voir mot-du-jour.js), pour ne pas pouvoir garder le mot visible pendant
+   qu'on écrit plus bas puis remonter discrètement jeter un oeil. */
+.word-display.scroll-blurred { filter: blur(7px); }
 .reveal-btn {
   width: 100%; background: white; color: #17252a; border: 1px solid #dceeed;
   border-radius: 999px; padding: 10px; font-size: 14px; margin-bottom: 8px;
