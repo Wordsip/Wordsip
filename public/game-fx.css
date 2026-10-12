@@ -1,0 +1,29 @@
+/* WordSip — effets partagés par les jeux (jeux.html et jeu-semaine.html) */
+.ws-fx-layer{position:fixed;left:0;top:0;pointer-events:none;z-index:9999}
+.ws-float{position:fixed;z-index:9998;pointer-events:none;font:900 26px/1 'Baloo 2','Nunito','Segoe UI',system-ui,sans-serif;transform:translate(-50%,-50%);animation:ws-float 1s cubic-bezier(.2,.8,.3,1) forwards;text-shadow:0 2px 0 #fff,0 0 12px #fff8;white-space:nowrap}
+.ws-float-good{color:#12a05c}.ws-float-bad{color:#e23d3d}.ws-float-combo{color:#ff7a00;font-size:32px}.ws-float-info{color:#2563eb}
+@keyframes ws-float{0%{opacity:0;transform:translate(-50%,-30%) scale(.5)}15%{opacity:1;transform:translate(-50%,-70%) scale(1.25)}100%{opacity:0;transform:translate(-50%,-190%) scale(1)}}
+@keyframes ws-shake{0%,100%{transform:translateX(0)}18%{transform:translateX(-9px) rotate(-1.2deg)}36%{transform:translateX(8px) rotate(1deg)}54%{transform:translateX(-6px)}72%{transform:translateX(4px)}}
+@keyframes ws-pop{0%{transform:scale(1)}40%{transform:scale(1.14)}70%{transform:scale(.96)}100%{transform:scale(1)}}
+@keyframes ws-bump{0%{transform:scale(1)}45%{transform:scale(1.35)}100%{transform:scale(1)}}
+@keyframes ws-pulse{0%,100%{opacity:1}50%{opacity:.55}}
+@keyframes ws-wobble{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(4deg) translateY(-5px)}}
+@keyframes ws-star-in{0%{opacity:0;transform:scale(0) rotate(-120deg)}70%{opacity:1;transform:scale(1.35) rotate(12deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes ws-rise{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+.ws-shake{animation:ws-shake .5s ease both}.ws-pop{animation:ws-pop .45s ease both}.ws-bump{animation:ws-bump .35s ease both}
+
+/* Chrono : barre qui se vide, rouge dans les derniers instants */
+.clock{height:14px;border-radius:99px;background:#0b2a3a1f;overflow:hidden;margin:12px 0 4px;box-shadow:inset 0 2px 4px #0003}
+.clock[hidden]{display:none}
+.clock i{display:block;height:100%;width:100%;transform-origin:left center;border-radius:99px;background:linear-gradient(90deg,#1fc98a,#9be23f 60%,#ffd23f)}
+.clock.warn i{background:linear-gradient(90deg,#ff4d4d,#ff9a3d);animation:ws-pulse .45s infinite}
+
+/* Bouton son */
+.sound-toggle{font:800 13px/1 'Nunito','Segoe UI',system-ui,sans-serif;border:0;border-radius:99px;padding:10px 16px;min-height:40px;cursor:pointer;background:#fff;color:#0d4f57;box-shadow:0 3px 0 #0d4f5733,0 6px 14px #0d4f5722;transition:transform .12s}
+.sound-toggle:hover{transform:translateY(-2px)}.sound-toggle:active{transform:translateY(1px)}
+.sound-toggle:focus-visible{outline:3px solid #ff7a3d;outline-offset:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .ws-float{animation:none;opacity:1}
+}
