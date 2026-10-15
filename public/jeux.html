@@ -2,7 +2,15 @@
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#83ffe7"><title>Jeux — WordSip</title><link rel="stylesheet" href="/vocabulary-help.css"><link rel="stylesheet" href="/game-fx.css"><link rel="stylesheet" href="/learning-games.css"></head>
 <body><main class="games-page">
 <nav class="top-nav"><a id="games-back" class="pill-link" href="/grammaire">← Fiches de cours</a><a id="games-word" class="pill-link" href="/mot-du-jour">Mon mot du jour</a><button id="sound-toggle" class="sound-toggle" type="button">🔊 Son activé</button><span class="brand">🥤 WordSip</span></nav>
-<header class="hero"><div class="hero-text"><p class="games-eyebrow">APPRENDRE EN JOUANT</p><h1>Les jeux <span>WordSip</span></h1><p>Comprendre un mot, le retrouver, puis l’utiliser. Enchaînez les bonnes réponses pour lancer des combos, gardez vos vies et battez votre record.</p></div><div class="hero-art" aria-hidden="true"><i>🎯</i><i>🧩</i><i>🎧</i><i>🚀</i></div></header>
+<div class="games-layout"><aside id="game-nav" class="game-nav" aria-label="Tous les jeux"><button id="games-home" class="nav-item nav-home" type="button"><i>🏠</i><span>Tous les jeux</span></button>
+<button class="nav-item tone-teal" data-game="matching"><i>🔗</i><span>Mots à relier</span></button>
+<button class="nav-item tone-orange" data-game="ball"><i>🔴</i><span>Où va la balle ?</span></button>
+<button class="nav-item tone-purple" data-game="odd"><i>🔎</i><span>Le mot intrus</span></button>
+<button class="nav-item tone-lime" data-game="verbs"><i>🧩</i><span>Atelier des verbes</span></button>
+<button class="nav-item tone-pink" data-game="images"><i>🖼️</i><span>Images et mots</span></button>
+<button class="nav-item tone-blue" data-game="listening"><i>🎧</i><span>Écouter et écrire</span></button>
+<button class="nav-item tone-slate" data-game="parking"><i>🅿️</i><span>Parking des phrases</span></button>
+<a class="nav-item tone-gold" href="/jeu-semaine"><i>🚀</i><span>Mission de la semaine</span></a></aside><div class="games-main"><header class="hero"><div class="hero-text"><p class="games-eyebrow">APPRENDRE EN JOUANT</p><h1>Les jeux <span>WordSip</span></h1><p>Comprendre un mot, le retrouver, puis l’utiliser. Enchaînez les bonnes réponses pour lancer des combos, gardez vos vies et battez votre record.</p></div><div class="hero-art" aria-hidden="true"><i>🎯</i><i>🧩</i><i>🎧</i><i>🚀</i></div></header>
 <section id="weekly-path" class="weekly-path" aria-live="polite"><h2>⭐ Mon parcours de la semaine</h2><p id="path-status">Chargement du parcours…</p><div id="path-games"></div></section>
 <h2 class="section-title">Jeux en accès libre</h2><div class="games-settings"><label>Langue <select id="games-language"><option value="en">Anglais</option><option value="es">Espagnol</option><option value="it">Italien</option><option value="ja">Japonais</option><option value="zh">Chinois</option></select></label><label>Thème pour le jeu des mots <select id="games-theme"></select></label></div><p id="games-error" role="status"></p>
 <div class="game-cards">
@@ -12,6 +20,7 @@
 <button class="game-card tone-lime" data-game="verbs"><span class="thumb">🧩</span><strong>L’atelier des verbes</strong><small>Irréguliers et terminaisons du présent, contre la montre.</small><em class="tile-meta"><b class="stars" aria-label="Difficulté : 3 sur 3">★★★</b><b class="best" data-best="verbs"></b></em></button>
 <button class="game-card tone-pink" data-game="images"><span class="thumb">🖼️</span><strong>Images et mots</strong><small>Glisser le bon mot sous chaque illustration.</small><em class="tile-meta"><b class="stars" aria-label="Difficulté : 1 sur 3">★☆☆</b><b class="best" data-best="images"></b></em></button>
 <button class="game-card tone-blue" data-game="listening"><span class="thumb">🎧</span><strong>Écouter et écrire</strong><small>Retrouver le mot à partir du son uniquement.</small><em class="tile-meta"><b class="stars" aria-label="Difficulté : 3 sur 3">★★★</b><b class="best" data-best="listening"></b></em></button>
+<button class="game-card tone-slate wide" data-game="parking"><span class="thumb">🅿️</span><strong>Parking des phrases <span class="new-badge">NOUVEAU</span></strong><small>Construisez une phrase en faisant sortir les voitures dans l’ordre : un vrai puzzle de parking avec des mots sur les plaques, des intrus et des obstacles.</small><em class="tile-meta"><b class="stars" aria-label="Difficulté : 3 sur 3">★★★</b><b class="best" data-best="parking"></b></em></button>
 <a class="game-card tone-gold wide" id="weekly-game" href="/jeu-semaine"><span class="thumb">🚀</span><strong>Mission de la semaine</strong><small>Un vrai jeu de tir spatial : visez la traduction des mots consultés cette semaine.</small><em class="tile-meta"><b class="stars" aria-label="Difficulté : 3 sur 3">★★★</b><b class="best" data-best="weekly"></b></em></a>
 </div>
 <section id="game-panel" hidden>
@@ -19,5 +28,6 @@
 <div class="clock" id="game-clock" hidden aria-hidden="true"><i id="game-clock-bar"></i></div>
 <div class="progress" id="game-progress" aria-hidden="true"></div>
 <p id="game-instructions"></p><div id="game-area"></div><p id="game-feedback" aria-live="polite"></p><button id="game-next" type="button" hidden>Continuer ▶</button></section>
+</div></div>
 <footer><p>+10 points pour une bonne réponse, −5 pour une erreur. Trois bonnes réponses d’affilée lancent un <strong>combo</strong> avec des points bonus. Chaque erreur ou chaque temps écoulé coûte une vie ❤️.</p><p>Les corrections vous aident à progresser ; les points ne valident pas les mots du jour. Un mot souligné ? Cliquez pour afficher son sens seulement si vous en avez besoin.</p></footer>
-</main><script src="/vocabulary-help.js"></script><script src="/week-history.js"></script><script src="/learning-history.js"></script><script src="/game-fx.js"></script><script src="/learning-games-core.js"></script><script src="/verb-games-core.js"></script><script src="/learning-games.js"></script></body></html>
+</main><script src="/vocabulary-help.js"></script><script src="/week-history.js"></script><script src="/learning-history.js"></script><script src="/game-fx.js"></script><script src="/learning-games-core.js"></script><script src="/verb-games-core.js"></script><script src="/parking-core.js"></script><script src="/learning-games.js"></script></body></html>

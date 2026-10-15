@@ -3,9 +3,9 @@
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   let language=params.get('lang')||'en',lessons=[],active='matching',score=0,selection=null,matched=[],ballRound=0,ballPrompts=[],ballLocation=[320,365],oddRound=0,loadVersion=0,level=params.get('level')||'niveau1',profileEmail=params.get('email'),pathMode=false,pathThemes=[],roundIndex=0,audioOverride=null,pathData=null;
   let difficulty={pairs:4,oddOptions:4,positions:['inside','on','above','below']};
-  const names={matching:'Mots à relier',ball:'Où va la balle ?',odd:'Le mot intrus',verbs:'L’atelier des verbes',images:'Images et mots',listening:'Écouter et écrire'};
+  const names={matching:'Mots à relier',ball:'Où va la balle ?',odd:'Le mot intrus',verbs:'L’atelier des verbes',images:'Images et mots',listening:'Écouter et écrire',parking:'Parking des phrases'};
   let gameGeneration=0,activeAudio=null;
-  let lives=3,maxLives=3,streak=0,bestStreak=0,answers=0,correctAnswers=0,matchRound=0;
+  let lives=3,maxLives=3,streak=0,bestStreak=0,answers=0,correctAnswers=0,matchRound=0,parkLevel=0,parkSet=null;
   function links(){const q=new URLSearchParams(location.search);q.set('lang',language);q.delete('lesson');const suffix='?'+q.toString();$('games-back').href='/grammaire'+suffix;$('games-word').href='/mot-du-jour'+suffix;$('weekly-game').href='/jeu-semaine'+suffix;return suffix;}
   const instructions={
     en:{inside:'Put the ball inside the box.',above:'Put the ball above the box.',below:'Put the ball below the box.',left:'Put the ball to the left of the box.',right:'Put the ball to the right of the box.',on:'Put the ball on the box.',next:'Put the ball next to the box.'},
@@ -58,6 +58,174 @@
     setTimeout(()=>{if(generation===gameGeneration)result(forced||true);},900);
   }
 
+  function goHome(){
+    gameGeneration++;stopClock();if(activeAudio){activeAudio.pause();activeAudio=null;}
+    document.body.classList.remove('playing');$('game-panel').hidden=true;
+    document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed','false'));
+    window.scrollTo({top:0,behavior:FX&&FX.reduce?'auto':'smooth'});
+  }
+
+  /* ===== Parking des mots : puzzle de voitures à faire glisser ===== */
+  const PARK_COLORS=[['#ff6b6b','#c0392b'],['#ffa94d','#d9480f'],['#ffd43b','#e8a100'],['#69db7c','#2b8a3e'],['#38d9a9','#0b7285'],['#4dabf7','#1864ab'],['#9775fa','#5f3dc4'],['#f783ac','#a61e4d'],['#adb5bd','#495057'],['#ced4da','#6c757d']];
+  function parkCarSvg(c){
+    const W=c.len*100,w=c.h?W:100,h=c.h?100:W,angle=c.h?(c.face>0?0:180):(c.face>0?90:-90),[c1,c2]=c.color,g='pg'+c.id;
+    return `<svg class="park-svg" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="${g}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient></defs><g transform="translate(${w/2} ${h/2}) rotate(${angle}) translate(${-W/2} -50)"><rect x="8" y="16" width="${W-14}" height="78" rx="26" fill="#0003"/><rect x="26" y="3" width="34" height="17" rx="6" fill="#1b1f2a"/><rect x="${W-62}" y="3" width="34" height="17" rx="6" fill="#1b1f2a"/><rect x="26" y="80" width="34" height="17" rx="6" fill="#1b1f2a"/><rect x="${W-62}" y="80" width="34" height="17" rx="6" fill="#1b1f2a"/><rect x="6" y="10" width="${W-12}" height="80" rx="26" fill="url(#${g})" stroke="#0005" stroke-width="3"/><rect x="${W*.27}" y="22" width="${W*.44}" height="56" rx="16" fill="#ffffff30"/><path d="M${W*.64} 27L${W*.73} 36L${W*.73} 64L${W*.64} 73Z" fill="#1e3a5f" opacity=".92"/><path d="M${W*.3} 29L${W*.25} 37L${W*.25} 63L${W*.3} 71Z" fill="#1e3a5f" opacity=".8"/><rect x="${W-22}" y="18" width="11" height="15" rx="5" fill="#fff8b0"/><rect x="${W-22}" y="67" width="11" height="15" rx="5" fill="#fff8b0"/><rect x="11" y="18" width="8" height="15" rx="4" fill="#ff3b3b"/><rect x="11" y="67" width="8" height="15" rx="4" fill="#ff3b3b"/></g></svg>`;
+  }
+  function parkObstacleSvg(c){
+    const W=c.len*100,w=c.h?W:100,h=c.h?100:W,angle=c.h?0:90;
+    const art=c.len===1
+      ?'<ellipse cx="50" cy="86" rx="38" ry="9" fill="#0004"/><path d="M50 10L80 80H20Z" fill="#ff7a1a" stroke="#b34700" stroke-width="3"/><path d="M41 38H59L63 50H37Z" fill="#fff"/><path d="M33 60H67L70 70H30Z" fill="#fff"/><rect x="14" y="78" width="72" height="12" rx="4" fill="#ff7a1a" stroke="#b34700" stroke-width="3"/>'
+      :`<ellipse cx="${W/2}" cy="86" rx="${W/2-10}" ry="8" fill="#0004"/><rect x="14" y="62" width="14" height="26" rx="4" fill="#374151"/><rect x="${W-28}" y="62" width="14" height="26" rx="4" fill="#374151"/><clipPath id="bc${c.id}"><rect x="6" y="26" width="${W-12}" height="44" rx="10"/></clipPath><rect x="6" y="26" width="${W-12}" height="44" rx="10" fill="#facc15"/><g clip-path="url(#bc${c.id})">${Array.from({length:Math.ceil(W/36)+1},(_,i)=>`<path d="M${i*36-20} 70L${i*36} 26H${i*36+18}L${i*36-2} 70Z" fill="#1f2937"/>`).join('')}</g><rect x="6" y="26" width="${W-12}" height="44" rx="10" fill="none" stroke="#1f2937" stroke-width="3"/>`;
+    return `<svg class="park-svg" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><g transform="translate(${w/2} ${h/2}) rotate(${angle}) translate(${-W/2} -50)">${art}</g></svg>`;
+  }
+  const parkKey=s=>String(s).normalize('NFC').toLocaleLowerCase();
+  function parkTokens(text){
+    if((language==='ja'||language==='zh')&&typeof Intl!=='undefined'&&Intl.Segmenter)return [...new Intl.Segmenter(language,{granularity:'word'}).segment(text)].filter(s=>s.isWordLike).map(s=>s.segment);
+    return text.split(/\s+/).map(w=>w.replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu,'')).filter(Boolean);
+  }
+  function parkSentences(){
+    const target={niveau1:4,niveau2:5,niveau3:6}[level]||5,current=currentLesson();
+    const score=s=>(current&&s.theme===current.id?0:4)+Math.abs(s.tokens.length-target)+Math.random()*2.5;
+    return lessons.flatMap(l=>(l.examples||[]).map(e=>({text:e.text,translation:e.translation,reading:e.reading||'',theme:l.id,tokens:parkTokens(e.text)}))).filter(s=>s.tokens.length>=3&&s.tokens.length<=7).sort((a,b)=>score(a)-score(b));
+  }
+  function parkIntruders(sentence,count){
+    const used=new Set(sentence.tokens.map(parkKey)),words=new Map();
+    for(const l of lessons){
+      for(const e of l.examples||[])for(const t of parkTokens(e.text))words.set(parkKey(t),t);
+      for(const v of l.vocabulary||[])if(!/\s/.test(v.term))words.set(parkKey(v.term),v.term);
+    }
+    return G.shuffle([...words].filter(([k,t])=>!used.has(k)&&Array.from(t).length<=12).map(([,t])=>t)).slice(0,count);
+  }
+  function renderParking(){
+    if(parkLevel>=3){result();return;}
+    const P=WordSipParking,n=6,generation=gameGeneration;
+    if(!parkSet||parkSet.length<3)parkSet=parkSentences().slice(0,3);
+    const sentence=parkSet[parkLevel];
+    if(!sentence){$('game-area').textContent='Aucune phrase d’exemple n’est disponible pour ce jeu.';return;}
+    const baseIntruders=({niveau1:2,niveau2:3,niveau3:4}[level]||3)+(parkLevel>=2?1:0),baseObstacles=({niveau1:1,niveau2:2,niveau3:3}[level]||2);
+    let first=null,intruderCount=baseIntruders,obstacleCount=baseObstacles,tokens=sentence.tokens;
+    while(!first&&intruderCount>=0){
+      first=P.makeSentenceLevel({n,tokens,intruders:parkIntruders(sentence,intruderCount),obstacles:obstacleCount,minPar:tokens.length+2,maxPar:40,keyOf:parkKey});
+      if(!first){if(obstacleCount>1)obstacleCount--;else intruderCount--;}
+    }
+    if(!first){$('game-area').textContent='Impossible de préparer ce parking, essayez une autre fiche.';return;}
+    let cars=first.cars.map((c,i)=>({...c,color:PARK_COLORS[i%PARK_COLORS.length]})),par=first.par,idx=0,moves=0,exits=0,locked=false,drag=null;
+    const total=tokens.length;
+    progress(3,parkLevel);
+    $('game-instructions').textContent=`Phrase ${parkLevel+1}/3 — Faites glisser les voitures pour sortir les mots de la phrase dans l’ordre. Les voitures intruses et les obstacles bloquent la route : sortir un mauvais mot coûte une vie.`;
+    const fontSize=c=>{const cell=100/n,chars=Math.max(3,Array.from(c.text).length);return Math.max(2.4,Math.min(cell*.3,c.len*cell*.78/(chars*.56))).toFixed(2);};
+    const carHtml=c=>c.fixed
+      ?`<div class="park-car park-obstacle" data-id="${c.id}" data-len="${c.len}" data-h="${c.h?1:0}" data-fixed="1" aria-hidden="true">${parkObstacleSvg(c)}</div>`
+      :`<button type="button" class="park-car" data-id="${c.id}" data-len="${c.len}" data-h="${c.h?1:0}" aria-label="Voiture avec le mot ${esc(c.text)}">${parkCarSvg(c)}<span class="park-plate${c.h?'':' vertical'}" style="--fs:${fontSize(c)}">${esc(c.text)}</span></button>`;
+    $('game-area').innerHTML=`<div class="park-wrap"><div class="park-top"><div class="park-mission" id="park-mission" aria-live="polite"></div><div class="park-side"><span class="park-chip">Mot <b id="park-count">1/${total}</b></span><span class="park-chip">Coups <b id="park-moves">0</b></span><button type="button" class="btn alt" id="park-hint">💡 Indice (−3)</button><button type="button" class="btn alt" id="park-listen">🔊 Écouter</button></div></div><div class="park-board" id="park-board" style="--n:${n}">${cars.map(carHtml).join('')}</div><p class="park-help">Glissez une voiture avec la souris ou le doigt, ou choisissez-la avec Tab et utilisez les flèches. Pour la faire sortir, poussez-la au-delà du bord quand sa voie est libre. Les plots et barrières ne bougent pas.</p></div>`;
+    const board=$('park-board'),els=new Map([...board.querySelectorAll('.park-car')].map(el=>[Number(el.dataset.id),el]));
+    function put(c){
+      const el=els.get(c.id),x=c.h?c.p:c.lane,y=c.h?c.lane:c.p;
+      el.style.left=(x/n*100)+'%';el.style.top=(y/n*100)+'%';el.style.width=((c.h?c.len:1)/n*100)+'%';el.style.height=((c.h?1:c.len)/n*100)+'%';
+      el.dataset.p=String(c.p);el.dataset.lane=String(c.lane);
+    }
+    cars.forEach(put);
+    const movesLabel=()=>{$('park-moves').textContent=String(moves+exits);};
+    function banner(){
+      $('park-mission').innerHTML=`<small>Construisez la phrase en sortant les mots dans l’ordre :</small><strong>« ${esc(sentence.translation)} »</strong><div class="park-slots" role="img" aria-label="Phrase en construction">${tokens.map((t,i)=>`<span class="park-slot${i<idx?' filled':i===idx?' next':''}">${i<idx?esc(t):'…'}</span>`).join('')}</div>`;
+      $('park-count').textContent=`${Math.min(idx+1,total)}/${total}`;movesLabel();
+    }
+    function clearHints(){els.forEach(el=>{el.classList.remove('hint','hint-exit','pulse');delete el.dataset.hintTo;delete el.dataset.hintExit;});}
+    function nextSentence(delay){
+      setTimeout(()=>{
+        if(generation!==gameGeneration)return;
+        parkLevel++;progress(3,parkLevel);
+        if(parkLevel>=3){result();return;}
+        feedback('');renderParking();
+      },delay);
+    }
+    function complete(){
+      locked=true;stopClock();drag=null;
+      const used=moves+exits,bonus=used<=par?5:0;
+      if(bonus){score+=bonus;$('learning-score').textContent=score;fx.float($('learning-score'),'⚡ Optimal +5','combo');}
+      fx.confetti(1);fx.play('win');
+      feedback(`Phrase construite : ${sentence.text}${sentence.reading?' ('+sentence.reading+')':''} — ${sentence.translation}. ${bonus?'Coups optimaux : +5.':`Résolu en ${used} coups (optimal : ${par}).`}`);
+      nextSentence(2200);
+    }
+    function exitCar(c,el,dir){
+      drag=null;exits++;idx++;
+      updateScore(true,el);fx.play('vroom');
+      el.classList.remove('drag','ghost');el.classList.add('snap','leaving');
+      c.p=dir<0?-c.len-.3:n+.3;put(c);cars=cars.filter(o=>o!==c);clearHints();banner();
+      setTimeout(()=>{el.remove();},480);
+      if(idx>=total){locked=true;setTimeout(()=>{if(generation===gameGeneration)complete();},350);}
+      else feedback(`Bien ! « ${c.text} » est placé. Quel est le mot suivant ?`);
+    }
+    function wrongCar(c,el){
+      updateScore(false,el);fx.play('honk');
+      feedback(c.role==='intruder'?`Intrus ! « ${c.text} » ne fait pas partie de la phrase. −5 points.`:'Pas dans le bon ordre : ce mot vient plus tard dans la phrase. −5 points.',false);
+      el.classList.add('snap');c.p=Math.round(Math.min(Math.max(c.p,0),n-c.len));put(c);
+      if(lives<=0){locked=true;stopClock();endSoon();}
+    }
+    const isNext=c=>c.role==='token'&&c.key===parkKey(tokens[idx]);
+    function release(){
+      const d=drag;if(!d)return;drag=null;
+      const c=d.car,el=d.el;el.classList.remove('drag','ghost');board.classList.remove('exiting');
+      const centre=c.p+c.len/2;
+      if(centre<0||centre>n){if(isNext(c))exitCar(c,el,centre<0?-1:1);else wrongCar(c,el);return;}
+      const target=Math.min(Math.max(Math.round(c.p),Math.max(d.lo,0)),Math.min(d.hi,n-c.len));
+      el.classList.add('snap');c.p=target;put(c);
+      if(target!==d.startP){moves++;movesLabel();fx.play('click');}
+    }
+    function attemptStep(c,el,delta){
+      if(locked)return;
+      const r=P.range(c,cars,n),np=c.p+delta;
+      if(np<0||np+c.len>n){
+        if((delta<0&&r.lo<=-c.len)||(delta>0&&r.hi>=n)){if(isNext(c))exitCar(c,el,delta);else wrongCar(c,el);}
+        else fx.play('bad');
+        return;
+      }
+      if(np<r.lo||np>r.hi){fx.play('bad');fx.shake(el);return;}
+      el.classList.add('snap');c.p=np;put(c);moves++;movesLabel();fx.play('click');
+    }
+    cars.filter(c=>!c.fixed).forEach(c=>{
+      const el=els.get(c.id);
+      el.addEventListener('pointerdown',e=>{
+        if(locked||(e.button!==undefined&&e.button>0))return;
+        e.preventDefault();
+        const r=P.range(c,cars,n);
+        drag={car:c,el,startP:c.p,lo:r.lo,hi:r.hi,from:c.h?e.clientX:e.clientY,cell:board.clientWidth/n,id:e.pointerId};
+        try{el.setPointerCapture(e.pointerId);}catch{}
+        el.classList.remove('snap');el.classList.add('drag');fx.play('pick');
+      });
+      el.addEventListener('pointermove',e=>{
+        if(!drag||drag.id!==e.pointerId||drag.car!==c)return;
+        c.p=Math.min(Math.max(drag.startP+((c.h?e.clientX:e.clientY)-drag.from)/drag.cell,drag.lo),drag.hi);put(c);
+        const out=c.p+c.len/2<0||c.p+c.len/2>n;el.classList.toggle('ghost',out);board.classList.toggle('exiting',out);
+      });
+      el.addEventListener('pointerup',e=>{if(drag&&drag.id===e.pointerId)release();});
+      el.addEventListener('pointercancel',e=>{if(drag&&drag.id===e.pointerId){c.p=drag.startP;put(c);drag=null;el.classList.remove('drag','ghost');board.classList.remove('exiting');}});
+      el.addEventListener('keydown',e=>{
+        const keys=c.h?{ArrowLeft:-1,ArrowRight:1}:{ArrowUp:-1,ArrowDown:1};
+        if(!(e.key in keys))return;
+        e.preventDefault();attemptStep(c,el,keys[e.key]);
+      });
+    });
+    $('park-hint').onclick=()=>{
+      if(locked)return;
+      const h=P.hintStage(cars,n,parkKey(tokens[idx]));if(!h)return;
+      score-=3;$('learning-score').textContent=score;fx.float($('learning-score'),'−3','bad');fx.play('pick');
+      clearHints();
+      const el=els.get(h.id);
+      if(h.exit){el.classList.add('hint-exit');el.dataset.hintExit=String(h.dir);feedback('Voie libre : poussez cette voiture hors du parking !');}
+      else{el.classList.add('hint');el.dataset.hintTo=String(h.to);feedback('Indice : déplacez la voiture en surbrillance pour dégager le prochain mot.');}
+    };
+    $('park-listen').onclick=()=>{new Audio('/api/tts?text='+encodeURIComponent(sentence.text)+'&lang='+language).play().catch(()=>{});};
+    banner();
+    clock(15+par*6,()=>{
+      if(locked||generation!==gameGeneration)return;
+      locked=true;drag=null;updateScore(false,board);
+      feedback(`⏱️ Temps écoulé ! La phrase était : ${sentence.text} — ${sentence.translation}.`,false);
+      if(lives<=0){endSoon();return;}
+      nextSentence(2600);
+    });
+  }
+
   function result(forced){
     stopClock();if(activeAudio){activeAudio.pause();activeAudio=null;}
     const accuracy=answers?correctAnswers/answers:0,lost=Boolean(forced)||lives<=0;
@@ -95,12 +263,12 @@
   function choose(game){
     if(!lessons.length){feedback('Les fiches ne sont pas encore disponibles.',false);return;}
     gameGeneration++;if(activeAudio){activeAudio.pause();activeAudio=null;}stopClock();
-    active=game;score=0;selection=null;matched=[];ballRound=0;oddRound=0;roundIndex=0;matchRound=0;
+    active=game;score=0;selection=null;matched=[];ballRound=0;oddRound=0;roundIndex=0;matchRound=0;parkLevel=0;parkSet=null;
     maxLives=lives=lifeMax();streak=0;bestStreak=0;answers=0;correctAnswers=0;
     $('learning-score').textContent=0;$('game-panel').hidden=false;$('game-title').textContent=names[game];$('game-next').hidden=true;feedback('');hud();$('game-progress').replaceChildren();
     document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));
-    if(game==='matching')startMatching();else if(game==='ball'){ballPrompts=G.shuffle(difficulty.positions);renderBall();}else if(game==='odd')renderOdd();else if(game==='verbs')renderVerbs();else if(game==='images')renderImages();else renderListening();
-    fx.play('click');
+    if(game==='matching')startMatching();else if(game==='ball'){ballPrompts=G.shuffle(difficulty.positions);renderBall();}else if(game==='odd')renderOdd();else if(game==='verbs')renderVerbs();else if(game==='images')renderImages();else if(game==='parking')renderParking();else renderListening();
+    document.body.classList.add('playing');fx.play('click');
     $('game-panel').scrollIntoView({behavior:FX&&FX.reduce?'auto':'smooth',block:'start'});
   }
 
@@ -397,7 +565,7 @@
     try{const r=await fetch('/api/learning-games/'+language);if(!r.ok)throw new Error('Impossible de charger les jeux.');const data=await r.json();if(version!==loadVersion)return;lessons=data.lessons;paintBest();$('games-theme').replaceChildren();for(const lesson of lessons){const option=document.createElement('option');option.value=lesson.id;option.textContent=lesson.title;$('games-theme').append(option);}if(!lessons.length)throw new Error('Aucune fiche disponible dans cette langue.');await WordSipHelp.setLanguage(language);try{await loadPath();}catch{$('path-status').textContent='Le parcours est indisponible. Les jeux en accès libre restent utilisables.';}}
     catch(error){if(version===loadVersion){lessons=[];$('games-error').textContent=error.message;}}
   }
-  document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{pathMode=false;audioOverride=null;choose(b.dataset.game);});$('game-restart').onclick=()=>choose(active);$('games-theme').onchange=()=>{pathMode=false;audioOverride=null;if(!$('game-panel').hidden&&['matching','images','listening'].includes(active))choose(active);};
+  document.querySelectorAll('[data-game]').forEach(b=>b.onclick=()=>{pathMode=false;audioOverride=null;choose(b.dataset.game);});$('game-restart').onclick=()=>choose(active);$('games-home').onclick=goHome;$('games-theme').onchange=()=>{pathMode=false;audioOverride=null;if(!$('game-panel').hidden&&['matching','images','listening'].includes(active))choose(active);};
   $('games-language').onchange=()=>{language=$('games-language').value;load();};window.addEventListener('resize',drawLinks);if(FX)FX.bindMute($('sound-toggle'));else $('sound-toggle').hidden=true;paintBest();
   const context=location.search;$('games-back').href='/grammaire'+context;$('games-word').href='/mot-du-jour'+context;$('weekly-game').href='/jeu-semaine'+context;
   (async()=>{
