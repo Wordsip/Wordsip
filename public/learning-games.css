@@ -252,3 +252,18 @@ body.playing .games-settings{margin-top:22px}
 .park-obstacle{pointer-events:none;cursor:default;z-index:0}
 .park-obstacle .park-svg{padding:4%}
 #park-listen{min-height:38px;padding:6px 14px;font-size:14px}
+
+/* Billard des mots */
+.tone-green{--c1:#14a76c;--c2:#0b5d3b}
+.nav-item.tone-green{--c1:#22b57a;--c2:#0b6b45}
+.bill-wrap{max-width:760px;margin:auto}
+.bill-stage{position:relative;width:100%;container-type:inline-size;border-radius:26px;box-shadow:0 14px 30px #0d2b3e40;user-select:none;-webkit-user-select:none}
+.bill-stage canvas{display:block;width:100%;height:auto;border-radius:26px;touch-action:none;cursor:crosshair}
+.bill-stage canvas:focus-visible{outline:4px solid #ff7a3d;outline-offset:3px}
+.bill-ptag{position:absolute;transform:translateY(-50%);max-width:30%;padding:.15em .6em;background:#fffdf2;color:#17202e;border:2px solid #3a1d0b;border-radius:99px;font:900 max(10px,1.9cqw)/1.15 var(--font);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;pointer-events:none;box-shadow:0 2px 0 #0005}
+.bill-ptag[style*="left:50%"]{transform:translate(-50%,-50%)}
+.bill-ptag.reveal{background:#ffd24a;animation:ws-pulse .5s infinite}
+.bill-ptag.good{background:#86efac}
+.bill-btag{position:absolute;transform:translate(-50%,-100%);padding:.05em .45em;background:#ffffffe6;color:#17202e;border-radius:.5em;font:900 max(9px,1.65cqw)/1.15 var(--font);white-space:nowrap;pointer-events:none;box-shadow:0 2px 0 #0004}
+.bill-btag[hidden]{display:none}
+#bill-fire{min-height:38px;padding:6px 14px;font-size:14px}

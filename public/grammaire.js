@@ -72,6 +72,7 @@ document.getElementById('tab-characters-btn').addEventListener('click', () => sw
 
 function switchTab(tab) {
   const tabs = ['verbs', 'characters', 'lessons'];
+  document.getElementById('page-container').classList.toggle('lib-wide', tab === 'lessons');
   tabs.forEach((t) => {
     document.getElementById(`${t}-tab`).style.display = t === tab ? 'block' : 'none';
     document.getElementById(`tab-${t}-btn`).className = `tab-btn${t === tab ? ' tab-btn-active' : ''}`;
@@ -700,73 +701,34 @@ const VOCAB_SUBCATEGORIES = [
   { key: 'vie-sociale', label: 'Vie sociale' },
 ];
 
-function itemHtml({ lesson, index }) {
-  const preview = buildLessonPreview(lesson);
-  return `
-    <button type="button" class="lesson-menu-item" data-index="${index}">
-      <span style="font-weight:600;">${lesson.title}</span>
-      ${lesson.learningOrder ? `<span class="learning-badge">Parcours quotidien · étape ${lesson.learningOrder}/6</span>` : ''}
-      ${lesson.subtitle ? `<span style="display:block;font-size:12px;color:#999;margin-top:2px;">${lesson.subtitle}</span>` : ''}
-      ${preview ? `<span class="lesson-preview">${preview}</span>` : ''}
-    </button>
-  `;
+const LESSON_LANGUAGE_LABELS = { en: 'Anglais', es: 'Espagnol', it: 'Italien', ja: 'Japonais', zh: 'Chinois' };
+
+// Bibliothèque des fiches : tuiles par lettre, recherche, filtres, index A → Z et barre latérale
+// (voir fiches-library.js). Ouvrir une fiche passe toujours par showLessonDetail().
+function renderLessonsMenu() {
+  window.WordSipLibrary.mount({
+    lessons: allLessons,
+    language: lessonsLanguage,
+    languageLabel: LESSON_LANGUAGE_LABELS[lessonsLanguage] || lessonsLanguage,
+    preview: buildLessonPreview,
+    onOpen: showLessonDetail,
+  });
+  document.getElementById('lib-layout').style.display = ''; // la mise en page (grille / bandeau mobile) vient du CSS
+  showLessonsList();
 }
 
-function renderLessonsMenu() {
-  const menu = document.getElementById('lessons-menu');
-
-  const groups = {};
-  allLessons.forEach((lesson, i) => {
-    const key = lesson.category || 'grammaire';
-    if (!groups[key]) groups[key] = [];
-    groups[key].push({ lesson, index: i });
-  });
-
-  // Le vocabulaire se subdivise encore par sous-catégorie ; la grammaire
-  // reste une seule liste pour l'instant (pas encore assez de fiches pour
-  // justifier une subdivision supplémentaire).
-  function renderCategoryBody(key, items) {
-    if (key !== 'vocabulaire') {
-      return `<div>${items.map(itemHtml).join('')}</div>`;
-    }
-    const daily = items.filter(item=>item.lesson.type==='vocabulary').sort((a,b)=>a.lesson.learningOrder-b.lesson.learningOrder);
-    items = items.filter(item=>item.lesson.type!=='vocabulary');
-    const subgroups = {};
-    items.forEach((item) => {
-      const subKey = item.lesson.subcategory || 'bases';
-      if (!subgroups[subKey]) subgroups[subKey] = [];
-      subgroups[subKey].push(item);
-    });
-    return (daily.length ? `<p class="learning-path-title">🌱 Commencer : le quotidien en six étapes</p><p class="learning-path-note">Couleurs → heures → lieux → positions → vêtements → cuisine. Une fiche à la fois ; écoutez, répondez puis formulez une phrase.</p><div>${daily.map(itemHtml).join('')}</div>` : '') + VOCAB_SUBCATEGORIES
-      .filter((sc) => subgroups[sc.key] && subgroups[sc.key].length > 0)
-      .map((sc) => `
-        <p style="font-size:11px;font-weight:700;color:#999;letter-spacing:.3px;margin:12px 0 6px;">${sc.label}</p>
-        <div>${subgroups[sc.key].map(itemHtml).join('')}</div>
-      `).join('');
-  }
-
-  // Chaque catégorie (et chaque sous-catégorie) dans son propre conteneur :
-  // .lesson-menu-item:first-child (qui annule le décalage de pile -30px) ne
-  // cible sinon que le tout premier bouton de la page entière.
-  menu.innerHTML = LESSON_CATEGORIES
-    .filter((c) => groups[c.key] && groups[c.key].length > 0)
-    .map((c) => `
-      <p style="font-size:12px;font-weight:700;color:#2b7a78;letter-spacing:.4px;margin:18px 0 8px;">${c.label}</p>
-      ${renderCategoryBody(c.key, groups[c.key])}
-    `).join('');
-
-  menu.querySelectorAll('.lesson-menu-item').forEach((btn) => {
-    btn.addEventListener('click', () => showLessonDetail(Number(btn.dataset.index)));
-  });
-
-  menu.style.display = 'block';
+function showLessonsList() {
   document.getElementById('lessons-detail').style.display = 'none';
+  document.getElementById('lessons-menu').style.display = 'block';
+  window.WordSipLibrary?.showList();
 }
 
 function showLessonDetail(index) {
   renderLessons([allLessons[index]]);
   document.getElementById('lessons-menu').style.display = 'none';
   document.getElementById('lessons-detail').style.display = 'block';
+  window.WordSipLibrary?.setActive(index);
+  window.scrollTo({ top: 0 });
   trackLesson(allLessons[index]);
 }
 
@@ -783,10 +745,7 @@ async function trackLesson(lesson){
   const link=document.createElement('a');link.className='learning-next-game';link.href='/jeux'+location.search;link.textContent='🎮 Continuer dans les jeux de mon parcours de la semaine';container.append(link);
 }
 
-document.getElementById('lessons-back-btn').addEventListener('click', () => {
-  document.getElementById('lessons-detail').style.display = 'none';
-  document.getElementById('lessons-menu').style.display = 'block';
-});
+document.getElementById('lessons-back-btn').addEventListener('click', showLessonsList);
 
 function renderLessons(lessons) {
   const container = document.getElementById('lessons-content');

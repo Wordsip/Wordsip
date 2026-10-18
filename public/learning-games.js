@@ -3,9 +3,9 @@
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   let language=params.get('lang')||'en',lessons=[],active='matching',score=0,selection=null,matched=[],ballRound=0,ballPrompts=[],ballLocation=[320,365],oddRound=0,loadVersion=0,level=params.get('level')||'niveau1',profileEmail=params.get('email'),pathMode=false,pathThemes=[],roundIndex=0,audioOverride=null,pathData=null;
   let difficulty={pairs:4,oddOptions:4,positions:['inside','on','above','below']};
-  const names={matching:'Mots à relier',ball:'Où va la balle ?',odd:'Le mot intrus',verbs:'L’atelier des verbes',images:'Images et mots',listening:'Écouter et écrire',parking:'Parking des phrases'};
+  const names={matching:'Mots à relier',ball:'Où va la balle ?',odd:'Le mot intrus',verbs:'L’atelier des verbes',images:'Images et mots',listening:'Écouter et écrire',parking:'Parking des phrases',billiard:'Billard des mots'};
   let gameGeneration=0,activeAudio=null;
-  let lives=3,maxLives=3,streak=0,bestStreak=0,answers=0,correctAnswers=0,matchRound=0,parkLevel=0,parkSet=null;
+  let lives=3,maxLives=3,streak=0,bestStreak=0,answers=0,correctAnswers=0,matchRound=0,parkLevel=0,parkSet=null,billRound=0,billSet=null;
   function links(){const q=new URLSearchParams(location.search);q.set('lang',language);q.delete('lesson');const suffix='?'+q.toString();$('games-back').href='/grammaire'+suffix;$('games-word').href='/mot-du-jour'+suffix;$('weekly-game').href='/jeu-semaine'+suffix;return suffix;}
   const instructions={
     en:{inside:'Put the ball inside the box.',above:'Put the ball above the box.',below:'Put the ball below the box.',left:'Put the ball to the left of the box.',right:'Put the ball to the right of the box.',on:'Put the ball on the box.',next:'Put the ball next to the box.'},
@@ -226,6 +226,178 @@
     });
   }
 
+  /* ===== Billard des mots : envoyer la bonne bille dans la poche qui porte sa traduction ===== */
+  const BILL_COLORS=['#ef4444','#f59e0b','#3b82f6','#8b5cf6','#10b981','#ec4899','#14b8a6'];
+  function renderBilliard(){
+    if(billRound>=6){result();return;}
+    const B=WordSipBilliard,T=B.T,LW=704,LH=464,RAIL=32,generation=gameGeneration;
+    const allWords=[...new Map(lessons.flatMap(l=>(l.vocabulary||[]).map(v=>({...v}))).map(v=>[v.term,v])).values()];
+    if(!billSet){
+      const own=G.shuffle(currentLesson().vocabulary.filter((v,i,l)=>l.findIndex(o=>o.term===v.term||o.translation===v.translation)===i));
+      const rest=G.shuffle(allWords.filter(w=>!own.some(o=>o.term===w.term)));
+      billSet=[...own,...rest].slice(0,6);
+    }
+    if(billSet.length<3){$('game-area').textContent='Choisissez une fiche de vocabulaire pour jouer au billard.';return;}
+    const pair=billSet[billRound],reverse=billRound%2===1,show=w=>reverse?w.translation:w.term,answer=w=>reverse?w.term:w.translation;
+    let nIntruders=Math.min(4,({niveau1:1,niveau2:2,niveau3:3}[level]||2)+(billRound>=3?1:0)),nBumpers=Math.min(3,({niveau1:0,niveau2:1,niveau3:2}[level]||1)+(billRound>=4?1:0)),round=null;
+    while(!round){
+      round=B.createRound({intruders:nIntruders,bumpers:nBumpers});
+      if(!round){if(nBumpers>0)nBumpers--;else if(nIntruders>1)nIntruders--;else break;}
+    }
+    if(!round){$('game-area').textContent='Impossible de préparer cette table, réessayez.';return;}
+    const others=G.shuffle(allWords.filter(w=>show(w)!==show(pair)&&answer(w)!==answer(pair)&&w.term!==pair.term));
+    const intruderWords=others.slice(0,nIntruders),labels=[];
+    const decoys=others.slice(nIntruders).filter((w,i,l)=>l.findIndex(o=>answer(o)===answer(w))===i);
+    let d=0;for(let i=0;i<6;i++)labels.push(i===round.pocket?answer(pair):answer(decoys[d++]||others[d++]));
+    const state=round.state,cueStart={x:state.balls[0].x,y:state.balls[0].y};
+    const wordOf=id=>id===1?pair:intruderWords[id-2];
+    let shotsLeft=({niveau1:5,niveau2:4,niveau3:3}[level]||4),shotsUsed=0,phase='idle',events=[],aim={angle:Math.atan2(state.balls[1].y-state.balls[0].y,state.balls[1].x-state.balls[0].x),power:.6,active:false,hint:false};
+    progress(6,billRound);
+    $('game-instructions').textContent=`Manche ${billRound+1}/6 — Tirez en reculant : glissez le doigt ou la souris à l’opposé de la direction voulue, puis relâchez (plus vous reculez, plus c’est fort). Les plots font rebondir les billes ; les autres billes sont des intrus.`;
+    const pocketTag=(i)=>{const top=i<3,col=i%3,pos=col===0?'left:1%':col===2?'right:1%':'left:50%;transform:translate(-50%,-50%)';return `<span class="bill-ptag" data-pocket="${i}" style="${pos};${top?'top':'bottom'}:${RAIL/2/LH*100}%">${esc(labels[i])}</span>`;};
+    $('game-area').innerHTML=`<div class="bill-wrap"><div class="park-top"><div class="park-mission" id="bill-mission" aria-live="polite"><small>${reverse?'Envoyez la bille dans la poche qui porte le mot dans la langue étudiée :':'Envoyez la bille dans la poche qui porte sa traduction :'}</small><strong>«\u00a0${esc(show(pair))}\u00a0»</strong></div><div class="park-side"><span class="park-chip">Tirs <b id="bill-shots">${shotsLeft}</b></span><span class="park-chip">Manche <b id="bill-count">${billRound+1}/6</b></span><button type="button" class="btn alt" id="bill-hint">💡 Indice (−3)</button><button type="button" class="btn" id="bill-fire">🎱 Tirer</button></div></div><div class="bill-stage" id="bill-stage"><canvas id="bill-canvas" width="${LW*dpr()}" height="${LH*dpr()}" tabindex="0" role="application" aria-label="Table de billard. Flèches gauche et droite : viser. Flèches haut et bas : puissance. Entrée : tirer."></canvas>${labels.map((_,i)=>pocketTag(i)).join('')}${state.balls.filter(b=>b.id>0).map(b=>`<span class="bill-btag" data-ball="${b.id}">${esc(show(wordOf(b.id)))}</span>`).join('')}</div><p class="park-help">Une seule bille est la bonne : celle du mot demandé. Empocher un intrus ou la bonne bille dans la mauvaise poche coûte une vie.</p></div>`;
+    const cv=$('bill-canvas'),ctx=cv.getContext('2d'),stage=$('bill-stage'),tags=new Map([...stage.querySelectorAll('.bill-btag')].map(el=>[Number(el.dataset.ball),el])),ptags=[...stage.querySelectorAll('.bill-ptag')];
+    const colorOf=id=>BILL_COLORS[(id-1)%BILL_COLORS.length],shotsLabel=()=>{$('bill-shots').textContent=String(Math.max(0,shotsLeft));};
+    stage.__bill={state,round,aim,labels,get phase(){return phase;},get shotsLeft(){return shotsLeft;},canvas:cv,LW,LH,RAIL};
+    function toLocal(e){const r=cv.getBoundingClientRect();return{x:(e.clientX-r.left)*LW/r.width-RAIL,y:(e.clientY-r.top)*LH/r.height-RAIL};}
+    function nextRound(delay){
+      setTimeout(()=>{if(generation!==gameGeneration)return;billRound++;progress(6,billRound);if(billRound>=6){result();return;}feedback('');renderBilliard();},delay);
+    }
+    function example(){
+      const n=s=>String(s).toLowerCase();
+      for(const l of lessons)for(const e of l.examples||[])if(e.text&&n(e.text).includes(n(pair.term)))return ` Exemple : ${e.text} — ${e.translation}`;
+      return '';
+    }
+    function reveal(){ptags[round.pocket].classList.add('reveal');}
+    function failRound(message){
+      phase='done';stopClock();updateScore(false,stage);reveal();feedback(message,false);fx.play('honk');
+      if(lives<=0){endSoon();return;}
+      nextRound(2400);
+    }
+    function succeed(){
+      phase='done';stopClock();
+      const bonus=shotsUsed===1?5:0,tg=state.balls[1];
+      updateScore(true,ptags[round.pocket]);
+      if(bonus){score+=bonus;$('learning-score').textContent=score;fx.float($('learning-score'),'🎯 Du premier coup +5','combo');}
+      fx.burst(ptags[round.pocket],{count:34});fx.confetti(1);fx.play('win');ptags[round.pocket].classList.add('good');tg.potted=true;
+      feedback(`Bien joué ! ${pair.term} = ${pair.translation}.${bonus?' Du premier coup : +5.':''}${example()}`);
+      nextRound(2200);
+    }
+    function settle(){
+      const pots=events.filter(e=>e.type==='pot');events=[];
+      const cue=state.balls[0],tg=state.balls[1];
+      for(const e of pots){
+        const b=state.balls.find(x=>x.id===e.id);
+        if(b.role==='intruder'){
+          updateScore(false,ptags[e.pocket]);fx.burst(ptags[e.pocket],{count:14});
+          feedback(`Intrus empoché : « ${show(wordOf(b.id))} » n’est pas la bille demandée. −5 points.`,false);
+        }
+      }
+      if(cue.potted){
+        cue.potted=false;cue.vx=cue.vy=0;let x=cueStart.x,y=cueStart.y;
+        while(state.balls.some(b=>b!==cue&&!b.potted&&Math.hypot(b.x-x,b.y-y)<2*T.ballR+2))x+=T.ballR*2;
+        cue.x=x;cue.y=y;feedback('La bille blanche est tombée : elle est replacée. Ce tir est perdu.',false);
+      }
+      if(tg.potted){
+        if(tg.pocket===round.pocket){succeed();return;}
+        const was=tg.pocket;
+        phase='done';stopClock();updateScore(false,ptags[was]);reveal();fx.play('honk');
+        feedback(`Mauvaise poche : « ${labels[was]} » n’est pas la traduction de « ${show(pair)} ». La bonne réponse : « ${labels[round.pocket]} ».`,false);
+        if(lives<=0){endSoon();return;}
+        nextRound(2800);return;
+      }
+      if(lives<=0){phase='done';stopClock();endSoon();return;}
+      if(shotsLeft<=0){failRound(`Plus de tirs ! La bonne poche était « ${labels[round.pocket]} » (${pair.term} = ${pair.translation}).`);return;}
+      phase='idle';
+    }
+    function fire(){
+      if(phase!=='idle'||shotsLeft<=0)return;
+      shotsLeft--;shotsUsed++;shotsLabel();aim.active=false;aim.hint=false;phase='rolling';events=[];
+      B.shoot(state,aim.angle,aim.power);fx.play('shoot');
+    }
+    cv.addEventListener('pointerdown',e=>{
+      if(phase!=='idle')return;e.preventDefault();aim.active=true;aim.hint=false;try{cv.setPointerCapture(e.pointerId);}catch{}
+      cv.dataset.drag='1';moveAim(e);
+    });
+    function moveAim(e){
+      const p=toLocal(e),cue=state.balls[0],vx=cue.x-p.x,vy=cue.y-p.y,dist=Math.hypot(vx,vy);
+      aim.power=Math.min(1,dist/150);if(dist>6)aim.angle=Math.atan2(vy,vx);
+    }
+    cv.addEventListener('pointermove',e=>{if(aim.active&&phase==='idle')moveAim(e);});
+    const release=()=>{delete cv.dataset.drag;if(aim.active&&phase==='idle'){if(aim.power>.06)fire();else aim.active=false;}};
+    cv.addEventListener('pointerup',release);cv.addEventListener('pointercancel',()=>{aim.active=false;delete cv.dataset.drag;});
+    cv.addEventListener('keydown',e=>{
+      if(phase!=='idle')return;
+      const k=e.key,fine=e.shiftKey?.01:.04;
+      if(k==='ArrowLeft')aim.angle-=fine;else if(k==='ArrowRight')aim.angle+=fine;else if(k==='ArrowUp')aim.power=Math.min(1,aim.power+.05);else if(k==='ArrowDown')aim.power=Math.max(.08,aim.power-.05);
+      else if(k==='Enter'||k===' '){e.preventDefault();fire();return;}else return;
+      e.preventDefault();aim.hint=true;
+    });
+    $('bill-fire').onclick=fire;
+    $('bill-hint').onclick=()=>{
+      if(phase!=='idle')return;
+      score-=3;$('learning-score').textContent=score;fx.float($('learning-score'),'−3','bad');fx.play('pick');
+      aim.angle=round.shot.angle;aim.power=round.shot.power;aim.hint=true;
+      feedback('Indice : la visée est réglée sur un tir qui marche. Appuyez sur Tirer !');
+    };
+    clock(45,()=>{if(phase==='done'||generation!==gameGeneration)return;failRound(`⏱️ Temps écoulé ! La bonne poche était « ${labels[round.pocket]} » (${pair.term} = ${pair.translation}).`);});
+    /* --- dessin --- */
+    const rr=(x,y,w,h,r)=>{ctx.beginPath();if(ctx.roundRect)ctx.roundRect(x,y,w,h,r);else ctx.rect(x,y,w,h);};
+    function drawTable(){
+      const wood=ctx.createLinearGradient(0,0,0,LH);wood.addColorStop(0,'#9a5a2b');wood.addColorStop(.5,'#7a4320');wood.addColorStop(1,'#5b3016');
+      ctx.fillStyle=wood;rr(0,0,LW,LH,26);ctx.fill();ctx.strokeStyle='#3a1d0b';ctx.lineWidth=4;ctx.stroke();
+      const felt=ctx.createRadialGradient(LW/2,LH/2,40,LW/2,LH/2,LW*.6);felt.addColorStop(0,'#1fa26a');felt.addColorStop(1,'#0c6b45');
+      ctx.fillStyle=felt;ctx.fillRect(RAIL,RAIL,T.w,T.h);ctx.strokeStyle='#0a4a30';ctx.lineWidth=4;ctx.strokeRect(RAIL,RAIL,T.w,T.h);
+      ctx.save();ctx.translate(RAIL,RAIL);ctx.strokeStyle='#ffffff22';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(160,0);ctx.lineTo(160,T.h);ctx.stroke();
+      ctx.fillStyle='#ffffff33';ctx.beginPath();ctx.arc(160,T.h/2,3,0,6.3);ctx.fill();
+      for(const[px,py]of B.POCKETS){const g=ctx.createRadialGradient(px,py,3,px,py,T.pocketR+6);g.addColorStop(0,'#000');g.addColorStop(.75,'#0b0b0f');g.addColorStop(1,'#3a2a1a');ctx.fillStyle=g;ctx.beginPath();ctx.arc(px,py,T.pocketR+3,0,6.3);ctx.fill();}
+      ctx.restore();
+    }
+    function drawBumper(m){
+      const g=ctx.createRadialGradient(m.x-6,m.y-6,2,m.x,m.y,m.r);g.addColorStop(0,'#cfd6e3');g.addColorStop(1,'#4b5563');
+      ctx.fillStyle='#0004';ctx.beginPath();ctx.arc(m.x+3,m.y+4,m.r,0,6.3);ctx.fill();ctx.fillStyle=g;ctx.beginPath();ctx.arc(m.x,m.y,m.r,0,6.3);ctx.fill();
+      ctx.strokeStyle='#ff4d6d';ctx.lineWidth=4;ctx.stroke();ctx.fillStyle='#ff4d6d';ctx.beginPath();ctx.arc(m.x,m.y,5,0,6.3);ctx.fill();
+    }
+    function drawBall(b){
+      const R=T.ballR;ctx.fillStyle='#0004';ctx.beginPath();ctx.ellipse(b.x+3,b.y+5,R,R*.8,0,0,6.3);ctx.fill();
+      const base=b.id===0?'#ffffff':colorOf(b.id),g=ctx.createRadialGradient(b.x-5,b.y-6,2,b.x,b.y,R);g.addColorStop(0,'#fff');g.addColorStop(.35,base);g.addColorStop(1,'#00000055');
+      ctx.fillStyle=base;ctx.beginPath();ctx.arc(b.x,b.y,R,0,6.3);ctx.fill();ctx.fillStyle=g;ctx.beginPath();ctx.arc(b.x,b.y,R,0,6.3);ctx.fill();
+      ctx.fillStyle='#ffffffcc';ctx.beginPath();ctx.ellipse(b.x-5,b.y-6,4,2.5,-.6,0,6.3);ctx.fill();
+    }
+    function drawAim(){
+      const cue=state.balls[0];if(phase!=='idle'||cue.potted)return;
+      const a=aim.angle,len=50+aim.power*230,pull=22+aim.power*70;
+      ctx.save();ctx.translate(RAIL,RAIL);
+      // queue
+      ctx.strokeStyle='#e8c48a';ctx.lineWidth=7;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(cue.x-Math.cos(a)*pull,cue.y-Math.sin(a)*pull);ctx.lineTo(cue.x-Math.cos(a)*(pull+190),cue.y-Math.sin(a)*(pull+190));ctx.stroke();
+      ctx.strokeStyle='#5b3016';ctx.lineWidth=7;ctx.beginPath();ctx.moveTo(cue.x-Math.cos(a)*(pull+150),cue.y-Math.sin(a)*(pull+150));ctx.lineTo(cue.x-Math.cos(a)*(pull+190),cue.y-Math.sin(a)*(pull+190));ctx.stroke();
+      // ligne de visée
+      ctx.setLineDash([8,8]);ctx.lineDashOffset=-performance.now()/40;ctx.strokeStyle=aim.hint?'#ffd24a':'#ffffffcc';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(cue.x+Math.cos(a)*T.ballR,cue.y+Math.sin(a)*T.ballR);ctx.lineTo(cue.x+Math.cos(a)*len,cue.y+Math.sin(a)*len);ctx.stroke();ctx.setLineDash([]);
+      // jauge de puissance
+      const bx=cue.x-26,by=cue.y+T.ballR+12;ctx.fillStyle='#0006';rr(bx,by,52,7,3);ctx.fill();ctx.fillStyle=aim.power>.8?'#ff4d6d':aim.power>.5?'#ffd24a':'#4ade80';rr(bx,by,52*aim.power,7,3);ctx.fill();
+      ctx.restore();
+    }
+    function draw(){
+      ctx.setTransform(dpr(),0,0,dpr(),0,0);ctx.clearRect(0,0,LW,LH);drawTable();
+      ctx.save();ctx.translate(RAIL,RAIL);state.bumpers.forEach(drawBumper);state.balls.filter(b=>!b.potted).forEach(drawBall);ctx.restore();drawAim();
+      for(const b of state.balls){const el=tags.get(b.id);if(!el)continue;el.hidden=b.potted;el.style.left=((b.x+RAIL)/LW*100)+'%';el.style.top=((b.y+RAIL-T.ballR-6)/LH*100)+'%';}
+    }
+    let last=performance.now(),acc=0,hitAt=0;
+    function frame(now){
+      if(generation!==gameGeneration||!cv.isConnected)return;
+      const dt=Math.min(.05,(now-last)/1000);last=now;
+      if(phase==='rolling'){
+        acc+=dt*1.5;let n=0;
+        while(acc>=T.dt&&n<60){for(const e of B.step(state,T.dt)){events.push(e);if(e.type==='hit'&&now-hitAt>70){hitAt=now;fx.play('click');}}acc-=T.dt;n++;}
+        if(!B.moving(state))settle();
+      }
+      draw();requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  function dpr(){return Math.min(2,window.devicePixelRatio||1);}
+
+
   function result(forced){
     stopClock();if(activeAudio){activeAudio.pause();activeAudio=null;}
     const accuracy=answers?correctAnswers/answers:0,lost=Boolean(forced)||lives<=0;
@@ -263,11 +435,11 @@
   function choose(game){
     if(!lessons.length){feedback('Les fiches ne sont pas encore disponibles.',false);return;}
     gameGeneration++;if(activeAudio){activeAudio.pause();activeAudio=null;}stopClock();
-    active=game;score=0;selection=null;matched=[];ballRound=0;oddRound=0;roundIndex=0;matchRound=0;parkLevel=0;parkSet=null;
+    active=game;score=0;selection=null;matched=[];ballRound=0;oddRound=0;roundIndex=0;matchRound=0;parkLevel=0;parkSet=null;billRound=0;billSet=null;
     maxLives=lives=lifeMax();streak=0;bestStreak=0;answers=0;correctAnswers=0;
     $('learning-score').textContent=0;$('game-panel').hidden=false;$('game-title').textContent=names[game];$('game-next').hidden=true;feedback('');hud();$('game-progress').replaceChildren();
     document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));
-    if(game==='matching')startMatching();else if(game==='ball'){ballPrompts=G.shuffle(difficulty.positions);renderBall();}else if(game==='odd')renderOdd();else if(game==='verbs')renderVerbs();else if(game==='images')renderImages();else if(game==='parking')renderParking();else renderListening();
+    if(game==='matching')startMatching();else if(game==='ball'){ballPrompts=G.shuffle(difficulty.positions);renderBall();}else if(game==='odd')renderOdd();else if(game==='verbs')renderVerbs();else if(game==='images')renderImages();else if(game==='parking')renderParking();else if(game==='billiard')renderBilliard();else renderListening();
     document.body.classList.add('playing');fx.play('click');
     $('game-panel').scrollIntoView({behavior:FX&&FX.reduce?'auto':'smooth',block:'start'});
   }
