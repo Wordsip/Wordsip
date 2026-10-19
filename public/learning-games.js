@@ -3,9 +3,9 @@
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   let language=params.get('lang')||'en',lessons=[],active='matching',score=0,selection=null,matched=[],ballRound=0,ballPrompts=[],ballLocation=[320,365],oddRound=0,loadVersion=0,level=params.get('level')||'niveau1',profileEmail=params.get('email'),pathMode=false,pathThemes=[],roundIndex=0,audioOverride=null,pathData=null;
   let difficulty={pairs:4,oddOptions:4,positions:['inside','on','above','below']};
-  const names={matching:'Mots à relier',ball:'Où va la balle ?',odd:'Le mot intrus',verbs:'L’atelier des verbes',images:'Images et mots',listening:'Écouter et écrire',parking:'Parking des phrases',billiard:'Billard des mots'};
+  const names={matching:'Mots à relier',ball:'Où va la balle ?',odd:'Le mot intrus',verbs:'L’atelier des verbes',images:'Images et mots',listening:'Écouter et écrire',parking:'Parking des phrases',billiard:'Billard des mots',archery:'Tir à l’arc des mots'};
   let gameGeneration=0,activeAudio=null;
-  let lives=3,maxLives=3,streak=0,bestStreak=0,answers=0,correctAnswers=0,matchRound=0,parkLevel=0,parkSet=null,billRound=0,billSet=null;
+  let lives=3,maxLives=3,streak=0,bestStreak=0,answers=0,correctAnswers=0,matchRound=0,parkLevel=0,parkSet=null,billRound=0,billSet=null,archRound=0,archSet=null;
   function links(){const q=new URLSearchParams(location.search);q.set('lang',language);q.delete('lesson');const suffix='?'+q.toString();$('games-back').href='/grammaire'+suffix;$('games-word').href='/mot-du-jour'+suffix;$('weekly-game').href='/jeu-semaine'+suffix;return suffix;}
   const instructions={
     en:{inside:'Put the ball inside the box.',above:'Put the ball above the box.',below:'Put the ball below the box.',left:'Put the ball to the left of the box.',right:'Put the ball to the right of the box.',on:'Put the ball on the box.',next:'Put the ball next to the box.'},
@@ -398,6 +398,193 @@
   function dpr(){return Math.min(2,window.devicePixelRatio||1);}
 
 
+  /* ===== Tir à l'arc des mots : viser la bonne traduction, de près ou de loin ===== */
+  function renderArchery(){
+    if(archRound>=6){result();return;}
+    const Q=WordSipArchery,A=Q.A,W=A.W,H=A.H,generation=gameGeneration;
+    const allWords=[...new Map(lessons.flatMap(l=>(l.vocabulary||[]).map(v=>({...v}))).map(v=>[v.term,v])).values()];
+    if(!archSet){
+      const own=G.shuffle(currentLesson().vocabulary.filter((v,i,l)=>l.findIndex(o=>o.term===v.term||o.translation===v.translation)===i));
+      archSet=[...own,...G.shuffle(allWords.filter(w=>!own.some(o=>o.term===w.term)))].slice(0,6);
+    }
+    if(archSet.length<3){$('game-area').textContent='Choisissez une fiche de vocabulaire pour jouer au tir à l’arc.';return;}
+    const pair=archSet[archRound],reverse=archRound%2===1,show=w=>reverse?w.translation:w.term,answer=w=>reverse?w.term:w.translation;
+    const moving=({niveau1:archRound>=4,niveau2:archRound>=2,niveau3:archRound>=1}[level]);
+    const speedMul=({niveau1:.7,niveau2:1,niveau3:1.35}[level]||1),swayFactor=({niveau1:.7,niveau2:1,niveau3:1.4}[level]||1);
+    const windMax=archRound<2?0:({niveau1:.4,niveau2:.7,niveau3:1}[level]||.7);
+    const count=Math.min(6,({niveau1:3,niveau2:4,niveau3:5}[level]||4)+(archRound>=3?1:0));
+    let round=Q.makeRound({count,moving,windMax,speedMul})||Q.makeRound({count:3,moving:false,windMax:0});
+    if(!round){$('game-area').textContent='Impossible de préparer ce stand, réessayez.';return;}
+    const others=G.shuffle(allWords.filter(w=>show(w)!==show(pair)&&answer(w)!==answer(pair)&&w.term!==pair.term));
+    const targets=round.targets,wind=round.wind;let oi=0;
+    for(const t of targets)t.label=t.id===round.correct?answer(pair):answer(others[oi++]);
+    let arrowsLeft=({niveau1:4,niveau2:3,niveau3:3}[level]||3),phase='aim',drawStart=0,drawing=false,hintOn=false,flying=null,shots=0;
+    const aim={x:W/2,y:300},stuck=[],roundStart=performance.now();
+    const tNow=()=>(performance.now()-roundStart)/1000,drawTime=()=>drawing?(performance.now()-drawStart)/1000:0;
+    const windText=()=>Math.abs(wind)<.05?'Aucun vent':`${wind>0?'→':'←'} ${Math.abs(wind)<.4?'faible':Math.abs(wind)<.75?'modéré':'fort'}`;
+    progress(6,archRound);
+    $('game-instructions').textContent=`Manche ${archRound+1}/6 — Maintenez pour bander l’arc, relâchez pour tirer. Plus la cible est loin, plus elle rapporte (10, 20 ou 30 points), avec un bonus au centre. Tenez compte du vent et de la chute de la flèche si l’arc n’est pas bandé à fond.`;
+    $('game-area').innerHTML=`<div class="arch-wrap"><div class="park-top"><div class="park-mission" id="arch-mission" aria-live="polite"><small>${reverse?'Visez la cible qui porte le mot dans la langue étudiée :':'Visez la cible qui porte la traduction de :'}</small><strong>«\u00a0${esc(show(pair))}\u00a0»</strong></div><div class="park-side"><span class="park-chip">Flèches <b id="arch-arrows">${arrowsLeft}</b></span><span class="park-chip">💨 <b id="arch-wind">${windText()}</b></span><button type="button" class="btn alt" id="arch-hint">💡 Indice (−3)</button><button type="button" class="btn" id="arch-fire">🏹 Tirer</button></div></div><div class="arch-stage" id="arch-stage"><canvas id="arch-canvas" width="${W*dpr()}" height="${H*dpr()}" tabindex="0" role="application" aria-label="Stand de tir à l’arc. Flèches du clavier : viser. Espace maintenu puis relâché : bander l’arc et tirer."></canvas><span class="arch-lane" style="top:${A.depths.near.ground/H*100}%">10 m · 10 pts</span><span class="arch-lane" style="top:${A.depths.mid.ground/H*100}%">20 m · 20 pts</span><span class="arch-lane" style="top:${A.depths.far.ground/H*100}%">30 m · 30 pts</span>${targets.map(t=>`<span class="arch-tag arch-${t.depth}" data-target="${t.id}">${esc(t.label)}</span>`).join('')}</div><p class="park-help">Les cibles lointaines sont plus petites et bougent plus facilement hors de portée : bandez l’arc à fond (la jauge devient verte) sans le tenir trop longtemps (la visée tremble).</p></div>`;
+    const cv=$('arch-canvas'),ctx=cv.getContext('2d'),stage=$('arch-stage'),tags=new Map([...stage.querySelectorAll('.arch-tag')].map(el=>[Number(el.dataset.target),el]));
+    stage.__arch={round,targets,wind,aim,get phase(){return phase;},get arrows(){return arrowsLeft;},swayFactor,tNow,drawTime,canvas:cv,W,H,get drawing(){return drawing;}};
+    const arrowsLabel=()=>{$('arch-arrows').textContent=String(Math.max(0,arrowsLeft));};
+    function toLocal(e){
+      const r=cv.getBoundingClientRect(),p={x:(e.clientX-r.left)*W/r.width,y:(e.clientY-r.top)*H/r.height};
+      if(e.pointerType==='touch')p.y-=70;
+      return {x:Math.max(0,Math.min(W,p.x)),y:Math.max(0,Math.min(H,p.y))};
+    }
+    function nextRound(delay){setTimeout(()=>{if(generation!==gameGeneration)return;archRound++;progress(6,archRound);if(archRound>=6){result();return;}feedback('');renderArchery();},delay);}
+    const correctTag=()=>tags.get(round.correct);
+    function failRound(message){
+      phase='done';stopClock();updateScore(false,stage);correctTag().classList.add('reveal');fx.play('honk');feedback(message,false);
+      if(lives<=0){endSoon();return;}
+      nextRound(2500);
+    }
+    function example(){
+      const n=s=>String(s).toLowerCase();
+      for(const l of lessons)for(const e of l.examples||[])if(e.text&&n(e.text).includes(n(pair.term)))return ` Exemple : ${e.text} — ${e.translation}`;
+      return '';
+    }
+    function landArrow(f){
+      const res=f.res,from=f.from,ang=Math.atan2(res.land.y-from.y,res.land.x-from.x);
+      if(res.hit){
+        const tg=targets.find(t=>t.id===res.hit.id),tag=tags.get(tg.id),sc=Q.A.depths[res.hit.depth].scale;
+        stuck.push({tid:tg.id,dx:res.land.x-res.hit.at.x,dy:res.land.y-res.hit.at.y,angle:ang,scale:sc});
+        if(tg.role==='target'){
+          const s=Q.scoreOf(res.hit);phase='done';stopClock();
+          updateScore(true,tag);const extra=s.base-10+s.bonus;
+          if(extra){score+=extra;$('learning-score').textContent=score;}
+          fx.float(tag,`🎯 +${s.base+s.bonus}`,'combo');fx.burst(tag,{count:30});fx.confetti(s.ring==='bull'?2:1);fx.play('win');tag.classList.add('good');
+          const where={near:'proche (10 m)',mid:'à 20 m',far:'lointaine (30 m)'}[res.hit.depth],ring={bull:' en plein centre !',inner:' près du centre',mid:'',edge:' sur le bord'}[s.ring];
+          feedback(`Dans le mille ! Cible ${where}${ring} : ${s.base} points${s.bonus?` + ${s.bonus} de bonus`:''}. ${pair.term} = ${pair.translation}.${example()}`);
+          nextRound(2300);return;
+        }
+        updateScore(false,tag);tag.classList.add('wrong');fx.play('honk');
+        feedback(`Mauvaise cible : « ${tg.label} » n’est pas la bonne réponse pour « ${show(pair)} ». −5 points.`,false);
+      }else{
+        stuck.push({x:res.land.x,y:res.land.y,angle:ang,scale:Q.A.depths.far.scale});
+        fx.play('click');feedback('Raté ! La flèche s’est perdue. Corrigez la visée (vent, chute) et réessayez.',false);
+      }
+      if(lives<=0){phase='done';stopClock();endSoon();return;}
+      if(arrowsLeft<=0){failRound(`Plus de flèches ! La bonne cible portait « ${correctTag().textContent} » (${pair.term} = ${pair.translation}).`);return;}
+      phase='aim';
+    }
+    function shoot(dTime){
+      if(phase!=='aim'||arrowsLeft<=0)return;
+      const time=tNow(),res=Q.resolveShot({aim:{x:aim.x,y:aim.y},drawTime:dTime,time,targets,wind,swayFactor});
+      stage.__arch.last={res,dTime,time,aim:{x:aim.x,y:aim.y}};
+      arrowsLeft--;shots++;arrowsLabel();drawing=false;hintOn=false;phase='flying';fx.play('shoot');
+      flying={res,start:performance.now(),from:{x:A.bow.x,y:A.bow.y-24},ms:Math.max(280,res.flight*1000)};
+    }
+    function release(){
+      if(!drawing)return;
+      const d=drawTime();drawing=false;
+      if(d<.15)return;
+      shoot(d);
+    }
+    cv.addEventListener('pointermove',e=>{if(phase!=='aim')return;const p=toLocal(e);aim.x=p.x;aim.y=p.y;});
+    cv.addEventListener('pointerdown',e=>{
+      if(phase!=='aim'||arrowsLeft<=0)return;e.preventDefault();try{cv.setPointerCapture(e.pointerId);}catch{}
+      const p=toLocal(e);aim.x=p.x;aim.y=p.y;drawing=true;drawStart=performance.now();fx.play('pick');
+    });
+    cv.addEventListener('pointerup',release);cv.addEventListener('pointercancel',()=>{drawing=false;});
+    cv.addEventListener('keydown',e=>{
+      const step=e.shiftKey?4:14;
+      if(e.key==='ArrowLeft')aim.x=Math.max(0,aim.x-step);else if(e.key==='ArrowRight')aim.x=Math.min(W,aim.x+step);else if(e.key==='ArrowUp')aim.y=Math.max(0,aim.y-step);else if(e.key==='ArrowDown')aim.y=Math.min(H,aim.y+step);
+      else if((e.key===' '||e.key==='Enter')&&!e.repeat){e.preventDefault();if(phase==='aim'&&arrowsLeft>0&&!drawing){drawing=true;drawStart=performance.now();fx.play('pick');}return;}
+      else return;
+      e.preventDefault();
+    });
+    cv.addEventListener('keyup',e=>{if(e.key===' '||e.key==='Enter')release();});
+    $('arch-fire').onclick=()=>shoot(A.fullDraw);
+    $('arch-hint').onclick=()=>{
+      if(phase!=='aim')return;
+      score-=3;$('learning-score').textContent=score;fx.float($('learning-score'),'−3','bad');fx.play('pick');hintOn=true;
+      feedback('Indice : le point jaune est la visée parfaite (vent, chute et mouvement compris). Bandez à fond et relâchez !');
+    };
+    clock(45,()=>{if(phase==='done'||generation!==gameGeneration)return;failRound(`⏱️ Temps écoulé ! La bonne cible portait « ${correctTag().textContent} » (${pair.term} = ${pair.translation}).`);});
+    /* --- dessin --- */
+    const hills=(y,amp,col,ph)=>{ctx.fillStyle=col;ctx.beginPath();ctx.moveTo(0,A.horizon+4);for(let x=0;x<=W;x+=20)ctx.lineTo(x,y-Math.sin(x/130+ph)*amp-Math.sin(x/53+ph*2)*amp*.35);ctx.lineTo(W,A.horizon+4);ctx.closePath();ctx.fill();};
+    function drawBackdrop(t){
+      const sky=ctx.createLinearGradient(0,0,0,A.horizon);sky.addColorStop(0,'#6cc4ff');sky.addColorStop(1,'#e6f8ff');ctx.fillStyle=sky;ctx.fillRect(0,0,W,A.horizon+6);
+      ctx.fillStyle='#fff7c2';ctx.beginPath();ctx.arc(690,70,34,0,6.3);ctx.fill();ctx.fillStyle='#fff9';ctx.beginPath();ctx.arc(690,70,50,0,6.3);ctx.fill();
+      ctx.fillStyle='#ffffffd9';for(const [cx,cy,s,sp] of [[120,60,1,6],[420,90,1.3,4],[600,40,.8,8]]){const x=((cx+t*sp)%(W+200))-100;ctx.beginPath();ctx.ellipse(x,cy,50*s,16*s,0,0,6.3);ctx.ellipse(x+32*s,cy-10*s,32*s,15*s,0,0,6.3);ctx.ellipse(x-30*s,cy-6*s,28*s,13*s,0,0,6.3);ctx.fill();}
+      hills(A.horizon-18,16,'#8fcf9a',1);hills(A.horizon+2,12,'#5fb273',3);
+      const g=ctx.createLinearGradient(0,A.horizon,0,H);g.addColorStop(0,'#59b36c');g.addColorStop(1,'#2f8a4d');ctx.fillStyle=g;ctx.fillRect(0,A.horizon,W,H-A.horizon);
+      let y=A.horizon,h=5,i=0;while(y<H){ctx.fillStyle=i%2?'#ffffff12':'#00000010';ctx.fillRect(0,y,W,h);y+=h;h*=1.22;i++;}
+      ctx.setLineDash([12,10]);ctx.lineWidth=2;ctx.strokeStyle='#ffffff77';for(const k of Q.ORDER){const gy=A.depths[k].ground;ctx.beginPath();ctx.moveTo(0,gy);ctx.lineTo(W,gy);ctx.stroke();}ctx.setLineDash([]);
+    }
+    const RINGS=[['#fdfdfd',1],['#232a35',.8],['#3b82f6',.6],['#ef4444',.4],['#fbbf24',.2]];
+    function drawTarget(t,tt){
+      const p=Q.posAt(t,tt),R=Q.radius(t.depth),gy=A.depths[t.depth].ground;
+      ctx.fillStyle='#0003';ctx.beginPath();ctx.ellipse(p.x,gy+2,R*.9,R*.18,0,0,6.3);ctx.fill();
+      ctx.strokeStyle='#7a4a21';ctx.lineWidth=Math.max(3,R*.1);ctx.lineCap='round';ctx.beginPath();ctx.moveTo(p.x-R*.5,gy);ctx.lineTo(p.x,p.y+R*.3);ctx.lineTo(p.x+R*.5,gy);ctx.stroke();
+      ctx.fillStyle='#a8743d';ctx.beginPath();ctx.arc(p.x,p.y,R*1.07,0,6.3);ctx.fill();
+      for(const [col,k] of RINGS){ctx.fillStyle=col;ctx.beginPath();ctx.arc(p.x,p.y,R*k,0,6.3);ctx.fill();}
+      ctx.strokeStyle='#0003';ctx.lineWidth=1.5;for(const [,k] of RINGS){ctx.beginPath();ctx.arc(p.x,p.y,R*k,0,6.3);ctx.stroke();}
+      if(tags.get(t.id).classList.contains('reveal')){ctx.strokeStyle=`rgba(255,210,74,${.6+.4*Math.sin(performance.now()/120)})`;ctx.lineWidth=6;ctx.beginPath();ctx.arc(p.x,p.y,R*1.25,0,6.3);ctx.stroke();}
+    }
+    function drawArrow(x,y,ang,sc){
+      ctx.save();ctx.translate(x,y);ctx.rotate(ang);const L=84*sc;
+      ctx.strokeStyle='#e9c98f';ctx.lineWidth=Math.max(2.5,5*sc);ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-L,0);ctx.lineTo(0,0);ctx.stroke();
+      ctx.fillStyle='#e8eef7';ctx.beginPath();ctx.moveTo(6*sc,0);ctx.lineTo(-8*sc,-6*sc);ctx.lineTo(-8*sc,6*sc);ctx.closePath();ctx.fill();
+      ctx.fillStyle='#ef4444';for(const s of [-1,1]){ctx.beginPath();ctx.moveTo(-L,0);ctx.lineTo(-L-12*sc,s*8*sc);ctx.lineTo(-L+16*sc,s*2*sc);ctx.closePath();ctx.fill();}
+      ctx.restore();
+    }
+    function drawBow(pw){
+      const bx=A.bow.x,by=A.bow.y,ang=Math.atan2(aim.y-by,aim.x-bx);
+      ctx.save();ctx.translate(bx,by);ctx.rotate(ang);
+      const pull=pw*34;
+      ctx.strokeStyle='#8a5a2b';ctx.lineWidth=9;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(0,-62);ctx.quadraticCurveTo(26,0,0,62);ctx.stroke();
+      ctx.strokeStyle='#e8e2d0';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(0,-62);ctx.lineTo(-pull,0);ctx.lineTo(0,62);ctx.stroke();
+      if(phase==='aim'&&arrowsLeft>0){ctx.restore();drawArrow(bx+Math.cos(ang)*(70-pull),by+Math.sin(ang)*(70-pull),ang,1);return;}
+      ctx.restore();
+    }
+    function drawHud(tt){
+      const dt=drawTime(),pw=Q.power(dt),sw=drawing?Q.swayAt(tt,dt,swayFactor):{x:0,y:0};
+      // jauge de force
+      const gx=W/2-110,gy=H-22;ctx.fillStyle='#0006';ctx.beginPath();ctx.roundRect?ctx.roundRect(gx,gy,220,12,6):ctx.rect(gx,gy,220,12);ctx.fill();
+      if(drawing){const over=dt>1.6;ctx.fillStyle=over?(Math.floor(performance.now()/120)%2?'#ff4d6d':'#ffb347'):pw>=1?'#4ade80':'#ffd24a';ctx.beginPath();ctx.roundRect?ctx.roundRect(gx,gy,220*pw,12,6):ctx.rect(gx,gy,220*pw,12);ctx.fill();}
+      // viseur
+      const cx=aim.x+(drawing?sw.x:0),cy=aim.y+(drawing?sw.y:0);
+      ctx.strokeStyle=drawing?'#fff':'#ffffffcc';ctx.lineWidth=2.5;ctx.beginPath();ctx.arc(cx,cy,14,0,6.3);ctx.moveTo(cx-24,cy);ctx.lineTo(cx-8,cy);ctx.moveTo(cx+8,cy);ctx.lineTo(cx+24,cy);ctx.moveTo(cx,cy-24);ctx.lineTo(cx,cy-8);ctx.moveTo(cx,cy+8);ctx.lineTo(cx,cy+24);ctx.stroke();
+      ctx.fillStyle='#ff3d81';ctx.beginPath();ctx.arc(cx,cy,2.5,0,6.3);ctx.fill();
+      // indice : visée parfaite
+      if(hintOn&&phase==='aim'){
+        const tg=targets.find(t=>t.id===round.correct),h=Q.solveAim(tg,{drawTime:drawing?Math.max(dt,.2):A.fullDraw,time:tt,wind,swayFactor});
+        const hx=h.x+(drawing?sw.x:0),hy=h.y+(drawing?sw.y:0),pu=6*Math.sin(performance.now()/130);
+        ctx.strokeStyle='#ffd24a';ctx.fillStyle='#ffd24a55';ctx.lineWidth=3;ctx.beginPath();ctx.arc(hx,hy,12+pu,0,6.3);ctx.fill();ctx.stroke();ctx.beginPath();ctx.moveTo(hx-9,hy);ctx.lineTo(hx+9,hy);ctx.moveTo(hx,hy-9);ctx.lineTo(hx,hy+9);ctx.stroke();
+      }
+      // girouette
+      const fx0=56,fy0=84,w=wind;ctx.strokeStyle='#5b3a1b';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(fx0,fy0+30);ctx.lineTo(fx0,fy0-30);ctx.stroke();
+      const len=14+Math.abs(w)*46,dir=w>=0?1:-1;ctx.fillStyle='#ff6b6b';ctx.beginPath();ctx.moveTo(fx0,fy0-30);for(let k=0;k<=8;k++)ctx.lineTo(fx0+dir*len*k/8,fy0-30+Math.sin(tt*6+k)*(Math.abs(w)*5+1)+k*1.2);for(let k=8;k>=0;k--)ctx.lineTo(fx0+dir*len*k/8,fy0-14+Math.sin(tt*6+k)*(Math.abs(w)*5+1)+k*.6);ctx.closePath();ctx.fill();
+      return pw;
+    }
+    let lastNow=performance.now();
+    function frame(now){
+      if(generation!==gameGeneration||!cv.isConnected)return;
+      const tt=tNow();lastNow=now;
+      ctx.setTransform(dpr(),0,0,dpr(),0,0);ctx.clearRect(0,0,W,H);drawBackdrop(tt);
+      for(const t of [...targets].sort((a,b)=>A.depths[a.depth].d-A.depths[b.depth].d).reverse())drawTarget(t,tt);
+      for(const a of stuck){
+        if(a.tid!=null){const tg=targets.find(t=>t.id===a.tid),p=Q.posAt(tg,tt);drawArrow(p.x+a.dx,p.y+a.dy,a.angle,a.scale);}
+        else if(a.y>A.horizon-6)drawArrow(a.x,a.y,a.angle,a.scale);
+      }
+      if(flying){
+        const s=Math.min(1,(now-flying.start)/flying.ms),res=flying.res,e=s,p={x:flying.from.x+(res.land.x-flying.from.x)*e,y:flying.from.y+(res.land.y-flying.from.y)*e-Math.sin(Math.PI*s)*70};
+        const p2s=Math.min(1,s+.03),p2={x:flying.from.x+(res.land.x-flying.from.x)*p2s,y:flying.from.y+(res.land.y-flying.from.y)*p2s-Math.sin(Math.PI*p2s)*70};
+        const sc=1+(A.depths[res.endDepth].scale-1)*s;drawArrow(p.x,p.y,Math.atan2(p2.y-p.y,p2.x-p.x),sc);
+        if(s>=1){const f=flying;flying=null;landArrow(f);}
+      }
+      const pw=drawHud(tt);drawBow(drawing?pw:0);
+      for(const t of targets){const el=tags.get(t.id),p=Q.posAt(t,tt),R=Q.radius(t.depth),sw=stage.clientWidth,half=el.offsetWidth/2;el.style.left=Math.min(Math.max(p.x/W*sw,half+3),sw-half-3)+'px';el.style.top=((p.y-R-8)/H*100)+'%';}
+      requestAnimationFrame(frame);
+    }
+    void lastNow;
+    requestAnimationFrame(frame);
+  }
+
+
   function result(forced){
     stopClock();if(activeAudio){activeAudio.pause();activeAudio=null;}
     const accuracy=answers?correctAnswers/answers:0,lost=Boolean(forced)||lives<=0;
@@ -435,11 +622,11 @@
   function choose(game){
     if(!lessons.length){feedback('Les fiches ne sont pas encore disponibles.',false);return;}
     gameGeneration++;if(activeAudio){activeAudio.pause();activeAudio=null;}stopClock();
-    active=game;score=0;selection=null;matched=[];ballRound=0;oddRound=0;roundIndex=0;matchRound=0;parkLevel=0;parkSet=null;billRound=0;billSet=null;
+    active=game;score=0;selection=null;matched=[];ballRound=0;oddRound=0;roundIndex=0;matchRound=0;parkLevel=0;parkSet=null;billRound=0;billSet=null;archRound=0;archSet=null;
     maxLives=lives=lifeMax();streak=0;bestStreak=0;answers=0;correctAnswers=0;
     $('learning-score').textContent=0;$('game-panel').hidden=false;$('game-title').textContent=names[game];$('game-next').hidden=true;feedback('');hud();$('game-progress').replaceChildren();
     document.querySelectorAll('[data-game]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.game===game)));
-    if(game==='matching')startMatching();else if(game==='ball'){ballPrompts=G.shuffle(difficulty.positions);renderBall();}else if(game==='odd')renderOdd();else if(game==='verbs')renderVerbs();else if(game==='images')renderImages();else if(game==='parking')renderParking();else if(game==='billiard')renderBilliard();else renderListening();
+    if(game==='matching')startMatching();else if(game==='ball'){ballPrompts=G.shuffle(difficulty.positions);renderBall();}else if(game==='odd')renderOdd();else if(game==='verbs')renderVerbs();else if(game==='images')renderImages();else if(game==='parking')renderParking();else if(game==='billiard')renderBilliard();else if(game==='archery')renderArchery();else renderListening();
     document.body.classList.add('playing');fx.play('click');
     $('game-panel').scrollIntoView({behavior:FX&&FX.reduce?'auto':'smooth',block:'start'});
   }
